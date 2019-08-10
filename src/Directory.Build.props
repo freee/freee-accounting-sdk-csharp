@@ -1,0 +1,9 @@
+<Project>
+
+  <PropertyGroup>
+    <Authors>Freee</Authors>
+    <Company>Freee</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+</Project>

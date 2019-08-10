@@ -1,0 +1,28 @@
+﻿@model Freee.Accounting.Models.UsersMeResponseUser
+@{
+    ViewData["Title"] = "User info";
+}
+
+<h1>User info</h1>
+
+<dl>
+  <dt>@nameof(Model.Email)</dt>
+  <dd>@Model.Email</dd>
+  <dt>@nameof(Model.LastName)</dt>
+  <dd>@Model.LastName</dd>
+  <dt>@nameof(Model.FirstName)</dt>
+  <dd>@Model.FirstName</dd>
+</dl>
+
+<h2>Deals</h2>
+
+<ul>
+  @foreach (Freee.Accounting.Models.Deals deal in ViewBag.Deals)
+  {
+    <li>
+      <span>@deal.IssueDate - @deal.Type</span>
+      <br />
+      <span>Amount: @deal.Amount</span>
+    </li>
+  }
+</ul>
