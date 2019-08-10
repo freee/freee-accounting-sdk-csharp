@@ -4,6 +4,8 @@
     <Authors>Freee</Authors>
     <Company>Freee</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/freee/freee-accounting-sdk-csharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
 </Project>
