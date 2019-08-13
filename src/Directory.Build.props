@@ -4,7 +4,7 @@
     <Authors>Freee</Authors>
     <Company>Freee</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIconUrl>https://secure.gravatar.com/avatar/7b40de7080cd343a8cb11f586e5c7b42?s=64&r=g&d=retro</PackageIconUrl>
+    <PackageIconUrl>https://secure.gravatar.com/avatar/7b40de7080cd343a8cb11f586e5c7b42?s=64&amp;r=g&amp;d=retro</PackageIconUrl>
     <RepositoryUrl>https://github.com/freee/freee-accounting-sdk-csharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
