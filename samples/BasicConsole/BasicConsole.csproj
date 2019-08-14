@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Freee.Accounting\Freee.Accounting.csproj" />
+    <PackageReference Include="Freee.Accounting.Sdk" Version="1.0.0-preview" />
   </ItemGroup>
 
 </Project>

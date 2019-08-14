@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicConsole", "BasicConsole.csproj", "{027AD5EA-26C1-4166-99E0-2CBE7C64AC51}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Freee.Accounting", "..\..\src\Freee.Accounting\Freee.Accounting.csproj", "{FCBB70F4-7153-44AC-9864-D1971AE4D549}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicConsole", "BasicConsole.csproj", "{027AD5EA-26C1-4166-99E0-2CBE7C64AC51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{027AD5EA-26C1-4166-99E0-2CBE7C64AC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{027AD5EA-26C1-4166-99E0-2CBE7C64AC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{027AD5EA-26C1-4166-99E0-2CBE7C64AC51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FCBB70F4-7153-44AC-9864-D1971AE4D549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCBB70F4-7153-44AC-9864-D1971AE4D549}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCBB70F4-7153-44AC-9864-D1971AE4D549}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCBB70F4-7153-44AC-9864-D1971AE4D549}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
