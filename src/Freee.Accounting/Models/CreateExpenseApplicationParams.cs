@@ -37,7 +37,7 @@ namespace Freee.Accounting.Models
         /// false）：falseの場合、Web上からの項目行の追加／削除・金額の編集が出来なくなります。APIでの編集は可能です。</param>
         /// <param name="sectionId">部門ID</param>
         /// <param name="tagIds">メモタグID</param>
-        public CreateExpenseApplicationParams(int companyId, string title, IList<CreateExpenseApplicationParamsExpenseApplicationLinesItem> expenseApplicationLines, string issueDate = default(string), string description = default(string), bool? editableOnWeb = default(bool?), int? sectionId = default(int?), IList<int?> tagIds = default(IList<int?>))
+        public CreateExpenseApplicationParams(int companyId, string title, string issueDate, IList<CreateExpenseApplicationParamsExpenseApplicationLinesItem> expenseApplicationLines, string description = default(string), bool? editableOnWeb = default(bool?), int? sectionId = default(int?), IList<int?> tagIds = default(IList<int?>))
         {
             CompanyId = companyId;
             Title = title;

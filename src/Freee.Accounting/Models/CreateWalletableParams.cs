@@ -33,7 +33,7 @@ namespace Freee.Accounting.Models
         /// <param name="bankId">サービスID</param>
         /// <param name="groupName">決算書表示名（小カテゴリー） 例：売掛金, 受取手形, 未収入金（法人のみ）,
         /// 買掛金, 支払手形, 未払金, 預り金, 前受金</param>
-        public CreateWalletableParams(string name, string type, int companyId, int bankId, string groupName = default(string))
+        public CreateWalletableParams(string name, string type, int companyId, int? bankId = default(int?), string groupName = default(string))
         {
             Name = name;
             Type = type;
@@ -72,7 +72,7 @@ namespace Freee.Accounting.Models
         /// Gets or sets サービスID
         /// </summary>
         [JsonProperty(PropertyName = "bank_id")]
-        public int BankId { get; set; }
+        public int? BankId { get; set; }
 
         /// <summary>
         /// Gets or sets 決算書表示名（小カテゴリー） 例：売掛金, 受取手形, 未収入金（法人のみ）, 買掛金, 支払手形,
