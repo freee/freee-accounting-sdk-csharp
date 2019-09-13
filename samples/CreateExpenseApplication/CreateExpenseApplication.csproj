@@ -9,4 +9,10 @@
     <PackageReference Include="Freee.Accounting.Sdk" Version="1.0.0-preview2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="receipt.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

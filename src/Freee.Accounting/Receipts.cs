@@ -138,7 +138,7 @@ namespace Freee.Accounting
             if (companyId != null)
             {
                 StringContent _companyId = new StringContent(Microsoft.Rest.Serialization.SafeJsonConvert.SerializeObject(companyId, Client.SerializationSettings).Trim('"'), System.Text.Encoding.UTF8);
-                _multiPartContent.Add(_companyId, "company_id");
+                _multiPartContent.Add(_companyId, "\"company_id\"");
             }
             if (description != null)
             {
@@ -170,7 +170,7 @@ namespace Freee.Accounting
                     _contentDispositionHeaderValue.FileName = _fileName;
                 }
                 _receipt.Headers.ContentDisposition = _contentDispositionHeaderValue;
-                _multiPartContent.Add(_receipt, "receipt");
+                _multiPartContent.Add(_receipt, "\"receipt\"");
             }
             _httpRequest.Content = _multiPartContent;
             // Set Credentials
