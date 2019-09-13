@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Freee.Accounting.Sdk" Version="1.0.0-preview" />
+    <PackageReference Include="Freee.Accounting.Sdk" Version="1.0.0-preview2" />
     <PackageReference Include="Sharprompt" Version="1.0.1" />
   </ItemGroup>
 
