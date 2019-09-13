@@ -83,7 +83,7 @@ namespace Freee.Accounting
         /// 事業所ID
         /// </param>
         /// <param name='baseDate'>
-        /// 基準日
+        /// 基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.

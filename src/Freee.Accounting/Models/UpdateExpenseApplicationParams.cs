@@ -37,7 +37,7 @@ namespace Freee.Accounting.Models
         /// name="editableOnWeb">会計freeeのWeb画面から申請内容を編集可能：falseの場合、Web上からの項目行の追加／削除・金額の編集が出来なくなります。APIでの編集は可能です。</param>
         /// <param name="sectionId">部門ID</param>
         /// <param name="tagIds">メモタグID</param>
-        public UpdateExpenseApplicationParams(int companyId, string title, IList<UpdateExpenseApplicationParamsExpenseApplicationLinesItem> expenseApplicationLines, string issueDate = default(string), string description = default(string), bool? editableOnWeb = default(bool?), int? sectionId = default(int?), IList<int?> tagIds = default(IList<int?>))
+        public UpdateExpenseApplicationParams(int companyId, string title, string issueDate, IList<UpdateExpenseApplicationParamsExpenseApplicationLinesItem> expenseApplicationLines, string description = default(string), bool? editableOnWeb = default(bool?), int? sectionId = default(int?), IList<int?> tagIds = default(IList<int?>))
         {
             CompanyId = companyId;
             Title = title;
