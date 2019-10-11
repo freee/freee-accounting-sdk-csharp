@@ -4,10 +4,6 @@ freee 会計APIを C# で利用するための SDK です。
 
 会計APIの詳細については、[会計API 概要 | freee Developers Community](https://developer.freee.co.jp/docs/accounting) をご参照ください。
 
-## ステータス: WIP ##
-
-本SDKは主要な機能が含まれていますが、制限およびバグがある可能性があります。また、このステータスの記載が更新されるまでは、APIは変更される可能性がありますので、ご利用の際はご留意ください。
-
 ## 目次 ##
 
 - [チュートリアル](#チュートリアル)
