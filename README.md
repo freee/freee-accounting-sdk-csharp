@@ -1,8 +1,8 @@
-# freee 会計API SDK for C# #
+# 会計freee C# SDK #
 
-freee 会計APIを C# で利用するための SDK です。
+会計freee APIを C# で利用するための SDK です。
 
-会計APIの詳細については、[会計API 概要 | freee Developers Community](https://developer.freee.co.jp/docs/accounting) をご参照ください。
+会計freee APIの詳細については、[会計API 概要 | freee Developers Community](https://developer.freee.co.jp/docs/accounting) をご参照ください。
 
 ## 目次 ##
 
@@ -17,7 +17,7 @@ freee 会計APIを C# で利用するための SDK です。
 
 ## チュートリアル ##
 
-freee 会計API SDK for C# を利用する手順について記載します。
+会計freee API C# SDK を利用する手順について記載します。
 
 ### 前提条件 ###
 
