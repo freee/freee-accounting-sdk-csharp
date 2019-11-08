@@ -114,8 +114,8 @@ ASP.NET Core MVC のプロジェクトを新規に作成する場合は、[ASP.N
   <ItemGroup>
     ...
     <!-- [2] ここから -->
-    <PackageReference Include="Freee.Accounting.Sdk" Version="1.0.0-preview" />
-    <PackageReference Include="Freee.OAuth.AspNetCore" Version="1.0.0-preview" />
+    <PackageReference Include="Freee.Accounting.Sdk" Version="1.0.0" />
+    <PackageReference Include="Freee.OAuth.AspNetCore" Version="1.0.0" />
     <!-- [2] ここまでを追加 -->
   </ItemGroup>
 ```
