@@ -2,9 +2,8 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-using Freee.Accounting;
-
-using Microsoft.Rest;
+using Freee.Accounting.Api;
+using Freee.Accounting.Client;
 
 namespace GetTrialPLSection
 {
@@ -15,10 +14,13 @@ namespace GetTrialPLSection
             var companyId = 0;
             var accessToken = "";
 
-            // Freee AccountingClient を作成
-            var accountingClient = new AccountingClient(new TokenCredentials(accessToken));
+            // Configuration を作成
+            var config = new Configuration
+            {
+                AccessToken = accessToken
+            };
 
-            var trialPl = await accountingClient.TrialBalance.GetTrialPlAsync(companyId, 2019);
+            var trialPl = await new TrialBalanceApi(config).GetTrialPlAsync(companyId, 2019);
 
             foreach (var balance in trialPl.TrialPl.Balances.OrderBy(x => x.ParentAccountCategoryId).ThenBy(x => x.HierarchyLevel))
             {

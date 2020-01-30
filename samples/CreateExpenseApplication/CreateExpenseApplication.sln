@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateExpenseApplication", "CreateExpenseApplication.csproj", "{339CE1DE-246E-4E83-9F20-754A8DCC0B73}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Freee.Accounting", "..\..\src\Freee.Accounting\Freee.Accounting.csproj", "{CBD7E017-E74F-4B8F-ABA8-ADAC25EADD8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{339CE1DE-246E-4E83-9F20-754A8DCC0B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{339CE1DE-246E-4E83-9F20-754A8DCC0B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{339CE1DE-246E-4E83-9F20-754A8DCC0B73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBD7E017-E74F-4B8F-ABA8-ADAC25EADD8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBD7E017-E74F-4B8F-ABA8-ADAC25EADD8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBD7E017-E74F-4B8F-ABA8-ADAC25EADD8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBD7E017-E74F-4B8F-ABA8-ADAC25EADD8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

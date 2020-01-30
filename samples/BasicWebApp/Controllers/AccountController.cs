@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
 
-using Freee.Accounting;
+using Freee.Accounting.Api;
+using Freee.Accounting.Client;
 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Rest;
 
 namespace BasicWebApp.Controllers
 {
@@ -29,11 +29,16 @@ namespace BasicWebApp.Controllers
         {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
 
-            var accountingClient = new AccountingClient(new TokenCredentials(accessToken));
+            var config = new Configuration
+            {
+                AccessToken = accessToken
+            };
 
-            var user = await accountingClient.Users.GetMeAsync(companies: true);
+            var usersApi = new UsersApi(config);
+            var dealsApi = new DealsApi(config);
 
-            var deals = await accountingClient.Deals.ListAsync(user.User.Companies[0].Id, limit: 5);
+            var user = await usersApi.GetUsersMeAsync(companies: true);
+            var deals = await dealsApi.GetDealsAsync(user.User.Companies[0].Id, limit: 5);
 
             ViewBag.Deals = deals.Deals;
 
