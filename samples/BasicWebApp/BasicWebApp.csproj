@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Freee.OAuth.AspNetCore" Version="1.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Freee.Accounting\Freee.Accounting.csproj" />
+    <ProjectReference Include="..\..\src\Freee.OAuth.AspNetCore\Freee.OAuth.AspNetCore.csproj" />
   </ItemGroup>
 
 </Project>
