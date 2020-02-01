@@ -599,13 +599,7 @@ namespace Freee.Accounting.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
-            foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId))
-            {
-                foreach (var _kvpValue in _kvp.Value)
-                {
-                    localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                }
-            }
+            localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
 
             // authentication (oauth2) required
             // oauth required
@@ -666,13 +660,7 @@ namespace Freee.Accounting.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
             
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
-            foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId))
-            {
-                foreach (var _kvpValue in _kvp.Value)
-                {
-                    localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                }
-            }
+            localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
 
             // authentication (oauth2) required
             // oauth required
@@ -735,22 +723,10 @@ namespace Freee.Accounting.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
-            foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId))
-            {
-                foreach (var _kvpValue in _kvp.Value)
-                {
-                    localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                }
-            }
+            localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
             if (accruals != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "accruals", accruals))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "accruals", accruals));
             }
 
             // authentication (oauth2) required
@@ -815,22 +791,10 @@ namespace Freee.Accounting.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
             
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
-            foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId))
-            {
-                foreach (var _kvpValue in _kvp.Value)
-                {
-                    localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                }
-            }
+            localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
             if (accruals != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "accruals", accruals))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "accruals", accruals));
             }
 
             // authentication (oauth2) required
@@ -919,162 +883,66 @@ namespace Freee.Accounting.Api
             var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId))
-            {
-                foreach (var _kvpValue in _kvp.Value)
-                {
-                    localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                }
-            }
+            localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
             if (partnerId != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "partner_id", partnerId))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "partner_id", partnerId));
             }
             if (accountItemId != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "account_item_id", accountItemId))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "account_item_id", accountItemId));
             }
             if (partnerCode != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "partner_code", partnerCode))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "partner_code", partnerCode));
             }
             if (status != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "status", status))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "status", status));
             }
             if (type != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "type", type))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "type", type));
             }
             if (startIssueDate != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_issue_date", startIssueDate))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_issue_date", startIssueDate));
             }
             if (endIssueDate != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_issue_date", endIssueDate))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_issue_date", endIssueDate));
             }
             if (startDueDate != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_due_date", startDueDate))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_due_date", startDueDate));
             }
             if (endDueDate != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_due_date", endDueDate))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_due_date", endDueDate));
             }
             if (startRenewDate != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_renew_date", startRenewDate))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_renew_date", startRenewDate));
             }
             if (endRenewDate != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_renew_date", endRenewDate))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_renew_date", endRenewDate));
             }
             if (offset != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "offset", offset))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
             }
             if (limit != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "limit", limit))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (registeredFrom != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "registered_from", registeredFrom))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "registered_from", registeredFrom));
             }
             if (accruals != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "accruals", accruals))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "accruals", accruals));
             }
 
             // authentication (oauth2) required
@@ -1164,162 +1032,66 @@ namespace Freee.Accounting.Api
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
             
-            foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId))
-            {
-                foreach (var _kvpValue in _kvp.Value)
-                {
-                    localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                }
-            }
+            localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
             if (partnerId != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "partner_id", partnerId))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "partner_id", partnerId));
             }
             if (accountItemId != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "account_item_id", accountItemId))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "account_item_id", accountItemId));
             }
             if (partnerCode != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "partner_code", partnerCode))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "partner_code", partnerCode));
             }
             if (status != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "status", status))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "status", status));
             }
             if (type != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "type", type))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "type", type));
             }
             if (startIssueDate != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_issue_date", startIssueDate))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_issue_date", startIssueDate));
             }
             if (endIssueDate != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_issue_date", endIssueDate))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_issue_date", endIssueDate));
             }
             if (startDueDate != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_due_date", startDueDate))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_due_date", startDueDate));
             }
             if (endDueDate != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_due_date", endDueDate))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_due_date", endDueDate));
             }
             if (startRenewDate != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_renew_date", startRenewDate))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_renew_date", startRenewDate));
             }
             if (endRenewDate != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_renew_date", endRenewDate))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_renew_date", endRenewDate));
             }
             if (offset != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "offset", offset))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
             }
             if (limit != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "limit", limit))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (registeredFrom != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "registered_from", registeredFrom))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "registered_from", registeredFrom));
             }
             if (accruals != null)
             {
-                foreach (var _kvp in Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "accruals", accruals))
-                {
-                    foreach (var _kvpValue in _kvp.Value)
-                    {
-                        localVarRequestOptions.QueryParameters.Add(_kvp.Key, _kvpValue);
-                    }
-                }
+                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "accruals", accruals));
             }
 
             // authentication (oauth2) required
