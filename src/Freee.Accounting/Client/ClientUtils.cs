@@ -156,7 +156,7 @@ namespace Freee.Accounting.Client
         /// <param name="fromObject">Object to be casted</param>
         /// <param name="toObject">Target type</param>
         /// <returns>Casted object</returns>
-        public static dynamic ConvertType(dynamic fromObject, Type toObject)
+        public static object ConvertType(object fromObject, Type toObject)
         {
             return Convert.ChangeType(fromObject, toObject);
         }
