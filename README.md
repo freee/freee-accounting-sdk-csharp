@@ -4,6 +4,8 @@
 
 会計freee APIの詳細については、[会計API 概要 | freee Developers Community](https://developer.freee.co.jp/docs/accounting) をご参照ください。
 
+**最新バージョンとなる 2.x は現在 alpha リリース版となっています。一部の API 呼び出しに問題が発生する可能性があります。**
+
 ## 目次 ##
 
 - [チュートリアル](#チュートリアル)
