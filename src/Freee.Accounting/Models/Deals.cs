@@ -174,7 +174,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>取引先ID</value>
         [DataMember(Name="partner_id", EmitDefaultValue=false)]
-        public int PartnerId { get; set; }
+        public int? PartnerId { get; set; }
 
         /// <summary>
         /// 取引先コード

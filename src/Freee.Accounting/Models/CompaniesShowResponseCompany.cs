@@ -218,7 +218,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他）</value>
         [DataMember(Name="industry_class", EmitDefaultValue=false)]
-        public IndustryClassEnum IndustryClass { get; set; }
+        public IndustryClassEnum? IndustryClass { get; set; }
         /// <summary>
         /// コード（transport_delivery: 輸送業/配送業、delivery: バイク便等の配達業、other_transportation_logistics: その他の運輸業、物流業）
         /// </summary>
@@ -257,7 +257,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>コード（transport_delivery: 輸送業/配送業、delivery: バイク便等の配達業、other_transportation_logistics: その他の運輸業、物流業）</value>
         [DataMember(Name="industry_code", EmitDefaultValue=false)]
-        public IndustryCodeEnum IndustryCode { get; set; }
+        public IndustryCodeEnum? IndustryCode { get; set; }
         /// <summary>
         /// 仕訳承認フロー（enable: 有効、 disable: 無効）
         /// </summary>

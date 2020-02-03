@@ -87,7 +87,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>経費科目ID</value>
         [DataMember(Name="expense_application_line_template_id", EmitDefaultValue=false)]
-        public int ExpenseApplicationLineTemplateId { get; set; }
+        public int? ExpenseApplicationLineTemplateId { get; set; }
 
         /// <summary>
         /// 証憑ID
