@@ -2,12 +2,15 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Freee.Accounting.Sdk" Version="1.0.0" />
-    <PackageReference Include="Sharprompt" Version="1.0.1" />
+    <PackageReference Include="Sharprompt" Version="1.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Freee.Accounting\Freee.Accounting.csproj" />
   </ItemGroup>
 
 </Project>

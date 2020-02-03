@@ -2,14 +2,13 @@
 using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-
-using Newtonsoft.Json.Linq;
 
 namespace Freee.OAuth.AspNetCore
 {
@@ -31,17 +30,17 @@ namespace Freee.OAuth.AspNetCore
 
             response.EnsureSuccessStatusCode();
 
-            var payload = JObject.Parse(await response.Content.ReadAsStringAsync());
-            var userData = (JObject)payload["user"];
+            using (var payload = JsonDocument.Parse(await response.Content.ReadAsStringAsync()))
+            {
+                var userData = payload.RootElement.GetProperty("user");
+                var context = new OAuthCreatingTicketContext(new ClaimsPrincipal(identity), properties, Context, Scheme, Options, Backchannel, tokens, userData);
 
-            var principal = new ClaimsPrincipal(identity);
-            var context = new OAuthCreatingTicketContext(principal, properties, Context, Scheme, Options, Backchannel, tokens, userData);
+                context.RunClaimActions();
 
-            context.RunClaimActions(userData);
+                await Options.Events.CreatingTicket(context);
 
-            await Options.Events.CreatingTicket(context);
-
-            return new AuthenticationTicket(context.Principal, context.Properties, Scheme.Name);
+                return new AuthenticationTicket(context.Principal, context.Properties, Scheme.Name);
+            }
         }
     }
 }

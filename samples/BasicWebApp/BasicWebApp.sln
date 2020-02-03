@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicWebApp", "BasicWebApp.csproj", "{8DDF276E-041E-460A-A6F4-78A45EFEE4BE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Freee.Accounting", "..\..\src\Freee.Accounting\Freee.Accounting.csproj", "{3EF318CE-CDCC-49CA-8FDE-4E069C44DA48}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Freee.OAuth.AspNetCore", "..\..\src\Freee.OAuth.AspNetCore\Freee.OAuth.AspNetCore.csproj", "{9D35ED1C-1E04-4E96-BD44-F45952E4E379}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{8DDF276E-041E-460A-A6F4-78A45EFEE4BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DDF276E-041E-460A-A6F4-78A45EFEE4BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DDF276E-041E-460A-A6F4-78A45EFEE4BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF318CE-CDCC-49CA-8FDE-4E069C44DA48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF318CE-CDCC-49CA-8FDE-4E069C44DA48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF318CE-CDCC-49CA-8FDE-4E069C44DA48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF318CE-CDCC-49CA-8FDE-4E069C44DA48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D35ED1C-1E04-4E96-BD44-F45952E4E379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D35ED1C-1E04-4E96-BD44-F45952E4E379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D35ED1C-1E04-4E96-BD44-F45952E4E379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D35ED1C-1E04-4E96-BD44-F45952E4E379}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

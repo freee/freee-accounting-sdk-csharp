@@ -22,7 +22,7 @@ namespace Freee.OAuth.AspNetCore
             ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
             ClaimActions.MapJsonKey(ClaimTypes.GivenName, "first_name");
             ClaimActions.MapJsonKey(ClaimTypes.Surname, "last_name");
-            ClaimActions.MapCustomJson(ClaimTypes.Name, x => (string)x["display_name"] ?? $"{x["last_name"]} {x["first_name"]}");
+            ClaimActions.MapCustomJson(ClaimTypes.Name, x => x.GetString("display_name") ?? $"{x.GetString("last_name")} {x.GetString("first_name")}");
         }
     }
 }

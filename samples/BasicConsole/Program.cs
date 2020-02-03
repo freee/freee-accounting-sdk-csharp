@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using Freee.Accounting;
-
-using Microsoft.Rest;
+using Freee.Accounting.Api;
+using Freee.Accounting.Client;
 
 namespace BasicConsole
 {
@@ -15,15 +14,20 @@ namespace BasicConsole
             var accessToken = "";
 
             // アクセストークンを指定して、クライアントを作成する
-            var accountClient = new AccountingClient(new TokenCredentials(accessToken));
+            var config = new Configuration
+            {
+                AccessToken = accessToken
+            };
 
             // 事業所の詳細情報を取得する
-            var company = await accountClient.Companies.GetAsync(companyId);
+            var companyApi = new CompaniesApi(config);
+            var company = await companyApi.GetCompanyAsync(companyId);
 
             Console.WriteLine($"事業所名 : {company.Company.DisplayName}");
 
             // 登録されている口座の一覧を取得する
-            var walletablesIndex = await accountClient.Walletables.ListAsync(companyId, true);
+            var walletablesApi = new WalletablesApi(config);
+            var walletablesIndex = await walletablesApi.GetWalletablesAsync(companyId, true);
 
             foreach (var walletable in walletablesIndex.Walletables)
             {
@@ -31,7 +35,8 @@ namespace BasicConsole
             }
 
             // 請求書の一覧を取得する
-            var invoicesIndex = await accountClient.Invoices.ListAsync(companyId);
+            var invoicesApi = new InvoicesApi(config);
+            var invoicesIndex = await invoicesApi.GetInvoicesAsync(companyId);
 
             foreach (var invoice in invoicesIndex.Invoices)
             {

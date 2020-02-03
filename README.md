@@ -4,6 +4,8 @@
 
 会計freee APIの詳細については、[会計API 概要 | freee Developers Community](https://developer.freee.co.jp/docs/accounting) をご参照ください。
 
+**最新バージョンとなる 2.x は現在 alpha リリース版となっています。一部の API 呼び出しに問題が発生する可能性があります。**
+
 ## 目次 ##
 
 - [チュートリアル](#チュートリアル)
@@ -30,18 +32,18 @@ freee 本体のアカウントは、後述する [freeeアプリストアへの�
 
 freee API に関しては、[チュートリアルガイド](https://app.secure.freee.co.jp/developers/tutorials/1-freee%20API%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B#freee%20API%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B) をご参照ください。
 
-ASP.NET Core の基礎知識については、[ASP.NET Core - ASP.NET のドキュメント | Microsoft Docs](https://docs.microsoft.com/ja-jp/aspnet/?view=aspnetcore-2.2#pivot=core) をご参照ください。
+ASP.NET Core の基礎知識については、[ASP.NET Core - ASP.NET のドキュメント | Microsoft Docs](https://docs.microsoft.com/ja-jp/aspnet/?view=aspnetcore-3.1#pivot=core) をご参照ください。
 
 ### 実行環境 ###
 
 このリポジトリは以下の環境を想定しています。
 
-- .NET Core 2.2 以上
+- .NET Core 3.1 以上
   - dotnet コマンド
 - [Visual Studio Code](https://code.visualstudio.com/)
   - [C# エクステンション](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 
-このリポジトリは、.NET Core 2.2 を対象としています。SDK をお持ちでない方は、[.NET のダウンロードページ](https://dotnet.microsoft.com/download) から .NET Core SDK をダウンロードしインストールして下さい。dotnet コマンドは、 .NET Core SDK と同時にインストールされます。
+このリポジトリは、.NET Core 3.1 を対象としています。SDK をお持ちでない方は、[.NET のダウンロードページ](https://dotnet.microsoft.com/download) から .NET Core SDK をダウンロードしインストールして下さい。dotnet コマンドは、 .NET Core SDK と同時にインストールされます。
 
 Visual Studio Code をお持ちでない方は、[Visual Studio Code ダウンロードページ](https://code.visualstudio.com/Download) より入手し、前述の C# エクステンションをインストールしてください。
 
@@ -89,7 +91,7 @@ Welcome と書かれたページが表示されれば正常に起動できてい
 
 ASP.NET Core MVC プロジェクトに、本 SDK を導入する方法を説明します。
 
-ASP.NET Core MVC のプロジェクトを新規に作成する場合は、[ASP.NET Core MVC の概要 | Microsoft Docs](https://docs.microsoft.com/ja-jp/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-2.2&tabs=visual-studio-code) をご参照ください。
+ASP.NET Core MVC のプロジェクトを新規に作成する場合は、[ASP.NET Core MVC の概要 | Microsoft Docs](https://docs.microsoft.com/ja-jp/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-3.1&tabs=visual-studio-code) をご参照ください。
 
 大まかな作業は下記のとおりです。
 
@@ -103,7 +105,7 @@ ASP.NET Core MVC のプロジェクトを新規に作成する場合は、[ASP.N
 
 ```xml
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <!-- [1] ここから -->
     <!-- [1] ※ 値には新規に生成したGUIDを指定してください -->
@@ -114,8 +116,8 @@ ASP.NET Core MVC のプロジェクトを新規に作成する場合は、[ASP.N
   <ItemGroup>
     ...
     <!-- [2] ここから -->
-    <PackageReference Include="Freee.Accounting.Sdk" Version="1.0.0" />
-    <PackageReference Include="Freee.OAuth.AspNetCore" Version="1.0.0" />
+    <PackageReference Include="Freee.Accounting.Sdk" Version="2.0.0-alpha" />
+    <PackageReference Include="Freee.OAuth.AspNetCore" Version="2.0.0-alpha" />
     <!-- [2] ここまでを追加 -->
   </ItemGroup>
 ```
@@ -164,11 +166,11 @@ namespace BasicWebApp
                     });
             // -- [2] ここまでを追加 ----
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -185,15 +187,18 @@ namespace BasicWebApp
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseRouting();
+
             // -- [3] ここから ----
             app.UseAuthentication();
+            app.UseAuthorization();
             // -- [3] ここまでを追加 ----
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
 ```
@@ -203,13 +208,13 @@ namespace BasicWebApp
 ```cs
 using System.Threading.Tasks;
 
-using Freee.Accounting;
+using Freee.Accounting.Api;
+using Freee.Accounting.Client;
 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Rest;
 
 namespace BasicWebApp.Controllers
 {
@@ -232,11 +237,16 @@ namespace BasicWebApp.Controllers
         {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
 
-            var accountingClient = new AccountingClient(new TokenCredentials(accessToken));
+            var config = new Configuration
+            {
+                AccessToken = accessToken
+            };
 
-            var user = await accountingClient.Users.GetMeAsync(companies: true);
+            var usersApi = new UsersApi(config);
+            var dealsApi = new DealsApi(config);
 
-            var deals = await accountingClient.Deals.ListAsync(user.User.Companies[0].Id, limit: 5);
+            var user = await usersApi.GetUsersMeAsync(companies: true);
+            var deals = await dealsApi.GetDealsAsync(user.User.Companies[0].Id, limit: 5);
 
             ViewBag.Deals = deals.Deals;
 
