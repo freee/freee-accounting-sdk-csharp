@@ -348,6 +348,7 @@ namespace Freee.Accounting.Api
             var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            localVarRequestOptions.HeaderParameters.Add("X-Api-Version", "2020-06-15");
 
             // authentication (oauth2) required
             // oauth required
@@ -403,7 +404,8 @@ namespace Freee.Accounting.Api
             
             foreach (var _accept in _accepts)
                 localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+            localVarRequestOptions.HeaderParameters.Add("X-Api-Version", "2020-06-15");
 
             // authentication (oauth2) required
             // oauth required
@@ -511,6 +513,8 @@ namespace Freee.Accounting.Api
                 localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "walletables", walletables));
             }
 
+            localVarRequestOptions.HeaderParameters.Add("X-Api-Version", "2020-06-15");
+
             // authentication (oauth2) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -617,6 +621,8 @@ namespace Freee.Accounting.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "walletables", walletables));
             }
+
+            localVarRequestOptions.HeaderParameters.Add("X-Api-Version", "2020-06-15");
 
             // authentication (oauth2) required
             // oauth required

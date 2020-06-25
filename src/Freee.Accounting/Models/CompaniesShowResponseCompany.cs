@@ -21,6 +21,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
+using static Freee.Accounting.Models.Invoice;
 
 namespace Freee.Accounting.Models
 {
@@ -320,7 +321,7 @@ namespace Freee.Accounting.Models
         /// <param name="industryCode">コード（transport_delivery: 輸送業/配送業、delivery: バイク便等の配達業、other_transportation_logistics: その他の運輸業、物流業） (required).</param>
         /// <param name="workflowSetting">仕訳承認フロー（enable: 有効、 disable: 無効） (required).</param>
         /// <param name="usePartnerCode">取引先コードの利用設定（true: 有効、 false: 無効） (required).</param>
-        public CompaniesShowResponseCompany(int id = default(int), string name = default(string), string nameKana = default(string), string displayName = default(string), int taxAtSourceCalcType = default(int), string contactName = default(string), int? headCount = default(int?), string corporateNumber = default(string), TxnNumberFormatEnum txnNumberFormat = default(TxnNumberFormatEnum), int defaultWalletAccountId = default(int), bool privateSettlement = default(bool), int minusFormat = default(int), RoleEnum role = default(RoleEnum), string phone1 = default(string), string phone2 = default(string), string fax = default(string), string zipcode = default(string), int prefectureCode = default(int), string streetName1 = default(string), string streetName2 = default(string), int invoiceLayout = default(int), int invoiceStyle = default(int), int amountFraction = default(int), IndustryClassEnum industryClass = default(IndustryClassEnum), IndustryCodeEnum industryCode = default(IndustryCodeEnum), WorkflowSettingEnum workflowSetting = default(WorkflowSettingEnum), bool usePartnerCode = default(bool))
+        public CompaniesShowResponseCompany(int id = default(int), string name = default(string), string nameKana = default(string), string displayName = default(string), int taxAtSourceCalcType = default(int), string contactName = default(string), int? headCount = default(int?), string corporateNumber = default(string), TxnNumberFormatEnum txnNumberFormat = default(TxnNumberFormatEnum), int defaultWalletAccountId = default(int), bool privateSettlement = default(bool), int minusFormat = default(int), RoleEnum role = default(RoleEnum), string phone1 = default(string), string phone2 = default(string), string fax = default(string), string zipcode = default(string), int prefectureCode = default(int), string streetName1 = default(string), string streetName2 = default(string), InvoiceLayoutEnum invoiceLayout = default(InvoiceLayoutEnum), int invoiceStyle = default(int), int amountFraction = default(int), IndustryClassEnum industryClass = default(IndustryClassEnum), IndustryCodeEnum industryCode = default(IndustryCodeEnum), WorkflowSettingEnum workflowSetting = default(WorkflowSettingEnum), bool usePartnerCode = default(bool))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -490,11 +491,11 @@ namespace Freee.Accounting.Models
         public string StreetName2 { get; set; }
 
         /// <summary>
-        /// レイアウト(0: レイアウト1, 1:レイアウト2, 3:封筒1, 4:レイアウト3(繰越金額欄あり), 5: 封筒2(繰越金額欄あり))
+        /// レイアウト(default_classic:レイアウト１/クラシック (デフォルト), standard_classic:レイアウト２/クラシック, envelope_classic:封筒１/クラシック, carried_forward_standard_classic:レイアウト３（繰越金額欄あり）/クラシック, carried_forward_envelope_classic:封筒２（繰越金額欄あり）/クラシック, default_modern:レイアウト１/モダン, standard_modern:レイアウト２/モダン, envelope_modern:封筒/モダン)
         /// </summary>
-        /// <value>レイアウト(0: レイアウト1, 1:レイアウト2, 3:封筒1, 4:レイアウト3(繰越金額欄あり), 5: 封筒2(繰越金額欄あり))</value>
+        /// <value>default_classic:レイアウト１/クラシック (デフォルト), standard_classic:レイアウト２/クラシック, envelope_classic:封筒１/クラシック, carried_forward_standard_classic:レイアウト３（繰越金額欄あり）/クラシック, carried_forward_envelope_classic:封筒２（繰越金額欄あり）/クラシック, default_modern:レイアウト１/モダン, standard_modern:レイアウト２/モダン, envelope_modern:封筒/モダン</value>
         [DataMember(Name="invoice_layout", EmitDefaultValue=false)]
-        public int InvoiceLayout { get; set; }
+        public InvoiceLayoutEnum InvoiceLayout { get; set; }
 
         /// <summary>
         /// スタイル(0: クラシック, 1: モダン)
