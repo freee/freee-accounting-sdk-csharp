@@ -86,8 +86,7 @@ namespace Freee.Accounting.Models
             this.Amount = amount;
             this.FromWalletableId = fromWalletableId;
             this.FromWalletableType = fromWalletableType;
-            // to ensure "date" is required (not null)
-            this.Date = date ?? throw new ArgumentNullException("date is a required property for CreateDealParamsPayments and cannot be null");;
+            this.Date = date;
         }
         
         /// <summary>
