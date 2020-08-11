@@ -1,7 +1,7 @@
 /* 
  * freee API
  *
- *  <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"\">スタートガイド</h2> <p>1. セットアップ</p> <ol> <ul><li><a href=\"https://support.freee.co.jp/hc/ja/articles/202847230\" class=\"external-link\" rel=\"nofollow\">freeeアカウント（無料）</a>を<a href=\"https://secure.freee.co.jp/users/sign_up\" class=\"external-link\" rel=\"nofollow\">作成</a>します（すでにお持ちの場合は次へ）</li><li><a href=\"https://app.secure.freee.co.jp/developers/demo_companies/description\" class=\"external-link\" rel=\"nofollow\">開発者向け事業所・環境を作成</a>します</li><li><span><a href=\"https://app.secure.freee.co.jp/developers/applications\" class=\"external-link\" rel=\"nofollow\">前のステップで作成した事業所を選択してfreeeアプリを追加</a>します</span></li><li>Client IDをCopyしておきます</li> </ul> </ol>  <p>2. 実際にAPIを叩いてみる（ブラウザからAPIのレスポンスを確認する）</p> <ol> <ul><li><span><span>以下のURLの●をclient_idに入れ替えて<a href=\"https://app.secure.freee.co.jp/developers/tutorials/3-%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B#%E8%AA%8D%E5%8F%AF%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B\" class=\"external-link\" rel=\"nofollow\">アクセストークンを取得</a>します</span></span><ul><li><span><span><pre><code>https://accounts.secure.freee.co.jp/public_api/authorize?client_id=●&amp;redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&amp;response_type=token</a></code></pre></span></span></li></ul></li><li><span><a href=\"https://developer.freee.co.jp/docs/accounting/reference#/%E9%80%A3%E7%B5%A1%E5%85%88\" class=\"external-link\" rel=\"nofollow\">APIリファレンス</a>で<code>Authorize</code>を押下します</span></li><li><span>アクセストークン<span><span>を入力して</span></span>&nbsp;もう一度<span><code>Authorize</code>を押下して<code>Close</code>を押下します</span></span></li><li>リファレンス内のCompanies（事業所）に移動し、<code>Try it out</code>を押下し、<code>Execute</code>を押下します</li><li>Response bodyを参照し、事業所ID(id属性)を活用して、Companies以外のエンドポイントでどのようなデータのやりとりできるのか確認します</li></ul> </ol> <p>3. 連携を実装する</p> <ol> <ul><li><a href=\"https://developer.freee.co.jp/tips\" class=\"external-link\" rel=\"nofollow\">API TIPS</a>を参考に、ユースケースごとの連携の概要を学びます。<span>例えば</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-salesmanegement-system\" class=\"external-link\" rel=\"nofollow\">SFA、CRM、販売管理システムから会計freeeへの連携</a>や<a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-excel-and-spreadsheet\" class=\"external-link\" rel=\"nofollow\">エクセルやgoogle spreadsheetからの連携</a>です</li><li>実利用向け事業所がすでにある場合は利用、ない場合は作成します（セットアップで作成したのは開発者向け環境のため活用不可）</li><li><a href=\"https://developer.freee.co.jp/docs/accounting/reference\" class=\"external-link\" rel=\"nofollow\">API documentation</a><span>&nbsp;を参照し、躓いた場合は</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/community/forum/community\" class=\"external-link\" rel=\"nofollow\">Community</a><span>&nbsp;で質問してみましょう</span></li></ul> </ol> <p>アプリケーションの登録方法や認証方法、またはAPIの活用方法でご不明な点がある場合は<a href=\"https://support.freee.co.jp/hc/ja/sections/115000030743\">ヘルプセンター</a>もご確認ください</p> <hr /> <h2 id=\"_2\">仕様</h2>  <h3 id=\"api\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"_3\">認証方式</h3>  <p><a href=\"http://tools.ietf.org/html/rfc6749\">OAuth2</a>に対応</p>  <ul> <li>Authorization Code Flow (Webアプリ向け)</li>  <li>Implicit Flow (Mobileアプリ向け)</li> </ul>  <h3 id=\"_4\">認証エンドポイント</h3>  <p>https://accounts.secure.freee.co.jp/</p>  <ul> <li>authorize : https://accounts.secure.freee.co.jp/public_api/authorize</li>  <li>token : https://accounts.secure.freee.co.jp/public_api/token</li> </ul>  <h3 id=\"_5\">アクセストークンのリフレッシュ</h3>  <p>認証時に得たrefresh_token を使ってtoken の期限をリフレッシュして新規に発行することが出来ます。</p>  <p>grant_type=refresh_token で https://accounts.secure.freee.co.jp/public_api/token にアクセスすればリフレッシュされます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/token</p>  <p>params: grant_type=refresh_token&amp;client_id=UID&amp;client_secret=SECRET&amp;refresh_token=REFRESH_TOKEN</p>  <p>詳細は<a href=\"https://github.com/applicake/doorkeeper/wiki/Enable-Refresh-Token-Credentials#flow\">refresh_token</a>を参照下さい。</p>  <h3 id=\"_6\">アクセストークンの破棄</h3>  <p>認証時に得たaccess_tokenまたはrefresh_tokenを使って、tokenを破棄することができます。 token=access_tokenまたはtoken=refresh_tokenでhttps://accounts.secure.freee.co.jp/public_api/revokeにアクセスすると破棄されます。token_type_hintでaccess_tokenまたはrefresh_tokenを陽に指定できます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/revoke</p>  <p>params: token=ACCESS_TOKEN</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN</p>  <p>または</p>  <p>params: token=ACCESS_TOKEN&amp;token_type_hint=access_token</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN&amp;token_type_hint=refresh_token</p>  <p>詳細は <a href=\"https://tools.ietf.org/html/rfc7009\">OAuth 2.0 Token revocation</a> をご参照ください。</p>  <h3 id=\"_7\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポート</p>  <h3 id=\"_8\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"_9\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li>  <li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre> <hr /> <h2 id=\"_10\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
+ *  <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"start_guide\">スタートガイド</h2>  <p>freee API開発がはじめての方は<a href=\"https://developer.freee.co.jp/getting-started\">freee API スタートガイド</a>を参照してください。</p>  <hr /> <h2 id=\"specification\">仕様</h2>  <pre><code>【重要】会計freee APIの新バージョンについて 2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。<br> 新しいAPIを利用するにはリクエストヘッダーに以下を指定します。 X-Api-Version: 2020-06-15<br> 指定がない場合は2020年12月に廃止予定のAPIを利用することとなります。<br> 【重要】APIのバージョン指定をせずに利用し続ける場合 2020年12月に新しいバージョンのAPIに自動的に切り替わります。 詳細は、<a href=\"https://developer.freee.co.jp/release-note/2948\" target=\"_blank\">リリースノート</a>をご覧ください。<br> 旧バージョンのAPIリファレンスを確認したい場合は、<a href=\"https://freee.github.io/freee-api-schema/\" target=\"_blank\">旧バージョンのAPIリファレンスページ</a>をご覧ください。 </code></pre>  <h3 id=\"api_endpoint\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"about_authorize\">認証について</h3> <p>OAuth2.0を利用します。詳細は<a href=\"https://developer.freee.co.jp/docs\" target=\"_blank\">ドキュメントの認証</a>パートを参照してください。</p>  <h3 id=\"data_format\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポートしていますが、詳細は、API毎の説明欄（application/jsonなど）を確認してください。</p>  <h3 id=\"compatibility\">後方互換性ありの変更</h3>  <p>freeeでは、APIを改善していくために以下のような変更は後方互換性ありとして通知なく変更を入れることがあります。アプリケーション実装者は以下を踏まえて開発を行ってください。</p>  <ul> <li>新しいAPIリソース・エンドポイントの追加</li> <li>既存のAPIに対して必須ではない新しいリクエストパラメータの追加</li> <li>既存のAPIレスポンスに対する新しいプロパティの追加</li> <li>既存のAPIレスポンスに対するプロパティの順番の入れ変え</li> <li>keyとなっているidやcodeの長さの変更（長くする）</li> </ul>  <h3 id=\"common_response_header\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"common_error_response\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li> <li> <p>一部のエラーレスポンスにはエラーコードが含まれます。<br>詳細は、<a href=\"https://developer.freee.co.jp/tips/faq/40x-checkpoint\">HTTPステータスコード400台エラー時のチェックポイント</a>を参照してください</p> </li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre>  </br>  <h3 id=\"api_rate_limit\">API使用制限</h3>    <p>freeeは一定期間に過度のアクセスを検知した場合、APIアクセスをコントロールする場合があります。</p>   <p>その際のhttp status codeは403となります。制限がかかってから10分程度が過ぎると再度使用することができるようになります。</p>  <h4 id=\"reports_api_endpoint\">/reportsエンドポイント</h4>  <p>freeeは/reportsエンドポイントに対して1秒間に10以上のアクセスを検知した場合、APIアクセスをコントロールする場合があります。その際のhttp status codeは429（too many requests）となります。</p>  <p>レスポンスボディのmetaプロパティに以下を含めます。</p>  <ul>   <li>設定されている上限値</li>   <li>上限に達するまでの使用可能回数</li>   <li>（上限値に達した場合）使用回数がリセットされる時刻</li> </ul>  <h3 id=\"plan_api_rate_limit\">プラン別のAPI Rate Limit</h3>   <table border=\"1\">     <tbody>       <tr>         <th style=\"padding: 10px\"><strong>会計freeeプラン名</strong></th>         <th style=\"padding: 10px\"><strong>事業所とアプリケーション毎に1日でのAPIコール数</strong></th>       </tr>       <tr>         <td style=\"padding: 10px\">エンタープライズ</td>         <td style=\"padding: 10px\">10,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">プロフェッショナル</td>         <td style=\"padding: 10px\">5,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ベーシック</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ミニマム</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">上記以外</td>         <td style=\"padding: 10px\">3,000</td>       </tr>     </tbody>   </table>  <hr /> <h2 id=\"contact\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
  *
  * The version of the OpenAPI document: v1.0
  * 
@@ -71,63 +71,63 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceInvoiceContents" /> class.
         /// </summary>
-        /// <param name="id">請求内容ID (required).</param>
-        /// <param name="order">順序 (required).</param>
-        /// <param name="type">行の種類 (required).</param>
-        /// <param name="qty">数量 (required).</param>
-        /// <param name="unit">単位 (required).</param>
-        /// <param name="unitPrice">単価 (required).</param>
-        /// <param name="amount">金額 (required).</param>
-        /// <param name="vat">消費税額 (required).</param>
-        /// <param name="reducedVat">軽減税率税区分（true: 対象、false: 対象外） (required).</param>
-        /// <param name="description">備考 (required).</param>
         /// <param name="accountItemId">勘定科目ID (required).</param>
         /// <param name="accountItemName">勘定科目名 (required).</param>
-        /// <param name="taxCode">税区分コード (required).</param>
+        /// <param name="amount">金額 (required).</param>
+        /// <param name="description">備考 (required).</param>
+        /// <param name="id">請求内容ID (required).</param>
         /// <param name="itemId">品目ID (required).</param>
         /// <param name="itemName">品目 (required).</param>
+        /// <param name="order">順序 (required).</param>
+        /// <param name="qty">数量 (required).</param>
+        /// <param name="reducedVat">軽減税率税区分（true: 対象、false: 対象外） (required).</param>
         /// <param name="sectionId">部門ID (required).</param>
         /// <param name="sectionName">部門 (required).</param>
-        /// <param name="tagIds">tagIds (required).</param>
-        /// <param name="tagNames">tagNames (required).</param>
         /// <param name="segment1TagId">セグメント１ID.</param>
         /// <param name="segment1TagName">セグメント１ID.</param>
         /// <param name="segment2TagId">セグメント２ID.</param>
         /// <param name="segment2TagName">セグメント２.</param>
         /// <param name="segment3TagId">セグメント３ID.</param>
         /// <param name="segment3TagName">セグメント３.</param>
-        public InvoiceInvoiceContents(int id = default(int), int order = default(int), TypeEnum type = default(TypeEnum), decimal qty = default(decimal), string unit = default(string), decimal unitPrice = default(decimal), int amount = default(int), int vat = default(int), bool reducedVat = default(bool), string description = default(string), int? accountItemId = default(int?), string accountItemName = default(string), int? taxCode = default(int?), int? itemId = default(int?), string itemName = default(string), int? sectionId = default(int?), string sectionName = default(string), List<int> tagIds = default(List<int>), List<string> tagNames = default(List<string>), int? segment1TagId = default(int?), string segment1TagName = default(string), int? segment2TagId = default(int?), string segment2TagName = default(string), int? segment3TagId = default(int?), string segment3TagName = default(string))
+        /// <param name="tagIds">tagIds (required).</param>
+        /// <param name="tagNames">tagNames (required).</param>
+        /// <param name="taxCode">税区分コード (required).</param>
+        /// <param name="type">行の種類 (required).</param>
+        /// <param name="unit">単位 (required).</param>
+        /// <param name="unitPrice">単価 (required).</param>
+        /// <param name="vat">消費税額 (required).</param>
+        public InvoiceInvoiceContents(int? accountItemId = default(int?), string accountItemName = default(string), int amount = default(int), string description = default(string), int id = default(int), int? itemId = default(int?), string itemName = default(string), int order = default(int), decimal qty = default(decimal), bool reducedVat = default(bool), int? sectionId = default(int?), string sectionName = default(string), int? segment1TagId = default(int?), string segment1TagName = default(string), int? segment2TagId = default(int?), string segment2TagName = default(string), int? segment3TagId = default(int?), string segment3TagName = default(string), List<int> tagIds = default(List<int>), List<string> tagNames = default(List<string>), int? taxCode = default(int?), TypeEnum type = default(TypeEnum), string unit = default(string), decimal unitPrice = default(decimal), int vat = default(int))
         {
-            this.Id = id;
-            this.Order = order;
-            this.Type = type;
-            this.Qty = qty;
-            // to ensure "unit" is required (not null)
-            this.Unit = unit ?? throw new ArgumentNullException("unit is a required property for InvoiceInvoiceContents and cannot be null");;
-            this.UnitPrice = unitPrice;
-            this.Amount = amount;
-            this.Vat = vat;
-            this.ReducedVat = reducedVat;
-            // to ensure "description" is required (not null)
-            this.Description = description ?? throw new ArgumentNullException("description is a required property for InvoiceInvoiceContents and cannot be null");;
             // to ensure "accountItemId" is required (not null)
-            this.AccountItemId = accountItemId ?? throw new ArgumentNullException("accountItemId is a required property for InvoiceInvoiceContents and cannot be null");;
+            this.AccountItemId = accountItemId ?? throw new ArgumentNullException("accountItemId is a required property for InvoiceInvoiceContents and cannot be null");
             // to ensure "accountItemName" is required (not null)
-            this.AccountItemName = accountItemName ?? throw new ArgumentNullException("accountItemName is a required property for InvoiceInvoiceContents and cannot be null");;
-            // to ensure "taxCode" is required (not null)
-            this.TaxCode = taxCode ?? throw new ArgumentNullException("taxCode is a required property for InvoiceInvoiceContents and cannot be null");;
+            this.AccountItemName = accountItemName ?? throw new ArgumentNullException("accountItemName is a required property for InvoiceInvoiceContents and cannot be null");
+            this.Amount = amount;
+            // to ensure "description" is required (not null)
+            this.Description = description ?? throw new ArgumentNullException("description is a required property for InvoiceInvoiceContents and cannot be null");
+            this.Id = id;
             // to ensure "itemId" is required (not null)
-            this.ItemId = itemId ?? throw new ArgumentNullException("itemId is a required property for InvoiceInvoiceContents and cannot be null");;
+            this.ItemId = itemId ?? throw new ArgumentNullException("itemId is a required property for InvoiceInvoiceContents and cannot be null");
             // to ensure "itemName" is required (not null)
-            this.ItemName = itemName ?? throw new ArgumentNullException("itemName is a required property for InvoiceInvoiceContents and cannot be null");;
+            this.ItemName = itemName ?? throw new ArgumentNullException("itemName is a required property for InvoiceInvoiceContents and cannot be null");
+            this.Order = order;
+            this.Qty = qty;
+            this.ReducedVat = reducedVat;
             // to ensure "sectionId" is required (not null)
-            this.SectionId = sectionId ?? throw new ArgumentNullException("sectionId is a required property for InvoiceInvoiceContents and cannot be null");;
+            this.SectionId = sectionId ?? throw new ArgumentNullException("sectionId is a required property for InvoiceInvoiceContents and cannot be null");
             // to ensure "sectionName" is required (not null)
-            this.SectionName = sectionName ?? throw new ArgumentNullException("sectionName is a required property for InvoiceInvoiceContents and cannot be null");;
+            this.SectionName = sectionName ?? throw new ArgumentNullException("sectionName is a required property for InvoiceInvoiceContents and cannot be null");
             // to ensure "tagIds" is required (not null)
-            this.TagIds = tagIds ?? throw new ArgumentNullException("tagIds is a required property for InvoiceInvoiceContents and cannot be null");;
+            this.TagIds = tagIds ?? throw new ArgumentNullException("tagIds is a required property for InvoiceInvoiceContents and cannot be null");
             // to ensure "tagNames" is required (not null)
-            this.TagNames = tagNames ?? throw new ArgumentNullException("tagNames is a required property for InvoiceInvoiceContents and cannot be null");;
+            this.TagNames = tagNames ?? throw new ArgumentNullException("tagNames is a required property for InvoiceInvoiceContents and cannot be null");
+            // to ensure "taxCode" is required (not null)
+            this.TaxCode = taxCode ?? throw new ArgumentNullException("taxCode is a required property for InvoiceInvoiceContents and cannot be null");
+            this.Type = type;
+            // to ensure "unit" is required (not null)
+            this.Unit = unit ?? throw new ArgumentNullException("unit is a required property for InvoiceInvoiceContents and cannot be null");
+            this.UnitPrice = unitPrice;
+            this.Vat = vat;
             this.Segment1TagId = segment1TagId;
             this.Segment1TagName = segment1TagName;
             this.Segment2TagId = segment2TagId;
@@ -136,69 +136,6 @@ namespace Freee.Accounting.Models
             this.Segment3TagName = segment3TagName;
         }
         
-        /// <summary>
-        /// 請求内容ID
-        /// </summary>
-        /// <value>請求内容ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
-        public int Id { get; set; }
-
-        /// <summary>
-        /// 順序
-        /// </summary>
-        /// <value>順序</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
-        public int Order { get; set; }
-
-        /// <summary>
-        /// 数量
-        /// </summary>
-        /// <value>数量</value>
-        [DataMember(Name="qty", EmitDefaultValue=false)]
-        public decimal Qty { get; set; }
-
-        /// <summary>
-        /// 単位
-        /// </summary>
-        /// <value>単位</value>
-        [DataMember(Name="unit", EmitDefaultValue=true)]
-        public string Unit { get; set; }
-
-        /// <summary>
-        /// 単価
-        /// </summary>
-        /// <value>単価</value>
-        [DataMember(Name="unit_price", EmitDefaultValue=false)]
-        public decimal UnitPrice { get; set; }
-
-        /// <summary>
-        /// 金額
-        /// </summary>
-        /// <value>金額</value>
-        [DataMember(Name="amount", EmitDefaultValue=false)]
-        public int Amount { get; set; }
-
-        /// <summary>
-        /// 消費税額
-        /// </summary>
-        /// <value>消費税額</value>
-        [DataMember(Name="vat", EmitDefaultValue=false)]
-        public int Vat { get; set; }
-
-        /// <summary>
-        /// 軽減税率税区分（true: 対象、false: 対象外）
-        /// </summary>
-        /// <value>軽減税率税区分（true: 対象、false: 対象外）</value>
-        [DataMember(Name="reduced_vat", EmitDefaultValue=false)]
-        public bool ReducedVat { get; set; }
-
-        /// <summary>
-        /// 備考
-        /// </summary>
-        /// <value>備考</value>
-        [DataMember(Name="description", EmitDefaultValue=true)]
-        public string Description { get; set; }
-
         /// <summary>
         /// 勘定科目ID
         /// </summary>
@@ -214,11 +151,25 @@ namespace Freee.Accounting.Models
         public string AccountItemName { get; set; }
 
         /// <summary>
-        /// 税区分コード
+        /// 金額
         /// </summary>
-        /// <value>税区分コード</value>
-        [DataMember(Name="tax_code", EmitDefaultValue=true)]
-        public int? TaxCode { get; set; }
+        /// <value>金額</value>
+        [DataMember(Name="amount", EmitDefaultValue=false)]
+        public int Amount { get; set; }
+
+        /// <summary>
+        /// 備考
+        /// </summary>
+        /// <value>備考</value>
+        [DataMember(Name="description", EmitDefaultValue=true)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 請求内容ID
+        /// </summary>
+        /// <value>請求内容ID</value>
+        [DataMember(Name="id", EmitDefaultValue=false)]
+        public int Id { get; set; }
 
         /// <summary>
         /// 品目ID
@@ -235,6 +186,27 @@ namespace Freee.Accounting.Models
         public string ItemName { get; set; }
 
         /// <summary>
+        /// 順序
+        /// </summary>
+        /// <value>順序</value>
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public int Order { get; set; }
+
+        /// <summary>
+        /// 数量
+        /// </summary>
+        /// <value>数量</value>
+        [DataMember(Name="qty", EmitDefaultValue=false)]
+        public decimal Qty { get; set; }
+
+        /// <summary>
+        /// 軽減税率税区分（true: 対象、false: 対象外）
+        /// </summary>
+        /// <value>軽減税率税区分（true: 対象、false: 対象外）</value>
+        [DataMember(Name="reduced_vat", EmitDefaultValue=false)]
+        public bool ReducedVat { get; set; }
+
+        /// <summary>
         /// 部門ID
         /// </summary>
         /// <value>部門ID</value>
@@ -247,18 +219,6 @@ namespace Freee.Accounting.Models
         /// <value>部門</value>
         [DataMember(Name="section_name", EmitDefaultValue=true)]
         public string SectionName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TagIds
-        /// </summary>
-        [DataMember(Name="tag_ids", EmitDefaultValue=false)]
-        public List<int> TagIds { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TagNames
-        /// </summary>
-        [DataMember(Name="tag_names", EmitDefaultValue=false)]
-        public List<string> TagNames { get; set; }
 
         /// <summary>
         /// セグメント１ID
@@ -303,6 +263,46 @@ namespace Freee.Accounting.Models
         public string Segment3TagName { get; set; }
 
         /// <summary>
+        /// Gets or Sets TagIds
+        /// </summary>
+        [DataMember(Name="tag_ids", EmitDefaultValue=false)]
+        public List<int> TagIds { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TagNames
+        /// </summary>
+        [DataMember(Name="tag_names", EmitDefaultValue=false)]
+        public List<string> TagNames { get; set; }
+
+        /// <summary>
+        /// 税区分コード
+        /// </summary>
+        /// <value>税区分コード</value>
+        [DataMember(Name="tax_code", EmitDefaultValue=true)]
+        public int? TaxCode { get; set; }
+
+        /// <summary>
+        /// 単位
+        /// </summary>
+        /// <value>単位</value>
+        [DataMember(Name="unit", EmitDefaultValue=true)]
+        public string Unit { get; set; }
+
+        /// <summary>
+        /// 単価
+        /// </summary>
+        /// <value>単価</value>
+        [DataMember(Name="unit_price", EmitDefaultValue=false)]
+        public decimal UnitPrice { get; set; }
+
+        /// <summary>
+        /// 消費税額
+        /// </summary>
+        /// <value>消費税額</value>
+        [DataMember(Name="vat", EmitDefaultValue=false)]
+        public int Vat { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -310,31 +310,31 @@ namespace Freee.Accounting.Models
         {
             var sb = new StringBuilder();
             sb.Append("class InvoiceInvoiceContents {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Order: ").Append(Order).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Qty: ").Append(Qty).Append("\n");
-            sb.Append("  Unit: ").Append(Unit).Append("\n");
-            sb.Append("  UnitPrice: ").Append(UnitPrice).Append("\n");
-            sb.Append("  Amount: ").Append(Amount).Append("\n");
-            sb.Append("  Vat: ").Append(Vat).Append("\n");
-            sb.Append("  ReducedVat: ").Append(ReducedVat).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  AccountItemId: ").Append(AccountItemId).Append("\n");
             sb.Append("  AccountItemName: ").Append(AccountItemName).Append("\n");
-            sb.Append("  TaxCode: ").Append(TaxCode).Append("\n");
+            sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ItemId: ").Append(ItemId).Append("\n");
             sb.Append("  ItemName: ").Append(ItemName).Append("\n");
+            sb.Append("  Order: ").Append(Order).Append("\n");
+            sb.Append("  Qty: ").Append(Qty).Append("\n");
+            sb.Append("  ReducedVat: ").Append(ReducedVat).Append("\n");
             sb.Append("  SectionId: ").Append(SectionId).Append("\n");
             sb.Append("  SectionName: ").Append(SectionName).Append("\n");
-            sb.Append("  TagIds: ").Append(TagIds).Append("\n");
-            sb.Append("  TagNames: ").Append(TagNames).Append("\n");
             sb.Append("  Segment1TagId: ").Append(Segment1TagId).Append("\n");
             sb.Append("  Segment1TagName: ").Append(Segment1TagName).Append("\n");
             sb.Append("  Segment2TagId: ").Append(Segment2TagId).Append("\n");
             sb.Append("  Segment2TagName: ").Append(Segment2TagName).Append("\n");
             sb.Append("  Segment3TagId: ").Append(Segment3TagId).Append("\n");
             sb.Append("  Segment3TagName: ").Append(Segment3TagName).Append("\n");
+            sb.Append("  TagIds: ").Append(TagIds).Append("\n");
+            sb.Append("  TagNames: ").Append(TagNames).Append("\n");
+            sb.Append("  TaxCode: ").Append(TaxCode).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Unit: ").Append(Unit).Append("\n");
+            sb.Append("  UnitPrice: ").Append(UnitPrice).Append("\n");
+            sb.Append("  Vat: ").Append(Vat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -370,48 +370,6 @@ namespace Freee.Accounting.Models
 
             return 
                 (
-                    this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
-                ) && 
-                (
-                    this.Order == input.Order ||
-                    this.Order.Equals(input.Order)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
-                (
-                    this.Qty == input.Qty ||
-                    this.Qty.Equals(input.Qty)
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                ) && 
-                (
-                    this.UnitPrice == input.UnitPrice ||
-                    this.UnitPrice.Equals(input.UnitPrice)
-                ) && 
-                (
-                    this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
-                ) && 
-                (
-                    this.Vat == input.Vat ||
-                    this.Vat.Equals(input.Vat)
-                ) && 
-                (
-                    this.ReducedVat == input.ReducedVat ||
-                    this.ReducedVat.Equals(input.ReducedVat)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
                     this.AccountItemId == input.AccountItemId ||
                     (this.AccountItemId != null &&
                     this.AccountItemId.Equals(input.AccountItemId))
@@ -422,9 +380,17 @@ namespace Freee.Accounting.Models
                     this.AccountItemName.Equals(input.AccountItemName))
                 ) && 
                 (
-                    this.TaxCode == input.TaxCode ||
-                    (this.TaxCode != null &&
-                    this.TaxCode.Equals(input.TaxCode))
+                    this.Amount == input.Amount ||
+                    this.Amount.Equals(input.Amount)
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Id == input.Id ||
+                    this.Id.Equals(input.Id)
                 ) && 
                 (
                     this.ItemId == input.ItemId ||
@@ -437,6 +403,18 @@ namespace Freee.Accounting.Models
                     this.ItemName.Equals(input.ItemName))
                 ) && 
                 (
+                    this.Order == input.Order ||
+                    this.Order.Equals(input.Order)
+                ) && 
+                (
+                    this.Qty == input.Qty ||
+                    this.Qty.Equals(input.Qty)
+                ) && 
+                (
+                    this.ReducedVat == input.ReducedVat ||
+                    this.ReducedVat.Equals(input.ReducedVat)
+                ) && 
+                (
                     this.SectionId == input.SectionId ||
                     (this.SectionId != null &&
                     this.SectionId.Equals(input.SectionId))
@@ -445,18 +423,6 @@ namespace Freee.Accounting.Models
                     this.SectionName == input.SectionName ||
                     (this.SectionName != null &&
                     this.SectionName.Equals(input.SectionName))
-                ) && 
-                (
-                    this.TagIds == input.TagIds ||
-                    this.TagIds != null &&
-                    input.TagIds != null &&
-                    this.TagIds.SequenceEqual(input.TagIds)
-                ) && 
-                (
-                    this.TagNames == input.TagNames ||
-                    this.TagNames != null &&
-                    input.TagNames != null &&
-                    this.TagNames.SequenceEqual(input.TagNames)
                 ) && 
                 (
                     this.Segment1TagId == input.Segment1TagId ||
@@ -487,6 +453,40 @@ namespace Freee.Accounting.Models
                     this.Segment3TagName == input.Segment3TagName ||
                     (this.Segment3TagName != null &&
                     this.Segment3TagName.Equals(input.Segment3TagName))
+                ) && 
+                (
+                    this.TagIds == input.TagIds ||
+                    this.TagIds != null &&
+                    input.TagIds != null &&
+                    this.TagIds.SequenceEqual(input.TagIds)
+                ) && 
+                (
+                    this.TagNames == input.TagNames ||
+                    this.TagNames != null &&
+                    input.TagNames != null &&
+                    this.TagNames.SequenceEqual(input.TagNames)
+                ) && 
+                (
+                    this.TaxCode == input.TaxCode ||
+                    (this.TaxCode != null &&
+                    this.TaxCode.Equals(input.TaxCode))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    this.Type.Equals(input.Type)
+                ) && 
+                (
+                    this.Unit == input.Unit ||
+                    (this.Unit != null &&
+                    this.Unit.Equals(input.Unit))
+                ) && 
+                (
+                    this.UnitPrice == input.UnitPrice ||
+                    this.UnitPrice.Equals(input.UnitPrice)
+                ) && 
+                (
+                    this.Vat == input.Vat ||
+                    this.Vat.Equals(input.Vat)
                 );
         }
 
@@ -499,36 +499,25 @@ namespace Freee.Accounting.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Id.GetHashCode();
-                hashCode = hashCode * 59 + this.Order.GetHashCode();
-                hashCode = hashCode * 59 + this.Type.GetHashCode();
-                hashCode = hashCode * 59 + this.Qty.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
-                hashCode = hashCode * 59 + this.UnitPrice.GetHashCode();
-                hashCode = hashCode * 59 + this.Amount.GetHashCode();
-                hashCode = hashCode * 59 + this.Vat.GetHashCode();
-                hashCode = hashCode * 59 + this.ReducedVat.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.AccountItemId != null)
                     hashCode = hashCode * 59 + this.AccountItemId.GetHashCode();
                 if (this.AccountItemName != null)
                     hashCode = hashCode * 59 + this.AccountItemName.GetHashCode();
-                if (this.TaxCode != null)
-                    hashCode = hashCode * 59 + this.TaxCode.GetHashCode();
+                hashCode = hashCode * 59 + this.Amount.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.ItemId != null)
                     hashCode = hashCode * 59 + this.ItemId.GetHashCode();
                 if (this.ItemName != null)
                     hashCode = hashCode * 59 + this.ItemName.GetHashCode();
+                hashCode = hashCode * 59 + this.Order.GetHashCode();
+                hashCode = hashCode * 59 + this.Qty.GetHashCode();
+                hashCode = hashCode * 59 + this.ReducedVat.GetHashCode();
                 if (this.SectionId != null)
                     hashCode = hashCode * 59 + this.SectionId.GetHashCode();
                 if (this.SectionName != null)
                     hashCode = hashCode * 59 + this.SectionName.GetHashCode();
-                if (this.TagIds != null)
-                    hashCode = hashCode * 59 + this.TagIds.GetHashCode();
-                if (this.TagNames != null)
-                    hashCode = hashCode * 59 + this.TagNames.GetHashCode();
                 if (this.Segment1TagId != null)
                     hashCode = hashCode * 59 + this.Segment1TagId.GetHashCode();
                 if (this.Segment1TagName != null)
@@ -541,6 +530,17 @@ namespace Freee.Accounting.Models
                     hashCode = hashCode * 59 + this.Segment3TagId.GetHashCode();
                 if (this.Segment3TagName != null)
                     hashCode = hashCode * 59 + this.Segment3TagName.GetHashCode();
+                if (this.TagIds != null)
+                    hashCode = hashCode * 59 + this.TagIds.GetHashCode();
+                if (this.TagNames != null)
+                    hashCode = hashCode * 59 + this.TagNames.GetHashCode();
+                if (this.TaxCode != null)
+                    hashCode = hashCode * 59 + this.TaxCode.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Unit != null)
+                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                hashCode = hashCode * 59 + this.UnitPrice.GetHashCode();
+                hashCode = hashCode * 59 + this.Vat.GetHashCode();
                 return hashCode;
             }
         }

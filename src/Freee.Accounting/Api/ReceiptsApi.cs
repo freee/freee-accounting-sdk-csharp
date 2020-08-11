@@ -1,7 +1,7 @@
 /* 
  * freee API
  *
- *  <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"\">スタートガイド</h2> <p>1. セットアップ</p> <ol> <ul><li><a href=\"https://support.freee.co.jp/hc/ja/articles/202847230\" class=\"external-link\" rel=\"nofollow\">freeeアカウント（無料）</a>を<a href=\"https://secure.freee.co.jp/users/sign_up\" class=\"external-link\" rel=\"nofollow\">作成</a>します（すでにお持ちの場合は次へ）</li><li><a href=\"https://app.secure.freee.co.jp/developers/demo_companies/description\" class=\"external-link\" rel=\"nofollow\">開発者向け事業所・環境を作成</a>します</li><li><span><a href=\"https://app.secure.freee.co.jp/developers/applications\" class=\"external-link\" rel=\"nofollow\">前のステップで作成した事業所を選択してfreeeアプリを追加</a>します</span></li><li>Client IDをCopyしておきます</li> </ul> </ol>  <p>2. 実際にAPIを叩いてみる（ブラウザからAPIのレスポンスを確認する）</p> <ol> <ul><li><span><span>以下のURLの●をclient_idに入れ替えて<a href=\"https://app.secure.freee.co.jp/developers/tutorials/3-%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B#%E8%AA%8D%E5%8F%AF%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B\" class=\"external-link\" rel=\"nofollow\">アクセストークンを取得</a>します</span></span><ul><li><span><span><pre><code>https://accounts.secure.freee.co.jp/public_api/authorize?client_id=●&amp;redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&amp;response_type=token</a></code></pre></span></span></li></ul></li><li><span><a href=\"https://developer.freee.co.jp/docs/accounting/reference#/%E9%80%A3%E7%B5%A1%E5%85%88\" class=\"external-link\" rel=\"nofollow\">APIリファレンス</a>で<code>Authorize</code>を押下します</span></li><li><span>アクセストークン<span><span>を入力して</span></span>&nbsp;もう一度<span><code>Authorize</code>を押下して<code>Close</code>を押下します</span></span></li><li>リファレンス内のCompanies（事業所）に移動し、<code>Try it out</code>を押下し、<code>Execute</code>を押下します</li><li>Response bodyを参照し、事業所ID(id属性)を活用して、Companies以外のエンドポイントでどのようなデータのやりとりできるのか確認します</li></ul> </ol> <p>3. 連携を実装する</p> <ol> <ul><li><a href=\"https://developer.freee.co.jp/tips\" class=\"external-link\" rel=\"nofollow\">API TIPS</a>を参考に、ユースケースごとの連携の概要を学びます。<span>例えば</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-salesmanegement-system\" class=\"external-link\" rel=\"nofollow\">SFA、CRM、販売管理システムから会計freeeへの連携</a>や<a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-excel-and-spreadsheet\" class=\"external-link\" rel=\"nofollow\">エクセルやgoogle spreadsheetからの連携</a>です</li><li>実利用向け事業所がすでにある場合は利用、ない場合は作成します（セットアップで作成したのは開発者向け環境のため活用不可）</li><li><a href=\"https://developer.freee.co.jp/docs/accounting/reference\" class=\"external-link\" rel=\"nofollow\">API documentation</a><span>&nbsp;を参照し、躓いた場合は</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/community/forum/community\" class=\"external-link\" rel=\"nofollow\">Community</a><span>&nbsp;で質問してみましょう</span></li></ul> </ol> <p>アプリケーションの登録方法や認証方法、またはAPIの活用方法でご不明な点がある場合は<a href=\"https://support.freee.co.jp/hc/ja/sections/115000030743\">ヘルプセンター</a>もご確認ください</p> <hr /> <h2 id=\"_2\">仕様</h2>  <h3 id=\"api\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"_3\">認証方式</h3>  <p><a href=\"http://tools.ietf.org/html/rfc6749\">OAuth2</a>に対応</p>  <ul> <li>Authorization Code Flow (Webアプリ向け)</li>  <li>Implicit Flow (Mobileアプリ向け)</li> </ul>  <h3 id=\"_4\">認証エンドポイント</h3>  <p>https://accounts.secure.freee.co.jp/</p>  <ul> <li>authorize : https://accounts.secure.freee.co.jp/public_api/authorize</li>  <li>token : https://accounts.secure.freee.co.jp/public_api/token</li> </ul>  <h3 id=\"_5\">アクセストークンのリフレッシュ</h3>  <p>認証時に得たrefresh_token を使ってtoken の期限をリフレッシュして新規に発行することが出来ます。</p>  <p>grant_type=refresh_token で https://accounts.secure.freee.co.jp/public_api/token にアクセスすればリフレッシュされます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/token</p>  <p>params: grant_type=refresh_token&amp;client_id=UID&amp;client_secret=SECRET&amp;refresh_token=REFRESH_TOKEN</p>  <p>詳細は<a href=\"https://github.com/applicake/doorkeeper/wiki/Enable-Refresh-Token-Credentials#flow\">refresh_token</a>を参照下さい。</p>  <h3 id=\"_6\">アクセストークンの破棄</h3>  <p>認証時に得たaccess_tokenまたはrefresh_tokenを使って、tokenを破棄することができます。 token=access_tokenまたはtoken=refresh_tokenでhttps://accounts.secure.freee.co.jp/public_api/revokeにアクセスすると破棄されます。token_type_hintでaccess_tokenまたはrefresh_tokenを陽に指定できます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/revoke</p>  <p>params: token=ACCESS_TOKEN</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN</p>  <p>または</p>  <p>params: token=ACCESS_TOKEN&amp;token_type_hint=access_token</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN&amp;token_type_hint=refresh_token</p>  <p>詳細は <a href=\"https://tools.ietf.org/html/rfc7009\">OAuth 2.0 Token revocation</a> をご参照ください。</p>  <h3 id=\"_7\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポート</p>  <h3 id=\"_8\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"_9\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li>  <li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre> <hr /> <h2 id=\"_10\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
+ *  <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"start_guide\">スタートガイド</h2>  <p>freee API開発がはじめての方は<a href=\"https://developer.freee.co.jp/getting-started\">freee API スタートガイド</a>を参照してください。</p>  <hr /> <h2 id=\"specification\">仕様</h2>  <pre><code>【重要】会計freee APIの新バージョンについて 2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。<br> 新しいAPIを利用するにはリクエストヘッダーに以下を指定します。 X-Api-Version: 2020-06-15<br> 指定がない場合は2020年12月に廃止予定のAPIを利用することとなります。<br> 【重要】APIのバージョン指定をせずに利用し続ける場合 2020年12月に新しいバージョンのAPIに自動的に切り替わります。 詳細は、<a href=\"https://developer.freee.co.jp/release-note/2948\" target=\"_blank\">リリースノート</a>をご覧ください。<br> 旧バージョンのAPIリファレンスを確認したい場合は、<a href=\"https://freee.github.io/freee-api-schema/\" target=\"_blank\">旧バージョンのAPIリファレンスページ</a>をご覧ください。 </code></pre>  <h3 id=\"api_endpoint\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"about_authorize\">認証について</h3> <p>OAuth2.0を利用します。詳細は<a href=\"https://developer.freee.co.jp/docs\" target=\"_blank\">ドキュメントの認証</a>パートを参照してください。</p>  <h3 id=\"data_format\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポートしていますが、詳細は、API毎の説明欄（application/jsonなど）を確認してください。</p>  <h3 id=\"compatibility\">後方互換性ありの変更</h3>  <p>freeeでは、APIを改善していくために以下のような変更は後方互換性ありとして通知なく変更を入れることがあります。アプリケーション実装者は以下を踏まえて開発を行ってください。</p>  <ul> <li>新しいAPIリソース・エンドポイントの追加</li> <li>既存のAPIに対して必須ではない新しいリクエストパラメータの追加</li> <li>既存のAPIレスポンスに対する新しいプロパティの追加</li> <li>既存のAPIレスポンスに対するプロパティの順番の入れ変え</li> <li>keyとなっているidやcodeの長さの変更（長くする）</li> </ul>  <h3 id=\"common_response_header\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"common_error_response\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li> <li> <p>一部のエラーレスポンスにはエラーコードが含まれます。<br>詳細は、<a href=\"https://developer.freee.co.jp/tips/faq/40x-checkpoint\">HTTPステータスコード400台エラー時のチェックポイント</a>を参照してください</p> </li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre>  </br>  <h3 id=\"api_rate_limit\">API使用制限</h3>    <p>freeeは一定期間に過度のアクセスを検知した場合、APIアクセスをコントロールする場合があります。</p>   <p>その際のhttp status codeは403となります。制限がかかってから10分程度が過ぎると再度使用することができるようになります。</p>  <h4 id=\"reports_api_endpoint\">/reportsエンドポイント</h4>  <p>freeeは/reportsエンドポイントに対して1秒間に10以上のアクセスを検知した場合、APIアクセスをコントロールする場合があります。その際のhttp status codeは429（too many requests）となります。</p>  <p>レスポンスボディのmetaプロパティに以下を含めます。</p>  <ul>   <li>設定されている上限値</li>   <li>上限に達するまでの使用可能回数</li>   <li>（上限値に達した場合）使用回数がリセットされる時刻</li> </ul>  <h3 id=\"plan_api_rate_limit\">プラン別のAPI Rate Limit</h3>   <table border=\"1\">     <tbody>       <tr>         <th style=\"padding: 10px\"><strong>会計freeeプラン名</strong></th>         <th style=\"padding: 10px\"><strong>事業所とアプリケーション毎に1日でのAPIコール数</strong></th>       </tr>       <tr>         <td style=\"padding: 10px\">エンタープライズ</td>         <td style=\"padding: 10px\">10,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">プロフェッショナル</td>         <td style=\"padding: 10px\">5,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ベーシック</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ミニマム</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">上記以外</td>         <td style=\"padding: 10px\">3,000</td>       </tr>     </tbody>   </table>  <hr /> <h2 id=\"contact\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
  *
  * The version of the OpenAPI document: v1.0
  * 
@@ -31,29 +31,29 @@ namespace Freee.Accounting.Api
         /// ファイルボックス 証憑ファイルアップロード
         /// </summary>
         /// <remarks>
-        ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt;
+        ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <returns>ReceiptsResponse</returns>
-        ReceiptsResponse CreateReceipt (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string));
+        /// <returns>ReceiptResponse</returns>
+        ReceiptResponse CreateReceipt (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string));
 
         /// <summary>
         /// ファイルボックス 証憑ファイルアップロード
         /// </summary>
         /// <remarks>
-        ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt;
+        ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <returns>ApiResponse of ReceiptsResponse</returns>
-        ApiResponse<ReceiptsResponse> CreateReceiptWithHttpInfo (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string));
+        /// <returns>ApiResponse of ReceiptResponse</returns>
+        ApiResponse<ReceiptResponse> CreateReceiptWithHttpInfo (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string));
         /// <summary>
         /// ファイルボックス 証憑ファイルを削除する
         /// </summary>
@@ -86,8 +86,8 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>ReceiptsResponse</returns>
-        ReceiptsResponse GetReceipt (int id, int companyId);
+        /// <returns>ReceiptResponse</returns>
+        ReceiptResponse GetReceipt (int id, int companyId);
 
         /// <summary>
         /// ファイルボックス 証憑ファイルの取得
@@ -98,8 +98,8 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>ApiResponse of ReceiptsResponse</returns>
-        ApiResponse<ReceiptsResponse> GetReceiptWithHttpInfo (int id, int companyId);
+        /// <returns>ApiResponse of ReceiptResponse</returns>
+        ApiResponse<ReceiptResponse> GetReceiptWithHttpInfo (int id, int companyId);
         /// <summary>
         /// ファイルボックス 証憑ファイル一覧の取得
         /// </summary>
@@ -116,9 +116,9 @@ namespace Freee.Accounting.Api
         /// <param name="commentImportant">trueの時、重要コメント付きが対象 (optional)</param>
         /// <param name="category">all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最大: 3000) (optional)</param>
-        /// <returns>ReceiptsIndexResponse</returns>
-        ReceiptsIndexResponse GetReceipts (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?));
+        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
+        /// <returns>InlineResponse2009</returns>
+        InlineResponse2009 GetReceipts (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// ファイルボックス 証憑ファイル一覧の取得
@@ -136,9 +136,9 @@ namespace Freee.Accounting.Api
         /// <param name="commentImportant">trueの時、重要コメント付きが対象 (optional)</param>
         /// <param name="category">all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最大: 3000) (optional)</param>
-        /// <returns>ApiResponse of ReceiptsIndexResponse</returns>
-        ApiResponse<ReceiptsIndexResponse> GetReceiptsWithHttpInfo (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?));
+        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2009</returns>
+        ApiResponse<InlineResponse2009> GetReceiptsWithHttpInfo (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?));
         /// <summary>
         /// ファイルボックス 証憑ファイル情報更新
         /// </summary>
@@ -147,9 +147,9 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
-        /// <param name="parameters">経費申請の更新</param>
-        /// <returns>ReceiptsResponse</returns>
-        ReceiptsResponse UpdateReceipt (int id, ReceiptUpdateParams parameters);
+        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <returns>ReceiptResponse</returns>
+        ReceiptResponse UpdateReceipt (int id, ReceiptUpdateParams receiptUpdateParams);
 
         /// <summary>
         /// ファイルボックス 証憑ファイル情報更新
@@ -159,9 +159,9 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
-        /// <param name="parameters">経費申請の更新</param>
-        /// <returns>ApiResponse of ReceiptsResponse</returns>
-        ApiResponse<ReceiptsResponse> UpdateReceiptWithHttpInfo (int id, ReceiptUpdateParams parameters);
+        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <returns>ApiResponse of ReceiptResponse</returns>
+        ApiResponse<ReceiptResponse> UpdateReceiptWithHttpInfo (int id, ReceiptUpdateParams receiptUpdateParams);
         #endregion Synchronous Operations
     }
 
@@ -175,29 +175,31 @@ namespace Freee.Accounting.Api
         /// ファイルボックス 証憑ファイルアップロード
         /// </summary>
         /// <remarks>
-        ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt;
+        ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <returns>Task of ReceiptsResponse</returns>
-        System.Threading.Tasks.Task<ReceiptsResponse> CreateReceiptAsync (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string));
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ReceiptResponse</returns>
+        System.Threading.Tasks.Task<ReceiptResponse> CreateReceiptAsync (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ファイルボックス 証憑ファイルアップロード
         /// </summary>
         /// <remarks>
-        ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt;
+        ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <returns>Task of ApiResponse (ReceiptsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ReceiptsResponse>> CreateReceiptAsyncWithHttpInfo (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string));
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ReceiptResponse>> CreateReceiptWithHttpInfoAsync (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ファイルボックス 証憑ファイルを削除する
         /// </summary>
@@ -207,8 +209,9 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
         /// <param name="companyId">事業所ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyReceiptAsync (int id, int companyId);
+        System.Threading.Tasks.Task DestroyReceiptAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ファイルボックス 証憑ファイルを削除する
@@ -219,8 +222,9 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
         /// <param name="companyId">事業所ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyReceiptAsyncWithHttpInfo (int id, int companyId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyReceiptWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ファイルボックス 証憑ファイルの取得
         /// </summary>
@@ -230,8 +234,9 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>Task of ReceiptsResponse</returns>
-        System.Threading.Tasks.Task<ReceiptsResponse> GetReceiptAsync (int id, int companyId);
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ReceiptResponse</returns>
+        System.Threading.Tasks.Task<ReceiptResponse> GetReceiptAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ファイルボックス 証憑ファイルの取得
@@ -242,8 +247,9 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>Task of ApiResponse (ReceiptsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ReceiptsResponse>> GetReceiptAsyncWithHttpInfo (int id, int companyId);
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ReceiptResponse>> GetReceiptWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ファイルボックス 証憑ファイル一覧の取得
         /// </summary>
@@ -260,9 +266,10 @@ namespace Freee.Accounting.Api
         /// <param name="commentImportant">trueの時、重要コメント付きが対象 (optional)</param>
         /// <param name="category">all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最大: 3000) (optional)</param>
-        /// <returns>Task of ReceiptsIndexResponse</returns>
-        System.Threading.Tasks.Task<ReceiptsIndexResponse> GetReceiptsAsync (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?));
+        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InlineResponse2009</returns>
+        System.Threading.Tasks.Task<InlineResponse2009> GetReceiptsAsync (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ファイルボックス 証憑ファイル一覧の取得
@@ -280,9 +287,10 @@ namespace Freee.Accounting.Api
         /// <param name="commentImportant">trueの時、重要コメント付きが対象 (optional)</param>
         /// <param name="category">all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最大: 3000) (optional)</param>
-        /// <returns>Task of ApiResponse (ReceiptsIndexResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ReceiptsIndexResponse>> GetReceiptsAsyncWithHttpInfo (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?));
+        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2009>> GetReceiptsWithHttpInfoAsync (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ファイルボックス 証憑ファイル情報更新
         /// </summary>
@@ -291,9 +299,10 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
-        /// <param name="parameters">経費申請の更新</param>
-        /// <returns>Task of ReceiptsResponse</returns>
-        System.Threading.Tasks.Task<ReceiptsResponse> UpdateReceiptAsync (int id, ReceiptUpdateParams parameters);
+        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ReceiptResponse</returns>
+        System.Threading.Tasks.Task<ReceiptResponse> UpdateReceiptAsync (int id, ReceiptUpdateParams receiptUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ファイルボックス 証憑ファイル情報更新
@@ -303,9 +312,10 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
-        /// <param name="parameters">経費申請の更新</param>
-        /// <returns>Task of ApiResponse (ReceiptsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ReceiptsResponse>> UpdateReceiptAsyncWithHttpInfo (int id, ReceiptUpdateParams parameters);
+        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ReceiptResponse>> UpdateReceiptWithHttpInfoAsync (int id, ReceiptUpdateParams receiptUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -427,30 +437,30 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス 証憑ファイルアップロード  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt;
+        /// ファイルボックス 証憑ファイルアップロード  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <returns>ReceiptsResponse</returns>
-        public ReceiptsResponse CreateReceipt (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string))
+        /// <returns>ReceiptResponse</returns>
+        public ReceiptResponse CreateReceipt (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string))
         {
-             Freee.Accounting.Client.ApiResponse<ReceiptsResponse> localVarResponse = CreateReceiptWithHttpInfo(companyId, receipt, description, issueDate);
+             Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = CreateReceiptWithHttpInfo(companyId, receipt, description, issueDate);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// ファイルボックス 証憑ファイルアップロード  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt;
+        /// ファイルボックス 証憑ファイルアップロード  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <returns>ApiResponse of ReceiptsResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ReceiptsResponse > CreateReceiptWithHttpInfo (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string))
+        /// <returns>ApiResponse of ReceiptResponse</returns>
+        public Freee.Accounting.Client.ApiResponse< ReceiptResponse > CreateReceiptWithHttpInfo (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string))
         {
             // verify the required parameter 'receipt' is set
             if (receipt == null)
@@ -482,10 +492,7 @@ namespace Freee.Accounting.Api
             {
                 localVarRequestOptions.FormParameters.Add("issue_date", Freee.Accounting.Client.ClientUtils.ParameterToString(issueDate)); // form parameter
             }
-            if (receipt != null)
-            {
-                localVarRequestOptions.FileParameters.Add("receipt", receipt);
-            }
+            localVarRequestOptions.FileParameters.Add("receipt", receipt);
 
             // authentication (oauth2) required
             // oauth required
@@ -495,7 +502,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< ReceiptsResponse >("/api/1/receipts", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post< ReceiptResponse >("/api/1/receipts", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -507,31 +514,32 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス 証憑ファイルアップロード  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt;
+        /// ファイルボックス 証憑ファイルアップロード  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <returns>Task of ReceiptsResponse</returns>
-        public async System.Threading.Tasks.Task<ReceiptsResponse> CreateReceiptAsync (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string))
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ReceiptResponse</returns>
+        public async System.Threading.Tasks.Task<ReceiptResponse> CreateReceiptAsync (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ReceiptsResponse> localVarResponse = await CreateReceiptAsyncWithHttpInfo(companyId, receipt, description, issueDate);
+             Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = await CreateReceiptWithHttpInfoAsync(companyId, receipt, description, issueDate, cancellationToken);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
-        /// ファイルボックス 証憑ファイルアップロード  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt;
+        /// ファイルボックス 証憑ファイルアップロード  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <returns>Task of ApiResponse (ReceiptsResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ReceiptsResponse>> CreateReceiptAsyncWithHttpInfo (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string))
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ReceiptResponse>> CreateReceiptWithHttpInfoAsync (int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'receipt' is set
             if (receipt == null)
@@ -548,12 +556,13 @@ namespace Freee.Accounting.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            var localVarContentType = Freee.Accounting.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             
             localVarRequestOptions.FormParameters.Add("company_id", Freee.Accounting.Client.ClientUtils.ParameterToString(companyId)); // form parameter
             if (description != null)
@@ -564,10 +573,7 @@ namespace Freee.Accounting.Api
             {
                 localVarRequestOptions.FormParameters.Add("issue_date", Freee.Accounting.Client.ClientUtils.ParameterToString(issueDate)); // form parameter
             }
-            if (receipt != null)
-            {
-                localVarRequestOptions.FileParameters.Add("receipt", receipt);
-            }
+            localVarRequestOptions.FileParameters.Add("receipt", receipt);
 
             // authentication (oauth2) required
             // oauth required
@@ -578,7 +584,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<ReceiptsResponse>("/api/1/receipts", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ReceiptResponse>("/api/1/receipts", localVarRequestOptions, this.Configuration, cancellationToken);
 
             if (this.ExceptionFactory != null)
             {
@@ -654,11 +660,11 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
         /// <param name="companyId">事業所ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyReceiptAsync (int id, int companyId)
+        public async System.Threading.Tasks.Task DestroyReceiptAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyReceiptAsyncWithHttpInfo(id, companyId);
-
+             await DestroyReceiptWithHttpInfoAsync(id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -667,8 +673,9 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
         /// <param name="companyId">事業所ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyReceiptAsyncWithHttpInfo (int id, int companyId)
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyReceiptWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -680,12 +687,13 @@ namespace Freee.Accounting.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            var localVarContentType = Freee.Accounting.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
@@ -699,7 +707,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/receipts/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/receipts/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
 
             if (this.ExceptionFactory != null)
             {
@@ -716,10 +724,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>ReceiptsResponse</returns>
-        public ReceiptsResponse GetReceipt (int id, int companyId)
+        /// <returns>ReceiptResponse</returns>
+        public ReceiptResponse GetReceipt (int id, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<ReceiptsResponse> localVarResponse = GetReceiptWithHttpInfo(id, companyId);
+             Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = GetReceiptWithHttpInfo(id, companyId);
              return localVarResponse.Data;
         }
 
@@ -729,8 +737,8 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>ApiResponse of ReceiptsResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ReceiptsResponse > GetReceiptWithHttpInfo (int id, int companyId)
+        /// <returns>ApiResponse of ReceiptResponse</returns>
+        public Freee.Accounting.Client.ApiResponse< ReceiptResponse > GetReceiptWithHttpInfo (int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -759,7 +767,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< ReceiptsResponse >("/api/1/receipts/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get< ReceiptResponse >("/api/1/receipts/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -776,12 +784,12 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>Task of ReceiptsResponse</returns>
-        public async System.Threading.Tasks.Task<ReceiptsResponse> GetReceiptAsync (int id, int companyId)
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ReceiptResponse</returns>
+        public async System.Threading.Tasks.Task<ReceiptResponse> GetReceiptAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ReceiptsResponse> localVarResponse = await GetReceiptAsyncWithHttpInfo(id, companyId);
+             Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = await GetReceiptWithHttpInfoAsync(id, companyId, cancellationToken);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -790,8 +798,9 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>Task of ApiResponse (ReceiptsResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ReceiptsResponse>> GetReceiptAsyncWithHttpInfo (int id, int companyId)
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ReceiptResponse>> GetReceiptWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -803,12 +812,13 @@ namespace Freee.Accounting.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            var localVarContentType = Freee.Accounting.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
@@ -822,7 +832,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ReceiptsResponse>("/api/1/receipts/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ReceiptResponse>("/api/1/receipts/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
 
             if (this.ExceptionFactory != null)
             {
@@ -846,11 +856,11 @@ namespace Freee.Accounting.Api
         /// <param name="commentImportant">trueの時、重要コメント付きが対象 (optional)</param>
         /// <param name="category">all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最大: 3000) (optional)</param>
-        /// <returns>ReceiptsIndexResponse</returns>
-        public ReceiptsIndexResponse GetReceipts (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?))
+        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
+        /// <returns>InlineResponse2009</returns>
+        public InlineResponse2009 GetReceipts (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<ReceiptsIndexResponse> localVarResponse = GetReceiptsWithHttpInfo(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
+             Freee.Accounting.Client.ApiResponse<InlineResponse2009> localVarResponse = GetReceiptsWithHttpInfo(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
              return localVarResponse.Data;
         }
 
@@ -867,9 +877,9 @@ namespace Freee.Accounting.Api
         /// <param name="commentImportant">trueの時、重要コメント付きが対象 (optional)</param>
         /// <param name="category">all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最大: 3000) (optional)</param>
-        /// <returns>ApiResponse of ReceiptsIndexResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ReceiptsIndexResponse > GetReceiptsWithHttpInfo (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?))
+        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
+        /// <returns>ApiResponse of InlineResponse2009</returns>
+        public Freee.Accounting.Client.ApiResponse< InlineResponse2009 > GetReceiptsWithHttpInfo (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?))
         {
             // verify the required parameter 'startDate' is set
             if (startDate == null)
@@ -896,14 +906,8 @@ namespace Freee.Accounting.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
-            if (startDate != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_date", startDate));
-            }
-            if (endDate != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_date", endDate));
-            }
+            localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_date", startDate));
+            localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_date", endDate));
             if (userName != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "user_name", userName));
@@ -941,7 +945,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< ReceiptsIndexResponse >("/api/1/receipts", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get< InlineResponse2009 >("/api/1/receipts", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -965,13 +969,13 @@ namespace Freee.Accounting.Api
         /// <param name="commentImportant">trueの時、重要コメント付きが対象 (optional)</param>
         /// <param name="category">all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最大: 3000) (optional)</param>
-        /// <returns>Task of ReceiptsIndexResponse</returns>
-        public async System.Threading.Tasks.Task<ReceiptsIndexResponse> GetReceiptsAsync (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?))
+        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InlineResponse2009</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2009> GetReceiptsAsync (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ReceiptsIndexResponse> localVarResponse = await GetReceiptsAsyncWithHttpInfo(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
+             Freee.Accounting.Client.ApiResponse<InlineResponse2009> localVarResponse = await GetReceiptsWithHttpInfoAsync(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit, cancellationToken);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -987,9 +991,10 @@ namespace Freee.Accounting.Api
         /// <param name="commentImportant">trueの時、重要コメント付きが対象 (optional)</param>
         /// <param name="category">all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最大: 3000) (optional)</param>
-        /// <returns>Task of ApiResponse (ReceiptsIndexResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ReceiptsIndexResponse>> GetReceiptsAsyncWithHttpInfo (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?))
+        /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2009>> GetReceiptsWithHttpInfoAsync (int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'startDate' is set
             if (startDate == null)
@@ -1009,22 +1014,17 @@ namespace Freee.Accounting.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            var localVarContentType = Freee.Accounting.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             
             localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
-            if (startDate != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_date", startDate));
-            }
-            if (endDate != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_date", endDate));
-            }
+            localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "start_date", startDate));
+            localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "end_date", endDate));
             if (userName != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "user_name", userName));
@@ -1063,7 +1063,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ReceiptsIndexResponse>("/api/1/receipts", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2009>("/api/1/receipts", localVarRequestOptions, this.Configuration, cancellationToken);
 
             if (this.ExceptionFactory != null)
             {
@@ -1079,11 +1079,11 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
-        /// <param name="parameters">経費申請の更新</param>
-        /// <returns>ReceiptsResponse</returns>
-        public ReceiptsResponse UpdateReceipt (int id, ReceiptUpdateParams parameters)
+        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <returns>ReceiptResponse</returns>
+        public ReceiptResponse UpdateReceipt (int id, ReceiptUpdateParams receiptUpdateParams)
         {
-             Freee.Accounting.Client.ApiResponse<ReceiptsResponse> localVarResponse = UpdateReceiptWithHttpInfo(id, parameters);
+             Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = UpdateReceiptWithHttpInfo(id, receiptUpdateParams);
              return localVarResponse.Data;
         }
 
@@ -1092,18 +1092,19 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
-        /// <param name="parameters">経費申請の更新</param>
-        /// <returns>ApiResponse of ReceiptsResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ReceiptsResponse > UpdateReceiptWithHttpInfo (int id, ReceiptUpdateParams parameters)
+        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <returns>ApiResponse of ReceiptResponse</returns>
+        public Freee.Accounting.Client.ApiResponse< ReceiptResponse > UpdateReceiptWithHttpInfo (int id, ReceiptUpdateParams receiptUpdateParams)
         {
-            // verify the required parameter 'parameters' is set
-            if (parameters == null)
-                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'parameters' when calling ReceiptsApi->UpdateReceipt");
+            // verify the required parameter 'receiptUpdateParams' is set
+            if (receiptUpdateParams == null)
+                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'receiptUpdateParams' when calling ReceiptsApi->UpdateReceipt");
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/x-www-form-urlencoded"
             };
 
             // to determine the Accept header
@@ -1118,7 +1119,7 @@ namespace Freee.Accounting.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = parameters;
+            localVarRequestOptions.Data = receiptUpdateParams;
 
             // authentication (oauth2) required
             // oauth required
@@ -1128,7 +1129,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< ReceiptsResponse >("/api/1/receipts/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put< ReceiptResponse >("/api/1/receipts/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1144,13 +1145,13 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
-        /// <param name="parameters">経費申請の更新</param>
-        /// <returns>Task of ReceiptsResponse</returns>
-        public async System.Threading.Tasks.Task<ReceiptsResponse> UpdateReceiptAsync (int id, ReceiptUpdateParams parameters)
+        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ReceiptResponse</returns>
+        public async System.Threading.Tasks.Task<ReceiptResponse> UpdateReceiptAsync (int id, ReceiptUpdateParams receiptUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ReceiptsResponse> localVarResponse = await UpdateReceiptAsyncWithHttpInfo(id, parameters);
+             Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = await UpdateReceiptWithHttpInfoAsync(id, receiptUpdateParams, cancellationToken);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
@@ -1158,34 +1159,37 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ID</param>
-        /// <param name="parameters">経費申請の更新</param>
-        /// <returns>Task of ApiResponse (ReceiptsResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ReceiptsResponse>> UpdateReceiptAsyncWithHttpInfo (int id, ReceiptUpdateParams parameters)
+        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ReceiptResponse>> UpdateReceiptWithHttpInfoAsync (int id, ReceiptUpdateParams receiptUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'parameters' is set
-            if (parameters == null)
-                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'parameters' when calling ReceiptsApi->UpdateReceipt");
+            // verify the required parameter 'receiptUpdateParams' is set
+            if (receiptUpdateParams == null)
+                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'receiptUpdateParams' when calling ReceiptsApi->UpdateReceipt");
 
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/x-www-form-urlencoded"
             };
 
             // to determine the Accept header
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+
+
+            var localVarContentType = Freee.Accounting.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = parameters;
+            localVarRequestOptions.Data = receiptUpdateParams;
 
             // authentication (oauth2) required
             // oauth required
@@ -1196,7 +1200,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<ReceiptsResponse>("/api/1/receipts/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<ReceiptResponse>("/api/1/receipts/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
 
             if (this.ExceptionFactory != null)
             {
