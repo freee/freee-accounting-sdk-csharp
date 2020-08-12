@@ -1,7 +1,7 @@
 /* 
  * freee API
  *
- *  <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"start_guide\">スタートガイド</h2>  <p>freee API開発がはじめての方は<a href=\"https://developer.freee.co.jp/getting-started\">freee API スタートガイド</a>を参照してください。</p>  <hr /> <h2 id=\"specification\">仕様</h2>  <pre><code>【重要】会計freee APIの新バージョンについて 2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。<br> 新しいAPIを利用するにはリクエストヘッダーに以下を指定します。 X-Api-Version: 2020-06-15<br> 指定がない場合は2020年12月に廃止予定のAPIを利用することとなります。<br> 【重要】APIのバージョン指定をせずに利用し続ける場合 2020年12月に新しいバージョンのAPIに自動的に切り替わります。 詳細は、<a href=\"https://developer.freee.co.jp/release-note/2948\" target=\"_blank\">リリースノート</a>をご覧ください。<br> 旧バージョンのAPIリファレンスを確認したい場合は、<a href=\"https://freee.github.io/freee-api-schema/\" target=\"_blank\">旧バージョンのAPIリファレンスページ</a>をご覧ください。 </code></pre>  <h3 id=\"api_endpoint\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"about_authorize\">認証について</h3> <p>OAuth2.0を利用します。詳細は<a href=\"https://developer.freee.co.jp/docs\" target=\"_blank\">ドキュメントの認証</a>パートを参照してください。</p>  <h3 id=\"data_format\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポートしていますが、詳細は、API毎の説明欄（application/jsonなど）を確認してください。</p>  <h3 id=\"compatibility\">後方互換性ありの変更</h3>  <p>freeeでは、APIを改善していくために以下のような変更は後方互換性ありとして通知なく変更を入れることがあります。アプリケーション実装者は以下を踏まえて開発を行ってください。</p>  <ul> <li>新しいAPIリソース・エンドポイントの追加</li> <li>既存のAPIに対して必須ではない新しいリクエストパラメータの追加</li> <li>既存のAPIレスポンスに対する新しいプロパティの追加</li> <li>既存のAPIレスポンスに対するプロパティの順番の入れ変え</li> <li>keyとなっているidやcodeの長さの変更（長くする）</li> </ul>  <h3 id=\"common_response_header\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"common_error_response\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li> <li> <p>一部のエラーレスポンスにはエラーコードが含まれます。<br>詳細は、<a href=\"https://developer.freee.co.jp/tips/faq/40x-checkpoint\">HTTPステータスコード400台エラー時のチェックポイント</a>を参照してください</p> </li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre>  </br>  <h3 id=\"api_rate_limit\">API使用制限</h3>    <p>freeeは一定期間に過度のアクセスを検知した場合、APIアクセスをコントロールする場合があります。</p>   <p>その際のhttp status codeは403となります。制限がかかってから10分程度が過ぎると再度使用することができるようになります。</p>  <h4 id=\"reports_api_endpoint\">/reportsエンドポイント</h4>  <p>freeeは/reportsエンドポイントに対して1秒間に10以上のアクセスを検知した場合、APIアクセスをコントロールする場合があります。その際のhttp status codeは429（too many requests）となります。</p>  <p>レスポンスボディのmetaプロパティに以下を含めます。</p>  <ul>   <li>設定されている上限値</li>   <li>上限に達するまでの使用可能回数</li>   <li>（上限値に達した場合）使用回数がリセットされる時刻</li> </ul>  <h3 id=\"plan_api_rate_limit\">プラン別のAPI Rate Limit</h3>   <table border=\"1\">     <tbody>       <tr>         <th style=\"padding: 10px\"><strong>会計freeeプラン名</strong></th>         <th style=\"padding: 10px\"><strong>事業所とアプリケーション毎に1日でのAPIコール数</strong></th>       </tr>       <tr>         <td style=\"padding: 10px\">エンタープライズ</td>         <td style=\"padding: 10px\">10,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">プロフェッショナル</td>         <td style=\"padding: 10px\">5,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ベーシック</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ミニマム</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">上記以外</td>         <td style=\"padding: 10px\">3,000</td>       </tr>     </tbody>   </table>  <hr /> <h2 id=\"contact\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
+ *  <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"start_guide\">スタートガイド</h2>  <p>freee API開発がはじめての方は<a href=\"https://developer.freee.co.jp/getting-started\">freee API スタートガイド</a>を参照してください。</p>  <hr /> <h2 id=\"specification\">仕様</h2>  <pre><code>【重要】会計freee APIの新バージョンについて 2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。<br> 新しいAPIを利用するにはリクエストヘッダーに以下を指定します。 X-Api-Version: 2020-06-15<br> 指定がない場合は2020年12月に廃止予定のAPIを利用することとなります。<br> 【重要】APIのバージョン指定をせずに利用し続ける場合 2020年12月に新しいバージョンのAPIに自動的に切り替わります。 詳細は、<a href=\"https://developer.freee.co.jp/release-note/2948\" target=\"_blank\">リリースノート</a>をご覧ください。<br> 旧バージョンのAPIリファレンスを確認したい場合は、<a href=\"https://freee.github.io/freee-api-schema/\" target=\"_blank\">旧バージョンのAPIリファレンスページ</a>をご覧ください。 </code></pre>  <h3 id=\"api_endpoint\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"about_authorize\">認証について</h3> <p>OAuth2.0を利用します。詳細は<a href=\"https://developer.freee.co.jp/docs\" target=\"_blank\">ドキュメントの認証</a>パートを参照してください。</p>  <h3 id=\"data_format\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポートしていますが、詳細は、API毎の説明欄（application/jsonなど）を確認してください。</p>  <h3 id=\"compatibility\">後方互換性ありの変更</h3>  <p>freeeでは、APIを改善していくために以下のような変更は後方互換性ありとして通知なく変更を入れることがあります。アプリケーション実装者は以下を踏まえて開発を行ってください。</p>  <ul> <li>新しいAPIリソース・エンドポイントの追加</li> <li>既存のAPIに対して必須ではない新しいリクエストパラメータの追加</li> <li>既存のAPIレスポンスに対する新しいプロパティの追加</li> <li>既存のAPIレスポンスに対するプロパティの順番の入れ変え</li> <li>keyとなっているidやcodeの長さの変更（長くする）</li> </ul>  <h3 id=\"common_response_header\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"common_error_response\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li> <li> <p>一部のエラーレスポンスにはエラーコードが含まれます。<br>詳細は、<a href=\"https://developer.freee.co.jp/tips/faq/40x-checkpoint\">HTTPステータスコード400台エラー時のチェックポイント</a>を参照してください</p> </li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre>  </br>  <h3 id=\"api_rate_limit\">API使用制限</h3>    <p>freeeは一定期間に過度のアクセスを検知した場合、APIアクセスをコントロールする場合があります。</p>   <p>その際のhttp status codeは403となります。制限がかかってから10分程度が過ぎると再度使用することができるようになります。</p>  <h4 id=\"reports_api_endpoint\">/reportsエンドポイント</h4>  <p>freeeは/reportsエンドポイントに対して1秒間に10以上のアクセスを検知した場合、APIアクセスをコントロールする場合があります。その際のhttp status codeは429（too many requests）となります。</p>  <p>レスポンスボディのmetaプロパティに以下を含めます。</p>  <ul>   <li>設定されている上限値</li>   <li>上限に達するまでの使用可能回数</li>   <li>（上限値に達した場合）使用回数がリセットされる時刻</li> </ul>  <h3 id=\"plan_api_rate_limit\">プラン別のAPI Rate Limit</h3>   <table border=\"1\">     <tbody>       <tr>         <th style=\"padding: 10px\"><strong>会計freeeプラン名</strong></th>         <th style=\"padding: 10px\"><strong>事業所とアプリケーション毎に1日でのAPIコール数</strong></th>       </tr>       <tr>         <td style=\"padding: 10px\">エンタープライズ</td>         <td style=\"padding: 10px\">10,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">プロフェッショナル</td>         <td style=\"padding: 10px\">5,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ベーシック</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ミニマム</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">上記以外</td>         <td style=\"padding: 10px\">3,000</td>       </tr>     </tbody>   </table>  <h3 id=\"webhook\">Webhookについて</h3>  <p>詳細は<a href=\"https://developer.freee.co.jp/docs/accounting/webhook\" target=\"_blank\">会計Webhook概要</a>を参照してください。</p>  <hr /> <h2 id=\"contact\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
  *
  * The version of the OpenAPI document: v1.0
  * 
@@ -30,6 +30,58 @@ namespace Freee.Accounting.Models
     [DataContract]
     public partial class PartnerCreateParams :  IEquatable<PartnerCreateParams>
     {
+        /// <summary>
+        /// 地域（JP: 国内、ZZ:国外）
+        /// </summary>
+        /// <value>地域（JP: 国内、ZZ:国外）</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CountryCodeEnum
+        {
+            /// <summary>
+            /// Enum JP for value: JP
+            /// </summary>
+            [EnumMember(Value = "JP")]
+            JP = 1,
+
+            /// <summary>
+            /// Enum ZZ for value: ZZ
+            /// </summary>
+            [EnumMember(Value = "ZZ")]
+            ZZ = 2
+
+        }
+
+        /// <summary>
+        /// 地域（JP: 国内、ZZ:国外）
+        /// </summary>
+        /// <value>地域（JP: 国内、ZZ:国外）</value>
+        [DataMember(Name="country_code", EmitDefaultValue=false)]
+        public CountryCodeEnum? CountryCode { get; set; }
+        /// <summary>
+        /// 事業所種別（null: 未設定、1: 法人、2: 個人）
+        /// </summary>
+        /// <value>事業所種別（null: 未設定、1: 法人、2: 個人）</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum OrgCodeEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            NUMBER_1 = 1,
+
+            /// <summary>
+            /// Enum NUMBER_2 for value: 2
+            /// </summary>
+            NUMBER_2 = 2
+
+        }
+
+        /// <summary>
+        /// 事業所種別（null: 未設定、1: 法人、2: 個人）
+        /// </summary>
+        /// <value>事業所種別（null: 未設定、1: 法人、2: 個人）</value>
+        [DataMember(Name="org_code", EmitDefaultValue=true)]
+        public OrgCodeEnum? OrgCode { get; set; }
         /// <summary>
         /// 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)
         /// </summary>
@@ -69,12 +121,14 @@ namespace Freee.Accounting.Models
         /// <param name="code">取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。）.</param>
         /// <param name="companyId">事業所ID (required).</param>
         /// <param name="contactName">担当者 氏名 (255文字以内).</param>
+        /// <param name="countryCode">地域（JP: 国内、ZZ:国外）.</param>
         /// <param name="defaultTitle">敬称（御中、様、(空白)の3つから選択）.</param>
         /// <param name="email">担当者 メールアドレス (255文字以内).</param>
         /// <param name="invoicePaymentTermAttributes">invoicePaymentTermAttributes.</param>
         /// <param name="longName">正式名称（255文字以内）.</param>
         /// <param name="name">取引先名 (255文字以内) (required).</param>
         /// <param name="nameKana">カナ名称（255文字以内）.</param>
+        /// <param name="orgCode">事業所種別（null: 未設定、1: 法人、2: 個人）.</param>
         /// <param name="partnerBankAccountAttributes">partnerBankAccountAttributes.</param>
         /// <param name="partnerDocSettingAttributes">partnerDocSettingAttributes.</param>
         /// <param name="payerWalletableId">振込元口座ID（一括振込ファイル用）:（walletableのtypeが&#39;bank_account&#39;のidのみ指定できます。また、未設定にする場合は、nullを指定してください。）.</param>
@@ -83,7 +137,7 @@ namespace Freee.Accounting.Models
         /// <param name="shortcut1">ショートカット１ (255文字以内).</param>
         /// <param name="shortcut2">ショートカット２ (255文字以内).</param>
         /// <param name="transferFeeHandlingSide">振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee).</param>
-        public PartnerCreateParams(PartnerCreateParamsAddressAttributes addressAttributes = default(PartnerCreateParamsAddressAttributes), string code = default(string), int companyId = default(int), string contactName = default(string), string defaultTitle = default(string), string email = default(string), PartnerCreateParamsInvoicePaymentTermAttributes invoicePaymentTermAttributes = default(PartnerCreateParamsInvoicePaymentTermAttributes), string longName = default(string), string name = default(string), string nameKana = default(string), PartnerCreateParamsPartnerBankAccountAttributes partnerBankAccountAttributes = default(PartnerCreateParamsPartnerBankAccountAttributes), PartnerCreateParamsPartnerDocSettingAttributes partnerDocSettingAttributes = default(PartnerCreateParamsPartnerDocSettingAttributes), int? payerWalletableId = default(int?), PartnerCreateParamsInvoicePaymentTermAttributes paymentTermAttributes = default(PartnerCreateParamsInvoicePaymentTermAttributes), string phone = default(string), string shortcut1 = default(string), string shortcut2 = default(string), TransferFeeHandlingSideEnum? transferFeeHandlingSide = default(TransferFeeHandlingSideEnum?))
+        public PartnerCreateParams(PartnerCreateParamsAddressAttributes addressAttributes = default(PartnerCreateParamsAddressAttributes), string code = default(string), int companyId = default(int), string contactName = default(string), CountryCodeEnum? countryCode = default(CountryCodeEnum?), string defaultTitle = default(string), string email = default(string), PartnerCreateParamsInvoicePaymentTermAttributes invoicePaymentTermAttributes = default(PartnerCreateParamsInvoicePaymentTermAttributes), string longName = default(string), string name = default(string), string nameKana = default(string), OrgCodeEnum? orgCode = default(OrgCodeEnum?), PartnerCreateParamsPartnerBankAccountAttributes partnerBankAccountAttributes = default(PartnerCreateParamsPartnerBankAccountAttributes), PartnerCreateParamsPartnerDocSettingAttributes partnerDocSettingAttributes = default(PartnerCreateParamsPartnerDocSettingAttributes), int? payerWalletableId = default(int?), PartnerCreateParamsInvoicePaymentTermAttributes paymentTermAttributes = default(PartnerCreateParamsInvoicePaymentTermAttributes), string phone = default(string), string shortcut1 = default(string), string shortcut2 = default(string), TransferFeeHandlingSideEnum? transferFeeHandlingSide = default(TransferFeeHandlingSideEnum?))
         {
             this.CompanyId = companyId;
             // to ensure "name" is required (not null)
@@ -91,11 +145,13 @@ namespace Freee.Accounting.Models
             this.AddressAttributes = addressAttributes;
             this.Code = code;
             this.ContactName = contactName;
+            this.CountryCode = countryCode;
             this.DefaultTitle = defaultTitle;
             this.Email = email;
             this.InvoicePaymentTermAttributes = invoicePaymentTermAttributes;
             this.LongName = longName;
             this.NameKana = nameKana;
+            this.OrgCode = orgCode;
             this.PartnerBankAccountAttributes = partnerBankAccountAttributes;
             this.PartnerDocSettingAttributes = partnerDocSettingAttributes;
             this.PayerWalletableId = payerWalletableId;
@@ -232,12 +288,14 @@ namespace Freee.Accounting.Models
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
             sb.Append("  ContactName: ").Append(ContactName).Append("\n");
+            sb.Append("  CountryCode: ").Append(CountryCode).Append("\n");
             sb.Append("  DefaultTitle: ").Append(DefaultTitle).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  InvoicePaymentTermAttributes: ").Append(InvoicePaymentTermAttributes).Append("\n");
             sb.Append("  LongName: ").Append(LongName).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NameKana: ").Append(NameKana).Append("\n");
+            sb.Append("  OrgCode: ").Append(OrgCode).Append("\n");
             sb.Append("  PartnerBankAccountAttributes: ").Append(PartnerBankAccountAttributes).Append("\n");
             sb.Append("  PartnerDocSettingAttributes: ").Append(PartnerDocSettingAttributes).Append("\n");
             sb.Append("  PayerWalletableId: ").Append(PayerWalletableId).Append("\n");
@@ -300,6 +358,10 @@ namespace Freee.Accounting.Models
                     this.ContactName.Equals(input.ContactName))
                 ) && 
                 (
+                    this.CountryCode == input.CountryCode ||
+                    this.CountryCode.Equals(input.CountryCode)
+                ) && 
+                (
                     this.DefaultTitle == input.DefaultTitle ||
                     (this.DefaultTitle != null &&
                     this.DefaultTitle.Equals(input.DefaultTitle))
@@ -328,6 +390,10 @@ namespace Freee.Accounting.Models
                     this.NameKana == input.NameKana ||
                     (this.NameKana != null &&
                     this.NameKana.Equals(input.NameKana))
+                ) && 
+                (
+                    this.OrgCode == input.OrgCode ||
+                    this.OrgCode.Equals(input.OrgCode)
                 ) && 
                 (
                     this.PartnerBankAccountAttributes == input.PartnerBankAccountAttributes ||
@@ -386,6 +452,7 @@ namespace Freee.Accounting.Models
                 hashCode = hashCode * 59 + this.CompanyId.GetHashCode();
                 if (this.ContactName != null)
                     hashCode = hashCode * 59 + this.ContactName.GetHashCode();
+                hashCode = hashCode * 59 + this.CountryCode.GetHashCode();
                 if (this.DefaultTitle != null)
                     hashCode = hashCode * 59 + this.DefaultTitle.GetHashCode();
                 if (this.Email != null)
@@ -398,6 +465,7 @@ namespace Freee.Accounting.Models
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.NameKana != null)
                     hashCode = hashCode * 59 + this.NameKana.GetHashCode();
+                hashCode = hashCode * 59 + this.OrgCode.GetHashCode();
                 if (this.PartnerBankAccountAttributes != null)
                     hashCode = hashCode * 59 + this.PartnerBankAccountAttributes.GetHashCode();
                 if (this.PartnerDocSettingAttributes != null)
