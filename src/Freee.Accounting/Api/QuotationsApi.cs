@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="quotationCreateParams">見積書の作成 (optional)</param>
         /// <returns>QuotationResponse</returns>
-        QuotationResponse CreateQuotation (QuotationCreateParams quotationCreateParams = default(QuotationCreateParams));
+        QuotationResponse CreateQuotation(QuotationCreateParams quotationCreateParams = default(QuotationCreateParams));
 
         /// <summary>
         /// 見積書の作成
@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="quotationCreateParams">見積書の作成 (optional)</param>
         /// <returns>ApiResponse of QuotationResponse</returns>
-        ApiResponse<QuotationResponse> CreateQuotationWithHttpInfo (QuotationCreateParams quotationCreateParams = default(QuotationCreateParams));
+        ApiResponse<QuotationResponse> CreateQuotationWithHttpInfo(QuotationCreateParams quotationCreateParams = default(QuotationCreateParams));
         /// <summary>
         /// 見積書の削除
         /// </summary>
@@ -57,7 +57,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroyQuotation (int id, int companyId);
+        void DestroyQuotation(int id, int companyId);
 
         /// <summary>
         /// 見積書の削除
@@ -69,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroyQuotationWithHttpInfo (int id, int companyId);
+        ApiResponse<Object> DestroyQuotationWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 見積書の取得
         /// </summary>
@@ -80,7 +80,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">見積書ID</param>
         /// <returns>QuotationResponse</returns>
-        QuotationResponse GetQuotation (int companyId, int id);
+        QuotationResponse GetQuotation(int companyId, int id);
 
         /// <summary>
         /// 見積書の取得
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">見積書ID</param>
         /// <returns>ApiResponse of QuotationResponse</returns>
-        ApiResponse<QuotationResponse> GetQuotationWithHttpInfo (int companyId, int id);
+        ApiResponse<QuotationResponse> GetQuotationWithHttpInfo(int companyId, int id);
         /// <summary>
         /// 見積書一覧の取得
         /// </summary>
@@ -111,7 +111,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <returns>InlineResponse2007</returns>
-        InlineResponse2007 GetQuotations (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?));
+        InlineResponse2007 GetQuotations(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// 見積書一覧の取得
@@ -131,7 +131,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse2007</returns>
-        ApiResponse<InlineResponse2007> GetQuotationsWithHttpInfo (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<InlineResponse2007> GetQuotationsWithHttpInfo(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?));
         /// <summary>
         /// 見積書の更新
         /// </summary>
@@ -142,7 +142,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">見積書ID</param>
         /// <param name="quotationUpdateParams">見積書の更新 (optional)</param>
         /// <returns>QuotationResponse</returns>
-        QuotationResponse UpdateQuotation (int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams));
+        QuotationResponse UpdateQuotation(int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams));
 
         /// <summary>
         /// 見積書の更新
@@ -154,7 +154,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">見積書ID</param>
         /// <param name="quotationUpdateParams">見積書の更新 (optional)</param>
         /// <returns>ApiResponse of QuotationResponse</returns>
-        ApiResponse<QuotationResponse> UpdateQuotationWithHttpInfo (int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams));
+        ApiResponse<QuotationResponse> UpdateQuotationWithHttpInfo(int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams));
         #endregion Synchronous Operations
     }
 
@@ -174,7 +174,7 @@ namespace Freee.Accounting.Api
         /// <param name="quotationCreateParams">見積書の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuotationResponse</returns>
-        System.Threading.Tasks.Task<QuotationResponse> CreateQuotationAsync (QuotationCreateParams quotationCreateParams = default(QuotationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<QuotationResponse> CreateQuotationAsync(QuotationCreateParams quotationCreateParams = default(QuotationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 見積書の作成
@@ -186,7 +186,7 @@ namespace Freee.Accounting.Api
         /// <param name="quotationCreateParams">見積書の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuotationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QuotationResponse>> CreateQuotationWithHttpInfoAsync (QuotationCreateParams quotationCreateParams = default(QuotationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<QuotationResponse>> CreateQuotationWithHttpInfoAsync(QuotationCreateParams quotationCreateParams = default(QuotationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 見積書の削除
         /// </summary>
@@ -198,7 +198,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyQuotationAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroyQuotationAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 見積書の削除
@@ -211,7 +211,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyQuotationWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyQuotationWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 見積書の取得
         /// </summary>
@@ -223,7 +223,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">見積書ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuotationResponse</returns>
-        System.Threading.Tasks.Task<QuotationResponse> GetQuotationAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<QuotationResponse> GetQuotationAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 見積書の取得
@@ -236,7 +236,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">見積書ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuotationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QuotationResponse>> GetQuotationWithHttpInfoAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<QuotationResponse>> GetQuotationWithHttpInfoAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 見積書一覧の取得
         /// </summary>
@@ -256,7 +256,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2007</returns>
-        System.Threading.Tasks.Task<InlineResponse2007> GetQuotationsAsync (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse2007> GetQuotationsAsync(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 見積書一覧の取得
@@ -277,7 +277,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2007>> GetQuotationsWithHttpInfoAsync (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2007>> GetQuotationsWithHttpInfoAsync(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 見積書の更新
         /// </summary>
@@ -289,7 +289,7 @@ namespace Freee.Accounting.Api
         /// <param name="quotationUpdateParams">見積書の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuotationResponse</returns>
-        System.Threading.Tasks.Task<QuotationResponse> UpdateQuotationAsync (int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<QuotationResponse> UpdateQuotationAsync(int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 見積書の更新
@@ -302,7 +302,7 @@ namespace Freee.Accounting.Api
         /// <param name="quotationUpdateParams">見積書の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuotationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QuotationResponse>> UpdateQuotationWithHttpInfoAsync (int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<QuotationResponse>> UpdateQuotationWithHttpInfoAsync(int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -325,7 +325,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="QuotationsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public QuotationsApi() : this((string) null)
+        public QuotationsApi() : this((string)null)
         {
         }
 
@@ -370,11 +370,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public QuotationsApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public QuotationsApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -405,7 +405,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -429,10 +429,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="quotationCreateParams">見積書の作成 (optional)</param>
         /// <returns>QuotationResponse</returns>
-        public QuotationResponse CreateQuotation (QuotationCreateParams quotationCreateParams = default(QuotationCreateParams))
+        public QuotationResponse CreateQuotation(QuotationCreateParams quotationCreateParams = default(QuotationCreateParams))
         {
-             Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = CreateQuotationWithHttpInfo(quotationCreateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = CreateQuotationWithHttpInfo(quotationCreateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -441,7 +441,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="quotationCreateParams">見積書の作成 (optional)</param>
         /// <returns>ApiResponse of QuotationResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< QuotationResponse > CreateQuotationWithHttpInfo (QuotationCreateParams quotationCreateParams = default(QuotationCreateParams))
+        public Freee.Accounting.Client.ApiResponse<QuotationResponse> CreateQuotationWithHttpInfo(QuotationCreateParams quotationCreateParams = default(QuotationCreateParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -471,7 +471,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< QuotationResponse >("/api/1/quotations", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<QuotationResponse>("/api/1/quotations", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -489,10 +489,10 @@ namespace Freee.Accounting.Api
         /// <param name="quotationCreateParams">見積書の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuotationResponse</returns>
-        public async System.Threading.Tasks.Task<QuotationResponse> CreateQuotationAsync (QuotationCreateParams quotationCreateParams = default(QuotationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<QuotationResponse> CreateQuotationAsync(QuotationCreateParams quotationCreateParams = default(QuotationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = await CreateQuotationWithHttpInfoAsync(quotationCreateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = await CreateQuotationWithHttpInfoAsync(quotationCreateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -502,7 +502,7 @@ namespace Freee.Accounting.Api
         /// <param name="quotationCreateParams">見積書の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuotationResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<QuotationResponse>> CreateQuotationWithHttpInfoAsync (QuotationCreateParams quotationCreateParams = default(QuotationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<QuotationResponse>> CreateQuotationWithHttpInfoAsync(QuotationCreateParams quotationCreateParams = default(QuotationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -553,9 +553,9 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroyQuotation (int id, int companyId)
+        public void DestroyQuotation(int id, int companyId)
         {
-             DestroyQuotationWithHttpInfo(id, companyId);
+            DestroyQuotationWithHttpInfo(id, companyId);
         }
 
         /// <summary>
@@ -565,7 +565,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroyQuotationWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroyQuotationWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -613,9 +613,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyQuotationAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroyQuotationAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyQuotationWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyQuotationWithHttpInfoAsync(id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -626,7 +626,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyQuotationWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyQuotationWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -676,10 +676,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">見積書ID</param>
         /// <returns>QuotationResponse</returns>
-        public QuotationResponse GetQuotation (int companyId, int id)
+        public QuotationResponse GetQuotation(int companyId, int id)
         {
-             Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = GetQuotationWithHttpInfo(companyId, id);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = GetQuotationWithHttpInfo(companyId, id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -689,7 +689,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">見積書ID</param>
         /// <returns>ApiResponse of QuotationResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< QuotationResponse > GetQuotationWithHttpInfo (int companyId, int id)
+        public Freee.Accounting.Client.ApiResponse<QuotationResponse> GetQuotationWithHttpInfo(int companyId, int id)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -718,7 +718,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< QuotationResponse >("/api/1/quotations/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<QuotationResponse>("/api/1/quotations/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -737,10 +737,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">見積書ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuotationResponse</returns>
-        public async System.Threading.Tasks.Task<QuotationResponse> GetQuotationAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<QuotationResponse> GetQuotationAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = await GetQuotationWithHttpInfoAsync(companyId, id, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = await GetQuotationWithHttpInfoAsync(companyId, id, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -751,7 +751,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">見積書ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuotationResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<QuotationResponse>> GetQuotationWithHttpInfoAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<QuotationResponse>> GetQuotationWithHttpInfoAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -809,10 +809,10 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <returns>InlineResponse2007</returns>
-        public InlineResponse2007 GetQuotations (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?))
+        public InlineResponse2007 GetQuotations(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse2007> localVarResponse = GetQuotationsWithHttpInfo(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, quotationNumber, description, quotationStatus, offset, limit);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse2007> localVarResponse = GetQuotationsWithHttpInfo(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, quotationNumber, description, quotationStatus, offset, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -830,7 +830,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse2007</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse2007 > GetQuotationsWithHttpInfo (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse2007> GetQuotationsWithHttpInfo(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -894,7 +894,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse2007 >("/api/1/quotations", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse2007>("/api/1/quotations", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -921,10 +921,10 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2007</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2007> GetQuotationsAsync (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse2007> GetQuotationsAsync(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse2007> localVarResponse = await GetQuotationsWithHttpInfoAsync(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, quotationNumber, description, quotationStatus, offset, limit, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse2007> localVarResponse = await GetQuotationsWithHttpInfoAsync(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, quotationNumber, description, quotationStatus, offset, limit, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -943,7 +943,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2007>> GetQuotationsWithHttpInfoAsync (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2007>> GetQuotationsWithHttpInfoAsync(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -1028,10 +1028,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">見積書ID</param>
         /// <param name="quotationUpdateParams">見積書の更新 (optional)</param>
         /// <returns>QuotationResponse</returns>
-        public QuotationResponse UpdateQuotation (int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams))
+        public QuotationResponse UpdateQuotation(int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams))
         {
-             Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = UpdateQuotationWithHttpInfo(id, quotationUpdateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = UpdateQuotationWithHttpInfo(id, quotationUpdateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1041,7 +1041,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">見積書ID</param>
         /// <param name="quotationUpdateParams">見積書の更新 (optional)</param>
         /// <returns>ApiResponse of QuotationResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< QuotationResponse > UpdateQuotationWithHttpInfo (int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams))
+        public Freee.Accounting.Client.ApiResponse<QuotationResponse> UpdateQuotationWithHttpInfo(int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -1072,7 +1072,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< QuotationResponse >("/api/1/quotations/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<QuotationResponse>("/api/1/quotations/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1091,10 +1091,10 @@ namespace Freee.Accounting.Api
         /// <param name="quotationUpdateParams">見積書の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuotationResponse</returns>
-        public async System.Threading.Tasks.Task<QuotationResponse> UpdateQuotationAsync (int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<QuotationResponse> UpdateQuotationAsync(int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = await UpdateQuotationWithHttpInfoAsync(id, quotationUpdateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = await UpdateQuotationWithHttpInfoAsync(id, quotationUpdateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1105,7 +1105,7 @@ namespace Freee.Accounting.Api
         /// <param name="quotationUpdateParams">見積書の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuotationResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<QuotationResponse>> UpdateQuotationWithHttpInfoAsync (int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<QuotationResponse>> UpdateQuotationWithHttpInfoAsync(int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

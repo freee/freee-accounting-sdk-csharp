@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ApprovalRequestFormParts
     /// </summary>
     [DataContract]
-    public partial class ApprovalRequestFormParts :  IEquatable<ApprovalRequestFormParts>
+    public partial class ApprovalRequestFormParts : IEquatable<ApprovalRequestFormParts>
     {
         /// <summary>
         /// 項目種別 (title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル)
@@ -84,7 +84,7 @@ namespace Freee.Accounting.Models
         /// 項目種別 (title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル)
         /// </summary>
         /// <value>項目種別 (title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル)</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestFormParts" /> class.
@@ -120,56 +120,56 @@ namespace Freee.Accounting.Models
         /// 追加説明
         /// </summary>
         /// <value>追加説明</value>
-        [DataMember(Name="annotation", EmitDefaultValue=true)]
+        [DataMember(Name = "annotation", EmitDefaultValue = true)]
         public string Annotation { get; set; }
 
         /// <summary>
         /// 項目ID
         /// </summary>
         /// <value>項目ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 項目名
         /// </summary>
         /// <value>項目名</value>
-        [DataMember(Name="label", EmitDefaultValue=false)]
+        [DataMember(Name = "label", EmitDefaultValue = false)]
         public string Label { get; set; }
 
         /// <summary>
         /// 上限金額
         /// </summary>
         /// <value>上限金額</value>
-        [DataMember(Name="max_amount", EmitDefaultValue=true)]
+        [DataMember(Name = "max_amount", EmitDefaultValue = true)]
         public int? MaxAmount { get; set; }
 
         /// <summary>
         /// 下限金額
         /// </summary>
         /// <value>下限金額</value>
-        [DataMember(Name="min_amount", EmitDefaultValue=true)]
+        [DataMember(Name = "min_amount", EmitDefaultValue = true)]
         public int? MinAmount { get; set; }
 
         /// <summary>
         /// 順序
         /// </summary>
         /// <value>順序</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
+        [DataMember(Name = "order", EmitDefaultValue = false)]
         public int Order { get; set; }
 
         /// <summary>
         /// 必須かどうか
         /// </summary>
         /// <value>必須かどうか</value>
-        [DataMember(Name="required", EmitDefaultValue=true)]
+        [DataMember(Name = "required", EmitDefaultValue = true)]
         public bool? Required { get; set; }
 
         /// <summary>
         /// 選択項目
         /// </summary>
         /// <value>選択項目</value>
-        [DataMember(Name="values", EmitDefaultValue=true)]
+        [DataMember(Name = "values", EmitDefaultValue = true)]
         public List<ApprovalRequestFormValues> Values { get; set; }
 
         /// <summary>

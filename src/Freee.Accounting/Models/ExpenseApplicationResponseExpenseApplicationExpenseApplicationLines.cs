@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines
     /// </summary>
     [DataContract]
-    public partial class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines :  IEquatable<ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines>
+    public partial class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines : IEquatable<ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines" /> class.
@@ -57,42 +57,42 @@ namespace Freee.Accounting.Models
         /// 金額
         /// </summary>
         /// <value>金額</value>
-        [DataMember(Name="amount", EmitDefaultValue=false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
         /// 内容
         /// </summary>
         /// <value>内容</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// 経費科目ID
         /// </summary>
         /// <value>経費科目ID</value>
-        [DataMember(Name="expense_application_line_template_id", EmitDefaultValue=false)]
+        [DataMember(Name = "expense_application_line_template_id", EmitDefaultValue = false)]
         public int ExpenseApplicationLineTemplateId { get; set; }
 
         /// <summary>
         /// 経費申請の項目行ID
         /// </summary>
         /// <value>経費申請の項目行ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 証憑ID
         /// </summary>
         /// <value>証憑ID</value>
-        [DataMember(Name="receipt_id", EmitDefaultValue=false)]
+        [DataMember(Name = "receipt_id", EmitDefaultValue = false)]
         public int ReceiptId { get; set; }
 
         /// <summary>
         /// 日付 (yyyy-mm-dd)
         /// </summary>
         /// <value>日付 (yyyy-mm-dd)</value>
-        [DataMember(Name="transaction_date", EmitDefaultValue=false)]
+        [DataMember(Name = "transaction_date", EmitDefaultValue = false)]
         public string TransactionDate { get; set; }
 
         /// <summary>

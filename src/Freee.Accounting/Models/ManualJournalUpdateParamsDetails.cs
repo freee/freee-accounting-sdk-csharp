@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// 貸借行一覧（配列）: 貸借合わせて100行まで登録できます。
     /// </summary>
     [DataContract]
-    public partial class ManualJournalUpdateParamsDetails :  IEquatable<ManualJournalUpdateParamsDetails>
+    public partial class ManualJournalUpdateParamsDetails : IEquatable<ManualJournalUpdateParamsDetails>
     {
         /// <summary>
         /// 貸借（貸方: credit, 借方: debit）
@@ -54,7 +54,7 @@ namespace Freee.Accounting.Models
         /// 貸借（貸方: credit, 借方: debit）
         /// </summary>
         /// <value>貸借（貸方: credit, 借方: debit）</value>
-        [DataMember(Name="entry_side", EmitDefaultValue=false)]
+        [DataMember(Name = "entry_side", EmitDefaultValue = false)]
         public EntrySideEnum EntrySide { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ManualJournalUpdateParamsDetails" /> class.
@@ -102,98 +102,98 @@ namespace Freee.Accounting.Models
         /// 勘定科目ID
         /// </summary>
         /// <value>勘定科目ID</value>
-        [DataMember(Name="account_item_id", EmitDefaultValue=false)]
+        [DataMember(Name = "account_item_id", EmitDefaultValue = false)]
         public int AccountItemId { get; set; }
 
         /// <summary>
         /// 取引金額（税込で指定してください）
         /// </summary>
         /// <value>取引金額（税込で指定してください）</value>
-        [DataMember(Name="amount", EmitDefaultValue=false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
         /// 備考
         /// </summary>
         /// <value>備考</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// 貸借行ID: 既存貸借行を更新または削除する場合に指定します。IDを指定しない貸借行は、新規行として扱われ追加されます。
         /// </summary>
         /// <value>貸借行ID: 既存貸借行を更新または削除する場合に指定します。IDを指定しない貸借行は、新規行として扱われ追加されます。</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 品目ID
         /// </summary>
         /// <value>品目ID</value>
-        [DataMember(Name="item_id", EmitDefaultValue=false)]
+        [DataMember(Name = "item_id", EmitDefaultValue = false)]
         public int ItemId { get; set; }
 
         /// <summary>
         /// 取引先コード
         /// </summary>
         /// <value>取引先コード</value>
-        [DataMember(Name="partner_code", EmitDefaultValue=false)]
+        [DataMember(Name = "partner_code", EmitDefaultValue = false)]
         public string PartnerCode { get; set; }
 
         /// <summary>
         /// 取引先ID
         /// </summary>
         /// <value>取引先ID</value>
-        [DataMember(Name="partner_id", EmitDefaultValue=false)]
+        [DataMember(Name = "partner_id", EmitDefaultValue = false)]
         public int PartnerId { get; set; }
 
         /// <summary>
         /// 部門ID
         /// </summary>
         /// <value>部門ID</value>
-        [DataMember(Name="section_id", EmitDefaultValue=false)]
+        [DataMember(Name = "section_id", EmitDefaultValue = false)]
         public int SectionId { get; set; }
 
         /// <summary>
         /// セグメント１ID
         /// </summary>
         /// <value>セグメント１ID</value>
-        [DataMember(Name="segment_1_tag_id", EmitDefaultValue=false)]
+        [DataMember(Name = "segment_1_tag_id", EmitDefaultValue = false)]
         public int Segment1TagId { get; set; }
 
         /// <summary>
         /// セグメント２ID
         /// </summary>
         /// <value>セグメント２ID</value>
-        [DataMember(Name="segment_2_tag_id", EmitDefaultValue=false)]
+        [DataMember(Name = "segment_2_tag_id", EmitDefaultValue = false)]
         public int Segment2TagId { get; set; }
 
         /// <summary>
         /// セグメント３ID
         /// </summary>
         /// <value>セグメント３ID</value>
-        [DataMember(Name="segment_3_tag_id", EmitDefaultValue=false)]
+        [DataMember(Name = "segment_3_tag_id", EmitDefaultValue = false)]
         public int Segment3TagId { get; set; }
 
         /// <summary>
         /// メモタグID
         /// </summary>
         /// <value>メモタグID</value>
-        [DataMember(Name="tag_ids", EmitDefaultValue=false)]
+        [DataMember(Name = "tag_ids", EmitDefaultValue = false)]
         public List<int> TagIds { get; set; }
 
         /// <summary>
         /// 税区分コード
         /// </summary>
         /// <value>税区分コード</value>
-        [DataMember(Name="tax_code", EmitDefaultValue=false)]
+        [DataMember(Name = "tax_code", EmitDefaultValue = false)]
         public int TaxCode { get; set; }
 
         /// <summary>
         /// 消費税額（指定しない場合は自動で計算されます）
         /// </summary>
         /// <value>消費税額（指定しない場合は自動で計算されます）</value>
-        [DataMember(Name="vat", EmitDefaultValue=false)]
+        [DataMember(Name = "vat", EmitDefaultValue = false)]
         public int Vat { get; set; }
 
         /// <summary>

@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// DealRenews
     /// </summary>
     [DataContract]
-    public partial class DealRenews :  IEquatable<DealRenews>
+    public partial class DealRenews : IEquatable<DealRenews>
     {
         /// <summary>
         /// +更新の対象行タイプ
@@ -60,7 +60,7 @@ namespace Freee.Accounting.Models
         /// +更新の対象行タイプ
         /// </summary>
         /// <value>+更新の対象行タイプ</value>
-        [DataMember(Name="renew_target_type", EmitDefaultValue=false)]
+        [DataMember(Name = "renew_target_type", EmitDefaultValue = false)]
         public RenewTargetTypeEnum RenewTargetType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DealRenews" /> class.
@@ -90,28 +90,28 @@ namespace Freee.Accounting.Models
         /// +更新の明細行一覧（配列）
         /// </summary>
         /// <value>+更新の明細行一覧（配列）</value>
-        [DataMember(Name="details", EmitDefaultValue=false)]
+        [DataMember(Name = "details", EmitDefaultValue = false)]
         public List<DealDetails> Details { get; set; }
 
         /// <summary>
         /// +更新行ID
         /// </summary>
         /// <value>+更新行ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// +更新の対象行ID
         /// </summary>
         /// <value>+更新の対象行ID</value>
-        [DataMember(Name="renew_target_id", EmitDefaultValue=false)]
+        [DataMember(Name = "renew_target_id", EmitDefaultValue = false)]
         public int RenewTargetId { get; set; }
 
         /// <summary>
         /// 更新日 (yyyy-mm-dd)
         /// </summary>
         /// <value>更新日 (yyyy-mm-dd)</value>
-        [DataMember(Name="update_date", EmitDefaultValue=false)]
+        [DataMember(Name = "update_date", EmitDefaultValue = false)]
         public string UpdateDate { get; set; }
 
         /// <summary>

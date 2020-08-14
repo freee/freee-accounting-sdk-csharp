@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// DealCreateResponseDealDetails
     /// </summary>
     [DataContract]
-    public partial class DealCreateResponseDealDetails :  IEquatable<DealCreateResponseDealDetails>
+    public partial class DealCreateResponseDealDetails : IEquatable<DealCreateResponseDealDetails>
     {
         /// <summary>
         /// 貸借（貸方: credit, 借方: debit）
@@ -54,7 +54,7 @@ namespace Freee.Accounting.Models
         /// 貸借（貸方: credit, 借方: debit）
         /// </summary>
         /// <value>貸借（貸方: credit, 借方: debit）</value>
-        [DataMember(Name="entry_side", EmitDefaultValue=false)]
+        [DataMember(Name = "entry_side", EmitDefaultValue = false)]
         public EntrySideEnum EntrySide { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DealCreateResponseDealDetails" /> class.
@@ -98,84 +98,84 @@ namespace Freee.Accounting.Models
         /// 勘定科目ID
         /// </summary>
         /// <value>勘定科目ID</value>
-        [DataMember(Name="account_item_id", EmitDefaultValue=false)]
+        [DataMember(Name = "account_item_id", EmitDefaultValue = false)]
         public int AccountItemId { get; set; }
 
         /// <summary>
         /// 取引金額
         /// </summary>
         /// <value>取引金額</value>
-        [DataMember(Name="amount", EmitDefaultValue=false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
         /// 備考
         /// </summary>
         /// <value>備考</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// 取引行ID
         /// </summary>
         /// <value>取引行ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 品目ID
         /// </summary>
         /// <value>品目ID</value>
-        [DataMember(Name="item_id", EmitDefaultValue=true)]
+        [DataMember(Name = "item_id", EmitDefaultValue = true)]
         public int? ItemId { get; set; }
 
         /// <summary>
         /// 部門ID
         /// </summary>
         /// <value>部門ID</value>
-        [DataMember(Name="section_id", EmitDefaultValue=true)]
+        [DataMember(Name = "section_id", EmitDefaultValue = true)]
         public int? SectionId { get; set; }
 
         /// <summary>
         /// セグメント１ID
         /// </summary>
         /// <value>セグメント１ID</value>
-        [DataMember(Name="segment_1_tag_id", EmitDefaultValue=true)]
+        [DataMember(Name = "segment_1_tag_id", EmitDefaultValue = true)]
         public int? Segment1TagId { get; set; }
 
         /// <summary>
         /// セグメント２ID
         /// </summary>
         /// <value>セグメント２ID</value>
-        [DataMember(Name="segment_2_tag_id", EmitDefaultValue=true)]
+        [DataMember(Name = "segment_2_tag_id", EmitDefaultValue = true)]
         public int? Segment2TagId { get; set; }
 
         /// <summary>
         /// セグメント３ID
         /// </summary>
         /// <value>セグメント３ID</value>
-        [DataMember(Name="segment_3_tag_id", EmitDefaultValue=true)]
+        [DataMember(Name = "segment_3_tag_id", EmitDefaultValue = true)]
         public int? Segment3TagId { get; set; }
 
         /// <summary>
         /// メモタグID
         /// </summary>
         /// <value>メモタグID</value>
-        [DataMember(Name="tag_ids", EmitDefaultValue=false)]
+        [DataMember(Name = "tag_ids", EmitDefaultValue = false)]
         public List<int> TagIds { get; set; }
 
         /// <summary>
         /// 税区分コード
         /// </summary>
         /// <value>税区分コード</value>
-        [DataMember(Name="tax_code", EmitDefaultValue=false)]
+        [DataMember(Name = "tax_code", EmitDefaultValue = false)]
         public int TaxCode { get; set; }
 
         /// <summary>
         /// 消費税額
         /// </summary>
         /// <value>消費税額</value>
-        [DataMember(Name="vat", EmitDefaultValue=false)]
+        [DataMember(Name = "vat", EmitDefaultValue = false)]
         public int Vat { get; set; }
 
         /// <summary>

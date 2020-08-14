@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ExpenseApplicationUpdateParams
     /// </summary>
     [DataContract]
-    public partial class ExpenseApplicationUpdateParams :  IEquatable<ExpenseApplicationUpdateParams>
+    public partial class ExpenseApplicationUpdateParams : IEquatable<ExpenseApplicationUpdateParams>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExpenseApplicationUpdateParams" /> class.
@@ -64,55 +64,55 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 備考 (10000文字以内)
         /// </summary>
         /// <value>備考 (10000文字以内)</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// 会計freeeのWeb画面から申請内容を編集可能：falseの場合、Web上からの項目行の追加／削除・金額の編集が出来なくなります。APIでの編集は可能です。
         /// </summary>
         /// <value>会計freeeのWeb画面から申請内容を編集可能：falseの場合、Web上からの項目行の追加／削除・金額の編集が出来なくなります。APIでの編集は可能です。</value>
-        [DataMember(Name="editable_on_web", EmitDefaultValue=false)]
+        [DataMember(Name = "editable_on_web", EmitDefaultValue = false)]
         public bool EditableOnWeb { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpenseApplicationLines
         /// </summary>
-        [DataMember(Name="expense_application_lines", EmitDefaultValue=false)]
+        [DataMember(Name = "expense_application_lines", EmitDefaultValue = false)]
         public List<ExpenseApplicationUpdateParamsExpenseApplicationLines> ExpenseApplicationLines { get; set; }
 
         /// <summary>
         /// 申請日 (yyyy-mm-dd)
         /// </summary>
         /// <value>申請日 (yyyy-mm-dd)</value>
-        [DataMember(Name="issue_date", EmitDefaultValue=false)]
+        [DataMember(Name = "issue_date", EmitDefaultValue = false)]
         public string IssueDate { get; set; }
 
         /// <summary>
         /// 部門ID
         /// </summary>
         /// <value>部門ID</value>
-        [DataMember(Name="section_id", EmitDefaultValue=false)]
+        [DataMember(Name = "section_id", EmitDefaultValue = false)]
         public int SectionId { get; set; }
 
         /// <summary>
         /// メモタグID
         /// </summary>
         /// <value>メモタグID</value>
-        [DataMember(Name="tag_ids", EmitDefaultValue=false)]
+        [DataMember(Name = "tag_ids", EmitDefaultValue = false)]
         public List<int> TagIds { get; set; }
 
         /// <summary>
         /// 申請タイトル (250文字以内)
         /// </summary>
         /// <value>申請タイトル (250文字以内)</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>

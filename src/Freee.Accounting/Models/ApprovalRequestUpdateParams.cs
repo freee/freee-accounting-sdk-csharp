@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ApprovalRequestUpdateParams
     /// </summary>
     [DataContract]
-    public partial class ApprovalRequestUpdateParams :  IEquatable<ApprovalRequestUpdateParams>
+    public partial class ApprovalRequestUpdateParams : IEquatable<ApprovalRequestUpdateParams>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestUpdateParams" /> class.
@@ -59,41 +59,41 @@ namespace Freee.Accounting.Models
         /// 申請日 (yyyy-mm-dd)
         /// </summary>
         /// <value>申請日 (yyyy-mm-dd)</value>
-        [DataMember(Name="application_date", EmitDefaultValue=false)]
+        [DataMember(Name = "application_date", EmitDefaultValue = false)]
         public string ApplicationDate { get; set; }
 
         /// <summary>
         /// 申請経路ID
         /// </summary>
         /// <value>申請経路ID</value>
-        [DataMember(Name="approval_flow_route_id", EmitDefaultValue=false)]
+        [DataMember(Name = "approval_flow_route_id", EmitDefaultValue = false)]
         public int ApprovalFlowRouteId { get; set; }
 
         /// <summary>
         /// 承認者のユーザーID
         /// </summary>
         /// <value>承認者のユーザーID</value>
-        [DataMember(Name="approver_id", EmitDefaultValue=false)]
+        [DataMember(Name = "approver_id", EmitDefaultValue = false)]
         public int ApproverId { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// falseの時、in_progress:申請中で更新する。それ以外の時はdraft:下書きで更新する
         /// </summary>
         /// <value>falseの時、in_progress:申請中で更新する。それ以外の時はdraft:下書きで更新する</value>
-        [DataMember(Name="draft", EmitDefaultValue=false)]
+        [DataMember(Name = "draft", EmitDefaultValue = false)]
         public bool Draft { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestItems
         /// </summary>
-        [DataMember(Name="request_items", EmitDefaultValue=false)]
+        [DataMember(Name = "request_items", EmitDefaultValue = false)]
         public List<ApprovalRequestCreateParamsRequestItems> RequestItems { get; set; }
 
         /// <summary>

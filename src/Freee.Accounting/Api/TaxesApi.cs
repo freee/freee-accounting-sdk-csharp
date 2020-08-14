@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="code">税区分コード</param>
         /// <returns>TaxResponse</returns>
-        TaxResponse GetTaxCode (int code);
+        TaxResponse GetTaxCode(int code);
 
         /// <summary>
         /// 税区分コードの取得
@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="code">税区分コード</param>
         /// <returns>ApiResponse of TaxResponse</returns>
-        ApiResponse<TaxResponse> GetTaxCodeWithHttpInfo (int code);
+        ApiResponse<TaxResponse> GetTaxCodeWithHttpInfo(int code);
         /// <summary>
         /// 税区分コード一覧の取得
         /// </summary>
@@ -55,7 +55,7 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>InlineResponse20012</returns>
-        InlineResponse20012 GetTaxCodes ();
+        InlineResponse20012 GetTaxCodes();
 
         /// <summary>
         /// 税区分コード一覧の取得
@@ -65,14 +65,14 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of InlineResponse20012</returns>
-        ApiResponse<InlineResponse20012> GetTaxCodesWithHttpInfo ();
+        ApiResponse<InlineResponse20012> GetTaxCodesWithHttpInfo();
         /// <summary>
         /// 税区分コード詳細一覧の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>InlineResponse20013</returns>
-        InlineResponse20013 GetTaxesCompanies (int companyId);
+        InlineResponse20013 GetTaxesCompanies(int companyId);
 
         /// <summary>
         /// 税区分コード詳細一覧の取得
@@ -83,7 +83,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of InlineResponse20013</returns>
-        ApiResponse<InlineResponse20013> GetTaxesCompaniesWithHttpInfo (int companyId);
+        ApiResponse<InlineResponse20013> GetTaxesCompaniesWithHttpInfo(int companyId);
         #endregion Synchronous Operations
     }
 
@@ -103,7 +103,7 @@ namespace Freee.Accounting.Api
         /// <param name="code">税区分コード</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TaxResponse</returns>
-        System.Threading.Tasks.Task<TaxResponse> GetTaxCodeAsync (int code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TaxResponse> GetTaxCodeAsync(int code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 税区分コードの取得
@@ -115,7 +115,7 @@ namespace Freee.Accounting.Api
         /// <param name="code">税区分コード</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TaxResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TaxResponse>> GetTaxCodeWithHttpInfoAsync (int code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TaxResponse>> GetTaxCodeWithHttpInfoAsync(int code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 税区分コード一覧の取得
         /// </summary>
@@ -125,7 +125,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20012</returns>
-        System.Threading.Tasks.Task<InlineResponse20012> GetTaxCodesAsync (System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse20012> GetTaxCodesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 税区分コード一覧の取得
@@ -136,7 +136,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20012>> GetTaxCodesWithHttpInfoAsync (System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20012>> GetTaxCodesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 税区分コード詳細一覧の取得
         /// </summary>
@@ -147,7 +147,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20013</returns>
-        System.Threading.Tasks.Task<InlineResponse20013> GetTaxesCompaniesAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse20013> GetTaxesCompaniesAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 税区分コード詳細一覧の取得
@@ -159,7 +159,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20013>> GetTaxesCompaniesWithHttpInfoAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20013>> GetTaxesCompaniesWithHttpInfoAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -182,7 +182,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="TaxesApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public TaxesApi() : this((string) null)
+        public TaxesApi() : this((string)null)
         {
         }
 
@@ -227,11 +227,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public TaxesApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public TaxesApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -262,7 +262,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -286,10 +286,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="code">税区分コード</param>
         /// <returns>TaxResponse</returns>
-        public TaxResponse GetTaxCode (int code)
+        public TaxResponse GetTaxCode(int code)
         {
-             Freee.Accounting.Client.ApiResponse<TaxResponse> localVarResponse = GetTaxCodeWithHttpInfo(code);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TaxResponse> localVarResponse = GetTaxCodeWithHttpInfo(code);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="code">税区分コード</param>
         /// <returns>ApiResponse of TaxResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TaxResponse > GetTaxCodeWithHttpInfo (int code)
+        public Freee.Accounting.Client.ApiResponse<TaxResponse> GetTaxCodeWithHttpInfo(int code)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -326,7 +326,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< TaxResponse >("/api/1/taxes/codes/{code}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TaxResponse>("/api/1/taxes/codes/{code}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -344,10 +344,10 @@ namespace Freee.Accounting.Api
         /// <param name="code">税区分コード</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TaxResponse</returns>
-        public async System.Threading.Tasks.Task<TaxResponse> GetTaxCodeAsync (int code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TaxResponse> GetTaxCodeAsync(int code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TaxResponse> localVarResponse = await GetTaxCodeWithHttpInfoAsync(code, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TaxResponse> localVarResponse = await GetTaxCodeWithHttpInfoAsync(code, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -357,7 +357,7 @@ namespace Freee.Accounting.Api
         /// <param name="code">税区分コード</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TaxResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TaxResponse>> GetTaxCodeWithHttpInfoAsync (int code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TaxResponse>> GetTaxCodeWithHttpInfoAsync(int code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -404,10 +404,10 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>InlineResponse20012</returns>
-        public InlineResponse20012 GetTaxCodes ()
+        public InlineResponse20012 GetTaxCodes()
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20012> localVarResponse = GetTaxCodesWithHttpInfo();
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20012> localVarResponse = GetTaxCodesWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -415,7 +415,7 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of InlineResponse20012</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse20012 > GetTaxCodesWithHttpInfo ()
+        public Freee.Accounting.Client.ApiResponse<InlineResponse20012> GetTaxCodesWithHttpInfo()
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -442,7 +442,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse20012 >("/api/1/taxes/codes", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20012>("/api/1/taxes/codes", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -459,10 +459,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20012</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20012> GetTaxCodesAsync (System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse20012> GetTaxCodesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20012> localVarResponse = await GetTaxCodesWithHttpInfoAsync(cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20012> localVarResponse = await GetTaxCodesWithHttpInfoAsync(cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -471,7 +471,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20012>> GetTaxCodesWithHttpInfoAsync (System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20012>> GetTaxCodesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -518,10 +518,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>InlineResponse20013</returns>
-        public InlineResponse20013 GetTaxesCompanies (int companyId)
+        public InlineResponse20013 GetTaxesCompanies(int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20013> localVarResponse = GetTaxesCompaniesWithHttpInfo(companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20013> localVarResponse = GetTaxesCompaniesWithHttpInfo(companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -530,7 +530,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of InlineResponse20013</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse20013 > GetTaxesCompaniesWithHttpInfo (int companyId)
+        public Freee.Accounting.Client.ApiResponse<InlineResponse20013> GetTaxesCompaniesWithHttpInfo(int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -558,7 +558,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse20013 >("/api/1/taxes/companies/{company_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20013>("/api/1/taxes/companies/{company_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -576,10 +576,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20013</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20013> GetTaxesCompaniesAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse20013> GetTaxesCompaniesAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20013> localVarResponse = await GetTaxesCompaniesWithHttpInfoAsync(companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20013> localVarResponse = await GetTaxesCompaniesWithHttpInfoAsync(companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -589,7 +589,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20013>> GetTaxesCompaniesWithHttpInfoAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20013>> GetTaxesCompaniesWithHttpInfoAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// TrialPlSectionsResponseTrialPlSectionsSections
     /// </summary>
     [DataContract]
-    public partial class TrialPlSectionsResponseTrialPlSectionsSections :  IEquatable<TrialPlSectionsResponseTrialPlSectionsSections>
+    public partial class TrialPlSectionsResponseTrialPlSectionsSections : IEquatable<TrialPlSectionsResponseTrialPlSectionsSections>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TrialPlSectionsResponseTrialPlSectionsSections" /> class.
@@ -55,35 +55,35 @@ namespace Freee.Accounting.Models
         /// 期末残高
         /// </summary>
         /// <value>期末残高</value>
-        [DataMember(Name="closing_balance", EmitDefaultValue=false)]
+        [DataMember(Name = "closing_balance", EmitDefaultValue = false)]
         public int ClosingBalance { get; set; }
 
         /// <summary>
         /// 部門ID
         /// </summary>
         /// <value>部門ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる
         /// </summary>
         /// <value>breakdown_display_type:item, account_item_display_type:account_item指定時のみ含まれる</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<TrialPlSectionsResponseTrialPlSectionsItems> Items { get; set; }
 
         /// <summary>
         /// 部門名
         /// </summary>
         /// <value>部門名</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる
         /// </summary>
         /// <value>breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる</value>
-        [DataMember(Name="partners", EmitDefaultValue=false)]
+        [DataMember(Name = "partners", EmitDefaultValue = false)]
         public List<TrialPlSectionsResponseTrialPlSectionsPartners> Partners { get; set; }
 
         /// <summary>

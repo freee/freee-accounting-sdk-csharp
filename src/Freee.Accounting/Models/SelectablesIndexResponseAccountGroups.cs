@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// SelectablesIndexResponseAccountGroups
     /// </summary>
     [DataContract]
-    public partial class SelectablesIndexResponseAccountGroups :  IEquatable<SelectablesIndexResponseAccountGroups>
+    public partial class SelectablesIndexResponseAccountGroups : IEquatable<SelectablesIndexResponseAccountGroups>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectablesIndexResponseAccountGroups" /> class.
@@ -62,56 +62,56 @@ namespace Freee.Accounting.Models
         /// 勘定科目カテゴリーID
         /// </summary>
         /// <value>勘定科目カテゴリーID</value>
-        [DataMember(Name="account_category_id", EmitDefaultValue=false)]
+        [DataMember(Name = "account_category_id", EmitDefaultValue = false)]
         public int AccountCategoryId { get; set; }
 
         /// <summary>
         /// 年度ID
         /// </summary>
         /// <value>年度ID</value>
-        [DataMember(Name="account_structure_id", EmitDefaultValue=false)]
+        [DataMember(Name = "account_structure_id", EmitDefaultValue = false)]
         public int AccountStructureId { get; set; }
 
         /// <summary>
         /// 作成日時
         /// </summary>
         /// <value>作成日時</value>
-        [DataMember(Name="created_at", EmitDefaultValue=false)]
+        [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public string CreatedAt { get; set; }
 
         /// <summary>
         /// 詳細パラメータの種類
         /// </summary>
         /// <value>詳細パラメータの種類</value>
-        [DataMember(Name="detail_type", EmitDefaultValue=false)]
+        [DataMember(Name = "detail_type", EmitDefaultValue = false)]
         public int DetailType { get; set; }
 
         /// <summary>
         /// 決算書表示名（小カテゴリー）ID
         /// </summary>
         /// <value>決算書表示名（小カテゴリー）ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 並び順
         /// </summary>
         /// <value>並び順</value>
-        [DataMember(Name="index", EmitDefaultValue=false)]
+        [DataMember(Name = "index", EmitDefaultValue = false)]
         public int Index { get; set; }
 
         /// <summary>
         /// 決算書表示名
         /// </summary>
         /// <value>決算書表示名</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// 更新日時
         /// </summary>
         /// <value>更新日時</value>
-        [DataMember(Name="updated_at", EmitDefaultValue=false)]
+        [DataMember(Name = "updated_at", EmitDefaultValue = false)]
         public string UpdatedAt { get; set; }
 
         /// <summary>

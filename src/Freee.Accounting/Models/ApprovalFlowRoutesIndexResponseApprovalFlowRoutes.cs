@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ApprovalFlowRoutesIndexResponseApprovalFlowRoutes
     /// </summary>
     [DataContract]
-    public partial class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes :  IEquatable<ApprovalFlowRoutesIndexResponseApprovalFlowRoutes>
+    public partial class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes : IEquatable<ApprovalFlowRoutesIndexResponseApprovalFlowRoutes>
     {
         /// <summary>
         /// Defines Usages
@@ -72,7 +72,7 @@ namespace Freee.Accounting.Models
         /// 申請種別（申請経路を使用できる申請種別を示します。例えば、ApprovalRequest の場合は、各種申請で使用できる申請経路です。） * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60; - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書)
         /// </summary>
         /// <value>申請種別（申請経路を使用できる申請種別を示します。例えば、ApprovalRequest の場合は、各種申請で使用できる申請経路です。） * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60; - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書)</value>
-        [DataMember(Name="usages", EmitDefaultValue=false)]
+        [DataMember(Name = "usages", EmitDefaultValue = false)]
         public List<UsagesEnum> Usages { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalFlowRoutesIndexResponseApprovalFlowRoutes" /> class.
@@ -106,49 +106,49 @@ namespace Freee.Accounting.Models
         /// システム作成の申請経路かどうか
         /// </summary>
         /// <value>システム作成の申請経路かどうか</value>
-        [DataMember(Name="definition_system", EmitDefaultValue=false)]
+        [DataMember(Name = "definition_system", EmitDefaultValue = false)]
         public bool DefinitionSystem { get; set; }
 
         /// <summary>
         /// 申請経路の説明
         /// </summary>
         /// <value>申請経路の説明</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// 最初の承認ステップのID
         /// </summary>
         /// <value>最初の承認ステップのID</value>
-        [DataMember(Name="first_step_id", EmitDefaultValue=false)]
+        [DataMember(Name = "first_step_id", EmitDefaultValue = false)]
         public int FirstStepId { get; set; }
 
         /// <summary>
         /// 申請経路ID
         /// </summary>
         /// <value>申請経路ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 申請経路名
         /// </summary>
         /// <value>申請経路名</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// 申請経路で利用できる申請フォームID配列
         /// </summary>
         /// <value>申請経路で利用できる申請フォームID配列</value>
-        [DataMember(Name="request_form_ids", EmitDefaultValue=false)]
+        [DataMember(Name = "request_form_ids", EmitDefaultValue = false)]
         public List<int> RequestFormIds { get; set; }
 
         /// <summary>
         /// 更新したユーザーのユーザーID
         /// </summary>
         /// <value>更新したユーザーのユーザーID</value>
-        [DataMember(Name="user_id", EmitDefaultValue=true)]
+        [DataMember(Name = "user_id", EmitDefaultValue = true)]
         public int? UserId { get; set; }
 
         /// <summary>

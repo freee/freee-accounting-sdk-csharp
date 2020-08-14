@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// Tag
     /// </summary>
     [DataContract]
-    public partial class Tag :  IEquatable<Tag>
+    public partial class Tag : IEquatable<Tag>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Tag" /> class.
@@ -56,35 +56,35 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// タグID
         /// </summary>
         /// <value>タグID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 名前(30文字以内)
         /// </summary>
         /// <value>名前(30文字以内)</value>
-        [DataMember(Name="name", EmitDefaultValue=true)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// ショートカット1 (255文字以内)
         /// </summary>
         /// <value>ショートカット1 (255文字以内)</value>
-        [DataMember(Name="shortcut1", EmitDefaultValue=true)]
+        [DataMember(Name = "shortcut1", EmitDefaultValue = true)]
         public string Shortcut1 { get; set; }
 
         /// <summary>
         /// ショートカット2 (255文字以内)
         /// </summary>
         /// <value>ショートカット2 (255文字以内)</value>
-        [DataMember(Name="shortcut2", EmitDefaultValue=true)]
+        [DataMember(Name = "shortcut2", EmitDefaultValue = true)]
         public string Shortcut2 { get; set; }
 
         /// <summary>

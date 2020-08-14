@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ApprovalFlowRouteResponseApprovalFlowRouteSteps
     /// </summary>
     [DataContract]
-    public partial class ApprovalFlowRouteResponseApprovalFlowRouteSteps :  IEquatable<ApprovalFlowRouteResponseApprovalFlowRouteSteps>
+    public partial class ApprovalFlowRouteResponseApprovalFlowRouteSteps : IEquatable<ApprovalFlowRouteResponseApprovalFlowRouteSteps>
     {
         /// <summary>
         /// 承認方法( predefined_user: メンバー指定 (1人), selected_user: 申請時にメンバー指定,unspecified: 指定なし, and_resource: メンバー指定 (複数、全員の承認), or_resource: メンバー指定 (複数、1人の承認), and_position: 役職指定 (複数、全員の承認), or_position: 役職指定 (複数、1人の承認) ) 
@@ -84,7 +84,7 @@ namespace Freee.Accounting.Models
         /// 承認方法( predefined_user: メンバー指定 (1人), selected_user: 申請時にメンバー指定,unspecified: 指定なし, and_resource: メンバー指定 (複数、全員の承認), or_resource: メンバー指定 (複数、1人の承認), and_position: 役職指定 (複数、全員の承認), or_position: 役職指定 (複数、1人の承認) ) 
         /// </summary>
         /// <value>承認方法( predefined_user: メンバー指定 (1人), selected_user: 申請時にメンバー指定,unspecified: 指定なし, and_resource: メンバー指定 (複数、全員の承認), or_resource: メンバー指定 (複数、1人の承認), and_position: 役職指定 (複数、全員の承認), or_position: 役職指定 (複数、1人の承認) ) </value>
-        [DataMember(Name="resource_type", EmitDefaultValue=false)]
+        [DataMember(Name = "resource_type", EmitDefaultValue = false)]
         public ResourceTypeEnum ResourceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalFlowRouteResponseApprovalFlowRouteSteps" /> class.
@@ -111,21 +111,21 @@ namespace Freee.Accounting.Models
         /// 承認ステップID
         /// </summary>
         /// <value>承認ステップID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 次の承認ステップID
         /// </summary>
         /// <value>次の承認ステップID</value>
-        [DataMember(Name="next_step_id", EmitDefaultValue=true)]
+        [DataMember(Name = "next_step_id", EmitDefaultValue = true)]
         public int? NextStepId { get; set; }
 
         /// <summary>
         /// 承認者のユーザーID (配列)
         /// </summary>
         /// <value>承認者のユーザーID (配列)</value>
-        [DataMember(Name="user_ids", EmitDefaultValue=false)]
+        [DataMember(Name = "user_ids", EmitDefaultValue = false)]
         public List<int> UserIds { get; set; }
 
         /// <summary>

@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// InvoiceCreateParams
     /// </summary>
     [DataContract]
-    public partial class InvoiceCreateParams :  IEquatable<InvoiceCreateParams>
+    public partial class InvoiceCreateParams : IEquatable<InvoiceCreateParams>
     {
         /// <summary>
         /// 請求書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;carried_forward_standard_classic&#x60; - レイアウト３（繰越金額欄あり）/クラシック  * &#x60;carried_forward_envelope_classic&#x60; - 封筒２（繰越金額欄あり）/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン
@@ -90,7 +90,7 @@ namespace Freee.Accounting.Models
         /// 請求書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;carried_forward_standard_classic&#x60; - レイアウト３（繰越金額欄あり）/クラシック  * &#x60;carried_forward_envelope_classic&#x60; - 封筒２（繰越金額欄あり）/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン
         /// </summary>
         /// <value>請求書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;carried_forward_standard_classic&#x60; - レイアウト３（繰越金額欄あり）/クラシック  * &#x60;carried_forward_envelope_classic&#x60; - 封筒２（繰越金額欄あり）/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン</value>
-        [DataMember(Name="invoice_layout", EmitDefaultValue=false)]
+        [DataMember(Name = "invoice_layout", EmitDefaultValue = false)]
         public InvoiceLayoutEnum? InvoiceLayout { get; set; }
         /// <summary>
         /// 請求書ステータス  (draft: 下書き (デフォルト), issue: 発行(請求先ワークフローを利用している場合は指定できません))
@@ -117,7 +117,7 @@ namespace Freee.Accounting.Models
         /// 請求書ステータス  (draft: 下書き (デフォルト), issue: 発行(請求先ワークフローを利用している場合は指定できません))
         /// </summary>
         /// <value>請求書ステータス  (draft: 下書き (デフォルト), issue: 発行(請求先ワークフローを利用している場合は指定できません))</value>
-        [DataMember(Name="invoice_status", EmitDefaultValue=false)]
+        [DataMember(Name = "invoice_status", EmitDefaultValue = false)]
         public InvoiceStatusEnum? InvoiceStatus { get; set; }
         /// <summary>
         /// 支払方法 (振込: transfer, 引き落とし: direct_debit)
@@ -144,7 +144,7 @@ namespace Freee.Accounting.Models
         /// 支払方法 (振込: transfer, 引き落とし: direct_debit)
         /// </summary>
         /// <value>支払方法 (振込: transfer, 引き落とし: direct_debit)</value>
-        [DataMember(Name="payment_type", EmitDefaultValue=false)]
+        [DataMember(Name = "payment_type", EmitDefaultValue = false)]
         public PaymentTypeEnum? PaymentType { get; set; }
         /// <summary>
         /// 請求書の消費税計算方法(inclusive: 内税表示, exclusive: 外税表示 (デフォルト))
@@ -171,7 +171,7 @@ namespace Freee.Accounting.Models
         /// 請求書の消費税計算方法(inclusive: 内税表示, exclusive: 外税表示 (デフォルト))
         /// </summary>
         /// <value>請求書の消費税計算方法(inclusive: 内税表示, exclusive: 外税表示 (デフォルト))</value>
-        [DataMember(Name="tax_entry_method", EmitDefaultValue=false)]
+        [DataMember(Name = "tax_entry_method", EmitDefaultValue = false)]
         public TaxEntryMethodEnum? TaxEntryMethod { get; set; }
         /// <summary>
         /// 振込専用口座の利用(利用しない: not_use(デフォルト), 利用する: use)
@@ -198,7 +198,7 @@ namespace Freee.Accounting.Models
         /// 振込専用口座の利用(利用しない: not_use(デフォルト), 利用する: use)
         /// </summary>
         /// <value>振込専用口座の利用(利用しない: not_use(デフォルト), 利用する: use)</value>
-        [DataMember(Name="use_virtual_transfer_account", EmitDefaultValue=false)]
+        [DataMember(Name = "use_virtual_transfer_account", EmitDefaultValue = false)]
         public UseVirtualTransferAccountEnum? UseVirtualTransferAccount { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceCreateParams" /> class.
@@ -280,182 +280,182 @@ namespace Freee.Accounting.Models
         /// 売上計上日
         /// </summary>
         /// <value>売上計上日</value>
-        [DataMember(Name="booking_date", EmitDefaultValue=false)]
+        [DataMember(Name = "booking_date", EmitDefaultValue = false)]
         public string BookingDate { get; set; }
 
         /// <summary>
         /// 市区町村・番地 (デフォルトは事業所設定情報が補完されます)
         /// </summary>
         /// <value>市区町村・番地 (デフォルトは事業所設定情報が補完されます)</value>
-        [DataMember(Name="company_address1", EmitDefaultValue=false)]
+        [DataMember(Name = "company_address1", EmitDefaultValue = false)]
         public string CompanyAddress1 { get; set; }
 
         /// <summary>
         /// 建物名・部屋番号など (デフォルトは事業所設定情報が補完されます)
         /// </summary>
         /// <value>建物名・部屋番号など (デフォルトは事業所設定情報が補完されます)</value>
-        [DataMember(Name="company_address2", EmitDefaultValue=false)]
+        [DataMember(Name = "company_address2", EmitDefaultValue = false)]
         public string CompanyAddress2 { get; set; }
 
         /// <summary>
         /// 事業所担当者名 (デフォルトは事業所設定情報が補完されます)
         /// </summary>
         /// <value>事業所担当者名 (デフォルトは事業所設定情報が補完されます)</value>
-        [DataMember(Name="company_contact_info", EmitDefaultValue=false)]
+        [DataMember(Name = "company_contact_info", EmitDefaultValue = false)]
         public string CompanyContactInfo { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 事業所名 (デフォルトは事業所設定情報が補完されます)
         /// </summary>
         /// <value>事業所名 (デフォルトは事業所設定情報が補完されます)</value>
-        [DataMember(Name="company_name", EmitDefaultValue=false)]
+        [DataMember(Name = "company_name", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
         /// <summary>
         /// 都道府県コード（0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄) (デフォルトは事業所設定情報が補完されます)
         /// </summary>
         /// <value>都道府県コード（0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄) (デフォルトは事業所設定情報が補完されます)</value>
-        [DataMember(Name="company_prefecture_code", EmitDefaultValue=false)]
+        [DataMember(Name = "company_prefecture_code", EmitDefaultValue = false)]
         public int CompanyPrefectureCode { get; set; }
 
         /// <summary>
         /// 郵便番号 (デフォルトは事業所設定情報が補完されます)
         /// </summary>
         /// <value>郵便番号 (デフォルトは事業所設定情報が補完されます)</value>
-        [DataMember(Name="company_zipcode", EmitDefaultValue=false)]
+        [DataMember(Name = "company_zipcode", EmitDefaultValue = false)]
         public string CompanyZipcode { get; set; }
 
         /// <summary>
         /// 概要
         /// </summary>
         /// <value>概要</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// 期日 (yyyy-mm-dd)
         /// </summary>
         /// <value>期日 (yyyy-mm-dd)</value>
-        [DataMember(Name="due_date", EmitDefaultValue=false)]
+        [DataMember(Name = "due_date", EmitDefaultValue = false)]
         public string DueDate { get; set; }
 
         /// <summary>
         /// 請求内容
         /// </summary>
         /// <value>請求内容</value>
-        [DataMember(Name="invoice_contents", EmitDefaultValue=false)]
+        [DataMember(Name = "invoice_contents", EmitDefaultValue = false)]
         public List<InvoiceCreateParamsInvoiceContents> InvoiceContents { get; set; }
 
         /// <summary>
         /// 請求書番号 (デフォルト: 自動採番されます)
         /// </summary>
         /// <value>請求書番号 (デフォルト: 自動採番されます)</value>
-        [DataMember(Name="invoice_number", EmitDefaultValue=false)]
+        [DataMember(Name = "invoice_number", EmitDefaultValue = false)]
         public string InvoiceNumber { get; set; }
 
         /// <summary>
         /// 請求日 (yyyy-mm-dd)
         /// </summary>
         /// <value>請求日 (yyyy-mm-dd)</value>
-        [DataMember(Name="issue_date", EmitDefaultValue=false)]
+        [DataMember(Name = "issue_date", EmitDefaultValue = false)]
         public string IssueDate { get; set; }
 
         /// <summary>
         /// メッセージ (デフォルト: 下記の通りご請求申し上げます。)
         /// </summary>
         /// <value>メッセージ (デフォルト: 下記の通りご請求申し上げます。)</value>
-        [DataMember(Name="message", EmitDefaultValue=false)]
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
         /// <summary>
         /// 備考
         /// </summary>
         /// <value>備考</value>
-        [DataMember(Name="notes", EmitDefaultValue=false)]
+        [DataMember(Name = "notes", EmitDefaultValue = false)]
         public string Notes { get; set; }
 
         /// <summary>
         /// 取引先市区町村・番地 (デフォルトはpartner_idもしくははpartner_codeで指定された取引先設定情報が補完されます)
         /// </summary>
         /// <value>取引先市区町村・番地 (デフォルトはpartner_idもしくははpartner_codeで指定された取引先設定情報が補完されます)</value>
-        [DataMember(Name="partner_address1", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_address1", EmitDefaultValue = true)]
         public string PartnerAddress1 { get; set; }
 
         /// <summary>
         /// 取引先建物名・部屋番号など (デフォルトはpartner_idもしくははpartner_codeで指定された取引先設定情報が補完されます)
         /// </summary>
         /// <value>取引先建物名・部屋番号など (デフォルトはpartner_idもしくははpartner_codeで指定された取引先設定情報が補完されます)</value>
-        [DataMember(Name="partner_address2", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_address2", EmitDefaultValue = true)]
         public string PartnerAddress2 { get; set; }
 
         /// <summary>
         /// 取引先コード
         /// </summary>
         /// <value>取引先コード</value>
-        [DataMember(Name="partner_code", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_code", EmitDefaultValue = true)]
         public string PartnerCode { get; set; }
 
         /// <summary>
         /// 取引先担当者名
         /// </summary>
         /// <value>取引先担当者名</value>
-        [DataMember(Name="partner_contact_info", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_contact_info", EmitDefaultValue = true)]
         public string PartnerContactInfo { get; set; }
 
         /// <summary>
         /// 請求書に表示する取引先名
         /// </summary>
         /// <value>請求書に表示する取引先名</value>
-        [DataMember(Name="partner_display_name", EmitDefaultValue=false)]
+        [DataMember(Name = "partner_display_name", EmitDefaultValue = false)]
         public string PartnerDisplayName { get; set; }
 
         /// <summary>
         /// 取引先ID
         /// </summary>
         /// <value>取引先ID</value>
-        [DataMember(Name="partner_id", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_id", EmitDefaultValue = true)]
         public int? PartnerId { get; set; }
 
         /// <summary>
         /// 取引先都道府県コード（0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄) (デフォルトはpartner_idもしくははpartner_codeで指定された取引先設定情報が補完されます)
         /// </summary>
         /// <value>取引先都道府県コード（0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄) (デフォルトはpartner_idもしくははpartner_codeで指定された取引先設定情報が補完されます)</value>
-        [DataMember(Name="partner_prefecture_code", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_prefecture_code", EmitDefaultValue = true)]
         public int? PartnerPrefectureCode { get; set; }
 
         /// <summary>
         /// 敬称（御中、様、(空白)の3つから選択）
         /// </summary>
         /// <value>敬称（御中、様、(空白)の3つから選択）</value>
-        [DataMember(Name="partner_title", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_title", EmitDefaultValue = true)]
         public string PartnerTitle { get; set; }
 
         /// <summary>
         /// 取引先郵便番号 (デフォルトはpartner_idもしくははpartner_codeで指定された取引先設定情報が補完されます)
         /// </summary>
         /// <value>取引先郵便番号 (デフォルトはpartner_idもしくははpartner_codeで指定された取引先設定情報が補完されます)</value>
-        [DataMember(Name="partner_zipcode", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_zipcode", EmitDefaultValue = true)]
         public string PartnerZipcode { get; set; }
 
         /// <summary>
         /// 支払口座
         /// </summary>
         /// <value>支払口座</value>
-        [DataMember(Name="payment_bank_info", EmitDefaultValue=false)]
+        [DataMember(Name = "payment_bank_info", EmitDefaultValue = false)]
         public string PaymentBankInfo { get; set; }
 
         /// <summary>
         /// タイトル (デフォルト: 請求書)
         /// </summary>
         /// <value>タイトル (デフォルト: 請求書)</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>

@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// InlineResponse2002Meta
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2002Meta :  IEquatable<InlineResponse2002Meta>
+    public partial class InlineResponse2002Meta : IEquatable<InlineResponse2002Meta>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2002Meta" /> class.
@@ -47,7 +47,7 @@ namespace Freee.Accounting.Models
         /// 検索条件に合致する取引の総数
         /// </summary>
         /// <value>検索条件に合致する取引の総数</value>
-        [DataMember(Name="total_count", EmitDefaultValue=false)]
+        [DataMember(Name = "total_count", EmitDefaultValue = false)]
         public int TotalCount { get; set; }
 
         /// <summary>

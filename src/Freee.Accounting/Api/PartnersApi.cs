@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="partnerCreateParams">取引先の作成</param>
         /// <returns>PartnerResponse</returns>
-        PartnerResponse CreatePartner (PartnerCreateParams partnerCreateParams);
+        PartnerResponse CreatePartner(PartnerCreateParams partnerCreateParams);
 
         /// <summary>
         /// 取引先の作成
@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="partnerCreateParams">取引先の作成</param>
         /// <returns>ApiResponse of PartnerResponse</returns>
-        ApiResponse<PartnerResponse> CreatePartnerWithHttpInfo (PartnerCreateParams partnerCreateParams);
+        ApiResponse<PartnerResponse> CreatePartnerWithHttpInfo(PartnerCreateParams partnerCreateParams);
         /// <summary>
         /// 取引先の削除
         /// </summary>
@@ -57,7 +57,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引先ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroyPartner (int id, int companyId);
+        void DestroyPartner(int id, int companyId);
 
         /// <summary>
         /// 取引先の削除
@@ -69,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引先ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroyPartnerWithHttpInfo (int id, int companyId);
+        ApiResponse<Object> DestroyPartnerWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 取引先の取得
         /// </summary>
@@ -80,7 +80,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引先ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>PartnerResponse</returns>
-        PartnerResponse GetPartner (int id, int companyId);
+        PartnerResponse GetPartner(int id, int companyId);
 
         /// <summary>
         /// 取引先の取得
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引先ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of PartnerResponse</returns>
-        ApiResponse<PartnerResponse> GetPartnerWithHttpInfo (int id, int companyId);
+        ApiResponse<PartnerResponse> GetPartnerWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 取引先一覧の取得
         /// </summary>
@@ -105,7 +105,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <returns>PartnersResponse</returns>
-        PartnersResponse GetPartners (int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string));
+        PartnersResponse GetPartners(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string));
 
         /// <summary>
         /// 取引先一覧の取得
@@ -119,7 +119,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <returns>ApiResponse of PartnersResponse</returns>
-        ApiResponse<PartnersResponse> GetPartnersWithHttpInfo (int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string));
+        ApiResponse<PartnersResponse> GetPartnersWithHttpInfo(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string));
         /// <summary>
         /// 取引先の更新
         /// </summary>
@@ -130,7 +130,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引先ID</param>
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <returns>PartnerResponse</returns>
-        PartnerResponse UpdatePartner (int id, PartnerUpdateParams partnerUpdateParams);
+        PartnerResponse UpdatePartner(int id, PartnerUpdateParams partnerUpdateParams);
 
         /// <summary>
         /// 取引先の更新
@@ -142,7 +142,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引先ID</param>
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <returns>ApiResponse of PartnerResponse</returns>
-        ApiResponse<PartnerResponse> UpdatePartnerWithHttpInfo (int id, PartnerUpdateParams partnerUpdateParams);
+        ApiResponse<PartnerResponse> UpdatePartnerWithHttpInfo(int id, PartnerUpdateParams partnerUpdateParams);
         /// <summary>
         /// 取引先の更新
         /// </summary>
@@ -153,7 +153,7 @@ namespace Freee.Accounting.Api
         /// <param name="code">取引先コード</param>
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <returns>PartnerResponse</returns>
-        PartnerResponse UpdatePartnerByCode (string code, PartnerUpdateParams partnerUpdateParams);
+        PartnerResponse UpdatePartnerByCode(string code, PartnerUpdateParams partnerUpdateParams);
 
         /// <summary>
         /// 取引先の更新
@@ -165,7 +165,7 @@ namespace Freee.Accounting.Api
         /// <param name="code">取引先コード</param>
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <returns>ApiResponse of PartnerResponse</returns>
-        ApiResponse<PartnerResponse> UpdatePartnerByCodeWithHttpInfo (string code, PartnerUpdateParams partnerUpdateParams);
+        ApiResponse<PartnerResponse> UpdatePartnerByCodeWithHttpInfo(string code, PartnerUpdateParams partnerUpdateParams);
         #endregion Synchronous Operations
     }
 
@@ -185,7 +185,7 @@ namespace Freee.Accounting.Api
         /// <param name="partnerCreateParams">取引先の作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnerResponse</returns>
-        System.Threading.Tasks.Task<PartnerResponse> CreatePartnerAsync (PartnerCreateParams partnerCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PartnerResponse> CreatePartnerAsync(PartnerCreateParams partnerCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引先の作成
@@ -197,7 +197,7 @@ namespace Freee.Accounting.Api
         /// <param name="partnerCreateParams">取引先の作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PartnerResponse>> CreatePartnerWithHttpInfoAsync (PartnerCreateParams partnerCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PartnerResponse>> CreatePartnerWithHttpInfoAsync(PartnerCreateParams partnerCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引先の削除
         /// </summary>
@@ -209,7 +209,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyPartnerAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroyPartnerAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引先の削除
@@ -222,7 +222,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyPartnerWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyPartnerWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引先の取得
         /// </summary>
@@ -234,7 +234,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnerResponse</returns>
-        System.Threading.Tasks.Task<PartnerResponse> GetPartnerAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PartnerResponse> GetPartnerAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引先の取得
@@ -247,7 +247,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PartnerResponse>> GetPartnerWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PartnerResponse>> GetPartnerWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引先一覧の取得
         /// </summary>
@@ -261,7 +261,7 @@ namespace Freee.Accounting.Api
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnersResponse</returns>
-        System.Threading.Tasks.Task<PartnersResponse> GetPartnersAsync (int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PartnersResponse> GetPartnersAsync(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引先一覧の取得
@@ -276,7 +276,7 @@ namespace Freee.Accounting.Api
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PartnersResponse>> GetPartnersWithHttpInfoAsync (int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PartnersResponse>> GetPartnersWithHttpInfoAsync(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引先の更新
         /// </summary>
@@ -288,7 +288,7 @@ namespace Freee.Accounting.Api
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnerResponse</returns>
-        System.Threading.Tasks.Task<PartnerResponse> UpdatePartnerAsync (int id, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PartnerResponse> UpdatePartnerAsync(int id, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引先の更新
@@ -301,7 +301,7 @@ namespace Freee.Accounting.Api
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PartnerResponse>> UpdatePartnerWithHttpInfoAsync (int id, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PartnerResponse>> UpdatePartnerWithHttpInfoAsync(int id, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引先の更新
         /// </summary>
@@ -313,7 +313,7 @@ namespace Freee.Accounting.Api
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnerResponse</returns>
-        System.Threading.Tasks.Task<PartnerResponse> UpdatePartnerByCodeAsync (string code, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PartnerResponse> UpdatePartnerByCodeAsync(string code, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引先の更新
@@ -326,7 +326,7 @@ namespace Freee.Accounting.Api
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PartnerResponse>> UpdatePartnerByCodeWithHttpInfoAsync (string code, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PartnerResponse>> UpdatePartnerByCodeWithHttpInfoAsync(string code, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -349,7 +349,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="PartnersApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PartnersApi() : this((string) null)
+        public PartnersApi() : this((string)null)
         {
         }
 
@@ -394,11 +394,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public PartnersApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public PartnersApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -429,7 +429,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -453,10 +453,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="partnerCreateParams">取引先の作成</param>
         /// <returns>PartnerResponse</returns>
-        public PartnerResponse CreatePartner (PartnerCreateParams partnerCreateParams)
+        public PartnerResponse CreatePartner(PartnerCreateParams partnerCreateParams)
         {
-             Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = CreatePartnerWithHttpInfo(partnerCreateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = CreatePartnerWithHttpInfo(partnerCreateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -465,7 +465,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="partnerCreateParams">取引先の作成</param>
         /// <returns>ApiResponse of PartnerResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< PartnerResponse > CreatePartnerWithHttpInfo (PartnerCreateParams partnerCreateParams)
+        public Freee.Accounting.Client.ApiResponse<PartnerResponse> CreatePartnerWithHttpInfo(PartnerCreateParams partnerCreateParams)
         {
             // verify the required parameter 'partnerCreateParams' is set
             if (partnerCreateParams == null)
@@ -499,7 +499,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< PartnerResponse >("/api/1/partners", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<PartnerResponse>("/api/1/partners", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -517,10 +517,10 @@ namespace Freee.Accounting.Api
         /// <param name="partnerCreateParams">取引先の作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnerResponse</returns>
-        public async System.Threading.Tasks.Task<PartnerResponse> CreatePartnerAsync (PartnerCreateParams partnerCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PartnerResponse> CreatePartnerAsync(PartnerCreateParams partnerCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await CreatePartnerWithHttpInfoAsync(partnerCreateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await CreatePartnerWithHttpInfoAsync(partnerCreateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -530,7 +530,7 @@ namespace Freee.Accounting.Api
         /// <param name="partnerCreateParams">取引先の作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnerResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnerResponse>> CreatePartnerWithHttpInfoAsync (PartnerCreateParams partnerCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnerResponse>> CreatePartnerWithHttpInfoAsync(PartnerCreateParams partnerCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'partnerCreateParams' is set
             if (partnerCreateParams == null)
@@ -585,9 +585,9 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引先ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroyPartner (int id, int companyId)
+        public void DestroyPartner(int id, int companyId)
         {
-             DestroyPartnerWithHttpInfo(id, companyId);
+            DestroyPartnerWithHttpInfo(id, companyId);
         }
 
         /// <summary>
@@ -597,7 +597,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引先ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroyPartnerWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroyPartnerWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -645,9 +645,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyPartnerAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroyPartnerAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyPartnerWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyPartnerWithHttpInfoAsync(id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -658,7 +658,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyPartnerWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyPartnerWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -708,10 +708,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引先ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>PartnerResponse</returns>
-        public PartnerResponse GetPartner (int id, int companyId)
+        public PartnerResponse GetPartner(int id, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = GetPartnerWithHttpInfo(id, companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = GetPartnerWithHttpInfo(id, companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -721,7 +721,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引先ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of PartnerResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< PartnerResponse > GetPartnerWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<PartnerResponse> GetPartnerWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -750,7 +750,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< PartnerResponse >("/api/1/partners/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<PartnerResponse>("/api/1/partners/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -769,10 +769,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnerResponse</returns>
-        public async System.Threading.Tasks.Task<PartnerResponse> GetPartnerAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PartnerResponse> GetPartnerAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await GetPartnerWithHttpInfoAsync(id, companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await GetPartnerWithHttpInfoAsync(id, companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -783,7 +783,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnerResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnerResponse>> GetPartnerWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnerResponse>> GetPartnerWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -835,10 +835,10 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <returns>PartnersResponse</returns>
-        public PartnersResponse GetPartners (int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string))
+        public PartnersResponse GetPartners(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string))
         {
-             Freee.Accounting.Client.ApiResponse<PartnersResponse> localVarResponse = GetPartnersWithHttpInfo(companyId, offset, limit, keyword);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<PartnersResponse> localVarResponse = GetPartnersWithHttpInfo(companyId, offset, limit, keyword);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -850,7 +850,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <returns>ApiResponse of PartnersResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< PartnersResponse > GetPartnersWithHttpInfo (int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string))
+        public Freee.Accounting.Client.ApiResponse<PartnersResponse> GetPartnersWithHttpInfo(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -890,7 +890,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< PartnersResponse >("/api/1/partners", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<PartnersResponse>("/api/1/partners", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -911,10 +911,10 @@ namespace Freee.Accounting.Api
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnersResponse</returns>
-        public async System.Threading.Tasks.Task<PartnersResponse> GetPartnersAsync (int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PartnersResponse> GetPartnersAsync(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<PartnersResponse> localVarResponse = await GetPartnersWithHttpInfoAsync(companyId, offset, limit, keyword, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<PartnersResponse> localVarResponse = await GetPartnersWithHttpInfoAsync(companyId, offset, limit, keyword, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -927,7 +927,7 @@ namespace Freee.Accounting.Api
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnersResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnersResponse>> GetPartnersWithHttpInfoAsync (int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnersResponse>> GetPartnersWithHttpInfoAsync(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -988,10 +988,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引先ID</param>
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <returns>PartnerResponse</returns>
-        public PartnerResponse UpdatePartner (int id, PartnerUpdateParams partnerUpdateParams)
+        public PartnerResponse UpdatePartner(int id, PartnerUpdateParams partnerUpdateParams)
         {
-             Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = UpdatePartnerWithHttpInfo(id, partnerUpdateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = UpdatePartnerWithHttpInfo(id, partnerUpdateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1001,7 +1001,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引先ID</param>
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <returns>ApiResponse of PartnerResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< PartnerResponse > UpdatePartnerWithHttpInfo (int id, PartnerUpdateParams partnerUpdateParams)
+        public Freee.Accounting.Client.ApiResponse<PartnerResponse> UpdatePartnerWithHttpInfo(int id, PartnerUpdateParams partnerUpdateParams)
         {
             // verify the required parameter 'partnerUpdateParams' is set
             if (partnerUpdateParams == null)
@@ -1036,7 +1036,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< PartnerResponse >("/api/1/partners/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<PartnerResponse>("/api/1/partners/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1055,10 +1055,10 @@ namespace Freee.Accounting.Api
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnerResponse</returns>
-        public async System.Threading.Tasks.Task<PartnerResponse> UpdatePartnerAsync (int id, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PartnerResponse> UpdatePartnerAsync(int id, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await UpdatePartnerWithHttpInfoAsync(id, partnerUpdateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await UpdatePartnerWithHttpInfoAsync(id, partnerUpdateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1069,7 +1069,7 @@ namespace Freee.Accounting.Api
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnerResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnerResponse>> UpdatePartnerWithHttpInfoAsync (int id, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnerResponse>> UpdatePartnerWithHttpInfoAsync(int id, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'partnerUpdateParams' is set
             if (partnerUpdateParams == null)
@@ -1125,10 +1125,10 @@ namespace Freee.Accounting.Api
         /// <param name="code">取引先コード</param>
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <returns>PartnerResponse</returns>
-        public PartnerResponse UpdatePartnerByCode (string code, PartnerUpdateParams partnerUpdateParams)
+        public PartnerResponse UpdatePartnerByCode(string code, PartnerUpdateParams partnerUpdateParams)
         {
-             Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = UpdatePartnerByCodeWithHttpInfo(code, partnerUpdateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = UpdatePartnerByCodeWithHttpInfo(code, partnerUpdateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1138,7 +1138,7 @@ namespace Freee.Accounting.Api
         /// <param name="code">取引先コード</param>
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <returns>ApiResponse of PartnerResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< PartnerResponse > UpdatePartnerByCodeWithHttpInfo (string code, PartnerUpdateParams partnerUpdateParams)
+        public Freee.Accounting.Client.ApiResponse<PartnerResponse> UpdatePartnerByCodeWithHttpInfo(string code, PartnerUpdateParams partnerUpdateParams)
         {
             // verify the required parameter 'code' is set
             if (code == null)
@@ -1177,7 +1177,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< PartnerResponse >("/api/1/partners/code/{code}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<PartnerResponse>("/api/1/partners/code/{code}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1196,10 +1196,10 @@ namespace Freee.Accounting.Api
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnerResponse</returns>
-        public async System.Threading.Tasks.Task<PartnerResponse> UpdatePartnerByCodeAsync (string code, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PartnerResponse> UpdatePartnerByCodeAsync(string code, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await UpdatePartnerByCodeWithHttpInfoAsync(code, partnerUpdateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await UpdatePartnerByCodeWithHttpInfoAsync(code, partnerUpdateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1210,7 +1210,7 @@ namespace Freee.Accounting.Api
         /// <param name="partnerUpdateParams">取引先の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnerResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnerResponse>> UpdatePartnerByCodeWithHttpInfoAsync (string code, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnerResponse>> UpdatePartnerByCodeWithHttpInfoAsync(string code, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'code' is set
             if (code == null)

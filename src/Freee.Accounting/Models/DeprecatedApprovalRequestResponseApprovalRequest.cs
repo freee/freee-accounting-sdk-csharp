@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// DeprecatedApprovalRequestResponseApprovalRequest
     /// </summary>
     [DataContract]
-    public partial class DeprecatedApprovalRequestResponseApprovalRequest :  IEquatable<DeprecatedApprovalRequestResponseApprovalRequest>
+    public partial class DeprecatedApprovalRequestResponseApprovalRequest : IEquatable<DeprecatedApprovalRequestResponseApprovalRequest>
     {
         /// <summary>
         /// 申請ステータス
@@ -48,7 +48,7 @@ namespace Freee.Accounting.Models
         /// 申請ステータス
         /// </summary>
         /// <value>申請ステータス</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DeprecatedApprovalRequestResponseApprovalRequest" /> class.
@@ -89,56 +89,56 @@ namespace Freee.Accounting.Models
         /// 申請者のユーザーID
         /// </summary>
         /// <value>申請者のユーザーID</value>
-        [DataMember(Name="applicant_id", EmitDefaultValue=false)]
+        [DataMember(Name = "applicant_id", EmitDefaultValue = false)]
         public int ApplicantId { get; set; }
 
         /// <summary>
         /// 申請日 (yyyy-mm-dd)
         /// </summary>
         /// <value>申請日 (yyyy-mm-dd)</value>
-        [DataMember(Name="application_date", EmitDefaultValue=false)]
+        [DataMember(Name = "application_date", EmitDefaultValue = false)]
         public string ApplicationDate { get; set; }
 
         /// <summary>
         /// 申請No.
         /// </summary>
         /// <value>申請No.</value>
-        [DataMember(Name="application_number", EmitDefaultValue=false)]
+        [DataMember(Name = "application_number", EmitDefaultValue = false)]
         public string ApplicationNumber { get; set; }
 
         /// <summary>
         /// 承認者のユーザーID
         /// </summary>
         /// <value>承認者のユーザーID</value>
-        [DataMember(Name="approver_id", EmitDefaultValue=true)]
+        [DataMember(Name = "approver_id", EmitDefaultValue = true)]
         public int? ApproverId { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 各種申請ID
         /// </summary>
         /// <value>各種申請ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 各種申請の項目一覧（配列）
         /// </summary>
         /// <value>各種申請の項目一覧（配列）</value>
-        [DataMember(Name="request_items", EmitDefaultValue=false)]
+        [DataMember(Name = "request_items", EmitDefaultValue = false)]
         public List<DeprecatedApprovalRequestResponseApprovalRequestRequestItems> RequestItems { get; set; }
 
         /// <summary>
         /// 申請タイトル
         /// </summary>
         /// <value>申請タイトル</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>

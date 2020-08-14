@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// PartnerCreateParamsPartnerDocSettingAttributes
     /// </summary>
     [DataContract]
-    public partial class PartnerCreateParamsPartnerDocSettingAttributes :  IEquatable<PartnerCreateParamsPartnerDocSettingAttributes>
+    public partial class PartnerCreateParamsPartnerDocSettingAttributes : IEquatable<PartnerCreateParamsPartnerDocSettingAttributes>
     {
         /// <summary>
         /// 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)
@@ -60,7 +60,7 @@ namespace Freee.Accounting.Models
         /// 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)
         /// </summary>
         /// <value>請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)</value>
-        [DataMember(Name="sending_method", EmitDefaultValue=false)]
+        [DataMember(Name = "sending_method", EmitDefaultValue = false)]
         public SendingMethodEnum? SendingMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PartnerCreateParamsPartnerDocSettingAttributes" /> class.

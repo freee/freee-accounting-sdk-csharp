@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// PartnersResponseAddressAttributes
     /// </summary>
     [DataContract]
-    public partial class PartnersResponseAddressAttributes :  IEquatable<PartnersResponseAddressAttributes>
+    public partial class PartnersResponseAddressAttributes : IEquatable<PartnersResponseAddressAttributes>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PartnersResponseAddressAttributes" /> class.
@@ -48,28 +48,28 @@ namespace Freee.Accounting.Models
         /// 都道府県コード（0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄
         /// </summary>
         /// <value>都道府県コード（0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄</value>
-        [DataMember(Name="prefecture_code", EmitDefaultValue=false)]
+        [DataMember(Name = "prefecture_code", EmitDefaultValue = false)]
         public int PrefectureCode { get; set; }
 
         /// <summary>
         /// 市区町村・番地
         /// </summary>
         /// <value>市区町村・番地</value>
-        [DataMember(Name="street_name1", EmitDefaultValue=true)]
+        [DataMember(Name = "street_name1", EmitDefaultValue = true)]
         public string StreetName1 { get; set; }
 
         /// <summary>
         /// 建物名・部屋番号など
         /// </summary>
         /// <value>建物名・部屋番号など</value>
-        [DataMember(Name="street_name2", EmitDefaultValue=true)]
+        [DataMember(Name = "street_name2", EmitDefaultValue = true)]
         public string StreetName2 { get; set; }
 
         /// <summary>
         /// 郵便番号
         /// </summary>
         /// <value>郵便番号</value>
-        [DataMember(Name="zipcode", EmitDefaultValue=true)]
+        [DataMember(Name = "zipcode", EmitDefaultValue = true)]
         public string Zipcode { get; set; }
 
         /// <summary>

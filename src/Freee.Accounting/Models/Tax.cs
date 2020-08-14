@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// Tax
     /// </summary>
     [DataContract]
-    public partial class Tax :  IEquatable<Tax>
+    public partial class Tax : IEquatable<Tax>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Tax" /> class.
@@ -53,21 +53,21 @@ namespace Freee.Accounting.Models
         /// 税区分コード
         /// </summary>
         /// <value>税区分コード</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public int Code { get; set; }
 
         /// <summary>
         /// 税区分名
         /// </summary>
         /// <value>税区分名</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// 税区分名（日本語表示用）
         /// </summary>
         /// <value>税区分名（日本語表示用）</value>
-        [DataMember(Name="name_ja", EmitDefaultValue=false)]
+        [DataMember(Name = "name_ja", EmitDefaultValue = false)]
         public string NameJa { get; set; }
 
         /// <summary>

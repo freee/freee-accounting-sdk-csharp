@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// InlineResponse2006
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2006 :  IEquatable<InlineResponse2006>
+    public partial class InlineResponse2006 : IEquatable<InlineResponse2006>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2006" /> class.
@@ -47,7 +47,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets ManualJournals
         /// </summary>
-        [DataMember(Name="manual_journals", EmitDefaultValue=false)]
+        [DataMember(Name = "manual_journals", EmitDefaultValue = false)]
         public List<ManualJournal> ManualJournals { get; set; }
 
         /// <summary>

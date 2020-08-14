@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="walletTxnParams">明細の作成 (optional)</param>
         /// <returns>WalletTxnResponse</returns>
-        WalletTxnResponse CreateWalletTxn (WalletTxnParams walletTxnParams = default(WalletTxnParams));
+        WalletTxnResponse CreateWalletTxn(WalletTxnParams walletTxnParams = default(WalletTxnParams));
 
         /// <summary>
         /// 明細の作成
@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="walletTxnParams">明細の作成 (optional)</param>
         /// <returns>ApiResponse of WalletTxnResponse</returns>
-        ApiResponse<WalletTxnResponse> CreateWalletTxnWithHttpInfo (WalletTxnParams walletTxnParams = default(WalletTxnParams));
+        ApiResponse<WalletTxnResponse> CreateWalletTxnWithHttpInfo(WalletTxnParams walletTxnParams = default(WalletTxnParams));
         /// <summary>
         /// 明細の削除
         /// </summary>
@@ -57,7 +57,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">明細ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroyWalletTxn (int id, int companyId);
+        void DestroyWalletTxn(int id, int companyId);
 
         /// <summary>
         /// 明細の削除
@@ -69,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">明細ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroyWalletTxnWithHttpInfo (int id, int companyId);
+        ApiResponse<Object> DestroyWalletTxnWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 明細の取得
         /// </summary>
@@ -80,7 +80,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">明細ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>WalletTxnResponse</returns>
-        WalletTxnResponse GetWalletTxn (int id, int companyId);
+        WalletTxnResponse GetWalletTxn(int id, int companyId);
 
         /// <summary>
         /// 明細の取得
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">明細ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of WalletTxnResponse</returns>
-        ApiResponse<WalletTxnResponse> GetWalletTxnWithHttpInfo (int id, int companyId);
+        ApiResponse<WalletTxnResponse> GetWalletTxnWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 明細一覧の取得
         /// </summary>
@@ -109,7 +109,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>InlineResponse20017</returns>
-        InlineResponse20017 GetWalletTxns (int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?));
+        InlineResponse20017 GetWalletTxns(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// 明細一覧の取得
@@ -127,7 +127,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20017</returns>
-        ApiResponse<InlineResponse20017> GetWalletTxnsWithHttpInfo (int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<InlineResponse20017> GetWalletTxnsWithHttpInfo(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?));
         #endregion Synchronous Operations
     }
 
@@ -147,7 +147,7 @@ namespace Freee.Accounting.Api
         /// <param name="walletTxnParams">明細の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WalletTxnResponse</returns>
-        System.Threading.Tasks.Task<WalletTxnResponse> CreateWalletTxnAsync (WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WalletTxnResponse> CreateWalletTxnAsync(WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 明細の作成
@@ -159,7 +159,7 @@ namespace Freee.Accounting.Api
         /// <param name="walletTxnParams">明細の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WalletTxnResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WalletTxnResponse>> CreateWalletTxnWithHttpInfoAsync (WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WalletTxnResponse>> CreateWalletTxnWithHttpInfoAsync(WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 明細の削除
         /// </summary>
@@ -171,7 +171,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyWalletTxnAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroyWalletTxnAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 明細の削除
@@ -184,7 +184,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyWalletTxnWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyWalletTxnWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 明細の取得
         /// </summary>
@@ -196,7 +196,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WalletTxnResponse</returns>
-        System.Threading.Tasks.Task<WalletTxnResponse> GetWalletTxnAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WalletTxnResponse> GetWalletTxnAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 明細の取得
@@ -209,7 +209,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WalletTxnResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WalletTxnResponse>> GetWalletTxnWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WalletTxnResponse>> GetWalletTxnWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 明細一覧の取得
         /// </summary>
@@ -227,7 +227,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20017</returns>
-        System.Threading.Tasks.Task<InlineResponse20017> GetWalletTxnsAsync (int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse20017> GetWalletTxnsAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 明細一覧の取得
@@ -246,7 +246,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20017>> GetWalletTxnsWithHttpInfoAsync (int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20017>> GetWalletTxnsWithHttpInfoAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -269,7 +269,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="WalletTxnsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public WalletTxnsApi() : this((string) null)
+        public WalletTxnsApi() : this((string)null)
         {
         }
 
@@ -314,11 +314,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public WalletTxnsApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public WalletTxnsApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -349,7 +349,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -373,10 +373,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="walletTxnParams">明細の作成 (optional)</param>
         /// <returns>WalletTxnResponse</returns>
-        public WalletTxnResponse CreateWalletTxn (WalletTxnParams walletTxnParams = default(WalletTxnParams))
+        public WalletTxnResponse CreateWalletTxn(WalletTxnParams walletTxnParams = default(WalletTxnParams))
         {
-             Freee.Accounting.Client.ApiResponse<WalletTxnResponse> localVarResponse = CreateWalletTxnWithHttpInfo(walletTxnParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<WalletTxnResponse> localVarResponse = CreateWalletTxnWithHttpInfo(walletTxnParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -385,7 +385,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="walletTxnParams">明細の作成 (optional)</param>
         /// <returns>ApiResponse of WalletTxnResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< WalletTxnResponse > CreateWalletTxnWithHttpInfo (WalletTxnParams walletTxnParams = default(WalletTxnParams))
+        public Freee.Accounting.Client.ApiResponse<WalletTxnResponse> CreateWalletTxnWithHttpInfo(WalletTxnParams walletTxnParams = default(WalletTxnParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -415,7 +415,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< WalletTxnResponse >("/api/1/wallet_txns", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<WalletTxnResponse>("/api/1/wallet_txns", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -433,10 +433,10 @@ namespace Freee.Accounting.Api
         /// <param name="walletTxnParams">明細の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WalletTxnResponse</returns>
-        public async System.Threading.Tasks.Task<WalletTxnResponse> CreateWalletTxnAsync (WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WalletTxnResponse> CreateWalletTxnAsync(WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<WalletTxnResponse> localVarResponse = await CreateWalletTxnWithHttpInfoAsync(walletTxnParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<WalletTxnResponse> localVarResponse = await CreateWalletTxnWithHttpInfoAsync(walletTxnParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -446,7 +446,7 @@ namespace Freee.Accounting.Api
         /// <param name="walletTxnParams">明細の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WalletTxnResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<WalletTxnResponse>> CreateWalletTxnWithHttpInfoAsync (WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<WalletTxnResponse>> CreateWalletTxnWithHttpInfoAsync(WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -497,9 +497,9 @@ namespace Freee.Accounting.Api
         /// <param name="id">明細ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroyWalletTxn (int id, int companyId)
+        public void DestroyWalletTxn(int id, int companyId)
         {
-             DestroyWalletTxnWithHttpInfo(id, companyId);
+            DestroyWalletTxnWithHttpInfo(id, companyId);
         }
 
         /// <summary>
@@ -509,7 +509,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">明細ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroyWalletTxnWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroyWalletTxnWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -557,9 +557,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyWalletTxnAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroyWalletTxnAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyWalletTxnWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyWalletTxnWithHttpInfoAsync(id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -570,7 +570,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyWalletTxnWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyWalletTxnWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -620,10 +620,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">明細ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>WalletTxnResponse</returns>
-        public WalletTxnResponse GetWalletTxn (int id, int companyId)
+        public WalletTxnResponse GetWalletTxn(int id, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<WalletTxnResponse> localVarResponse = GetWalletTxnWithHttpInfo(id, companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<WalletTxnResponse> localVarResponse = GetWalletTxnWithHttpInfo(id, companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -633,7 +633,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">明細ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of WalletTxnResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< WalletTxnResponse > GetWalletTxnWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<WalletTxnResponse> GetWalletTxnWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -662,7 +662,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< WalletTxnResponse >("/api/1/wallet_txns/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<WalletTxnResponse>("/api/1/wallet_txns/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -681,10 +681,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WalletTxnResponse</returns>
-        public async System.Threading.Tasks.Task<WalletTxnResponse> GetWalletTxnAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WalletTxnResponse> GetWalletTxnAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<WalletTxnResponse> localVarResponse = await GetWalletTxnWithHttpInfoAsync(id, companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<WalletTxnResponse> localVarResponse = await GetWalletTxnWithHttpInfoAsync(id, companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -695,7 +695,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WalletTxnResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<WalletTxnResponse>> GetWalletTxnWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<WalletTxnResponse>> GetWalletTxnWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -751,10 +751,10 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>InlineResponse20017</returns>
-        public InlineResponse20017 GetWalletTxns (int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?))
+        public InlineResponse20017 GetWalletTxns(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20017> localVarResponse = GetWalletTxnsWithHttpInfo(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20017> localVarResponse = GetWalletTxnsWithHttpInfo(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -770,7 +770,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20017</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse20017 > GetWalletTxnsWithHttpInfo (int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse20017> GetWalletTxnsWithHttpInfo(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -826,7 +826,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse20017 >("/api/1/wallet_txns", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20017>("/api/1/wallet_txns", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -851,10 +851,10 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20017</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20017> GetWalletTxnsAsync (int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse20017> GetWalletTxnsAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20017> localVarResponse = await GetWalletTxnsWithHttpInfoAsync(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20017> localVarResponse = await GetWalletTxnsWithHttpInfoAsync(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -871,7 +871,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20017>> GetWalletTxnsWithHttpInfoAsync (int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20017>> GetWalletTxnsWithHttpInfoAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

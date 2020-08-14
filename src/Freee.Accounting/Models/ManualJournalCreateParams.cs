@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ManualJournalCreateParams
     /// </summary>
     [DataContract]
-    public partial class ManualJournalCreateParams :  IEquatable<ManualJournalCreateParams>
+    public partial class ManualJournalCreateParams : IEquatable<ManualJournalCreateParams>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ManualJournalCreateParams" /> class.
@@ -55,27 +55,27 @@ namespace Freee.Accounting.Models
         /// 決算整理仕訳フラグ（falseまたは未指定の場合: 日常仕訳）
         /// </summary>
         /// <value>決算整理仕訳フラグ（falseまたは未指定の場合: 日常仕訳）</value>
-        [DataMember(Name="adjustment", EmitDefaultValue=false)]
+        [DataMember(Name = "adjustment", EmitDefaultValue = false)]
         public bool Adjustment { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// Gets or Sets Details
         /// </summary>
-        [DataMember(Name="details", EmitDefaultValue=false)]
+        [DataMember(Name = "details", EmitDefaultValue = false)]
         public List<ManualJournalCreateParamsDetails> Details { get; set; }
 
         /// <summary>
         /// 発生日 (yyyy-mm-dd)
         /// </summary>
         /// <value>発生日 (yyyy-mm-dd)</value>
-        [DataMember(Name="issue_date", EmitDefaultValue=false)]
+        [DataMember(Name = "issue_date", EmitDefaultValue = false)]
         public string IssueDate { get; set; }
 
         /// <summary>

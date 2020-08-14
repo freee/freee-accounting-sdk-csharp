@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ApprovalRequestResponseApprovalRequest
     /// </summary>
     [DataContract]
-    public partial class ApprovalRequestResponseApprovalRequest :  IEquatable<ApprovalRequestResponseApprovalRequest>
+    public partial class ApprovalRequestResponseApprovalRequest : IEquatable<ApprovalRequestResponseApprovalRequest>
     {
         /// <summary>
         /// 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
@@ -72,7 +72,7 @@ namespace Freee.Accounting.Models
         /// 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
         /// </summary>
         /// <value>申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestResponseApprovalRequest" /> class.
@@ -131,104 +131,104 @@ namespace Freee.Accounting.Models
         /// 申請者のユーザーID
         /// </summary>
         /// <value>申請者のユーザーID</value>
-        [DataMember(Name="applicant_id", EmitDefaultValue=false)]
+        [DataMember(Name = "applicant_id", EmitDefaultValue = false)]
         public int ApplicantId { get; set; }
 
         /// <summary>
         /// 申請日 (yyyy-mm-dd)
         /// </summary>
         /// <value>申請日 (yyyy-mm-dd)</value>
-        [DataMember(Name="application_date", EmitDefaultValue=false)]
+        [DataMember(Name = "application_date", EmitDefaultValue = false)]
         public string ApplicationDate { get; set; }
 
         /// <summary>
         /// 申請No.
         /// </summary>
         /// <value>申請No.</value>
-        [DataMember(Name="application_number", EmitDefaultValue=false)]
+        [DataMember(Name = "application_number", EmitDefaultValue = false)]
         public string ApplicationNumber { get; set; }
 
         /// <summary>
         /// 各種申請の承認履歴（配列）
         /// </summary>
         /// <value>各種申請の承認履歴（配列）</value>
-        [DataMember(Name="approval_flow_logs", EmitDefaultValue=false)]
+        [DataMember(Name = "approval_flow_logs", EmitDefaultValue = false)]
         public List<ApprovalRequestResponseApprovalRequestApprovalFlowLogs> ApprovalFlowLogs { get; set; }
 
         /// <summary>
         /// 申請経路ID
         /// </summary>
         /// <value>申請経路ID</value>
-        [DataMember(Name="approval_flow_route_id", EmitDefaultValue=false)]
+        [DataMember(Name = "approval_flow_route_id", EmitDefaultValue = false)]
         public int ApprovalFlowRouteId { get; set; }
 
         /// <summary>
         /// Gets or Sets ApprovalRequestForm
         /// </summary>
-        [DataMember(Name="approval_request_form", EmitDefaultValue=false)]
+        [DataMember(Name = "approval_request_form", EmitDefaultValue = false)]
         public ApprovalRequestResponseApprovalRequestApprovalRequestForm ApprovalRequestForm { get; set; }
 
         /// <summary>
         /// 承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、    approversはレスポンスに含まれるようになります。    その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。
         /// </summary>
         /// <value>承認者（配列）   承認ステップのresource_typeがunspecified (指定なし)の場合はapproversはレスポンスに含まれません。   しかし、resource_typeがunspecifiedの承認ステップにおいて誰かが承認・却下・差し戻しのいずれかのアクションを取った後は、    approversはレスポンスに含まれるようになります。    その場合approversにはアクションを行ったステップのIDとアクションを行ったユーザーのIDが含まれます。</value>
-        [DataMember(Name="approvers", EmitDefaultValue=false)]
+        [DataMember(Name = "approvers", EmitDefaultValue = false)]
         public List<ApprovalRequestResponseApprovalRequestApprovers> Approvers { get; set; }
 
         /// <summary>
         /// 各種申請のコメント一覧（配列）
         /// </summary>
         /// <value>各種申請のコメント一覧（配列）</value>
-        [DataMember(Name="comments", EmitDefaultValue=false)]
+        [DataMember(Name = "comments", EmitDefaultValue = false)]
         public List<ApprovalRequestResponseApprovalRequestComments> Comments { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 現在のround。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。
         /// </summary>
         /// <value>現在のround。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。</value>
-        [DataMember(Name="current_round", EmitDefaultValue=false)]
+        [DataMember(Name = "current_round", EmitDefaultValue = false)]
         public int CurrentRound { get; set; }
 
         /// <summary>
         /// 現在承認ステップID
         /// </summary>
         /// <value>現在承認ステップID</value>
-        [DataMember(Name="current_step_id", EmitDefaultValue=true)]
+        [DataMember(Name = "current_step_id", EmitDefaultValue = true)]
         public int? CurrentStepId { get; set; }
 
         /// <summary>
         /// 申請フォームID
         /// </summary>
         /// <value>申請フォームID</value>
-        [DataMember(Name="form_id", EmitDefaultValue=false)]
+        [DataMember(Name = "form_id", EmitDefaultValue = false)]
         public int FormId { get; set; }
 
         /// <summary>
         /// 各種申請ID
         /// </summary>
         /// <value>各種申請ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 各種申請の項目一覧（配列）
         /// </summary>
         /// <value>各種申請の項目一覧（配列）</value>
-        [DataMember(Name="request_items", EmitDefaultValue=false)]
+        [DataMember(Name = "request_items", EmitDefaultValue = false)]
         public List<ApprovalRequestResponseApprovalRequestRequestItems> RequestItems { get; set; }
 
         /// <summary>
         /// 申請タイトル
         /// </summary>
         /// <value>申請タイトル</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>

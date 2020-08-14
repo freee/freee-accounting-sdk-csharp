@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// TrialBsThreeYearsResponse
     /// </summary>
     [DataContract]
-    public partial class TrialBsThreeYearsResponse :  IEquatable<TrialBsThreeYearsResponse>
+    public partial class TrialBsThreeYearsResponse : IEquatable<TrialBsThreeYearsResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TrialBsThreeYearsResponse" /> class.
@@ -49,14 +49,14 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets TrialBsThreeYears
         /// </summary>
-        [DataMember(Name="trial_bs_three_years", EmitDefaultValue=false)]
+        [DataMember(Name = "trial_bs_three_years", EmitDefaultValue = false)]
         public TrialBsThreeYearsResponseTrialBsThreeYears TrialBsThreeYears { get; set; }
 
         /// <summary>
         /// 集計結果が最新かどうか
         /// </summary>
         /// <value>集計結果が最新かどうか</value>
-        [DataMember(Name="up_to_date", EmitDefaultValue=false)]
+        [DataMember(Name = "up_to_date", EmitDefaultValue = false)]
         public bool UpToDate { get; set; }
 
         /// <summary>

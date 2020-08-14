@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ReceiptUpdateParams
     /// </summary>
     [DataContract]
-    public partial class ReceiptUpdateParams :  IEquatable<ReceiptUpdateParams>
+    public partial class ReceiptUpdateParams : IEquatable<ReceiptUpdateParams>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReceiptUpdateParams" /> class.
@@ -52,21 +52,21 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// メモ (255文字以内)
         /// </summary>
         /// <value>メモ (255文字以内)</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// 取引日 (yyyy-mm-dd)
         /// </summary>
         /// <value>取引日 (yyyy-mm-dd)</value>
-        [DataMember(Name="issue_date", EmitDefaultValue=false)]
+        [DataMember(Name = "issue_date", EmitDefaultValue = false)]
         public string IssueDate { get; set; }
 
         /// <summary>

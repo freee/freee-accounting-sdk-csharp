@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// SelectablesIndexResponseAccountCategories
     /// </summary>
     [DataContract]
-    public partial class SelectablesIndexResponseAccountCategories :  IEquatable<SelectablesIndexResponseAccountCategories>
+    public partial class SelectablesIndexResponseAccountCategories : IEquatable<SelectablesIndexResponseAccountCategories>
     {
         /// <summary>
         /// 収支
@@ -54,7 +54,7 @@ namespace Freee.Accounting.Models
         /// 収支
         /// </summary>
         /// <value>収支</value>
-        [DataMember(Name="balance", EmitDefaultValue=false)]
+        [DataMember(Name = "balance", EmitDefaultValue = false)]
         public BalanceEnum Balance { get; set; }
         /// <summary>
         /// 事業形態（個人事業主: personal、法人: corporate）
@@ -81,7 +81,7 @@ namespace Freee.Accounting.Models
         /// 事業形態（個人事業主: personal、法人: corporate）
         /// </summary>
         /// <value>事業形態（個人事業主: personal、法人: corporate）</value>
-        [DataMember(Name="org_code", EmitDefaultValue=false)]
+        [DataMember(Name = "org_code", EmitDefaultValue = false)]
         public OrgCodeEnum OrgCode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectablesIndexResponseAccountCategories" /> class.
@@ -114,28 +114,28 @@ namespace Freee.Accounting.Models
         /// 勘定科目の一覧
         /// </summary>
         /// <value>勘定科目の一覧</value>
-        [DataMember(Name="account_items", EmitDefaultValue=false)]
+        [DataMember(Name = "account_items", EmitDefaultValue = false)]
         public List<SelectablesIndexResponseAccountItems> AccountItems { get; set; }
 
         /// <summary>
         /// カテゴリーの説明
         /// </summary>
         /// <value>カテゴリーの説明</value>
-        [DataMember(Name="desc", EmitDefaultValue=false)]
+        [DataMember(Name = "desc", EmitDefaultValue = false)]
         public string Desc { get; set; }
 
         /// <summary>
         /// カテゴリーコード
         /// </summary>
         /// <value>カテゴリーコード</value>
-        [DataMember(Name="role", EmitDefaultValue=false)]
+        [DataMember(Name = "role", EmitDefaultValue = false)]
         public string Role { get; set; }
 
         /// <summary>
         /// カテゴリー名
         /// </summary>
         /// <value>カテゴリー名</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>

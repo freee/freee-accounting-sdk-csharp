@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// TrialPlResponseTrialPlSections
     /// </summary>
     [DataContract]
-    public partial class TrialPlResponseTrialPlSections :  IEquatable<TrialPlResponseTrialPlSections>
+    public partial class TrialPlResponseTrialPlSections : IEquatable<TrialPlResponseTrialPlSections>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TrialPlResponseTrialPlSections" /> class.
@@ -59,49 +59,49 @@ namespace Freee.Accounting.Models
         /// 期末残高
         /// </summary>
         /// <value>期末残高</value>
-        [DataMember(Name="closing_balance", EmitDefaultValue=false)]
+        [DataMember(Name = "closing_balance", EmitDefaultValue = false)]
         public int ClosingBalance { get; set; }
 
         /// <summary>
         /// 構成比
         /// </summary>
         /// <value>構成比</value>
-        [DataMember(Name="composition_ratio", EmitDefaultValue=false)]
+        [DataMember(Name = "composition_ratio", EmitDefaultValue = false)]
         public decimal CompositionRatio { get; set; }
 
         /// <summary>
         /// 貸方金額
         /// </summary>
         /// <value>貸方金額</value>
-        [DataMember(Name="credit_amount", EmitDefaultValue=false)]
+        [DataMember(Name = "credit_amount", EmitDefaultValue = false)]
         public int CreditAmount { get; set; }
 
         /// <summary>
         /// 借方金額
         /// </summary>
         /// <value>借方金額</value>
-        [DataMember(Name="debit_amount", EmitDefaultValue=false)]
+        [DataMember(Name = "debit_amount", EmitDefaultValue = false)]
         public int DebitAmount { get; set; }
 
         /// <summary>
         /// 部門ID
         /// </summary>
         /// <value>部門ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 部門名
         /// </summary>
         /// <value>部門名</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// 期首残高
         /// </summary>
         /// <value>期首残高</value>
-        [DataMember(Name="opening_balance", EmitDefaultValue=false)]
+        [DataMember(Name = "opening_balance", EmitDefaultValue = false)]
         public int OpeningBalance { get; set; }
 
         /// <summary>

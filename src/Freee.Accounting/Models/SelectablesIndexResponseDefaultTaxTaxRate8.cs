@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// SelectablesIndexResponseDefaultTaxTaxRate8
     /// </summary>
     [DataContract]
-    public partial class SelectablesIndexResponseDefaultTaxTaxRate8 :  IEquatable<SelectablesIndexResponseDefaultTaxTaxRate8>
+    public partial class SelectablesIndexResponseDefaultTaxTaxRate8 : IEquatable<SelectablesIndexResponseDefaultTaxTaxRate8>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectablesIndexResponseDefaultTaxTaxRate8" /> class.
@@ -44,14 +44,14 @@ namespace Freee.Accounting.Models
         /// 税区分ID
         /// </summary>
         /// <value>税区分ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 税区分
         /// </summary>
         /// <value>税区分</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>

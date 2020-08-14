@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="approvalRequestCreateParams">各種申請の作成 (optional)</param>
         /// <returns>ApprovalRequestResponse</returns>
-        ApprovalRequestResponse CreateApprovalRequest (ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams));
+        ApprovalRequestResponse CreateApprovalRequest(ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams));
 
         /// <summary>
         /// 各種申請の作成
@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="approvalRequestCreateParams">各種申請の作成 (optional)</param>
         /// <returns>ApiResponse of ApprovalRequestResponse</returns>
-        ApiResponse<ApprovalRequestResponse> CreateApprovalRequestWithHttpInfo (ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams));
+        ApiResponse<ApprovalRequestResponse> CreateApprovalRequestWithHttpInfo(ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams));
         /// <summary>
         /// 各種申請の削除
         /// </summary>
@@ -57,7 +57,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroyApprovalRequest (int id, int companyId);
+        void DestroyApprovalRequest(int id, int companyId);
 
         /// <summary>
         /// 各種申請の削除
@@ -69,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroyApprovalRequestWithHttpInfo (int id, int companyId);
+        ApiResponse<Object> DestroyApprovalRequestWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 各種申請の取得
         /// </summary>
@@ -80,7 +80,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApprovalRequestResponse</returns>
-        ApprovalRequestResponse GetApprovalRequest (int id, int companyId);
+        ApprovalRequestResponse GetApprovalRequest(int id, int companyId);
 
         /// <summary>
         /// 各種申請の取得
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of ApprovalRequestResponse</returns>
-        ApiResponse<ApprovalRequestResponse> GetApprovalRequestWithHttpInfo (int id, int companyId);
+        ApiResponse<ApprovalRequestResponse> GetApprovalRequestWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 各種申請の申請フォームの取得
         /// </summary>
@@ -103,7 +103,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">申請フォームID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApprovalRequestFormResponse</returns>
-        ApprovalRequestFormResponse GetApprovalRequestForm (int id, int companyId);
+        ApprovalRequestFormResponse GetApprovalRequestForm(int id, int companyId);
 
         /// <summary>
         /// 各種申請の申請フォームの取得
@@ -115,7 +115,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">申請フォームID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of ApprovalRequestFormResponse</returns>
-        ApiResponse<ApprovalRequestFormResponse> GetApprovalRequestFormWithHttpInfo (int id, int companyId);
+        ApiResponse<ApprovalRequestFormResponse> GetApprovalRequestFormWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 各種申請の申請フォーム一覧の取得
         /// </summary>
@@ -125,7 +125,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>InlineResponse200</returns>
-        InlineResponse200 GetApprovalRequestForms (int companyId);
+        InlineResponse200 GetApprovalRequestForms(int companyId);
 
         /// <summary>
         /// 各種申請の申請フォーム一覧の取得
@@ -136,7 +136,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of InlineResponse200</returns>
-        ApiResponse<InlineResponse200> GetApprovalRequestFormsWithHttpInfo (int companyId);
+        ApiResponse<InlineResponse200> GetApprovalRequestFormsWithHttpInfo(int companyId);
         /// <summary>
         /// 各種申請の一覧
         /// </summary>
@@ -156,7 +156,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <returns>ApprovalRequestsIndexResponse</returns>
-        ApprovalRequestsIndexResponse GetApprovalRequests (int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?));
+        ApprovalRequestsIndexResponse GetApprovalRequests(int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// 各種申請の一覧
@@ -177,7 +177,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <returns>ApiResponse of ApprovalRequestsIndexResponse</returns>
-        ApiResponse<ApprovalRequestsIndexResponse> GetApprovalRequestsWithHttpInfo (int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<ApprovalRequestsIndexResponse> GetApprovalRequestsWithHttpInfo(int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?));
         /// <summary>
         /// 各種申請の更新
         /// </summary>
@@ -188,7 +188,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="approvalRequestUpdateParams">各種申請の更新</param>
         /// <returns>ApprovalRequestResponse</returns>
-        ApprovalRequestResponse UpdateApprovalRequest (int id, ApprovalRequestUpdateParams approvalRequestUpdateParams);
+        ApprovalRequestResponse UpdateApprovalRequest(int id, ApprovalRequestUpdateParams approvalRequestUpdateParams);
 
         /// <summary>
         /// 各種申請の更新
@@ -200,7 +200,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="approvalRequestUpdateParams">各種申請の更新</param>
         /// <returns>ApiResponse of ApprovalRequestResponse</returns>
-        ApiResponse<ApprovalRequestResponse> UpdateApprovalRequestWithHttpInfo (int id, ApprovalRequestUpdateParams approvalRequestUpdateParams);
+        ApiResponse<ApprovalRequestResponse> UpdateApprovalRequestWithHttpInfo(int id, ApprovalRequestUpdateParams approvalRequestUpdateParams);
         /// <summary>
         /// 各種申請の承認操作
         /// </summary>
@@ -211,7 +211,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="approvalRequestActionCreateParams">各種申請の承認操作</param>
         /// <returns>ApprovalRequestResponse</returns>
-        ApprovalRequestResponse UpdateApprovalRequestAction (int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams);
+        ApprovalRequestResponse UpdateApprovalRequestAction(int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams);
 
         /// <summary>
         /// 各種申請の承認操作
@@ -223,7 +223,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="approvalRequestActionCreateParams">各種申請の承認操作</param>
         /// <returns>ApiResponse of ApprovalRequestResponse</returns>
-        ApiResponse<ApprovalRequestResponse> UpdateApprovalRequestActionWithHttpInfo (int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams);
+        ApiResponse<ApprovalRequestResponse> UpdateApprovalRequestActionWithHttpInfo(int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams);
         #endregion Synchronous Operations
     }
 
@@ -243,7 +243,7 @@ namespace Freee.Accounting.Api
         /// <param name="approvalRequestCreateParams">各種申請の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalRequestResponse</returns>
-        System.Threading.Tasks.Task<ApprovalRequestResponse> CreateApprovalRequestAsync (ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApprovalRequestResponse> CreateApprovalRequestAsync(ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 各種申請の作成
@@ -255,7 +255,7 @@ namespace Freee.Accounting.Api
         /// <param name="approvalRequestCreateParams">各種申請の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalRequestResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApprovalRequestResponse>> CreateApprovalRequestWithHttpInfoAsync (ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApprovalRequestResponse>> CreateApprovalRequestWithHttpInfoAsync(ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 各種申請の削除
         /// </summary>
@@ -267,7 +267,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyApprovalRequestAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroyApprovalRequestAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 各種申請の削除
@@ -280,7 +280,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyApprovalRequestWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyApprovalRequestWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 各種申請の取得
         /// </summary>
@@ -292,7 +292,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalRequestResponse</returns>
-        System.Threading.Tasks.Task<ApprovalRequestResponse> GetApprovalRequestAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApprovalRequestResponse> GetApprovalRequestAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 各種申請の取得
@@ -305,7 +305,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalRequestResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApprovalRequestResponse>> GetApprovalRequestWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApprovalRequestResponse>> GetApprovalRequestWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 各種申請の申請フォームの取得
         /// </summary>
@@ -317,7 +317,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalRequestFormResponse</returns>
-        System.Threading.Tasks.Task<ApprovalRequestFormResponse> GetApprovalRequestFormAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApprovalRequestFormResponse> GetApprovalRequestFormAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 各種申請の申請フォームの取得
@@ -330,7 +330,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalRequestFormResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApprovalRequestFormResponse>> GetApprovalRequestFormWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApprovalRequestFormResponse>> GetApprovalRequestFormWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 各種申請の申請フォーム一覧の取得
         /// </summary>
@@ -341,7 +341,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse200</returns>
-        System.Threading.Tasks.Task<InlineResponse200> GetApprovalRequestFormsAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse200> GetApprovalRequestFormsAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 各種申請の申請フォーム一覧の取得
@@ -353,7 +353,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> GetApprovalRequestFormsWithHttpInfoAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> GetApprovalRequestFormsWithHttpInfoAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 各種申請の一覧
         /// </summary>
@@ -374,7 +374,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalRequestsIndexResponse</returns>
-        System.Threading.Tasks.Task<ApprovalRequestsIndexResponse> GetApprovalRequestsAsync (int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApprovalRequestsIndexResponse> GetApprovalRequestsAsync(int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 各種申請の一覧
@@ -396,7 +396,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalRequestsIndexResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApprovalRequestsIndexResponse>> GetApprovalRequestsWithHttpInfoAsync (int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApprovalRequestsIndexResponse>> GetApprovalRequestsWithHttpInfoAsync(int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 各種申請の更新
         /// </summary>
@@ -408,7 +408,7 @@ namespace Freee.Accounting.Api
         /// <param name="approvalRequestUpdateParams">各種申請の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalRequestResponse</returns>
-        System.Threading.Tasks.Task<ApprovalRequestResponse> UpdateApprovalRequestAsync (int id, ApprovalRequestUpdateParams approvalRequestUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApprovalRequestResponse> UpdateApprovalRequestAsync(int id, ApprovalRequestUpdateParams approvalRequestUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 各種申請の更新
@@ -421,7 +421,7 @@ namespace Freee.Accounting.Api
         /// <param name="approvalRequestUpdateParams">各種申請の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalRequestResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApprovalRequestResponse>> UpdateApprovalRequestWithHttpInfoAsync (int id, ApprovalRequestUpdateParams approvalRequestUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApprovalRequestResponse>> UpdateApprovalRequestWithHttpInfoAsync(int id, ApprovalRequestUpdateParams approvalRequestUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 各種申請の承認操作
         /// </summary>
@@ -433,7 +433,7 @@ namespace Freee.Accounting.Api
         /// <param name="approvalRequestActionCreateParams">各種申請の承認操作</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalRequestResponse</returns>
-        System.Threading.Tasks.Task<ApprovalRequestResponse> UpdateApprovalRequestActionAsync (int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApprovalRequestResponse> UpdateApprovalRequestActionAsync(int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 各種申請の承認操作
@@ -446,7 +446,7 @@ namespace Freee.Accounting.Api
         /// <param name="approvalRequestActionCreateParams">各種申請の承認操作</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalRequestResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApprovalRequestResponse>> UpdateApprovalRequestActionWithHttpInfoAsync (int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApprovalRequestResponse>> UpdateApprovalRequestActionWithHttpInfoAsync(int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -469,7 +469,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="ApprovalRequestsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ApprovalRequestsApi() : this((string) null)
+        public ApprovalRequestsApi() : this((string)null)
         {
         }
 
@@ -514,11 +514,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public ApprovalRequestsApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public ApprovalRequestsApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -549,7 +549,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -573,10 +573,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="approvalRequestCreateParams">各種申請の作成 (optional)</param>
         /// <returns>ApprovalRequestResponse</returns>
-        public ApprovalRequestResponse CreateApprovalRequest (ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams))
+        public ApprovalRequestResponse CreateApprovalRequest(ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams))
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = CreateApprovalRequestWithHttpInfo(approvalRequestCreateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = CreateApprovalRequestWithHttpInfo(approvalRequestCreateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -585,7 +585,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="approvalRequestCreateParams">各種申請の作成 (optional)</param>
         /// <returns>ApiResponse of ApprovalRequestResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ApprovalRequestResponse > CreateApprovalRequestWithHttpInfo (ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams))
+        public Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> CreateApprovalRequestWithHttpInfo(ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -615,7 +615,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< ApprovalRequestResponse >("/api/1/approval_requests", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ApprovalRequestResponse>("/api/1/approval_requests", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -633,10 +633,10 @@ namespace Freee.Accounting.Api
         /// <param name="approvalRequestCreateParams">各種申請の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalRequestResponse</returns>
-        public async System.Threading.Tasks.Task<ApprovalRequestResponse> CreateApprovalRequestAsync (ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApprovalRequestResponse> CreateApprovalRequestAsync(ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = await CreateApprovalRequestWithHttpInfoAsync(approvalRequestCreateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = await CreateApprovalRequestWithHttpInfoAsync(approvalRequestCreateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -646,7 +646,7 @@ namespace Freee.Accounting.Api
         /// <param name="approvalRequestCreateParams">各種申請の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalRequestResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse>> CreateApprovalRequestWithHttpInfoAsync (ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse>> CreateApprovalRequestWithHttpInfoAsync(ApprovalRequestCreateParams approvalRequestCreateParams = default(ApprovalRequestCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -697,9 +697,9 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroyApprovalRequest (int id, int companyId)
+        public void DestroyApprovalRequest(int id, int companyId)
         {
-             DestroyApprovalRequestWithHttpInfo(id, companyId);
+            DestroyApprovalRequestWithHttpInfo(id, companyId);
         }
 
         /// <summary>
@@ -709,7 +709,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroyApprovalRequestWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroyApprovalRequestWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -757,9 +757,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyApprovalRequestAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroyApprovalRequestAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyApprovalRequestWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyApprovalRequestWithHttpInfoAsync(id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -770,7 +770,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyApprovalRequestWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyApprovalRequestWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -820,10 +820,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApprovalRequestResponse</returns>
-        public ApprovalRequestResponse GetApprovalRequest (int id, int companyId)
+        public ApprovalRequestResponse GetApprovalRequest(int id, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = GetApprovalRequestWithHttpInfo(id, companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = GetApprovalRequestWithHttpInfo(id, companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -833,7 +833,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of ApprovalRequestResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ApprovalRequestResponse > GetApprovalRequestWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> GetApprovalRequestWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -862,7 +862,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< ApprovalRequestResponse >("/api/1/approval_requests/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ApprovalRequestResponse>("/api/1/approval_requests/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -881,10 +881,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalRequestResponse</returns>
-        public async System.Threading.Tasks.Task<ApprovalRequestResponse> GetApprovalRequestAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApprovalRequestResponse> GetApprovalRequestAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = await GetApprovalRequestWithHttpInfoAsync(id, companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = await GetApprovalRequestWithHttpInfoAsync(id, companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -895,7 +895,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalRequestResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse>> GetApprovalRequestWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse>> GetApprovalRequestWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -945,10 +945,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">申請フォームID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApprovalRequestFormResponse</returns>
-        public ApprovalRequestFormResponse GetApprovalRequestForm (int id, int companyId)
+        public ApprovalRequestFormResponse GetApprovalRequestForm(int id, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalRequestFormResponse> localVarResponse = GetApprovalRequestFormWithHttpInfo(id, companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalRequestFormResponse> localVarResponse = GetApprovalRequestFormWithHttpInfo(id, companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -958,7 +958,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">申請フォームID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of ApprovalRequestFormResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ApprovalRequestFormResponse > GetApprovalRequestFormWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<ApprovalRequestFormResponse> GetApprovalRequestFormWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -987,7 +987,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< ApprovalRequestFormResponse >("/api/1/approval_requests/forms/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ApprovalRequestFormResponse>("/api/1/approval_requests/forms/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1006,10 +1006,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalRequestFormResponse</returns>
-        public async System.Threading.Tasks.Task<ApprovalRequestFormResponse> GetApprovalRequestFormAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApprovalRequestFormResponse> GetApprovalRequestFormAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalRequestFormResponse> localVarResponse = await GetApprovalRequestFormWithHttpInfoAsync(id, companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalRequestFormResponse> localVarResponse = await GetApprovalRequestFormWithHttpInfoAsync(id, companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1020,7 +1020,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalRequestFormResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalRequestFormResponse>> GetApprovalRequestFormWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalRequestFormResponse>> GetApprovalRequestFormWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -1069,10 +1069,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>InlineResponse200</returns>
-        public InlineResponse200 GetApprovalRequestForms (int companyId)
+        public InlineResponse200 GetApprovalRequestForms(int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse200> localVarResponse = GetApprovalRequestFormsWithHttpInfo(companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse200> localVarResponse = GetApprovalRequestFormsWithHttpInfo(companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1081,7 +1081,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of InlineResponse200</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse200 > GetApprovalRequestFormsWithHttpInfo (int companyId)
+        public Freee.Accounting.Client.ApiResponse<InlineResponse200> GetApprovalRequestFormsWithHttpInfo(int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -1109,7 +1109,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse200 >("/api/1/approval_requests/forms", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse200>("/api/1/approval_requests/forms", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1127,10 +1127,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse200</returns>
-        public async System.Threading.Tasks.Task<InlineResponse200> GetApprovalRequestFormsAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse200> GetApprovalRequestFormsAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse200> localVarResponse = await GetApprovalRequestFormsWithHttpInfoAsync(companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse200> localVarResponse = await GetApprovalRequestFormsWithHttpInfoAsync(companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1140,7 +1140,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse200>> GetApprovalRequestFormsWithHttpInfoAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse200>> GetApprovalRequestFormsWithHttpInfoAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -1198,10 +1198,10 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <returns>ApprovalRequestsIndexResponse</returns>
-        public ApprovalRequestsIndexResponse GetApprovalRequests (int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?))
+        public ApprovalRequestsIndexResponse GetApprovalRequests(int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalRequestsIndexResponse> localVarResponse = GetApprovalRequestsWithHttpInfo(companyId, status, applicationNumber, title, formId, startApplicationDate, endApplicationDate, applicantId, approverId, offset, limit);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalRequestsIndexResponse> localVarResponse = GetApprovalRequestsWithHttpInfo(companyId, status, applicationNumber, title, formId, startApplicationDate, endApplicationDate, applicantId, approverId, offset, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1220,7 +1220,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <returns>ApiResponse of ApprovalRequestsIndexResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ApprovalRequestsIndexResponse > GetApprovalRequestsWithHttpInfo (int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<ApprovalRequestsIndexResponse> GetApprovalRequestsWithHttpInfo(int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -1288,7 +1288,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< ApprovalRequestsIndexResponse >("/api/1/approval_requests", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ApprovalRequestsIndexResponse>("/api/1/approval_requests", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1316,10 +1316,10 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalRequestsIndexResponse</returns>
-        public async System.Threading.Tasks.Task<ApprovalRequestsIndexResponse> GetApprovalRequestsAsync (int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApprovalRequestsIndexResponse> GetApprovalRequestsAsync(int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalRequestsIndexResponse> localVarResponse = await GetApprovalRequestsWithHttpInfoAsync(companyId, status, applicationNumber, title, formId, startApplicationDate, endApplicationDate, applicantId, approverId, offset, limit, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalRequestsIndexResponse> localVarResponse = await GetApprovalRequestsWithHttpInfoAsync(companyId, status, applicationNumber, title, formId, startApplicationDate, endApplicationDate, applicantId, approverId, offset, limit, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1339,7 +1339,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalRequestsIndexResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalRequestsIndexResponse>> GetApprovalRequestsWithHttpInfoAsync (int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalRequestsIndexResponse>> GetApprovalRequestsWithHttpInfoAsync(int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -1428,10 +1428,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="approvalRequestUpdateParams">各種申請の更新</param>
         /// <returns>ApprovalRequestResponse</returns>
-        public ApprovalRequestResponse UpdateApprovalRequest (int id, ApprovalRequestUpdateParams approvalRequestUpdateParams)
+        public ApprovalRequestResponse UpdateApprovalRequest(int id, ApprovalRequestUpdateParams approvalRequestUpdateParams)
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = UpdateApprovalRequestWithHttpInfo(id, approvalRequestUpdateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = UpdateApprovalRequestWithHttpInfo(id, approvalRequestUpdateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1441,7 +1441,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="approvalRequestUpdateParams">各種申請の更新</param>
         /// <returns>ApiResponse of ApprovalRequestResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ApprovalRequestResponse > UpdateApprovalRequestWithHttpInfo (int id, ApprovalRequestUpdateParams approvalRequestUpdateParams)
+        public Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> UpdateApprovalRequestWithHttpInfo(int id, ApprovalRequestUpdateParams approvalRequestUpdateParams)
         {
             // verify the required parameter 'approvalRequestUpdateParams' is set
             if (approvalRequestUpdateParams == null)
@@ -1476,7 +1476,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< ApprovalRequestResponse >("/api/1/approval_requests/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<ApprovalRequestResponse>("/api/1/approval_requests/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1495,10 +1495,10 @@ namespace Freee.Accounting.Api
         /// <param name="approvalRequestUpdateParams">各種申請の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalRequestResponse</returns>
-        public async System.Threading.Tasks.Task<ApprovalRequestResponse> UpdateApprovalRequestAsync (int id, ApprovalRequestUpdateParams approvalRequestUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApprovalRequestResponse> UpdateApprovalRequestAsync(int id, ApprovalRequestUpdateParams approvalRequestUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = await UpdateApprovalRequestWithHttpInfoAsync(id, approvalRequestUpdateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = await UpdateApprovalRequestWithHttpInfoAsync(id, approvalRequestUpdateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1509,7 +1509,7 @@ namespace Freee.Accounting.Api
         /// <param name="approvalRequestUpdateParams">各種申請の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalRequestResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse>> UpdateApprovalRequestWithHttpInfoAsync (int id, ApprovalRequestUpdateParams approvalRequestUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse>> UpdateApprovalRequestWithHttpInfoAsync(int id, ApprovalRequestUpdateParams approvalRequestUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'approvalRequestUpdateParams' is set
             if (approvalRequestUpdateParams == null)
@@ -1565,10 +1565,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="approvalRequestActionCreateParams">各種申請の承認操作</param>
         /// <returns>ApprovalRequestResponse</returns>
-        public ApprovalRequestResponse UpdateApprovalRequestAction (int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams)
+        public ApprovalRequestResponse UpdateApprovalRequestAction(int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams)
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = UpdateApprovalRequestActionWithHttpInfo(id, approvalRequestActionCreateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = UpdateApprovalRequestActionWithHttpInfo(id, approvalRequestActionCreateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1578,7 +1578,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">各種申請ID</param>
         /// <param name="approvalRequestActionCreateParams">各種申請の承認操作</param>
         /// <returns>ApiResponse of ApprovalRequestResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ApprovalRequestResponse > UpdateApprovalRequestActionWithHttpInfo (int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams)
+        public Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> UpdateApprovalRequestActionWithHttpInfo(int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams)
         {
             // verify the required parameter 'approvalRequestActionCreateParams' is set
             if (approvalRequestActionCreateParams == null)
@@ -1613,7 +1613,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< ApprovalRequestResponse >("/api/1/approval_requests/{id}/actions", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ApprovalRequestResponse>("/api/1/approval_requests/{id}/actions", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1632,10 +1632,10 @@ namespace Freee.Accounting.Api
         /// <param name="approvalRequestActionCreateParams">各種申請の承認操作</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalRequestResponse</returns>
-        public async System.Threading.Tasks.Task<ApprovalRequestResponse> UpdateApprovalRequestActionAsync (int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApprovalRequestResponse> UpdateApprovalRequestActionAsync(int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = await UpdateApprovalRequestActionWithHttpInfoAsync(id, approvalRequestActionCreateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse> localVarResponse = await UpdateApprovalRequestActionWithHttpInfoAsync(id, approvalRequestActionCreateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1646,7 +1646,7 @@ namespace Freee.Accounting.Api
         /// <param name="approvalRequestActionCreateParams">各種申請の承認操作</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalRequestResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse>> UpdateApprovalRequestActionWithHttpInfoAsync (int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalRequestResponse>> UpdateApprovalRequestActionWithHttpInfoAsync(int id, ApprovalRequestActionCreateParams approvalRequestActionCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'approvalRequestActionCreateParams' is set
             if (approvalRequestActionCreateParams == null)

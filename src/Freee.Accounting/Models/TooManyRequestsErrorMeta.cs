@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// TooManyRequestsErrorMeta
     /// </summary>
     [DataContract]
-    public partial class TooManyRequestsErrorMeta :  IEquatable<TooManyRequestsErrorMeta>
+    public partial class TooManyRequestsErrorMeta : IEquatable<TooManyRequestsErrorMeta>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TooManyRequestsErrorMeta" /> class.
@@ -54,28 +54,28 @@ namespace Freee.Accounting.Models
         /// 設定されている上限値
         /// </summary>
         /// <value>設定されている上限値</value>
-        [DataMember(Name="limit", EmitDefaultValue=false)]
+        [DataMember(Name = "limit", EmitDefaultValue = false)]
         public int Limit { get; set; }
 
         /// <summary>
         /// 使用回数をカウントする期間 (秒)
         /// </summary>
         /// <value>使用回数をカウントする期間 (秒)</value>
-        [DataMember(Name="period", EmitDefaultValue=false)]
+        [DataMember(Name = "period", EmitDefaultValue = false)]
         public int Period { get; set; }
 
         /// <summary>
         /// 上限に達するまでの使用可能回数
         /// </summary>
         /// <value>上限に達するまでの使用可能回数</value>
-        [DataMember(Name="remaining", EmitDefaultValue=false)]
+        [DataMember(Name = "remaining", EmitDefaultValue = false)]
         public int Remaining { get; set; }
 
         /// <summary>
         /// （上限値に達した場合）使用回数がリセットされる時刻
         /// </summary>
         /// <value>（上限値に達した場合）使用回数がリセットされる時刻</value>
-        [DataMember(Name="reset", EmitDefaultValue=false)]
+        [DataMember(Name = "reset", EmitDefaultValue = false)]
         public string Reset { get; set; }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagParams">メモタグの作成</param>
         /// <returns>TagResponse</returns>
-        TagResponse CreateTag (TagParams tagParams);
+        TagResponse CreateTag(TagParams tagParams);
 
         /// <summary>
         /// メモタグの作成
@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagParams">メモタグの作成</param>
         /// <returns>ApiResponse of TagResponse</returns>
-        ApiResponse<TagResponse> CreateTagWithHttpInfo (TagParams tagParams);
+        ApiResponse<TagResponse> CreateTagWithHttpInfo(TagParams tagParams);
         /// <summary>
         /// メモタグの削除
         /// </summary>
@@ -57,7 +57,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">タグID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroyTag (int id, int companyId);
+        void DestroyTag(int id, int companyId);
 
         /// <summary>
         /// メモタグの削除
@@ -69,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">タグID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroyTagWithHttpInfo (int id, int companyId);
+        ApiResponse<Object> DestroyTagWithHttpInfo(int id, int companyId);
         /// <summary>
         /// メモタグの詳細情報の取得
         /// </summary>
@@ -80,7 +80,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">タグID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>TagResponse</returns>
-        TagResponse GetTag (int id, int companyId);
+        TagResponse GetTag(int id, int companyId);
 
         /// <summary>
         /// メモタグの詳細情報の取得
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">タグID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of TagResponse</returns>
-        ApiResponse<TagResponse> GetTagWithHttpInfo (int id, int companyId);
+        ApiResponse<TagResponse> GetTagWithHttpInfo(int id, int companyId);
         /// <summary>
         /// メモタグ一覧の取得
         /// </summary>
@@ -104,7 +104,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>InlineResponse20011</returns>
-        InlineResponse20011 GetTags (int companyId, int? offset = default(int?), int? limit = default(int?));
+        InlineResponse20011 GetTags(int companyId, int? offset = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// メモタグ一覧の取得
@@ -117,7 +117,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>ApiResponse of InlineResponse20011</returns>
-        ApiResponse<InlineResponse20011> GetTagsWithHttpInfo (int companyId, int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<InlineResponse20011> GetTagsWithHttpInfo(int companyId, int? offset = default(int?), int? limit = default(int?));
         /// <summary>
         /// メモタグの更新
         /// </summary>
@@ -128,7 +128,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">メモタグID</param>
         /// <param name="tagParams">メモタグの更新 (optional)</param>
         /// <returns>TagResponse</returns>
-        TagResponse UpdateTag (int id, TagParams tagParams = default(TagParams));
+        TagResponse UpdateTag(int id, TagParams tagParams = default(TagParams));
 
         /// <summary>
         /// メモタグの更新
@@ -140,7 +140,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">メモタグID</param>
         /// <param name="tagParams">メモタグの更新 (optional)</param>
         /// <returns>ApiResponse of TagResponse</returns>
-        ApiResponse<TagResponse> UpdateTagWithHttpInfo (int id, TagParams tagParams = default(TagParams));
+        ApiResponse<TagResponse> UpdateTagWithHttpInfo(int id, TagParams tagParams = default(TagParams));
         #endregion Synchronous Operations
     }
 
@@ -160,7 +160,7 @@ namespace Freee.Accounting.Api
         /// <param name="tagParams">メモタグの作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TagResponse</returns>
-        System.Threading.Tasks.Task<TagResponse> CreateTagAsync (TagParams tagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TagResponse> CreateTagAsync(TagParams tagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// メモタグの作成
@@ -172,7 +172,7 @@ namespace Freee.Accounting.Api
         /// <param name="tagParams">メモタグの作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TagResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TagResponse>> CreateTagWithHttpInfoAsync (TagParams tagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TagResponse>> CreateTagWithHttpInfoAsync(TagParams tagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// メモタグの削除
         /// </summary>
@@ -184,7 +184,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyTagAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroyTagAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// メモタグの削除
@@ -197,7 +197,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyTagWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyTagWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// メモタグの詳細情報の取得
         /// </summary>
@@ -209,7 +209,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TagResponse</returns>
-        System.Threading.Tasks.Task<TagResponse> GetTagAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TagResponse> GetTagAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// メモタグの詳細情報の取得
@@ -222,7 +222,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TagResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TagResponse>> GetTagWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TagResponse>> GetTagWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// メモタグ一覧の取得
         /// </summary>
@@ -235,7 +235,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20011</returns>
-        System.Threading.Tasks.Task<InlineResponse20011> GetTagsAsync (int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse20011> GetTagsAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// メモタグ一覧の取得
@@ -249,7 +249,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20011>> GetTagsWithHttpInfoAsync (int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20011>> GetTagsWithHttpInfoAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// メモタグの更新
         /// </summary>
@@ -261,7 +261,7 @@ namespace Freee.Accounting.Api
         /// <param name="tagParams">メモタグの更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TagResponse</returns>
-        System.Threading.Tasks.Task<TagResponse> UpdateTagAsync (int id, TagParams tagParams = default(TagParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TagResponse> UpdateTagAsync(int id, TagParams tagParams = default(TagParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// メモタグの更新
@@ -274,7 +274,7 @@ namespace Freee.Accounting.Api
         /// <param name="tagParams">メモタグの更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TagResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TagResponse>> UpdateTagWithHttpInfoAsync (int id, TagParams tagParams = default(TagParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TagResponse>> UpdateTagWithHttpInfoAsync(int id, TagParams tagParams = default(TagParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -297,7 +297,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="TagsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public TagsApi() : this((string) null)
+        public TagsApi() : this((string)null)
         {
         }
 
@@ -342,11 +342,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public TagsApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public TagsApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -377,7 +377,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -401,10 +401,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagParams">メモタグの作成</param>
         /// <returns>TagResponse</returns>
-        public TagResponse CreateTag (TagParams tagParams)
+        public TagResponse CreateTag(TagParams tagParams)
         {
-             Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = CreateTagWithHttpInfo(tagParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = CreateTagWithHttpInfo(tagParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -413,7 +413,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagParams">メモタグの作成</param>
         /// <returns>ApiResponse of TagResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TagResponse > CreateTagWithHttpInfo (TagParams tagParams)
+        public Freee.Accounting.Client.ApiResponse<TagResponse> CreateTagWithHttpInfo(TagParams tagParams)
         {
             // verify the required parameter 'tagParams' is set
             if (tagParams == null)
@@ -447,7 +447,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< TagResponse >("/api/1/tags", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TagResponse>("/api/1/tags", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -465,10 +465,10 @@ namespace Freee.Accounting.Api
         /// <param name="tagParams">メモタグの作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TagResponse</returns>
-        public async System.Threading.Tasks.Task<TagResponse> CreateTagAsync (TagParams tagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TagResponse> CreateTagAsync(TagParams tagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = await CreateTagWithHttpInfoAsync(tagParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = await CreateTagWithHttpInfoAsync(tagParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -478,7 +478,7 @@ namespace Freee.Accounting.Api
         /// <param name="tagParams">メモタグの作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TagResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TagResponse>> CreateTagWithHttpInfoAsync (TagParams tagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TagResponse>> CreateTagWithHttpInfoAsync(TagParams tagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'tagParams' is set
             if (tagParams == null)
@@ -533,9 +533,9 @@ namespace Freee.Accounting.Api
         /// <param name="id">タグID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroyTag (int id, int companyId)
+        public void DestroyTag(int id, int companyId)
         {
-             DestroyTagWithHttpInfo(id, companyId);
+            DestroyTagWithHttpInfo(id, companyId);
         }
 
         /// <summary>
@@ -545,7 +545,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">タグID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroyTagWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroyTagWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -593,9 +593,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyTagAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroyTagAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyTagWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyTagWithHttpInfoAsync(id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -606,7 +606,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyTagWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyTagWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -656,10 +656,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">タグID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>TagResponse</returns>
-        public TagResponse GetTag (int id, int companyId)
+        public TagResponse GetTag(int id, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = GetTagWithHttpInfo(id, companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = GetTagWithHttpInfo(id, companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -669,7 +669,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">タグID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of TagResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TagResponse > GetTagWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<TagResponse> GetTagWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -698,7 +698,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< TagResponse >("/api/1/tags/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TagResponse>("/api/1/tags/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -717,10 +717,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TagResponse</returns>
-        public async System.Threading.Tasks.Task<TagResponse> GetTagAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TagResponse> GetTagAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = await GetTagWithHttpInfoAsync(id, companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = await GetTagWithHttpInfoAsync(id, companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -731,7 +731,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TagResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TagResponse>> GetTagWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TagResponse>> GetTagWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -782,10 +782,10 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>InlineResponse20011</returns>
-        public InlineResponse20011 GetTags (int companyId, int? offset = default(int?), int? limit = default(int?))
+        public InlineResponse20011 GetTags(int companyId, int? offset = default(int?), int? limit = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20011> localVarResponse = GetTagsWithHttpInfo(companyId, offset, limit);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20011> localVarResponse = GetTagsWithHttpInfo(companyId, offset, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -796,7 +796,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>ApiResponse of InlineResponse20011</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse20011 > GetTagsWithHttpInfo (int companyId, int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse20011> GetTagsWithHttpInfo(int companyId, int? offset = default(int?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -832,7 +832,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse20011 >("/api/1/tags", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20011>("/api/1/tags", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -852,10 +852,10 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20011</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20011> GetTagsAsync (int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse20011> GetTagsAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20011> localVarResponse = await GetTagsWithHttpInfoAsync(companyId, offset, limit, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20011> localVarResponse = await GetTagsWithHttpInfoAsync(companyId, offset, limit, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -867,7 +867,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20011>> GetTagsWithHttpInfoAsync (int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20011>> GetTagsWithHttpInfoAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -924,10 +924,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">メモタグID</param>
         /// <param name="tagParams">メモタグの更新 (optional)</param>
         /// <returns>TagResponse</returns>
-        public TagResponse UpdateTag (int id, TagParams tagParams = default(TagParams))
+        public TagResponse UpdateTag(int id, TagParams tagParams = default(TagParams))
         {
-             Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = UpdateTagWithHttpInfo(id, tagParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = UpdateTagWithHttpInfo(id, tagParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -937,7 +937,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">メモタグID</param>
         /// <param name="tagParams">メモタグの更新 (optional)</param>
         /// <returns>ApiResponse of TagResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TagResponse > UpdateTagWithHttpInfo (int id, TagParams tagParams = default(TagParams))
+        public Freee.Accounting.Client.ApiResponse<TagResponse> UpdateTagWithHttpInfo(int id, TagParams tagParams = default(TagParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -968,7 +968,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< TagResponse >("/api/1/tags/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<TagResponse>("/api/1/tags/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -987,10 +987,10 @@ namespace Freee.Accounting.Api
         /// <param name="tagParams">メモタグの更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TagResponse</returns>
-        public async System.Threading.Tasks.Task<TagResponse> UpdateTagAsync (int id, TagParams tagParams = default(TagParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TagResponse> UpdateTagAsync(int id, TagParams tagParams = default(TagParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = await UpdateTagWithHttpInfoAsync(id, tagParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = await UpdateTagWithHttpInfoAsync(id, tagParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1001,7 +1001,7 @@ namespace Freee.Accounting.Api
         /// <param name="tagParams">メモタグの更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TagResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TagResponse>> UpdateTagWithHttpInfoAsync (int id, TagParams tagParams = default(TagParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TagResponse>> UpdateTagWithHttpInfoAsync(int id, TagParams tagParams = default(TagParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

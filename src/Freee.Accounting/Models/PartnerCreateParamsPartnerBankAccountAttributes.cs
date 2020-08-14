@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// PartnerCreateParamsPartnerBankAccountAttributes
     /// </summary>
     [DataContract]
-    public partial class PartnerCreateParamsPartnerBankAccountAttributes :  IEquatable<PartnerCreateParamsPartnerBankAccountAttributes>
+    public partial class PartnerCreateParamsPartnerBankAccountAttributes : IEquatable<PartnerCreateParamsPartnerBankAccountAttributes>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PartnerCreateParamsPartnerBankAccountAttributes" /> class.
@@ -60,70 +60,70 @@ namespace Freee.Accounting.Models
         /// 受取人名（カナ）
         /// </summary>
         /// <value>受取人名（カナ）</value>
-        [DataMember(Name="account_name", EmitDefaultValue=false)]
+        [DataMember(Name = "account_name", EmitDefaultValue = false)]
         public string AccountName { get; set; }
 
         /// <summary>
         /// 口座番号
         /// </summary>
         /// <value>口座番号</value>
-        [DataMember(Name="account_number", EmitDefaultValue=false)]
+        [DataMember(Name = "account_number", EmitDefaultValue = false)]
         public string AccountNumber { get; set; }
 
         /// <summary>
         /// 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)
         /// </summary>
         /// <value>口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)</value>
-        [DataMember(Name="account_type", EmitDefaultValue=false)]
+        [DataMember(Name = "account_type", EmitDefaultValue = false)]
         public string AccountType { get; set; }
 
         /// <summary>
         /// 銀行番号
         /// </summary>
         /// <value>銀行番号</value>
-        [DataMember(Name="bank_code", EmitDefaultValue=false)]
+        [DataMember(Name = "bank_code", EmitDefaultValue = false)]
         public string BankCode { get; set; }
 
         /// <summary>
         /// 銀行名
         /// </summary>
         /// <value>銀行名</value>
-        [DataMember(Name="bank_name", EmitDefaultValue=false)]
+        [DataMember(Name = "bank_name", EmitDefaultValue = false)]
         public string BankName { get; set; }
 
         /// <summary>
         /// 銀行名（カナ）
         /// </summary>
         /// <value>銀行名（カナ）</value>
-        [DataMember(Name="bank_name_kana", EmitDefaultValue=false)]
+        [DataMember(Name = "bank_name_kana", EmitDefaultValue = false)]
         public string BankNameKana { get; set; }
 
         /// <summary>
         /// 支店番号
         /// </summary>
         /// <value>支店番号</value>
-        [DataMember(Name="branch_code", EmitDefaultValue=false)]
+        [DataMember(Name = "branch_code", EmitDefaultValue = false)]
         public string BranchCode { get; set; }
 
         /// <summary>
         /// 支店名（カナ）
         /// </summary>
         /// <value>支店名（カナ）</value>
-        [DataMember(Name="branch_kana", EmitDefaultValue=false)]
+        [DataMember(Name = "branch_kana", EmitDefaultValue = false)]
         public string BranchKana { get; set; }
 
         /// <summary>
         /// 支店名
         /// </summary>
         /// <value>支店名</value>
-        [DataMember(Name="branch_name", EmitDefaultValue=false)]
+        [DataMember(Name = "branch_name", EmitDefaultValue = false)]
         public string BranchName { get; set; }
 
         /// <summary>
         /// 受取人名
         /// </summary>
         /// <value>受取人名</value>
-        [DataMember(Name="long_account_name", EmitDefaultValue=false)]
+        [DataMember(Name = "long_account_name", EmitDefaultValue = false)]
         public string LongAccountName { get; set; }
 
         /// <summary>

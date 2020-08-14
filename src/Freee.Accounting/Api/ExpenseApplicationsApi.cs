@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="expenseApplicationCreateParams">経費申請の作成 (optional)</param>
         /// <returns>ExpenseApplicationResponse</returns>
-        ExpenseApplicationResponse CreateExpenseApplication (ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams));
+        ExpenseApplicationResponse CreateExpenseApplication(ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams));
 
         /// <summary>
         /// 経費申請の作成
@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="expenseApplicationCreateParams">経費申請の作成 (optional)</param>
         /// <returns>ApiResponse of ExpenseApplicationResponse</returns>
-        ApiResponse<ExpenseApplicationResponse> CreateExpenseApplicationWithHttpInfo (ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams));
+        ApiResponse<ExpenseApplicationResponse> CreateExpenseApplicationWithHttpInfo(ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams));
         /// <summary>
         /// 経費申請の削除
         /// </summary>
@@ -57,7 +57,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroyExpenseApplication (int id, int companyId);
+        void DestroyExpenseApplication(int id, int companyId);
 
         /// <summary>
         /// 経費申請の削除
@@ -69,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroyExpenseApplicationWithHttpInfo (int id, int companyId);
+        ApiResponse<Object> DestroyExpenseApplicationWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 経費申請詳細の取得
         /// </summary>
@@ -77,7 +77,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">経費申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ExpenseApplicationResponse</returns>
-        ExpenseApplicationResponse GetExpenseApplication (int id, int companyId);
+        ExpenseApplicationResponse GetExpenseApplication(int id, int companyId);
 
         /// <summary>
         /// 経費申請詳細の取得
@@ -89,7 +89,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">経費申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of ExpenseApplicationResponse</returns>
-        ApiResponse<ExpenseApplicationResponse> GetExpenseApplicationWithHttpInfo (int id, int companyId);
+        ApiResponse<ExpenseApplicationResponse> GetExpenseApplicationWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 経費申請一覧の取得
         /// </summary>
@@ -98,7 +98,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <returns>ExpenseApplicationsIndexResponse</returns>
-        ExpenseApplicationsIndexResponse GetExpenseApplications (int companyId, int? offset = default(int?), int? limit = default(int?));
+        ExpenseApplicationsIndexResponse GetExpenseApplications(int companyId, int? offset = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// 経費申請一覧の取得
@@ -111,7 +111,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <returns>ApiResponse of ExpenseApplicationsIndexResponse</returns>
-        ApiResponse<ExpenseApplicationsIndexResponse> GetExpenseApplicationsWithHttpInfo (int companyId, int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<ExpenseApplicationsIndexResponse> GetExpenseApplicationsWithHttpInfo(int companyId, int? offset = default(int?), int? limit = default(int?));
         /// <summary>
         /// 経費申請の更新
         /// </summary>
@@ -122,7 +122,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="expenseApplicationUpdateParams">経費申請の更新 (optional)</param>
         /// <returns>ExpenseApplicationResponse</returns>
-        ExpenseApplicationResponse UpdateExpenseApplication (int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams));
+        ExpenseApplicationResponse UpdateExpenseApplication(int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams));
 
         /// <summary>
         /// 経費申請の更新
@@ -134,7 +134,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="expenseApplicationUpdateParams">経費申請の更新 (optional)</param>
         /// <returns>ApiResponse of ExpenseApplicationResponse</returns>
-        ApiResponse<ExpenseApplicationResponse> UpdateExpenseApplicationWithHttpInfo (int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams));
+        ApiResponse<ExpenseApplicationResponse> UpdateExpenseApplicationWithHttpInfo(int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams));
         #endregion Synchronous Operations
     }
 
@@ -154,7 +154,7 @@ namespace Freee.Accounting.Api
         /// <param name="expenseApplicationCreateParams">経費申請の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ExpenseApplicationResponse</returns>
-        System.Threading.Tasks.Task<ExpenseApplicationResponse> CreateExpenseApplicationAsync (ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ExpenseApplicationResponse> CreateExpenseApplicationAsync(ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 経費申請の作成
@@ -166,7 +166,7 @@ namespace Freee.Accounting.Api
         /// <param name="expenseApplicationCreateParams">経費申請の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ExpenseApplicationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExpenseApplicationResponse>> CreateExpenseApplicationWithHttpInfoAsync (ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ExpenseApplicationResponse>> CreateExpenseApplicationWithHttpInfoAsync(ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 経費申請の削除
         /// </summary>
@@ -178,7 +178,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyExpenseApplicationAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroyExpenseApplicationAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 経費申請の削除
@@ -191,7 +191,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyExpenseApplicationWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyExpenseApplicationWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 経費申請詳細の取得
         /// </summary>
@@ -203,7 +203,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ExpenseApplicationResponse</returns>
-        System.Threading.Tasks.Task<ExpenseApplicationResponse> GetExpenseApplicationAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ExpenseApplicationResponse> GetExpenseApplicationAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 経費申請詳細の取得
@@ -216,7 +216,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ExpenseApplicationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExpenseApplicationResponse>> GetExpenseApplicationWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ExpenseApplicationResponse>> GetExpenseApplicationWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 経費申請一覧の取得
         /// </summary>
@@ -229,7 +229,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ExpenseApplicationsIndexResponse</returns>
-        System.Threading.Tasks.Task<ExpenseApplicationsIndexResponse> GetExpenseApplicationsAsync (int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ExpenseApplicationsIndexResponse> GetExpenseApplicationsAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 経費申請一覧の取得
@@ -243,7 +243,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ExpenseApplicationsIndexResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExpenseApplicationsIndexResponse>> GetExpenseApplicationsWithHttpInfoAsync (int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ExpenseApplicationsIndexResponse>> GetExpenseApplicationsWithHttpInfoAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 経費申請の更新
         /// </summary>
@@ -255,7 +255,7 @@ namespace Freee.Accounting.Api
         /// <param name="expenseApplicationUpdateParams">経費申請の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ExpenseApplicationResponse</returns>
-        System.Threading.Tasks.Task<ExpenseApplicationResponse> UpdateExpenseApplicationAsync (int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ExpenseApplicationResponse> UpdateExpenseApplicationAsync(int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 経費申請の更新
@@ -268,7 +268,7 @@ namespace Freee.Accounting.Api
         /// <param name="expenseApplicationUpdateParams">経費申請の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ExpenseApplicationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExpenseApplicationResponse>> UpdateExpenseApplicationWithHttpInfoAsync (int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ExpenseApplicationResponse>> UpdateExpenseApplicationWithHttpInfoAsync(int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -291,7 +291,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="ExpenseApplicationsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ExpenseApplicationsApi() : this((string) null)
+        public ExpenseApplicationsApi() : this((string)null)
         {
         }
 
@@ -336,11 +336,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public ExpenseApplicationsApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public ExpenseApplicationsApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -371,7 +371,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -395,10 +395,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="expenseApplicationCreateParams">経費申請の作成 (optional)</param>
         /// <returns>ExpenseApplicationResponse</returns>
-        public ExpenseApplicationResponse CreateExpenseApplication (ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams))
+        public ExpenseApplicationResponse CreateExpenseApplication(ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams))
         {
-             Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> localVarResponse = CreateExpenseApplicationWithHttpInfo(expenseApplicationCreateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> localVarResponse = CreateExpenseApplicationWithHttpInfo(expenseApplicationCreateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -407,7 +407,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="expenseApplicationCreateParams">経費申請の作成 (optional)</param>
         /// <returns>ApiResponse of ExpenseApplicationResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ExpenseApplicationResponse > CreateExpenseApplicationWithHttpInfo (ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams))
+        public Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> CreateExpenseApplicationWithHttpInfo(ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -437,7 +437,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< ExpenseApplicationResponse >("/api/1/expense_applications", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ExpenseApplicationResponse>("/api/1/expense_applications", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -455,10 +455,10 @@ namespace Freee.Accounting.Api
         /// <param name="expenseApplicationCreateParams">経費申請の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ExpenseApplicationResponse</returns>
-        public async System.Threading.Tasks.Task<ExpenseApplicationResponse> CreateExpenseApplicationAsync (ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ExpenseApplicationResponse> CreateExpenseApplicationAsync(ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> localVarResponse = await CreateExpenseApplicationWithHttpInfoAsync(expenseApplicationCreateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> localVarResponse = await CreateExpenseApplicationWithHttpInfoAsync(expenseApplicationCreateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -468,7 +468,7 @@ namespace Freee.Accounting.Api
         /// <param name="expenseApplicationCreateParams">経費申請の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ExpenseApplicationResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse>> CreateExpenseApplicationWithHttpInfoAsync (ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse>> CreateExpenseApplicationWithHttpInfoAsync(ExpenseApplicationCreateParams expenseApplicationCreateParams = default(ExpenseApplicationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -519,9 +519,9 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroyExpenseApplication (int id, int companyId)
+        public void DestroyExpenseApplication(int id, int companyId)
         {
-             DestroyExpenseApplicationWithHttpInfo(id, companyId);
+            DestroyExpenseApplicationWithHttpInfo(id, companyId);
         }
 
         /// <summary>
@@ -531,7 +531,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroyExpenseApplicationWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroyExpenseApplicationWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -579,9 +579,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyExpenseApplicationAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroyExpenseApplicationAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyExpenseApplicationWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyExpenseApplicationWithHttpInfoAsync(id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -592,7 +592,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyExpenseApplicationWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyExpenseApplicationWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -642,10 +642,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">経費申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ExpenseApplicationResponse</returns>
-        public ExpenseApplicationResponse GetExpenseApplication (int id, int companyId)
+        public ExpenseApplicationResponse GetExpenseApplication(int id, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> localVarResponse = GetExpenseApplicationWithHttpInfo(id, companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> localVarResponse = GetExpenseApplicationWithHttpInfo(id, companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -655,7 +655,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">経費申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of ExpenseApplicationResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ExpenseApplicationResponse > GetExpenseApplicationWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> GetExpenseApplicationWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -684,7 +684,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< ExpenseApplicationResponse >("/api/1/expense_applications/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ExpenseApplicationResponse>("/api/1/expense_applications/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -703,10 +703,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ExpenseApplicationResponse</returns>
-        public async System.Threading.Tasks.Task<ExpenseApplicationResponse> GetExpenseApplicationAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ExpenseApplicationResponse> GetExpenseApplicationAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> localVarResponse = await GetExpenseApplicationWithHttpInfoAsync(id, companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> localVarResponse = await GetExpenseApplicationWithHttpInfoAsync(id, companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -717,7 +717,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ExpenseApplicationResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse>> GetExpenseApplicationWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse>> GetExpenseApplicationWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -768,10 +768,10 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <returns>ExpenseApplicationsIndexResponse</returns>
-        public ExpenseApplicationsIndexResponse GetExpenseApplications (int companyId, int? offset = default(int?), int? limit = default(int?))
+        public ExpenseApplicationsIndexResponse GetExpenseApplications(int companyId, int? offset = default(int?), int? limit = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<ExpenseApplicationsIndexResponse> localVarResponse = GetExpenseApplicationsWithHttpInfo(companyId, offset, limit);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ExpenseApplicationsIndexResponse> localVarResponse = GetExpenseApplicationsWithHttpInfo(companyId, offset, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -782,7 +782,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <returns>ApiResponse of ExpenseApplicationsIndexResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ExpenseApplicationsIndexResponse > GetExpenseApplicationsWithHttpInfo (int companyId, int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<ExpenseApplicationsIndexResponse> GetExpenseApplicationsWithHttpInfo(int companyId, int? offset = default(int?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -818,7 +818,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< ExpenseApplicationsIndexResponse >("/api/1/expense_applications", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ExpenseApplicationsIndexResponse>("/api/1/expense_applications", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -838,10 +838,10 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ExpenseApplicationsIndexResponse</returns>
-        public async System.Threading.Tasks.Task<ExpenseApplicationsIndexResponse> GetExpenseApplicationsAsync (int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ExpenseApplicationsIndexResponse> GetExpenseApplicationsAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ExpenseApplicationsIndexResponse> localVarResponse = await GetExpenseApplicationsWithHttpInfoAsync(companyId, offset, limit, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ExpenseApplicationsIndexResponse> localVarResponse = await GetExpenseApplicationsWithHttpInfoAsync(companyId, offset, limit, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -853,7 +853,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ExpenseApplicationsIndexResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ExpenseApplicationsIndexResponse>> GetExpenseApplicationsWithHttpInfoAsync (int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ExpenseApplicationsIndexResponse>> GetExpenseApplicationsWithHttpInfoAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -910,10 +910,10 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="expenseApplicationUpdateParams">経費申請の更新 (optional)</param>
         /// <returns>ExpenseApplicationResponse</returns>
-        public ExpenseApplicationResponse UpdateExpenseApplication (int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams))
+        public ExpenseApplicationResponse UpdateExpenseApplication(int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams))
         {
-             Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> localVarResponse = UpdateExpenseApplicationWithHttpInfo(id, expenseApplicationUpdateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> localVarResponse = UpdateExpenseApplicationWithHttpInfo(id, expenseApplicationUpdateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -923,7 +923,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="expenseApplicationUpdateParams">経費申請の更新 (optional)</param>
         /// <returns>ApiResponse of ExpenseApplicationResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ExpenseApplicationResponse > UpdateExpenseApplicationWithHttpInfo (int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams))
+        public Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> UpdateExpenseApplicationWithHttpInfo(int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -954,7 +954,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< ExpenseApplicationResponse >("/api/1/expense_applications/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<ExpenseApplicationResponse>("/api/1/expense_applications/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -973,10 +973,10 @@ namespace Freee.Accounting.Api
         /// <param name="expenseApplicationUpdateParams">経費申請の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ExpenseApplicationResponse</returns>
-        public async System.Threading.Tasks.Task<ExpenseApplicationResponse> UpdateExpenseApplicationAsync (int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ExpenseApplicationResponse> UpdateExpenseApplicationAsync(int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> localVarResponse = await UpdateExpenseApplicationWithHttpInfoAsync(id, expenseApplicationUpdateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse> localVarResponse = await UpdateExpenseApplicationWithHttpInfoAsync(id, expenseApplicationUpdateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -987,7 +987,7 @@ namespace Freee.Accounting.Api
         /// <param name="expenseApplicationUpdateParams">経費申請の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ExpenseApplicationResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse>> UpdateExpenseApplicationWithHttpInfoAsync (int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ExpenseApplicationResponse>> UpdateExpenseApplicationWithHttpInfoAsync(int id, ExpenseApplicationUpdateParams expenseApplicationUpdateParams = default(ExpenseApplicationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

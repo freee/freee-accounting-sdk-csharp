@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="invoiceCreateParams">請求書の作成 (optional)</param>
         /// <returns>InvoiceResponse</returns>
-        InvoiceResponse CreateInvoice (InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams));
+        InvoiceResponse CreateInvoice(InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams));
 
         /// <summary>
         /// 請求書の作成
@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="invoiceCreateParams">請求書の作成 (optional)</param>
         /// <returns>ApiResponse of InvoiceResponse</returns>
-        ApiResponse<InvoiceResponse> CreateInvoiceWithHttpInfo (InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams));
+        ApiResponse<InvoiceResponse> CreateInvoiceWithHttpInfo(InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams));
         /// <summary>
         /// 請求書の削除
         /// </summary>
@@ -57,7 +57,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroyInvoice (int id, int companyId);
+        void DestroyInvoice(int id, int companyId);
 
         /// <summary>
         /// 請求書の削除
@@ -69,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroyInvoiceWithHttpInfo (int id, int companyId);
+        ApiResponse<Object> DestroyInvoiceWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 請求書の取得
         /// </summary>
@@ -80,7 +80,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">請求書ID</param>
         /// <returns>InvoiceResponse</returns>
-        InvoiceResponse GetInvoice (int companyId, int id);
+        InvoiceResponse GetInvoice(int companyId, int id);
 
         /// <summary>
         /// 請求書の取得
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">請求書ID</param>
         /// <returns>ApiResponse of InvoiceResponse</returns>
-        ApiResponse<InvoiceResponse> GetInvoiceWithHttpInfo (int companyId, int id);
+        ApiResponse<InvoiceResponse> GetInvoiceWithHttpInfo(int companyId, int id);
         /// <summary>
         /// 請求書一覧の取得
         /// </summary>
@@ -114,7 +114,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <returns>InlineResponse2004</returns>
-        InlineResponse2004 GetInvoices (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?));
+        InlineResponse2004 GetInvoices(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// 請求書一覧の取得
@@ -137,7 +137,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse2004</returns>
-        ApiResponse<InlineResponse2004> GetInvoicesWithHttpInfo (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<InlineResponse2004> GetInvoicesWithHttpInfo(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?));
         /// <summary>
         /// 請求書の更新
         /// </summary>
@@ -148,7 +148,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">請求書ID</param>
         /// <param name="invoiceUpdateParams">請求書の更新 (optional)</param>
         /// <returns>InvoiceResponse</returns>
-        InvoiceResponse UpdateInvoice (int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams));
+        InvoiceResponse UpdateInvoice(int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams));
 
         /// <summary>
         /// 請求書の更新
@@ -160,7 +160,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">請求書ID</param>
         /// <param name="invoiceUpdateParams">請求書の更新 (optional)</param>
         /// <returns>ApiResponse of InvoiceResponse</returns>
-        ApiResponse<InvoiceResponse> UpdateInvoiceWithHttpInfo (int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams));
+        ApiResponse<InvoiceResponse> UpdateInvoiceWithHttpInfo(int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams));
         #endregion Synchronous Operations
     }
 
@@ -180,7 +180,7 @@ namespace Freee.Accounting.Api
         /// <param name="invoiceCreateParams">請求書の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InvoiceResponse</returns>
-        System.Threading.Tasks.Task<InvoiceResponse> CreateInvoiceAsync (InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InvoiceResponse> CreateInvoiceAsync(InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 請求書の作成
@@ -192,7 +192,7 @@ namespace Freee.Accounting.Api
         /// <param name="invoiceCreateParams">請求書の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InvoiceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InvoiceResponse>> CreateInvoiceWithHttpInfoAsync (InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InvoiceResponse>> CreateInvoiceWithHttpInfoAsync(InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 請求書の削除
         /// </summary>
@@ -204,7 +204,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyInvoiceAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroyInvoiceAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 請求書の削除
@@ -217,7 +217,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyInvoiceWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyInvoiceWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 請求書の取得
         /// </summary>
@@ -229,7 +229,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">請求書ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InvoiceResponse</returns>
-        System.Threading.Tasks.Task<InvoiceResponse> GetInvoiceAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InvoiceResponse> GetInvoiceAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 請求書の取得
@@ -242,7 +242,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">請求書ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InvoiceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InvoiceResponse>> GetInvoiceWithHttpInfoAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InvoiceResponse>> GetInvoiceWithHttpInfoAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 請求書一覧の取得
         /// </summary>
@@ -265,7 +265,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2004</returns>
-        System.Threading.Tasks.Task<InlineResponse2004> GetInvoicesAsync (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse2004> GetInvoicesAsync(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 請求書一覧の取得
@@ -289,7 +289,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2004)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2004>> GetInvoicesWithHttpInfoAsync (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2004>> GetInvoicesWithHttpInfoAsync(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 請求書の更新
         /// </summary>
@@ -301,7 +301,7 @@ namespace Freee.Accounting.Api
         /// <param name="invoiceUpdateParams">請求書の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InvoiceResponse</returns>
-        System.Threading.Tasks.Task<InvoiceResponse> UpdateInvoiceAsync (int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InvoiceResponse> UpdateInvoiceAsync(int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 請求書の更新
@@ -314,7 +314,7 @@ namespace Freee.Accounting.Api
         /// <param name="invoiceUpdateParams">請求書の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InvoiceResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InvoiceResponse>> UpdateInvoiceWithHttpInfoAsync (int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InvoiceResponse>> UpdateInvoiceWithHttpInfoAsync(int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -337,7 +337,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="InvoicesApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public InvoicesApi() : this((string) null)
+        public InvoicesApi() : this((string)null)
         {
         }
 
@@ -382,11 +382,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public InvoicesApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public InvoicesApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -417,7 +417,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -441,10 +441,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="invoiceCreateParams">請求書の作成 (optional)</param>
         /// <returns>InvoiceResponse</returns>
-        public InvoiceResponse CreateInvoice (InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams))
+        public InvoiceResponse CreateInvoice(InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams))
         {
-             Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = CreateInvoiceWithHttpInfo(invoiceCreateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = CreateInvoiceWithHttpInfo(invoiceCreateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -453,7 +453,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="invoiceCreateParams">請求書の作成 (optional)</param>
         /// <returns>ApiResponse of InvoiceResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< InvoiceResponse > CreateInvoiceWithHttpInfo (InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams))
+        public Freee.Accounting.Client.ApiResponse<InvoiceResponse> CreateInvoiceWithHttpInfo(InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -483,7 +483,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< InvoiceResponse >("/api/1/invoices", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<InvoiceResponse>("/api/1/invoices", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -501,10 +501,10 @@ namespace Freee.Accounting.Api
         /// <param name="invoiceCreateParams">請求書の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InvoiceResponse</returns>
-        public async System.Threading.Tasks.Task<InvoiceResponse> CreateInvoiceAsync (InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InvoiceResponse> CreateInvoiceAsync(InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = await CreateInvoiceWithHttpInfoAsync(invoiceCreateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = await CreateInvoiceWithHttpInfoAsync(invoiceCreateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -514,7 +514,7 @@ namespace Freee.Accounting.Api
         /// <param name="invoiceCreateParams">請求書の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InvoiceResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InvoiceResponse>> CreateInvoiceWithHttpInfoAsync (InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InvoiceResponse>> CreateInvoiceWithHttpInfoAsync(InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -565,9 +565,9 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroyInvoice (int id, int companyId)
+        public void DestroyInvoice(int id, int companyId)
         {
-             DestroyInvoiceWithHttpInfo(id, companyId);
+            DestroyInvoiceWithHttpInfo(id, companyId);
         }
 
         /// <summary>
@@ -577,7 +577,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroyInvoiceWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroyInvoiceWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -625,9 +625,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyInvoiceAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroyInvoiceAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyInvoiceWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyInvoiceWithHttpInfoAsync(id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -638,7 +638,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyInvoiceWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyInvoiceWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -688,10 +688,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">請求書ID</param>
         /// <returns>InvoiceResponse</returns>
-        public InvoiceResponse GetInvoice (int companyId, int id)
+        public InvoiceResponse GetInvoice(int companyId, int id)
         {
-             Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = GetInvoiceWithHttpInfo(companyId, id);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = GetInvoiceWithHttpInfo(companyId, id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -701,7 +701,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">請求書ID</param>
         /// <returns>ApiResponse of InvoiceResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< InvoiceResponse > GetInvoiceWithHttpInfo (int companyId, int id)
+        public Freee.Accounting.Client.ApiResponse<InvoiceResponse> GetInvoiceWithHttpInfo(int companyId, int id)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -730,7 +730,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InvoiceResponse >("/api/1/invoices/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InvoiceResponse>("/api/1/invoices/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -749,10 +749,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">請求書ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InvoiceResponse</returns>
-        public async System.Threading.Tasks.Task<InvoiceResponse> GetInvoiceAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InvoiceResponse> GetInvoiceAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = await GetInvoiceWithHttpInfoAsync(companyId, id, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = await GetInvoiceWithHttpInfoAsync(companyId, id, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -763,7 +763,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">請求書ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InvoiceResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InvoiceResponse>> GetInvoiceWithHttpInfoAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InvoiceResponse>> GetInvoiceWithHttpInfoAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -824,10 +824,10 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <returns>InlineResponse2004</returns>
-        public InlineResponse2004 GetInvoices (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?))
+        public InlineResponse2004 GetInvoices(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse2004> localVarResponse = GetInvoicesWithHttpInfo(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, startDueDate, endDueDate, invoiceNumber, description, invoiceStatus, paymentStatus, offset, limit);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse2004> localVarResponse = GetInvoicesWithHttpInfo(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, startDueDate, endDueDate, invoiceNumber, description, invoiceStatus, paymentStatus, offset, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -848,7 +848,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse2004</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse2004 > GetInvoicesWithHttpInfo (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse2004> GetInvoicesWithHttpInfo(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -924,7 +924,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse2004 >("/api/1/invoices", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse2004>("/api/1/invoices", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -954,10 +954,10 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2004</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2004> GetInvoicesAsync (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse2004> GetInvoicesAsync(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse2004> localVarResponse = await GetInvoicesWithHttpInfoAsync(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, startDueDate, endDueDate, invoiceNumber, description, invoiceStatus, paymentStatus, offset, limit, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse2004> localVarResponse = await GetInvoicesWithHttpInfoAsync(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, startDueDate, endDueDate, invoiceNumber, description, invoiceStatus, paymentStatus, offset, limit, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -979,7 +979,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2004)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2004>> GetInvoicesWithHttpInfoAsync (int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2004>> GetInvoicesWithHttpInfoAsync(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -1076,10 +1076,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">請求書ID</param>
         /// <param name="invoiceUpdateParams">請求書の更新 (optional)</param>
         /// <returns>InvoiceResponse</returns>
-        public InvoiceResponse UpdateInvoice (int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams))
+        public InvoiceResponse UpdateInvoice(int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams))
         {
-             Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = UpdateInvoiceWithHttpInfo(id, invoiceUpdateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = UpdateInvoiceWithHttpInfo(id, invoiceUpdateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1089,7 +1089,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">請求書ID</param>
         /// <param name="invoiceUpdateParams">請求書の更新 (optional)</param>
         /// <returns>ApiResponse of InvoiceResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< InvoiceResponse > UpdateInvoiceWithHttpInfo (int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams))
+        public Freee.Accounting.Client.ApiResponse<InvoiceResponse> UpdateInvoiceWithHttpInfo(int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -1120,7 +1120,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< InvoiceResponse >("/api/1/invoices/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<InvoiceResponse>("/api/1/invoices/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1139,10 +1139,10 @@ namespace Freee.Accounting.Api
         /// <param name="invoiceUpdateParams">請求書の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InvoiceResponse</returns>
-        public async System.Threading.Tasks.Task<InvoiceResponse> UpdateInvoiceAsync (int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InvoiceResponse> UpdateInvoiceAsync(int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = await UpdateInvoiceWithHttpInfoAsync(id, invoiceUpdateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = await UpdateInvoiceWithHttpInfoAsync(id, invoiceUpdateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1153,7 +1153,7 @@ namespace Freee.Accounting.Api
         /// <param name="invoiceUpdateParams">請求書の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InvoiceResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InvoiceResponse>> UpdateInvoiceWithHttpInfoAsync (int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InvoiceResponse>> UpdateInvoiceWithHttpInfoAsync(int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

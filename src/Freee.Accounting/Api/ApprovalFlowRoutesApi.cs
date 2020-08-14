@@ -36,7 +36,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">経路申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApprovalFlowRouteResponse</returns>
-        ApprovalFlowRouteResponse GetApprovalFlowRoute (int id, int companyId);
+        ApprovalFlowRouteResponse GetApprovalFlowRoute(int id, int companyId);
 
         /// <summary>
         /// 申請経路の取得
@@ -48,7 +48,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">経路申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of ApprovalFlowRouteResponse</returns>
-        ApiResponse<ApprovalFlowRouteResponse> GetApprovalFlowRouteWithHttpInfo (int id, int companyId);
+        ApiResponse<ApprovalFlowRouteResponse> GetApprovalFlowRouteWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 申請経路一覧の取得
         /// </summary>
@@ -61,7 +61,7 @@ namespace Freee.Accounting.Api
         /// <param name="usage">申請種別（各申請種別が使用できる申請経路に絞り込めます。例えば、ApprovalRequest を指定すると、各種申請が使用できる申請経路に絞り込めます。） * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60; - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書) (optional)</param>
         /// <param name="requestFormId">申請フォームID request_form_id指定時はusage条件をApprovalRequestに指定してください。指定しない場合無効になります。 (optional)</param>
         /// <returns>ApprovalFlowRoutesIndexResponse</returns>
-        ApprovalFlowRoutesIndexResponse GetApprovalFlowRoutes (int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?));
+        ApprovalFlowRoutesIndexResponse GetApprovalFlowRoutes(int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?));
 
         /// <summary>
         /// 申請経路一覧の取得
@@ -75,7 +75,7 @@ namespace Freee.Accounting.Api
         /// <param name="usage">申請種別（各申請種別が使用できる申請経路に絞り込めます。例えば、ApprovalRequest を指定すると、各種申請が使用できる申請経路に絞り込めます。） * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60; - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書) (optional)</param>
         /// <param name="requestFormId">申請フォームID request_form_id指定時はusage条件をApprovalRequestに指定してください。指定しない場合無効になります。 (optional)</param>
         /// <returns>ApiResponse of ApprovalFlowRoutesIndexResponse</returns>
-        ApiResponse<ApprovalFlowRoutesIndexResponse> GetApprovalFlowRoutesWithHttpInfo (int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?));
+        ApiResponse<ApprovalFlowRoutesIndexResponse> GetApprovalFlowRoutesWithHttpInfo(int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?));
         #endregion Synchronous Operations
     }
 
@@ -96,7 +96,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalFlowRouteResponse</returns>
-        System.Threading.Tasks.Task<ApprovalFlowRouteResponse> GetApprovalFlowRouteAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApprovalFlowRouteResponse> GetApprovalFlowRouteAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 申請経路の取得
@@ -109,7 +109,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalFlowRouteResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApprovalFlowRouteResponse>> GetApprovalFlowRouteWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApprovalFlowRouteResponse>> GetApprovalFlowRouteWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 申請経路一覧の取得
         /// </summary>
@@ -123,7 +123,7 @@ namespace Freee.Accounting.Api
         /// <param name="requestFormId">申請フォームID request_form_id指定時はusage条件をApprovalRequestに指定してください。指定しない場合無効になります。 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalFlowRoutesIndexResponse</returns>
-        System.Threading.Tasks.Task<ApprovalFlowRoutesIndexResponse> GetApprovalFlowRoutesAsync (int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApprovalFlowRoutesIndexResponse> GetApprovalFlowRoutesAsync(int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 申請経路一覧の取得
@@ -138,7 +138,7 @@ namespace Freee.Accounting.Api
         /// <param name="requestFormId">申請フォームID request_form_id指定時はusage条件をApprovalRequestに指定してください。指定しない場合無効になります。 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalFlowRoutesIndexResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApprovalFlowRoutesIndexResponse>> GetApprovalFlowRoutesWithHttpInfoAsync (int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ApprovalFlowRoutesIndexResponse>> GetApprovalFlowRoutesWithHttpInfoAsync(int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -161,7 +161,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="ApprovalFlowRoutesApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ApprovalFlowRoutesApi() : this((string) null)
+        public ApprovalFlowRoutesApi() : this((string)null)
         {
         }
 
@@ -206,11 +206,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public ApprovalFlowRoutesApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public ApprovalFlowRoutesApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -241,7 +241,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -266,10 +266,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">経路申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApprovalFlowRouteResponse</returns>
-        public ApprovalFlowRouteResponse GetApprovalFlowRoute (int id, int companyId)
+        public ApprovalFlowRouteResponse GetApprovalFlowRoute(int id, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalFlowRouteResponse> localVarResponse = GetApprovalFlowRouteWithHttpInfo(id, companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalFlowRouteResponse> localVarResponse = GetApprovalFlowRouteWithHttpInfo(id, companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -279,7 +279,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">経路申請ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of ApprovalFlowRouteResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ApprovalFlowRouteResponse > GetApprovalFlowRouteWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<ApprovalFlowRouteResponse> GetApprovalFlowRouteWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -308,7 +308,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< ApprovalFlowRouteResponse >("/api/1/approval_flow_routes/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ApprovalFlowRouteResponse>("/api/1/approval_flow_routes/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -327,10 +327,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalFlowRouteResponse</returns>
-        public async System.Threading.Tasks.Task<ApprovalFlowRouteResponse> GetApprovalFlowRouteAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApprovalFlowRouteResponse> GetApprovalFlowRouteAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalFlowRouteResponse> localVarResponse = await GetApprovalFlowRouteWithHttpInfoAsync(id, companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalFlowRouteResponse> localVarResponse = await GetApprovalFlowRouteWithHttpInfoAsync(id, companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -341,7 +341,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalFlowRouteResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalFlowRouteResponse>> GetApprovalFlowRouteWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalFlowRouteResponse>> GetApprovalFlowRouteWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -393,10 +393,10 @@ namespace Freee.Accounting.Api
         /// <param name="usage">申請種別（各申請種別が使用できる申請経路に絞り込めます。例えば、ApprovalRequest を指定すると、各種申請が使用できる申請経路に絞り込めます。） * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60; - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書) (optional)</param>
         /// <param name="requestFormId">申請フォームID request_form_id指定時はusage条件をApprovalRequestに指定してください。指定しない場合無効になります。 (optional)</param>
         /// <returns>ApprovalFlowRoutesIndexResponse</returns>
-        public ApprovalFlowRoutesIndexResponse GetApprovalFlowRoutes (int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?))
+        public ApprovalFlowRoutesIndexResponse GetApprovalFlowRoutes(int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalFlowRoutesIndexResponse> localVarResponse = GetApprovalFlowRoutesWithHttpInfo(companyId, includedUserId, usage, requestFormId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalFlowRoutesIndexResponse> localVarResponse = GetApprovalFlowRoutesWithHttpInfo(companyId, includedUserId, usage, requestFormId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -408,7 +408,7 @@ namespace Freee.Accounting.Api
         /// <param name="usage">申請種別（各申請種別が使用できる申請経路に絞り込めます。例えば、ApprovalRequest を指定すると、各種申請が使用できる申請経路に絞り込めます。） * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60; - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書) (optional)</param>
         /// <param name="requestFormId">申請フォームID request_form_id指定時はusage条件をApprovalRequestに指定してください。指定しない場合無効になります。 (optional)</param>
         /// <returns>ApiResponse of ApprovalFlowRoutesIndexResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ApprovalFlowRoutesIndexResponse > GetApprovalFlowRoutesWithHttpInfo (int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?))
+        public Freee.Accounting.Client.ApiResponse<ApprovalFlowRoutesIndexResponse> GetApprovalFlowRoutesWithHttpInfo(int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -448,7 +448,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< ApprovalFlowRoutesIndexResponse >("/api/1/approval_flow_routes", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ApprovalFlowRoutesIndexResponse>("/api/1/approval_flow_routes", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -469,10 +469,10 @@ namespace Freee.Accounting.Api
         /// <param name="requestFormId">申請フォームID request_form_id指定時はusage条件をApprovalRequestに指定してください。指定しない場合無効になります。 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApprovalFlowRoutesIndexResponse</returns>
-        public async System.Threading.Tasks.Task<ApprovalFlowRoutesIndexResponse> GetApprovalFlowRoutesAsync (int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApprovalFlowRoutesIndexResponse> GetApprovalFlowRoutesAsync(int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ApprovalFlowRoutesIndexResponse> localVarResponse = await GetApprovalFlowRoutesWithHttpInfoAsync(companyId, includedUserId, usage, requestFormId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ApprovalFlowRoutesIndexResponse> localVarResponse = await GetApprovalFlowRoutesWithHttpInfoAsync(companyId, includedUserId, usage, requestFormId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -485,7 +485,7 @@ namespace Freee.Accounting.Api
         /// <param name="requestFormId">申請フォームID request_form_id指定時はusage条件をApprovalRequestに指定してください。指定しない場合無効になります。 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApprovalFlowRoutesIndexResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalFlowRoutesIndexResponse>> GetApprovalFlowRoutesWithHttpInfoAsync (int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ApprovalFlowRoutesIndexResponse>> GetApprovalFlowRoutesWithHttpInfoAsync(int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// TrialPlSectionsResponseTrialPlSectionsBalances
     /// </summary>
     [DataContract]
-    public partial class TrialPlSectionsResponseTrialPlSectionsBalances :  IEquatable<TrialPlSectionsResponseTrialPlSectionsBalances>
+    public partial class TrialPlSectionsResponseTrialPlSectionsBalances : IEquatable<TrialPlSectionsResponseTrialPlSectionsBalances>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TrialPlSectionsResponseTrialPlSectionsBalances" /> class.
@@ -58,63 +58,63 @@ namespace Freee.Accounting.Models
         /// 勘定科目カテゴリー名
         /// </summary>
         /// <value>勘定科目カテゴリー名</value>
-        [DataMember(Name="account_category_name", EmitDefaultValue=false)]
+        [DataMember(Name = "account_category_name", EmitDefaultValue = false)]
         public string AccountCategoryName { get; set; }
 
         /// <summary>
         /// 決算書表示名(account_item_display_type:group指定時に決算書表示名の時のみ含まれる)
         /// </summary>
         /// <value>決算書表示名(account_item_display_type:group指定時に決算書表示名の時のみ含まれる)</value>
-        [DataMember(Name="account_group_name", EmitDefaultValue=false)]
+        [DataMember(Name = "account_group_name", EmitDefaultValue = false)]
         public string AccountGroupName { get; set; }
 
         /// <summary>
         /// 勘定科目ID(勘定科目の時のみ含まれる)
         /// </summary>
         /// <value>勘定科目ID(勘定科目の時のみ含まれる)</value>
-        [DataMember(Name="account_item_id", EmitDefaultValue=false)]
+        [DataMember(Name = "account_item_id", EmitDefaultValue = false)]
         public int AccountItemId { get; set; }
 
         /// <summary>
         /// 勘定科目名(勘定科目の時のみ含まれる)
         /// </summary>
         /// <value>勘定科目名(勘定科目の時のみ含まれる)</value>
-        [DataMember(Name="account_item_name", EmitDefaultValue=false)]
+        [DataMember(Name = "account_item_name", EmitDefaultValue = false)]
         public string AccountItemName { get; set; }
 
         /// <summary>
         /// 期末残高
         /// </summary>
         /// <value>期末残高</value>
-        [DataMember(Name="closing_balance", EmitDefaultValue=false)]
+        [DataMember(Name = "closing_balance", EmitDefaultValue = false)]
         public int ClosingBalance { get; set; }
 
         /// <summary>
         /// 階層レベル
         /// </summary>
         /// <value>階層レベル</value>
-        [DataMember(Name="hierarchy_level", EmitDefaultValue=false)]
+        [DataMember(Name = "hierarchy_level", EmitDefaultValue = false)]
         public int HierarchyLevel { get; set; }
 
         /// <summary>
         /// 上位勘定科目カテゴリー名(勘定科目カテゴリーの時のみ、上層が存在する場合含まれる)
         /// </summary>
         /// <value>上位勘定科目カテゴリー名(勘定科目カテゴリーの時のみ、上層が存在する場合含まれる)</value>
-        [DataMember(Name="parent_account_category_name", EmitDefaultValue=false)]
+        [DataMember(Name = "parent_account_category_name", EmitDefaultValue = false)]
         public string ParentAccountCategoryName { get; set; }
 
         /// <summary>
         /// 部門
         /// </summary>
         /// <value>部門</value>
-        [DataMember(Name="sections", EmitDefaultValue=false)]
+        [DataMember(Name = "sections", EmitDefaultValue = false)]
         public List<TrialPlSectionsResponseTrialPlSectionsSections> Sections { get; set; }
 
         /// <summary>
         /// 合計行(勘定科目カテゴリーの時のみ含まれる)
         /// </summary>
         /// <value>合計行(勘定科目カテゴリーの時のみ含まれる)</value>
-        [DataMember(Name="total_line", EmitDefaultValue=false)]
+        [DataMember(Name = "total_line", EmitDefaultValue = false)]
         public bool TotalLine { get; set; }
 
         /// <summary>

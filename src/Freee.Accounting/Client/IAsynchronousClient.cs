@@ -8,7 +8,6 @@
  */
 
 
-
 using System;
 using System.Threading.Tasks;
 
@@ -99,4 +98,3 @@ namespace Freee.Accounting.Client
         Task<ApiResponse<T>> PatchAsync<T>(String path, RequestOptions options, IReadableConfiguration configuration = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
     }
 }
-

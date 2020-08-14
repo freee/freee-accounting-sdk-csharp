@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ApprovalRequestResponseApprovalRequestComments
     /// </summary>
     [DataContract]
-    public partial class ApprovalRequestResponseApprovalRequestComments :  IEquatable<ApprovalRequestResponseApprovalRequestComments>
+    public partial class ApprovalRequestResponseApprovalRequestComments : IEquatable<ApprovalRequestResponseApprovalRequestComments>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestResponseApprovalRequestComments" /> class.
@@ -53,21 +53,21 @@ namespace Freee.Accounting.Models
         /// コメント内容
         /// </summary>
         /// <value>コメント内容</value>
-        [DataMember(Name="comment", EmitDefaultValue=false)]
+        [DataMember(Name = "comment", EmitDefaultValue = false)]
         public string Comment { get; set; }
 
         /// <summary>
         /// コメント日時(ISO8601形式)
         /// </summary>
         /// <value>コメント日時(ISO8601形式)</value>
-        [DataMember(Name="posted_at", EmitDefaultValue=false)]
+        [DataMember(Name = "posted_at", EmitDefaultValue = false)]
         public string PostedAt { get; set; }
 
         /// <summary>
         /// ユーザーID
         /// </summary>
         /// <value>ユーザーID</value>
-        [DataMember(Name="user_id", EmitDefaultValue=false)]
+        [DataMember(Name = "user_id", EmitDefaultValue = false)]
         public int UserId { get; set; }
 
         /// <summary>

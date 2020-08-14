@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ServiceUnavailableErrorErrors
     /// </summary>
     [DataContract]
-    public partial class ServiceUnavailableErrorErrors :  IEquatable<ServiceUnavailableErrorErrors>
+    public partial class ServiceUnavailableErrorErrors : IEquatable<ServiceUnavailableErrorErrors>
     {
         /// <summary>
         /// Defines Type
@@ -52,7 +52,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceUnavailableErrorErrors" /> class.
@@ -74,7 +74,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets Messages
         /// </summary>
-        [DataMember(Name="messages", EmitDefaultValue=false)]
+        [DataMember(Name = "messages", EmitDefaultValue = false)]
         public List<string> Messages { get; set; }
 
         /// <summary>

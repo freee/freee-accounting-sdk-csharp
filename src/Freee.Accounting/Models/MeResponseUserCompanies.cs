@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// MeResponseUserCompanies
     /// </summary>
     [DataContract]
-    public partial class MeResponseUserCompanies :  IEquatable<MeResponseUserCompanies>
+    public partial class MeResponseUserCompanies : IEquatable<MeResponseUserCompanies>
     {
         /// <summary>
         /// ユーザーの権限
@@ -66,7 +66,7 @@ namespace Freee.Accounting.Models
         /// ユーザーの権限
         /// </summary>
         /// <value>ユーザーの権限</value>
-        [DataMember(Name="role", EmitDefaultValue=false)]
+        [DataMember(Name = "role", EmitDefaultValue = false)]
         public RoleEnum Role { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="MeResponseUserCompanies" /> class.
@@ -93,21 +93,21 @@ namespace Freee.Accounting.Models
         /// 表示名
         /// </summary>
         /// <value>表示名</value>
-        [DataMember(Name="display_name", EmitDefaultValue=false)]
+        [DataMember(Name = "display_name", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// カスタム権限（true: 使用する、false: 使用しない）
         /// </summary>
         /// <value>カスタム権限（true: 使用する、false: 使用しない）</value>
-        [DataMember(Name="use_custom_role", EmitDefaultValue=false)]
+        [DataMember(Name = "use_custom_role", EmitDefaultValue = false)]
         public bool UseCustomRole { get; set; }
 
         /// <summary>

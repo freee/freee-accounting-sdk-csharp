@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// AccountItemParamsAccountItem
     /// </summary>
     [DataContract]
-    public partial class AccountItemParamsAccountItem :  IEquatable<AccountItemParamsAccountItem>
+    public partial class AccountItemParamsAccountItem : IEquatable<AccountItemParamsAccountItem>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountItemParamsAccountItem" /> class.
@@ -71,84 +71,84 @@ namespace Freee.Accounting.Models
         /// 勘定科目カテゴリーID Selectablesフォーム用選択項目情報エンドポイント(account_groups.account_category_id)で取得可能です
         /// </summary>
         /// <value>勘定科目カテゴリーID Selectablesフォーム用選択項目情報エンドポイント(account_groups.account_category_id)で取得可能です</value>
-        [DataMember(Name="account_category_id", EmitDefaultValue=false)]
+        [DataMember(Name = "account_category_id", EmitDefaultValue = false)]
         public int AccountCategoryId { get; set; }
 
         /// <summary>
         /// 減価償却累計額勘定科目ID（法人のみ利用可能）
         /// </summary>
         /// <value>減価償却累計額勘定科目ID（法人のみ利用可能）</value>
-        [DataMember(Name="accumulated_dep_account_item_id", EmitDefaultValue=false)]
+        [DataMember(Name = "accumulated_dep_account_item_id", EmitDefaultValue = false)]
         public int AccumulatedDepAccountItemId { get; set; }
 
         /// <summary>
         /// 支出取引相手勘定科目ID
         /// </summary>
         /// <value>支出取引相手勘定科目ID</value>
-        [DataMember(Name="corresponding_expense_id", EmitDefaultValue=false)]
+        [DataMember(Name = "corresponding_expense_id", EmitDefaultValue = false)]
         public int CorrespondingExpenseId { get; set; }
 
         /// <summary>
         /// 収入取引相手勘定科目ID
         /// </summary>
         /// <value>収入取引相手勘定科目ID</value>
-        [DataMember(Name="corresponding_income_id", EmitDefaultValue=false)]
+        [DataMember(Name = "corresponding_income_id", EmitDefaultValue = false)]
         public int CorrespondingIncomeId { get; set; }
 
         /// <summary>
         /// 決算書表示名（小カテゴリー） Selectablesフォーム用選択項目情報エンドポイント(account_groups.name)で取得可能です
         /// </summary>
         /// <value>決算書表示名（小カテゴリー） Selectablesフォーム用選択項目情報エンドポイント(account_groups.name)で取得可能です</value>
-        [DataMember(Name="group_name", EmitDefaultValue=false)]
+        [DataMember(Name = "group_name", EmitDefaultValue = false)]
         public string GroupName { get; set; }
 
         /// <summary>
         /// 品目
         /// </summary>
         /// <value>品目</value>
-        [DataMember(Name="items", EmitDefaultValue=false)]
+        [DataMember(Name = "items", EmitDefaultValue = false)]
         public List<AccountItemParamsAccountItemItems> Items { get; set; }
 
         /// <summary>
         /// 勘定科目名 (30文字以内)
         /// </summary>
         /// <value>勘定科目名 (30文字以内)</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// 取引先
         /// </summary>
         /// <value>取引先</value>
-        [DataMember(Name="partners", EmitDefaultValue=false)]
+        [DataMember(Name = "partners", EmitDefaultValue = false)]
         public List<AccountItemParamsAccountItemItems> Partners { get; set; }
 
         /// <summary>
         /// 検索可能:2, 検索不可：3(登録時未指定の場合は2で登録されます。更新時未指定の場合はsearchableは変更されません。)
         /// </summary>
         /// <value>検索可能:2, 検索不可：3(登録時未指定の場合は2で登録されます。更新時未指定の場合はsearchableは変更されません。)</value>
-        [DataMember(Name="searchable", EmitDefaultValue=false)]
+        [DataMember(Name = "searchable", EmitDefaultValue = false)]
         public int Searchable { get; set; }
 
         /// <summary>
         /// ショートカット1 (20文字以内)
         /// </summary>
         /// <value>ショートカット1 (20文字以内)</value>
-        [DataMember(Name="shortcut", EmitDefaultValue=false)]
+        [DataMember(Name = "shortcut", EmitDefaultValue = false)]
         public string Shortcut { get; set; }
 
         /// <summary>
         /// ショートカット2(勘定科目コード)(20文字以内)
         /// </summary>
         /// <value>ショートカット2(勘定科目コード)(20文字以内)</value>
-        [DataMember(Name="shortcut_num", EmitDefaultValue=false)]
+        [DataMember(Name = "shortcut_num", EmitDefaultValue = false)]
         public string ShortcutNum { get; set; }
 
         /// <summary>
         /// 税区分コード
         /// </summary>
         /// <value>税区分コード</value>
-        [DataMember(Name="tax_code", EmitDefaultValue=false)]
+        [DataMember(Name = "tax_code", EmitDefaultValue = false)]
         public int TaxCode { get; set; }
 
         /// <summary>

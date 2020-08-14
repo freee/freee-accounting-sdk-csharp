@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ApprovalRequestActionCreateParams
     /// </summary>
     [DataContract]
-    public partial class ApprovalRequestActionCreateParams :  IEquatable<ApprovalRequestActionCreateParams>
+    public partial class ApprovalRequestActionCreateParams : IEquatable<ApprovalRequestActionCreateParams>
     {
         /// <summary>
         /// 操作(approve: 承認する、force_approve: 代理承認する、cancel: 申請を取り消す、reject: 却下する、feedback: 申請者へ差し戻す、force_feedback: 承認済み・却下済みを取り消す)
@@ -78,7 +78,7 @@ namespace Freee.Accounting.Models
         /// 操作(approve: 承認する、force_approve: 代理承認する、cancel: 申請を取り消す、reject: 却下する、feedback: 申請者へ差し戻す、force_feedback: 承認済み・却下済みを取り消す)
         /// </summary>
         /// <value>操作(approve: 承認する、force_approve: 代理承認する、cancel: 申請を取り消す、reject: 却下する、feedback: 申請者へ差し戻す、force_feedback: 承認済み・却下済みを取り消す)</value>
-        [DataMember(Name="approval_action", EmitDefaultValue=false)]
+        [DataMember(Name = "approval_action", EmitDefaultValue = false)]
         public ApprovalActionEnum ApprovalAction { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestActionCreateParams" /> class.
@@ -106,28 +106,28 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 次ステップの承認者のユーザーID
         /// </summary>
         /// <value>次ステップの承認者のユーザーID</value>
-        [DataMember(Name="next_approver_id", EmitDefaultValue=true)]
+        [DataMember(Name = "next_approver_id", EmitDefaultValue = true)]
         public int? NextApproverId { get; set; }
 
         /// <summary>
         /// 対象round。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。各種申請の取得APIレスポンス.current_roundを送信してください。
         /// </summary>
         /// <value>対象round。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。各種申請の取得APIレスポンス.current_roundを送信してください。</value>
-        [DataMember(Name="target_round", EmitDefaultValue=false)]
+        [DataMember(Name = "target_round", EmitDefaultValue = false)]
         public int TargetRound { get; set; }
 
         /// <summary>
         /// 対象承認ステップID 各種申請の取得APIレスポンス.current_step_idを送信してください。
         /// </summary>
         /// <value>対象承認ステップID 各種申請の取得APIレスポンス.current_step_idを送信してください。</value>
-        [DataMember(Name="target_step_id", EmitDefaultValue=false)]
+        [DataMember(Name = "target_step_id", EmitDefaultValue = false)]
         public int TargetStepId { get; set; }
 
         /// <summary>

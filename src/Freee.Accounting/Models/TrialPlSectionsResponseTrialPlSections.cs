@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// TrialPlSectionsResponseTrialPlSections
     /// </summary>
     [DataContract]
-    public partial class TrialPlSectionsResponseTrialPlSections :  IEquatable<TrialPlSectionsResponseTrialPlSections>
+    public partial class TrialPlSectionsResponseTrialPlSections : IEquatable<TrialPlSectionsResponseTrialPlSections>
     {
         /// <summary>
         /// 勘定科目の表示（勘定科目: account_item, 決算書表示:group）(条件に指定した時のみ含まれる）
@@ -54,7 +54,7 @@ namespace Freee.Accounting.Models
         /// 勘定科目の表示（勘定科目: account_item, 決算書表示:group）(条件に指定した時のみ含まれる）
         /// </summary>
         /// <value>勘定科目の表示（勘定科目: account_item, 決算書表示:group）(条件に指定した時のみ含まれる）</value>
-        [DataMember(Name="account_item_display_type", EmitDefaultValue=false)]
+        [DataMember(Name = "account_item_display_type", EmitDefaultValue = false)]
         public AccountItemDisplayTypeEnum? AccountItemDisplayType { get; set; }
         /// <summary>
         /// 決算整理仕訳のみ: only, 決算整理仕訳以外: without(条件に指定した時のみ含まれる）
@@ -81,7 +81,7 @@ namespace Freee.Accounting.Models
         /// 決算整理仕訳のみ: only, 決算整理仕訳以外: without(条件に指定した時のみ含まれる）
         /// </summary>
         /// <value>決算整理仕訳のみ: only, 決算整理仕訳以外: without(条件に指定した時のみ含まれる）</value>
-        [DataMember(Name="adjustment", EmitDefaultValue=false)]
+        [DataMember(Name = "adjustment", EmitDefaultValue = false)]
         public AdjustmentEnum? Adjustment { get; set; }
         /// <summary>
         /// 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item）(条件に指定した時のみ含まれる）
@@ -114,7 +114,7 @@ namespace Freee.Accounting.Models
         /// 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item）(条件に指定した時のみ含まれる）
         /// </summary>
         /// <value>内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item）(条件に指定した時のみ含まれる）</value>
-        [DataMember(Name="breakdown_display_type", EmitDefaultValue=false)]
+        [DataMember(Name = "breakdown_display_type", EmitDefaultValue = false)]
         public BreakdownDisplayTypeEnum? BreakdownDisplayType { get; set; }
         /// <summary>
         /// 配賦仕訳のみ：only,配賦仕訳以外：without(条件に指定した時のみ含まれる）
@@ -141,7 +141,7 @@ namespace Freee.Accounting.Models
         /// 配賦仕訳のみ：only,配賦仕訳以外：without(条件に指定した時のみ含まれる）
         /// </summary>
         /// <value>配賦仕訳のみ：only,配賦仕訳以外：without(条件に指定した時のみ含まれる）</value>
-        [DataMember(Name="cost_allocation", EmitDefaultValue=false)]
+        [DataMember(Name = "cost_allocation", EmitDefaultValue = false)]
         public CostAllocationEnum? CostAllocation { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TrialPlSectionsResponseTrialPlSections" /> class.
@@ -192,84 +192,84 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets Balances
         /// </summary>
-        [DataMember(Name="balances", EmitDefaultValue=false)]
+        [DataMember(Name = "balances", EmitDefaultValue = false)]
         public List<TrialPlSectionsResponseTrialPlSectionsBalances> Balances { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 作成日時
         /// </summary>
         /// <value>作成日時</value>
-        [DataMember(Name="created_at", EmitDefaultValue=false)]
+        [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public string CreatedAt { get; set; }
 
         /// <summary>
         /// 発生日で絞込：終了日(yyyy-mm-dd)(条件に指定した時のみ含まれる）
         /// </summary>
         /// <value>発生日で絞込：終了日(yyyy-mm-dd)(条件に指定した時のみ含まれる）</value>
-        [DataMember(Name="end_date", EmitDefaultValue=false)]
+        [DataMember(Name = "end_date", EmitDefaultValue = false)]
         public string EndDate { get; set; }
 
         /// <summary>
         /// 発生月で絞込：終了会計月(1-12)(条件に指定した時のみ含まれる）
         /// </summary>
         /// <value>発生月で絞込：終了会計月(1-12)(条件に指定した時のみ含まれる）</value>
-        [DataMember(Name="end_month", EmitDefaultValue=false)]
+        [DataMember(Name = "end_month", EmitDefaultValue = false)]
         public int EndMonth { get; set; }
 
         /// <summary>
         /// 会計年度(条件に指定した時、または条件に月、日条件がない時のみ含まれる）
         /// </summary>
         /// <value>会計年度(条件に指定した時、または条件に月、日条件がない時のみ含まれる）</value>
-        [DataMember(Name="fiscal_year", EmitDefaultValue=false)]
+        [DataMember(Name = "fiscal_year", EmitDefaultValue = false)]
         public int FiscalYear { get; set; }
 
         /// <summary>
         /// 品目ID(条件に指定した時のみ含まれる）
         /// </summary>
         /// <value>品目ID(条件に指定した時のみ含まれる）</value>
-        [DataMember(Name="item_id", EmitDefaultValue=false)]
+        [DataMember(Name = "item_id", EmitDefaultValue = false)]
         public int ItemId { get; set; }
 
         /// <summary>
         /// 取引先コード(条件に指定した時のみ含まれる）
         /// </summary>
         /// <value>取引先コード(条件に指定した時のみ含まれる）</value>
-        [DataMember(Name="partner_code", EmitDefaultValue=false)]
+        [DataMember(Name = "partner_code", EmitDefaultValue = false)]
         public string PartnerCode { get; set; }
 
         /// <summary>
         /// 取引先ID(条件に指定した時のみ含まれる）
         /// </summary>
         /// <value>取引先ID(条件に指定した時のみ含まれる）</value>
-        [DataMember(Name="partner_id", EmitDefaultValue=false)]
+        [DataMember(Name = "partner_id", EmitDefaultValue = false)]
         public int PartnerId { get; set; }
 
         /// <summary>
         /// 出力する部門の指定
         /// </summary>
         /// <value>出力する部門の指定</value>
-        [DataMember(Name="section_ids", EmitDefaultValue=false)]
+        [DataMember(Name = "section_ids", EmitDefaultValue = false)]
         public string SectionIds { get; set; }
 
         /// <summary>
         /// 発生日で絞込：開始日(yyyy-mm-dd)(条件に指定した時のみ含まれる）
         /// </summary>
         /// <value>発生日で絞込：開始日(yyyy-mm-dd)(条件に指定した時のみ含まれる）</value>
-        [DataMember(Name="start_date", EmitDefaultValue=false)]
+        [DataMember(Name = "start_date", EmitDefaultValue = false)]
         public string StartDate { get; set; }
 
         /// <summary>
         /// 発生月で絞込：開始会計月(1-12)(条件に指定した時のみ含まれる）
         /// </summary>
         /// <value>発生月で絞込：開始会計月(1-12)(条件に指定した時のみ含まれる）</value>
-        [DataMember(Name="start_month", EmitDefaultValue=false)]
+        [DataMember(Name = "start_month", EmitDefaultValue = false)]
         public int StartMonth { get; set; }
 
         /// <summary>

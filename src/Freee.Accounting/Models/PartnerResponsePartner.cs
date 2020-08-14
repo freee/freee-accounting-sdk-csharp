@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// PartnerResponsePartner
     /// </summary>
     [DataContract]
-    public partial class PartnerResponsePartner :  IEquatable<PartnerResponsePartner>
+    public partial class PartnerResponsePartner : IEquatable<PartnerResponsePartner>
     {
         /// <summary>
         /// 口座種別(ordinary:普通、checking:当座、earmarked:納税準備預金、savings:貯蓄、other:その他)
@@ -72,7 +72,7 @@ namespace Freee.Accounting.Models
         /// 口座種別(ordinary:普通、checking:当座、earmarked:納税準備預金、savings:貯蓄、other:その他)
         /// </summary>
         /// <value>口座種別(ordinary:普通、checking:当座、earmarked:納税準備預金、savings:貯蓄、other:その他)</value>
-        [DataMember(Name="partner_bank_account_attributes[account_type]", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_bank_account_attributes[account_type]", EmitDefaultValue = true)]
         public PartnerBankAccountAttributesAccountTypeEnum? PartnerBankAccountAttributesAccountType { get; set; }
         /// <summary>
         /// 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)
@@ -105,7 +105,7 @@ namespace Freee.Accounting.Models
         /// 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)
         /// </summary>
         /// <value>請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)</value>
-        [DataMember(Name="partner_doc_setting_attributes[sending_method]", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_doc_setting_attributes[sending_method]", EmitDefaultValue = true)]
         public PartnerDocSettingAttributesSendingMethodEnum? PartnerDocSettingAttributesSendingMethod { get; set; }
         /// <summary>
         /// 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)
@@ -132,7 +132,7 @@ namespace Freee.Accounting.Models
         /// 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)
         /// </summary>
         /// <value>振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)</value>
-        [DataMember(Name="transfer_fee_handling_side", EmitDefaultValue=false)]
+        [DataMember(Name = "transfer_fee_handling_side", EmitDefaultValue = false)]
         public TransferFeeHandlingSideEnum? TransferFeeHandlingSide { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PartnerResponsePartner" /> class.
@@ -219,217 +219,217 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets AddressAttributes
         /// </summary>
-        [DataMember(Name="address_attributes", EmitDefaultValue=false)]
+        [DataMember(Name = "address_attributes", EmitDefaultValue = false)]
         public PartnerResponsePartnerAddressAttributes AddressAttributes { get; set; }
 
         /// <summary>
         /// 取引先コード
         /// </summary>
         /// <value>取引先コード</value>
-        [DataMember(Name="code", EmitDefaultValue=true)]
+        [DataMember(Name = "code", EmitDefaultValue = true)]
         public string Code { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 担当者 氏名
         /// </summary>
         /// <value>担当者 氏名</value>
-        [DataMember(Name="contact_name", EmitDefaultValue=true)]
+        [DataMember(Name = "contact_name", EmitDefaultValue = true)]
         public string ContactName { get; set; }
 
         /// <summary>
         /// 地域（JP: 国内、ZZ:国外）
         /// </summary>
         /// <value>地域（JP: 国内、ZZ:国外）</value>
-        [DataMember(Name="country_code", EmitDefaultValue=false)]
+        [DataMember(Name = "country_code", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
         /// <summary>
         /// 敬称（御中、様、(空白)の3つから選択）
         /// </summary>
         /// <value>敬称（御中、様、(空白)の3つから選択）</value>
-        [DataMember(Name="default_title", EmitDefaultValue=true)]
+        [DataMember(Name = "default_title", EmitDefaultValue = true)]
         public string DefaultTitle { get; set; }
 
         /// <summary>
         /// 担当者 メールアドレス
         /// </summary>
         /// <value>担当者 メールアドレス</value>
-        [DataMember(Name="email", EmitDefaultValue=true)]
+        [DataMember(Name = "email", EmitDefaultValue = true)]
         public string Email { get; set; }
 
         /// <summary>
         /// 取引先ID
         /// </summary>
         /// <value>取引先ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 支払月
         /// </summary>
         /// <value>支払月</value>
-        [DataMember(Name="invoice_payment_term_attributes[additional_months]", EmitDefaultValue=true)]
+        [DataMember(Name = "invoice_payment_term_attributes[additional_months]", EmitDefaultValue = true)]
         public int? InvoicePaymentTermAttributesAdditionalMonths { get; set; }
 
         /// <summary>
         /// 締め日（29, 30, 31日の末日を指定する場合は、32。）
         /// </summary>
         /// <value>締め日（29, 30, 31日の末日を指定する場合は、32。）</value>
-        [DataMember(Name="invoice_payment_term_attributes[cutoff_day]", EmitDefaultValue=true)]
+        [DataMember(Name = "invoice_payment_term_attributes[cutoff_day]", EmitDefaultValue = true)]
         public int? InvoicePaymentTermAttributesCutoffDay { get; set; }
 
         /// <summary>
         /// 支払日（29, 30, 31日の末日を指定する場合は、32。）
         /// </summary>
         /// <value>支払日（29, 30, 31日の末日を指定する場合は、32。）</value>
-        [DataMember(Name="invoice_payment_term_attributes[fixed_day]", EmitDefaultValue=true)]
+        [DataMember(Name = "invoice_payment_term_attributes[fixed_day]", EmitDefaultValue = true)]
         public int? InvoicePaymentTermAttributesFixedDay { get; set; }
 
         /// <summary>
         /// 正式名称（255文字以内）
         /// </summary>
         /// <value>正式名称（255文字以内）</value>
-        [DataMember(Name="long_name", EmitDefaultValue=true)]
+        [DataMember(Name = "long_name", EmitDefaultValue = true)]
         public string LongName { get; set; }
 
         /// <summary>
         /// 取引先名
         /// </summary>
         /// <value>取引先名</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// カナ名称（255文字以内）
         /// </summary>
         /// <value>カナ名称（255文字以内）</value>
-        [DataMember(Name="name_kana", EmitDefaultValue=true)]
+        [DataMember(Name = "name_kana", EmitDefaultValue = true)]
         public string NameKana { get; set; }
 
         /// <summary>
         /// 事業所種別（null: 未設定、1: 法人、2: 個人）
         /// </summary>
         /// <value>事業所種別（null: 未設定、1: 法人、2: 個人）</value>
-        [DataMember(Name="org_code", EmitDefaultValue=true)]
+        [DataMember(Name = "org_code", EmitDefaultValue = true)]
         public int? OrgCode { get; set; }
 
         /// <summary>
         /// 受取人名（カナ）
         /// </summary>
         /// <value>受取人名（カナ）</value>
-        [DataMember(Name="partner_bank_account_attributes[account_name]", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_bank_account_attributes[account_name]", EmitDefaultValue = true)]
         public string PartnerBankAccountAttributesAccountName { get; set; }
 
         /// <summary>
         /// 口座番号
         /// </summary>
         /// <value>口座番号</value>
-        [DataMember(Name="partner_bank_account_attributes[account_number]", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_bank_account_attributes[account_number]", EmitDefaultValue = true)]
         public string PartnerBankAccountAttributesAccountNumber { get; set; }
 
         /// <summary>
         /// 銀行番号
         /// </summary>
         /// <value>銀行番号</value>
-        [DataMember(Name="partner_bank_account_attributes[bank_code]", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_bank_account_attributes[bank_code]", EmitDefaultValue = true)]
         public string PartnerBankAccountAttributesBankCode { get; set; }
 
         /// <summary>
         /// 銀行名
         /// </summary>
         /// <value>銀行名</value>
-        [DataMember(Name="partner_bank_account_attributes[bank_name]", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_bank_account_attributes[bank_name]", EmitDefaultValue = true)]
         public string PartnerBankAccountAttributesBankName { get; set; }
 
         /// <summary>
         /// 銀行名（カナ）
         /// </summary>
         /// <value>銀行名（カナ）</value>
-        [DataMember(Name="partner_bank_account_attributes[bank_name_kana]", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_bank_account_attributes[bank_name_kana]", EmitDefaultValue = true)]
         public string PartnerBankAccountAttributesBankNameKana { get; set; }
 
         /// <summary>
         /// 受取人名（カナ）
         /// </summary>
         /// <value>受取人名（カナ）</value>
-        [DataMember(Name="partner_bank_account_attributes[branch_code]", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_bank_account_attributes[branch_code]", EmitDefaultValue = true)]
         public string PartnerBankAccountAttributesBranchCode { get; set; }
 
         /// <summary>
         /// 支店名（カナ）
         /// </summary>
         /// <value>支店名（カナ）</value>
-        [DataMember(Name="partner_bank_account_attributes[branch_kana]", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_bank_account_attributes[branch_kana]", EmitDefaultValue = true)]
         public string PartnerBankAccountAttributesBranchKana { get; set; }
 
         /// <summary>
         /// 支店名
         /// </summary>
         /// <value>支店名</value>
-        [DataMember(Name="partner_bank_account_attributes[branch_name]", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_bank_account_attributes[branch_name]", EmitDefaultValue = true)]
         public string PartnerBankAccountAttributesBranchName { get; set; }
 
         /// <summary>
         /// 受取人名
         /// </summary>
         /// <value>受取人名</value>
-        [DataMember(Name="partner_bank_account_attributes[long_account_name]", EmitDefaultValue=true)]
+        [DataMember(Name = "partner_bank_account_attributes[long_account_name]", EmitDefaultValue = true)]
         public string PartnerBankAccountAttributesLongAccountName { get; set; }
 
         /// <summary>
         /// 振込元口座ID（一括振込ファイル用）:（未設定の場合は、nullです。）
         /// </summary>
         /// <value>振込元口座ID（一括振込ファイル用）:（未設定の場合は、nullです。）</value>
-        [DataMember(Name="payer_walletable_id", EmitDefaultValue=true)]
+        [DataMember(Name = "payer_walletable_id", EmitDefaultValue = true)]
         public int? PayerWalletableId { get; set; }
 
         /// <summary>
         /// 支払月
         /// </summary>
         /// <value>支払月</value>
-        [DataMember(Name="payment_term_attributes[additional_months]", EmitDefaultValue=true)]
+        [DataMember(Name = "payment_term_attributes[additional_months]", EmitDefaultValue = true)]
         public int? PaymentTermAttributesAdditionalMonths { get; set; }
 
         /// <summary>
         /// 締め日（29, 30, 31日の末日を指定する場合は、32。）
         /// </summary>
         /// <value>締め日（29, 30, 31日の末日を指定する場合は、32。）</value>
-        [DataMember(Name="payment_term_attributes[cutoff_day]", EmitDefaultValue=true)]
+        [DataMember(Name = "payment_term_attributes[cutoff_day]", EmitDefaultValue = true)]
         public int? PaymentTermAttributesCutoffDay { get; set; }
 
         /// <summary>
         /// 支払日（29, 30, 31日の末日を指定する場合は、32。）
         /// </summary>
         /// <value>支払日（29, 30, 31日の末日を指定する場合は、32。）</value>
-        [DataMember(Name="payment_term_attributes[fixed_day]", EmitDefaultValue=true)]
+        [DataMember(Name = "payment_term_attributes[fixed_day]", EmitDefaultValue = true)]
         public int? PaymentTermAttributesFixedDay { get; set; }
 
         /// <summary>
         /// 電話番号
         /// </summary>
         /// <value>電話番号</value>
-        [DataMember(Name="phone", EmitDefaultValue=true)]
+        [DataMember(Name = "phone", EmitDefaultValue = true)]
         public string Phone { get; set; }
 
         /// <summary>
         /// ショートカット1 (20文字以内)
         /// </summary>
         /// <value>ショートカット1 (20文字以内)</value>
-        [DataMember(Name="shortcut1", EmitDefaultValue=true)]
+        [DataMember(Name = "shortcut1", EmitDefaultValue = true)]
         public string Shortcut1 { get; set; }
 
         /// <summary>
         /// ショートカット2 (20文字以内)
         /// </summary>
         /// <value>ショートカット2 (20文字以内)</value>
-        [DataMember(Name="shortcut2", EmitDefaultValue=true)]
+        [DataMember(Name = "shortcut2", EmitDefaultValue = true)]
         public string Shortcut2 { get; set; }
 
         /// <summary>

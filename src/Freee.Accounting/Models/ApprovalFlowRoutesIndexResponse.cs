@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ApprovalFlowRoutesIndexResponse
     /// </summary>
     [DataContract]
-    public partial class ApprovalFlowRoutesIndexResponse :  IEquatable<ApprovalFlowRoutesIndexResponse>
+    public partial class ApprovalFlowRoutesIndexResponse : IEquatable<ApprovalFlowRoutesIndexResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalFlowRoutesIndexResponse" /> class.
@@ -47,7 +47,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets ApprovalFlowRoutes
         /// </summary>
-        [DataMember(Name="approval_flow_routes", EmitDefaultValue=false)]
+        [DataMember(Name = "approval_flow_routes", EmitDefaultValue = false)]
         public List<ApprovalFlowRoutesIndexResponseApprovalFlowRoutes> ApprovalFlowRoutes { get; set; }
 
         /// <summary>

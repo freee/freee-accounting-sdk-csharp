@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountItemParams">勘定科目の作成</param>
         /// <returns>AccountItemResponse</returns>
-        AccountItemResponse CreateAccountItem (AccountItemParams accountItemParams);
+        AccountItemResponse CreateAccountItem(AccountItemParams accountItemParams);
 
         /// <summary>
         /// 勘定科目の作成
@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountItemParams">勘定科目の作成</param>
         /// <returns>ApiResponse of AccountItemResponse</returns>
-        ApiResponse<AccountItemResponse> CreateAccountItemWithHttpInfo (AccountItemParams accountItemParams);
+        ApiResponse<AccountItemResponse> CreateAccountItemWithHttpInfo(AccountItemParams accountItemParams);
         /// <summary>
         /// 勘定科目の削除
         /// </summary>
@@ -57,7 +57,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroyAccountItem (int id, int companyId);
+        void DestroyAccountItem(int id, int companyId);
 
         /// <summary>
         /// 勘定科目の削除
@@ -69,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroyAccountItemWithHttpInfo (int id, int companyId);
+        ApiResponse<Object> DestroyAccountItemWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 勘定科目の詳細情報の取得
         /// </summary>
@@ -80,7 +80,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">勘定科目ID</param>
         /// <returns>AccountItemResponse</returns>
-        AccountItemResponse GetAccountItem (int companyId, int id);
+        AccountItemResponse GetAccountItem(int companyId, int id);
 
         /// <summary>
         /// 勘定科目の詳細情報の取得
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">勘定科目ID</param>
         /// <returns>ApiResponse of AccountItemResponse</returns>
-        ApiResponse<AccountItemResponse> GetAccountItemWithHttpInfo (int companyId, int id);
+        ApiResponse<AccountItemResponse> GetAccountItemWithHttpInfo(int companyId, int id);
         /// <summary>
         /// 勘定科目一覧の取得
         /// </summary>
@@ -103,7 +103,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="baseDate">基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。 (optional)</param>
         /// <returns>AccountItemsResponse</returns>
-        AccountItemsResponse GetAccountItems (int companyId, string baseDate = default(string));
+        AccountItemsResponse GetAccountItems(int companyId, string baseDate = default(string));
 
         /// <summary>
         /// 勘定科目一覧の取得
@@ -115,7 +115,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="baseDate">基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。 (optional)</param>
         /// <returns>ApiResponse of AccountItemsResponse</returns>
-        ApiResponse<AccountItemsResponse> GetAccountItemsWithHttpInfo (int companyId, string baseDate = default(string));
+        ApiResponse<AccountItemsResponse> GetAccountItemsWithHttpInfo(int companyId, string baseDate = default(string));
         /// <summary>
         /// 勘定科目の更新
         /// </summary>
@@ -126,7 +126,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="accountItemParams">勘定科目の更新</param>
         /// <returns>AccountItemResponse</returns>
-        AccountItemResponse UpdateAccountItem (int id, AccountItemParams accountItemParams);
+        AccountItemResponse UpdateAccountItem(int id, AccountItemParams accountItemParams);
 
         /// <summary>
         /// 勘定科目の更新
@@ -138,7 +138,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="accountItemParams">勘定科目の更新</param>
         /// <returns>ApiResponse of AccountItemResponse</returns>
-        ApiResponse<AccountItemResponse> UpdateAccountItemWithHttpInfo (int id, AccountItemParams accountItemParams);
+        ApiResponse<AccountItemResponse> UpdateAccountItemWithHttpInfo(int id, AccountItemParams accountItemParams);
         #endregion Synchronous Operations
     }
 
@@ -158,7 +158,7 @@ namespace Freee.Accounting.Api
         /// <param name="accountItemParams">勘定科目の作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountItemResponse</returns>
-        System.Threading.Tasks.Task<AccountItemResponse> CreateAccountItemAsync (AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AccountItemResponse> CreateAccountItemAsync(AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 勘定科目の作成
@@ -170,7 +170,7 @@ namespace Freee.Accounting.Api
         /// <param name="accountItemParams">勘定科目の作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountItemResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AccountItemResponse>> CreateAccountItemWithHttpInfoAsync (AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AccountItemResponse>> CreateAccountItemWithHttpInfoAsync(AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 勘定科目の削除
         /// </summary>
@@ -182,7 +182,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyAccountItemAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroyAccountItemAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 勘定科目の削除
@@ -195,7 +195,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyAccountItemWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyAccountItemWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 勘定科目の詳細情報の取得
         /// </summary>
@@ -207,7 +207,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">勘定科目ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountItemResponse</returns>
-        System.Threading.Tasks.Task<AccountItemResponse> GetAccountItemAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AccountItemResponse> GetAccountItemAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 勘定科目の詳細情報の取得
@@ -220,7 +220,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">勘定科目ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountItemResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AccountItemResponse>> GetAccountItemWithHttpInfoAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AccountItemResponse>> GetAccountItemWithHttpInfoAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 勘定科目一覧の取得
         /// </summary>
@@ -232,7 +232,7 @@ namespace Freee.Accounting.Api
         /// <param name="baseDate">基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountItemsResponse</returns>
-        System.Threading.Tasks.Task<AccountItemsResponse> GetAccountItemsAsync (int companyId, string baseDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AccountItemsResponse> GetAccountItemsAsync(int companyId, string baseDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 勘定科目一覧の取得
@@ -245,7 +245,7 @@ namespace Freee.Accounting.Api
         /// <param name="baseDate">基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountItemsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AccountItemsResponse>> GetAccountItemsWithHttpInfoAsync (int companyId, string baseDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AccountItemsResponse>> GetAccountItemsWithHttpInfoAsync(int companyId, string baseDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 勘定科目の更新
         /// </summary>
@@ -257,7 +257,7 @@ namespace Freee.Accounting.Api
         /// <param name="accountItemParams">勘定科目の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountItemResponse</returns>
-        System.Threading.Tasks.Task<AccountItemResponse> UpdateAccountItemAsync (int id, AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AccountItemResponse> UpdateAccountItemAsync(int id, AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 勘定科目の更新
@@ -270,7 +270,7 @@ namespace Freee.Accounting.Api
         /// <param name="accountItemParams">勘定科目の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountItemResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AccountItemResponse>> UpdateAccountItemWithHttpInfoAsync (int id, AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AccountItemResponse>> UpdateAccountItemWithHttpInfoAsync(int id, AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -293,7 +293,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="AccountItemsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public AccountItemsApi() : this((string) null)
+        public AccountItemsApi() : this((string)null)
         {
         }
 
@@ -338,11 +338,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public AccountItemsApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public AccountItemsApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -373,7 +373,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -397,10 +397,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountItemParams">勘定科目の作成</param>
         /// <returns>AccountItemResponse</returns>
-        public AccountItemResponse CreateAccountItem (AccountItemParams accountItemParams)
+        public AccountItemResponse CreateAccountItem(AccountItemParams accountItemParams)
         {
-             Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = CreateAccountItemWithHttpInfo(accountItemParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = CreateAccountItemWithHttpInfo(accountItemParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -409,7 +409,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountItemParams">勘定科目の作成</param>
         /// <returns>ApiResponse of AccountItemResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< AccountItemResponse > CreateAccountItemWithHttpInfo (AccountItemParams accountItemParams)
+        public Freee.Accounting.Client.ApiResponse<AccountItemResponse> CreateAccountItemWithHttpInfo(AccountItemParams accountItemParams)
         {
             // verify the required parameter 'accountItemParams' is set
             if (accountItemParams == null)
@@ -443,7 +443,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< AccountItemResponse >("/api/1/account_items", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<AccountItemResponse>("/api/1/account_items", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -461,10 +461,10 @@ namespace Freee.Accounting.Api
         /// <param name="accountItemParams">勘定科目の作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountItemResponse</returns>
-        public async System.Threading.Tasks.Task<AccountItemResponse> CreateAccountItemAsync (AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AccountItemResponse> CreateAccountItemAsync(AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = await CreateAccountItemWithHttpInfoAsync(accountItemParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = await CreateAccountItemWithHttpInfoAsync(accountItemParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -474,7 +474,7 @@ namespace Freee.Accounting.Api
         /// <param name="accountItemParams">勘定科目の作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountItemResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<AccountItemResponse>> CreateAccountItemWithHttpInfoAsync (AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<AccountItemResponse>> CreateAccountItemWithHttpInfoAsync(AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'accountItemParams' is set
             if (accountItemParams == null)
@@ -529,9 +529,9 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroyAccountItem (int id, int companyId)
+        public void DestroyAccountItem(int id, int companyId)
         {
-             DestroyAccountItemWithHttpInfo(id, companyId);
+            DestroyAccountItemWithHttpInfo(id, companyId);
         }
 
         /// <summary>
@@ -541,7 +541,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroyAccountItemWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroyAccountItemWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -589,9 +589,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyAccountItemAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroyAccountItemAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyAccountItemWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyAccountItemWithHttpInfoAsync(id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -602,7 +602,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyAccountItemWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyAccountItemWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -652,10 +652,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">勘定科目ID</param>
         /// <returns>AccountItemResponse</returns>
-        public AccountItemResponse GetAccountItem (int companyId, int id)
+        public AccountItemResponse GetAccountItem(int companyId, int id)
         {
-             Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = GetAccountItemWithHttpInfo(companyId, id);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = GetAccountItemWithHttpInfo(companyId, id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -665,7 +665,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">勘定科目ID</param>
         /// <returns>ApiResponse of AccountItemResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< AccountItemResponse > GetAccountItemWithHttpInfo (int companyId, int id)
+        public Freee.Accounting.Client.ApiResponse<AccountItemResponse> GetAccountItemWithHttpInfo(int companyId, int id)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -694,7 +694,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< AccountItemResponse >("/api/1/account_items/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<AccountItemResponse>("/api/1/account_items/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -713,10 +713,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">勘定科目ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountItemResponse</returns>
-        public async System.Threading.Tasks.Task<AccountItemResponse> GetAccountItemAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AccountItemResponse> GetAccountItemAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = await GetAccountItemWithHttpInfoAsync(companyId, id, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = await GetAccountItemWithHttpInfoAsync(companyId, id, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -727,7 +727,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">勘定科目ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountItemResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<AccountItemResponse>> GetAccountItemWithHttpInfoAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<AccountItemResponse>> GetAccountItemWithHttpInfoAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -777,10 +777,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="baseDate">基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。 (optional)</param>
         /// <returns>AccountItemsResponse</returns>
-        public AccountItemsResponse GetAccountItems (int companyId, string baseDate = default(string))
+        public AccountItemsResponse GetAccountItems(int companyId, string baseDate = default(string))
         {
-             Freee.Accounting.Client.ApiResponse<AccountItemsResponse> localVarResponse = GetAccountItemsWithHttpInfo(companyId, baseDate);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<AccountItemsResponse> localVarResponse = GetAccountItemsWithHttpInfo(companyId, baseDate);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -790,7 +790,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="baseDate">基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。 (optional)</param>
         /// <returns>ApiResponse of AccountItemsResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< AccountItemsResponse > GetAccountItemsWithHttpInfo (int companyId, string baseDate = default(string))
+        public Freee.Accounting.Client.ApiResponse<AccountItemsResponse> GetAccountItemsWithHttpInfo(int companyId, string baseDate = default(string))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -822,7 +822,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< AccountItemsResponse >("/api/1/account_items", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<AccountItemsResponse>("/api/1/account_items", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -841,10 +841,10 @@ namespace Freee.Accounting.Api
         /// <param name="baseDate">基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountItemsResponse</returns>
-        public async System.Threading.Tasks.Task<AccountItemsResponse> GetAccountItemsAsync (int companyId, string baseDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AccountItemsResponse> GetAccountItemsAsync(int companyId, string baseDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<AccountItemsResponse> localVarResponse = await GetAccountItemsWithHttpInfoAsync(companyId, baseDate, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<AccountItemsResponse> localVarResponse = await GetAccountItemsWithHttpInfoAsync(companyId, baseDate, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -855,7 +855,7 @@ namespace Freee.Accounting.Api
         /// <param name="baseDate">基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountItemsResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<AccountItemsResponse>> GetAccountItemsWithHttpInfoAsync (int companyId, string baseDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<AccountItemsResponse>> GetAccountItemsWithHttpInfoAsync(int companyId, string baseDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -908,10 +908,10 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="accountItemParams">勘定科目の更新</param>
         /// <returns>AccountItemResponse</returns>
-        public AccountItemResponse UpdateAccountItem (int id, AccountItemParams accountItemParams)
+        public AccountItemResponse UpdateAccountItem(int id, AccountItemParams accountItemParams)
         {
-             Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = UpdateAccountItemWithHttpInfo(id, accountItemParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = UpdateAccountItemWithHttpInfo(id, accountItemParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -921,7 +921,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="accountItemParams">勘定科目の更新</param>
         /// <returns>ApiResponse of AccountItemResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< AccountItemResponse > UpdateAccountItemWithHttpInfo (int id, AccountItemParams accountItemParams)
+        public Freee.Accounting.Client.ApiResponse<AccountItemResponse> UpdateAccountItemWithHttpInfo(int id, AccountItemParams accountItemParams)
         {
             // verify the required parameter 'accountItemParams' is set
             if (accountItemParams == null)
@@ -956,7 +956,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< AccountItemResponse >("/api/1/account_items/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<AccountItemResponse>("/api/1/account_items/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -975,10 +975,10 @@ namespace Freee.Accounting.Api
         /// <param name="accountItemParams">勘定科目の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountItemResponse</returns>
-        public async System.Threading.Tasks.Task<AccountItemResponse> UpdateAccountItemAsync (int id, AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AccountItemResponse> UpdateAccountItemAsync(int id, AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = await UpdateAccountItemWithHttpInfoAsync(id, accountItemParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = await UpdateAccountItemWithHttpInfoAsync(id, accountItemParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -989,7 +989,7 @@ namespace Freee.Accounting.Api
         /// <param name="accountItemParams">勘定科目の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountItemResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<AccountItemResponse>> UpdateAccountItemWithHttpInfoAsync (int id, AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<AccountItemResponse>> UpdateAccountItemWithHttpInfoAsync(int id, AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'accountItemParams' is set
             if (accountItemParams == null)

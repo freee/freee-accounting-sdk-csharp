@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ExpenseApplicationLineTemplate
     /// </summary>
     [DataContract]
-    public partial class ExpenseApplicationLineTemplate :  IEquatable<ExpenseApplicationLineTemplate>
+    public partial class ExpenseApplicationLineTemplate : IEquatable<ExpenseApplicationLineTemplate>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExpenseApplicationLineTemplate" /> class.
@@ -64,56 +64,56 @@ namespace Freee.Accounting.Models
         /// 勘定科目ID
         /// </summary>
         /// <value>勘定科目ID</value>
-        [DataMember(Name="account_item_id", EmitDefaultValue=false)]
+        [DataMember(Name = "account_item_id", EmitDefaultValue = false)]
         public int AccountItemId { get; set; }
 
         /// <summary>
         /// 勘定科目名
         /// </summary>
         /// <value>勘定科目名</value>
-        [DataMember(Name="account_item_name", EmitDefaultValue=false)]
+        [DataMember(Name = "account_item_name", EmitDefaultValue = false)]
         public string AccountItemName { get; set; }
 
         /// <summary>
         /// 経費科目の説明
         /// </summary>
         /// <value>経費科目の説明</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// 経費科目ID
         /// </summary>
         /// <value>経費科目ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 内容の補足
         /// </summary>
         /// <value>内容の補足</value>
-        [DataMember(Name="line_description", EmitDefaultValue=false)]
+        [DataMember(Name = "line_description", EmitDefaultValue = false)]
         public string LineDescription { get; set; }
 
         /// <summary>
         /// 経費科目名
         /// </summary>
         /// <value>経費科目名</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// 税区分コード
         /// </summary>
         /// <value>税区分コード</value>
-        [DataMember(Name="tax_code", EmitDefaultValue=false)]
+        [DataMember(Name = "tax_code", EmitDefaultValue = false)]
         public int TaxCode { get; set; }
 
         /// <summary>
         /// 税区分名
         /// </summary>
         /// <value>税区分名</value>
-        [DataMember(Name="tax_name", EmitDefaultValue=false)]
+        [DataMember(Name = "tax_name", EmitDefaultValue = false)]
         public string TaxName { get; set; }
 
         /// <summary>

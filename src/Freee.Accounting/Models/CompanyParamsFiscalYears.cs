@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// CompanyParamsFiscalYears
     /// </summary>
     [DataContract]
-    public partial class CompanyParamsFiscalYears :  IEquatable<CompanyParamsFiscalYears>
+    public partial class CompanyParamsFiscalYears : IEquatable<CompanyParamsFiscalYears>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyParamsFiscalYears" /> class.
@@ -58,63 +58,63 @@ namespace Freee.Accounting.Models
         /// 期
         /// </summary>
         /// <value>期</value>
-        [DataMember(Name="accounting_period", EmitDefaultValue=false)]
+        [DataMember(Name = "accounting_period", EmitDefaultValue = false)]
         public int AccountingPeriod { get; set; }
 
         /// <summary>
         /// 減価償却端数処理法(法人のみ)(0: 切り捨て、1: 切り上げ)
         /// </summary>
         /// <value>減価償却端数処理法(法人のみ)(0: 切り捨て、1: 切り上げ)</value>
-        [DataMember(Name="depreciation_fraction", EmitDefaultValue=false)]
+        [DataMember(Name = "depreciation_fraction", EmitDefaultValue = false)]
         public int DepreciationFraction { get; set; }
 
         /// <summary>
         /// 期末日（決算日）
         /// </summary>
         /// <value>期末日（決算日）</value>
-        [DataMember(Name="end_date", EmitDefaultValue=false)]
+        [DataMember(Name = "end_date", EmitDefaultValue = false)]
         public string EndDate { get; set; }
 
         /// <summary>
         /// 固定資産の控除法（true: 間接控除法、false: 直接控除法）
         /// </summary>
         /// <value>固定資産の控除法（true: 間接控除法、false: 直接控除法）</value>
-        [DataMember(Name="indirect_write_off_method", EmitDefaultValue=false)]
+        [DataMember(Name = "indirect_write_off_method", EmitDefaultValue = false)]
         public bool IndirectWriteOffMethod { get; set; }
 
         /// <summary>
         /// 間接控除時の累計額（true: 資産分類別、false: 共通）
         /// </summary>
         /// <value>間接控除時の累計額（true: 資産分類別、false: 共通）</value>
-        [DataMember(Name="indirect_write_off_method_type", EmitDefaultValue=false)]
+        [DataMember(Name = "indirect_write_off_method_type", EmitDefaultValue = false)]
         public bool IndirectWriteOffMethodType { get; set; }
 
         /// <summary>
         /// 不動産所得使用区分（0: 一般、3: 一般/不動産） ※個人事業主のみ設定可能
         /// </summary>
         /// <value>不動産所得使用区分（0: 一般、3: 一般/不動産） ※個人事業主のみ設定可能</value>
-        [DataMember(Name="return_code", EmitDefaultValue=false)]
+        [DataMember(Name = "return_code", EmitDefaultValue = false)]
         public int ReturnCode { get; set; }
 
         /// <summary>
         /// 期首日
         /// </summary>
         /// <value>期首日</value>
-        [DataMember(Name="start_date", EmitDefaultValue=false)]
+        [DataMember(Name = "start_date", EmitDefaultValue = false)]
         public string StartDate { get; set; }
 
         /// <summary>
         /// 消費税端数処理方法（0: 切り上げ、1: 切り捨て, 2: 四捨五入）
         /// </summary>
         /// <value>消費税端数処理方法（0: 切り上げ、1: 切り捨て, 2: 四捨五入）</value>
-        [DataMember(Name="tax_fraction", EmitDefaultValue=false)]
+        [DataMember(Name = "tax_fraction", EmitDefaultValue = false)]
         public int TaxFraction { get; set; }
 
         /// <summary>
         /// 製造業向け機能（true: 使用する、false: 使用しない）
         /// </summary>
         /// <value>製造業向け機能（true: 使用する、false: 使用しない）</value>
-        [DataMember(Name="use_industry_template", EmitDefaultValue=false)]
+        [DataMember(Name = "use_industry_template", EmitDefaultValue = false)]
         public bool UseIndustryTemplate { get; set; }
 
         /// <summary>

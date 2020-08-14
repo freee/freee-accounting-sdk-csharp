@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ReceiptResponse
     /// </summary>
     [DataContract]
-    public partial class ReceiptResponse :  IEquatable<ReceiptResponse>
+    public partial class ReceiptResponse : IEquatable<ReceiptResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReceiptResponse" /> class.
@@ -47,7 +47,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets Receipt
         /// </summary>
-        [DataMember(Name="receipt", EmitDefaultValue=false)]
+        [DataMember(Name = "receipt", EmitDefaultValue = false)]
         public Receipt Receipt { get; set; }
 
         /// <summary>

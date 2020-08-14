@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// RenewCreateParams
     /// </summary>
     [DataContract]
-    public partial class RenewCreateParams :  IEquatable<RenewCreateParams>
+    public partial class RenewCreateParams : IEquatable<RenewCreateParams>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RenewCreateParams" /> class.
@@ -55,28 +55,28 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// +更新の明細行
         /// </summary>
         /// <value>+更新の明細行</value>
-        [DataMember(Name="details", EmitDefaultValue=false)]
+        [DataMember(Name = "details", EmitDefaultValue = false)]
         public List<RenewCreateParamsDetails> Details { get; set; }
 
         /// <summary>
         /// +更新対象行ID (details(取引の明細行), accruals(債権債務行), renewsのdetails(+更新の明細行)のIDを指定) 
         /// </summary>
         /// <value>+更新対象行ID (details(取引の明細行), accruals(債権債務行), renewsのdetails(+更新の明細行)のIDを指定) </value>
-        [DataMember(Name="renew_target_id", EmitDefaultValue=false)]
+        [DataMember(Name = "renew_target_id", EmitDefaultValue = false)]
         public int RenewTargetId { get; set; }
 
         /// <summary>
         /// 更新日 (yyyy-mm-dd)
         /// </summary>
         /// <value>更新日 (yyyy-mm-dd)</value>
-        [DataMember(Name="update_date", EmitDefaultValue=false)]
+        [DataMember(Name = "update_date", EmitDefaultValue = false)]
         public string UpdateDate { get; set; }
 
         /// <summary>

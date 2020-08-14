@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="itemParams">品目の作成 (optional)</param>
         /// <returns>ItemResponse</returns>
-        ItemResponse CreateItem (ItemParams itemParams = default(ItemParams));
+        ItemResponse CreateItem(ItemParams itemParams = default(ItemParams));
 
         /// <summary>
         /// 品目の作成
@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="itemParams">品目の作成 (optional)</param>
         /// <returns>ApiResponse of ItemResponse</returns>
-        ApiResponse<ItemResponse> CreateItemWithHttpInfo (ItemParams itemParams = default(ItemParams));
+        ApiResponse<ItemResponse> CreateItemWithHttpInfo(ItemParams itemParams = default(ItemParams));
         /// <summary>
         /// 品目の削除
         /// </summary>
@@ -57,7 +57,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">品目ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroyItem (int id, int companyId);
+        void DestroyItem(int id, int companyId);
 
         /// <summary>
         /// 品目の削除
@@ -69,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">品目ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroyItemWithHttpInfo (int id, int companyId);
+        ApiResponse<Object> DestroyItemWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 品目の取得
         /// </summary>
@@ -80,7 +80,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">品目ID</param>
         /// <returns>ItemResponse</returns>
-        ItemResponse GetItem (int companyId, int id);
+        ItemResponse GetItem(int companyId, int id);
 
         /// <summary>
         /// 品目の取得
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">品目ID</param>
         /// <returns>ApiResponse of ItemResponse</returns>
-        ApiResponse<ItemResponse> GetItemWithHttpInfo (int companyId, int id);
+        ApiResponse<ItemResponse> GetItemWithHttpInfo(int companyId, int id);
         /// <summary>
         /// 品目一覧の取得
         /// </summary>
@@ -104,7 +104,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>InlineResponse2005</returns>
-        InlineResponse2005 GetItems (int companyId, int? offset = default(int?), int? limit = default(int?));
+        InlineResponse2005 GetItems(int companyId, int? offset = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// 品目一覧の取得
@@ -117,7 +117,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>ApiResponse of InlineResponse2005</returns>
-        ApiResponse<InlineResponse2005> GetItemsWithHttpInfo (int companyId, int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<InlineResponse2005> GetItemsWithHttpInfo(int companyId, int? offset = default(int?), int? limit = default(int?));
         /// <summary>
         /// 品目の更新
         /// </summary>
@@ -128,7 +128,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">品目ID</param>
         /// <param name="itemParams">品目の更新 (optional)</param>
         /// <returns>ItemResponse</returns>
-        ItemResponse UpdateItem (int id, ItemParams itemParams = default(ItemParams));
+        ItemResponse UpdateItem(int id, ItemParams itemParams = default(ItemParams));
 
         /// <summary>
         /// 品目の更新
@@ -140,7 +140,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">品目ID</param>
         /// <param name="itemParams">品目の更新 (optional)</param>
         /// <returns>ApiResponse of ItemResponse</returns>
-        ApiResponse<ItemResponse> UpdateItemWithHttpInfo (int id, ItemParams itemParams = default(ItemParams));
+        ApiResponse<ItemResponse> UpdateItemWithHttpInfo(int id, ItemParams itemParams = default(ItemParams));
         #endregion Synchronous Operations
     }
 
@@ -160,7 +160,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemParams">品目の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ItemResponse</returns>
-        System.Threading.Tasks.Task<ItemResponse> CreateItemAsync (ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ItemResponse> CreateItemAsync(ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 品目の作成
@@ -172,7 +172,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemParams">品目の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ItemResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ItemResponse>> CreateItemWithHttpInfoAsync (ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ItemResponse>> CreateItemWithHttpInfoAsync(ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 品目の削除
         /// </summary>
@@ -184,7 +184,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyItemAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroyItemAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 品目の削除
@@ -197,7 +197,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyItemWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyItemWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 品目の取得
         /// </summary>
@@ -209,7 +209,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">品目ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ItemResponse</returns>
-        System.Threading.Tasks.Task<ItemResponse> GetItemAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ItemResponse> GetItemAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 品目の取得
@@ -222,7 +222,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">品目ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ItemResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ItemResponse>> GetItemWithHttpInfoAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ItemResponse>> GetItemWithHttpInfoAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 品目一覧の取得
         /// </summary>
@@ -235,7 +235,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2005</returns>
-        System.Threading.Tasks.Task<InlineResponse2005> GetItemsAsync (int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse2005> GetItemsAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 品目一覧の取得
@@ -249,7 +249,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2005>> GetItemsWithHttpInfoAsync (int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2005>> GetItemsWithHttpInfoAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 品目の更新
         /// </summary>
@@ -261,7 +261,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemParams">品目の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ItemResponse</returns>
-        System.Threading.Tasks.Task<ItemResponse> UpdateItemAsync (int id, ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ItemResponse> UpdateItemAsync(int id, ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 品目の更新
@@ -274,7 +274,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemParams">品目の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ItemResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ItemResponse>> UpdateItemWithHttpInfoAsync (int id, ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ItemResponse>> UpdateItemWithHttpInfoAsync(int id, ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -297,7 +297,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="ItemsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ItemsApi() : this((string) null)
+        public ItemsApi() : this((string)null)
         {
         }
 
@@ -342,11 +342,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public ItemsApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public ItemsApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -377,7 +377,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -401,10 +401,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="itemParams">品目の作成 (optional)</param>
         /// <returns>ItemResponse</returns>
-        public ItemResponse CreateItem (ItemParams itemParams = default(ItemParams))
+        public ItemResponse CreateItem(ItemParams itemParams = default(ItemParams))
         {
-             Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = CreateItemWithHttpInfo(itemParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = CreateItemWithHttpInfo(itemParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -413,7 +413,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="itemParams">品目の作成 (optional)</param>
         /// <returns>ApiResponse of ItemResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ItemResponse > CreateItemWithHttpInfo (ItemParams itemParams = default(ItemParams))
+        public Freee.Accounting.Client.ApiResponse<ItemResponse> CreateItemWithHttpInfo(ItemParams itemParams = default(ItemParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -443,7 +443,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< ItemResponse >("/api/1/items", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ItemResponse>("/api/1/items", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -461,10 +461,10 @@ namespace Freee.Accounting.Api
         /// <param name="itemParams">品目の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ItemResponse</returns>
-        public async System.Threading.Tasks.Task<ItemResponse> CreateItemAsync (ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ItemResponse> CreateItemAsync(ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = await CreateItemWithHttpInfoAsync(itemParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = await CreateItemWithHttpInfoAsync(itemParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -474,7 +474,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemParams">品目の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ItemResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ItemResponse>> CreateItemWithHttpInfoAsync (ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ItemResponse>> CreateItemWithHttpInfoAsync(ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -525,9 +525,9 @@ namespace Freee.Accounting.Api
         /// <param name="id">品目ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroyItem (int id, int companyId)
+        public void DestroyItem(int id, int companyId)
         {
-             DestroyItemWithHttpInfo(id, companyId);
+            DestroyItemWithHttpInfo(id, companyId);
         }
 
         /// <summary>
@@ -537,7 +537,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">品目ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroyItemWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroyItemWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -585,9 +585,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyItemAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroyItemAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyItemWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyItemWithHttpInfoAsync(id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -598,7 +598,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyItemWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyItemWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -648,10 +648,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">品目ID</param>
         /// <returns>ItemResponse</returns>
-        public ItemResponse GetItem (int companyId, int id)
+        public ItemResponse GetItem(int companyId, int id)
         {
-             Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = GetItemWithHttpInfo(companyId, id);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = GetItemWithHttpInfo(companyId, id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -661,7 +661,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="id">品目ID</param>
         /// <returns>ApiResponse of ItemResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ItemResponse > GetItemWithHttpInfo (int companyId, int id)
+        public Freee.Accounting.Client.ApiResponse<ItemResponse> GetItemWithHttpInfo(int companyId, int id)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -690,7 +690,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< ItemResponse >("/api/1/items/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ItemResponse>("/api/1/items/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -709,10 +709,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">品目ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ItemResponse</returns>
-        public async System.Threading.Tasks.Task<ItemResponse> GetItemAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ItemResponse> GetItemAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = await GetItemWithHttpInfoAsync(companyId, id, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = await GetItemWithHttpInfoAsync(companyId, id, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -723,7 +723,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">品目ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ItemResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ItemResponse>> GetItemWithHttpInfoAsync (int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ItemResponse>> GetItemWithHttpInfoAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -774,10 +774,10 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>InlineResponse2005</returns>
-        public InlineResponse2005 GetItems (int companyId, int? offset = default(int?), int? limit = default(int?))
+        public InlineResponse2005 GetItems(int companyId, int? offset = default(int?), int? limit = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse2005> localVarResponse = GetItemsWithHttpInfo(companyId, offset, limit);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse2005> localVarResponse = GetItemsWithHttpInfo(companyId, offset, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -788,7 +788,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>ApiResponse of InlineResponse2005</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse2005 > GetItemsWithHttpInfo (int companyId, int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse2005> GetItemsWithHttpInfo(int companyId, int? offset = default(int?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -824,7 +824,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse2005 >("/api/1/items", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse2005>("/api/1/items", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -844,10 +844,10 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2005</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2005> GetItemsAsync (int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse2005> GetItemsAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse2005> localVarResponse = await GetItemsWithHttpInfoAsync(companyId, offset, limit, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse2005> localVarResponse = await GetItemsWithHttpInfoAsync(companyId, offset, limit, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -859,7 +859,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2005>> GetItemsWithHttpInfoAsync (int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2005>> GetItemsWithHttpInfoAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -916,10 +916,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">品目ID</param>
         /// <param name="itemParams">品目の更新 (optional)</param>
         /// <returns>ItemResponse</returns>
-        public ItemResponse UpdateItem (int id, ItemParams itemParams = default(ItemParams))
+        public ItemResponse UpdateItem(int id, ItemParams itemParams = default(ItemParams))
         {
-             Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = UpdateItemWithHttpInfo(id, itemParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = UpdateItemWithHttpInfo(id, itemParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -929,7 +929,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">品目ID</param>
         /// <param name="itemParams">品目の更新 (optional)</param>
         /// <returns>ApiResponse of ItemResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< ItemResponse > UpdateItemWithHttpInfo (int id, ItemParams itemParams = default(ItemParams))
+        public Freee.Accounting.Client.ApiResponse<ItemResponse> UpdateItemWithHttpInfo(int id, ItemParams itemParams = default(ItemParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -960,7 +960,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< ItemResponse >("/api/1/items/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<ItemResponse>("/api/1/items/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -979,10 +979,10 @@ namespace Freee.Accounting.Api
         /// <param name="itemParams">品目の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ItemResponse</returns>
-        public async System.Threading.Tasks.Task<ItemResponse> UpdateItemAsync (int id, ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ItemResponse> UpdateItemAsync(int id, ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = await UpdateItemWithHttpInfoAsync(id, itemParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = await UpdateItemWithHttpInfoAsync(id, itemParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -993,7 +993,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemParams">品目の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ItemResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ItemResponse>> UpdateItemWithHttpInfoAsync (int id, ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ItemResponse>> UpdateItemWithHttpInfoAsync(int id, ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

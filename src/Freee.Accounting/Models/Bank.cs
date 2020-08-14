@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// Bank
     /// </summary>
     [DataContract]
-    public partial class Bank :  IEquatable<Bank>
+    public partial class Bank : IEquatable<Bank>
     {
         /// <summary>
         /// 連携サービス種別: (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
@@ -60,7 +60,7 @@ namespace Freee.Accounting.Models
         /// 連携サービス種別: (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
         /// </summary>
         /// <value>連携サービス種別: (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Bank" /> class.
@@ -86,21 +86,21 @@ namespace Freee.Accounting.Models
         /// 連携サービスID
         /// </summary>
         /// <value>連携サービスID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 連携サービス名
         /// </summary>
         /// <value>連携サービス名</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// 連携サービス名(カナ)
         /// </summary>
         /// <value>連携サービス名(カナ)</value>
-        [DataMember(Name="name_kana", EmitDefaultValue=true)]
+        [DataMember(Name = "name_kana", EmitDefaultValue = true)]
         public string NameKana { get; set; }
 
         /// <summary>

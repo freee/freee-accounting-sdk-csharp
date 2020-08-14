@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// JournalStatusResponseJournals
     /// </summary>
     [DataContract]
-    public partial class JournalStatusResponseJournals :  IEquatable<JournalStatusResponseJournals>
+    public partial class JournalStatusResponseJournals : IEquatable<JournalStatusResponseJournals>
     {
         /// <summary>
         /// ダウンロード形式
@@ -60,7 +60,7 @@ namespace Freee.Accounting.Models
         /// ダウンロード形式
         /// </summary>
         /// <value>ダウンロード形式</value>
-        [DataMember(Name="download_type", EmitDefaultValue=false)]
+        [DataMember(Name = "download_type", EmitDefaultValue = false)]
         public DownloadTypeEnum DownloadType { get; set; }
         /// <summary>
         /// 事業所ID
@@ -99,7 +99,7 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// 補助科目やコメントとして出力する項目
@@ -156,7 +156,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets VisibleTags
         /// </summary>
-        [DataMember(Name="visible_tags", EmitDefaultValue=false)]
+        [DataMember(Name = "visible_tags", EmitDefaultValue = false)]
         public List<VisibleTagsEnum> VisibleTags { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="JournalStatusResponseJournals" /> class.
@@ -193,35 +193,35 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// ダウンロードURL
         /// </summary>
         /// <value>ダウンロードURL</value>
-        [DataMember(Name="download_url", EmitDefaultValue=false)]
+        [DataMember(Name = "download_url", EmitDefaultValue = false)]
         public string DownloadUrl { get; set; }
 
         /// <summary>
         /// 取得終了日 (yyyy-mm-dd)
         /// </summary>
         /// <value>取得終了日 (yyyy-mm-dd)</value>
-        [DataMember(Name="end_date", EmitDefaultValue=false)]
+        [DataMember(Name = "end_date", EmitDefaultValue = false)]
         public string EndDate { get; set; }
 
         /// <summary>
         /// 受け付けID
         /// </summary>
         /// <value>受け付けID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 取得開始日 (yyyy-mm-dd)
         /// </summary>
         /// <value>取得開始日 (yyyy-mm-dd)</value>
-        [DataMember(Name="start_date", EmitDefaultValue=false)]
+        [DataMember(Name = "start_date", EmitDefaultValue = false)]
         public string StartDate { get; set; }
 
         /// <summary>

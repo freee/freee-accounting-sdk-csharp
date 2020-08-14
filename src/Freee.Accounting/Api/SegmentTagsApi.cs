@@ -36,7 +36,7 @@ namespace Freee.Accounting.Api
         /// <param name="segmentId">セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン </param>
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <returns>SegmentTagResponse</returns>
-        SegmentTagResponse CreateSegmentTag (int segmentId, SegmentTagParams segmentTagParams);
+        SegmentTagResponse CreateSegmentTag(int segmentId, SegmentTagParams segmentTagParams);
 
         /// <summary>
         /// セグメントの作成
@@ -48,7 +48,7 @@ namespace Freee.Accounting.Api
         /// <param name="segmentId">セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン </param>
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <returns>ApiResponse of SegmentTagResponse</returns>
-        ApiResponse<SegmentTagResponse> CreateSegmentTagWithHttpInfo (int segmentId, SegmentTagParams segmentTagParams);
+        ApiResponse<SegmentTagResponse> CreateSegmentTagWithHttpInfo(int segmentId, SegmentTagParams segmentTagParams);
         /// <summary>
         /// セグメントタグの削除
         /// </summary>
@@ -60,7 +60,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">セグメントタグID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroySegmentsTag (int segmentId, int id, int companyId);
+        void DestroySegmentsTag(int segmentId, int id, int companyId);
 
         /// <summary>
         /// セグメントタグの削除
@@ -73,7 +73,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">セグメントタグID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroySegmentsTagWithHttpInfo (int segmentId, int id, int companyId);
+        ApiResponse<Object> DestroySegmentsTagWithHttpInfo(int segmentId, int id, int companyId);
         /// <summary>
         /// セグメントタグ一覧の取得
         /// </summary>
@@ -86,7 +86,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <returns>InlineResponse20010</returns>
-        InlineResponse20010 GetSegmentTags (int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?));
+        InlineResponse20010 GetSegmentTags(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// セグメントタグ一覧の取得
@@ -100,7 +100,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20010</returns>
-        ApiResponse<InlineResponse20010> GetSegmentTagsWithHttpInfo (int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<InlineResponse20010> GetSegmentTagsWithHttpInfo(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?));
         /// <summary>
         /// セグメントタグの更新
         /// </summary>
@@ -112,7 +112,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">セグメントタグID</param>
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <returns>SegmentTagResponse</returns>
-        SegmentTagResponse UpdateSegmentTag (int segmentId, int id, SegmentTagParams segmentTagParams);
+        SegmentTagResponse UpdateSegmentTag(int segmentId, int id, SegmentTagParams segmentTagParams);
 
         /// <summary>
         /// セグメントタグの更新
@@ -125,7 +125,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">セグメントタグID</param>
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <returns>ApiResponse of SegmentTagResponse</returns>
-        ApiResponse<SegmentTagResponse> UpdateSegmentTagWithHttpInfo (int segmentId, int id, SegmentTagParams segmentTagParams);
+        ApiResponse<SegmentTagResponse> UpdateSegmentTagWithHttpInfo(int segmentId, int id, SegmentTagParams segmentTagParams);
         #endregion Synchronous Operations
     }
 
@@ -146,7 +146,7 @@ namespace Freee.Accounting.Api
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SegmentTagResponse</returns>
-        System.Threading.Tasks.Task<SegmentTagResponse> CreateSegmentTagAsync (int segmentId, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SegmentTagResponse> CreateSegmentTagAsync(int segmentId, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// セグメントの作成
@@ -159,7 +159,7 @@ namespace Freee.Accounting.Api
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SegmentTagResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SegmentTagResponse>> CreateSegmentTagWithHttpInfoAsync (int segmentId, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SegmentTagResponse>> CreateSegmentTagWithHttpInfoAsync(int segmentId, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// セグメントタグの削除
         /// </summary>
@@ -172,7 +172,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroySegmentsTagAsync (int segmentId, int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroySegmentsTagAsync(int segmentId, int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// セグメントタグの削除
@@ -186,7 +186,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroySegmentsTagWithHttpInfoAsync (int segmentId, int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroySegmentsTagWithHttpInfoAsync(int segmentId, int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// セグメントタグ一覧の取得
         /// </summary>
@@ -200,7 +200,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20010</returns>
-        System.Threading.Tasks.Task<InlineResponse20010> GetSegmentTagsAsync (int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse20010> GetSegmentTagsAsync(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// セグメントタグ一覧の取得
@@ -215,7 +215,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20010>> GetSegmentTagsWithHttpInfoAsync (int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20010>> GetSegmentTagsWithHttpInfoAsync(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// セグメントタグの更新
         /// </summary>
@@ -228,7 +228,7 @@ namespace Freee.Accounting.Api
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SegmentTagResponse</returns>
-        System.Threading.Tasks.Task<SegmentTagResponse> UpdateSegmentTagAsync (int segmentId, int id, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SegmentTagResponse> UpdateSegmentTagAsync(int segmentId, int id, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// セグメントタグの更新
@@ -242,7 +242,7 @@ namespace Freee.Accounting.Api
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SegmentTagResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SegmentTagResponse>> UpdateSegmentTagWithHttpInfoAsync (int segmentId, int id, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SegmentTagResponse>> UpdateSegmentTagWithHttpInfoAsync(int segmentId, int id, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -265,7 +265,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="SegmentTagsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public SegmentTagsApi() : this((string) null)
+        public SegmentTagsApi() : this((string)null)
         {
         }
 
@@ -310,11 +310,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public SegmentTagsApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public SegmentTagsApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -345,7 +345,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -370,10 +370,10 @@ namespace Freee.Accounting.Api
         /// <param name="segmentId">セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン </param>
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <returns>SegmentTagResponse</returns>
-        public SegmentTagResponse CreateSegmentTag (int segmentId, SegmentTagParams segmentTagParams)
+        public SegmentTagResponse CreateSegmentTag(int segmentId, SegmentTagParams segmentTagParams)
         {
-             Freee.Accounting.Client.ApiResponse<SegmentTagResponse> localVarResponse = CreateSegmentTagWithHttpInfo(segmentId, segmentTagParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<SegmentTagResponse> localVarResponse = CreateSegmentTagWithHttpInfo(segmentId, segmentTagParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -383,7 +383,7 @@ namespace Freee.Accounting.Api
         /// <param name="segmentId">セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン </param>
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <returns>ApiResponse of SegmentTagResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< SegmentTagResponse > CreateSegmentTagWithHttpInfo (int segmentId, SegmentTagParams segmentTagParams)
+        public Freee.Accounting.Client.ApiResponse<SegmentTagResponse> CreateSegmentTagWithHttpInfo(int segmentId, SegmentTagParams segmentTagParams)
         {
             // verify the required parameter 'segmentTagParams' is set
             if (segmentTagParams == null)
@@ -418,7 +418,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< SegmentTagResponse >("/api/1/segments/{segment_id}/tags", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<SegmentTagResponse>("/api/1/segments/{segment_id}/tags", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -437,10 +437,10 @@ namespace Freee.Accounting.Api
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SegmentTagResponse</returns>
-        public async System.Threading.Tasks.Task<SegmentTagResponse> CreateSegmentTagAsync (int segmentId, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SegmentTagResponse> CreateSegmentTagAsync(int segmentId, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<SegmentTagResponse> localVarResponse = await CreateSegmentTagWithHttpInfoAsync(segmentId, segmentTagParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<SegmentTagResponse> localVarResponse = await CreateSegmentTagWithHttpInfoAsync(segmentId, segmentTagParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -451,7 +451,7 @@ namespace Freee.Accounting.Api
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SegmentTagResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<SegmentTagResponse>> CreateSegmentTagWithHttpInfoAsync (int segmentId, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<SegmentTagResponse>> CreateSegmentTagWithHttpInfoAsync(int segmentId, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'segmentTagParams' is set
             if (segmentTagParams == null)
@@ -508,9 +508,9 @@ namespace Freee.Accounting.Api
         /// <param name="id">セグメントタグID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroySegmentsTag (int segmentId, int id, int companyId)
+        public void DestroySegmentsTag(int segmentId, int id, int companyId)
         {
-             DestroySegmentsTagWithHttpInfo(segmentId, id, companyId);
+            DestroySegmentsTagWithHttpInfo(segmentId, id, companyId);
         }
 
         /// <summary>
@@ -521,7 +521,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">セグメントタグID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroySegmentsTagWithHttpInfo (int segmentId, int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroySegmentsTagWithHttpInfo(int segmentId, int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -571,9 +571,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroySegmentsTagAsync (int segmentId, int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroySegmentsTagAsync(int segmentId, int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroySegmentsTagWithHttpInfoAsync(segmentId, id, companyId, cancellationToken);
+            await DestroySegmentsTagWithHttpInfoAsync(segmentId, id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -585,7 +585,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroySegmentsTagWithHttpInfoAsync (int segmentId, int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroySegmentsTagWithHttpInfoAsync(int segmentId, int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -638,10 +638,10 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <returns>InlineResponse20010</returns>
-        public InlineResponse20010 GetSegmentTags (int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?))
+        public InlineResponse20010 GetSegmentTags(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20010> localVarResponse = GetSegmentTagsWithHttpInfo(companyId, segmentId, offset, limit);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20010> localVarResponse = GetSegmentTagsWithHttpInfo(companyId, segmentId, offset, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -653,7 +653,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20010</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse20010 > GetSegmentTagsWithHttpInfo (int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse20010> GetSegmentTagsWithHttpInfo(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -690,7 +690,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse20010 >("/api/1/segments/{segment_id}/tags", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20010>("/api/1/segments/{segment_id}/tags", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -711,10 +711,10 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20010</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20010> GetSegmentTagsAsync (int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse20010> GetSegmentTagsAsync(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20010> localVarResponse = await GetSegmentTagsWithHttpInfoAsync(companyId, segmentId, offset, limit, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20010> localVarResponse = await GetSegmentTagsWithHttpInfoAsync(companyId, segmentId, offset, limit, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -727,7 +727,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20010>> GetSegmentTagsWithHttpInfoAsync (int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20010>> GetSegmentTagsWithHttpInfoAsync(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -786,10 +786,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">セグメントタグID</param>
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <returns>SegmentTagResponse</returns>
-        public SegmentTagResponse UpdateSegmentTag (int segmentId, int id, SegmentTagParams segmentTagParams)
+        public SegmentTagResponse UpdateSegmentTag(int segmentId, int id, SegmentTagParams segmentTagParams)
         {
-             Freee.Accounting.Client.ApiResponse<SegmentTagResponse> localVarResponse = UpdateSegmentTagWithHttpInfo(segmentId, id, segmentTagParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<SegmentTagResponse> localVarResponse = UpdateSegmentTagWithHttpInfo(segmentId, id, segmentTagParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -800,7 +800,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">セグメントタグID</param>
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <returns>ApiResponse of SegmentTagResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< SegmentTagResponse > UpdateSegmentTagWithHttpInfo (int segmentId, int id, SegmentTagParams segmentTagParams)
+        public Freee.Accounting.Client.ApiResponse<SegmentTagResponse> UpdateSegmentTagWithHttpInfo(int segmentId, int id, SegmentTagParams segmentTagParams)
         {
             // verify the required parameter 'segmentTagParams' is set
             if (segmentTagParams == null)
@@ -836,7 +836,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< SegmentTagResponse >("/api/1/segments/{segment_id}/tags/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<SegmentTagResponse>("/api/1/segments/{segment_id}/tags/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -856,10 +856,10 @@ namespace Freee.Accounting.Api
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SegmentTagResponse</returns>
-        public async System.Threading.Tasks.Task<SegmentTagResponse> UpdateSegmentTagAsync (int segmentId, int id, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SegmentTagResponse> UpdateSegmentTagAsync(int segmentId, int id, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<SegmentTagResponse> localVarResponse = await UpdateSegmentTagWithHttpInfoAsync(segmentId, id, segmentTagParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<SegmentTagResponse> localVarResponse = await UpdateSegmentTagWithHttpInfoAsync(segmentId, id, segmentTagParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -871,7 +871,7 @@ namespace Freee.Accounting.Api
         /// <param name="segmentTagParams">セグメントタグの作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SegmentTagResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<SegmentTagResponse>> UpdateSegmentTagWithHttpInfoAsync (int segmentId, int id, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<SegmentTagResponse>> UpdateSegmentTagWithHttpInfoAsync(int segmentId, int id, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'segmentTagParams' is set
             if (segmentTagParams == null)

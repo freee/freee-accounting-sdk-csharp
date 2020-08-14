@@ -36,7 +36,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">受け付けID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>System.IO.Stream</returns>
-        System.IO.Stream DownloadJournal (int id, int companyId);
+        System.IO.Stream DownloadJournal(int id, int companyId);
 
         /// <summary>
         /// ダウンロード実行
@@ -48,7 +48,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">受け付けID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> DownloadJournalWithHttpInfo (int id, int companyId);
+        ApiResponse<System.IO.Stream> DownloadJournalWithHttpInfo(int id, int companyId);
         /// <summary>
         /// ステータス確認
         /// </summary>
@@ -62,7 +62,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">取得開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <returns>JournalStatusResponse</returns>
-        JournalStatusResponse GetJournalStatus (int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string));
+        JournalStatusResponse GetJournalStatus(int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string));
 
         /// <summary>
         /// ステータス確認
@@ -77,7 +77,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">取得開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <returns>ApiResponse of JournalStatusResponse</returns>
-        ApiResponse<JournalStatusResponse> GetJournalStatusWithHttpInfo (int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string));
+        ApiResponse<JournalStatusResponse> GetJournalStatusWithHttpInfo(int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string));
         /// <summary>
         /// ダウンロード要求
         /// </summary>
@@ -91,7 +91,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">取得開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <returns>JournalsResponse</returns>
-        JournalsResponse GetJournals (string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string));
+        JournalsResponse GetJournals(string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string));
 
         /// <summary>
         /// ダウンロード要求
@@ -106,7 +106,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">取得開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <returns>ApiResponse of JournalsResponse</returns>
-        ApiResponse<JournalsResponse> GetJournalsWithHttpInfo (string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string));
+        ApiResponse<JournalsResponse> GetJournalsWithHttpInfo(string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string));
         #endregion Synchronous Operations
     }
 
@@ -127,7 +127,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> DownloadJournalAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.IO.Stream> DownloadJournalAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ダウンロード実行
@@ -140,7 +140,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DownloadJournalWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DownloadJournalWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ステータス確認
         /// </summary>
@@ -155,7 +155,7 @@ namespace Freee.Accounting.Api
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of JournalStatusResponse</returns>
-        System.Threading.Tasks.Task<JournalStatusResponse> GetJournalStatusAsync (int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<JournalStatusResponse> GetJournalStatusAsync(int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ステータス確認
@@ -171,7 +171,7 @@ namespace Freee.Accounting.Api
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (JournalStatusResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<JournalStatusResponse>> GetJournalStatusWithHttpInfoAsync (int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<JournalStatusResponse>> GetJournalStatusWithHttpInfoAsync(int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ダウンロード要求
         /// </summary>
@@ -186,7 +186,7 @@ namespace Freee.Accounting.Api
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of JournalsResponse</returns>
-        System.Threading.Tasks.Task<JournalsResponse> GetJournalsAsync (string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<JournalsResponse> GetJournalsAsync(string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ダウンロード要求
@@ -202,7 +202,7 @@ namespace Freee.Accounting.Api
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (JournalsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<JournalsResponse>> GetJournalsWithHttpInfoAsync (string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<JournalsResponse>> GetJournalsWithHttpInfoAsync(string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -225,7 +225,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="JournalsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public JournalsApi() : this((string) null)
+        public JournalsApi() : this((string)null)
         {
         }
 
@@ -270,11 +270,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public JournalsApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public JournalsApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -305,7 +305,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -330,10 +330,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">受け付けID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream DownloadJournal (int id, int companyId)
+        public System.IO.Stream DownloadJournal(int id, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<System.IO.Stream> localVarResponse = DownloadJournalWithHttpInfo(id, companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<System.IO.Stream> localVarResponse = DownloadJournalWithHttpInfo(id, companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -343,7 +343,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">受け付けID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Freee.Accounting.Client.ApiResponse< System.IO.Stream > DownloadJournalWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<System.IO.Stream> DownloadJournalWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -374,7 +374,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< System.IO.Stream >("/api/1/journals/reports/{id}/download", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<System.IO.Stream>("/api/1/journals/reports/{id}/download", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -393,10 +393,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> DownloadJournalAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<System.IO.Stream> DownloadJournalAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<System.IO.Stream> localVarResponse = await DownloadJournalWithHttpInfoAsync(id, companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<System.IO.Stream> localVarResponse = await DownloadJournalWithHttpInfoAsync(id, companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -407,7 +407,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<System.IO.Stream>> DownloadJournalWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<System.IO.Stream>> DownloadJournalWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -462,10 +462,10 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">取得開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <returns>JournalStatusResponse</returns>
-        public JournalStatusResponse GetJournalStatus (int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string))
+        public JournalStatusResponse GetJournalStatus(int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string))
         {
-             Freee.Accounting.Client.ApiResponse<JournalStatusResponse> localVarResponse = GetJournalStatusWithHttpInfo(companyId, id, visibleTags, startDate, endDate);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<JournalStatusResponse> localVarResponse = GetJournalStatusWithHttpInfo(companyId, id, visibleTags, startDate, endDate);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -478,7 +478,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">取得開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <returns>ApiResponse of JournalStatusResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< JournalStatusResponse > GetJournalStatusWithHttpInfo (int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string))
+        public Freee.Accounting.Client.ApiResponse<JournalStatusResponse> GetJournalStatusWithHttpInfo(int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -519,7 +519,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< JournalStatusResponse >("/api/1/journals/reports/{id}/status", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<JournalStatusResponse>("/api/1/journals/reports/{id}/status", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -541,10 +541,10 @@ namespace Freee.Accounting.Api
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of JournalStatusResponse</returns>
-        public async System.Threading.Tasks.Task<JournalStatusResponse> GetJournalStatusAsync (int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<JournalStatusResponse> GetJournalStatusAsync(int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<JournalStatusResponse> localVarResponse = await GetJournalStatusWithHttpInfoAsync(companyId, id, visibleTags, startDate, endDate, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<JournalStatusResponse> localVarResponse = await GetJournalStatusWithHttpInfoAsync(companyId, id, visibleTags, startDate, endDate, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -558,7 +558,7 @@ namespace Freee.Accounting.Api
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (JournalStatusResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<JournalStatusResponse>> GetJournalStatusWithHttpInfoAsync (int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<JournalStatusResponse>> GetJournalStatusWithHttpInfoAsync(int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -623,10 +623,10 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">取得開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <returns>JournalsResponse</returns>
-        public JournalsResponse GetJournals (string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string))
+        public JournalsResponse GetJournals(string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string))
         {
-             Freee.Accounting.Client.ApiResponse<JournalsResponse> localVarResponse = GetJournalsWithHttpInfo(downloadType, companyId, visibleTags, startDate, endDate);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<JournalsResponse> localVarResponse = GetJournalsWithHttpInfo(downloadType, companyId, visibleTags, startDate, endDate);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -639,7 +639,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">取得開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <returns>ApiResponse of JournalsResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< JournalsResponse > GetJournalsWithHttpInfo (string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string))
+        public Freee.Accounting.Client.ApiResponse<JournalsResponse> GetJournalsWithHttpInfo(string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string))
         {
             // verify the required parameter 'downloadType' is set
             if (downloadType == null)
@@ -684,7 +684,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< JournalsResponse >("/api/1/journals", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<JournalsResponse>("/api/1/journals", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -706,10 +706,10 @@ namespace Freee.Accounting.Api
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of JournalsResponse</returns>
-        public async System.Threading.Tasks.Task<JournalsResponse> GetJournalsAsync (string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<JournalsResponse> GetJournalsAsync(string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<JournalsResponse> localVarResponse = await GetJournalsWithHttpInfoAsync(downloadType, companyId, visibleTags, startDate, endDate, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<JournalsResponse> localVarResponse = await GetJournalsWithHttpInfoAsync(downloadType, companyId, visibleTags, startDate, endDate, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -723,7 +723,7 @@ namespace Freee.Accounting.Api
         /// <param name="endDate">取得終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (JournalsResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<JournalsResponse>> GetJournalsWithHttpInfoAsync (string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<JournalsResponse>> GetJournalsWithHttpInfoAsync(string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'downloadType' is set
             if (downloadType == null)

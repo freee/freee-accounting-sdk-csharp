@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// WalletableCreateParams
     /// </summary>
     [DataContract]
-    public partial class WalletableCreateParams :  IEquatable<WalletableCreateParams>
+    public partial class WalletableCreateParams : IEquatable<WalletableCreateParams>
     {
         /// <summary>
         /// 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
@@ -60,7 +60,7 @@ namespace Freee.Accounting.Models
         /// 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
         /// </summary>
         /// <value>口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WalletableCreateParams" /> class.
@@ -89,28 +89,28 @@ namespace Freee.Accounting.Models
         /// サービスID
         /// </summary>
         /// <value>サービスID</value>
-        [DataMember(Name="bank_id", EmitDefaultValue=false)]
+        [DataMember(Name = "bank_id", EmitDefaultValue = false)]
         public int BankId { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 決算書表示名（小カテゴリー）　例：売掛金, 受取手形, 未収入金（法人のみ）, 買掛金, 支払手形, 未払金, 預り金, 前受金
         /// </summary>
         /// <value>決算書表示名（小カテゴリー）　例：売掛金, 受取手形, 未収入金（法人のみ）, 買掛金, 支払手形, 未払金, 預り金, 前受金</value>
-        [DataMember(Name="group_name", EmitDefaultValue=false)]
+        [DataMember(Name = "group_name", EmitDefaultValue = false)]
         public string GroupName { get; set; }
 
         /// <summary>
         /// 口座名 (255文字以内)
         /// </summary>
         /// <value>口座名 (255文字以内)</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>

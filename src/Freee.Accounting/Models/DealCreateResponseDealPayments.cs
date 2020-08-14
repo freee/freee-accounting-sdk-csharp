@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// DealCreateResponseDealPayments
     /// </summary>
     [DataContract]
-    public partial class DealCreateResponseDealPayments :  IEquatable<DealCreateResponseDealPayments>
+    public partial class DealCreateResponseDealPayments : IEquatable<DealCreateResponseDealPayments>
     {
         /// <summary>
         /// 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet, プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）: private_account_item)
@@ -66,7 +66,7 @@ namespace Freee.Accounting.Models
         /// 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet, プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）: private_account_item)
         /// </summary>
         /// <value>口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet, プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）: private_account_item)</value>
-        [DataMember(Name="from_walletable_type", EmitDefaultValue=false)]
+        [DataMember(Name = "from_walletable_type", EmitDefaultValue = false)]
         public FromWalletableTypeEnum? FromWalletableType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DealCreateResponseDealPayments" /> class.
@@ -95,28 +95,28 @@ namespace Freee.Accounting.Models
         /// 支払金額
         /// </summary>
         /// <value>支払金額</value>
-        [DataMember(Name="amount", EmitDefaultValue=false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
         /// 支払日
         /// </summary>
         /// <value>支払日</value>
-        [DataMember(Name="date", EmitDefaultValue=false)]
+        [DataMember(Name = "date", EmitDefaultValue = false)]
         public string Date { get; set; }
 
         /// <summary>
         /// 口座ID（from_walletable_typeがprivate_account_itemの場合は勘定科目ID）
         /// </summary>
         /// <value>口座ID（from_walletable_typeがprivate_account_itemの場合は勘定科目ID）</value>
-        [DataMember(Name="from_walletable_id", EmitDefaultValue=false)]
+        [DataMember(Name = "from_walletable_id", EmitDefaultValue = false)]
         public int FromWalletableId { get; set; }
 
         /// <summary>
         /// 取引行ID
         /// </summary>
         /// <value>取引行ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>

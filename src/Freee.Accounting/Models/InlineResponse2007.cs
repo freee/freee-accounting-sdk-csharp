@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// InlineResponse2007
     /// </summary>
     [DataContract]
-    public partial class InlineResponse2007 :  IEquatable<InlineResponse2007>
+    public partial class InlineResponse2007 : IEquatable<InlineResponse2007>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2007" /> class.
@@ -47,7 +47,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets Quotations
         /// </summary>
-        [DataMember(Name="quotations", EmitDefaultValue=false)]
+        [DataMember(Name = "quotations", EmitDefaultValue = false)]
         public List<Quotation> Quotations { get; set; }
 
         /// <summary>

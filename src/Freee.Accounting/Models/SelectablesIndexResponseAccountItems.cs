@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// SelectablesIndexResponseAccountItems
     /// </summary>
     [DataContract]
-    public partial class SelectablesIndexResponseAccountItems :  IEquatable<SelectablesIndexResponseAccountItems>
+    public partial class SelectablesIndexResponseAccountItems : IEquatable<SelectablesIndexResponseAccountItems>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectablesIndexResponseAccountItems" /> class.
@@ -56,42 +56,42 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets DefaultTax
         /// </summary>
-        [DataMember(Name="default_tax", EmitDefaultValue=false)]
+        [DataMember(Name = "default_tax", EmitDefaultValue = false)]
         public SelectablesIndexResponseDefaultTax DefaultTax { get; set; }
 
         /// <summary>
         /// 勘定科目の説明
         /// </summary>
         /// <value>勘定科目の説明</value>
-        [DataMember(Name="desc", EmitDefaultValue=false)]
+        [DataMember(Name = "desc", EmitDefaultValue = false)]
         public string Desc { get; set; }
 
         /// <summary>
         /// 勘定科目の説明（詳細）
         /// </summary>
         /// <value>勘定科目の説明（詳細）</value>
-        [DataMember(Name="help", EmitDefaultValue=false)]
+        [DataMember(Name = "help", EmitDefaultValue = false)]
         public string Help { get; set; }
 
         /// <summary>
         /// 勘定科目ID
         /// </summary>
         /// <value>勘定科目ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 勘定科目
         /// </summary>
         /// <value>勘定科目</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// ショートカット
         /// </summary>
         /// <value>ショートカット</value>
-        [DataMember(Name="shortcut", EmitDefaultValue=false)]
+        [DataMember(Name = "shortcut", EmitDefaultValue = false)]
         public string Shortcut { get; set; }
 
         /// <summary>

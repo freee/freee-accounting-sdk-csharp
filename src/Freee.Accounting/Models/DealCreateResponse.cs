@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// DealCreateResponse
     /// </summary>
     [DataContract]
-    public partial class DealCreateResponse :  IEquatable<DealCreateResponse>
+    public partial class DealCreateResponse : IEquatable<DealCreateResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DealCreateResponse" /> class.
@@ -47,7 +47,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets Deal
         /// </summary>
-        [DataMember(Name="deal", EmitDefaultValue=false)]
+        [DataMember(Name = "deal", EmitDefaultValue = false)]
         public DealCreateResponseDeal Deal { get; set; }
 
         /// <summary>

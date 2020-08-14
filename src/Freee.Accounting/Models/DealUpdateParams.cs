@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// DealUpdateParams
     /// </summary>
     [DataContract]
-    public partial class DealUpdateParams :  IEquatable<DealUpdateParams>
+    public partial class DealUpdateParams : IEquatable<DealUpdateParams>
     {
         /// <summary>
         /// 収支区分 (収入: income, 支出: expense)
@@ -54,7 +54,7 @@ namespace Freee.Accounting.Models
         /// 収支区分 (収入: income, 支出: expense)
         /// </summary>
         /// <value>収支区分 (収入: income, 支出: expense)</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DealUpdateParams" /> class.
@@ -92,55 +92,55 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// Gets or Sets Details
         /// </summary>
-        [DataMember(Name="details", EmitDefaultValue=false)]
+        [DataMember(Name = "details", EmitDefaultValue = false)]
         public List<DealUpdateParamsDetails> Details { get; set; }
 
         /// <summary>
         /// 支払期日(yyyy-mm-dd)
         /// </summary>
         /// <value>支払期日(yyyy-mm-dd)</value>
-        [DataMember(Name="due_date", EmitDefaultValue=false)]
+        [DataMember(Name = "due_date", EmitDefaultValue = false)]
         public string DueDate { get; set; }
 
         /// <summary>
         /// 発生日 (yyyy-mm-dd)
         /// </summary>
         /// <value>発生日 (yyyy-mm-dd)</value>
-        [DataMember(Name="issue_date", EmitDefaultValue=false)]
+        [DataMember(Name = "issue_date", EmitDefaultValue = false)]
         public string IssueDate { get; set; }
 
         /// <summary>
         /// 取引先コード
         /// </summary>
         /// <value>取引先コード</value>
-        [DataMember(Name="partner_code", EmitDefaultValue=false)]
+        [DataMember(Name = "partner_code", EmitDefaultValue = false)]
         public string PartnerCode { get; set; }
 
         /// <summary>
         /// 取引先ID
         /// </summary>
         /// <value>取引先ID</value>
-        [DataMember(Name="partner_id", EmitDefaultValue=false)]
+        [DataMember(Name = "partner_id", EmitDefaultValue = false)]
         public int PartnerId { get; set; }
 
         /// <summary>
         /// 証憑ファイルID（配列）
         /// </summary>
         /// <value>証憑ファイルID（配列）</value>
-        [DataMember(Name="receipt_ids", EmitDefaultValue=true)]
+        [DataMember(Name = "receipt_ids", EmitDefaultValue = true)]
         public List<int> ReceiptIds { get; set; }
 
         /// <summary>
         /// 管理番号
         /// </summary>
         /// <value>管理番号</value>
-        [DataMember(Name="ref_number", EmitDefaultValue=false)]
+        [DataMember(Name = "ref_number", EmitDefaultValue = false)]
         public string RefNumber { get; set; }
 
         /// <summary>

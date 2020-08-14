@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ApprovalRequestResponseApprovalRequestApprovalRequestForm
     /// </summary>
     [DataContract]
-    public partial class ApprovalRequestResponseApprovalRequestApprovalRequestForm :  IEquatable<ApprovalRequestResponseApprovalRequestApprovalRequestForm>
+    public partial class ApprovalRequestResponseApprovalRequestApprovalRequestForm : IEquatable<ApprovalRequestResponseApprovalRequestApprovalRequestForm>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestResponseApprovalRequestApprovalRequestForm" /> class.
@@ -48,7 +48,7 @@ namespace Freee.Accounting.Models
         /// 申請フォームの項目
         /// </summary>
         /// <value>申請フォームの項目</value>
-        [DataMember(Name="parts", EmitDefaultValue=false)]
+        [DataMember(Name = "parts", EmitDefaultValue = false)]
         public List<ApprovalRequestFormParts> Parts { get; set; }
 
         /// <summary>

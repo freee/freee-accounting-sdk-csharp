@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferParams">取引（振替）の作成 (optional)</param>
         /// <returns>TransferResponse</returns>
-        TransferResponse CreateTransfer (TransferParams transferParams = default(TransferParams));
+        TransferResponse CreateTransfer(TransferParams transferParams = default(TransferParams));
 
         /// <summary>
         /// 取引（振替）の作成
@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferParams">取引（振替）の作成 (optional)</param>
         /// <returns>ApiResponse of TransferResponse</returns>
-        ApiResponse<TransferResponse> CreateTransferWithHttpInfo (TransferParams transferParams = default(TransferParams));
+        ApiResponse<TransferResponse> CreateTransferWithHttpInfo(TransferParams transferParams = default(TransferParams));
         /// <summary>
         /// 取引（振替）の削除する
         /// </summary>
@@ -57,7 +57,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroyTransfer (int id, int companyId);
+        void DestroyTransfer(int id, int companyId);
 
         /// <summary>
         /// 取引（振替）の削除する
@@ -69,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroyTransferWithHttpInfo (int id, int companyId);
+        ApiResponse<Object> DestroyTransferWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 取引（振替）の取得
         /// </summary>
@@ -80,7 +80,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>TransferResponse</returns>
-        TransferResponse GetTransfer (int id, int companyId);
+        TransferResponse GetTransfer(int id, int companyId);
 
         /// <summary>
         /// 取引（振替）の取得
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of TransferResponse</returns>
-        ApiResponse<TransferResponse> GetTransferWithHttpInfo (int id, int companyId);
+        ApiResponse<TransferResponse> GetTransferWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 取引（振替）一覧の取得
         /// </summary>
@@ -106,7 +106,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>InlineResponse20014</returns>
-        InlineResponse20014 GetTransfers (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?));
+        InlineResponse20014 GetTransfers(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// 取引（振替）一覧の取得
@@ -121,7 +121,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20014</returns>
-        ApiResponse<InlineResponse20014> GetTransfersWithHttpInfo (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<InlineResponse20014> GetTransfersWithHttpInfo(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?));
         /// <summary>
         /// 取引（振替）の更新
         /// </summary>
@@ -132,7 +132,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="transferParams">取引（振替）の更新</param>
         /// <returns>TransferResponse</returns>
-        TransferResponse UpdateTransfer (int id, TransferParams transferParams);
+        TransferResponse UpdateTransfer(int id, TransferParams transferParams);
 
         /// <summary>
         /// 取引（振替）の更新
@@ -144,7 +144,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="transferParams">取引（振替）の更新</param>
         /// <returns>ApiResponse of TransferResponse</returns>
-        ApiResponse<TransferResponse> UpdateTransferWithHttpInfo (int id, TransferParams transferParams);
+        ApiResponse<TransferResponse> UpdateTransferWithHttpInfo(int id, TransferParams transferParams);
         #endregion Synchronous Operations
     }
 
@@ -164,7 +164,7 @@ namespace Freee.Accounting.Api
         /// <param name="transferParams">取引（振替）の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransferResponse</returns>
-        System.Threading.Tasks.Task<TransferResponse> CreateTransferAsync (TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TransferResponse> CreateTransferAsync(TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（振替）の作成
@@ -176,7 +176,7 @@ namespace Freee.Accounting.Api
         /// <param name="transferParams">取引（振替）の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransferResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransferResponse>> CreateTransferWithHttpInfoAsync (TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TransferResponse>> CreateTransferWithHttpInfoAsync(TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（振替）の削除する
         /// </summary>
@@ -188,7 +188,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyTransferAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroyTransferAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（振替）の削除する
@@ -201,7 +201,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyTransferWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyTransferWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（振替）の取得
         /// </summary>
@@ -213,7 +213,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransferResponse</returns>
-        System.Threading.Tasks.Task<TransferResponse> GetTransferAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TransferResponse> GetTransferAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（振替）の取得
@@ -226,7 +226,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransferResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransferResponse>> GetTransferWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TransferResponse>> GetTransferWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（振替）一覧の取得
         /// </summary>
@@ -241,7 +241,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20014</returns>
-        System.Threading.Tasks.Task<InlineResponse20014> GetTransfersAsync (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse20014> GetTransfersAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（振替）一覧の取得
@@ -257,7 +257,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20014>> GetTransfersWithHttpInfoAsync (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20014>> GetTransfersWithHttpInfoAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（振替）の更新
         /// </summary>
@@ -269,7 +269,7 @@ namespace Freee.Accounting.Api
         /// <param name="transferParams">取引（振替）の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransferResponse</returns>
-        System.Threading.Tasks.Task<TransferResponse> UpdateTransferAsync (int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TransferResponse> UpdateTransferAsync(int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（振替）の更新
@@ -282,7 +282,7 @@ namespace Freee.Accounting.Api
         /// <param name="transferParams">取引（振替）の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransferResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransferResponse>> UpdateTransferWithHttpInfoAsync (int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TransferResponse>> UpdateTransferWithHttpInfoAsync(int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -305,7 +305,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="TransfersApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public TransfersApi() : this((string) null)
+        public TransfersApi() : this((string)null)
         {
         }
 
@@ -350,11 +350,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public TransfersApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public TransfersApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -385,7 +385,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -409,10 +409,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferParams">取引（振替）の作成 (optional)</param>
         /// <returns>TransferResponse</returns>
-        public TransferResponse CreateTransfer (TransferParams transferParams = default(TransferParams))
+        public TransferResponse CreateTransfer(TransferParams transferParams = default(TransferParams))
         {
-             Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = CreateTransferWithHttpInfo(transferParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = CreateTransferWithHttpInfo(transferParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -421,7 +421,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferParams">取引（振替）の作成 (optional)</param>
         /// <returns>ApiResponse of TransferResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TransferResponse > CreateTransferWithHttpInfo (TransferParams transferParams = default(TransferParams))
+        public Freee.Accounting.Client.ApiResponse<TransferResponse> CreateTransferWithHttpInfo(TransferParams transferParams = default(TransferParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -451,7 +451,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< TransferResponse >("/api/1/transfers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TransferResponse>("/api/1/transfers", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -469,10 +469,10 @@ namespace Freee.Accounting.Api
         /// <param name="transferParams">取引（振替）の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransferResponse</returns>
-        public async System.Threading.Tasks.Task<TransferResponse> CreateTransferAsync (TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TransferResponse> CreateTransferAsync(TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await CreateTransferWithHttpInfoAsync(transferParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await CreateTransferWithHttpInfoAsync(transferParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -482,7 +482,7 @@ namespace Freee.Accounting.Api
         /// <param name="transferParams">取引（振替）の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransferResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransferResponse>> CreateTransferWithHttpInfoAsync (TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransferResponse>> CreateTransferWithHttpInfoAsync(TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -533,9 +533,9 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroyTransfer (int id, int companyId)
+        public void DestroyTransfer(int id, int companyId)
         {
-             DestroyTransferWithHttpInfo(id, companyId);
+            DestroyTransferWithHttpInfo(id, companyId);
         }
 
         /// <summary>
@@ -545,7 +545,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroyTransferWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroyTransferWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -593,9 +593,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyTransferAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroyTransferAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyTransferWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyTransferWithHttpInfoAsync(id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -606,7 +606,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyTransferWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyTransferWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -656,10 +656,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>TransferResponse</returns>
-        public TransferResponse GetTransfer (int id, int companyId)
+        public TransferResponse GetTransfer(int id, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = GetTransferWithHttpInfo(id, companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = GetTransferWithHttpInfo(id, companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -669,7 +669,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of TransferResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TransferResponse > GetTransferWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<TransferResponse> GetTransferWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -698,7 +698,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< TransferResponse >("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TransferResponse>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -717,10 +717,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransferResponse</returns>
-        public async System.Threading.Tasks.Task<TransferResponse> GetTransferAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TransferResponse> GetTransferAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await GetTransferWithHttpInfoAsync(id, companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await GetTransferWithHttpInfoAsync(id, companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -731,7 +731,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransferResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransferResponse>> GetTransferWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransferResponse>> GetTransferWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -784,10 +784,10 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>InlineResponse20014</returns>
-        public InlineResponse20014 GetTransfers (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?))
+        public InlineResponse20014 GetTransfers(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20014> localVarResponse = GetTransfersWithHttpInfo(companyId, startDate, endDate, offset, limit);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20014> localVarResponse = GetTransfersWithHttpInfo(companyId, startDate, endDate, offset, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -800,7 +800,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20014</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse20014 > GetTransfersWithHttpInfo (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse20014> GetTransfersWithHttpInfo(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -844,7 +844,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse20014 >("/api/1/transfers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20014>("/api/1/transfers", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -866,10 +866,10 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20014</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20014> GetTransfersAsync (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse20014> GetTransfersAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20014> localVarResponse = await GetTransfersWithHttpInfoAsync(companyId, startDate, endDate, offset, limit, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20014> localVarResponse = await GetTransfersWithHttpInfoAsync(companyId, startDate, endDate, offset, limit, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -883,7 +883,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20014>> GetTransfersWithHttpInfoAsync (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20014>> GetTransfersWithHttpInfoAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -948,10 +948,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="transferParams">取引（振替）の更新</param>
         /// <returns>TransferResponse</returns>
-        public TransferResponse UpdateTransfer (int id, TransferParams transferParams)
+        public TransferResponse UpdateTransfer(int id, TransferParams transferParams)
         {
-             Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = UpdateTransferWithHttpInfo(id, transferParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = UpdateTransferWithHttpInfo(id, transferParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -961,7 +961,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="transferParams">取引（振替）の更新</param>
         /// <returns>ApiResponse of TransferResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TransferResponse > UpdateTransferWithHttpInfo (int id, TransferParams transferParams)
+        public Freee.Accounting.Client.ApiResponse<TransferResponse> UpdateTransferWithHttpInfo(int id, TransferParams transferParams)
         {
             // verify the required parameter 'transferParams' is set
             if (transferParams == null)
@@ -996,7 +996,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< TransferResponse >("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<TransferResponse>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1015,10 +1015,10 @@ namespace Freee.Accounting.Api
         /// <param name="transferParams">取引（振替）の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TransferResponse</returns>
-        public async System.Threading.Tasks.Task<TransferResponse> UpdateTransferAsync (int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TransferResponse> UpdateTransferAsync(int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await UpdateTransferWithHttpInfoAsync(id, transferParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await UpdateTransferWithHttpInfoAsync(id, transferParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1029,7 +1029,7 @@ namespace Freee.Accounting.Api
         /// <param name="transferParams">取引（振替）の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TransferResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransferResponse>> UpdateTransferWithHttpInfoAsync (int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransferResponse>> UpdateTransferWithHttpInfoAsync(int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'transferParams' is set
             if (transferParams == null)

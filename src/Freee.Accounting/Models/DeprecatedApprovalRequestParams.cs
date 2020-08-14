@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// DeprecatedApprovalRequestParams
     /// </summary>
     [DataContract]
-    public partial class DeprecatedApprovalRequestParams :  IEquatable<DeprecatedApprovalRequestParams>
+    public partial class DeprecatedApprovalRequestParams : IEquatable<DeprecatedApprovalRequestParams>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeprecatedApprovalRequestParams" /> class.
@@ -58,41 +58,41 @@ namespace Freee.Accounting.Models
         /// 経路申請ID
         /// </summary>
         /// <value>経路申請ID</value>
-        [DataMember(Name="approval_flow_route_id", EmitDefaultValue=false)]
+        [DataMember(Name = "approval_flow_route_id", EmitDefaultValue = false)]
         public int ApprovalFlowRouteId { get; set; }
 
         /// <summary>
         /// 承認者のユーザーID
         /// </summary>
         /// <value>承認者のユーザーID</value>
-        [DataMember(Name="approver_id", EmitDefaultValue=false)]
+        [DataMember(Name = "approver_id", EmitDefaultValue = false)]
         public int ApproverId { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 申請フォームID
         /// </summary>
         /// <value>申請フォームID</value>
-        [DataMember(Name="request_form_id", EmitDefaultValue=false)]
+        [DataMember(Name = "request_form_id", EmitDefaultValue = false)]
         public int RequestFormId { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestItems
         /// </summary>
-        [DataMember(Name="request_items", EmitDefaultValue=false)]
+        [DataMember(Name = "request_items", EmitDefaultValue = false)]
         public List<DeprecatedApprovalRequestParamsRequestItems> RequestItems { get; set; }
 
         /// <summary>
         /// 申請タイトル (255文字以内)
         /// </summary>
         /// <value>申請タイトル (255文字以内)</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>

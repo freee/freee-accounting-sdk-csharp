@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// JournalsResponseJournals
     /// </summary>
     [DataContract]
-    public partial class JournalsResponseJournals :  IEquatable<JournalsResponseJournals>
+    public partial class JournalsResponseJournals : IEquatable<JournalsResponseJournals>
     {
         /// <summary>
         /// ダウンロード形式
@@ -60,7 +60,7 @@ namespace Freee.Accounting.Models
         /// ダウンロード形式
         /// </summary>
         /// <value>ダウンロード形式</value>
-        [DataMember(Name="download_type", EmitDefaultValue=false)]
+        [DataMember(Name = "download_type", EmitDefaultValue = false)]
         public DownloadTypeEnum? DownloadType { get; set; }
         /// <summary>
         /// 補助科目やコメントとして出力する項目
@@ -117,7 +117,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets VisibleTags
         /// </summary>
-        [DataMember(Name="visible_tags", EmitDefaultValue=false)]
+        [DataMember(Name = "visible_tags", EmitDefaultValue = false)]
         public List<VisibleTagsEnum> VisibleTags { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="JournalsResponseJournals" /> class.
@@ -151,41 +151,41 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 取得終了日 (yyyy-mm-dd)
         /// </summary>
         /// <value>取得終了日 (yyyy-mm-dd)</value>
-        [DataMember(Name="end_date", EmitDefaultValue=false)]
+        [DataMember(Name = "end_date", EmitDefaultValue = false)]
         public string EndDate { get; set; }
 
         /// <summary>
         /// 受け付けID
         /// </summary>
         /// <value>受け付けID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Messages
         /// </summary>
-        [DataMember(Name="messages", EmitDefaultValue=false)]
+        [DataMember(Name = "messages", EmitDefaultValue = false)]
         public List<string> Messages { get; set; }
 
         /// <summary>
         /// 取得開始日 (yyyy-mm-dd)
         /// </summary>
         /// <value>取得開始日 (yyyy-mm-dd)</value>
-        [DataMember(Name="start_date", EmitDefaultValue=false)]
+        [DataMember(Name = "start_date", EmitDefaultValue = false)]
         public string StartDate { get; set; }
 
         /// <summary>
         /// ステータス確認用URL
         /// </summary>
         /// <value>ステータス確認用URL</value>
-        [DataMember(Name="status_url", EmitDefaultValue=false)]
+        [DataMember(Name = "status_url", EmitDefaultValue = false)]
         public string StatusUrl { get; set; }
 
         /// <summary>

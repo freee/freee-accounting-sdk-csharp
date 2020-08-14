@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// TooManyRequestsError
     /// </summary>
     [DataContract]
-    public partial class TooManyRequestsError :  IEquatable<TooManyRequestsError>
+    public partial class TooManyRequestsError : IEquatable<TooManyRequestsError>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TooManyRequestsError" /> class.
@@ -49,13 +49,13 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets Meta
         /// </summary>
-        [DataMember(Name="meta", EmitDefaultValue=false)]
+        [DataMember(Name = "meta", EmitDefaultValue = false)]
         public TooManyRequestsErrorMeta Meta { get; set; }
 
         /// <summary>
         /// Gets or Sets StatusCode
         /// </summary>
-        [DataMember(Name="status_code", EmitDefaultValue=false)]
+        [DataMember(Name = "status_code", EmitDefaultValue = false)]
         public int StatusCode { get; set; }
 
         /// <summary>

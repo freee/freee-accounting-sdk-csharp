@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ApprovalRequestCreateParamsRequestItems
     /// </summary>
     [DataContract]
-    public partial class ApprovalRequestCreateParamsRequestItems :  IEquatable<ApprovalRequestCreateParamsRequestItems>
+    public partial class ApprovalRequestCreateParamsRequestItems : IEquatable<ApprovalRequestCreateParamsRequestItems>
     {
         /// <summary>
         /// 項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル)
@@ -84,7 +84,7 @@ namespace Freee.Accounting.Models
         /// 項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル)
         /// </summary>
         /// <value>項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル)</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestCreateParamsRequestItems" /> class.
@@ -103,14 +103,14 @@ namespace Freee.Accounting.Models
         /// 項目ID
         /// </summary>
         /// <value>項目ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 項目の値
         /// </summary>
         /// <value>項目の値</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
         /// <summary>

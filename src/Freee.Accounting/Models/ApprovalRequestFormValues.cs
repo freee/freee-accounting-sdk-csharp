@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ApprovalRequestFormValues
     /// </summary>
     [DataContract]
-    public partial class ApprovalRequestFormValues :  IEquatable<ApprovalRequestFormValues>
+    public partial class ApprovalRequestFormValues : IEquatable<ApprovalRequestFormValues>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestFormValues" /> class.
@@ -50,14 +50,14 @@ namespace Freee.Accounting.Models
         /// 選択項目名
         /// </summary>
         /// <value>選択項目名</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// 順序
         /// </summary>
         /// <value>順序</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
+        [DataMember(Name = "order", EmitDefaultValue = false)]
         public int Order { get; set; }
 
         /// <summary>

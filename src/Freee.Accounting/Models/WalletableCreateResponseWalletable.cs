@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// WalletableCreateResponseWalletable
     /// </summary>
     [DataContract]
-    public partial class WalletableCreateResponseWalletable :  IEquatable<WalletableCreateResponseWalletable>
+    public partial class WalletableCreateResponseWalletable : IEquatable<WalletableCreateResponseWalletable>
     {
         /// <summary>
         /// 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
@@ -60,7 +60,7 @@ namespace Freee.Accounting.Models
         /// 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
         /// </summary>
         /// <value>口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WalletableCreateResponseWalletable" /> class.
@@ -87,21 +87,21 @@ namespace Freee.Accounting.Models
         /// サービスID
         /// </summary>
         /// <value>サービスID</value>
-        [DataMember(Name="bank_id", EmitDefaultValue=false)]
+        [DataMember(Name = "bank_id", EmitDefaultValue = false)]
         public int BankId { get; set; }
 
         /// <summary>
         /// 口座ID
         /// </summary>
         /// <value>口座ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 口座名, 最大255文字
         /// </summary>
         /// <value>口座名, 最大255文字</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>

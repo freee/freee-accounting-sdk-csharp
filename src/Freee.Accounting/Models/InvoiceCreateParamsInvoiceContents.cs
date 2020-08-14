@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// InvoiceCreateParamsInvoiceContents
     /// </summary>
     [DataContract]
-    public partial class InvoiceCreateParamsInvoiceContents :  IEquatable<InvoiceCreateParamsInvoiceContents>
+    public partial class InvoiceCreateParamsInvoiceContents : IEquatable<InvoiceCreateParamsInvoiceContents>
     {
         /// <summary>
         /// 行の種類 &lt;ul&gt; &lt;li&gt;normal、discountを指定する場合、account_item_id,tax_codeとunit_priceが必須となります。&lt;/li&gt; &lt;li&gt;normalを指定した場合、qtyが必須となります。&lt;/li&gt; &lt;/ul&gt;
@@ -60,7 +60,7 @@ namespace Freee.Accounting.Models
         /// 行の種類 &lt;ul&gt; &lt;li&gt;normal、discountを指定する場合、account_item_id,tax_codeとunit_priceが必須となります。&lt;/li&gt; &lt;li&gt;normalを指定した場合、qtyが必須となります。&lt;/li&gt; &lt;/ul&gt;
         /// </summary>
         /// <value>行の種類 &lt;ul&gt; &lt;li&gt;normal、discountを指定する場合、account_item_id,tax_codeとunit_priceが必須となります。&lt;/li&gt; &lt;li&gt;normalを指定した場合、qtyが必須となります。&lt;/li&gt; &lt;/ul&gt;</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceCreateParamsInvoiceContents" /> class.
@@ -108,97 +108,97 @@ namespace Freee.Accounting.Models
         /// 勘定科目ID
         /// </summary>
         /// <value>勘定科目ID</value>
-        [DataMember(Name="account_item_id", EmitDefaultValue=false)]
+        [DataMember(Name = "account_item_id", EmitDefaultValue = false)]
         public int AccountItemId { get; set; }
 
         /// <summary>
         /// 備考
         /// </summary>
         /// <value>備考</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// 品目ID
         /// </summary>
         /// <value>品目ID</value>
-        [DataMember(Name="item_id", EmitDefaultValue=false)]
+        [DataMember(Name = "item_id", EmitDefaultValue = false)]
         public int ItemId { get; set; }
 
         /// <summary>
         /// 順序
         /// </summary>
         /// <value>順序</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
+        [DataMember(Name = "order", EmitDefaultValue = false)]
         public int Order { get; set; }
 
         /// <summary>
         /// 数量
         /// </summary>
         /// <value>数量</value>
-        [DataMember(Name="qty", EmitDefaultValue=false)]
+        [DataMember(Name = "qty", EmitDefaultValue = false)]
         public decimal Qty { get; set; }
 
         /// <summary>
         /// 部門ID
         /// </summary>
         /// <value>部門ID</value>
-        [DataMember(Name="section_id", EmitDefaultValue=false)]
+        [DataMember(Name = "section_id", EmitDefaultValue = false)]
         public int SectionId { get; set; }
 
         /// <summary>
         /// セグメント１ID
         /// </summary>
         /// <value>セグメント１ID</value>
-        [DataMember(Name="segment_1_tag_id", EmitDefaultValue=false)]
+        [DataMember(Name = "segment_1_tag_id", EmitDefaultValue = false)]
         public int Segment1TagId { get; set; }
 
         /// <summary>
         /// セグメント２ID
         /// </summary>
         /// <value>セグメント２ID</value>
-        [DataMember(Name="segment_2_tag_id", EmitDefaultValue=false)]
+        [DataMember(Name = "segment_2_tag_id", EmitDefaultValue = false)]
         public int Segment2TagId { get; set; }
 
         /// <summary>
         /// セグメント３ID
         /// </summary>
         /// <value>セグメント３ID</value>
-        [DataMember(Name="segment_3_tag_id", EmitDefaultValue=false)]
+        [DataMember(Name = "segment_3_tag_id", EmitDefaultValue = false)]
         public int Segment3TagId { get; set; }
 
         /// <summary>
         /// Gets or Sets TagIds
         /// </summary>
-        [DataMember(Name="tag_ids", EmitDefaultValue=false)]
+        [DataMember(Name = "tag_ids", EmitDefaultValue = false)]
         public List<int> TagIds { get; set; }
 
         /// <summary>
         /// 税区分ID
         /// </summary>
         /// <value>税区分ID</value>
-        [DataMember(Name="tax_code", EmitDefaultValue=false)]
+        [DataMember(Name = "tax_code", EmitDefaultValue = false)]
         public int TaxCode { get; set; }
 
         /// <summary>
         /// 単位
         /// </summary>
         /// <value>単位</value>
-        [DataMember(Name="unit", EmitDefaultValue=false)]
+        [DataMember(Name = "unit", EmitDefaultValue = false)]
         public string Unit { get; set; }
 
         /// <summary>
         /// 単価 (tax_entry_method: inclusiveの場合は税込価格、tax_entry_method: exclusiveの場合は税抜価格となります)
         /// </summary>
         /// <value>単価 (tax_entry_method: inclusiveの場合は税込価格、tax_entry_method: exclusiveの場合は税抜価格となります)</value>
-        [DataMember(Name="unit_price", EmitDefaultValue=false)]
+        [DataMember(Name = "unit_price", EmitDefaultValue = false)]
         public decimal UnitPrice { get; set; }
 
         /// <summary>
         /// 消費税額
         /// </summary>
         /// <value>消費税額</value>
-        [DataMember(Name="vat", EmitDefaultValue=true)]
+        [DataMember(Name = "vat", EmitDefaultValue = true)]
         public int? Vat { get; set; }
 
         /// <summary>

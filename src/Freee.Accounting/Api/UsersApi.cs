@@ -36,7 +36,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>InlineResponse20015</returns>
-        InlineResponse20015 GetUsers (int companyId, int? limit = default(int?));
+        InlineResponse20015 GetUsers(int companyId, int? limit = default(int?));
 
         /// <summary>
         /// 事業所に所属するユーザー一覧の取得
@@ -48,7 +48,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>ApiResponse of InlineResponse20015</returns>
-        ApiResponse<InlineResponse20015> GetUsersWithHttpInfo (int companyId, int? limit = default(int?));
+        ApiResponse<InlineResponse20015> GetUsersWithHttpInfo(int companyId, int? limit = default(int?));
         /// <summary>
         /// ログインユーザーの権限の取得
         /// </summary>
@@ -58,7 +58,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>InlineResponse20016</returns>
-        InlineResponse20016 GetUsersCapabilities (int companyId);
+        InlineResponse20016 GetUsersCapabilities(int companyId);
 
         /// <summary>
         /// ログインユーザーの権限の取得
@@ -69,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of InlineResponse20016</returns>
-        ApiResponse<InlineResponse20016> GetUsersCapabilitiesWithHttpInfo (int companyId);
+        ApiResponse<InlineResponse20016> GetUsersCapabilitiesWithHttpInfo(int companyId);
         /// <summary>
         /// ログインユーザー情報の取得
         /// </summary>
@@ -79,7 +79,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
         /// <returns>MeResponse</returns>
-        MeResponse GetUsersMe (bool? companies = default(bool?));
+        MeResponse GetUsersMe(bool? companies = default(bool?));
 
         /// <summary>
         /// ログインユーザー情報の取得
@@ -90,7 +90,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
         /// <returns>ApiResponse of MeResponse</returns>
-        ApiResponse<MeResponse> GetUsersMeWithHttpInfo (bool? companies = default(bool?));
+        ApiResponse<MeResponse> GetUsersMeWithHttpInfo(bool? companies = default(bool?));
         /// <summary>
         /// ユーザー情報の更新
         /// </summary>
@@ -100,7 +100,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <returns>UserResponse</returns>
-        UserResponse UpdateUser (UserParams userParams = default(UserParams));
+        UserResponse UpdateUser(UserParams userParams = default(UserParams));
 
         /// <summary>
         /// ユーザー情報の更新
@@ -111,7 +111,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <returns>ApiResponse of UserResponse</returns>
-        ApiResponse<UserResponse> UpdateUserWithHttpInfo (UserParams userParams = default(UserParams));
+        ApiResponse<UserResponse> UpdateUserWithHttpInfo(UserParams userParams = default(UserParams));
         #endregion Synchronous Operations
     }
 
@@ -132,7 +132,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20015</returns>
-        System.Threading.Tasks.Task<InlineResponse20015> GetUsersAsync (int companyId, int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse20015> GetUsersAsync(int companyId, int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 事業所に所属するユーザー一覧の取得
@@ -145,7 +145,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20015>> GetUsersWithHttpInfoAsync (int companyId, int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20015>> GetUsersWithHttpInfoAsync(int companyId, int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ログインユーザーの権限の取得
         /// </summary>
@@ -156,7 +156,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20016</returns>
-        System.Threading.Tasks.Task<InlineResponse20016> GetUsersCapabilitiesAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse20016> GetUsersCapabilitiesAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ログインユーザーの権限の取得
@@ -168,7 +168,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20016>> GetUsersCapabilitiesWithHttpInfoAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20016>> GetUsersCapabilitiesWithHttpInfoAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ログインユーザー情報の取得
         /// </summary>
@@ -179,7 +179,7 @@ namespace Freee.Accounting.Api
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MeResponse</returns>
-        System.Threading.Tasks.Task<MeResponse> GetUsersMeAsync (bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<MeResponse> GetUsersMeAsync(bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ログインユーザー情報の取得
@@ -191,7 +191,7 @@ namespace Freee.Accounting.Api
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MeResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MeResponse>> GetUsersMeWithHttpInfoAsync (bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<MeResponse>> GetUsersMeWithHttpInfoAsync(bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ユーザー情報の更新
         /// </summary>
@@ -202,7 +202,7 @@ namespace Freee.Accounting.Api
         /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserResponse</returns>
-        System.Threading.Tasks.Task<UserResponse> UpdateUserAsync (UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UserResponse> UpdateUserAsync(UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ユーザー情報の更新
@@ -214,7 +214,7 @@ namespace Freee.Accounting.Api
         /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserResponse>> UpdateUserWithHttpInfoAsync (UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UserResponse>> UpdateUserWithHttpInfoAsync(UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -237,7 +237,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="UsersApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public UsersApi() : this((string) null)
+        public UsersApi() : this((string)null)
         {
         }
 
@@ -282,11 +282,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public UsersApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public UsersApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -317,7 +317,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -342,10 +342,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>InlineResponse20015</returns>
-        public InlineResponse20015 GetUsers (int companyId, int? limit = default(int?))
+        public InlineResponse20015 GetUsers(int companyId, int? limit = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20015> localVarResponse = GetUsersWithHttpInfo(companyId, limit);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20015> localVarResponse = GetUsersWithHttpInfo(companyId, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -355,7 +355,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>ApiResponse of InlineResponse20015</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse20015 > GetUsersWithHttpInfo (int companyId, int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse20015> GetUsersWithHttpInfo(int companyId, int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -387,7 +387,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse20015 >("/api/1/users", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20015>("/api/1/users", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -406,10 +406,10 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20015</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20015> GetUsersAsync (int companyId, int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse20015> GetUsersAsync(int companyId, int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20015> localVarResponse = await GetUsersWithHttpInfoAsync(companyId, limit, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20015> localVarResponse = await GetUsersWithHttpInfoAsync(companyId, limit, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -420,7 +420,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20015>> GetUsersWithHttpInfoAsync (int companyId, int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20015>> GetUsersWithHttpInfoAsync(int companyId, int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -472,10 +472,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>InlineResponse20016</returns>
-        public InlineResponse20016 GetUsersCapabilities (int companyId)
+        public InlineResponse20016 GetUsersCapabilities(int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20016> localVarResponse = GetUsersCapabilitiesWithHttpInfo(companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20016> localVarResponse = GetUsersCapabilitiesWithHttpInfo(companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -484,7 +484,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of InlineResponse20016</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse20016 > GetUsersCapabilitiesWithHttpInfo (int companyId)
+        public Freee.Accounting.Client.ApiResponse<InlineResponse20016> GetUsersCapabilitiesWithHttpInfo(int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -512,7 +512,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse20016 >("/api/1/users/capabilities", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20016>("/api/1/users/capabilities", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -530,10 +530,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20016</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20016> GetUsersCapabilitiesAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse20016> GetUsersCapabilitiesAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse20016> localVarResponse = await GetUsersCapabilitiesWithHttpInfoAsync(companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20016> localVarResponse = await GetUsersCapabilitiesWithHttpInfoAsync(companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -543,7 +543,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20016>> GetUsersCapabilitiesWithHttpInfoAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20016>> GetUsersCapabilitiesWithHttpInfoAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -591,10 +591,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
         /// <returns>MeResponse</returns>
-        public MeResponse GetUsersMe (bool? companies = default(bool?))
+        public MeResponse GetUsersMe(bool? companies = default(bool?))
         {
-             Freee.Accounting.Client.ApiResponse<MeResponse> localVarResponse = GetUsersMeWithHttpInfo(companies);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<MeResponse> localVarResponse = GetUsersMeWithHttpInfo(companies);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -603,7 +603,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
         /// <returns>ApiResponse of MeResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< MeResponse > GetUsersMeWithHttpInfo (bool? companies = default(bool?))
+        public Freee.Accounting.Client.ApiResponse<MeResponse> GetUsersMeWithHttpInfo(bool? companies = default(bool?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -634,7 +634,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< MeResponse >("/api/1/users/me", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<MeResponse>("/api/1/users/me", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -652,10 +652,10 @@ namespace Freee.Accounting.Api
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MeResponse</returns>
-        public async System.Threading.Tasks.Task<MeResponse> GetUsersMeAsync (bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MeResponse> GetUsersMeAsync(bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<MeResponse> localVarResponse = await GetUsersMeWithHttpInfoAsync(companies, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<MeResponse> localVarResponse = await GetUsersMeWithHttpInfoAsync(companies, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -665,7 +665,7 @@ namespace Freee.Accounting.Api
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MeResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<MeResponse>> GetUsersMeWithHttpInfoAsync (bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<MeResponse>> GetUsersMeWithHttpInfoAsync(bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -716,10 +716,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <returns>UserResponse</returns>
-        public UserResponse UpdateUser (UserParams userParams = default(UserParams))
+        public UserResponse UpdateUser(UserParams userParams = default(UserParams))
         {
-             Freee.Accounting.Client.ApiResponse<UserResponse> localVarResponse = UpdateUserWithHttpInfo(userParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<UserResponse> localVarResponse = UpdateUserWithHttpInfo(userParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -728,7 +728,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <returns>ApiResponse of UserResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< UserResponse > UpdateUserWithHttpInfo (UserParams userParams = default(UserParams))
+        public Freee.Accounting.Client.ApiResponse<UserResponse> UpdateUserWithHttpInfo(UserParams userParams = default(UserParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -758,7 +758,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< UserResponse >("/api/1/users/me", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<UserResponse>("/api/1/users/me", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -776,10 +776,10 @@ namespace Freee.Accounting.Api
         /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserResponse</returns>
-        public async System.Threading.Tasks.Task<UserResponse> UpdateUserAsync (UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UserResponse> UpdateUserAsync(UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<UserResponse> localVarResponse = await UpdateUserWithHttpInfoAsync(userParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<UserResponse> localVarResponse = await UpdateUserWithHttpInfoAsync(userParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -789,7 +789,7 @@ namespace Freee.Accounting.Api
         /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<UserResponse>> UpdateUserWithHttpInfoAsync (UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<UserResponse>> UpdateUserWithHttpInfoAsync(UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

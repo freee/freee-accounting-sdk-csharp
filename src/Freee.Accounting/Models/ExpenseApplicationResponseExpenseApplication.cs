@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ExpenseApplicationResponseExpenseApplication
     /// </summary>
     [DataContract]
-    public partial class ExpenseApplicationResponseExpenseApplication :  IEquatable<ExpenseApplicationResponseExpenseApplication>
+    public partial class ExpenseApplicationResponseExpenseApplication : IEquatable<ExpenseApplicationResponseExpenseApplication>
     {
         /// <summary>
         /// 取引ステータス (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_statusが表示されます settled:精算済み, unsettled:清算待ち)
@@ -54,7 +54,7 @@ namespace Freee.Accounting.Models
         /// 取引ステータス (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_statusが表示されます settled:精算済み, unsettled:清算待ち)
         /// </summary>
         /// <value>取引ステータス (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_statusが表示されます settled:精算済み, unsettled:清算待ち)</value>
-        [DataMember(Name="deal_status", EmitDefaultValue=true)]
+        [DataMember(Name = "deal_status", EmitDefaultValue = true)]
         public DealStatusEnum DealStatus { get; set; }
         /// <summary>
         /// 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
@@ -99,7 +99,7 @@ namespace Freee.Accounting.Models
         /// 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
         /// </summary>
         /// <value>申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ExpenseApplicationResponseExpenseApplication" /> class.
@@ -147,77 +147,77 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 取引ID (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_idが表示されます)
         /// </summary>
         /// <value>取引ID (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_idが表示されます)</value>
-        [DataMember(Name="deal_id", EmitDefaultValue=true)]
+        [DataMember(Name = "deal_id", EmitDefaultValue = true)]
         public int? DealId { get; set; }
 
         /// <summary>
         /// 備考
         /// </summary>
         /// <value>備考</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// 会計freeeのWeb画面から申請内容を編集可能：falseの場合、Web上からの項目行の追加／削除・金額の編集が出来なくなります。APIでの編集は可能です。
         /// </summary>
         /// <value>会計freeeのWeb画面から申請内容を編集可能：falseの場合、Web上からの項目行の追加／削除・金額の編集が出来なくなります。APIでの編集は可能です。</value>
-        [DataMember(Name="editable_on_web", EmitDefaultValue=false)]
+        [DataMember(Name = "editable_on_web", EmitDefaultValue = false)]
         public bool EditableOnWeb { get; set; }
 
         /// <summary>
         /// 経費申請の項目行一覧（配列）
         /// </summary>
         /// <value>経費申請の項目行一覧（配列）</value>
-        [DataMember(Name="expense_application_lines", EmitDefaultValue=false)]
+        [DataMember(Name = "expense_application_lines", EmitDefaultValue = false)]
         public List<ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines> ExpenseApplicationLines { get; set; }
 
         /// <summary>
         /// 経費申請ID
         /// </summary>
         /// <value>経費申請ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 申請日 (yyyy-mm-dd)
         /// </summary>
         /// <value>申請日 (yyyy-mm-dd)</value>
-        [DataMember(Name="issue_date", EmitDefaultValue=true)]
+        [DataMember(Name = "issue_date", EmitDefaultValue = true)]
         public string IssueDate { get; set; }
 
         /// <summary>
         /// 部門ID
         /// </summary>
         /// <value>部門ID</value>
-        [DataMember(Name="section_id", EmitDefaultValue=true)]
+        [DataMember(Name = "section_id", EmitDefaultValue = true)]
         public int? SectionId { get; set; }
 
         /// <summary>
         /// メモタグID
         /// </summary>
         /// <value>メモタグID</value>
-        [DataMember(Name="tag_ids", EmitDefaultValue=false)]
+        [DataMember(Name = "tag_ids", EmitDefaultValue = false)]
         public List<int> TagIds { get; set; }
 
         /// <summary>
         /// 申請タイトル
         /// </summary>
         /// <value>申請タイトル</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// 合計金額
         /// </summary>
         /// <value>合計金額</value>
-        [DataMember(Name="total_amount", EmitDefaultValue=false)]
+        [DataMember(Name = "total_amount", EmitDefaultValue = false)]
         public int TotalAmount { get; set; }
 
         /// <summary>

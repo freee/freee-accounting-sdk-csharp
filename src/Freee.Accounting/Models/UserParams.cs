@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// UserParams
     /// </summary>
     [DataContract]
-    public partial class UserParams :  IEquatable<UserParams>
+    public partial class UserParams : IEquatable<UserParams>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserParams" /> class.
@@ -50,35 +50,35 @@ namespace Freee.Accounting.Models
         /// 表示名 (20文字以内)
         /// </summary>
         /// <value>表示名 (20文字以内)</value>
-        [DataMember(Name="display_name", EmitDefaultValue=false)]
+        [DataMember(Name = "display_name", EmitDefaultValue = false)]
         public string DisplayName { get; set; }
 
         /// <summary>
         /// 氏名（名） (20文字以内)
         /// </summary>
         /// <value>氏名（名） (20文字以内)</value>
-        [DataMember(Name="first_name", EmitDefaultValue=false)]
+        [DataMember(Name = "first_name", EmitDefaultValue = false)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// 氏名（カナ・名） (20文字以内)
         /// </summary>
         /// <value>氏名（カナ・名） (20文字以内)</value>
-        [DataMember(Name="first_name_kana", EmitDefaultValue=false)]
+        [DataMember(Name = "first_name_kana", EmitDefaultValue = false)]
         public string FirstNameKana { get; set; }
 
         /// <summary>
         /// 氏名（姓） (20文字以内)
         /// </summary>
         /// <value>氏名（姓） (20文字以内)</value>
-        [DataMember(Name="last_name", EmitDefaultValue=false)]
+        [DataMember(Name = "last_name", EmitDefaultValue = false)]
         public string LastName { get; set; }
 
         /// <summary>
         /// 氏名（カナ・姓） (20文字以内)
         /// </summary>
         /// <value>氏名（カナ・姓） (20文字以内)</value>
-        [DataMember(Name="last_name_kana", EmitDefaultValue=false)]
+        [DataMember(Name = "last_name_kana", EmitDefaultValue = false)]
         public string LastNameKana { get; set; }
 
         /// <summary>

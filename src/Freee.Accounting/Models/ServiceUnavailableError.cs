@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ServiceUnavailableError
     /// </summary>
     [DataContract]
-    public partial class ServiceUnavailableError :  IEquatable<ServiceUnavailableError>
+    public partial class ServiceUnavailableError : IEquatable<ServiceUnavailableError>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceUnavailableError" /> class.
@@ -49,13 +49,13 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets Errors
         /// </summary>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public List<ServiceUnavailableErrorErrors> Errors { get; set; }
 
         /// <summary>
         /// Gets or Sets StatusCode
         /// </summary>
-        [DataMember(Name="status_code", EmitDefaultValue=false)]
+        [DataMember(Name = "status_code", EmitDefaultValue = false)]
         public int StatusCode { get; set; }
 
         /// <summary>

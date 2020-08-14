@@ -36,7 +36,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引ID</param>
         /// <param name="paymentParams">取引（収入／支出）の支払行作成</param>
         /// <returns>DealResponse</returns>
-        DealResponse CreateDealPayment (int id, PaymentParams paymentParams);
+        DealResponse CreateDealPayment(int id, PaymentParams paymentParams);
 
         /// <summary>
         /// 取引（収入／支出）の支払行作成
@@ -48,7 +48,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引ID</param>
         /// <param name="paymentParams">取引（収入／支出）の支払行作成</param>
         /// <returns>ApiResponse of DealResponse</returns>
-        ApiResponse<DealResponse> CreateDealPaymentWithHttpInfo (int id, PaymentParams paymentParams);
+        ApiResponse<DealResponse> CreateDealPaymentWithHttpInfo(int id, PaymentParams paymentParams);
         /// <summary>
         /// 取引（収入／支出）の支払行削除
         /// </summary>
@@ -60,7 +60,7 @@ namespace Freee.Accounting.Api
         /// <param name="paymentId">決済ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroyDealPayment (int id, int paymentId, int companyId);
+        void DestroyDealPayment(int id, int paymentId, int companyId);
 
         /// <summary>
         /// 取引（収入／支出）の支払行削除
@@ -73,7 +73,7 @@ namespace Freee.Accounting.Api
         /// <param name="paymentId">決済ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroyDealPaymentWithHttpInfo (int id, int paymentId, int companyId);
+        ApiResponse<Object> DestroyDealPaymentWithHttpInfo(int id, int paymentId, int companyId);
         /// <summary>
         /// 取引（収入／支出）の支払行更新
         /// </summary>
@@ -85,7 +85,7 @@ namespace Freee.Accounting.Api
         /// <param name="paymentId">決済ID</param>
         /// <param name="paymentParams">取引（収入／支出）の支払行更新</param>
         /// <returns>DealResponse</returns>
-        DealResponse UpdateDealPayment (int id, int paymentId, PaymentParams paymentParams);
+        DealResponse UpdateDealPayment(int id, int paymentId, PaymentParams paymentParams);
 
         /// <summary>
         /// 取引（収入／支出）の支払行更新
@@ -98,7 +98,7 @@ namespace Freee.Accounting.Api
         /// <param name="paymentId">決済ID</param>
         /// <param name="paymentParams">取引（収入／支出）の支払行更新</param>
         /// <returns>ApiResponse of DealResponse</returns>
-        ApiResponse<DealResponse> UpdateDealPaymentWithHttpInfo (int id, int paymentId, PaymentParams paymentParams);
+        ApiResponse<DealResponse> UpdateDealPaymentWithHttpInfo(int id, int paymentId, PaymentParams paymentParams);
         #endregion Synchronous Operations
     }
 
@@ -119,7 +119,7 @@ namespace Freee.Accounting.Api
         /// <param name="paymentParams">取引（収入／支出）の支払行作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
-        System.Threading.Tasks.Task<DealResponse> CreateDealPaymentAsync (int id, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DealResponse> CreateDealPaymentAsync(int id, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（収入／支出）の支払行作成
@@ -132,7 +132,7 @@ namespace Freee.Accounting.Api
         /// <param name="paymentParams">取引（収入／支出）の支払行作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DealResponse>> CreateDealPaymentWithHttpInfoAsync (int id, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DealResponse>> CreateDealPaymentWithHttpInfoAsync(int id, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（収入／支出）の支払行削除
         /// </summary>
@@ -145,7 +145,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyDealPaymentAsync (int id, int paymentId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroyDealPaymentAsync(int id, int paymentId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（収入／支出）の支払行削除
@@ -159,7 +159,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyDealPaymentWithHttpInfoAsync (int id, int paymentId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyDealPaymentWithHttpInfoAsync(int id, int paymentId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（収入／支出）の支払行更新
         /// </summary>
@@ -172,7 +172,7 @@ namespace Freee.Accounting.Api
         /// <param name="paymentParams">取引（収入／支出）の支払行更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
-        System.Threading.Tasks.Task<DealResponse> UpdateDealPaymentAsync (int id, int paymentId, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DealResponse> UpdateDealPaymentAsync(int id, int paymentId, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（収入／支出）の支払行更新
@@ -186,7 +186,7 @@ namespace Freee.Accounting.Api
         /// <param name="paymentParams">取引（収入／支出）の支払行更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DealResponse>> UpdateDealPaymentWithHttpInfoAsync (int id, int paymentId, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DealResponse>> UpdateDealPaymentWithHttpInfoAsync(int id, int paymentId, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -209,7 +209,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="PaymentsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PaymentsApi() : this((string) null)
+        public PaymentsApi() : this((string)null)
         {
         }
 
@@ -254,11 +254,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public PaymentsApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public PaymentsApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -289,7 +289,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -314,10 +314,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引ID</param>
         /// <param name="paymentParams">取引（収入／支出）の支払行作成</param>
         /// <returns>DealResponse</returns>
-        public DealResponse CreateDealPayment (int id, PaymentParams paymentParams)
+        public DealResponse CreateDealPayment(int id, PaymentParams paymentParams)
         {
-             Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = CreateDealPaymentWithHttpInfo(id, paymentParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = CreateDealPaymentWithHttpInfo(id, paymentParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -327,7 +327,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引ID</param>
         /// <param name="paymentParams">取引（収入／支出）の支払行作成</param>
         /// <returns>ApiResponse of DealResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< DealResponse > CreateDealPaymentWithHttpInfo (int id, PaymentParams paymentParams)
+        public Freee.Accounting.Client.ApiResponse<DealResponse> CreateDealPaymentWithHttpInfo(int id, PaymentParams paymentParams)
         {
             // verify the required parameter 'paymentParams' is set
             if (paymentParams == null)
@@ -362,7 +362,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< DealResponse >("/api/1/deals/{id}/payments", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<DealResponse>("/api/1/deals/{id}/payments", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -381,10 +381,10 @@ namespace Freee.Accounting.Api
         /// <param name="paymentParams">取引（収入／支出）の支払行作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
-        public async System.Threading.Tasks.Task<DealResponse> CreateDealPaymentAsync (int id, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DealResponse> CreateDealPaymentAsync(int id, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await CreateDealPaymentWithHttpInfoAsync(id, paymentParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await CreateDealPaymentWithHttpInfoAsync(id, paymentParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -395,7 +395,7 @@ namespace Freee.Accounting.Api
         /// <param name="paymentParams">取引（収入／支出）の支払行作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<DealResponse>> CreateDealPaymentWithHttpInfoAsync (int id, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<DealResponse>> CreateDealPaymentWithHttpInfoAsync(int id, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'paymentParams' is set
             if (paymentParams == null)
@@ -452,9 +452,9 @@ namespace Freee.Accounting.Api
         /// <param name="paymentId">決済ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroyDealPayment (int id, int paymentId, int companyId)
+        public void DestroyDealPayment(int id, int paymentId, int companyId)
         {
-             DestroyDealPaymentWithHttpInfo(id, paymentId, companyId);
+            DestroyDealPaymentWithHttpInfo(id, paymentId, companyId);
         }
 
         /// <summary>
@@ -465,7 +465,7 @@ namespace Freee.Accounting.Api
         /// <param name="paymentId">決済ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroyDealPaymentWithHttpInfo (int id, int paymentId, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroyDealPaymentWithHttpInfo(int id, int paymentId, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -515,9 +515,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyDealPaymentAsync (int id, int paymentId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroyDealPaymentAsync(int id, int paymentId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyDealPaymentWithHttpInfoAsync(id, paymentId, companyId, cancellationToken);
+            await DestroyDealPaymentWithHttpInfoAsync(id, paymentId, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -529,7 +529,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyDealPaymentWithHttpInfoAsync (int id, int paymentId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyDealPaymentWithHttpInfoAsync(int id, int paymentId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -581,10 +581,10 @@ namespace Freee.Accounting.Api
         /// <param name="paymentId">決済ID</param>
         /// <param name="paymentParams">取引（収入／支出）の支払行更新</param>
         /// <returns>DealResponse</returns>
-        public DealResponse UpdateDealPayment (int id, int paymentId, PaymentParams paymentParams)
+        public DealResponse UpdateDealPayment(int id, int paymentId, PaymentParams paymentParams)
         {
-             Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = UpdateDealPaymentWithHttpInfo(id, paymentId, paymentParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = UpdateDealPaymentWithHttpInfo(id, paymentId, paymentParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -595,7 +595,7 @@ namespace Freee.Accounting.Api
         /// <param name="paymentId">決済ID</param>
         /// <param name="paymentParams">取引（収入／支出）の支払行更新</param>
         /// <returns>ApiResponse of DealResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< DealResponse > UpdateDealPaymentWithHttpInfo (int id, int paymentId, PaymentParams paymentParams)
+        public Freee.Accounting.Client.ApiResponse<DealResponse> UpdateDealPaymentWithHttpInfo(int id, int paymentId, PaymentParams paymentParams)
         {
             // verify the required parameter 'paymentParams' is set
             if (paymentParams == null)
@@ -631,7 +631,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< DealResponse >("/api/1/deals/{id}/payments/{payment_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<DealResponse>("/api/1/deals/{id}/payments/{payment_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -651,10 +651,10 @@ namespace Freee.Accounting.Api
         /// <param name="paymentParams">取引（収入／支出）の支払行更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
-        public async System.Threading.Tasks.Task<DealResponse> UpdateDealPaymentAsync (int id, int paymentId, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DealResponse> UpdateDealPaymentAsync(int id, int paymentId, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await UpdateDealPaymentWithHttpInfoAsync(id, paymentId, paymentParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await UpdateDealPaymentWithHttpInfoAsync(id, paymentId, paymentParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -666,7 +666,7 @@ namespace Freee.Accounting.Api
         /// <param name="paymentParams">取引（収入／支出）の支払行更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<DealResponse>> UpdateDealPaymentWithHttpInfoAsync (int id, int paymentId, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<DealResponse>> UpdateDealPaymentWithHttpInfoAsync(int id, int paymentId, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'paymentParams' is set
             if (paymentParams == null)

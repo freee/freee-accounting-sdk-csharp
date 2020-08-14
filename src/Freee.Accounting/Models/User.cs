@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// User
     /// </summary>
     [DataContract]
-    public partial class User :  IEquatable<User>
+    public partial class User : IEquatable<User>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="User" /> class.
@@ -60,49 +60,49 @@ namespace Freee.Accounting.Models
         /// 表示名
         /// </summary>
         /// <value>表示名</value>
-        [DataMember(Name="display_name", EmitDefaultValue=true)]
+        [DataMember(Name = "display_name", EmitDefaultValue = true)]
         public string DisplayName { get; set; }
 
         /// <summary>
         /// メールアドレス
         /// </summary>
         /// <value>メールアドレス</value>
-        [DataMember(Name="email", EmitDefaultValue=false)]
+        [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
         /// 氏名（名）
         /// </summary>
         /// <value>氏名（名）</value>
-        [DataMember(Name="first_name", EmitDefaultValue=true)]
+        [DataMember(Name = "first_name", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// 氏名（カナ・名）
         /// </summary>
         /// <value>氏名（カナ・名）</value>
-        [DataMember(Name="first_name_kana", EmitDefaultValue=true)]
+        [DataMember(Name = "first_name_kana", EmitDefaultValue = true)]
         public string FirstNameKana { get; set; }
 
         /// <summary>
         /// ユーザーID
         /// </summary>
         /// <value>ユーザーID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 氏名（姓）
         /// </summary>
         /// <value>氏名（姓）</value>
-        [DataMember(Name="last_name", EmitDefaultValue=true)]
+        [DataMember(Name = "last_name", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
         /// 氏名（カナ・姓）
         /// </summary>
         /// <value>氏名（カナ・姓）</value>
-        [DataMember(Name="last_name_kana", EmitDefaultValue=true)]
+        [DataMember(Name = "last_name_kana", EmitDefaultValue = true)]
         public string LastNameKana { get; set; }
 
         /// <summary>

@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// SelectablesIndexResponse
     /// </summary>
     [DataContract]
-    public partial class SelectablesIndexResponse :  IEquatable<SelectablesIndexResponse>
+    public partial class SelectablesIndexResponse : IEquatable<SelectablesIndexResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectablesIndexResponse" /> class.
@@ -43,14 +43,14 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets AccountCategories
         /// </summary>
-        [DataMember(Name="account_categories", EmitDefaultValue=false)]
+        [DataMember(Name = "account_categories", EmitDefaultValue = false)]
         public List<SelectablesIndexResponseAccountCategories> AccountCategories { get; set; }
 
         /// <summary>
         /// 決算書表示名（小カテゴリー）
         /// </summary>
         /// <value>決算書表示名（小カテゴリー）</value>
-        [DataMember(Name="account_groups", EmitDefaultValue=false)]
+        [DataMember(Name = "account_groups", EmitDefaultValue = false)]
         public List<SelectablesIndexResponseAccountGroups> AccountGroups { get; set; }
 
         /// <summary>

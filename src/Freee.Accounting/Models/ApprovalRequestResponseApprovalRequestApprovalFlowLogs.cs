@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ApprovalRequestResponseApprovalRequestApprovalFlowLogs
     /// </summary>
     [DataContract]
-    public partial class ApprovalRequestResponseApprovalRequestApprovalFlowLogs :  IEquatable<ApprovalRequestResponseApprovalRequestApprovalFlowLogs>
+    public partial class ApprovalRequestResponseApprovalRequestApprovalFlowLogs : IEquatable<ApprovalRequestResponseApprovalRequestApprovalFlowLogs>
     {
         /// <summary>
         /// 操作(apply: 申請, approve: 承認, force_approve: 代理承認, cancel: 取消, reject: 却下, feedback: 差戻し)
@@ -78,7 +78,7 @@ namespace Freee.Accounting.Models
         /// 操作(apply: 申請, approve: 承認, force_approve: 代理承認, cancel: 取消, reject: 却下, feedback: 差戻し)
         /// </summary>
         /// <value>操作(apply: 申請, approve: 承認, force_approve: 代理承認, cancel: 取消, reject: 却下, feedback: 差戻し)</value>
-        [DataMember(Name="action", EmitDefaultValue=false)]
+        [DataMember(Name = "action", EmitDefaultValue = false)]
         public ActionEnum Action { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestResponseApprovalRequestApprovalFlowLogs" /> class.
@@ -103,14 +103,14 @@ namespace Freee.Accounting.Models
         /// 更新日時(ISO8601形式)
         /// </summary>
         /// <value>更新日時(ISO8601形式)</value>
-        [DataMember(Name="updated_at", EmitDefaultValue=false)]
+        [DataMember(Name = "updated_at", EmitDefaultValue = false)]
         public string UpdatedAt { get; set; }
 
         /// <summary>
         /// ユーザーID
         /// </summary>
         /// <value>ユーザーID</value>
-        [DataMember(Name="user_id", EmitDefaultValue=false)]
+        [DataMember(Name = "user_id", EmitDefaultValue = false)]
         public int UserId { get; set; }
 
         /// <summary>

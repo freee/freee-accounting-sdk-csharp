@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// DeprecatedApprovalRequestResponseApprovalRequestRequestItems
     /// </summary>
     [DataContract]
-    public partial class DeprecatedApprovalRequestResponseApprovalRequestRequestItems :  IEquatable<DeprecatedApprovalRequestResponseApprovalRequestRequestItems>
+    public partial class DeprecatedApprovalRequestResponseApprovalRequestRequestItems : IEquatable<DeprecatedApprovalRequestResponseApprovalRequestRequestItems>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeprecatedApprovalRequestResponseApprovalRequestRequestItems" /> class.
@@ -53,21 +53,21 @@ namespace Freee.Accounting.Models
         /// 項目ID
         /// </summary>
         /// <value>項目ID</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 項目タイプ
         /// </summary>
         /// <value>項目タイプ</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
         /// 項目の値
         /// </summary>
         /// <value>項目の値</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
         /// <summary>

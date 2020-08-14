@@ -36,7 +36,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引ID</param>
         /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <returns>DealResponse</returns>
-        DealResponse CreateDealRenew (int id, RenewCreateParams renewCreateParams);
+        DealResponse CreateDealRenew(int id, RenewCreateParams renewCreateParams);
 
         /// <summary>
         /// 取引（収入／支出）に対する+更新の作成
@@ -48,7 +48,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引ID</param>
         /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <returns>ApiResponse of DealResponse</returns>
-        ApiResponse<DealResponse> CreateDealRenewWithHttpInfo (int id, RenewCreateParams renewCreateParams);
+        ApiResponse<DealResponse> CreateDealRenewWithHttpInfo(int id, RenewCreateParams renewCreateParams);
         /// <summary>
         /// 取引（収入／支出）の+更新の削除
         /// </summary>
@@ -60,7 +60,7 @@ namespace Freee.Accounting.Api
         /// <param name="renewId">+更新ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>DealResponse</returns>
-        DealResponse DeleteDealRenew (int id, int renewId, int companyId);
+        DealResponse DeleteDealRenew(int id, int renewId, int companyId);
 
         /// <summary>
         /// 取引（収入／支出）の+更新の削除
@@ -73,7 +73,7 @@ namespace Freee.Accounting.Api
         /// <param name="renewId">+更新ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of DealResponse</returns>
-        ApiResponse<DealResponse> DeleteDealRenewWithHttpInfo (int id, int renewId, int companyId);
+        ApiResponse<DealResponse> DeleteDealRenewWithHttpInfo(int id, int renewId, int companyId);
         /// <summary>
         /// 取引（収入／支出）の+更新の更新
         /// </summary>
@@ -85,7 +85,7 @@ namespace Freee.Accounting.Api
         /// <param name="renewId">+更新ID</param>
         /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <returns>DealResponse</returns>
-        DealResponse UpdateDealRenew (int id, int renewId, RenewUpdateParams renewUpdateParams);
+        DealResponse UpdateDealRenew(int id, int renewId, RenewUpdateParams renewUpdateParams);
 
         /// <summary>
         /// 取引（収入／支出）の+更新の更新
@@ -98,7 +98,7 @@ namespace Freee.Accounting.Api
         /// <param name="renewId">+更新ID</param>
         /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <returns>ApiResponse of DealResponse</returns>
-        ApiResponse<DealResponse> UpdateDealRenewWithHttpInfo (int id, int renewId, RenewUpdateParams renewUpdateParams);
+        ApiResponse<DealResponse> UpdateDealRenewWithHttpInfo(int id, int renewId, RenewUpdateParams renewUpdateParams);
         #endregion Synchronous Operations
     }
 
@@ -119,7 +119,7 @@ namespace Freee.Accounting.Api
         /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
-        System.Threading.Tasks.Task<DealResponse> CreateDealRenewAsync (int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DealResponse> CreateDealRenewAsync(int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（収入／支出）に対する+更新の作成
@@ -132,7 +132,7 @@ namespace Freee.Accounting.Api
         /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DealResponse>> CreateDealRenewWithHttpInfoAsync (int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DealResponse>> CreateDealRenewWithHttpInfoAsync(int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（収入／支出）の+更新の削除
         /// </summary>
@@ -145,7 +145,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
-        System.Threading.Tasks.Task<DealResponse> DeleteDealRenewAsync (int id, int renewId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DealResponse> DeleteDealRenewAsync(int id, int renewId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（収入／支出）の+更新の削除
@@ -159,7 +159,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DealResponse>> DeleteDealRenewWithHttpInfoAsync (int id, int renewId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DealResponse>> DeleteDealRenewWithHttpInfoAsync(int id, int renewId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（収入／支出）の+更新の更新
         /// </summary>
@@ -172,7 +172,7 @@ namespace Freee.Accounting.Api
         /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
-        System.Threading.Tasks.Task<DealResponse> UpdateDealRenewAsync (int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DealResponse> UpdateDealRenewAsync(int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（収入／支出）の+更新の更新
@@ -186,7 +186,7 @@ namespace Freee.Accounting.Api
         /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DealResponse>> UpdateDealRenewWithHttpInfoAsync (int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DealResponse>> UpdateDealRenewWithHttpInfoAsync(int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -209,7 +209,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="RenewsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public RenewsApi() : this((string) null)
+        public RenewsApi() : this((string)null)
         {
         }
 
@@ -254,11 +254,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public RenewsApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public RenewsApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -289,7 +289,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -314,10 +314,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引ID</param>
         /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <returns>DealResponse</returns>
-        public DealResponse CreateDealRenew (int id, RenewCreateParams renewCreateParams)
+        public DealResponse CreateDealRenew(int id, RenewCreateParams renewCreateParams)
         {
-             Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = CreateDealRenewWithHttpInfo(id, renewCreateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = CreateDealRenewWithHttpInfo(id, renewCreateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -327,7 +327,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引ID</param>
         /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <returns>ApiResponse of DealResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< DealResponse > CreateDealRenewWithHttpInfo (int id, RenewCreateParams renewCreateParams)
+        public Freee.Accounting.Client.ApiResponse<DealResponse> CreateDealRenewWithHttpInfo(int id, RenewCreateParams renewCreateParams)
         {
             // verify the required parameter 'renewCreateParams' is set
             if (renewCreateParams == null)
@@ -362,7 +362,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< DealResponse >("/api/1/deals/{id}/renews", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<DealResponse>("/api/1/deals/{id}/renews", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -381,10 +381,10 @@ namespace Freee.Accounting.Api
         /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
-        public async System.Threading.Tasks.Task<DealResponse> CreateDealRenewAsync (int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DealResponse> CreateDealRenewAsync(int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await CreateDealRenewWithHttpInfoAsync(id, renewCreateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await CreateDealRenewWithHttpInfoAsync(id, renewCreateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -395,7 +395,7 @@ namespace Freee.Accounting.Api
         /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<DealResponse>> CreateDealRenewWithHttpInfoAsync (int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<DealResponse>> CreateDealRenewWithHttpInfoAsync(int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'renewCreateParams' is set
             if (renewCreateParams == null)
@@ -452,10 +452,10 @@ namespace Freee.Accounting.Api
         /// <param name="renewId">+更新ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>DealResponse</returns>
-        public DealResponse DeleteDealRenew (int id, int renewId, int companyId)
+        public DealResponse DeleteDealRenew(int id, int renewId, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = DeleteDealRenewWithHttpInfo(id, renewId, companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = DeleteDealRenewWithHttpInfo(id, renewId, companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -466,7 +466,7 @@ namespace Freee.Accounting.Api
         /// <param name="renewId">+更新ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of DealResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< DealResponse > DeleteDealRenewWithHttpInfo (int id, int renewId, int companyId)
+        public Freee.Accounting.Client.ApiResponse<DealResponse> DeleteDealRenewWithHttpInfo(int id, int renewId, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -496,7 +496,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete< DealResponse >("/api/1/deals/{id}/renews/{renew_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<DealResponse>("/api/1/deals/{id}/renews/{renew_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -516,10 +516,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
-        public async System.Threading.Tasks.Task<DealResponse> DeleteDealRenewAsync (int id, int renewId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DealResponse> DeleteDealRenewAsync(int id, int renewId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await DeleteDealRenewWithHttpInfoAsync(id, renewId, companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await DeleteDealRenewWithHttpInfoAsync(id, renewId, companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -531,7 +531,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<DealResponse>> DeleteDealRenewWithHttpInfoAsync (int id, int renewId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<DealResponse>> DeleteDealRenewWithHttpInfoAsync(int id, int renewId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -583,10 +583,10 @@ namespace Freee.Accounting.Api
         /// <param name="renewId">+更新ID</param>
         /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <returns>DealResponse</returns>
-        public DealResponse UpdateDealRenew (int id, int renewId, RenewUpdateParams renewUpdateParams)
+        public DealResponse UpdateDealRenew(int id, int renewId, RenewUpdateParams renewUpdateParams)
         {
-             Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = UpdateDealRenewWithHttpInfo(id, renewId, renewUpdateParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = UpdateDealRenewWithHttpInfo(id, renewId, renewUpdateParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -597,7 +597,7 @@ namespace Freee.Accounting.Api
         /// <param name="renewId">+更新ID</param>
         /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <returns>ApiResponse of DealResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< DealResponse > UpdateDealRenewWithHttpInfo (int id, int renewId, RenewUpdateParams renewUpdateParams)
+        public Freee.Accounting.Client.ApiResponse<DealResponse> UpdateDealRenewWithHttpInfo(int id, int renewId, RenewUpdateParams renewUpdateParams)
         {
             // verify the required parameter 'renewUpdateParams' is set
             if (renewUpdateParams == null)
@@ -633,7 +633,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< DealResponse >("/api/1/deals/{id}/renews/{renew_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<DealResponse>("/api/1/deals/{id}/renews/{renew_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -653,10 +653,10 @@ namespace Freee.Accounting.Api
         /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
-        public async System.Threading.Tasks.Task<DealResponse> UpdateDealRenewAsync (int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DealResponse> UpdateDealRenewAsync(int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await UpdateDealRenewWithHttpInfoAsync(id, renewId, renewUpdateParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await UpdateDealRenewWithHttpInfoAsync(id, renewId, renewUpdateParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -668,7 +668,7 @@ namespace Freee.Accounting.Api
         /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<DealResponse>> UpdateDealRenewWithHttpInfoAsync (int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<DealResponse>> UpdateDealRenewWithHttpInfoAsync(int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'renewUpdateParams' is set
             if (renewUpdateParams == null)

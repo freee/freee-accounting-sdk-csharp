@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <returns>TrialBsResponse</returns>
-        TrialBsResponse GetTrialBs (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string));
+        TrialBsResponse GetTrialBs(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string));
 
         /// <summary>
         /// 貸借対照表の取得
@@ -68,7 +68,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <returns>ApiResponse of TrialBsResponse</returns>
-        ApiResponse<TrialBsResponse> GetTrialBsWithHttpInfo (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string));
+        ApiResponse<TrialBsResponse> GetTrialBsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string));
         /// <summary>
         /// 貸借対照表(３期間比較)の取得
         /// </summary>
@@ -89,7 +89,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <returns>TrialBsThreeYearsResponse</returns>
-        TrialBsThreeYearsResponse GetTrialBsThreeYears (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string));
+        TrialBsThreeYearsResponse GetTrialBsThreeYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string));
 
         /// <summary>
         /// 貸借対照表(３期間比較)の取得
@@ -111,7 +111,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <returns>ApiResponse of TrialBsThreeYearsResponse</returns>
-        ApiResponse<TrialBsThreeYearsResponse> GetTrialBsThreeYearsWithHttpInfo (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string));
+        ApiResponse<TrialBsThreeYearsResponse> GetTrialBsThreeYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string));
         /// <summary>
         /// 貸借対照表(前年比較)の取得
         /// </summary>
@@ -132,7 +132,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <returns>TrialBsTwoYearsResponse</returns>
-        TrialBsTwoYearsResponse GetTrialBsTwoYears (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string));
+        TrialBsTwoYearsResponse GetTrialBsTwoYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string));
 
         /// <summary>
         /// 貸借対照表(前年比較)の取得
@@ -154,7 +154,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <returns>ApiResponse of TrialBsTwoYearsResponse</returns>
-        ApiResponse<TrialBsTwoYearsResponse> GetTrialBsTwoYearsWithHttpInfo (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string));
+        ApiResponse<TrialBsTwoYearsResponse> GetTrialBsTwoYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string));
         /// <summary>
         /// 損益計算書の取得
         /// </summary>
@@ -177,7 +177,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>TrialPlResponse</returns>
-        TrialPlResponse GetTrialPl (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string));
+        TrialPlResponse GetTrialPl(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string));
 
         /// <summary>
         /// 損益計算書の取得
@@ -201,7 +201,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>ApiResponse of TrialPlResponse</returns>
-        ApiResponse<TrialPlResponse> GetTrialPlWithHttpInfo (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string));
+        ApiResponse<TrialPlResponse> GetTrialPlWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string));
         /// <summary>
         /// 損益計算書(部門比較)の取得
         /// </summary>
@@ -224,7 +224,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>TrialPlSectionsResponse</returns>
-        TrialPlSectionsResponse GetTrialPlSections (int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string));
+        TrialPlSectionsResponse GetTrialPlSections(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string));
 
         /// <summary>
         /// 損益計算書(部門比較)の取得
@@ -248,7 +248,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>ApiResponse of TrialPlSectionsResponse</returns>
-        ApiResponse<TrialPlSectionsResponse> GetTrialPlSectionsWithHttpInfo (int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string));
+        ApiResponse<TrialPlSectionsResponse> GetTrialPlSectionsWithHttpInfo(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string));
         /// <summary>
         /// 損益計算書(３期間比較)の取得
         /// </summary>
@@ -271,7 +271,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>TrialPlThreeYearsResponse</returns>
-        TrialPlThreeYearsResponse GetTrialPlThreeYears (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string));
+        TrialPlThreeYearsResponse GetTrialPlThreeYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string));
 
         /// <summary>
         /// 損益計算書(３期間比較)の取得
@@ -295,7 +295,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>ApiResponse of TrialPlThreeYearsResponse</returns>
-        ApiResponse<TrialPlThreeYearsResponse> GetTrialPlThreeYearsWithHttpInfo (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string));
+        ApiResponse<TrialPlThreeYearsResponse> GetTrialPlThreeYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string));
         /// <summary>
         /// 損益計算書(前年比較)の取得
         /// </summary>
@@ -318,7 +318,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>TrialPlTwoYearsResponse</returns>
-        TrialPlTwoYearsResponse GetTrialPlTwoYears (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string));
+        TrialPlTwoYearsResponse GetTrialPlTwoYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string));
 
         /// <summary>
         /// 損益計算書(前年比較)の取得
@@ -342,7 +342,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>ApiResponse of TrialPlTwoYearsResponse</returns>
-        ApiResponse<TrialPlTwoYearsResponse> GetTrialPlTwoYearsWithHttpInfo (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string));
+        ApiResponse<TrialPlTwoYearsResponse> GetTrialPlTwoYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string));
         #endregion Synchronous Operations
     }
 
@@ -373,7 +373,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialBsResponse</returns>
-        System.Threading.Tasks.Task<TrialBsResponse> GetTrialBsAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TrialBsResponse> GetTrialBsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 貸借対照表の取得
@@ -396,7 +396,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialBsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TrialBsResponse>> GetTrialBsWithHttpInfoAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TrialBsResponse>> GetTrialBsWithHttpInfoAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 貸借対照表(３期間比較)の取得
         /// </summary>
@@ -418,7 +418,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialBsThreeYearsResponse</returns>
-        System.Threading.Tasks.Task<TrialBsThreeYearsResponse> GetTrialBsThreeYearsAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TrialBsThreeYearsResponse> GetTrialBsThreeYearsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 貸借対照表(３期間比較)の取得
@@ -441,7 +441,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialBsThreeYearsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TrialBsThreeYearsResponse>> GetTrialBsThreeYearsWithHttpInfoAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TrialBsThreeYearsResponse>> GetTrialBsThreeYearsWithHttpInfoAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 貸借対照表(前年比較)の取得
         /// </summary>
@@ -463,7 +463,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialBsTwoYearsResponse</returns>
-        System.Threading.Tasks.Task<TrialBsTwoYearsResponse> GetTrialBsTwoYearsAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TrialBsTwoYearsResponse> GetTrialBsTwoYearsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 貸借対照表(前年比較)の取得
@@ -486,7 +486,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialBsTwoYearsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TrialBsTwoYearsResponse>> GetTrialBsTwoYearsWithHttpInfoAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TrialBsTwoYearsResponse>> GetTrialBsTwoYearsWithHttpInfoAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 損益計算書の取得
         /// </summary>
@@ -510,7 +510,7 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlResponse</returns>
-        System.Threading.Tasks.Task<TrialPlResponse> GetTrialPlAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TrialPlResponse> GetTrialPlAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 損益計算書の取得
@@ -535,7 +535,7 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TrialPlResponse>> GetTrialPlWithHttpInfoAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TrialPlResponse>> GetTrialPlWithHttpInfoAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 損益計算書(部門比較)の取得
         /// </summary>
@@ -559,7 +559,7 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlSectionsResponse</returns>
-        System.Threading.Tasks.Task<TrialPlSectionsResponse> GetTrialPlSectionsAsync (int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TrialPlSectionsResponse> GetTrialPlSectionsAsync(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 損益計算書(部門比較)の取得
@@ -584,7 +584,7 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlSectionsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TrialPlSectionsResponse>> GetTrialPlSectionsWithHttpInfoAsync (int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TrialPlSectionsResponse>> GetTrialPlSectionsWithHttpInfoAsync(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 損益計算書(３期間比較)の取得
         /// </summary>
@@ -608,7 +608,7 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlThreeYearsResponse</returns>
-        System.Threading.Tasks.Task<TrialPlThreeYearsResponse> GetTrialPlThreeYearsAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TrialPlThreeYearsResponse> GetTrialPlThreeYearsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 損益計算書(３期間比較)の取得
@@ -633,7 +633,7 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlThreeYearsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TrialPlThreeYearsResponse>> GetTrialPlThreeYearsWithHttpInfoAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TrialPlThreeYearsResponse>> GetTrialPlThreeYearsWithHttpInfoAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 損益計算書(前年比較)の取得
         /// </summary>
@@ -657,7 +657,7 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlTwoYearsResponse</returns>
-        System.Threading.Tasks.Task<TrialPlTwoYearsResponse> GetTrialPlTwoYearsAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TrialPlTwoYearsResponse> GetTrialPlTwoYearsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 損益計算書(前年比較)の取得
@@ -682,7 +682,7 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlTwoYearsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TrialPlTwoYearsResponse>> GetTrialPlTwoYearsWithHttpInfoAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TrialPlTwoYearsResponse>> GetTrialPlTwoYearsWithHttpInfoAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -705,7 +705,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="TrialBalanceApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public TrialBalanceApi() : this((string) null)
+        public TrialBalanceApi() : this((string)null)
         {
         }
 
@@ -750,11 +750,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public TrialBalanceApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public TrialBalanceApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -785,7 +785,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -820,10 +820,10 @@ namespace Freee.Accounting.Api
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <returns>TrialBsResponse</returns>
-        public TrialBsResponse GetTrialBs (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string))
+        public TrialBsResponse GetTrialBs(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string))
         {
-             Freee.Accounting.Client.ApiResponse<TrialBsResponse> localVarResponse = GetTrialBsWithHttpInfo(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialBsResponse> localVarResponse = GetTrialBsWithHttpInfo(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -843,7 +843,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <returns>ApiResponse of TrialBsResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TrialBsResponse > GetTrialBsWithHttpInfo (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string))
+        public Freee.Accounting.Client.ApiResponse<TrialBsResponse> GetTrialBsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -915,7 +915,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< TrialBsResponse >("/api/1/reports/trial_bs", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TrialBsResponse>("/api/1/reports/trial_bs", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -944,10 +944,10 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialBsResponse</returns>
-        public async System.Threading.Tasks.Task<TrialBsResponse> GetTrialBsAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TrialBsResponse> GetTrialBsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TrialBsResponse> localVarResponse = await GetTrialBsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialBsResponse> localVarResponse = await GetTrialBsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -968,7 +968,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialBsResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialBsResponse>> GetTrialBsWithHttpInfoAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialBsResponse>> GetTrialBsWithHttpInfoAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -1071,10 +1071,10 @@ namespace Freee.Accounting.Api
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <returns>TrialBsThreeYearsResponse</returns>
-        public TrialBsThreeYearsResponse GetTrialBsThreeYears (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string))
+        public TrialBsThreeYearsResponse GetTrialBsThreeYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string))
         {
-             Freee.Accounting.Client.ApiResponse<TrialBsThreeYearsResponse> localVarResponse = GetTrialBsThreeYearsWithHttpInfo(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialBsThreeYearsResponse> localVarResponse = GetTrialBsThreeYearsWithHttpInfo(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1094,7 +1094,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <returns>ApiResponse of TrialBsThreeYearsResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TrialBsThreeYearsResponse > GetTrialBsThreeYearsWithHttpInfo (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string))
+        public Freee.Accounting.Client.ApiResponse<TrialBsThreeYearsResponse> GetTrialBsThreeYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -1166,7 +1166,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< TrialBsThreeYearsResponse >("/api/1/reports/trial_bs_three_years", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TrialBsThreeYearsResponse>("/api/1/reports/trial_bs_three_years", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1195,10 +1195,10 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialBsThreeYearsResponse</returns>
-        public async System.Threading.Tasks.Task<TrialBsThreeYearsResponse> GetTrialBsThreeYearsAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TrialBsThreeYearsResponse> GetTrialBsThreeYearsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TrialBsThreeYearsResponse> localVarResponse = await GetTrialBsThreeYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialBsThreeYearsResponse> localVarResponse = await GetTrialBsThreeYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1219,7 +1219,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialBsThreeYearsResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialBsThreeYearsResponse>> GetTrialBsThreeYearsWithHttpInfoAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialBsThreeYearsResponse>> GetTrialBsThreeYearsWithHttpInfoAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -1322,10 +1322,10 @@ namespace Freee.Accounting.Api
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <returns>TrialBsTwoYearsResponse</returns>
-        public TrialBsTwoYearsResponse GetTrialBsTwoYears (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string))
+        public TrialBsTwoYearsResponse GetTrialBsTwoYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string))
         {
-             Freee.Accounting.Client.ApiResponse<TrialBsTwoYearsResponse> localVarResponse = GetTrialBsTwoYearsWithHttpInfo(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialBsTwoYearsResponse> localVarResponse = GetTrialBsTwoYearsWithHttpInfo(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1345,7 +1345,7 @@ namespace Freee.Accounting.Api
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <returns>ApiResponse of TrialBsTwoYearsResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TrialBsTwoYearsResponse > GetTrialBsTwoYearsWithHttpInfo (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string))
+        public Freee.Accounting.Client.ApiResponse<TrialBsTwoYearsResponse> GetTrialBsTwoYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -1417,7 +1417,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< TrialBsTwoYearsResponse >("/api/1/reports/trial_bs_two_years", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TrialBsTwoYearsResponse>("/api/1/reports/trial_bs_two_years", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1446,10 +1446,10 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialBsTwoYearsResponse</returns>
-        public async System.Threading.Tasks.Task<TrialBsTwoYearsResponse> GetTrialBsTwoYearsAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TrialBsTwoYearsResponse> GetTrialBsTwoYearsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TrialBsTwoYearsResponse> localVarResponse = await GetTrialBsTwoYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialBsTwoYearsResponse> localVarResponse = await GetTrialBsTwoYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1470,7 +1470,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialBsTwoYearsResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialBsTwoYearsResponse>> GetTrialBsTwoYearsWithHttpInfoAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialBsTwoYearsResponse>> GetTrialBsTwoYearsWithHttpInfoAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -1575,10 +1575,10 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>TrialPlResponse</returns>
-        public TrialPlResponse GetTrialPl (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string))
+        public TrialPlResponse GetTrialPl(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string))
         {
-             Freee.Accounting.Client.ApiResponse<TrialPlResponse> localVarResponse = GetTrialPlWithHttpInfo(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialPlResponse> localVarResponse = GetTrialPlWithHttpInfo(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1600,7 +1600,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>ApiResponse of TrialPlResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TrialPlResponse > GetTrialPlWithHttpInfo (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string))
+        public Freee.Accounting.Client.ApiResponse<TrialPlResponse> GetTrialPlWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -1680,7 +1680,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< TrialPlResponse >("/api/1/reports/trial_pl", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TrialPlResponse>("/api/1/reports/trial_pl", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1711,10 +1711,10 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlResponse</returns>
-        public async System.Threading.Tasks.Task<TrialPlResponse> GetTrialPlAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TrialPlResponse> GetTrialPlAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TrialPlResponse> localVarResponse = await GetTrialPlWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialPlResponse> localVarResponse = await GetTrialPlWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1737,7 +1737,7 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialPlResponse>> GetTrialPlWithHttpInfoAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialPlResponse>> GetTrialPlWithHttpInfoAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -1850,10 +1850,10 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>TrialPlSectionsResponse</returns>
-        public TrialPlSectionsResponse GetTrialPlSections (int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string))
+        public TrialPlSectionsResponse GetTrialPlSections(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string))
         {
-             Freee.Accounting.Client.ApiResponse<TrialPlSectionsResponse> localVarResponse = GetTrialPlSectionsWithHttpInfo(companyId, sectionIds, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, costAllocation);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialPlSectionsResponse> localVarResponse = GetTrialPlSectionsWithHttpInfo(companyId, sectionIds, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, costAllocation);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1875,7 +1875,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>ApiResponse of TrialPlSectionsResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TrialPlSectionsResponse > GetTrialPlSectionsWithHttpInfo (int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string))
+        public Freee.Accounting.Client.ApiResponse<TrialPlSectionsResponse> GetTrialPlSectionsWithHttpInfo(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string))
         {
             // verify the required parameter 'sectionIds' is set
             if (sectionIds == null)
@@ -1956,7 +1956,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< TrialPlSectionsResponse >("/api/1/reports/trial_pl_sections", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TrialPlSectionsResponse>("/api/1/reports/trial_pl_sections", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1987,10 +1987,10 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlSectionsResponse</returns>
-        public async System.Threading.Tasks.Task<TrialPlSectionsResponse> GetTrialPlSectionsAsync (int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TrialPlSectionsResponse> GetTrialPlSectionsAsync(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TrialPlSectionsResponse> localVarResponse = await GetTrialPlSectionsWithHttpInfoAsync(companyId, sectionIds, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, costAllocation, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialPlSectionsResponse> localVarResponse = await GetTrialPlSectionsWithHttpInfoAsync(companyId, sectionIds, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, costAllocation, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2013,7 +2013,7 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlSectionsResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialPlSectionsResponse>> GetTrialPlSectionsWithHttpInfoAsync (int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialPlSectionsResponse>> GetTrialPlSectionsWithHttpInfoAsync(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'sectionIds' is set
             if (sectionIds == null)
@@ -2127,10 +2127,10 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>TrialPlThreeYearsResponse</returns>
-        public TrialPlThreeYearsResponse GetTrialPlThreeYears (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string))
+        public TrialPlThreeYearsResponse GetTrialPlThreeYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string))
         {
-             Freee.Accounting.Client.ApiResponse<TrialPlThreeYearsResponse> localVarResponse = GetTrialPlThreeYearsWithHttpInfo(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialPlThreeYearsResponse> localVarResponse = GetTrialPlThreeYearsWithHttpInfo(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2152,7 +2152,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>ApiResponse of TrialPlThreeYearsResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TrialPlThreeYearsResponse > GetTrialPlThreeYearsWithHttpInfo (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string))
+        public Freee.Accounting.Client.ApiResponse<TrialPlThreeYearsResponse> GetTrialPlThreeYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -2232,7 +2232,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< TrialPlThreeYearsResponse >("/api/1/reports/trial_pl_three_years", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TrialPlThreeYearsResponse>("/api/1/reports/trial_pl_three_years", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2263,10 +2263,10 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlThreeYearsResponse</returns>
-        public async System.Threading.Tasks.Task<TrialPlThreeYearsResponse> GetTrialPlThreeYearsAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TrialPlThreeYearsResponse> GetTrialPlThreeYearsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TrialPlThreeYearsResponse> localVarResponse = await GetTrialPlThreeYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialPlThreeYearsResponse> localVarResponse = await GetTrialPlThreeYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2289,7 +2289,7 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlThreeYearsResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialPlThreeYearsResponse>> GetTrialPlThreeYearsWithHttpInfoAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialPlThreeYearsResponse>> GetTrialPlThreeYearsWithHttpInfoAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -2402,10 +2402,10 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>TrialPlTwoYearsResponse</returns>
-        public TrialPlTwoYearsResponse GetTrialPlTwoYears (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string))
+        public TrialPlTwoYearsResponse GetTrialPlTwoYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string))
         {
-             Freee.Accounting.Client.ApiResponse<TrialPlTwoYearsResponse> localVarResponse = GetTrialPlTwoYearsWithHttpInfo(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialPlTwoYearsResponse> localVarResponse = GetTrialPlTwoYearsWithHttpInfo(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2427,7 +2427,7 @@ namespace Freee.Accounting.Api
         /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <returns>ApiResponse of TrialPlTwoYearsResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TrialPlTwoYearsResponse > GetTrialPlTwoYearsWithHttpInfo (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string))
+        public Freee.Accounting.Client.ApiResponse<TrialPlTwoYearsResponse> GetTrialPlTwoYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -2507,7 +2507,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< TrialPlTwoYearsResponse >("/api/1/reports/trial_pl_two_years", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TrialPlTwoYearsResponse>("/api/1/reports/trial_pl_two_years", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2538,10 +2538,10 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlTwoYearsResponse</returns>
-        public async System.Threading.Tasks.Task<TrialPlTwoYearsResponse> GetTrialPlTwoYearsAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TrialPlTwoYearsResponse> GetTrialPlTwoYearsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TrialPlTwoYearsResponse> localVarResponse = await GetTrialPlTwoYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TrialPlTwoYearsResponse> localVarResponse = await GetTrialPlTwoYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2564,7 +2564,7 @@ namespace Freee.Accounting.Api
         /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlTwoYearsResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialPlTwoYearsResponse>> GetTrialPlTwoYearsWithHttpInfoAsync (int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TrialPlTwoYearsResponse>> GetTrialPlTwoYearsWithHttpInfoAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

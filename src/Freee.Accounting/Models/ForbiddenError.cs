@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// ForbiddenError
     /// </summary>
     [DataContract]
-    public partial class ForbiddenError :  IEquatable<ForbiddenError>
+    public partial class ForbiddenError : IEquatable<ForbiddenError>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ForbiddenError" /> class.
@@ -43,13 +43,13 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
-        [DataMember(Name="message", EmitDefaultValue=false)]
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Messages
         /// </summary>
-        [DataMember(Name="messages", EmitDefaultValue=false)]
+        [DataMember(Name = "messages", EmitDefaultValue = false)]
         public string Messages { get; set; }
 
         /// <summary>

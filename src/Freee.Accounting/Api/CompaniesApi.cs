@@ -34,7 +34,7 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>CompanyIndexResponse</returns>
-        CompanyIndexResponse GetCompanies ();
+        CompanyIndexResponse GetCompanies();
 
         /// <summary>
         /// 事業所一覧の取得
@@ -44,7 +44,7 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of CompanyIndexResponse</returns>
-        ApiResponse<CompanyIndexResponse> GetCompaniesWithHttpInfo ();
+        ApiResponse<CompanyIndexResponse> GetCompaniesWithHttpInfo();
         /// <summary>
         /// 事業所の詳細情報の取得
         /// </summary>
@@ -62,7 +62,7 @@ namespace Freee.Accounting.Api
         /// <param name="tags">取得情報にメモタグ一覧を含める (optional)</param>
         /// <param name="walletables">取得情報に口座一覧を含める (optional)</param>
         /// <returns>CompanyResponse</returns>
-        CompanyResponse GetCompany (int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?));
+        CompanyResponse GetCompany(int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?));
 
         /// <summary>
         /// 事業所の詳細情報の取得
@@ -81,7 +81,7 @@ namespace Freee.Accounting.Api
         /// <param name="tags">取得情報にメモタグ一覧を含める (optional)</param>
         /// <param name="walletables">取得情報に口座一覧を含める (optional)</param>
         /// <returns>ApiResponse of CompanyResponse</returns>
-        ApiResponse<CompanyResponse> GetCompanyWithHttpInfo (int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?));
+        ApiResponse<CompanyResponse> GetCompanyWithHttpInfo(int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?));
         /// <summary>
         /// 事業所情報の更新
         /// </summary>
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">事業所ID</param>
         /// <param name="companyParams"> (optional)</param>
         /// <returns>CompanyUpdateResponse</returns>
-        CompanyUpdateResponse UpdateCompany (int id, CompanyParams companyParams = default(CompanyParams));
+        CompanyUpdateResponse UpdateCompany(int id, CompanyParams companyParams = default(CompanyParams));
 
         /// <summary>
         /// 事業所情報の更新
@@ -104,7 +104,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">事業所ID</param>
         /// <param name="companyParams"> (optional)</param>
         /// <returns>ApiResponse of CompanyUpdateResponse</returns>
-        ApiResponse<CompanyUpdateResponse> UpdateCompanyWithHttpInfo (int id, CompanyParams companyParams = default(CompanyParams));
+        ApiResponse<CompanyUpdateResponse> UpdateCompanyWithHttpInfo(int id, CompanyParams companyParams = default(CompanyParams));
         #endregion Synchronous Operations
     }
 
@@ -123,7 +123,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CompanyIndexResponse</returns>
-        System.Threading.Tasks.Task<CompanyIndexResponse> GetCompaniesAsync (System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CompanyIndexResponse> GetCompaniesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 事業所一覧の取得
@@ -134,7 +134,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CompanyIndexResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CompanyIndexResponse>> GetCompaniesWithHttpInfoAsync (System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CompanyIndexResponse>> GetCompaniesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 事業所の詳細情報の取得
         /// </summary>
@@ -153,7 +153,7 @@ namespace Freee.Accounting.Api
         /// <param name="walletables">取得情報に口座一覧を含める (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CompanyResponse</returns>
-        System.Threading.Tasks.Task<CompanyResponse> GetCompanyAsync (int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CompanyResponse> GetCompanyAsync(int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 事業所の詳細情報の取得
@@ -173,7 +173,7 @@ namespace Freee.Accounting.Api
         /// <param name="walletables">取得情報に口座一覧を含める (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CompanyResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CompanyResponse>> GetCompanyWithHttpInfoAsync (int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CompanyResponse>> GetCompanyWithHttpInfoAsync(int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 事業所情報の更新
         /// </summary>
@@ -185,7 +185,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyParams"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CompanyUpdateResponse</returns>
-        System.Threading.Tasks.Task<CompanyUpdateResponse> UpdateCompanyAsync (int id, CompanyParams companyParams = default(CompanyParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CompanyUpdateResponse> UpdateCompanyAsync(int id, CompanyParams companyParams = default(CompanyParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 事業所情報の更新
@@ -198,7 +198,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyParams"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CompanyUpdateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CompanyUpdateResponse>> UpdateCompanyWithHttpInfoAsync (int id, CompanyParams companyParams = default(CompanyParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CompanyUpdateResponse>> UpdateCompanyWithHttpInfoAsync(int id, CompanyParams companyParams = default(CompanyParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -221,7 +221,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="CompaniesApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public CompaniesApi() : this((string) null)
+        public CompaniesApi() : this((string)null)
         {
         }
 
@@ -266,11 +266,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public CompaniesApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public CompaniesApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -301,7 +301,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -324,10 +324,10 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>CompanyIndexResponse</returns>
-        public CompanyIndexResponse GetCompanies ()
+        public CompanyIndexResponse GetCompanies()
         {
-             Freee.Accounting.Client.ApiResponse<CompanyIndexResponse> localVarResponse = GetCompaniesWithHttpInfo();
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<CompanyIndexResponse> localVarResponse = GetCompaniesWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -335,7 +335,7 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of CompanyIndexResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< CompanyIndexResponse > GetCompaniesWithHttpInfo ()
+        public Freee.Accounting.Client.ApiResponse<CompanyIndexResponse> GetCompaniesWithHttpInfo()
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -362,7 +362,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< CompanyIndexResponse >("/api/1/companies", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<CompanyIndexResponse>("/api/1/companies", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -379,10 +379,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CompanyIndexResponse</returns>
-        public async System.Threading.Tasks.Task<CompanyIndexResponse> GetCompaniesAsync (System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CompanyIndexResponse> GetCompaniesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<CompanyIndexResponse> localVarResponse = await GetCompaniesWithHttpInfoAsync(cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<CompanyIndexResponse> localVarResponse = await GetCompaniesWithHttpInfoAsync(cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -391,7 +391,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CompanyIndexResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<CompanyIndexResponse>> GetCompaniesWithHttpInfoAsync (System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<CompanyIndexResponse>> GetCompaniesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -446,10 +446,10 @@ namespace Freee.Accounting.Api
         /// <param name="tags">取得情報にメモタグ一覧を含める (optional)</param>
         /// <param name="walletables">取得情報に口座一覧を含める (optional)</param>
         /// <returns>CompanyResponse</returns>
-        public CompanyResponse GetCompany (int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?))
+        public CompanyResponse GetCompany(int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?))
         {
-             Freee.Accounting.Client.ApiResponse<CompanyResponse> localVarResponse = GetCompanyWithHttpInfo(id, details, accountItems, taxes, items, partners, sections, tags, walletables);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<CompanyResponse> localVarResponse = GetCompanyWithHttpInfo(id, details, accountItems, taxes, items, partners, sections, tags, walletables);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -466,7 +466,7 @@ namespace Freee.Accounting.Api
         /// <param name="tags">取得情報にメモタグ一覧を含める (optional)</param>
         /// <param name="walletables">取得情報に口座一覧を含める (optional)</param>
         /// <returns>ApiResponse of CompanyResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< CompanyResponse > GetCompanyWithHttpInfo (int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?))
+        public Freee.Accounting.Client.ApiResponse<CompanyResponse> GetCompanyWithHttpInfo(int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -526,7 +526,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< CompanyResponse >("/api/1/companies/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<CompanyResponse>("/api/1/companies/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -552,10 +552,10 @@ namespace Freee.Accounting.Api
         /// <param name="walletables">取得情報に口座一覧を含める (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CompanyResponse</returns>
-        public async System.Threading.Tasks.Task<CompanyResponse> GetCompanyAsync (int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CompanyResponse> GetCompanyAsync(int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<CompanyResponse> localVarResponse = await GetCompanyWithHttpInfoAsync(id, details, accountItems, taxes, items, partners, sections, tags, walletables, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<CompanyResponse> localVarResponse = await GetCompanyWithHttpInfoAsync(id, details, accountItems, taxes, items, partners, sections, tags, walletables, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -573,7 +573,7 @@ namespace Freee.Accounting.Api
         /// <param name="walletables">取得情報に口座一覧を含める (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CompanyResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<CompanyResponse>> GetCompanyWithHttpInfoAsync (int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<CompanyResponse>> GetCompanyWithHttpInfoAsync(int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -654,10 +654,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">事業所ID</param>
         /// <param name="companyParams"> (optional)</param>
         /// <returns>CompanyUpdateResponse</returns>
-        public CompanyUpdateResponse UpdateCompany (int id, CompanyParams companyParams = default(CompanyParams))
+        public CompanyUpdateResponse UpdateCompany(int id, CompanyParams companyParams = default(CompanyParams))
         {
-             Freee.Accounting.Client.ApiResponse<CompanyUpdateResponse> localVarResponse = UpdateCompanyWithHttpInfo(id, companyParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<CompanyUpdateResponse> localVarResponse = UpdateCompanyWithHttpInfo(id, companyParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -667,7 +667,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">事業所ID</param>
         /// <param name="companyParams"> (optional)</param>
         /// <returns>ApiResponse of CompanyUpdateResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< CompanyUpdateResponse > UpdateCompanyWithHttpInfo (int id, CompanyParams companyParams = default(CompanyParams))
+        public Freee.Accounting.Client.ApiResponse<CompanyUpdateResponse> UpdateCompanyWithHttpInfo(int id, CompanyParams companyParams = default(CompanyParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -698,7 +698,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< CompanyUpdateResponse >("/api/1/companies/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<CompanyUpdateResponse>("/api/1/companies/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -717,10 +717,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyParams"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CompanyUpdateResponse</returns>
-        public async System.Threading.Tasks.Task<CompanyUpdateResponse> UpdateCompanyAsync (int id, CompanyParams companyParams = default(CompanyParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CompanyUpdateResponse> UpdateCompanyAsync(int id, CompanyParams companyParams = default(CompanyParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<CompanyUpdateResponse> localVarResponse = await UpdateCompanyWithHttpInfoAsync(id, companyParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<CompanyUpdateResponse> localVarResponse = await UpdateCompanyWithHttpInfoAsync(id, companyParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -731,7 +731,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyParams"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CompanyUpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<CompanyUpdateResponse>> UpdateCompanyWithHttpInfoAsync (int id, CompanyParams companyParams = default(CompanyParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<CompanyUpdateResponse>> UpdateCompanyWithHttpInfoAsync(int id, CompanyParams companyParams = default(CompanyParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

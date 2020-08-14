@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionParams">部門の作成 (optional)</param>
         /// <returns>SectionResponse</returns>
-        SectionResponse CreateSection (SectionParams sectionParams = default(SectionParams));
+        SectionResponse CreateSection(SectionParams sectionParams = default(SectionParams));
 
         /// <summary>
         /// 部門の作成
@@ -46,7 +46,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionParams">部門の作成 (optional)</param>
         /// <returns>ApiResponse of SectionResponse</returns>
-        ApiResponse<SectionResponse> CreateSectionWithHttpInfo (SectionParams sectionParams = default(SectionParams));
+        ApiResponse<SectionResponse> CreateSectionWithHttpInfo(SectionParams sectionParams = default(SectionParams));
         /// <summary>
         /// 部門の削除
         /// </summary>
@@ -57,7 +57,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroySection (int id, int companyId);
+        void DestroySection(int id, int companyId);
 
         /// <summary>
         /// 部門の削除
@@ -69,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroySectionWithHttpInfo (int id, int companyId);
+        ApiResponse<Object> DestroySectionWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 
         /// </summary>
@@ -80,7 +80,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">部門ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>SectionResponse</returns>
-        SectionResponse GetSection (int id, int companyId);
+        SectionResponse GetSection(int id, int companyId);
 
         /// <summary>
         /// 
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">部門ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of SectionResponse</returns>
-        ApiResponse<SectionResponse> GetSectionWithHttpInfo (int id, int companyId);
+        ApiResponse<SectionResponse> GetSectionWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 部門一覧の取得
         /// </summary>
@@ -102,7 +102,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>InlineResponse2009</returns>
-        InlineResponse2009 GetSections (int companyId);
+        InlineResponse2009 GetSections(int companyId);
 
         /// <summary>
         /// 部門一覧の取得
@@ -113,7 +113,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of InlineResponse2009</returns>
-        ApiResponse<InlineResponse2009> GetSectionsWithHttpInfo (int companyId);
+        ApiResponse<InlineResponse2009> GetSectionsWithHttpInfo(int companyId);
         /// <summary>
         /// 部門の更新
         /// </summary>
@@ -124,7 +124,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="sectionParams">部門の更新 (optional)</param>
         /// <returns>SectionResponse</returns>
-        SectionResponse UpdateSection (int id, SectionParams sectionParams = default(SectionParams));
+        SectionResponse UpdateSection(int id, SectionParams sectionParams = default(SectionParams));
 
         /// <summary>
         /// 部門の更新
@@ -136,7 +136,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="sectionParams">部門の更新 (optional)</param>
         /// <returns>ApiResponse of SectionResponse</returns>
-        ApiResponse<SectionResponse> UpdateSectionWithHttpInfo (int id, SectionParams sectionParams = default(SectionParams));
+        ApiResponse<SectionResponse> UpdateSectionWithHttpInfo(int id, SectionParams sectionParams = default(SectionParams));
         #endregion Synchronous Operations
     }
 
@@ -156,7 +156,7 @@ namespace Freee.Accounting.Api
         /// <param name="sectionParams">部門の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionResponse</returns>
-        System.Threading.Tasks.Task<SectionResponse> CreateSectionAsync (SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SectionResponse> CreateSectionAsync(SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 部門の作成
@@ -168,7 +168,7 @@ namespace Freee.Accounting.Api
         /// <param name="sectionParams">部門の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SectionResponse>> CreateSectionWithHttpInfoAsync (SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SectionResponse>> CreateSectionWithHttpInfoAsync(SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 部門の削除
         /// </summary>
@@ -180,7 +180,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroySectionAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DestroySectionAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 部門の削除
@@ -193,7 +193,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroySectionWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroySectionWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -205,7 +205,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionResponse</returns>
-        System.Threading.Tasks.Task<SectionResponse> GetSectionAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SectionResponse> GetSectionAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -218,7 +218,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SectionResponse>> GetSectionWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SectionResponse>> GetSectionWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 部門一覧の取得
         /// </summary>
@@ -229,7 +229,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2009</returns>
-        System.Threading.Tasks.Task<InlineResponse2009> GetSectionsAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse2009> GetSectionsAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 部門一覧の取得
@@ -241,7 +241,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2009>> GetSectionsWithHttpInfoAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2009>> GetSectionsWithHttpInfoAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 部門の更新
         /// </summary>
@@ -253,7 +253,7 @@ namespace Freee.Accounting.Api
         /// <param name="sectionParams">部門の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionResponse</returns>
-        System.Threading.Tasks.Task<SectionResponse> UpdateSectionAsync (int id, SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SectionResponse> UpdateSectionAsync(int id, SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 部門の更新
@@ -266,7 +266,7 @@ namespace Freee.Accounting.Api
         /// <param name="sectionParams">部門の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SectionResponse>> UpdateSectionWithHttpInfoAsync (int id, SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SectionResponse>> UpdateSectionWithHttpInfoAsync(int id, SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -289,7 +289,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="SectionsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public SectionsApi() : this((string) null)
+        public SectionsApi() : this((string)null)
         {
         }
 
@@ -334,11 +334,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public SectionsApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public SectionsApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -369,7 +369,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -393,10 +393,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionParams">部門の作成 (optional)</param>
         /// <returns>SectionResponse</returns>
-        public SectionResponse CreateSection (SectionParams sectionParams = default(SectionParams))
+        public SectionResponse CreateSection(SectionParams sectionParams = default(SectionParams))
         {
-             Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = CreateSectionWithHttpInfo(sectionParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = CreateSectionWithHttpInfo(sectionParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -405,7 +405,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionParams">部門の作成 (optional)</param>
         /// <returns>ApiResponse of SectionResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< SectionResponse > CreateSectionWithHttpInfo (SectionParams sectionParams = default(SectionParams))
+        public Freee.Accounting.Client.ApiResponse<SectionResponse> CreateSectionWithHttpInfo(SectionParams sectionParams = default(SectionParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -435,7 +435,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< SectionResponse >("/api/1/sections", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<SectionResponse>("/api/1/sections", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -453,10 +453,10 @@ namespace Freee.Accounting.Api
         /// <param name="sectionParams">部門の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionResponse</returns>
-        public async System.Threading.Tasks.Task<SectionResponse> CreateSectionAsync (SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SectionResponse> CreateSectionAsync(SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = await CreateSectionWithHttpInfoAsync(sectionParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = await CreateSectionWithHttpInfoAsync(sectionParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -466,7 +466,7 @@ namespace Freee.Accounting.Api
         /// <param name="sectionParams">部門の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<SectionResponse>> CreateSectionWithHttpInfoAsync (SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<SectionResponse>> CreateSectionWithHttpInfoAsync(SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -517,9 +517,9 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroySection (int id, int companyId)
+        public void DestroySection(int id, int companyId)
         {
-             DestroySectionWithHttpInfo(id, companyId);
+            DestroySectionWithHttpInfo(id, companyId);
         }
 
         /// <summary>
@@ -529,7 +529,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroySectionWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroySectionWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -577,9 +577,9 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroySectionAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DestroySectionAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroySectionWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroySectionWithHttpInfoAsync(id, companyId, cancellationToken);
         }
 
         /// <summary>
@@ -590,7 +590,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroySectionWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroySectionWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -640,10 +640,10 @@ namespace Freee.Accounting.Api
         /// <param name="id">部門ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>SectionResponse</returns>
-        public SectionResponse GetSection (int id, int companyId)
+        public SectionResponse GetSection(int id, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = GetSectionWithHttpInfo(id, companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = GetSectionWithHttpInfo(id, companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -653,7 +653,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">部門ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of SectionResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< SectionResponse > GetSectionWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<SectionResponse> GetSectionWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -682,7 +682,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< SectionResponse >("/api/1/sections/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<SectionResponse>("/api/1/sections/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -701,10 +701,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionResponse</returns>
-        public async System.Threading.Tasks.Task<SectionResponse> GetSectionAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SectionResponse> GetSectionAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = await GetSectionWithHttpInfoAsync(id, companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = await GetSectionWithHttpInfoAsync(id, companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -715,7 +715,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<SectionResponse>> GetSectionWithHttpInfoAsync (int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<SectionResponse>> GetSectionWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -764,10 +764,10 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>InlineResponse2009</returns>
-        public InlineResponse2009 GetSections (int companyId)
+        public InlineResponse2009 GetSections(int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse2009> localVarResponse = GetSectionsWithHttpInfo(companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse2009> localVarResponse = GetSectionsWithHttpInfo(companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -776,7 +776,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of InlineResponse2009</returns>
-        public Freee.Accounting.Client.ApiResponse< InlineResponse2009 > GetSectionsWithHttpInfo (int companyId)
+        public Freee.Accounting.Client.ApiResponse<InlineResponse2009> GetSectionsWithHttpInfo(int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -804,7 +804,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< InlineResponse2009 >("/api/1/sections", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse2009>("/api/1/sections", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -822,10 +822,10 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2009</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2009> GetSectionsAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse2009> GetSectionsAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<InlineResponse2009> localVarResponse = await GetSectionsWithHttpInfoAsync(companyId, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse2009> localVarResponse = await GetSectionsWithHttpInfoAsync(companyId, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -835,7 +835,7 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2009>> GetSectionsWithHttpInfoAsync (int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2009>> GetSectionsWithHttpInfoAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -884,10 +884,10 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="sectionParams">部門の更新 (optional)</param>
         /// <returns>SectionResponse</returns>
-        public SectionResponse UpdateSection (int id, SectionParams sectionParams = default(SectionParams))
+        public SectionResponse UpdateSection(int id, SectionParams sectionParams = default(SectionParams))
         {
-             Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = UpdateSectionWithHttpInfo(id, sectionParams);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = UpdateSectionWithHttpInfo(id, sectionParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -897,7 +897,7 @@ namespace Freee.Accounting.Api
         /// <param name="id"></param>
         /// <param name="sectionParams">部門の更新 (optional)</param>
         /// <returns>ApiResponse of SectionResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< SectionResponse > UpdateSectionWithHttpInfo (int id, SectionParams sectionParams = default(SectionParams))
+        public Freee.Accounting.Client.ApiResponse<SectionResponse> UpdateSectionWithHttpInfo(int id, SectionParams sectionParams = default(SectionParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -928,7 +928,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< SectionResponse >("/api/1/sections/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<SectionResponse>("/api/1/sections/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -947,10 +947,10 @@ namespace Freee.Accounting.Api
         /// <param name="sectionParams">部門の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionResponse</returns>
-        public async System.Threading.Tasks.Task<SectionResponse> UpdateSectionAsync (int id, SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SectionResponse> UpdateSectionAsync(int id, SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = await UpdateSectionWithHttpInfoAsync(id, sectionParams, cancellationToken);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = await UpdateSectionWithHttpInfoAsync(id, sectionParams, cancellationToken);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -961,7 +961,7 @@ namespace Freee.Accounting.Api
         /// <param name="sectionParams">部門の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<SectionResponse>> UpdateSectionWithHttpInfoAsync (int id, SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<SectionResponse>> UpdateSectionWithHttpInfoAsync(int id, SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

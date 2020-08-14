@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// PartnerCreateParamsInvoicePaymentTermAttributes
     /// </summary>
     [DataContract]
-    public partial class PartnerCreateParamsInvoicePaymentTermAttributes :  IEquatable<PartnerCreateParamsInvoicePaymentTermAttributes>
+    public partial class PartnerCreateParamsInvoicePaymentTermAttributes : IEquatable<PartnerCreateParamsInvoicePaymentTermAttributes>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PartnerCreateParamsInvoicePaymentTermAttributes" /> class.
@@ -46,21 +46,21 @@ namespace Freee.Accounting.Models
         /// 支払月
         /// </summary>
         /// <value>支払月</value>
-        [DataMember(Name="additional_months", EmitDefaultValue=false)]
+        [DataMember(Name = "additional_months", EmitDefaultValue = false)]
         public int AdditionalMonths { get; set; }
 
         /// <summary>
         /// 締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
         /// </summary>
         /// <value>締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。）</value>
-        [DataMember(Name="cutoff_day", EmitDefaultValue=false)]
+        [DataMember(Name = "cutoff_day", EmitDefaultValue = false)]
         public int CutoffDay { get; set; }
 
         /// <summary>
         /// 支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
         /// </summary>
         /// <value>支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。）</value>
-        [DataMember(Name="fixed_day", EmitDefaultValue=false)]
+        [DataMember(Name = "fixed_day", EmitDefaultValue = false)]
         public int FixedDay { get; set; }
 
         /// <summary>

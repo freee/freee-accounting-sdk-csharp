@@ -9,14 +9,14 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
@@ -27,7 +27,7 @@ namespace Freee.Accounting.Models
     /// UserCapability
     /// </summary>
     [DataContract]
-    public partial class UserCapability :  IEquatable<UserCapability>
+    public partial class UserCapability : IEquatable<UserCapability>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserCapability" /> class.
@@ -48,28 +48,28 @@ namespace Freee.Accounting.Models
         /// 作成
         /// </summary>
         /// <value>作成</value>
-        [DataMember(Name="create", EmitDefaultValue=false)]
+        [DataMember(Name = "create", EmitDefaultValue = false)]
         public bool Create { get; set; }
 
         /// <summary>
         /// 削除
         /// </summary>
         /// <value>削除</value>
-        [DataMember(Name="destroy", EmitDefaultValue=false)]
+        [DataMember(Name = "destroy", EmitDefaultValue = false)]
         public bool Destroy { get; set; }
 
         /// <summary>
         /// 閲覧
         /// </summary>
         /// <value>閲覧</value>
-        [DataMember(Name="read", EmitDefaultValue=false)]
+        [DataMember(Name = "read", EmitDefaultValue = false)]
         public bool Read { get; set; }
 
         /// <summary>
         /// 更新
         /// </summary>
         /// <value>更新</value>
-        [DataMember(Name="update", EmitDefaultValue=false)]
+        [DataMember(Name = "update", EmitDefaultValue = false)]
         public bool Update { get; set; }
 
         /// <summary>
