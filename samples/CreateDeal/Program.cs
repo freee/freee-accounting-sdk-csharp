@@ -42,9 +42,9 @@ namespace CreateDeal
             var amount = Prompt.Input<int>("取引金額");
 
             // 未決済取引の作成
-            var details = new List<CreateDealParamsDetails>
+            var details = new List<DealCreateParamsDetails>
             {
-                new CreateDealParamsDetails
+                new DealCreateParamsDetails
                 {
                     AccountItemId = selectedAccountItem.Id,
                     Amount = amount,
@@ -55,9 +55,16 @@ namespace CreateDeal
                 }
             };
 
-            var dealResponse = await new DealsApi(config).CreateDealAsync(new CreateDealParams(
-                "2019-07-01", CreateDealParams.TypeEnum.Income, companyId, "2019-08-31",
-                selectedPartner.Id, details: details, refNumber: "100"));
+            var dealResponse = await new DealsApi(config).CreateDealAsync(new DealCreateParams
+            {
+                CompanyId = companyId,
+                Details = details,
+                IssueDate = "2019-07-01",
+                DueDate = "2019-08-31",
+                PartnerId = selectedPartner.Id,
+                RefNumber = "100",
+                Type = DealCreateParams.TypeEnum.Income
+            });
 
             var newDeal = dealResponse.Deal;
 
@@ -69,39 +76,50 @@ namespace CreateDeal
             var selectedWalletable = Prompt.Select("決済口座", walletables.Walletables, valueSelector: x => x.Name);
 
             // 決済の登録
-            var paymentResponse = await new PaymentsApi(config).CreateDealPaymentAsync(newDeal.Id, new DealPaymentParams(
-                companyId, "2019-07-30", ToWalletableTypeEnum(selectedWalletable.Type), selectedWalletable.Id, amount));
+            var paymentResponse = await new PaymentsApi(config).CreateDealPaymentAsync(newDeal.Id, new PaymentParams
+            {
+                CompanyId = companyId,
+                Date = "2019-07-30",
+                Amount = amount,
+                FromWalletableId = selectedWalletable.Id,
+                FromWalletableType = ToWalletableTypeEnum(selectedWalletable.Type)
+            });
 
             Console.WriteLine("決済を登録しました。");
 
             var updateDeal = paymentResponse.Deal;
 
             // 更新の登録
-            await new RenewsApi(config).CreateDealRenewAsync(updateDeal.Id, new RenewsCreateParams(
-                companyId, "2019-07-30", updateDeal.Details[0].Id, new List<RenewsCreateDetailParams>
+            await new RenewsApi(config).CreateDealRenewAsync(updateDeal.Id, new RenewCreateParams
             {
-                new RenewsCreateDetailParams
+                CompanyId = companyId,
+                UpdateDate = "2019-07-30",
+                RenewTargetId = updateDeal.Details[0].Id,
+                Details = new List<RenewCreateParamsDetails>
                 {
-                    AccountItemId = selectedAccountItem.Id,
-                    Amount = amount,
-                    ItemId = selectedItem.Id,
-                    SectionId = selectedSection.Id,
-                    TagIds = new List<int> { selectedTag.Id },
-                    TaxCode = selectedTaxesCode.Code
+                    new RenewCreateParamsDetails
+                    {
+                        AccountItemId = selectedAccountItem.Id,
+                        Amount = amount,
+                        ItemId = selectedItem.Id,
+                        SectionId = selectedSection.Id,
+                        TagIds = new List<int> { selectedTag.Id },
+                        TaxCode = selectedTaxesCode.Code
+                    }
                 }
-            }));
+            });
         }
 
-        private static DealPaymentParams.FromWalletableTypeEnum ToWalletableTypeEnum(Walletable.TypeEnum type)
+        private static PaymentParams.FromWalletableTypeEnum ToWalletableTypeEnum(Walletable.TypeEnum type)
         {
             switch (type)
             {
                 case Walletable.TypeEnum.Bankaccount:
-                    return DealPaymentParams.FromWalletableTypeEnum.Bankaccount;
+                    return PaymentParams.FromWalletableTypeEnum.Bankaccount;
                 case Walletable.TypeEnum.Creditcard:
-                    return DealPaymentParams.FromWalletableTypeEnum.Creditcard;
+                    return PaymentParams.FromWalletableTypeEnum.Creditcard;
                 case Walletable.TypeEnum.Wallet:
-                    return DealPaymentParams.FromWalletableTypeEnum.Wallet;
+                    return PaymentParams.FromWalletableTypeEnum.Wallet;
                 default:
                     throw new NotSupportedException(nameof(type));
             }
