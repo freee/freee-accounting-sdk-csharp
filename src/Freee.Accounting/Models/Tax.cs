@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// Tax
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "tax")]
     public partial class Tax : IEquatable<Tax>
     {
         /// <summary>

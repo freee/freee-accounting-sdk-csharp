@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ApprovalRequestResponseApprovalRequestApprovalFlowLogs
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "approvalRequestResponse_approval_request_approval_flow_logs")]
     public partial class ApprovalRequestResponseApprovalRequestApprovalFlowLogs : IEquatable<ApprovalRequestResponseApprovalRequestApprovalFlowLogs>
     {
         /// <summary>

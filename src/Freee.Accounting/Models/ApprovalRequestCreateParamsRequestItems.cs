@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ApprovalRequestCreateParamsRequestItems
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "approvalRequestCreateParams_request_items")]
     public partial class ApprovalRequestCreateParamsRequestItems : IEquatable<ApprovalRequestCreateParamsRequestItems>
     {
         /// <summary>

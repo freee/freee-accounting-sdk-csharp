@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// QuotationCreateParams
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "quotationCreateParams")]
     public partial class QuotationCreateParams : IEquatable<QuotationCreateParams>
     {
         /// <summary>

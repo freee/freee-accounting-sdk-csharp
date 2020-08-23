@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// InternalServerErrorErrors
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "internalServerError_errors")]
     public partial class InternalServerErrorErrors : IEquatable<InternalServerErrorErrors>
     {
         /// <summary>

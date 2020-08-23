@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// DealRenews
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "deal_renews")]
     public partial class DealRenews : IEquatable<DealRenews>
     {
         /// <summary>

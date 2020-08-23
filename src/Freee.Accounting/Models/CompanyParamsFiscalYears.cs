@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// CompanyParamsFiscalYears
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "companyParams_fiscal_years")]
     public partial class CompanyParamsFiscalYears : IEquatable<CompanyParamsFiscalYears>
     {
         /// <summary>

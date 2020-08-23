@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ApprovalFlowRoutesIndexResponse
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "approvalFlowRoutesIndexResponse")]
     public partial class ApprovalFlowRoutesIndexResponse : IEquatable<ApprovalFlowRoutesIndexResponse>
     {
         /// <summary>

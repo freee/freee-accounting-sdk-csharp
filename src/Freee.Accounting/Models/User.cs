@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// User
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "user")]
     public partial class User : IEquatable<User>
     {
         /// <summary>

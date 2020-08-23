@@ -475,7 +475,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of WalletableCreateResponse</returns>
         public async System.Threading.Tasks.Task<WalletableCreateResponse> CreateWalletableAsync(WalletableCreateParams walletableCreateParams = default(WalletableCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<WalletableCreateResponse> localVarResponse = await CreateWalletableWithHttpInfoAsync(walletableCreateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<WalletableCreateResponse> localVarResponse = await CreateWalletableWithHttpInfoAsync(walletableCreateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -519,7 +519,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<WalletableCreateResponse>("/api/1/walletables", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WalletableCreateResponse>("/api/1/walletables", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -607,7 +607,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DestroyWalletableAsync(int id, string type, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DestroyWalletableWithHttpInfoAsync(id, type, companyId, cancellationToken);
+            await DestroyWalletableWithHttpInfoAsync(id, type, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -656,7 +656,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/walletables/{type}/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/walletables/{type}/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -745,7 +745,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse20019</returns>
         public async System.Threading.Tasks.Task<InlineResponse20019> GetWalletableAsync(int id, string type, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse20019> localVarResponse = await GetWalletableWithHttpInfoAsync(id, type, companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse20019> localVarResponse = await GetWalletableWithHttpInfoAsync(id, type, companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -795,7 +795,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20019>("/api/1/walletables/{type}/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20019>("/api/1/walletables/{type}/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -886,7 +886,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse20018</returns>
         public async System.Threading.Tasks.Task<InlineResponse20018> GetWalletablesAsync(int companyId, bool? withBalance = default(bool?), string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse20018> localVarResponse = await GetWalletablesWithHttpInfoAsync(companyId, withBalance, type, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse20018> localVarResponse = await GetWalletablesWithHttpInfoAsync(companyId, withBalance, type, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -938,7 +938,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20018>("/api/1/walletables", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20018>("/api/1/walletables", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1029,7 +1029,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse20019</returns>
         public async System.Threading.Tasks.Task<InlineResponse20019> UpdateWalletableAsync(int id, string type, WalletableUpdateParams walletableUpdateParams = default(WalletableUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse20019> localVarResponse = await UpdateWalletableWithHttpInfoAsync(id, type, walletableUpdateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse20019> localVarResponse = await UpdateWalletableWithHttpInfoAsync(id, type, walletableUpdateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1081,7 +1081,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<InlineResponse20019>("/api/1/walletables/{type}/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<InlineResponse20019>("/api/1/walletables/{type}/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

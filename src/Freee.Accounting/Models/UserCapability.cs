@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// UserCapability
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "userCapability")]
     public partial class UserCapability : IEquatable<UserCapability>
     {
         /// <summary>

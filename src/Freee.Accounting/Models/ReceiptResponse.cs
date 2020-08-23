@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ReceiptResponse
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "receiptResponse")]
     public partial class ReceiptResponse : IEquatable<ReceiptResponse>
     {
         /// <summary>

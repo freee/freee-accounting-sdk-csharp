@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// 貸借行一覧（配列）: 貸借合わせて100行まで登録できます。
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "manualJournalUpdateParams_details")]
     public partial class ManualJournalUpdateParamsDetails : IEquatable<ManualJournalUpdateParamsDetails>
     {
         /// <summary>

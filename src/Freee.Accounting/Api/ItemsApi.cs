@@ -463,7 +463,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ItemResponse</returns>
         public async System.Threading.Tasks.Task<ItemResponse> CreateItemAsync(ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = await CreateItemWithHttpInfoAsync(itemParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = await CreateItemWithHttpInfoAsync(itemParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -507,7 +507,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<ItemResponse>("/api/1/items", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ItemResponse>("/api/1/items", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -587,7 +587,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DestroyItemAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DestroyItemWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyItemWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -630,7 +630,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/items/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/items/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -711,7 +711,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ItemResponse</returns>
         public async System.Threading.Tasks.Task<ItemResponse> GetItemAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = await GetItemWithHttpInfoAsync(companyId, id, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = await GetItemWithHttpInfoAsync(companyId, id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -755,7 +755,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ItemResponse>("/api/1/items/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ItemResponse>("/api/1/items/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -846,7 +846,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse2005</returns>
         public async System.Threading.Tasks.Task<InlineResponse2005> GetItemsAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse2005> localVarResponse = await GetItemsWithHttpInfoAsync(companyId, offset, limit, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse2005> localVarResponse = await GetItemsWithHttpInfoAsync(companyId, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -898,7 +898,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2005>("/api/1/items", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2005>("/api/1/items", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -981,7 +981,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ItemResponse</returns>
         public async System.Threading.Tasks.Task<ItemResponse> UpdateItemAsync(int id, ItemParams itemParams = default(ItemParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = await UpdateItemWithHttpInfoAsync(id, itemParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<ItemResponse> localVarResponse = await UpdateItemWithHttpInfoAsync(id, itemParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1027,7 +1027,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<ItemResponse>("/api/1/items/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<ItemResponse>("/api/1/items/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

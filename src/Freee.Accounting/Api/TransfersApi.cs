@@ -471,7 +471,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TransferResponse</returns>
         public async System.Threading.Tasks.Task<TransferResponse> CreateTransferAsync(TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await CreateTransferWithHttpInfoAsync(transferParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await CreateTransferWithHttpInfoAsync(transferParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -515,7 +515,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TransferResponse>("/api/1/transfers", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TransferResponse>("/api/1/transfers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -595,7 +595,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DestroyTransferAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DestroyTransferWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyTransferWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -638,7 +638,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -719,7 +719,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TransferResponse</returns>
         public async System.Threading.Tasks.Task<TransferResponse> GetTransferAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await GetTransferWithHttpInfoAsync(id, companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await GetTransferWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -763,7 +763,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TransferResponse>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TransferResponse>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -868,7 +868,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse20014</returns>
         public async System.Threading.Tasks.Task<InlineResponse20014> GetTransfersAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse20014> localVarResponse = await GetTransfersWithHttpInfoAsync(companyId, startDate, endDate, offset, limit, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse20014> localVarResponse = await GetTransfersWithHttpInfoAsync(companyId, startDate, endDate, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -930,7 +930,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20014>("/api/1/transfers", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20014>("/api/1/transfers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1017,7 +1017,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TransferResponse</returns>
         public async System.Threading.Tasks.Task<TransferResponse> UpdateTransferAsync(int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await UpdateTransferWithHttpInfoAsync(id, transferParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await UpdateTransferWithHttpInfoAsync(id, transferParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1067,7 +1067,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TransferResponse>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<TransferResponse>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

@@ -317,7 +317,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of BankResponse</returns>
         public async System.Threading.Tasks.Task<BankResponse> GetBankAsync(int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<BankResponse> localVarResponse = await GetBankWithHttpInfoAsync(id, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<BankResponse> localVarResponse = await GetBankWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -359,7 +359,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<BankResponse>("/api/1/banks/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<BankResponse>("/api/1/banks/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -453,7 +453,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse2001</returns>
         public async System.Threading.Tasks.Task<InlineResponse2001> GetBanksAsync(int? offset = default(int?), int? limit = default(int?), string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse2001> localVarResponse = await GetBanksWithHttpInfoAsync(offset, limit, type, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse2001> localVarResponse = await GetBanksWithHttpInfoAsync(offset, limit, type, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -508,7 +508,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2001>("/api/1/banks", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2001>("/api/1/banks", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

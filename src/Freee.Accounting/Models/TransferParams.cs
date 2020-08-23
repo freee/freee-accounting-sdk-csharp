@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// TransferParams
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "transferParams")]
     public partial class TransferParams : IEquatable<TransferParams>
     {
         /// <summary>

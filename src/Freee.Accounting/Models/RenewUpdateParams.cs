@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// RenewUpdateParams
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "renewUpdateParams")]
     public partial class RenewUpdateParams : IEquatable<RenewUpdateParams>
     {
         /// <summary>

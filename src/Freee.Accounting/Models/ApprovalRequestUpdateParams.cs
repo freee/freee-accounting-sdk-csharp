@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ApprovalRequestUpdateParams
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "approvalRequestUpdateParams")]
     public partial class ApprovalRequestUpdateParams : IEquatable<ApprovalRequestUpdateParams>
     {
         /// <summary>

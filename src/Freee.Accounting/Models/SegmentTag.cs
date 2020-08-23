@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// SegmentTag
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "segment_tag")]
     public partial class SegmentTag : IEquatable<SegmentTag>
     {
         /// <summary>

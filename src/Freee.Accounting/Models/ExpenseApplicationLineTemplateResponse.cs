@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ExpenseApplicationLineTemplateResponse
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "expenseApplicationLineTemplateResponse")]
     public partial class ExpenseApplicationLineTemplateResponse : IEquatable<ExpenseApplicationLineTemplateResponse>
     {
         /// <summary>

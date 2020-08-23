@@ -346,7 +346,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TaxResponse</returns>
         public async System.Threading.Tasks.Task<TaxResponse> GetTaxCodeAsync(int code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TaxResponse> localVarResponse = await GetTaxCodeWithHttpInfoAsync(code, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TaxResponse> localVarResponse = await GetTaxCodeWithHttpInfoAsync(code, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -388,7 +388,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TaxResponse>("/api/1/taxes/codes/{code}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TaxResponse>("/api/1/taxes/codes/{code}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -461,7 +461,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse20012</returns>
         public async System.Threading.Tasks.Task<InlineResponse20012> GetTaxCodesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse20012> localVarResponse = await GetTaxCodesWithHttpInfoAsync(cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse20012> localVarResponse = await GetTaxCodesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -501,7 +501,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20012>("/api/1/taxes/codes", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20012>("/api/1/taxes/codes", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -578,7 +578,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse20013</returns>
         public async System.Threading.Tasks.Task<InlineResponse20013> GetTaxesCompaniesAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse20013> localVarResponse = await GetTaxesCompaniesWithHttpInfoAsync(companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse20013> localVarResponse = await GetTaxesCompaniesWithHttpInfoAsync(companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -620,7 +620,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20013>("/api/1/taxes/companies/{company_id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20013>("/api/1/taxes/companies/{company_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

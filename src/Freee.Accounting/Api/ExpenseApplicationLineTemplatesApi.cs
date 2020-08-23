@@ -455,7 +455,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ExpenseApplicationLineTemplateResponse</returns>
         public async System.Threading.Tasks.Task<ExpenseApplicationLineTemplateResponse> CreateExpenseApplicationLineTemplateAsync(ExpenseApplicationLineTemplateParams expenseApplicationLineTemplateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<ExpenseApplicationLineTemplateResponse> localVarResponse = await CreateExpenseApplicationLineTemplateWithHttpInfoAsync(expenseApplicationLineTemplateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<ExpenseApplicationLineTemplateResponse> localVarResponse = await CreateExpenseApplicationLineTemplateWithHttpInfoAsync(expenseApplicationLineTemplateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -503,7 +503,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<ExpenseApplicationLineTemplateResponse>("/api/1/expense_application_line_templates", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ExpenseApplicationLineTemplateResponse>("/api/1/expense_application_line_templates", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -583,7 +583,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DestroyExpenseApplicationLineTemplateAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DestroyExpenseApplicationLineTemplateWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyExpenseApplicationLineTemplateWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -626,7 +626,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/expense_application_line_templates/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/expense_application_line_templates/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -707,7 +707,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ExpenseApplicationLineTemplateResponse</returns>
         public async System.Threading.Tasks.Task<ExpenseApplicationLineTemplateResponse> GetExpenseApplicationLineTemplateAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<ExpenseApplicationLineTemplateResponse> localVarResponse = await GetExpenseApplicationLineTemplateWithHttpInfoAsync(id, companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<ExpenseApplicationLineTemplateResponse> localVarResponse = await GetExpenseApplicationLineTemplateWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -751,7 +751,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ExpenseApplicationLineTemplateResponse>("/api/1/expense_application_line_templates/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ExpenseApplicationLineTemplateResponse>("/api/1/expense_application_line_templates/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -842,7 +842,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse2003</returns>
         public async System.Threading.Tasks.Task<InlineResponse2003> GetExpenseApplicationLineTemplatesAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse2003> localVarResponse = await GetExpenseApplicationLineTemplatesWithHttpInfoAsync(companyId, offset, limit, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse2003> localVarResponse = await GetExpenseApplicationLineTemplatesWithHttpInfoAsync(companyId, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -894,7 +894,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2003>("/api/1/expense_application_line_templates", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2003>("/api/1/expense_application_line_templates", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -981,7 +981,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ExpenseApplicationLineTemplateResponse</returns>
         public async System.Threading.Tasks.Task<ExpenseApplicationLineTemplateResponse> UpdateExpenseApplicationLineTemplateAsync(int id, ExpenseApplicationLineTemplateParams expenseApplicationLineTemplateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<ExpenseApplicationLineTemplateResponse> localVarResponse = await UpdateExpenseApplicationLineTemplateWithHttpInfoAsync(id, expenseApplicationLineTemplateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<ExpenseApplicationLineTemplateResponse> localVarResponse = await UpdateExpenseApplicationLineTemplateWithHttpInfoAsync(id, expenseApplicationLineTemplateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1031,7 +1031,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<ExpenseApplicationLineTemplateResponse>("/api/1/expense_application_line_templates/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<ExpenseApplicationLineTemplateResponse>("/api/1/expense_application_line_templates/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

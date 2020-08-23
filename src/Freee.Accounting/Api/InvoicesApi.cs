@@ -503,7 +503,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InvoiceResponse</returns>
         public async System.Threading.Tasks.Task<InvoiceResponse> CreateInvoiceAsync(InvoiceCreateParams invoiceCreateParams = default(InvoiceCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = await CreateInvoiceWithHttpInfoAsync(invoiceCreateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = await CreateInvoiceWithHttpInfoAsync(invoiceCreateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -547,7 +547,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<InvoiceResponse>("/api/1/invoices", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<InvoiceResponse>("/api/1/invoices", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -627,7 +627,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DestroyInvoiceAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DestroyInvoiceWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyInvoiceWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -670,7 +670,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/invoices/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/invoices/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -751,7 +751,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InvoiceResponse</returns>
         public async System.Threading.Tasks.Task<InvoiceResponse> GetInvoiceAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = await GetInvoiceWithHttpInfoAsync(companyId, id, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = await GetInvoiceWithHttpInfoAsync(companyId, id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -795,7 +795,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InvoiceResponse>("/api/1/invoices/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InvoiceResponse>("/api/1/invoices/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -956,7 +956,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse2004</returns>
         public async System.Threading.Tasks.Task<InlineResponse2004> GetInvoicesAsync(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string startDueDate = default(string), string endDueDate = default(string), string invoiceNumber = default(string), string description = default(string), string invoiceStatus = default(string), string paymentStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse2004> localVarResponse = await GetInvoicesWithHttpInfoAsync(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, startDueDate, endDueDate, invoiceNumber, description, invoiceStatus, paymentStatus, offset, limit, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse2004> localVarResponse = await GetInvoicesWithHttpInfoAsync(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, startDueDate, endDueDate, invoiceNumber, description, invoiceStatus, paymentStatus, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1058,7 +1058,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2004>("/api/1/invoices", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2004>("/api/1/invoices", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1141,7 +1141,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InvoiceResponse</returns>
         public async System.Threading.Tasks.Task<InvoiceResponse> UpdateInvoiceAsync(int id, InvoiceUpdateParams invoiceUpdateParams = default(InvoiceUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = await UpdateInvoiceWithHttpInfoAsync(id, invoiceUpdateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InvoiceResponse> localVarResponse = await UpdateInvoiceWithHttpInfoAsync(id, invoiceUpdateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1187,7 +1187,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<InvoiceResponse>("/api/1/invoices/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<InvoiceResponse>("/api/1/invoices/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

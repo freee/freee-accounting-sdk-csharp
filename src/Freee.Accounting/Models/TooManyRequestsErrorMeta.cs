@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// TooManyRequestsErrorMeta
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "tooManyRequestsError_meta")]
     public partial class TooManyRequestsErrorMeta : IEquatable<TooManyRequestsErrorMeta>
     {
         /// <summary>

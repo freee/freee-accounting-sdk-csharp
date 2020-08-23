@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// TrialPlSectionsResponseTrialPlSections
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "trialPlSectionsResponse_trial_pl_sections")]
     public partial class TrialPlSectionsResponseTrialPlSections : IEquatable<TrialPlSectionsResponseTrialPlSections>
     {
         /// <summary>

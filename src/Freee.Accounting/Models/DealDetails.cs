@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// DealDetails
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "deal_details")]
     public partial class DealDetails : IEquatable<DealDetails>
     {
         /// <summary>

@@ -467,7 +467,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TagResponse</returns>
         public async System.Threading.Tasks.Task<TagResponse> CreateTagAsync(TagParams tagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = await CreateTagWithHttpInfoAsync(tagParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = await CreateTagWithHttpInfoAsync(tagParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -515,7 +515,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TagResponse>("/api/1/tags", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TagResponse>("/api/1/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -595,7 +595,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DestroyTagAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DestroyTagWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyTagWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -638,7 +638,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/tags/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/tags/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -719,7 +719,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TagResponse</returns>
         public async System.Threading.Tasks.Task<TagResponse> GetTagAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = await GetTagWithHttpInfoAsync(id, companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = await GetTagWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -763,7 +763,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TagResponse>("/api/1/tags/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TagResponse>("/api/1/tags/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -854,7 +854,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse20011</returns>
         public async System.Threading.Tasks.Task<InlineResponse20011> GetTagsAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse20011> localVarResponse = await GetTagsWithHttpInfoAsync(companyId, offset, limit, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse20011> localVarResponse = await GetTagsWithHttpInfoAsync(companyId, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -906,7 +906,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20011>("/api/1/tags", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20011>("/api/1/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -989,7 +989,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TagResponse</returns>
         public async System.Threading.Tasks.Task<TagResponse> UpdateTagAsync(int id, TagParams tagParams = default(TagParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = await UpdateTagWithHttpInfoAsync(id, tagParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TagResponse> localVarResponse = await UpdateTagWithHttpInfoAsync(id, tagParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1035,7 +1035,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TagResponse>("/api/1/tags/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<TagResponse>("/api/1/tags/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

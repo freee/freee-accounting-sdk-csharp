@@ -455,7 +455,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of SectionResponse</returns>
         public async System.Threading.Tasks.Task<SectionResponse> CreateSectionAsync(SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = await CreateSectionWithHttpInfoAsync(sectionParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = await CreateSectionWithHttpInfoAsync(sectionParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -499,7 +499,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<SectionResponse>("/api/1/sections", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SectionResponse>("/api/1/sections", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -579,7 +579,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DestroySectionAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DestroySectionWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroySectionWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -622,7 +622,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/sections/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/sections/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -703,7 +703,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of SectionResponse</returns>
         public async System.Threading.Tasks.Task<SectionResponse> GetSectionAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = await GetSectionWithHttpInfoAsync(id, companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = await GetSectionWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -747,7 +747,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<SectionResponse>("/api/1/sections/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SectionResponse>("/api/1/sections/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -824,7 +824,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse2009</returns>
         public async System.Threading.Tasks.Task<InlineResponse2009> GetSectionsAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse2009> localVarResponse = await GetSectionsWithHttpInfoAsync(companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse2009> localVarResponse = await GetSectionsWithHttpInfoAsync(companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -866,7 +866,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2009>("/api/1/sections", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2009>("/api/1/sections", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -949,7 +949,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of SectionResponse</returns>
         public async System.Threading.Tasks.Task<SectionResponse> UpdateSectionAsync(int id, SectionParams sectionParams = default(SectionParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = await UpdateSectionWithHttpInfoAsync(id, sectionParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<SectionResponse> localVarResponse = await UpdateSectionWithHttpInfoAsync(id, sectionParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -995,7 +995,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<SectionResponse>("/api/1/sections/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<SectionResponse>("/api/1/sections/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

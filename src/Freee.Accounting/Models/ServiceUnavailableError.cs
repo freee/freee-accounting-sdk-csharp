@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ServiceUnavailableError
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "serviceUnavailableError")]
     public partial class ServiceUnavailableError : IEquatable<ServiceUnavailableError>
     {
         /// <summary>

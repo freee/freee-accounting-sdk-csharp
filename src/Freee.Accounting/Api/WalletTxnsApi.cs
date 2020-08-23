@@ -435,7 +435,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of WalletTxnResponse</returns>
         public async System.Threading.Tasks.Task<WalletTxnResponse> CreateWalletTxnAsync(WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<WalletTxnResponse> localVarResponse = await CreateWalletTxnWithHttpInfoAsync(walletTxnParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<WalletTxnResponse> localVarResponse = await CreateWalletTxnWithHttpInfoAsync(walletTxnParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -479,7 +479,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<WalletTxnResponse>("/api/1/wallet_txns", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WalletTxnResponse>("/api/1/wallet_txns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -559,7 +559,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DestroyWalletTxnAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DestroyWalletTxnWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyWalletTxnWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -602,7 +602,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/wallet_txns/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/wallet_txns/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -683,7 +683,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of WalletTxnResponse</returns>
         public async System.Threading.Tasks.Task<WalletTxnResponse> GetWalletTxnAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<WalletTxnResponse> localVarResponse = await GetWalletTxnWithHttpInfoAsync(id, companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<WalletTxnResponse> localVarResponse = await GetWalletTxnWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -727,7 +727,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<WalletTxnResponse>("/api/1/wallet_txns/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<WalletTxnResponse>("/api/1/wallet_txns/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -853,7 +853,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse20017</returns>
         public async System.Threading.Tasks.Task<InlineResponse20017> GetWalletTxnsAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse20017> localVarResponse = await GetWalletTxnsWithHttpInfoAsync(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse20017> localVarResponse = await GetWalletTxnsWithHttpInfoAsync(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -930,7 +930,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20017>("/api/1/wallet_txns", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20017>("/api/1/wallet_txns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

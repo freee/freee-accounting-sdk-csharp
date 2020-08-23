@@ -519,7 +519,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of PartnerResponse</returns>
         public async System.Threading.Tasks.Task<PartnerResponse> CreatePartnerAsync(PartnerCreateParams partnerCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await CreatePartnerWithHttpInfoAsync(partnerCreateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await CreatePartnerWithHttpInfoAsync(partnerCreateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -567,7 +567,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<PartnerResponse>("/api/1/partners", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<PartnerResponse>("/api/1/partners", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -647,7 +647,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DestroyPartnerAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DestroyPartnerWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyPartnerWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -690,7 +690,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/partners/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/partners/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -771,7 +771,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of PartnerResponse</returns>
         public async System.Threading.Tasks.Task<PartnerResponse> GetPartnerAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await GetPartnerWithHttpInfoAsync(id, companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await GetPartnerWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -815,7 +815,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<PartnerResponse>("/api/1/partners/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<PartnerResponse>("/api/1/partners/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -913,7 +913,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of PartnersResponse</returns>
         public async System.Threading.Tasks.Task<PartnersResponse> GetPartnersAsync(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<PartnersResponse> localVarResponse = await GetPartnersWithHttpInfoAsync(companyId, offset, limit, keyword, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<PartnersResponse> localVarResponse = await GetPartnersWithHttpInfoAsync(companyId, offset, limit, keyword, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -970,7 +970,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<PartnersResponse>("/api/1/partners", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<PartnersResponse>("/api/1/partners", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1057,7 +1057,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of PartnerResponse</returns>
         public async System.Threading.Tasks.Task<PartnerResponse> UpdatePartnerAsync(int id, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await UpdatePartnerWithHttpInfoAsync(id, partnerUpdateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await UpdatePartnerWithHttpInfoAsync(id, partnerUpdateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1107,7 +1107,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<PartnerResponse>("/api/1/partners/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<PartnerResponse>("/api/1/partners/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1198,7 +1198,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of PartnerResponse</returns>
         public async System.Threading.Tasks.Task<PartnerResponse> UpdatePartnerByCodeAsync(string code, PartnerUpdateParams partnerUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await UpdatePartnerByCodeWithHttpInfoAsync(code, partnerUpdateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<PartnerResponse> localVarResponse = await UpdatePartnerByCodeWithHttpInfoAsync(code, partnerUpdateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1252,7 +1252,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<PartnerResponse>("/api/1/partners/code/{code}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<PartnerResponse>("/api/1/partners/code/{code}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

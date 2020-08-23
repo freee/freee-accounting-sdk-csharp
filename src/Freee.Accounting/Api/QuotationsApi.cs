@@ -491,7 +491,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of QuotationResponse</returns>
         public async System.Threading.Tasks.Task<QuotationResponse> CreateQuotationAsync(QuotationCreateParams quotationCreateParams = default(QuotationCreateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = await CreateQuotationWithHttpInfoAsync(quotationCreateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = await CreateQuotationWithHttpInfoAsync(quotationCreateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -535,7 +535,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<QuotationResponse>("/api/1/quotations", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<QuotationResponse>("/api/1/quotations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -615,7 +615,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DestroyQuotationAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DestroyQuotationWithHttpInfoAsync(id, companyId, cancellationToken);
+            await DestroyQuotationWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -658,7 +658,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/quotations/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/quotations/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -739,7 +739,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of QuotationResponse</returns>
         public async System.Threading.Tasks.Task<QuotationResponse> GetQuotationAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = await GetQuotationWithHttpInfoAsync(companyId, id, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = await GetQuotationWithHttpInfoAsync(companyId, id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -783,7 +783,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<QuotationResponse>("/api/1/quotations/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<QuotationResponse>("/api/1/quotations/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -923,7 +923,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse2007</returns>
         public async System.Threading.Tasks.Task<InlineResponse2007> GetQuotationsAsync(int companyId, int? partnerId = default(int?), string partnerCode = default(string), string startIssueDate = default(string), string endIssueDate = default(string), string quotationNumber = default(string), string description = default(string), string quotationStatus = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse2007> localVarResponse = await GetQuotationsWithHttpInfoAsync(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, quotationNumber, description, quotationStatus, offset, limit, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse2007> localVarResponse = await GetQuotationsWithHttpInfoAsync(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, quotationNumber, description, quotationStatus, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1010,7 +1010,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2007>("/api/1/quotations", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse2007>("/api/1/quotations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1093,7 +1093,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of QuotationResponse</returns>
         public async System.Threading.Tasks.Task<QuotationResponse> UpdateQuotationAsync(int id, QuotationUpdateParams quotationUpdateParams = default(QuotationUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = await UpdateQuotationWithHttpInfoAsync(id, quotationUpdateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<QuotationResponse> localVarResponse = await UpdateQuotationWithHttpInfoAsync(id, quotationUpdateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1139,7 +1139,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<QuotationResponse>("/api/1/quotations/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<QuotationResponse>("/api/1/quotations/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

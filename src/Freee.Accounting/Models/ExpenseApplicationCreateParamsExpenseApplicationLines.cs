@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ExpenseApplicationCreateParamsExpenseApplicationLines
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "expenseApplicationCreateParams_expense_application_lines")]
     public partial class ExpenseApplicationCreateParamsExpenseApplicationLines : IEquatable<ExpenseApplicationCreateParamsExpenseApplicationLines>
     {
         /// <summary>

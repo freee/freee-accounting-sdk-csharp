@@ -383,7 +383,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of DealResponse</returns>
         public async System.Threading.Tasks.Task<DealResponse> CreateDealRenewAsync(int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await CreateDealRenewWithHttpInfoAsync(id, renewCreateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await CreateDealRenewWithHttpInfoAsync(id, renewCreateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -433,7 +433,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DealResponse>("/api/1/deals/{id}/renews", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DealResponse>("/api/1/deals/{id}/renews", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -518,7 +518,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of DealResponse</returns>
         public async System.Threading.Tasks.Task<DealResponse> DeleteDealRenewAsync(int id, int renewId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await DeleteDealRenewWithHttpInfoAsync(id, renewId, companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await DeleteDealRenewWithHttpInfoAsync(id, renewId, companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -564,7 +564,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<DealResponse>("/api/1/deals/{id}/renews/{renew_id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<DealResponse>("/api/1/deals/{id}/renews/{renew_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -655,7 +655,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of DealResponse</returns>
         public async System.Threading.Tasks.Task<DealResponse> UpdateDealRenewAsync(int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await UpdateDealRenewWithHttpInfoAsync(id, renewId, renewUpdateParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await UpdateDealRenewWithHttpInfoAsync(id, renewId, renewUpdateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -707,7 +707,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<DealResponse>("/api/1/deals/{id}/renews/{renew_id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<DealResponse>("/api/1/deals/{id}/renews/{renew_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

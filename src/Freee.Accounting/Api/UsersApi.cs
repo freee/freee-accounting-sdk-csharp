@@ -408,7 +408,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse20015</returns>
         public async System.Threading.Tasks.Task<InlineResponse20015> GetUsersAsync(int companyId, int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse20015> localVarResponse = await GetUsersWithHttpInfoAsync(companyId, limit, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse20015> localVarResponse = await GetUsersWithHttpInfoAsync(companyId, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -455,7 +455,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20015>("/api/1/users", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20015>("/api/1/users", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -532,7 +532,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse20016</returns>
         public async System.Threading.Tasks.Task<InlineResponse20016> GetUsersCapabilitiesAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse20016> localVarResponse = await GetUsersCapabilitiesWithHttpInfoAsync(companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse20016> localVarResponse = await GetUsersCapabilitiesWithHttpInfoAsync(companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -574,7 +574,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20016>("/api/1/users/capabilities", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20016>("/api/1/users/capabilities", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -654,7 +654,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of MeResponse</returns>
         public async System.Threading.Tasks.Task<MeResponse> GetUsersMeAsync(bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<MeResponse> localVarResponse = await GetUsersMeWithHttpInfoAsync(companies, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<MeResponse> localVarResponse = await GetUsersMeWithHttpInfoAsync(companies, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -699,7 +699,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<MeResponse>("/api/1/users/me", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<MeResponse>("/api/1/users/me", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -778,7 +778,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of UserResponse</returns>
         public async System.Threading.Tasks.Task<UserResponse> UpdateUserAsync(UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<UserResponse> localVarResponse = await UpdateUserWithHttpInfoAsync(userParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<UserResponse> localVarResponse = await UpdateUserWithHttpInfoAsync(userParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -822,7 +822,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<UserResponse>("/api/1/users/me", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<UserResponse>("/api/1/users/me", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// TagResponse
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "tagResponse")]
     public partial class TagResponse : IEquatable<TagResponse>
     {
         /// <summary>

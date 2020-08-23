@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// WalletableUpdateParams
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "walletableUpdateParams")]
     public partial class WalletableUpdateParams : IEquatable<WalletableUpdateParams>
     {
         /// <summary>

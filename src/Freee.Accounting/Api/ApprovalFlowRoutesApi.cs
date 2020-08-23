@@ -329,7 +329,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApprovalFlowRouteResponse</returns>
         public async System.Threading.Tasks.Task<ApprovalFlowRouteResponse> GetApprovalFlowRouteAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<ApprovalFlowRouteResponse> localVarResponse = await GetApprovalFlowRouteWithHttpInfoAsync(id, companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<ApprovalFlowRouteResponse> localVarResponse = await GetApprovalFlowRouteWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -373,7 +373,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ApprovalFlowRouteResponse>("/api/1/approval_flow_routes/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ApprovalFlowRouteResponse>("/api/1/approval_flow_routes/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -471,7 +471,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApprovalFlowRoutesIndexResponse</returns>
         public async System.Threading.Tasks.Task<ApprovalFlowRoutesIndexResponse> GetApprovalFlowRoutesAsync(int companyId, int? includedUserId = default(int?), string usage = default(string), int? requestFormId = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<ApprovalFlowRoutesIndexResponse> localVarResponse = await GetApprovalFlowRoutesWithHttpInfoAsync(companyId, includedUserId, usage, requestFormId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<ApprovalFlowRoutesIndexResponse> localVarResponse = await GetApprovalFlowRoutesWithHttpInfoAsync(companyId, includedUserId, usage, requestFormId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -528,7 +528,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ApprovalFlowRoutesIndexResponse>("/api/1/approval_flow_routes", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ApprovalFlowRoutesIndexResponse>("/api/1/approval_flow_routes", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

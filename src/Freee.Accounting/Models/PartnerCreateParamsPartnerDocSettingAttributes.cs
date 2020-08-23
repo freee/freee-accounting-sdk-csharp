@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// PartnerCreateParamsPartnerDocSettingAttributes
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "partnerCreateParams_partner_doc_setting_attributes")]
     public partial class PartnerCreateParamsPartnerDocSettingAttributes : IEquatable<PartnerCreateParamsPartnerDocSettingAttributes>
     {
         /// <summary>

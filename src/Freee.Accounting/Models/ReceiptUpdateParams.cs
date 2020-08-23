@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ReceiptUpdateParams
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "receiptUpdateParams")]
     public partial class ReceiptUpdateParams : IEquatable<ReceiptUpdateParams>
     {
         /// <summary>

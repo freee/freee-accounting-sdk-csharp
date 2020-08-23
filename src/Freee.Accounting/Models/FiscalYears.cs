@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// FiscalYears
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "fiscal_years")]
     public partial class FiscalYears : IEquatable<FiscalYears>
     {
         /// <summary>

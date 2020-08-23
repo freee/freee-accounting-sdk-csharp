@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// DeprecatedApprovalRequestParamsRequestItems
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "deprecatedApprovalRequestParams_request_items")]
     public partial class DeprecatedApprovalRequestParamsRequestItems : IEquatable<DeprecatedApprovalRequestParamsRequestItems>
     {
         /// <summary>

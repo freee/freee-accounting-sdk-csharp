@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// SelectablesIndexResponseDefaultTaxTaxRate5
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "selectablesIndexResponse_default_tax_tax_rate_5")]
     public partial class SelectablesIndexResponseDefaultTaxTaxRate5 : IEquatable<SelectablesIndexResponseDefaultTaxTaxRate5>
     {
         /// <summary>

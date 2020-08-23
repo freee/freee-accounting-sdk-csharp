@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ManualJournalCreateParams
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "manualJournalCreateParams")]
     public partial class ManualJournalCreateParams : IEquatable<ManualJournalCreateParams>
     {
         /// <summary>

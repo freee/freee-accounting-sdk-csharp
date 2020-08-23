@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ForbiddenError
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "forbiddenError")]
     public partial class ForbiddenError : IEquatable<ForbiddenError>
     {
         /// <summary>

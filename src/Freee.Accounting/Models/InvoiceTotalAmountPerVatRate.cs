@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// InvoiceTotalAmountPerVatRate
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "invoice_total_amount_per_vat_rate")]
     public partial class InvoiceTotalAmountPerVatRate : IEquatable<InvoiceTotalAmountPerVatRate>
     {
         /// <summary>

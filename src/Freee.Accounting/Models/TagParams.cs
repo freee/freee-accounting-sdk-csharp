@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// TagParams
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "tagParams")]
     public partial class TagParams : IEquatable<TagParams>
     {
         /// <summary>

@@ -395,7 +395,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of System.IO.Stream</returns>
         public async System.Threading.Tasks.Task<System.IO.Stream> DownloadJournalAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<System.IO.Stream> localVarResponse = await DownloadJournalWithHttpInfoAsync(id, companyId, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<System.IO.Stream> localVarResponse = await DownloadJournalWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -441,7 +441,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/api/1/journals/reports/{id}/download", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/api/1/journals/reports/{id}/download", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -543,7 +543,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of JournalStatusResponse</returns>
         public async System.Threading.Tasks.Task<JournalStatusResponse> GetJournalStatusAsync(int companyId, int id, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<JournalStatusResponse> localVarResponse = await GetJournalStatusWithHttpInfoAsync(companyId, id, visibleTags, startDate, endDate, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<JournalStatusResponse> localVarResponse = await GetJournalStatusWithHttpInfoAsync(companyId, id, visibleTags, startDate, endDate, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -602,7 +602,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<JournalStatusResponse>("/api/1/journals/reports/{id}/status", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<JournalStatusResponse>("/api/1/journals/reports/{id}/status", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -708,7 +708,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of JournalsResponse</returns>
         public async System.Threading.Tasks.Task<JournalsResponse> GetJournalsAsync(string downloadType, int companyId, List<string> visibleTags = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<JournalsResponse> localVarResponse = await GetJournalsWithHttpInfoAsync(downloadType, companyId, visibleTags, startDate, endDate, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<JournalsResponse> localVarResponse = await GetJournalsWithHttpInfoAsync(downloadType, companyId, visibleTags, startDate, endDate, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -771,7 +771,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<JournalsResponse>("/api/1/journals", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<JournalsResponse>("/api/1/journals", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

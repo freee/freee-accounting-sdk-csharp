@@ -381,7 +381,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of CompanyIndexResponse</returns>
         public async System.Threading.Tasks.Task<CompanyIndexResponse> GetCompaniesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<CompanyIndexResponse> localVarResponse = await GetCompaniesWithHttpInfoAsync(cancellationToken);
+            Freee.Accounting.Client.ApiResponse<CompanyIndexResponse> localVarResponse = await GetCompaniesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -421,7 +421,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<CompanyIndexResponse>("/api/1/companies", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<CompanyIndexResponse>("/api/1/companies", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -554,7 +554,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of CompanyResponse</returns>
         public async System.Threading.Tasks.Task<CompanyResponse> GetCompanyAsync(int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<CompanyResponse> localVarResponse = await GetCompanyWithHttpInfoAsync(id, details, accountItems, taxes, items, partners, sections, tags, walletables, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<CompanyResponse> localVarResponse = await GetCompanyWithHttpInfoAsync(id, details, accountItems, taxes, items, partners, sections, tags, walletables, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -636,7 +636,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<CompanyResponse>("/api/1/companies/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<CompanyResponse>("/api/1/companies/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -719,7 +719,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of CompanyUpdateResponse</returns>
         public async System.Threading.Tasks.Task<CompanyUpdateResponse> UpdateCompanyAsync(int id, CompanyParams companyParams = default(CompanyParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<CompanyUpdateResponse> localVarResponse = await UpdateCompanyWithHttpInfoAsync(id, companyParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<CompanyUpdateResponse> localVarResponse = await UpdateCompanyWithHttpInfoAsync(id, companyParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -765,7 +765,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<CompanyUpdateResponse>("/api/1/companies/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<CompanyUpdateResponse>("/api/1/companies/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

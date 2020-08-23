@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// QuotationUpdateParamsQuotationContents
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "quotationUpdateParams_quotation_contents")]
     public partial class QuotationUpdateParamsQuotationContents : IEquatable<QuotationUpdateParamsQuotationContents>
     {
         /// <summary>

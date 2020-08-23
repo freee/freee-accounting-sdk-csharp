@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// UnauthorizedError
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "unauthorizedError")]
     public partial class UnauthorizedError : IEquatable<UnauthorizedError>
     {
         /// <summary>

@@ -383,7 +383,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of DealResponse</returns>
         public async System.Threading.Tasks.Task<DealResponse> CreateDealPaymentAsync(int id, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await CreateDealPaymentWithHttpInfoAsync(id, paymentParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await CreateDealPaymentWithHttpInfoAsync(id, paymentParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -433,7 +433,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DealResponse>("/api/1/deals/{id}/payments", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DealResponse>("/api/1/deals/{id}/payments", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -517,7 +517,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DestroyDealPaymentAsync(int id, int paymentId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DestroyDealPaymentWithHttpInfoAsync(id, paymentId, companyId, cancellationToken);
+            await DestroyDealPaymentWithHttpInfoAsync(id, paymentId, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -562,7 +562,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/deals/{id}/payments/{payment_id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/deals/{id}/payments/{payment_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -653,7 +653,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of DealResponse</returns>
         public async System.Threading.Tasks.Task<DealResponse> UpdateDealPaymentAsync(int id, int paymentId, PaymentParams paymentParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await UpdateDealPaymentWithHttpInfoAsync(id, paymentId, paymentParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<DealResponse> localVarResponse = await UpdateDealPaymentWithHttpInfoAsync(id, paymentId, paymentParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -705,7 +705,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<DealResponse>("/api/1/deals/{id}/payments/{payment_id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<DealResponse>("/api/1/deals/{id}/payments/{payment_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

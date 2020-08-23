@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ExpenseApplicationUpdateParams
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "expenseApplicationUpdateParams")]
     public partial class ExpenseApplicationUpdateParams : IEquatable<ExpenseApplicationUpdateParams>
     {
         /// <summary>

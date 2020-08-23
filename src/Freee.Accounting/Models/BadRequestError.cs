@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// BadRequestError
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "badRequestError")]
     public partial class BadRequestError : IEquatable<BadRequestError>
     {
         /// <summary>

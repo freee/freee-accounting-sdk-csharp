@@ -439,7 +439,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of SegmentTagResponse</returns>
         public async System.Threading.Tasks.Task<SegmentTagResponse> CreateSegmentTagAsync(int segmentId, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<SegmentTagResponse> localVarResponse = await CreateSegmentTagWithHttpInfoAsync(segmentId, segmentTagParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<SegmentTagResponse> localVarResponse = await CreateSegmentTagWithHttpInfoAsync(segmentId, segmentTagParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -489,7 +489,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<SegmentTagResponse>("/api/1/segments/{segment_id}/tags", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SegmentTagResponse>("/api/1/segments/{segment_id}/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -573,7 +573,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DestroySegmentsTagAsync(int segmentId, int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DestroySegmentsTagWithHttpInfoAsync(segmentId, id, companyId, cancellationToken);
+            await DestroySegmentsTagWithHttpInfoAsync(segmentId, id, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -618,7 +618,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/segments/{segment_id}/tags/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/segments/{segment_id}/tags/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -713,7 +713,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of InlineResponse20010</returns>
         public async System.Threading.Tasks.Task<InlineResponse20010> GetSegmentTagsAsync(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<InlineResponse20010> localVarResponse = await GetSegmentTagsWithHttpInfoAsync(companyId, segmentId, offset, limit, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<InlineResponse20010> localVarResponse = await GetSegmentTagsWithHttpInfoAsync(companyId, segmentId, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -767,7 +767,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20010>("/api/1/segments/{segment_id}/tags", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20010>("/api/1/segments/{segment_id}/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -858,7 +858,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of SegmentTagResponse</returns>
         public async System.Threading.Tasks.Task<SegmentTagResponse> UpdateSegmentTagAsync(int segmentId, int id, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<SegmentTagResponse> localVarResponse = await UpdateSegmentTagWithHttpInfoAsync(segmentId, id, segmentTagParams, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<SegmentTagResponse> localVarResponse = await UpdateSegmentTagWithHttpInfoAsync(segmentId, id, segmentTagParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -910,7 +910,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<SegmentTagResponse>("/api/1/segments/{segment_id}/tags/{id}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<SegmentTagResponse>("/api/1/segments/{segment_id}/tags/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ExpenseApplicationResponseExpenseApplication
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "expenseApplicationResponse_expense_application")]
     public partial class ExpenseApplicationResponseExpenseApplication : IEquatable<ExpenseApplicationResponseExpenseApplication>
     {
         /// <summary>

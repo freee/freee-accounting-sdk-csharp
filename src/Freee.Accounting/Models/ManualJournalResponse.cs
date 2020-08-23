@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ManualJournalResponse
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "manualJournalResponse")]
     public partial class ManualJournalResponse : IEquatable<ManualJournalResponse>
     {
         /// <summary>

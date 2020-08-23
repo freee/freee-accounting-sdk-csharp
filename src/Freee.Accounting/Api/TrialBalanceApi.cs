@@ -946,7 +946,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TrialBsResponse</returns>
         public async System.Threading.Tasks.Task<TrialBsResponse> GetTrialBsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TrialBsResponse> localVarResponse = await GetTrialBsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TrialBsResponse> localVarResponse = await GetTrialBsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1043,7 +1043,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialBsResponse>("/api/1/reports/trial_bs", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialBsResponse>("/api/1/reports/trial_bs", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1197,7 +1197,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TrialBsThreeYearsResponse</returns>
         public async System.Threading.Tasks.Task<TrialBsThreeYearsResponse> GetTrialBsThreeYearsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TrialBsThreeYearsResponse> localVarResponse = await GetTrialBsThreeYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TrialBsThreeYearsResponse> localVarResponse = await GetTrialBsThreeYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1294,7 +1294,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialBsThreeYearsResponse>("/api/1/reports/trial_bs_three_years", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialBsThreeYearsResponse>("/api/1/reports/trial_bs_three_years", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1448,7 +1448,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TrialBsTwoYearsResponse</returns>
         public async System.Threading.Tasks.Task<TrialBsTwoYearsResponse> GetTrialBsTwoYearsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TrialBsTwoYearsResponse> localVarResponse = await GetTrialBsTwoYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TrialBsTwoYearsResponse> localVarResponse = await GetTrialBsTwoYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1545,7 +1545,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialBsTwoYearsResponse>("/api/1/reports/trial_bs_two_years", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialBsTwoYearsResponse>("/api/1/reports/trial_bs_two_years", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1713,7 +1713,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TrialPlResponse</returns>
         public async System.Threading.Tasks.Task<TrialPlResponse> GetTrialPlAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TrialPlResponse> localVarResponse = await GetTrialPlWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TrialPlResponse> localVarResponse = await GetTrialPlWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1820,7 +1820,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialPlResponse>("/api/1/reports/trial_pl", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialPlResponse>("/api/1/reports/trial_pl", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1989,7 +1989,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TrialPlSectionsResponse</returns>
         public async System.Threading.Tasks.Task<TrialPlSectionsResponse> GetTrialPlSectionsAsync(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TrialPlSectionsResponse> localVarResponse = await GetTrialPlSectionsWithHttpInfoAsync(companyId, sectionIds, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, costAllocation, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TrialPlSectionsResponse> localVarResponse = await GetTrialPlSectionsWithHttpInfoAsync(companyId, sectionIds, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, adjustment, costAllocation, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2097,7 +2097,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialPlSectionsResponse>("/api/1/reports/trial_pl_sections", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialPlSectionsResponse>("/api/1/reports/trial_pl_sections", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2265,7 +2265,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TrialPlThreeYearsResponse</returns>
         public async System.Threading.Tasks.Task<TrialPlThreeYearsResponse> GetTrialPlThreeYearsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TrialPlThreeYearsResponse> localVarResponse = await GetTrialPlThreeYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TrialPlThreeYearsResponse> localVarResponse = await GetTrialPlThreeYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2372,7 +2372,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialPlThreeYearsResponse>("/api/1/reports/trial_pl_three_years", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialPlThreeYearsResponse>("/api/1/reports/trial_pl_three_years", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2540,7 +2540,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of TrialPlTwoYearsResponse</returns>
         public async System.Threading.Tasks.Task<TrialPlTwoYearsResponse> GetTrialPlTwoYearsAsync(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<TrialPlTwoYearsResponse> localVarResponse = await GetTrialPlTwoYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation, cancellationToken);
+            Freee.Accounting.Client.ApiResponse<TrialPlTwoYearsResponse> localVarResponse = await GetTrialPlTwoYearsWithHttpInfoAsync(companyId, fiscalYear, startMonth, endMonth, startDate, endDate, accountItemDisplayType, breakdownDisplayType, partnerId, partnerCode, itemId, sectionId, adjustment, costAllocation, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2647,7 +2647,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialPlTwoYearsResponse>("/api/1/reports/trial_pl_two_years", localVarRequestOptions, this.Configuration, cancellationToken);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TrialPlTwoYearsResponse>("/api/1/reports/trial_pl_two_years", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

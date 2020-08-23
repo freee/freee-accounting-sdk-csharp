@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// SelectablesIndexResponseAccountGroups
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "selectablesIndexResponse_account_groups")]
     public partial class SelectablesIndexResponseAccountGroups : IEquatable<SelectablesIndexResponseAccountGroups>
     {
         /// <summary>

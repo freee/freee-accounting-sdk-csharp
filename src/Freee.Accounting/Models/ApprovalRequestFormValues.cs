@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// ApprovalRequestFormValues
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "approval_request_form_values")]
     public partial class ApprovalRequestFormValues : IEquatable<ApprovalRequestFormValues>
     {
         /// <summary>

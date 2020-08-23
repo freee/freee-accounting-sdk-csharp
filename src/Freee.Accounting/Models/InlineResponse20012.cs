@@ -26,7 +26,7 @@ namespace Freee.Accounting.Models
     /// <summary>
     /// InlineResponse20012
     /// </summary>
-    [DataContract]
+    [DataContract(Name = "inline_response_200_12")]
     public partial class InlineResponse20012 : IEquatable<InlineResponse20012>
     {
         /// <summary>
