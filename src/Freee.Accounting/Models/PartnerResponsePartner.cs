@@ -163,7 +163,7 @@ namespace Freee.Accounting.Models
         /// <param name="partnerBankAccountAttributesBankCode">銀行番号.</param>
         /// <param name="partnerBankAccountAttributesBankName">銀行名.</param>
         /// <param name="partnerBankAccountAttributesBankNameKana">銀行名（カナ）.</param>
-        /// <param name="partnerBankAccountAttributesBranchCode">受取人名（カナ）.</param>
+        /// <param name="partnerBankAccountAttributesBranchCode">支店番号.</param>
         /// <param name="partnerBankAccountAttributesBranchKana">支店名（カナ）.</param>
         /// <param name="partnerBankAccountAttributesBranchName">支店名.</param>
         /// <param name="partnerBankAccountAttributesLongAccountName">受取人名.</param>
@@ -356,9 +356,9 @@ namespace Freee.Accounting.Models
         public string PartnerBankAccountAttributesBankNameKana { get; set; }
 
         /// <summary>
-        /// 受取人名（カナ）
+        /// 支店番号
         /// </summary>
-        /// <value>受取人名（カナ）</value>
+        /// <value>支店番号</value>
         [DataMember(Name = "partner_bank_account_attributes[branch_code]", EmitDefaultValue = true)]
         public string PartnerBankAccountAttributesBranchCode { get; set; }
 

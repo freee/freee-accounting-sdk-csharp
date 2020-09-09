@@ -55,7 +55,7 @@ namespace Freee.Accounting.Models
         /// 市区町村・番地
         /// </summary>
         /// <value>市区町村・番地</value>
-        [DataMember(Name = "street_name1&#39;", EmitDefaultValue = true)]
+        [DataMember(Name = "street_name1", EmitDefaultValue = true)]
         public string StreetName1 { get; set; }
 
         /// <summary>

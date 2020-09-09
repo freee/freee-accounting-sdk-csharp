@@ -109,7 +109,25 @@ namespace Freee.Accounting.Models
             /// Enum All for value: all
             /// </summary>
             [EnumMember(Value = "all")]
-            All = 7
+            All = 7,
+
+            /// <summary>
+            /// Enum Segment1tag for value: segment_1_tag
+            /// </summary>
+            [EnumMember(Value = "segment_1_tag")]
+            Segment1tag = 8,
+
+            /// <summary>
+            /// Enum Segment2tag for value: segment_2_tag
+            /// </summary>
+            [EnumMember(Value = "segment_2_tag")]
+            Segment2tag = 9,
+
+            /// <summary>
+            /// Enum Segment3tag for value: segment_3_tag
+            /// </summary>
+            [EnumMember(Value = "segment_3_tag")]
+            Segment3tag = 10
 
         }
 

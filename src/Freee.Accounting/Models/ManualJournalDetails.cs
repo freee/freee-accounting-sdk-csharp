@@ -85,7 +85,7 @@ namespace Freee.Accounting.Models
         /// <param name="segment3TagName">セグメント３.</param>
         /// <param name="tagIds">tagIds (required).</param>
         /// <param name="tagNames">tagNames (required).</param>
-        /// <param name="taxCode">税区分ID (required).</param>
+        /// <param name="taxCode">税区分コード (required).</param>
         /// <param name="vat">消費税額（指定しない場合は自動で計算されます） (required).</param>
         public ManualJournalDetails(int accountItemId = default(int), int amount = default(int), string description = default(string), EntrySideEnum entrySide = default(EntrySideEnum), int id = default(int), int? itemId = default(int?), string itemName = default(string), string partnerCode = default(string), int? partnerId = default(int?), string partnerLongName = default(string), string partnerName = default(string), int? sectionId = default(int?), string sectionName = default(string), int segment1TagId = default(int), int segment1TagName = default(int), int segment2TagId = default(int), int segment2TagName = default(int), int segment3TagId = default(int), int segment3TagName = default(int), List<int> tagIds = default(List<int>), List<string> tagNames = default(List<string>), int taxCode = default(int), int vat = default(int))
         {
@@ -263,9 +263,9 @@ namespace Freee.Accounting.Models
         public List<string> TagNames { get; set; }
 
         /// <summary>
-        /// 税区分ID
+        /// 税区分コード
         /// </summary>
-        /// <value>税区分ID</value>
+        /// <value>税区分コード</value>
         [DataMember(Name = "tax_code", EmitDefaultValue = false)]
         public int TaxCode { get; set; }
 

@@ -81,7 +81,7 @@ namespace Freee.Accounting.Models
         /// <param name="segment2TagId">セグメント２ID.</param>
         /// <param name="segment3TagId">セグメント３ID.</param>
         /// <param name="tagIds">tagIds.</param>
-        /// <param name="taxCode">税区分ID.</param>
+        /// <param name="taxCode">税区分コード.</param>
         /// <param name="type">行の種類 &lt;ul&gt; &lt;li&gt;normal、discountを指定する場合、account_item_id,tax_codeとunit_priceが必須となります。&lt;/li&gt; &lt;li&gt;normalを指定した場合、qtyが必須となります。&lt;/li&gt; &lt;/ul&gt; (required).</param>
         /// <param name="unit">単位.</param>
         /// <param name="unitPrice">単価 (tax_entry_method: inclusiveの場合は税込価格、tax_entry_method: exclusiveの場合は税抜価格となります).</param>
@@ -183,9 +183,9 @@ namespace Freee.Accounting.Models
         public List<int> TagIds { get; set; }
 
         /// <summary>
-        /// 税区分ID
+        /// 税区分コード
         /// </summary>
-        /// <value>税区分ID</value>
+        /// <value>税区分コード</value>
         [DataMember(Name = "tax_code", EmitDefaultValue = false)]
         public int TaxCode { get; set; }
 

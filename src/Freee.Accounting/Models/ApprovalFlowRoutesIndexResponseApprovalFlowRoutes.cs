@@ -82,6 +82,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalFlowRoutesIndexResponseApprovalFlowRoutes" /> class.
         /// </summary>
+        /// <param name="defaultRoute">基本経路として設定されているかどうか&lt;br&gt;&lt;br&gt; リクエストパラメータusageに下記のいずれかが指定され、かつ、基本経路の場合はtrueになります。 * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60;(リクエストパラメータrequest_form_idを同時に指定) - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書)  &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/900000507963-%E7%94%B3%E8%AB%8B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%AE%E5%9F%BA%E6%9C%AC%E7%B5%8C%E8%B7%AF%E8%A8%AD%E5%AE%9A\&quot; target&#x3D;\&quot;_blank\&quot;&gt;申請フォームの基本経路設定&lt;/a&gt;  (required).</param>
         /// <param name="definitionSystem">システム作成の申請経路かどうか.</param>
         /// <param name="description">申請経路の説明.</param>
         /// <param name="firstStepId">最初の承認ステップのID.</param>
@@ -90,8 +91,9 @@ namespace Freee.Accounting.Models
         /// <param name="requestFormIds">申請経路で利用できる申請フォームID配列.</param>
         /// <param name="usages">申請種別（申請経路を使用できる申請種別を示します。例えば、ApprovalRequest の場合は、各種申請で使用できる申請経路です。） * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60; - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書).</param>
         /// <param name="userId">更新したユーザーのユーザーID.</param>
-        public ApprovalFlowRoutesIndexResponseApprovalFlowRoutes(bool definitionSystem = default(bool), string description = default(string), int firstStepId = default(int), int id = default(int), string name = default(string), List<int> requestFormIds = default(List<int>), List<UsagesEnum> usages = default(List<UsagesEnum>), int? userId = default(int?))
+        public ApprovalFlowRoutesIndexResponseApprovalFlowRoutes(bool defaultRoute = default(bool), bool definitionSystem = default(bool), string description = default(string), int firstStepId = default(int), int id = default(int), string name = default(string), List<int> requestFormIds = default(List<int>), List<UsagesEnum> usages = default(List<UsagesEnum>), int? userId = default(int?))
         {
+            this.DefaultRoute = defaultRoute;
             this.Id = id;
             this.DefinitionSystem = definitionSystem;
             this.Description = description;
@@ -101,6 +103,13 @@ namespace Freee.Accounting.Models
             this.Usages = usages;
             this.UserId = userId;
         }
+
+        /// <summary>
+        /// 基本経路として設定されているかどうか&lt;br&gt;&lt;br&gt; リクエストパラメータusageに下記のいずれかが指定され、かつ、基本経路の場合はtrueになります。 * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60;(リクエストパラメータrequest_form_idを同時に指定) - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書)  &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/900000507963-%E7%94%B3%E8%AB%8B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%AE%E5%9F%BA%E6%9C%AC%E7%B5%8C%E8%B7%AF%E8%A8%AD%E5%AE%9A\&quot; target&#x3D;\&quot;_blank\&quot;&gt;申請フォームの基本経路設定&lt;/a&gt; 
+        /// </summary>
+        /// <value>基本経路として設定されているかどうか&lt;br&gt;&lt;br&gt; リクエストパラメータusageに下記のいずれかが指定され、かつ、基本経路の場合はtrueになります。 * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60;(リクエストパラメータrequest_form_idを同時に指定) - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書)  &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/900000507963-%E7%94%B3%E8%AB%8B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%AE%E5%9F%BA%E6%9C%AC%E7%B5%8C%E8%B7%AF%E8%A8%AD%E5%AE%9A\&quot; target&#x3D;\&quot;_blank\&quot;&gt;申請フォームの基本経路設定&lt;/a&gt; </value>
+        [DataMember(Name = "default_route", EmitDefaultValue = false)]
+        public bool DefaultRoute { get; set; }
 
         /// <summary>
         /// システム作成の申請経路かどうか
@@ -159,6 +168,7 @@ namespace Freee.Accounting.Models
         {
             var sb = new StringBuilder();
             sb.Append("class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes {\n");
+            sb.Append("  DefaultRoute: ").Append(DefaultRoute).Append("\n");
             sb.Append("  DefinitionSystem: ").Append(DefinitionSystem).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  FirstStepId: ").Append(FirstStepId).Append("\n");
@@ -201,6 +211,10 @@ namespace Freee.Accounting.Models
                 return false;
 
             return 
+                (
+                    this.DefaultRoute == input.DefaultRoute ||
+                    this.DefaultRoute.Equals(input.DefaultRoute)
+                ) && 
                 (
                     this.DefinitionSystem == input.DefinitionSystem ||
                     this.DefinitionSystem.Equals(input.DefinitionSystem)
@@ -249,6 +263,7 @@ namespace Freee.Accounting.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                hashCode = hashCode * 59 + this.DefaultRoute.GetHashCode();
                 hashCode = hashCode * 59 + this.DefinitionSystem.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();

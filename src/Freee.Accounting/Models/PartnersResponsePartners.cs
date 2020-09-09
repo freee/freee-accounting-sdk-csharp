@@ -160,7 +160,7 @@ namespace Freee.Accounting.Models
         /// <param name="partnerBankAccountAttributesBankCode">銀行番号.</param>
         /// <param name="partnerBankAccountAttributesBankName">銀行名.</param>
         /// <param name="partnerBankAccountAttributesBankNameKana">銀行名（カナ）.</param>
-        /// <param name="partnerBankAccountAttributesBranchCode">受取人名（カナ）.</param>
+        /// <param name="partnerBankAccountAttributesBranchCode">支店番号.</param>
         /// <param name="partnerBankAccountAttributesBranchKana">支店名（カナ）.</param>
         /// <param name="partnerBankAccountAttributesBranchName">支店名.</param>
         /// <param name="partnerBankAccountAttributesLongAccountName">受取人名.</param>
@@ -170,7 +170,7 @@ namespace Freee.Accounting.Models
         /// <param name="shortcut1">ショートカット1 (20文字以内).</param>
         /// <param name="shortcut2">ショートカット2 (20文字以内).</param>
         /// <param name="transferFeeHandlingSide">振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee).</param>
-        public PartnersResponsePartners(PartnersResponseAddressAttributes addressAttributes = default(PartnersResponseAddressAttributes), string code = default(string), int companyId = default(int), string contactName = default(string), string countryCode = default(string), string defaultTitle = default(string), string email = default(string), int id = default(int), string longName = default(string), string name = default(string), string nameKana = default(string), int? orgCode = default(int?), string partnerBankAccountAttributesAccountName = default(string), string partnerBankAccountAttributesAccountNumber = default(string), PartnerBankAccountAttributesAccountTypeEnum? partnerBankAccountAttributesAccountType = default(PartnerBankAccountAttributesAccountTypeEnum?), string partnerBankAccountAttributesBankCode = default(string), string partnerBankAccountAttributesBankName = default(string), string partnerBankAccountAttributesBankNameKana = default(string), string partnerBankAccountAttributesBranchCode = default(string), string partnerBankAccountAttributesBranchKana = default(string), string partnerBankAccountAttributesBranchName = default(string), string partnerBankAccountAttributesLongAccountName = default(string), PartnerDocSettingAttributesSendingMethodEnum? partnerDocSettingAttributesSendingMethod = default(PartnerDocSettingAttributesSendingMethodEnum?), int? payerWalletableId = default(int?), string phone = default(string), string shortcut1 = default(string), string shortcut2 = default(string), TransferFeeHandlingSideEnum? transferFeeHandlingSide = default(TransferFeeHandlingSideEnum?))
+        public PartnersResponsePartners(PartnerResponsePartnerAddressAttributes addressAttributes = default(PartnerResponsePartnerAddressAttributes), string code = default(string), int companyId = default(int), string contactName = default(string), string countryCode = default(string), string defaultTitle = default(string), string email = default(string), int id = default(int), string longName = default(string), string name = default(string), string nameKana = default(string), int? orgCode = default(int?), string partnerBankAccountAttributesAccountName = default(string), string partnerBankAccountAttributesAccountNumber = default(string), PartnerBankAccountAttributesAccountTypeEnum? partnerBankAccountAttributesAccountType = default(PartnerBankAccountAttributesAccountTypeEnum?), string partnerBankAccountAttributesBankCode = default(string), string partnerBankAccountAttributesBankName = default(string), string partnerBankAccountAttributesBankNameKana = default(string), string partnerBankAccountAttributesBranchCode = default(string), string partnerBankAccountAttributesBranchKana = default(string), string partnerBankAccountAttributesBranchName = default(string), string partnerBankAccountAttributesLongAccountName = default(string), PartnerDocSettingAttributesSendingMethodEnum? partnerDocSettingAttributesSendingMethod = default(PartnerDocSettingAttributesSendingMethodEnum?), int? payerWalletableId = default(int?), string phone = default(string), string shortcut1 = default(string), string shortcut2 = default(string), TransferFeeHandlingSideEnum? transferFeeHandlingSide = default(TransferFeeHandlingSideEnum?))
         {
             // to ensure "code" is required (not null)
             this.Code = code ?? throw new ArgumentNullException("code is a required property for PartnersResponsePartners and cannot be null");
@@ -208,7 +208,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets AddressAttributes
         /// </summary>
         [DataMember(Name = "address_attributes", EmitDefaultValue = false)]
-        public PartnersResponseAddressAttributes AddressAttributes { get; set; }
+        public PartnerResponsePartnerAddressAttributes AddressAttributes { get; set; }
 
         /// <summary>
         /// 取引先コード
@@ -323,9 +323,9 @@ namespace Freee.Accounting.Models
         public string PartnerBankAccountAttributesBankNameKana { get; set; }
 
         /// <summary>
-        /// 受取人名（カナ）
+        /// 支店番号
         /// </summary>
-        /// <value>受取人名（カナ）</value>
+        /// <value>支店番号</value>
         [DataMember(Name = "partner_bank_account_attributes[branch_code]", EmitDefaultValue = true)]
         public string PartnerBankAccountAttributesBranchCode { get; set; }
 

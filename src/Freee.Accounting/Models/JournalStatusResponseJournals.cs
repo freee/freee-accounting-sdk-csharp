@@ -148,7 +148,25 @@ namespace Freee.Accounting.Models
             /// Enum All for value: all
             /// </summary>
             [EnumMember(Value = "all")]
-            All = 7
+            All = 7,
+
+            /// <summary>
+            /// Enum Segment1tag for value: segment_1_tag
+            /// </summary>
+            [EnumMember(Value = "segment_1_tag")]
+            Segment1tag = 8,
+
+            /// <summary>
+            /// Enum Segment2tag for value: segment_2_tag
+            /// </summary>
+            [EnumMember(Value = "segment_2_tag")]
+            Segment2tag = 9,
+
+            /// <summary>
+            /// Enum Segment3tag for value: segment_3_tag
+            /// </summary>
+            [EnumMember(Value = "segment_3_tag")]
+            Segment3tag = 10
 
         }
 
@@ -173,7 +191,7 @@ namespace Freee.Accounting.Models
         /// <param name="id">受け付けID (required).</param>
         /// <param name="startDate">取得開始日 (yyyy-mm-dd) (required).</param>
         /// <param name="status">事業所ID (required).</param>
-        /// <param name="visibleTags">visibleTags (required).</param>
+        /// <param name="visibleTags">visibleTags.</param>
         public JournalStatusResponseJournals(int companyId = default(int), DownloadTypeEnum downloadType = default(DownloadTypeEnum), string downloadUrl = default(string), string endDate = default(string), int id = default(int), string startDate = default(string), StatusEnum status = default(StatusEnum), List<VisibleTagsEnum> visibleTags = default(List<VisibleTagsEnum>))
         {
             this.CompanyId = companyId;
@@ -184,9 +202,8 @@ namespace Freee.Accounting.Models
             // to ensure "startDate" is required (not null)
             this.StartDate = startDate ?? throw new ArgumentNullException("startDate is a required property for JournalStatusResponseJournals and cannot be null");
             this.Status = status;
-            // to ensure "visibleTags" is required (not null)
-            this.VisibleTags = visibleTags ?? throw new ArgumentNullException("visibleTags is a required property for JournalStatusResponseJournals and cannot be null");
             this.DownloadUrl = downloadUrl;
+            this.VisibleTags = visibleTags;
         }
 
         /// <summary>
