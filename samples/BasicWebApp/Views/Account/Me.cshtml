@@ -1,4 +1,4 @@
-﻿@model Freee.Accounting.Models.UsersMeResponseUser
+﻿@model Freee.Accounting.Models.MeResponseUser
 @{
     ViewData["Title"] = "User info";
 }
@@ -17,7 +17,7 @@
 <h2>Deals</h2>
 
 <ul>
-  @foreach (Freee.Accounting.Models.Deals deal in ViewBag.Deals)
+  @foreach (Freee.Accounting.Models.Deal deal in ViewBag.Deals)
   {
     <li>
       <span>@deal.IssueDate - @deal.Type</span>

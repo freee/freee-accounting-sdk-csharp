@@ -1,10 +1,9 @@
-/* 
+/*
  * freee API
  *
- *  <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"\">スタートガイド</h2> <p>1. セットアップ</p> <ol> <ul><li><a href=\"https://support.freee.co.jp/hc/ja/articles/202847230\" class=\"external-link\" rel=\"nofollow\">freeeアカウント（無料）</a>を<a href=\"https://secure.freee.co.jp/users/sign_up\" class=\"external-link\" rel=\"nofollow\">作成</a>します（すでにお持ちの場合は次へ）</li><li><a href=\"https://app.secure.freee.co.jp/developers/demo_companies/description\" class=\"external-link\" rel=\"nofollow\">開発者向け事業所・環境を作成</a>します</li><li><span><a href=\"https://app.secure.freee.co.jp/developers/applications\" class=\"external-link\" rel=\"nofollow\">前のステップで作成した事業所を選択してfreeeアプリを追加</a>します</span></li><li>Client IDをCopyしておきます</li> </ul> </ol>  <p>2. 実際にAPIを叩いてみる（ブラウザからAPIのレスポンスを確認する）</p> <ol> <ul><li><span><span>以下のURLの●をclient_idに入れ替えて<a href=\"https://app.secure.freee.co.jp/developers/tutorials/3-%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B#%E8%AA%8D%E5%8F%AF%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B\" class=\"external-link\" rel=\"nofollow\">アクセストークンを取得</a>します</span></span><ul><li><span><span><pre><code>https://accounts.secure.freee.co.jp/public_api/authorize?client_id=●&amp;redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&amp;response_type=token</a></code></pre></span></span></li></ul></li><li><span><a href=\"https://developer.freee.co.jp/docs/accounting/reference#/%E9%80%A3%E7%B5%A1%E5%85%88\" class=\"external-link\" rel=\"nofollow\">APIリファレンス</a>で<code>Authorize</code>を押下します</span></li><li><span>アクセストークン<span><span>を入力して</span></span>&nbsp;もう一度<span><code>Authorize</code>を押下して<code>Close</code>を押下します</span></span></li><li>リファレンス内のCompanies（事業所）に移動し、<code>Try it out</code>を押下し、<code>Execute</code>を押下します</li><li>Response bodyを参照し、事業所ID(id属性)を活用して、Companies以外のエンドポイントでどのようなデータのやりとりできるのか確認します</li></ul> </ol> <p>3. 連携を実装する</p> <ol> <ul><li><a href=\"https://developer.freee.co.jp/tips\" class=\"external-link\" rel=\"nofollow\">API TIPS</a>を参考に、ユースケースごとの連携の概要を学びます。<span>例えば</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-salesmanegement-system\" class=\"external-link\" rel=\"nofollow\">SFA、CRM、販売管理システムから会計freeeへの連携</a>や<a href=\"https://developer.freee.co.jp/tips/how-to-cooperate-excel-and-spreadsheet\" class=\"external-link\" rel=\"nofollow\">エクセルやgoogle spreadsheetからの連携</a>です</li><li>実利用向け事業所がすでにある場合は利用、ない場合は作成します（セットアップで作成したのは開発者向け環境のため活用不可）</li><li><a href=\"https://developer.freee.co.jp/docs/accounting/reference\" class=\"external-link\" rel=\"nofollow\">API documentation</a><span>&nbsp;を参照し、躓いた場合は</span><span>&nbsp;</span><a href=\"https://developer.freee.co.jp/community/forum/community\" class=\"external-link\" rel=\"nofollow\">Community</a><span>&nbsp;で質問してみましょう</span></li></ul> </ol> <p>アプリケーションの登録方法や認証方法、またはAPIの活用方法でご不明な点がある場合は<a href=\"https://support.freee.co.jp/hc/ja/sections/115000030743\">ヘルプセンター</a>もご確認ください</p> <hr /> <h2 id=\"_2\">仕様</h2>  <h3 id=\"api\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"_3\">認証方式</h3>  <p><a href=\"http://tools.ietf.org/html/rfc6749\">OAuth2</a>に対応</p>  <ul> <li>Authorization Code Flow (Webアプリ向け)</li>  <li>Implicit Flow (Mobileアプリ向け)</li> </ul>  <h3 id=\"_4\">認証エンドポイント</h3>  <p>https://accounts.secure.freee.co.jp/</p>  <ul> <li>authorize : https://accounts.secure.freee.co.jp/public_api/authorize</li>  <li>token : https://accounts.secure.freee.co.jp/public_api/token</li> </ul>  <h3 id=\"_5\">アクセストークンのリフレッシュ</h3>  <p>認証時に得たrefresh_token を使ってtoken の期限をリフレッシュして新規に発行することが出来ます。</p>  <p>grant_type=refresh_token で https://accounts.secure.freee.co.jp/public_api/token にアクセスすればリフレッシュされます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/token</p>  <p>params: grant_type=refresh_token&amp;client_id=UID&amp;client_secret=SECRET&amp;refresh_token=REFRESH_TOKEN</p>  <p>詳細は<a href=\"https://github.com/applicake/doorkeeper/wiki/Enable-Refresh-Token-Credentials#flow\">refresh_token</a>を参照下さい。</p>  <h3 id=\"_6\">アクセストークンの破棄</h3>  <p>認証時に得たaccess_tokenまたはrefresh_tokenを使って、tokenを破棄することができます。 token=access_tokenまたはtoken=refresh_tokenでhttps://accounts.secure.freee.co.jp/public_api/revokeにアクセスすると破棄されます。token_type_hintでaccess_tokenまたはrefresh_tokenを陽に指定できます。</p>  <p>e.g.)</p>  <p>POST: https://accounts.secure.freee.co.jp/public_api/revoke</p>  <p>params: token=ACCESS_TOKEN</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN</p>  <p>または</p>  <p>params: token=ACCESS_TOKEN&amp;token_type_hint=access_token</p>  <p>または</p>  <p>params: token=REFRESH_TOKEN&amp;token_type_hint=refresh_token</p>  <p>詳細は <a href=\"https://tools.ietf.org/html/rfc7009\">OAuth 2.0 Token revocation</a> をご参照ください。</p>  <h3 id=\"_7\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポート</p>  <h3 id=\"_8\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"_9\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li>  <li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre> <hr /> <h2 id=\"_10\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
+ *  <h1 id=\"freee_api\">freee API</h1> <hr /> <h2 id=\"start_guide\">スタートガイド</h2>  <p>freee API開発がはじめての方は<a href=\"https://developer.freee.co.jp/getting-started\">freee API スタートガイド</a>を参照してください。</p>  <hr /> <h2 id=\"specification\">仕様</h2>  <pre><code>【重要】会計freee APIの新バージョンについて 2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。<br> 新しいAPIを利用するにはリクエストヘッダーに以下を指定します。 X-Api-Version: 2020-06-15<br> 指定がない場合は2020年12月に廃止予定のAPIを利用することとなります。<br> 【重要】APIのバージョン指定をせずに利用し続ける場合 2020年12月に新しいバージョンのAPIに自動的に切り替わります。 詳細は、<a href=\"https://developer.freee.co.jp/release-note/2948\" target=\"_blank\">リリースノート</a>をご覧ください。<br> 旧バージョンのAPIリファレンスを確認したい場合は、<a href=\"https://freee.github.io/freee-api-schema/\" target=\"_blank\">旧バージョンのAPIリファレンスページ</a>をご覧ください。 </code></pre>  <h3 id=\"api_endpoint\">APIエンドポイント</h3>  <p>https://api.freee.co.jp/ (httpsのみ)</p>  <h3 id=\"about_authorize\">認証について</h3> <p>OAuth2.0を利用します。詳細は<a href=\"https://developer.freee.co.jp/docs\" target=\"_blank\">ドキュメントの認証</a>パートを参照してください。</p>  <h3 id=\"data_format\">データフォーマット</h3>  <p>リクエスト、レスポンスともにJSON形式をサポートしていますが、詳細は、API毎の説明欄（application/jsonなど）を確認してください。</p>  <h3 id=\"compatibility\">後方互換性ありの変更</h3>  <p>freeeでは、APIを改善していくために以下のような変更は後方互換性ありとして通知なく変更を入れることがあります。アプリケーション実装者は以下を踏まえて開発を行ってください。</p>  <ul> <li>新しいAPIリソース・エンドポイントの追加</li> <li>既存のAPIに対して必須ではない新しいリクエストパラメータの追加</li> <li>既存のAPIレスポンスに対する新しいプロパティの追加</li> <li>既存のAPIレスポンスに対するプロパティの順番の入れ変え</li> <li>keyとなっているidやcodeの長さの変更（長くする）</li> </ul>  <h3 id=\"common_response_header\">共通レスポンスヘッダー</h3>  <p>すべてのAPIのレスポンスには以下のHTTPヘッダーが含まれます。</p>  <ul> <li> <p>X-Freee-Request-ID</p> <ul> <li>各リクエスト毎に発行されるID</li> </ul> </li> </ul>  <h3 id=\"common_error_response\">共通エラーレスポンス</h3>  <ul> <li> <p>ステータスコードはレスポンス内のJSONに含まれる他、HTTPヘッダにも含まれる</p> </li> <li> <p>一部のエラーレスポンスにはエラーコードが含まれます。<br>詳細は、<a href=\"https://developer.freee.co.jp/tips/faq/40x-checkpoint\">HTTPステータスコード400台エラー時のチェックポイント</a>を参照してください</p> </li> <p>type</p>  <ul> <li>status : HTTPステータスコードの説明</li>  <li>validation : エラーの詳細の説明（開発者向け）</li> </ul> </li> </ul>  <p>レスポンスの例</p>  <pre><code>  {     &quot;status_code&quot; : 400,     &quot;errors&quot; : [       {         &quot;type&quot; : &quot;status&quot;,         &quot;messages&quot; : [&quot;不正なリクエストです。&quot;]       },       {         &quot;type&quot; : &quot;validation&quot;,         &quot;messages&quot; : [&quot;Date は不正な日付フォーマットです。入力例：2013-01-01&quot;]       }     ]   }</code></pre>  </br>  <h3 id=\"api_rate_limit\">API使用制限</h3>    <p>freeeは一定期間に過度のアクセスを検知した場合、APIアクセスをコントロールする場合があります。</p>   <p>その際のhttp status codeは403となります。制限がかかってから10分程度が過ぎると再度使用することができるようになります。</p>  <h4 id=\"reports_api_endpoint\">/reportsエンドポイント</h4>  <p>freeeは/reportsエンドポイントに対して1秒間に10以上のアクセスを検知した場合、APIアクセスをコントロールする場合があります。その際のhttp status codeは429（too many requests）となります。</p>  <p>レスポンスボディのmetaプロパティに以下を含めます。</p>  <ul>   <li>設定されている上限値</li>   <li>上限に達するまでの使用可能回数</li>   <li>（上限値に達した場合）使用回数がリセットされる時刻</li> </ul>  <h3 id=\"plan_api_rate_limit\">プラン別のAPI Rate Limit</h3>   <table border=\"1\">     <tbody>       <tr>         <th style=\"padding: 10px\"><strong>会計freeeプラン名</strong></th>         <th style=\"padding: 10px\"><strong>事業所とアプリケーション毎に1日でのAPIコール数</strong></th>       </tr>       <tr>         <td style=\"padding: 10px\">エンタープライズ</td>         <td style=\"padding: 10px\">10,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">プロフェッショナル</td>         <td style=\"padding: 10px\">5,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ベーシック</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">ミニマム</td>         <td style=\"padding: 10px\">3,000</td>       </tr>       <tr>         <td style=\"padding: 10px\">上記以外</td>         <td style=\"padding: 10px\">3,000</td>       </tr>     </tbody>   </table>  <h3 id=\"webhook\">Webhookについて</h3>  <p>詳細は<a href=\"https://developer.freee.co.jp/docs/accounting/webhook\" target=\"_blank\">会計Webhook概要</a>を参照してください。</p>  <hr /> <h2 id=\"contact\">連絡先</h2>  <p>ご不明点、ご要望等は <a href=\"https://support.freee.co.jp/hc/ja/requests/new\">freee サポートデスクへのお問い合わせフォーム</a> からご連絡ください。</p> <hr />&copy; Since 2013 freee K.K.
  *
  * The version of the OpenAPI document: v1.0
- * 
  * Generated by: https://github.com/openapitools/openapi-generator.git
  */
 
@@ -34,9 +33,9 @@ namespace Freee.Accounting.Api
         ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt; &lt;p&gt;amount : 振替金額&lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p&gt;from_walletable_type, to_walletable_type&lt;/p&gt;  &lt;ul&gt; &lt;li&gt;bank_account : 銀行口座&lt;/li&gt;  &lt;li&gt;credit_card : クレジットカード&lt;/li&gt;  &lt;li&gt;wallet : その他の決済口座&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="_parameter">取引（振替）の作成 (optional)</param>
-        /// <returns>TransfersResponse</returns>
-        TransfersResponse CreateTransfer (TransferParams _parameter = default(TransferParams));
+        /// <param name="transferParams">取引（振替）の作成 (optional)</param>
+        /// <returns>TransferResponse</returns>
+        TransferResponse CreateTransfer(TransferParams transferParams = default(TransferParams));
 
         /// <summary>
         /// 取引（振替）の作成
@@ -45,9 +44,9 @@ namespace Freee.Accounting.Api
         ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt; &lt;p&gt;amount : 振替金額&lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p&gt;from_walletable_type, to_walletable_type&lt;/p&gt;  &lt;ul&gt; &lt;li&gt;bank_account : 銀行口座&lt;/li&gt;  &lt;li&gt;credit_card : クレジットカード&lt;/li&gt;  &lt;li&gt;wallet : その他の決済口座&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="_parameter">取引（振替）の作成 (optional)</param>
-        /// <returns>ApiResponse of TransfersResponse</returns>
-        ApiResponse<TransfersResponse> CreateTransferWithHttpInfo (TransferParams _parameter = default(TransferParams));
+        /// <param name="transferParams">取引（振替）の作成 (optional)</param>
+        /// <returns>ApiResponse of TransferResponse</returns>
+        ApiResponse<TransferResponse> CreateTransferWithHttpInfo(TransferParams transferParams = default(TransferParams));
         /// <summary>
         /// 取引（振替）の削除する
         /// </summary>
@@ -58,7 +57,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        void DestroyTransfer (int id, int companyId);
+        void DestroyTransfer(int id, int companyId);
 
         /// <summary>
         /// 取引（振替）の削除する
@@ -70,7 +69,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DestroyTransferWithHttpInfo (int id, int companyId);
+        ApiResponse<Object> DestroyTransferWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 取引（振替）の取得
         /// </summary>
@@ -80,8 +79,8 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>TransfersResponse</returns>
-        TransfersResponse GetTransfer (int id, int companyId);
+        /// <returns>TransferResponse</returns>
+        TransferResponse GetTransfer(int id, int companyId);
 
         /// <summary>
         /// 取引（振替）の取得
@@ -92,8 +91,8 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>ApiResponse of TransfersResponse</returns>
-        ApiResponse<TransfersResponse> GetTransferWithHttpInfo (int id, int companyId);
+        /// <returns>ApiResponse of TransferResponse</returns>
+        ApiResponse<TransferResponse> GetTransferWithHttpInfo(int id, int companyId);
         /// <summary>
         /// 取引（振替）一覧の取得
         /// </summary>
@@ -105,9 +104,9 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">振替日で絞込：開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">振替日で絞込：終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
-        /// <returns>TransfersIndexResponse</returns>
-        TransfersIndexResponse GetTransfers (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?));
+        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
+        /// <returns>InlineResponse20014</returns>
+        InlineResponse20014 GetTransfers(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?));
 
         /// <summary>
         /// 取引（振替）一覧の取得
@@ -120,9 +119,9 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">振替日で絞込：開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">振替日で絞込：終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
-        /// <returns>ApiResponse of TransfersIndexResponse</returns>
-        ApiResponse<TransfersIndexResponse> GetTransfersWithHttpInfo (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?));
+        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
+        /// <returns>ApiResponse of InlineResponse20014</returns>
+        ApiResponse<InlineResponse20014> GetTransfersWithHttpInfo(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?));
         /// <summary>
         /// 取引（振替）の更新
         /// </summary>
@@ -131,9 +130,9 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
-        /// <param name="_parameter">取引（振替）の更新</param>
-        /// <returns>TransfersResponse</returns>
-        TransfersResponse UpdateTransfer (int id, TransferParams _parameter);
+        /// <param name="transferParams">取引（振替）の更新</param>
+        /// <returns>TransferResponse</returns>
+        TransferResponse UpdateTransfer(int id, TransferParams transferParams);
 
         /// <summary>
         /// 取引（振替）の更新
@@ -143,9 +142,9 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
-        /// <param name="_parameter">取引（振替）の更新</param>
-        /// <returns>ApiResponse of TransfersResponse</returns>
-        ApiResponse<TransfersResponse> UpdateTransferWithHttpInfo (int id, TransferParams _parameter);
+        /// <param name="transferParams">取引（振替）の更新</param>
+        /// <returns>ApiResponse of TransferResponse</returns>
+        ApiResponse<TransferResponse> UpdateTransferWithHttpInfo(int id, TransferParams transferParams);
         #endregion Synchronous Operations
     }
 
@@ -162,9 +161,10 @@ namespace Freee.Accounting.Api
         ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt; &lt;p&gt;amount : 振替金額&lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p&gt;from_walletable_type, to_walletable_type&lt;/p&gt;  &lt;ul&gt; &lt;li&gt;bank_account : 銀行口座&lt;/li&gt;  &lt;li&gt;credit_card : クレジットカード&lt;/li&gt;  &lt;li&gt;wallet : その他の決済口座&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="_parameter">取引（振替）の作成 (optional)</param>
-        /// <returns>Task of TransfersResponse</returns>
-        System.Threading.Tasks.Task<TransfersResponse> CreateTransferAsync (TransferParams _parameter = default(TransferParams));
+        /// <param name="transferParams">取引（振替）の作成 (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransferResponse</returns>
+        System.Threading.Tasks.Task<TransferResponse> CreateTransferAsync(TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（振替）の作成
@@ -173,9 +173,10 @@ namespace Freee.Accounting.Api
         ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt; &lt;p&gt;amount : 振替金額&lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p&gt;from_walletable_type, to_walletable_type&lt;/p&gt;  &lt;ul&gt; &lt;li&gt;bank_account : 銀行口座&lt;/li&gt;  &lt;li&gt;credit_card : クレジットカード&lt;/li&gt;  &lt;li&gt;wallet : その他の決済口座&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="_parameter">取引（振替）の作成 (optional)</param>
-        /// <returns>Task of ApiResponse (TransfersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransfersResponse>> CreateTransferAsyncWithHttpInfo (TransferParams _parameter = default(TransferParams));
+        /// <param name="transferParams">取引（振替）の作成 (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransferResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TransferResponse>> CreateTransferWithHttpInfoAsync(TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（振替）の削除する
         /// </summary>
@@ -185,8 +186,9 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DestroyTransferAsync (int id, int companyId);
+        System.Threading.Tasks.Task DestroyTransferAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（振替）の削除する
@@ -197,8 +199,9 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyTransferAsyncWithHttpInfo (int id, int companyId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyTransferWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（振替）の取得
         /// </summary>
@@ -208,8 +211,9 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>Task of TransfersResponse</returns>
-        System.Threading.Tasks.Task<TransfersResponse> GetTransferAsync (int id, int companyId);
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransferResponse</returns>
+        System.Threading.Tasks.Task<TransferResponse> GetTransferAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（振替）の取得
@@ -220,8 +224,9 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>Task of ApiResponse (TransfersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransfersResponse>> GetTransferAsyncWithHttpInfo (int id, int companyId);
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransferResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TransferResponse>> GetTransferWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（振替）一覧の取得
         /// </summary>
@@ -233,9 +238,10 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">振替日で絞込：開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">振替日で絞込：終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
-        /// <returns>Task of TransfersIndexResponse</returns>
-        System.Threading.Tasks.Task<TransfersIndexResponse> GetTransfersAsync (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?));
+        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InlineResponse20014</returns>
+        System.Threading.Tasks.Task<InlineResponse20014> GetTransfersAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（振替）一覧の取得
@@ -248,9 +254,10 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">振替日で絞込：開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">振替日で絞込：終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
-        /// <returns>Task of ApiResponse (TransfersIndexResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransfersIndexResponse>> GetTransfersAsyncWithHttpInfo (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?));
+        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20014>> GetTransfersWithHttpInfoAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（振替）の更新
         /// </summary>
@@ -259,9 +266,10 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
-        /// <param name="_parameter">取引（振替）の更新</param>
-        /// <returns>Task of TransfersResponse</returns>
-        System.Threading.Tasks.Task<TransfersResponse> UpdateTransferAsync (int id, TransferParams _parameter);
+        /// <param name="transferParams">取引（振替）の更新</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransferResponse</returns>
+        System.Threading.Tasks.Task<TransferResponse> UpdateTransferAsync(int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（振替）の更新
@@ -271,9 +279,10 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
-        /// <param name="_parameter">取引（振替）の更新</param>
-        /// <returns>Task of ApiResponse (TransfersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransfersResponse>> UpdateTransferAsyncWithHttpInfo (int id, TransferParams _parameter);
+        /// <param name="transferParams">取引（振替）の更新</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransferResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TransferResponse>> UpdateTransferWithHttpInfoAsync(int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -296,7 +305,7 @@ namespace Freee.Accounting.Api
         /// Initializes a new instance of the <see cref="TransfersApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public TransfersApi() : this((string) null)
+        public TransfersApi() : this((string)null)
         {
         }
 
@@ -341,11 +350,11 @@ namespace Freee.Accounting.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public TransfersApi(Freee.Accounting.Client.ISynchronousClient client,Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
+        public TransfersApi(Freee.Accounting.Client.ISynchronousClient client, Freee.Accounting.Client.IAsynchronousClient asyncClient, Freee.Accounting.Client.IReadableConfiguration configuration)
         {
-            if(client == null) throw new ArgumentNullException("client");
-            if(asyncClient == null) throw new ArgumentNullException("asyncClient");
-            if(configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+            if (asyncClient == null) throw new ArgumentNullException("asyncClient");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Client = client;
             this.AsynchronousClient = asyncClient;
@@ -376,7 +385,7 @@ namespace Freee.Accounting.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Freee.Accounting.Client.IReadableConfiguration Configuration {get; set;}
+        public Freee.Accounting.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -398,26 +407,27 @@ namespace Freee.Accounting.Api
         /// 取引（振替）の作成  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt; &lt;p&gt;amount : 振替金額&lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p&gt;from_walletable_type, to_walletable_type&lt;/p&gt;  &lt;ul&gt; &lt;li&gt;bank_account : 銀行口座&lt;/li&gt;  &lt;li&gt;credit_card : クレジットカード&lt;/li&gt;  &lt;li&gt;wallet : その他の決済口座&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="_parameter">取引（振替）の作成 (optional)</param>
-        /// <returns>TransfersResponse</returns>
-        public TransfersResponse CreateTransfer (TransferParams _parameter = default(TransferParams))
+        /// <param name="transferParams">取引（振替）の作成 (optional)</param>
+        /// <returns>TransferResponse</returns>
+        public TransferResponse CreateTransfer(TransferParams transferParams = default(TransferParams))
         {
-             Freee.Accounting.Client.ApiResponse<TransfersResponse> localVarResponse = CreateTransferWithHttpInfo(_parameter);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = CreateTransferWithHttpInfo(transferParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// 取引（振替）の作成  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt; &lt;p&gt;amount : 振替金額&lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p&gt;from_walletable_type, to_walletable_type&lt;/p&gt;  &lt;ul&gt; &lt;li&gt;bank_account : 銀行口座&lt;/li&gt;  &lt;li&gt;credit_card : クレジットカード&lt;/li&gt;  &lt;li&gt;wallet : その他の決済口座&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="_parameter">取引（振替）の作成 (optional)</param>
-        /// <returns>ApiResponse of TransfersResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TransfersResponse > CreateTransferWithHttpInfo (TransferParams _parameter = default(TransferParams))
+        /// <param name="transferParams">取引（振替）の作成 (optional)</param>
+        /// <returns>ApiResponse of TransferResponse</returns>
+        public Freee.Accounting.Client.ApiResponse<TransferResponse> CreateTransferWithHttpInfo(TransferParams transferParams = default(TransferParams))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json",
+                "application/x-www-form-urlencoded"
             };
 
             // to determine the Accept header
@@ -431,7 +441,7 @@ namespace Freee.Accounting.Api
             var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = _parameter;
+            localVarRequestOptions.Data = transferParams;
 
             // authentication (oauth2) required
             // oauth required
@@ -441,7 +451,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post< TransfersResponse >("/api/1/transfers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TransferResponse>("/api/1/transfers", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -456,42 +466,45 @@ namespace Freee.Accounting.Api
         /// 取引（振替）の作成  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt; &lt;p&gt;amount : 振替金額&lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p&gt;from_walletable_type, to_walletable_type&lt;/p&gt;  &lt;ul&gt; &lt;li&gt;bank_account : 銀行口座&lt;/li&gt;  &lt;li&gt;credit_card : クレジットカード&lt;/li&gt;  &lt;li&gt;wallet : その他の決済口座&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="_parameter">取引（振替）の作成 (optional)</param>
-        /// <returns>Task of TransfersResponse</returns>
-        public async System.Threading.Tasks.Task<TransfersResponse> CreateTransferAsync (TransferParams _parameter = default(TransferParams))
+        /// <param name="transferParams">取引（振替）の作成 (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransferResponse</returns>
+        public async System.Threading.Tasks.Task<TransferResponse> CreateTransferAsync(TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TransfersResponse> localVarResponse = await CreateTransferAsyncWithHttpInfo(_parameter);
-             return localVarResponse.Data;
-
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await CreateTransferWithHttpInfoAsync(transferParams, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
         /// 取引（振替）の作成  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt; &lt;p&gt;amount : 振替金額&lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p&gt;from_walletable_type, to_walletable_type&lt;/p&gt;  &lt;ul&gt; &lt;li&gt;bank_account : 銀行口座&lt;/li&gt;  &lt;li&gt;credit_card : クレジットカード&lt;/li&gt;  &lt;li&gt;wallet : その他の決済口座&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="_parameter">取引（振替）の作成 (optional)</param>
-        /// <returns>Task of ApiResponse (TransfersResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransfersResponse>> CreateTransferAsyncWithHttpInfo (TransferParams _parameter = default(TransferParams))
+        /// <param name="transferParams">取引（振替）の作成 (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransferResponse)</returns>
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransferResponse>> CreateTransferWithHttpInfoAsync(TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/x-www-form-urlencoded"
             };
 
             // to determine the Accept header
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
-            localVarRequestOptions.Data = _parameter;
+
+
+            var localVarContentType = Freee.Accounting.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = transferParams;
 
             // authentication (oauth2) required
             // oauth required
@@ -502,7 +515,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TransfersResponse>("/api/1/transfers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TransferResponse>("/api/1/transfers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -520,9 +533,9 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
-        public void DestroyTransfer (int id, int companyId)
+        public void DestroyTransfer(int id, int companyId)
         {
-             DestroyTransferWithHttpInfo(id, companyId);
+            DestroyTransferWithHttpInfo(id, companyId);
         }
 
         /// <summary>
@@ -532,7 +545,7 @@ namespace Freee.Accounting.Api
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Freee.Accounting.Client.ApiResponse<Object> DestroyTransferWithHttpInfo (int id, int companyId)
+        public Freee.Accounting.Client.ApiResponse<Object> DestroyTransferWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -578,11 +591,11 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DestroyTransferAsync (int id, int companyId)
+        public async System.Threading.Tasks.Task DestroyTransferAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             await DestroyTransferAsyncWithHttpInfo(id, companyId);
-
+            await DestroyTransferWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -591,8 +604,9 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyTransferAsyncWithHttpInfo (int id, int companyId)
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<Object>> DestroyTransferWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -604,13 +618,14 @@ namespace Freee.Accounting.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Freee.Accounting.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
 
@@ -623,7 +638,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -640,11 +655,11 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>TransfersResponse</returns>
-        public TransfersResponse GetTransfer (int id, int companyId)
+        /// <returns>TransferResponse</returns>
+        public TransferResponse GetTransfer(int id, int companyId)
         {
-             Freee.Accounting.Client.ApiResponse<TransfersResponse> localVarResponse = GetTransferWithHttpInfo(id, companyId);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = GetTransferWithHttpInfo(id, companyId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -653,8 +668,8 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>ApiResponse of TransfersResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TransfersResponse > GetTransferWithHttpInfo (int id, int companyId)
+        /// <returns>ApiResponse of TransferResponse</returns>
+        public Freee.Accounting.Client.ApiResponse<TransferResponse> GetTransferWithHttpInfo(int id, int companyId)
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -683,7 +698,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< TransfersResponse >("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<TransferResponse>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -700,12 +715,12 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>Task of TransfersResponse</returns>
-        public async System.Threading.Tasks.Task<TransfersResponse> GetTransferAsync (int id, int companyId)
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransferResponse</returns>
+        public async System.Threading.Tasks.Task<TransferResponse> GetTransferAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TransfersResponse> localVarResponse = await GetTransferAsyncWithHttpInfo(id, companyId);
-             return localVarResponse.Data;
-
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await GetTransferWithHttpInfoAsync(id, companyId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -714,8 +729,9 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
         /// <param name="companyId">事業所ID</param>
-        /// <returns>Task of ApiResponse (TransfersResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransfersResponse>> GetTransferAsyncWithHttpInfo (int id, int companyId)
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransferResponse)</returns>
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransferResponse>> GetTransferWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -727,13 +743,14 @@ namespace Freee.Accounting.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Freee.Accounting.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
 
@@ -746,7 +763,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TransfersResponse>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<TransferResponse>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -765,12 +782,12 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">振替日で絞込：開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">振替日で絞込：終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
-        /// <returns>TransfersIndexResponse</returns>
-        public TransfersIndexResponse GetTransfers (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?))
+        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
+        /// <returns>InlineResponse20014</returns>
+        public InlineResponse20014 GetTransfers(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?))
         {
-             Freee.Accounting.Client.ApiResponse<TransfersIndexResponse> localVarResponse = GetTransfersWithHttpInfo(companyId, startDate, endDate, offset, limit);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<InlineResponse20014> localVarResponse = GetTransfersWithHttpInfo(companyId, startDate, endDate, offset, limit);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -781,9 +798,9 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">振替日で絞込：開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">振替日で絞込：終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
-        /// <returns>ApiResponse of TransfersIndexResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TransfersIndexResponse > GetTransfersWithHttpInfo (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?))
+        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
+        /// <returns>ApiResponse of InlineResponse20014</returns>
+        public Freee.Accounting.Client.ApiResponse<InlineResponse20014> GetTransfersWithHttpInfo(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -827,7 +844,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< TransfersIndexResponse >("/api/1/transfers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<InlineResponse20014>("/api/1/transfers", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -846,13 +863,13 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">振替日で絞込：開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">振替日で絞込：終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
-        /// <returns>Task of TransfersIndexResponse</returns>
-        public async System.Threading.Tasks.Task<TransfersIndexResponse> GetTransfersAsync (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?))
+        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InlineResponse20014</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20014> GetTransfersAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TransfersIndexResponse> localVarResponse = await GetTransfersAsyncWithHttpInfo(companyId, startDate, endDate, offset, limit);
-             return localVarResponse.Data;
-
+            Freee.Accounting.Client.ApiResponse<InlineResponse20014> localVarResponse = await GetTransfersWithHttpInfoAsync(companyId, startDate, endDate, offset, limit, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -863,9 +880,10 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">振替日で絞込：開始日 (yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">振替日で絞込：終了日 (yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
-        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最大: 100)  (optional)</param>
-        /// <returns>Task of ApiResponse (TransfersIndexResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransfersIndexResponse>> GetTransfersAsyncWithHttpInfo (int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?))
+        /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20014>> GetTransfersWithHttpInfoAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -877,13 +895,14 @@ namespace Freee.Accounting.Api
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Freee.Accounting.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "company_id", companyId));
             if (startDate != null)
             {
@@ -911,7 +930,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<TransfersIndexResponse>("/api/1/transfers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InlineResponse20014>("/api/1/transfers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -927,12 +946,12 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
-        /// <param name="_parameter">取引（振替）の更新</param>
-        /// <returns>TransfersResponse</returns>
-        public TransfersResponse UpdateTransfer (int id, TransferParams _parameter)
+        /// <param name="transferParams">取引（振替）の更新</param>
+        /// <returns>TransferResponse</returns>
+        public TransferResponse UpdateTransfer(int id, TransferParams transferParams)
         {
-             Freee.Accounting.Client.ApiResponse<TransfersResponse> localVarResponse = UpdateTransferWithHttpInfo(id, _parameter);
-             return localVarResponse.Data;
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = UpdateTransferWithHttpInfo(id, transferParams);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -940,18 +959,19 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
-        /// <param name="_parameter">取引（振替）の更新</param>
-        /// <returns>ApiResponse of TransfersResponse</returns>
-        public Freee.Accounting.Client.ApiResponse< TransfersResponse > UpdateTransferWithHttpInfo (int id, TransferParams _parameter)
+        /// <param name="transferParams">取引（振替）の更新</param>
+        /// <returns>ApiResponse of TransferResponse</returns>
+        public Freee.Accounting.Client.ApiResponse<TransferResponse> UpdateTransferWithHttpInfo(int id, TransferParams transferParams)
         {
-            // verify the required parameter '_parameter' is set
-            if (_parameter == null)
-                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter '_parameter' when calling TransfersApi->UpdateTransfer");
+            // verify the required parameter 'transferParams' is set
+            if (transferParams == null)
+                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'transferParams' when calling TransfersApi->UpdateTransfer");
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json",
+                "application/x-www-form-urlencoded"
             };
 
             // to determine the Accept header
@@ -966,7 +986,7 @@ namespace Freee.Accounting.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = _parameter;
+            localVarRequestOptions.Data = transferParams;
 
             // authentication (oauth2) required
             // oauth required
@@ -976,7 +996,7 @@ namespace Freee.Accounting.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put< TransfersResponse >("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<TransferResponse>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -992,13 +1012,13 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
-        /// <param name="_parameter">取引（振替）の更新</param>
-        /// <returns>Task of TransfersResponse</returns>
-        public async System.Threading.Tasks.Task<TransfersResponse> UpdateTransferAsync (int id, TransferParams _parameter)
+        /// <param name="transferParams">取引（振替）の更新</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TransferResponse</returns>
+        public async System.Threading.Tasks.Task<TransferResponse> UpdateTransferAsync(int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-             Freee.Accounting.Client.ApiResponse<TransfersResponse> localVarResponse = await UpdateTransferAsyncWithHttpInfo(id, _parameter);
-             return localVarResponse.Data;
-
+            Freee.Accounting.Client.ApiResponse<TransferResponse> localVarResponse = await UpdateTransferWithHttpInfoAsync(id, transferParams, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1006,34 +1026,37 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
-        /// <param name="_parameter">取引（振替）の更新</param>
-        /// <returns>Task of ApiResponse (TransfersResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransfersResponse>> UpdateTransferAsyncWithHttpInfo (int id, TransferParams _parameter)
+        /// <param name="transferParams">取引（振替）の更新</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TransferResponse)</returns>
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<TransferResponse>> UpdateTransferWithHttpInfoAsync(int id, TransferParams transferParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter '_parameter' is set
-            if (_parameter == null)
-                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter '_parameter' when calling TransfersApi->UpdateTransfer");
+            // verify the required parameter 'transferParams' is set
+            if (transferParams == null)
+                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'transferParams' when calling TransfersApi->UpdateTransfer");
 
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/x-www-form-urlencoded"
             };
 
             // to determine the Accept header
             String[] _accepts = new String[] {
                 "application/json"
             };
-            
-            foreach (var _contentType in _contentTypes)
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
-            
-            foreach (var _accept in _accepts)
-                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
-            
+
+
+            var localVarContentType = Freee.Accounting.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = _parameter;
+            localVarRequestOptions.Data = transferParams;
 
             // authentication (oauth2) required
             // oauth required
@@ -1044,7 +1067,7 @@ namespace Freee.Accounting.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<TransfersResponse>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<TransferResponse>("/api/1/transfers/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
