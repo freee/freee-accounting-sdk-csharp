@@ -21,7 +21,7 @@ jobs:
     - name: Generate APIs
       run: |
         docker run --rm -u "$(id -u $USER):$(id -g $USER)" -v "${PWD}:/local" openapitools/openapi-generator-cli:latest-release generate \
-        -i "https://dev.azure.com/freee-developer/accounting-sdk/_apis/git/repositories/freee-api-schema-v3/items?path=%2Fv2020_06_15%2Fopen-api-3%2Fapi-schema.yml&download=false&api-version=6.0-preview.1" \
+        -i https://gist.githubusercontent.com/shibayan/3fdf5a66554e5e7ccfe4cc8350db86d7/raw/5e8cc86e5d84639e6efd1cec5d0e34bc327545ab/api-schema.yml \
         -c /local/.openapi-generator/config.yml \
         -g csharp-netcore \
         -o /local/
