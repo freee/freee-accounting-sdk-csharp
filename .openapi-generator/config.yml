@@ -1,0 +1,11 @@
+allowUnicodeIdentifiers: true
+hideGenerationTimestamp: true
+licenseId: MIT
+netCoreProjectFile: true
+optionalAssemblyInfo: false
+packageName: Freee.Accounting
+targetFramework: netstandard2.0
+validatable: false
+modelPackage: Models
+optionalProjectFile: false
+excludeTests: true

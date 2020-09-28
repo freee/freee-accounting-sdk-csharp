@@ -1,0 +1,21 @@
+name: Generate
+
+env:
+  DOTNET_VERSION: 3.1.x
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Generate APIs
+      run: |
+        docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
+        -i https://github.com/freee/freee-api-schema/raw/master/v2020_06_15/open-api-3/api-schema.yml
+        -c /local/.openapi-generator/config.yml \
+        -g csharp-netcore \
+        -o /local/
+
+    - name: Git
+      run: git status
