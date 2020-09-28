@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  DOTNET_VERSION: 3.1.x
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -12,7 +15,7 @@ jobs:
 
     - name: Generate APIs
       run: |
-        docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
+        docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli:latest-release generate \
         -i https://github.com/freee/freee-api-schema/raw/master/v2020_06_15/open-api-3/api-schema.yml \
         -c /local/.openapi-generator/config.yml \
         -g csharp-netcore \
@@ -20,3 +23,11 @@ jobs:
 
     - name: Git
       run: git status
+
+    - name: Use .NET Core ${{ env.DOTNET_VERSION }}
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Build projects
+      run: dotnet build -c Release
