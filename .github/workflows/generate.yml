@@ -17,7 +17,6 @@ jobs:
       run: |
         mv src/Freee.Accounting/Client/ApiClient.Version.cs src/Freee.Accounting/ApiClient.Version.cs
         rm -rf src/Freee.Accounting/Api src/Freee.Accounting/Client src/Freee.Accounting/Models
-        mv src/Freee.Accounting/ApiClient.Version.cs src/Freee.Accounting/Client/ApiClient.Version.cs
 
     - name: Generate APIs
       run: |
@@ -26,6 +25,10 @@ jobs:
         -c /local/.openapi-generator/config.yml \
         -g csharp-netcore \
         -o /local/
+
+    - name: Add API Versioning
+      run: |
+        mv src/Freee.Accounting/ApiClient.Version.cs src/Freee.Accounting/Client/ApiClient.Version.cs
 
     - name: Git
       run: |
