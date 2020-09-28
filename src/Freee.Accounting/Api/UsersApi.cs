@@ -71,27 +71,6 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of InlineResponse20016</returns>
         ApiResponse<InlineResponse20016> GetUsersCapabilitiesWithHttpInfo(int companyId);
         /// <summary>
-        /// ログインユーザー情報の取得
-        /// </summary>
-        /// <remarks>
-        ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの情報を取得する&lt;/p&gt;
-        /// </remarks>
-        /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
-        /// <returns>MeResponse</returns>
-        MeResponse GetUsersMe(bool? companies = default(bool?));
-
-        /// <summary>
-        /// ログインユーザー情報の取得
-        /// </summary>
-        /// <remarks>
-        ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの情報を取得する&lt;/p&gt;
-        /// </remarks>
-        /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
-        /// <returns>ApiResponse of MeResponse</returns>
-        ApiResponse<MeResponse> GetUsersMeWithHttpInfo(bool? companies = default(bool?));
-        /// <summary>
         /// ユーザー情報の更新
         /// </summary>
         /// <remarks>
@@ -169,29 +148,6 @@ namespace Freee.Accounting.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
         System.Threading.Tasks.Task<ApiResponse<InlineResponse20016>> GetUsersCapabilitiesWithHttpInfoAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// ログインユーザー情報の取得
-        /// </summary>
-        /// <remarks>
-        ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの情報を取得する&lt;/p&gt;
-        /// </remarks>
-        /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of MeResponse</returns>
-        System.Threading.Tasks.Task<MeResponse> GetUsersMeAsync(bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// ログインユーザー情報の取得
-        /// </summary>
-        /// <remarks>
-        ///  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの情報を取得する&lt;/p&gt;
-        /// </remarks>
-        /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (MeResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MeResponse>> GetUsersMeWithHttpInfoAsync(bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ユーザー情報の更新
         /// </summary>
@@ -579,131 +535,6 @@ namespace Freee.Accounting.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetUsersCapabilities", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// ログインユーザー情報の取得  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの情報を取得する&lt;/p&gt;
-        /// </summary>
-        /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
-        /// <returns>MeResponse</returns>
-        public MeResponse GetUsersMe(bool? companies = default(bool?))
-        {
-            Freee.Accounting.Client.ApiResponse<MeResponse> localVarResponse = GetUsersMeWithHttpInfo(companies);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// ログインユーザー情報の取得  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの情報を取得する&lt;/p&gt;
-        /// </summary>
-        /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
-        /// <returns>ApiResponse of MeResponse</returns>
-        public Freee.Accounting.Client.ApiResponse<MeResponse> GetUsersMeWithHttpInfo(bool? companies = default(bool?))
-        {
-            Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Freee.Accounting.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (companies != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "companies", companies));
-            }
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<MeResponse>("/api/1/users/me", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetUsersMe", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// ログインユーザー情報の取得  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの情報を取得する&lt;/p&gt;
-        /// </summary>
-        /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of MeResponse</returns>
-        public async System.Threading.Tasks.Task<MeResponse> GetUsersMeAsync(bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Freee.Accounting.Client.ApiResponse<MeResponse> localVarResponse = await GetUsersMeWithHttpInfoAsync(companies, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// ログインユーザー情報の取得  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの情報を取得する&lt;/p&gt;
-        /// </summary>
-        /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (MeResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<MeResponse>> GetUsersMeWithHttpInfoAsync(bool? companies = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = Freee.Accounting.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Freee.Accounting.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            if (companies != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Freee.Accounting.Client.ClientUtils.ParameterToMultiMap("", "companies", companies));
-            }
-
-            // authentication (oauth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<MeResponse>("/api/1/users/me", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetUsersMe", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
