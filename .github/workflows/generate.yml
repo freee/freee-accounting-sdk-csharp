@@ -21,7 +21,7 @@ jobs:
     - name: Generate APIs
       run: |
         docker run --rm -u "$(id -u $USER):$(id -g $USER)" -v "${PWD}:/local" openapitools/openapi-generator-cli:latest-release generate \
-        -i https://gist.githubusercontent.com/shibayan/3fdf5a66554e5e7ccfe4cc8350db86d7/raw/5e8cc86e5d84639e6efd1cec5d0e34bc327545ab/api-schema.yml \
+        -i https://gist.githubusercontent.com/shibayan/3fdf5a66554e5e7ccfe4cc8350db86d7/raw/5d6c8241369c1203a31ce4454e97794f43249209/api-schema.yml \
         -c /local/.openapi-generator/config.yml \
         -g csharp-netcore \
         -o /local/
