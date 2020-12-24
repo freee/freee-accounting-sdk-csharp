@@ -1,0 +1,72 @@
+name: Generate SDK
+
+on:
+  pull_request:
+    branches: [ master ]
+    types:
+      - labeled
+      - edited
+
+env:
+  DOTNET_VERSION: 3.1.x
+  SCHEMA_URL_TEMP: https://raw.githubusercontent.com/dzeyelid/freee-api-schema/add-sdk-compatible-schema/_sdk_compatible/open-api-3/api-schema.yml
+  KEEP_CURRENT_HEADER_SELECTOR: true
+
+jobs:
+  generate:
+    name: Generate code and push them
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'auto-generate') }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get original repo tag
+      id: get_original_repo_tag
+      run: |
+        TAG=`echo $PULL_REQUEST_BODY | sed -E -n 's/(.*)tag:\s*(.+)\s*$/\2/p'`
+        echo "::set-output name=tag::$TAG"
+      env:
+        PULL_REQUEST_BODY: ${{ github.event.pull_request.body }}
+
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        ref: ${{ github.head_ref }}
+
+    - name: Remove old codes
+      run: |
+        rm -rf src/Freee.Accounting/Api src/Freee.Accounting/Client src/Freee.Accounting/Models
+
+    - name: Generate APIs
+      env:
+        SCHEMA_URL: https://raw.githubusercontent.com/freee/freee-api-schema/${{ steps.get_original_repo_tag.outputs.tag }}/_sdk_compatible/open-api-3/api-schema.yml
+      run: |
+        docker run --rm -u "$(id -u $USER):$(id -g $USER)" -v "${PWD}:/local" openapitools/openapi-generator-cli:latest-release generate \
+        -i ${{ env.SCHEMA_URL_TEMP }} \
+        -c /local/.openapi-generator/config.yml \
+        -g csharp-netcore \
+        -o /local/
+
+    - name: Revert ApiClient
+      if: ${{ env.KEEP_CURRENT_HEADER_SELECTOR }}
+      run: |
+        git checkout \
+          src/Freee.Accounting/Client/ApiClient.Version.cs
+
+    - name: Git
+      run: |
+        git config --local user.name "API Generator"
+        git add *.cs
+        git commit -m "Generate SDK code for ${{ github.event.pull_request.title }}"
+
+    - name: Use .NET Core ${{ env.DOTNET_VERSION }}
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Build projects
+      run: dotnet build -c Release
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.head_ref }}

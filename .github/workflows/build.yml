@@ -20,5 +20,5 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: Build project
+    - name: Build projects
       run: dotnet build -c Release
