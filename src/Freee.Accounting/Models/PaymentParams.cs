@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -66,7 +67,7 @@ namespace Freee.Accounting.Models
         /// 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet, プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）: private_account_item)：payments指定時は必須
         /// </summary>
         /// <value>口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet, プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）: private_account_item)：payments指定時は必須</value>
-        [DataMember(Name = "from_walletable_type", EmitDefaultValue = false)]
+        [DataMember(Name = "from_walletable_type", IsRequired = true, EmitDefaultValue = false)]
         public FromWalletableTypeEnum FromWalletableType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentParams" /> class.
@@ -95,28 +96,28 @@ namespace Freee.Accounting.Models
         /// 金額
         /// </summary>
         /// <value>金額</value>
-        [DataMember(Name = "amount", EmitDefaultValue = false)]
+        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 支払日
         /// </summary>
         /// <value>支払日</value>
-        [DataMember(Name = "date", EmitDefaultValue = false)]
+        [DataMember(Name = "date", IsRequired = true, EmitDefaultValue = false)]
         public string Date { get; set; }
 
         /// <summary>
         /// 口座ID（from_walletable_typeがprivate_account_itemの場合は勘定科目ID）：payments指定時は必須
         /// </summary>
         /// <value>口座ID（from_walletable_typeがprivate_account_itemの場合は勘定科目ID）：payments指定時は必須</value>
-        [DataMember(Name = "from_walletable_id", EmitDefaultValue = false)]
+        [DataMember(Name = "from_walletable_id", IsRequired = true, EmitDefaultValue = false)]
         public int FromWalletableId { get; set; }
 
         /// <summary>
@@ -142,7 +143,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

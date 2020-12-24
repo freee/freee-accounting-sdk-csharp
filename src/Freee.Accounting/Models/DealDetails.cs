@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -54,7 +55,7 @@ namespace Freee.Accounting.Models
         /// 貸借(貸方: credit, 借方: debit)
         /// </summary>
         /// <value>貸借(貸方: credit, 借方: debit)</value>
-        [DataMember(Name = "entry_side", EmitDefaultValue = false)]
+        [DataMember(Name = "entry_side", IsRequired = true, EmitDefaultValue = false)]
         public EntrySideEnum EntrySide { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DealDetails" /> class.
@@ -99,14 +100,14 @@ namespace Freee.Accounting.Models
         /// 勘定科目ID
         /// </summary>
         /// <value>勘定科目ID</value>
-        [DataMember(Name = "account_item_id", EmitDefaultValue = false)]
+        [DataMember(Name = "account_item_id", IsRequired = true, EmitDefaultValue = false)]
         public int AccountItemId { get; set; }
 
         /// <summary>
         /// 金額（税込で指定してください）
         /// </summary>
         /// <value>金額（税込で指定してください）</value>
-        [DataMember(Name = "amount", EmitDefaultValue = false)]
+        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace Freee.Accounting.Models
         /// +更新の明細行ID
         /// </summary>
         /// <value>+更新の明細行ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
@@ -161,21 +162,21 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets TagIds
         /// </summary>
-        [DataMember(Name = "tag_ids", EmitDefaultValue = false)]
+        [DataMember(Name = "tag_ids", IsRequired = true, EmitDefaultValue = false)]
         public List<int> TagIds { get; set; }
 
         /// <summary>
         /// 税区分コード
         /// </summary>
         /// <value>税区分コード</value>
-        [DataMember(Name = "tax_code", EmitDefaultValue = false)]
+        [DataMember(Name = "tax_code", IsRequired = true, EmitDefaultValue = false)]
         public int TaxCode { get; set; }
 
         /// <summary>
         /// 消費税額（指定しない場合は自動で計算されます）
         /// </summary>
         /// <value>消費税額（指定しない場合は自動で計算されます）</value>
-        [DataMember(Name = "vat", EmitDefaultValue = false)]
+        [DataMember(Name = "vat", IsRequired = true, EmitDefaultValue = false)]
         public int Vat { get; set; }
 
         /// <summary>
@@ -209,7 +210,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

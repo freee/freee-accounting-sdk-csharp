@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -54,7 +55,7 @@ namespace Freee.Accounting.Models
         /// 取引ステータス (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_statusが表示されます settled:精算済み, unsettled:清算待ち)
         /// </summary>
         /// <value>取引ステータス (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_statusが表示されます settled:精算済み, unsettled:清算待ち)</value>
-        [DataMember(Name = "deal_status", EmitDefaultValue = true)]
+        [DataMember(Name = "deal_status", IsRequired = true, EmitDefaultValue = true)]
         public DealStatusEnum DealStatus { get; set; }
         /// <summary>
         /// 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
@@ -99,7 +100,7 @@ namespace Freee.Accounting.Models
         /// 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
         /// </summary>
         /// <value>申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)</value>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ExpenseApplicationResponseExpenseApplication" /> class.
@@ -147,14 +148,14 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 取引ID (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_idが表示されます)
         /// </summary>
         /// <value>取引ID (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_idが表示されます)</value>
-        [DataMember(Name = "deal_id", EmitDefaultValue = true)]
+        [DataMember(Name = "deal_id", IsRequired = true, EmitDefaultValue = true)]
         public int? DealId { get; set; }
 
         /// <summary>
@@ -168,28 +169,28 @@ namespace Freee.Accounting.Models
         /// 会計freeeのWeb画面から申請内容を編集可能：falseの場合、Web上からの項目行の追加／削除・金額の編集が出来なくなります。APIでの編集は可能です。
         /// </summary>
         /// <value>会計freeeのWeb画面から申請内容を編集可能：falseの場合、Web上からの項目行の追加／削除・金額の編集が出来なくなります。APIでの編集は可能です。</value>
-        [DataMember(Name = "editable_on_web", EmitDefaultValue = false)]
+        [DataMember(Name = "editable_on_web", IsRequired = true, EmitDefaultValue = false)]
         public bool EditableOnWeb { get; set; }
 
         /// <summary>
         /// 経費申請の項目行一覧（配列）
         /// </summary>
         /// <value>経費申請の項目行一覧（配列）</value>
-        [DataMember(Name = "expense_application_lines", EmitDefaultValue = false)]
+        [DataMember(Name = "expense_application_lines", IsRequired = true, EmitDefaultValue = false)]
         public List<ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines> ExpenseApplicationLines { get; set; }
 
         /// <summary>
         /// 経費申請ID
         /// </summary>
         /// <value>経費申請ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 申請日 (yyyy-mm-dd)
         /// </summary>
         /// <value>申請日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "issue_date", EmitDefaultValue = true)]
+        [DataMember(Name = "issue_date", IsRequired = true, EmitDefaultValue = true)]
         public string IssueDate { get; set; }
 
         /// <summary>
@@ -210,7 +211,7 @@ namespace Freee.Accounting.Models
         /// 申請タイトル
         /// </summary>
         /// <value>申請タイトル</value>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
+        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
@@ -251,7 +252,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

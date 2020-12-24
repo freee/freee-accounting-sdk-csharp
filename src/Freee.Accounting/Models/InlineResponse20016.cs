@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -224,361 +225,361 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
-        [DataMember(Name = "tags", EmitDefaultValue = false)]
+        [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Tags { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountItemStatements
         /// </summary>
-        [DataMember(Name = "account_item_statements", EmitDefaultValue = false)]
+        [DataMember(Name = "account_item_statements", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability AccountItemStatements { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountItems
         /// </summary>
-        [DataMember(Name = "account_items", EmitDefaultValue = false)]
+        [DataMember(Name = "account_items", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability AccountItems { get; set; }
 
         /// <summary>
         /// Gets or Sets AnnualReports
         /// </summary>
-        [DataMember(Name = "annual_reports", EmitDefaultValue = false)]
+        [DataMember(Name = "annual_reports", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability AnnualReports { get; set; }
 
         /// <summary>
         /// Gets or Sets ApprovalFlowRoutes
         /// </summary>
-        [DataMember(Name = "approval_flow_routes", EmitDefaultValue = false)]
+        [DataMember(Name = "approval_flow_routes", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ApprovalFlowRoutes { get; set; }
 
         /// <summary>
         /// Gets or Sets ApprovalRequests
         /// </summary>
-        [DataMember(Name = "approval_requests", EmitDefaultValue = false)]
+        [DataMember(Name = "approval_requests", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ApprovalRequests { get; set; }
 
         /// <summary>
         /// Gets or Sets Backups
         /// </summary>
-        [DataMember(Name = "backups", EmitDefaultValue = false)]
+        [DataMember(Name = "backups", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Backups { get; set; }
 
         /// <summary>
         /// Gets or Sets BankAccountantStaffUsers
         /// </summary>
-        [DataMember(Name = "bank_accountant_staff_users", EmitDefaultValue = false)]
+        [DataMember(Name = "bank_accountant_staff_users", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability BankAccountantStaffUsers { get; set; }
 
         /// <summary>
         /// Gets or Sets BizAllocations
         /// </summary>
-        [DataMember(Name = "biz_allocations", EmitDefaultValue = false)]
+        [DataMember(Name = "biz_allocations", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability BizAllocations { get; set; }
 
         /// <summary>
         /// Gets or Sets Companies
         /// </summary>
-        [DataMember(Name = "companies", EmitDefaultValue = false)]
+        [DataMember(Name = "companies", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Companies { get; set; }
 
         /// <summary>
         /// Gets or Sets ConsumptionEntries
         /// </summary>
-        [DataMember(Name = "consumption_entries", EmitDefaultValue = false)]
+        [DataMember(Name = "consumption_entries", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ConsumptionEntries { get; set; }
 
         /// <summary>
         /// Gets or Sets CostAllocations
         /// </summary>
-        [DataMember(Name = "cost_allocations", EmitDefaultValue = false)]
+        [DataMember(Name = "cost_allocations", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability CostAllocations { get; set; }
 
         /// <summary>
         /// Gets or Sets DealTemplates
         /// </summary>
-        [DataMember(Name = "deal_templates", EmitDefaultValue = false)]
+        [DataMember(Name = "deal_templates", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability DealTemplates { get; set; }
 
         /// <summary>
         /// Gets or Sets Deals
         /// </summary>
-        [DataMember(Name = "deals", EmitDefaultValue = false)]
+        [DataMember(Name = "deals", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Deals { get; set; }
 
         /// <summary>
         /// Gets or Sets DocPostings
         /// </summary>
-        [DataMember(Name = "doc_postings", EmitDefaultValue = false)]
+        [DataMember(Name = "doc_postings", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability DocPostings { get; set; }
 
         /// <summary>
         /// Gets or Sets Docs
         /// </summary>
-        [DataMember(Name = "docs", EmitDefaultValue = false)]
+        [DataMember(Name = "docs", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Docs { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpenseApplicationTemplates
         /// </summary>
-        [DataMember(Name = "expense_application_templates", EmitDefaultValue = false)]
+        [DataMember(Name = "expense_application_templates", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ExpenseApplicationTemplates { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpenseApplications
         /// </summary>
-        [DataMember(Name = "expense_applications", EmitDefaultValue = false)]
+        [DataMember(Name = "expense_applications", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ExpenseApplications { get; set; }
 
         /// <summary>
         /// Gets or Sets FixedAssets
         /// </summary>
-        [DataMember(Name = "fixed_assets", EmitDefaultValue = false)]
+        [DataMember(Name = "fixed_assets", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability FixedAssets { get; set; }
 
         /// <summary>
         /// Gets or Sets InventoryRefreshes
         /// </summary>
-        [DataMember(Name = "inventory_refreshes", EmitDefaultValue = false)]
+        [DataMember(Name = "inventory_refreshes", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability InventoryRefreshes { get; set; }
 
         /// <summary>
         /// Gets or Sets Invitations
         /// </summary>
-        [DataMember(Name = "invitations", EmitDefaultValue = false)]
+        [DataMember(Name = "invitations", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Invitations { get; set; }
 
         /// <summary>
         /// Gets or Sets Items
         /// </summary>
-        [DataMember(Name = "items", EmitDefaultValue = false)]
+        [DataMember(Name = "items", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Items { get; set; }
 
         /// <summary>
         /// Gets or Sets ManualJournalTemplates
         /// </summary>
-        [DataMember(Name = "manual_journal_templates", EmitDefaultValue = false)]
+        [DataMember(Name = "manual_journal_templates", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ManualJournalTemplates { get; set; }
 
         /// <summary>
         /// Gets or Sets ManualJournals
         /// </summary>
-        [DataMember(Name = "manual_journals", EmitDefaultValue = false)]
+        [DataMember(Name = "manual_journals", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ManualJournals { get; set; }
 
         /// <summary>
         /// Gets or Sets MonthEnd
         /// </summary>
-        [DataMember(Name = "month_end", EmitDefaultValue = false)]
+        [DataMember(Name = "month_end", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability MonthEnd { get; set; }
 
         /// <summary>
         /// Gets or Sets OauthApplications
         /// </summary>
-        [DataMember(Name = "oauth_applications", EmitDefaultValue = false)]
+        [DataMember(Name = "oauth_applications", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability OauthApplications { get; set; }
 
         /// <summary>
         /// Gets or Sets OauthAuthorizations
         /// </summary>
-        [DataMember(Name = "oauth_authorizations", EmitDefaultValue = false)]
+        [DataMember(Name = "oauth_authorizations", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability OauthAuthorizations { get; set; }
 
         /// <summary>
         /// Gets or Sets OpeningBalances
         /// </summary>
-        [DataMember(Name = "opening_balances", EmitDefaultValue = false)]
+        [DataMember(Name = "opening_balances", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability OpeningBalances { get; set; }
 
         /// <summary>
         /// Gets or Sets Partners
         /// </summary>
-        [DataMember(Name = "partners", EmitDefaultValue = false)]
+        [DataMember(Name = "partners", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Partners { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentRecords
         /// </summary>
-        [DataMember(Name = "payment_records", EmitDefaultValue = false)]
+        [DataMember(Name = "payment_records", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability PaymentRecords { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentRequests
         /// </summary>
-        [DataMember(Name = "payment_requests", EmitDefaultValue = false)]
+        [DataMember(Name = "payment_requests", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability PaymentRequests { get; set; }
 
         /// <summary>
         /// Gets or Sets ReceiptStreamEditor
         /// </summary>
-        [DataMember(Name = "receipt_stream_editor", EmitDefaultValue = false)]
+        [DataMember(Name = "receipt_stream_editor", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ReceiptStreamEditor { get; set; }
 
         /// <summary>
         /// Gets or Sets Receipts
         /// </summary>
-        [DataMember(Name = "receipts", EmitDefaultValue = false)]
+        [DataMember(Name = "receipts", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Receipts { get; set; }
 
         /// <summary>
         /// Gets or Sets Reports
         /// </summary>
-        [DataMember(Name = "reports", EmitDefaultValue = false)]
+        [DataMember(Name = "reports", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Reports { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsBs
         /// </summary>
-        [DataMember(Name = "reports_bs", EmitDefaultValue = false)]
+        [DataMember(Name = "reports_bs", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ReportsBs { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsCashBalance
         /// </summary>
-        [DataMember(Name = "reports_cash_balance", EmitDefaultValue = false)]
+        [DataMember(Name = "reports_cash_balance", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ReportsCashBalance { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsCrosstabs
         /// </summary>
-        [DataMember(Name = "reports_crosstabs", EmitDefaultValue = false)]
+        [DataMember(Name = "reports_crosstabs", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ReportsCrosstabs { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsGeneralLedgers
         /// </summary>
-        [DataMember(Name = "reports_general_ledgers", EmitDefaultValue = false)]
+        [DataMember(Name = "reports_general_ledgers", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ReportsGeneralLedgers { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsIncomeExpense
         /// </summary>
-        [DataMember(Name = "reports_income_expense", EmitDefaultValue = false)]
+        [DataMember(Name = "reports_income_expense", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ReportsIncomeExpense { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsJournals
         /// </summary>
-        [DataMember(Name = "reports_journals", EmitDefaultValue = false)]
+        [DataMember(Name = "reports_journals", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ReportsJournals { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsManagementsNavigation
         /// </summary>
-        [DataMember(Name = "reports_managements_navigation", EmitDefaultValue = false)]
+        [DataMember(Name = "reports_managements_navigation", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ReportsManagementsNavigation { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsManagementsPlanning
         /// </summary>
-        [DataMember(Name = "reports_managements_planning", EmitDefaultValue = false)]
+        [DataMember(Name = "reports_managements_planning", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ReportsManagementsPlanning { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsPayables
         /// </summary>
-        [DataMember(Name = "reports_payables", EmitDefaultValue = false)]
+        [DataMember(Name = "reports_payables", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ReportsPayables { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsPl
         /// </summary>
-        [DataMember(Name = "reports_pl", EmitDefaultValue = false)]
+        [DataMember(Name = "reports_pl", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ReportsPl { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsReceivables
         /// </summary>
-        [DataMember(Name = "reports_receivables", EmitDefaultValue = false)]
+        [DataMember(Name = "reports_receivables", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability ReportsReceivables { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestForms
         /// </summary>
-        [DataMember(Name = "request_forms", EmitDefaultValue = false)]
+        [DataMember(Name = "request_forms", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability RequestForms { get; set; }
 
         /// <summary>
         /// Gets or Sets Resets
         /// </summary>
-        [DataMember(Name = "resets", EmitDefaultValue = false)]
+        [DataMember(Name = "resets", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Resets { get; set; }
 
         /// <summary>
         /// Gets or Sets Sections
         /// </summary>
-        [DataMember(Name = "sections", EmitDefaultValue = false)]
+        [DataMember(Name = "sections", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Sections { get; set; }
 
         /// <summary>
         /// Gets or Sets SignInLogs
         /// </summary>
-        [DataMember(Name = "sign_in_logs", EmitDefaultValue = false)]
+        [DataMember(Name = "sign_in_logs", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability SignInLogs { get; set; }
 
         /// <summary>
         /// Gets or Sets Spreadsheets
         /// </summary>
-        [DataMember(Name = "spreadsheets", EmitDefaultValue = false)]
+        [DataMember(Name = "spreadsheets", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Spreadsheets { get; set; }
 
         /// <summary>
         /// Gets or Sets SystemConversion
         /// </summary>
-        [DataMember(Name = "system_conversion", EmitDefaultValue = false)]
+        [DataMember(Name = "system_conversion", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability SystemConversion { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxReports
         /// </summary>
-        [DataMember(Name = "tax_reports", EmitDefaultValue = false)]
+        [DataMember(Name = "tax_reports", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability TaxReports { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxReturn
         /// </summary>
-        [DataMember(Name = "tax_return", EmitDefaultValue = false)]
+        [DataMember(Name = "tax_return", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability TaxReturn { get; set; }
 
         /// <summary>
         /// Gets or Sets Taxes
         /// </summary>
-        [DataMember(Name = "taxes", EmitDefaultValue = false)]
+        [DataMember(Name = "taxes", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Taxes { get; set; }
 
         /// <summary>
         /// Gets or Sets Transfers
         /// </summary>
-        [DataMember(Name = "transfers", EmitDefaultValue = false)]
+        [DataMember(Name = "transfers", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Transfers { get; set; }
 
         /// <summary>
         /// Gets or Sets UserMatchers
         /// </summary>
-        [DataMember(Name = "user_matchers", EmitDefaultValue = false)]
+        [DataMember(Name = "user_matchers", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability UserMatchers { get; set; }
 
         /// <summary>
         /// Gets or Sets WalletTxns
         /// </summary>
-        [DataMember(Name = "wallet_txns", EmitDefaultValue = false)]
+        [DataMember(Name = "wallet_txns", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability WalletTxns { get; set; }
 
         /// <summary>
         /// Gets or Sets Walletables
         /// </summary>
-        [DataMember(Name = "walletables", EmitDefaultValue = false)]
+        [DataMember(Name = "walletables", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Walletables { get; set; }
 
         /// <summary>
         /// Gets or Sets Workflows
         /// </summary>
-        [DataMember(Name = "workflows", EmitDefaultValue = false)]
+        [DataMember(Name = "workflows", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability Workflows { get; set; }
 
         /// <summary>
         /// Gets or Sets YearEnd
         /// </summary>
-        [DataMember(Name = "year_end", EmitDefaultValue = false)]
+        [DataMember(Name = "year_end", IsRequired = true, EmitDefaultValue = false)]
         public UserCapability YearEnd { get; set; }
 
         /// <summary>
@@ -659,7 +660,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -67,14 +68,14 @@ namespace Freee.Accounting.Models
         /// 勘定科目ID
         /// </summary>
         /// <value>勘定科目ID</value>
-        [DataMember(Name = "account_item_id", EmitDefaultValue = false)]
+        [DataMember(Name = "account_item_id", IsRequired = true, EmitDefaultValue = false)]
         public int AccountItemId { get; set; }
 
         /// <summary>
         /// 取引金額（税込で指定してください）
         /// </summary>
         /// <value>取引金額（税込で指定してください）</value>
-        [DataMember(Name = "amount", EmitDefaultValue = false)]
+        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Freee.Accounting.Models
         /// 税区分コード
         /// </summary>
         /// <value>税区分コード</value>
-        [DataMember(Name = "tax_code", EmitDefaultValue = false)]
+        [DataMember(Name = "tax_code", IsRequired = true, EmitDefaultValue = false)]
         public int TaxCode { get; set; }
 
         /// <summary>
@@ -169,7 +170,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
