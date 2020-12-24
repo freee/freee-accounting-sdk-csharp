@@ -8,7 +8,7 @@ on:
       - edited
 
 env:
-  DOTNET_VERSION: 3.1.x
+  # DOTNET_VERSION: 3.1.x
   SCHEMA_URL_TEMP: https://raw.githubusercontent.com/dzeyelid/freee-api-schema/add-sdk-compatible-schema/_sdk_compatible/open-api-3/api-schema.yml
   KEEP_CURRENT_HEADER_SELECTOR: true
 
@@ -57,13 +57,13 @@ jobs:
         git add *.cs
         git commit -m "Generate SDK code for ${{ github.event.pull_request.title }}"
 
-    - name: Use .NET Core ${{ env.DOTNET_VERSION }}
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
+    # - name: Use .NET Core ${{ env.DOTNET_VERSION }}
+    #   uses: actions/setup-dotnet@v1
+    #   with:
+    #     dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: Build projects
-      run: dotnet build -c Release
+    # - name: Build projects
+    #   run: dotnet build -c Release
 
     - name: Push changes
       uses: ad-m/github-push-action@master
