@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -55,7 +54,7 @@ namespace Freee.Accounting.Models
         /// 貸借（貸方: credit, 借方: debit）
         /// </summary>
         /// <value>貸借（貸方: credit, 借方: debit）</value>
-        [DataMember(Name = "entry_side", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "entry_side", EmitDefaultValue = false)]
         public EntrySideEnum EntrySide { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ManualJournalCreateParamsDetails" /> class.
@@ -101,14 +100,14 @@ namespace Freee.Accounting.Models
         /// 勘定科目ID
         /// </summary>
         /// <value>勘定科目ID</value>
-        [DataMember(Name = "account_item_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "account_item_id", EmitDefaultValue = false)]
         public int AccountItemId { get; set; }
 
         /// <summary>
         /// 取引金額（税込で指定してください）
         /// </summary>
         /// <value>取引金額（税込で指定してください）</value>
-        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
@@ -178,7 +177,7 @@ namespace Freee.Accounting.Models
         /// 税区分コード
         /// </summary>
         /// <value>税区分コード</value>
-        [DataMember(Name = "tax_code", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "tax_code", EmitDefaultValue = false)]
         public int TaxCode { get; set; }
 
         /// <summary>
@@ -220,7 +219,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

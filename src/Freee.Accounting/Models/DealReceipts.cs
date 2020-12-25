@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -103,7 +102,7 @@ namespace Freee.Accounting.Models
         /// アップロード元種別
         /// </summary>
         /// <value>アップロード元種別</value>
-        [DataMember(Name = "origin", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "origin", EmitDefaultValue = false)]
         public OriginEnum Origin { get; set; }
         /// <summary>
         /// ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視)
@@ -142,7 +141,7 @@ namespace Freee.Accounting.Models
         /// ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視)
         /// </summary>
         /// <value>ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視)</value>
-        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DealReceipts" /> class.
@@ -182,7 +181,7 @@ namespace Freee.Accounting.Models
         /// 作成日時（ISO8601形式）
         /// </summary>
         /// <value>作成日時（ISO8601形式）</value>
-        [DataMember(Name = "created_at", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public string CreatedAt { get; set; }
 
         /// <summary>
@@ -196,14 +195,14 @@ namespace Freee.Accounting.Models
         /// ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。）
         /// </summary>
         /// <value>ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。）</value>
-        [DataMember(Name = "file_src", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "file_src", EmitDefaultValue = false)]
         public string FileSrc { get; set; }
 
         /// <summary>
         /// 証憑ID
         /// </summary>
         /// <value>証憑ID</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
@@ -217,13 +216,13 @@ namespace Freee.Accounting.Models
         /// MIMEタイプ
         /// </summary>
         /// <value>MIMEタイプ</value>
-        [DataMember(Name = "mime_type", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "mime_type", EmitDefaultValue = false)]
         public string MimeType { get; set; }
 
         /// <summary>
         /// Gets or Sets User
         /// </summary>
-        [DataMember(Name = "user", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "user", EmitDefaultValue = false)]
         public DealUser User { get; set; }
 
         /// <summary>
@@ -253,7 +252,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

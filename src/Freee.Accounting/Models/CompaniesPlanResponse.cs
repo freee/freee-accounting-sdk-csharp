@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -55,7 +54,7 @@ namespace Freee.Accounting.Models
         /// 事業形態（個人事業主: personal、法人: corporate）
         /// </summary>
         /// <value>事業形態（個人事業主: personal、法人: corporate）</value>
-        [DataMember(Name = "org_code", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "org_code", EmitDefaultValue = false)]
         public OrgCodeEnum OrgCode { get; set; }
         /// <summary>
         /// 会計プラン 個人用(non_charged: 無料プラン、starter: スターター、standard: スタンダード、premium: プレミアム) 法人用(non_charged: 無料プラン、minimum: ミニマム、basic: ベーシック、professional: プロフェッショナル、enterprise: エンタープライズ)
@@ -118,7 +117,7 @@ namespace Freee.Accounting.Models
         /// 会計プラン 個人用(non_charged: 無料プラン、starter: スターター、standard: スタンダード、premium: プレミアム) 法人用(non_charged: 無料プラン、minimum: ミニマム、basic: ベーシック、professional: プロフェッショナル、enterprise: エンタープライズ)
         /// </summary>
         /// <value>会計プラン 個人用(non_charged: 無料プラン、starter: スターター、standard: スタンダード、premium: プレミアム) 法人用(non_charged: 無料プラン、minimum: ミニマム、basic: ベーシック、professional: プロフェッショナル、enterprise: エンタープライズ)</value>
-        [DataMember(Name = "plan", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "plan", EmitDefaultValue = false)]
         public PlanEnum Plan { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CompaniesPlanResponse" /> class.
@@ -142,7 +141,7 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
@@ -166,7 +165,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -85,7 +84,7 @@ namespace Freee.Accounting.Models
         /// 承認方法( predefined_user: メンバー指定 (1人), selected_user: 申請時にメンバー指定,unspecified: 指定なし, and_resource: メンバー指定 (複数、全員の承認), or_resource: メンバー指定 (複数、1人の承認), and_position: 役職指定 (複数、全員の承認), or_position: 役職指定 (複数、1人の承認) ) 
         /// </summary>
         /// <value>承認方法( predefined_user: メンバー指定 (1人), selected_user: 申請時にメンバー指定,unspecified: 指定なし, and_resource: メンバー指定 (複数、全員の承認), or_resource: メンバー指定 (複数、1人の承認), and_position: 役職指定 (複数、全員の承認), or_position: 役職指定 (複数、1人の承認) ) </value>
-        [DataMember(Name = "resource_type", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "resource_type", EmitDefaultValue = false)]
         public ResourceTypeEnum ResourceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalFlowRouteResponseApprovalFlowRouteSteps" /> class.
@@ -112,14 +111,14 @@ namespace Freee.Accounting.Models
         /// 承認ステップID
         /// </summary>
         /// <value>承認ステップID</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 次の承認ステップID
         /// </summary>
         /// <value>次の承認ステップID</value>
-        [DataMember(Name = "next_step_id", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "next_step_id", EmitDefaultValue = true)]
         public int? NextStepId { get; set; }
 
         /// <summary>
@@ -151,7 +150,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

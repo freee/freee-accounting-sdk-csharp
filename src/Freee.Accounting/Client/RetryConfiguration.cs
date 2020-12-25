@@ -1,4 +1,4 @@
-using Polly;
+using Polly.Retry;
 using RestSharp;
 
 namespace Freee.Accounting.Client
@@ -11,11 +11,11 @@ namespace Freee.Accounting.Client
         /// <summary>
         /// Retry policy
         /// </summary>
-        public static Policy<IRestResponse> RetryPolicy { get; set; }
+        public static RetryPolicy<IRestResponse> RetryPolicy { get; set; }
 
         /// <summary>
         /// Async retry policy
         /// </summary>
-        public static AsyncPolicy<IRestResponse> AsyncRetryPolicy { get; set; }
+        public static AsyncRetryPolicy<IRestResponse> AsyncRetryPolicy { get; set; }
     }
 }

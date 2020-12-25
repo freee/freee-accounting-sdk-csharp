@@ -9,68 +9,162 @@
 
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Converters;
+using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
 {
     /// <summary>
-    ///  Abstract base class for oneOf, anyOf schemas in the OpenAPI specification
+    /// ReceiptCreateParams
     /// </summary>
-    public abstract partial class AbstractOpenAPISchema
+    [DataContract(Name = "receiptCreateParams")]
+    public partial class ReceiptCreateParams : IEquatable<ReceiptCreateParams>
     {
         /// <summary>
-        ///  Custom JSON serializer
+        /// Initializes a new instance of the <see cref="ReceiptCreateParams" /> class.
         /// </summary>
-        static public readonly JsonSerializerSettings SerializerSettings = new JsonSerializerSettings
+        [JsonConstructorAttribute]
+        protected ReceiptCreateParams() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReceiptCreateParams" /> class.
+        /// </summary>
+        /// <param name="companyId">事業所ID (required).</param>
+        /// <param name="description">メモ (255文字以内).</param>
+        /// <param name="issueDate">取引日 (yyyy-mm-dd).</param>
+        /// <param name="receipt">証憑ファイル (required).</param>
+        public ReceiptCreateParams(int companyId = default(int), string description = default(string), string issueDate = default(string), System.IO.Stream receipt = default(System.IO.Stream))
         {
-            // OpenAPI generated types generally hide default constructors.
-            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-            MissingMemberHandling = MissingMemberHandling.Error,
-            ContractResolver = new DefaultContractResolver
-            {
-                NamingStrategy = new CamelCaseNamingStrategy
-                {
-                    OverrideSpecifiedNames = false
-                }
-            }
-        };
+            this.CompanyId = companyId;
+            // to ensure "receipt" is required (not null)
+            this.Receipt = receipt ?? throw new ArgumentNullException("receipt is a required property for ReceiptCreateParams and cannot be null");
+            this.Description = description;
+            this.IssueDate = issueDate;
+        }
 
         /// <summary>
-        ///  Custom JSON serializer for objects with additional properties
+        /// 事業所ID
         /// </summary>
-        static public readonly JsonSerializerSettings AdditionalPropertiesSerializerSettings = new JsonSerializerSettings
+        /// <value>事業所ID</value>
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        public int CompanyId { get; set; }
+
+        /// <summary>
+        /// メモ (255文字以内)
+        /// </summary>
+        /// <value>メモ (255文字以内)</value>
+        [DataMember(Name = "description", EmitDefaultValue = false)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 取引日 (yyyy-mm-dd)
+        /// </summary>
+        /// <value>取引日 (yyyy-mm-dd)</value>
+        [DataMember(Name = "issue_date", EmitDefaultValue = false)]
+        public string IssueDate { get; set; }
+
+        /// <summary>
+        /// 証憑ファイル
+        /// </summary>
+        /// <value>証憑ファイル</value>
+        [DataMember(Name = "receipt", EmitDefaultValue = false)]
+        public System.IO.Stream Receipt { get; set; }
+
+        /// <summary>
+        /// Returns the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()
         {
-            // OpenAPI generated types generally hide default constructors.
-            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-            MissingMemberHandling = MissingMemberHandling.Ignore,
-            ContractResolver = new DefaultContractResolver
+            var sb = new StringBuilder();
+            sb.Append("class ReceiptCreateParams {\n");
+            sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  IssueDate: ").Append(IssueDate).Append("\n");
+            sb.Append("  Receipt: ").Append(Receipt).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns the JSON string presentation of the object
+        /// </summary>
+        /// <returns>JSON string presentation of the object</returns>
+        public virtual string ToJson()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ReceiptCreateParams);
+        }
+
+        /// <summary>
+        /// Returns true if ReceiptCreateParams instances are equal
+        /// </summary>
+        /// <param name="input">Instance of ReceiptCreateParams to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(ReceiptCreateParams input)
+        {
+            if (input == null)
+                return false;
+
+            return 
+                (
+                    this.CompanyId == input.CompanyId ||
+                    this.CompanyId.Equals(input.CompanyId)
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.IssueDate == input.IssueDate ||
+                    (this.IssueDate != null &&
+                    this.IssueDate.Equals(input.IssueDate))
+                ) && 
+                (
+                    this.Receipt == input.Receipt ||
+                    (this.Receipt != null &&
+                    this.Receipt.Equals(input.Receipt))
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
             {
-                NamingStrategy = new CamelCaseNamingStrategy
-                {
-                    OverrideSpecifiedNames = false
-                }
+                int hashCode = 41;
+                hashCode = hashCode * 59 + this.CompanyId.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.IssueDate != null)
+                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.Receipt != null)
+                    hashCode = hashCode * 59 + this.Receipt.GetHashCode();
+                return hashCode;
             }
-        };
+        }
 
-        /// <summary>
-        /// Gets or Sets the actual instance
-        /// </summary>
-        public abstract Object ActualInstance { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsNullable to indicate whether the instance is nullable
-        /// </summary>
-        public bool IsNullable { get; protected set; }
-
-        /// <summary>
-        /// Gets or Sets the schema type, which can be either `oneOf` or `anyOf`
-        /// </summary>
-        public string SchemaType { get; protected set; }
-
-        /// <summary>
-        /// Converts the instance into JSON string.
-        /// </summary>
-        public abstract string ToJson();
     }
+
 }

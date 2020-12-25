@@ -13,7 +13,6 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -56,6 +55,7 @@ namespace Freee.Accounting.Client
                     string.Format("Error calling {0}: {1}", methodName, response.RawContent),
                     response.RawContent, response.Headers);
             }
+            
             return null;
         };
 
@@ -85,11 +85,6 @@ namespace Freee.Accounting.Client
         private string _dateTimeFormat = ISO8601_DATETIME_FORMAT;
         private string _tempFolderPath = Path.GetTempPath();
 
-        /// <summary>
-        /// Gets or sets the servers defined in the OpenAPI spec.
-        /// </summary>
-        /// <value>The servers</value>
-        private IList<IReadOnlyDictionary<string, object>> _servers;
         #endregion Private Members
 
         #region Constructors
@@ -100,21 +95,11 @@ namespace Freee.Accounting.Client
         [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration()
         {
-            Proxy = null;
             UserAgent = "OpenAPI-Generator/1.0.0/csharp";
             BasePath = "https://api.freee.co.jp";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
-            Servers = new List<IReadOnlyDictionary<string, object>>()
-            {
-                {
-                    new Dictionary<string, object> {
-                        {"url", "https://api.freee.co.jp"},
-                        {"description", "No description provided"},
-                    }
-                }
-            };
 
             // Setting Timeout has side effects (forces ApiClient creation).
             Timeout = 100000;
@@ -194,12 +179,6 @@ namespace Freee.Accounting.Client
         /// Gets or sets the HTTP timeout (milliseconds) of ApiClient. Default to 100000 milliseconds.
         /// </summary>
         public virtual int Timeout { get; set; }
-
-        /// <summary>
-        /// Gets or sets the proxy
-        /// </summary>
-        /// <value>Proxy.</value>
-        public virtual WebProxy Proxy { get; set; }
 
         /// <summary>
         /// Gets or sets the HTTP user agent.
@@ -357,82 +336,6 @@ namespace Freee.Accounting.Client
             }
         }
 
-        /// <summary>
-        /// Gets or sets the servers.
-        /// </summary>
-        /// <value>The servers.</value>
-        public virtual IList<IReadOnlyDictionary<string, object>> Servers
-        {
-            get { return _servers; }
-            set
-            {
-                if (value == null)
-                {
-                    throw new InvalidOperationException("Servers may not be null.");
-                }
-                _servers = value;
-            }
-        }
-
-        /// <summary>
-        /// Returns URL based on server settings without providing values
-        /// for the variables
-        /// </summary>
-        /// <param name="index">Array index of the server settings.</param>
-        /// <return>The server URL.</return>
-        public string GetServerUrl(int index)
-        {
-            return GetServerUrl(index, null);
-        }
-
-        /// <summary>
-        /// Returns URL based on server settings.
-        /// </summary>
-        /// <param name="index">Array index of the server settings.</param>
-        /// <param name="inputVariables">Dictionary of the variables and the corresponding values.</param>
-        /// <return>The server URL.</return>
-        public string GetServerUrl(int index, Dictionary<string, string> inputVariables)
-        {
-            if (index < 0 || index >= Servers.Count)
-            {
-                throw new InvalidOperationException($"Invalid index {index} when selecting the server. Must be less than {Servers.Count}.");
-            }
-
-            if (inputVariables == null)
-            {
-                inputVariables = new Dictionary<string, string>();
-            }
-
-            IReadOnlyDictionary<string, object> server = Servers[index];
-            string url = (string)server["url"];
-
-            // go through variable and assign a value
-            foreach (KeyValuePair<string, object> variable in (IReadOnlyDictionary<string, object>)server["variables"])
-            {
-
-                IReadOnlyDictionary<string, object> serverVariables = (IReadOnlyDictionary<string, object>)(variable.Value);
-
-                if (inputVariables.ContainsKey(variable.Key))
-                {
-                    if (((List<string>)serverVariables["enum_values"]).Contains(inputVariables[variable.Key]))
-                    {
-                        url = url.Replace("{" + variable.Key + "}", inputVariables[variable.Key]);
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException($"The variable `{variable.Key}` in the server URL has invalid value #{inputVariables[variable.Key]}. Must be {(List<string>)serverVariables["enum_values"]}");
-                    }
-                }
-                else
-                {
-                    // use defualt value
-                    url = url.Replace("{" + variable.Key + "}", (string)serverVariables["default_value"]);
-                }
-            }
-
-            return url;
-        }
-
         #endregion Properties
 
         #region Methods
@@ -443,8 +346,7 @@ namespace Freee.Accounting.Client
         public static String ToDebugReport()
         {
             String report = "C# SDK (Freee.Accounting) Debug Report:\n";
-            report += "    OS: " + System.Environment.OSVersion + "\n";
-            report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
+            report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
             report += "    Version of the API: v1.0\n";
             report += "    SDK Package Version: 1.0.0\n";
 
@@ -500,7 +402,6 @@ namespace Freee.Accounting.Client
                 DefaultHeaders = defaultHeaders,
                 BasePath = second.BasePath ?? first.BasePath,
                 Timeout = second.Timeout,
-                Proxy = second.Proxy ?? first.Proxy,
                 UserAgent = second.UserAgent ?? first.UserAgent,
                 Username = second.Username ?? first.Username,
                 Password = second.Password ?? first.Password,

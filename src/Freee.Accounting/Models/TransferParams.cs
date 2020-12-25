@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -61,7 +60,7 @@ namespace Freee.Accounting.Models
         /// 振替元口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
         /// </summary>
         /// <value>振替元口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)</value>
-        [DataMember(Name = "from_walletable_type", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "from_walletable_type", EmitDefaultValue = false)]
         public FromWalletableTypeEnum FromWalletableType { get; set; }
         /// <summary>
         /// 振替先口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
@@ -94,7 +93,7 @@ namespace Freee.Accounting.Models
         /// 振替先口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
         /// </summary>
         /// <value>振替先口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)</value>
-        [DataMember(Name = "to_walletable_type", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "to_walletable_type", EmitDefaultValue = false)]
         public ToWalletableTypeEnum ToWalletableType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferParams" /> class.
@@ -129,21 +128,21 @@ namespace Freee.Accounting.Models
         /// 金額
         /// </summary>
         /// <value>金額</value>
-        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 振替日 (yyyy-mm-dd)
         /// </summary>
         /// <value>振替日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "date", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "date", EmitDefaultValue = false)]
         public string Date { get; set; }
 
         /// <summary>
@@ -157,14 +156,14 @@ namespace Freee.Accounting.Models
         /// 振替元口座ID
         /// </summary>
         /// <value>振替元口座ID</value>
-        [DataMember(Name = "from_walletable_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "from_walletable_id", EmitDefaultValue = false)]
         public int FromWalletableId { get; set; }
 
         /// <summary>
         /// 振替先口座ID
         /// </summary>
         /// <value>振替先口座ID</value>
-        [DataMember(Name = "to_walletable_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "to_walletable_id", EmitDefaultValue = false)]
         public int ToWalletableId { get; set; }
 
         /// <summary>
@@ -193,7 +192,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

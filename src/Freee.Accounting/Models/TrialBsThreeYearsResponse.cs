@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -50,14 +49,14 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets TrialBsThreeYears
         /// </summary>
-        [DataMember(Name = "trial_bs_three_years", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "trial_bs_three_years", EmitDefaultValue = false)]
         public TrialBsThreeYearsResponseTrialBsThreeYears TrialBsThreeYears { get; set; }
 
         /// <summary>
         /// 集計結果が最新かどうか
         /// </summary>
         /// <value>集計結果が最新かどうか</value>
-        [DataMember(Name = "up_to_date", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "up_to_date", EmitDefaultValue = false)]
         public bool UpToDate { get; set; }
 
         /// <summary>
@@ -80,7 +79,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

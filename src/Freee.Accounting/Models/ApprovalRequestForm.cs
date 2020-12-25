@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -61,7 +60,7 @@ namespace Freee.Accounting.Models
         /// ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み)
         /// </summary>
         /// <value>ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み)</value>
-        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestForm" /> class.
@@ -101,42 +100,42 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 作成日時
         /// </summary>
         /// <value>作成日時</value>
-        [DataMember(Name = "created_date", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "created_date", EmitDefaultValue = false)]
         public string CreatedDate { get; set; }
 
         /// <summary>
         /// 申請フォームの説明
         /// </summary>
         /// <value>申請フォームの説明</value>
-        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// 表示順（申請者が選択する申請フォームの表示順を設定できます。小さい数ほど上位に表示されます。（0を除く整数のみ。マイナス不可）未入力の場合、表示順が後ろになります。同じ数字が入力された場合、登録順で表示されます。）
         /// </summary>
         /// <value>表示順（申請者が選択する申請フォームの表示順を設定できます。小さい数ほど上位に表示されます。（0を除く整数のみ。マイナス不可）未入力の場合、表示順が後ろになります。同じ数字が入力された場合、登録順で表示されます。）</value>
-        [DataMember(Name = "form_order", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "form_order", EmitDefaultValue = true)]
         public int? FormOrder { get; set; }
 
         /// <summary>
         /// 申請フォームID
         /// </summary>
         /// <value>申請フォームID</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 申請フォームの名前
         /// </summary>
         /// <value>申請フォームの名前</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -150,7 +149,7 @@ namespace Freee.Accounting.Models
         /// 適用された経路数
         /// </summary>
         /// <value>適用された経路数</value>
-        [DataMember(Name = "route_setting_count", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "route_setting_count", EmitDefaultValue = false)]
         public int RouteSettingCount { get; set; }
 
         /// <summary>
@@ -180,7 +179,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -55,7 +54,7 @@ namespace Freee.Accounting.Models
         /// 設定されている上限値
         /// </summary>
         /// <value>設定されている上限値</value>
-        [DataMember(Name = "limit", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "limit", EmitDefaultValue = false)]
         public int Limit { get; set; }
 
         /// <summary>
@@ -69,14 +68,14 @@ namespace Freee.Accounting.Models
         /// 上限に達するまでの使用可能回数
         /// </summary>
         /// <value>上限に達するまでの使用可能回数</value>
-        [DataMember(Name = "remaining", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "remaining", EmitDefaultValue = false)]
         public int Remaining { get; set; }
 
         /// <summary>
         /// （上限値に達した場合）使用回数がリセットされる時刻
         /// </summary>
         /// <value>（上限値に達した場合）使用回数がリセットされる時刻</value>
-        [DataMember(Name = "reset", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "reset", EmitDefaultValue = false)]
         public string Reset { get; set; }
 
         /// <summary>
@@ -101,7 +100,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

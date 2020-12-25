@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -91,7 +90,7 @@ namespace Freee.Accounting.Models
         /// 請求書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;carried_forward_standard_classic&#x60; - レイアウト３（繰越金額欄あり）/クラシック  * &#x60;carried_forward_envelope_classic&#x60; - 封筒２（繰越金額欄あり）/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン
         /// </summary>
         /// <value>請求書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;carried_forward_standard_classic&#x60; - レイアウト３（繰越金額欄あり）/クラシック  * &#x60;carried_forward_envelope_classic&#x60; - 封筒２（繰越金額欄あり）/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン</value>
-        [DataMember(Name = "invoice_layout", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "invoice_layout", EmitDefaultValue = false)]
         public InvoiceLayoutEnum InvoiceLayout { get; set; }
         /// <summary>
         /// 請求書ステータス  (draft: 下書き, applying: 申請中, remanded: 差し戻し, rejected: 却下, approved: 承認済み, submitted: 送付済み, unsubmitted: 請求書の承認フローが無効の場合のみ、unsubmitted（送付待ち）の値をとります)
@@ -148,7 +147,7 @@ namespace Freee.Accounting.Models
         /// 請求書ステータス  (draft: 下書き, applying: 申請中, remanded: 差し戻し, rejected: 却下, approved: 承認済み, submitted: 送付済み, unsubmitted: 請求書の承認フローが無効の場合のみ、unsubmitted（送付待ち）の値をとります)
         /// </summary>
         /// <value>請求書ステータス  (draft: 下書き, applying: 申請中, remanded: 差し戻し, rejected: 却下, approved: 承認済み, submitted: 送付済み, unsubmitted: 請求書の承認フローが無効の場合のみ、unsubmitted（送付待ち）の値をとります)</value>
-        [DataMember(Name = "invoice_status", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "invoice_status", EmitDefaultValue = false)]
         public InvoiceStatusEnum InvoiceStatus { get; set; }
         /// <summary>
         /// 入金ステータス  (unsettled: 入金待ち, settled: 入金済み)
@@ -214,7 +213,7 @@ namespace Freee.Accounting.Models
         /// 支払方法 (振込: transfer, 引き落とし: direct_debit)
         /// </summary>
         /// <value>支払方法 (振込: transfer, 引き落とし: direct_debit)</value>
-        [DataMember(Name = "payment_type", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "payment_type", EmitDefaultValue = false)]
         public PaymentTypeEnum PaymentType { get; set; }
         /// <summary>
         /// 郵送ステータス(unrequested: リクエスト前, preview_registered: プレビュー登録, preview_failed: プレビュー登録失敗, ordered: 注文中, order_failed: 注文失敗, printing: 印刷中, canceled: キャンセル, posted: 投函済み)
@@ -283,7 +282,7 @@ namespace Freee.Accounting.Models
         /// 郵送ステータス(unrequested: リクエスト前, preview_registered: プレビュー登録, preview_failed: プレビュー登録失敗, ordered: 注文中, order_failed: 注文失敗, printing: 印刷中, canceled: キャンセル, posted: 投函済み)
         /// </summary>
         /// <value>郵送ステータス(unrequested: リクエスト前, preview_registered: プレビュー登録, preview_failed: プレビュー登録失敗, ordered: 注文中, order_failed: 注文失敗, printing: 印刷中, canceled: キャンセル, posted: 投函済み)</value>
-        [DataMember(Name = "posting_status", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "posting_status", EmitDefaultValue = false)]
         public PostingStatusEnum PostingStatus { get; set; }
         /// <summary>
         /// 請求書の消費税計算方法(inclusive: 内税, exclusive: 外税)
@@ -316,7 +315,7 @@ namespace Freee.Accounting.Models
         /// 請求書の消費税計算方法(inclusive: 内税, exclusive: 外税)
         /// </summary>
         /// <value>請求書の消費税計算方法(inclusive: 内税, exclusive: 外税)</value>
-        [DataMember(Name = "tax_entry_method", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "tax_entry_method", EmitDefaultValue = false)]
         public TaxEntryMethodEnum TaxEntryMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Invoice" /> class.
@@ -459,14 +458,14 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 事業所名
         /// </summary>
         /// <value>事業所名</value>
-        [DataMember(Name = "company_name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "company_name", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
         /// <summary>
@@ -515,7 +514,7 @@ namespace Freee.Accounting.Models
         /// 請求書ID
         /// </summary>
         /// <value>請求書ID</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
@@ -529,14 +528,14 @@ namespace Freee.Accounting.Models
         /// 請求書番号
         /// </summary>
         /// <value>請求書番号</value>
-        [DataMember(Name = "invoice_number", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "invoice_number", EmitDefaultValue = false)]
         public string InvoiceNumber { get; set; }
 
         /// <summary>
         /// 請求日 (yyyy-mm-dd)
         /// </summary>
         /// <value>請求日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "issue_date", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "issue_date", EmitDefaultValue = false)]
         public string IssueDate { get; set; }
 
         /// <summary>
@@ -599,7 +598,7 @@ namespace Freee.Accounting.Models
         /// 取引先ID
         /// </summary>
         /// <value>取引先ID</value>
-        [DataMember(Name = "partner_id", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "partner_id", EmitDefaultValue = true)]
         public int? PartnerId { get; set; }
 
         /// <summary>
@@ -669,13 +668,13 @@ namespace Freee.Accounting.Models
         /// 合計金額
         /// </summary>
         /// <value>合計金額</value>
-        [DataMember(Name = "total_amount", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "total_amount", EmitDefaultValue = false)]
         public int TotalAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalAmountPerVatRate
         /// </summary>
-        [DataMember(Name = "total_amount_per_vat_rate", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "total_amount_per_vat_rate", EmitDefaultValue = false)]
         public InvoiceTotalAmountPerVatRate TotalAmountPerVatRate { get; set; }
 
         /// <summary>
@@ -770,7 +769,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

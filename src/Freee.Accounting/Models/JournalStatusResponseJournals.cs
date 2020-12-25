@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -61,7 +60,7 @@ namespace Freee.Accounting.Models
         /// ダウンロード形式
         /// </summary>
         /// <value>ダウンロード形式</value>
-        [DataMember(Name = "download_type", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "download_type", EmitDefaultValue = false)]
         public DownloadTypeEnum DownloadType { get; set; }
         /// <summary>
         /// 事業所ID
@@ -100,7 +99,7 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// 補助科目やコメントとして出力する項目
@@ -211,7 +210,7 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
@@ -225,21 +224,21 @@ namespace Freee.Accounting.Models
         /// 取得終了日 (yyyy-mm-dd)
         /// </summary>
         /// <value>取得終了日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "end_date", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "end_date", EmitDefaultValue = false)]
         public string EndDate { get; set; }
 
         /// <summary>
         /// 受け付けID
         /// </summary>
         /// <value>受け付けID</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 取得開始日 (yyyy-mm-dd)
         /// </summary>
         /// <value>取得開始日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "start_date", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "start_date", EmitDefaultValue = false)]
         public string StartDate { get; set; }
 
         /// <summary>
@@ -268,7 +267,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

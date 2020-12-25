@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -67,7 +66,7 @@ namespace Freee.Accounting.Models
         /// 税区分の表示カテゴリ（tax_5: 5%表示の税区分、tax_8: 8%表示の税区分、tax_r8: 軽減税率8%表示の税区分、tax_10: 10%表示の税区分、null: 税率未設定税区分）
         /// </summary>
         /// <value>税区分の表示カテゴリ（tax_5: 5%表示の税区分、tax_8: 8%表示の税区分、tax_r8: 軽減税率8%表示の税区分、tax_10: 10%表示の税区分、null: 税率未設定税区分）</value>
-        [DataMember(Name = "display_category", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "display_category", EmitDefaultValue = true)]
         public DisplayCategoryEnum DisplayCategory { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20013Taxes" /> class.
@@ -97,28 +96,28 @@ namespace Freee.Accounting.Models
         /// true: 使用する、false: 使用しない
         /// </summary>
         /// <value>true: 使用する、false: 使用しない</value>
-        [DataMember(Name = "available", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "available", EmitDefaultValue = false)]
         public bool Available { get; set; }
 
         /// <summary>
         /// 税区分コード
         /// </summary>
         /// <value>税区分コード</value>
-        [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public int Code { get; set; }
 
         /// <summary>
         /// 税区分名
         /// </summary>
         /// <value>税区分名</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// 税区分名（日本語表示用）
         /// </summary>
         /// <value>税区分名（日本語表示用）</value>
-        [DataMember(Name = "name_ja", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name_ja", EmitDefaultValue = false)]
         public string NameJa { get; set; }
 
         /// <summary>
@@ -144,7 +143,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

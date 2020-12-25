@@ -15,7 +15,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters;
 using System.Text;
@@ -47,7 +46,7 @@ namespace Freee.Accounting.Client
             {
                 NamingStrategy = new CamelCaseNamingStrategy
                 {
-                    OverrideSpecifiedNames = false
+                    OverrideSpecifiedNames = true
                 }
             }
         };
@@ -63,22 +62,10 @@ namespace Freee.Accounting.Client
             _configuration = configuration;
         }
 
-        /// <summary>
-        /// Serialize the object into a JSON string.
-        /// </summary>
-        /// <param name="obj">Object to be serialized.</param>
-        /// <returns>A JSON string.</returns>
         public string Serialize(object obj)
         {
-            if (obj != null && obj is Freee.Accounting.Model.AbstractOpenAPISchema)
-            {
-                // the object to be serialized is an oneOf/anyOf schema
-                return ((Freee.Accounting.Model.AbstractOpenAPISchema)obj).ToJson();
-            }
-            else
-            {
-                return JsonConvert.SerializeObject(obj, _serializerSettings);
-            }
+            var result = JsonConvert.SerializeObject(obj, _serializerSettings);
+            return result;
         }
 
         public T Deserialize<T>(IRestResponse response)
@@ -163,23 +150,6 @@ namespace Freee.Accounting.Client
     public partial class ApiClient : ISynchronousClient, IAsynchronousClient
     {
         private readonly String _baseUrl;
-
-        /// <summary>
-        /// Specifies the settings on a <see cref="JsonSerializer" /> object. 
-        /// These settings can be adjusted to accomodate custom serialization rules.
-        /// </summary>
-        public JsonSerializerSettings SerializerSettings { get; set; } = new JsonSerializerSettings
-        {
-            // OpenAPI generated types generally hide default constructors.
-            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-            ContractResolver = new DefaultContractResolver
-            {
-                NamingStrategy = new CamelCaseNamingStrategy
-                {
-                    OverrideSpecifiedNames = false
-                }
-            }
-        };
 
         /// <summary>
         /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
@@ -279,7 +249,7 @@ namespace Freee.Accounting.Client
             RestRequest request = new RestRequest(Method(method))
             {
                 Resource = path,
-                JsonSerializer = new CustomJsonCodec(SerializerSettings, configuration)
+                JsonSerializer = new CustomJsonCodec(configuration)
             };
 
             if (options.PathParameters != null)
@@ -427,7 +397,7 @@ namespace Freee.Accounting.Client
             }
             else
             {
-                var customDeserializer = new CustomJsonCodec(SerializerSettings, configuration);
+                var customDeserializer = new CustomJsonCodec(configuration);
                 client.AddHandler("application/json", () => customDeserializer);
                 client.AddHandler("text/json", () => customDeserializer);
                 client.AddHandler("text/x-json", () => customDeserializer);
@@ -443,11 +413,6 @@ namespace Freee.Accounting.Client
 
             client.Timeout = configuration.Timeout;
 
-            if (configuration.Proxy != null)
-            {
-                client.Proxy = configuration.Proxy;
-            }
-
             if (configuration.UserAgent != null)
             {
                 client.UserAgent = configuration.UserAgent;
@@ -461,7 +426,7 @@ namespace Freee.Accounting.Client
             InterceptRequest(req);
 
             IRestResponse<T> response;
-            if (RetryConfiguration.RetryPolicy != null)
+            if (RetryConfiguration.RetryPolicy != null)	
             {
                 var policy = RetryConfiguration.RetryPolicy;
                 var policyResult = policy.ExecuteAndCapture(() => client.Execute(req));
@@ -529,7 +494,7 @@ namespace Freee.Accounting.Client
             }
             else
             {
-                var customDeserializer = new CustomJsonCodec(SerializerSettings, configuration);
+                var customDeserializer = new CustomJsonCodec(configuration);
                 client.AddHandler("application/json", () => customDeserializer);
                 client.AddHandler("text/json", () => customDeserializer);
                 client.AddHandler("text/x-json", () => customDeserializer);
@@ -544,11 +509,6 @@ namespace Freee.Accounting.Client
             client.AddHandler("*", () => xmlDeserializer);
 
             client.Timeout = configuration.Timeout;
-
-            if (configuration.Proxy != null)
-            {
-                client.Proxy = configuration.Proxy;
-            }
 
             if (configuration.UserAgent != null)
             {
@@ -575,16 +535,7 @@ namespace Freee.Accounting.Client
             }
             else
             {
-                response = await client.ExecuteAsync<T>(req, cancellationToken).ConfigureAwait(false);
-            }
-
-            // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-            if (typeof(Freee.Accounting.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
-            {
-                T instance = (T)Activator.CreateInstance(typeof(T));
-                MethodInfo method = typeof(T).GetMethod("FromJson");
-                method.Invoke(instance, new object[] { response.Content });
-                response.Data = instance;
+                 response = await client.ExecuteAsync<T>(req, cancellationToken).ConfigureAwait(false);
             }
 
             InterceptResponse(req, response);

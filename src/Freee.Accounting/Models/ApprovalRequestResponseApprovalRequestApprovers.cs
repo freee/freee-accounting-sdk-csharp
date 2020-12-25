@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -85,7 +84,7 @@ namespace Freee.Accounting.Models
         /// 承認ステップの承認方法 * &#x60; predefined_user&#x60; - メンバー指定 (1人), * &#x60; selected_user&#x60; - 申請時にメンバー指定 * &#x60; unspecified&#x60; - 指定なし * &#x60; and_resource&#x60; - メンバー指定 (複数、全員の承認), * &#x60; or_resource&#x60; - メンバー指定 (複数、1人の承認) * &#x60; and_position&#x60; - 役職指定 (複数、全員の承認) * &#x60; or_position&#x60; - 役職指定 (複数、1人の承認)
         /// </summary>
         /// <value>承認ステップの承認方法 * &#x60; predefined_user&#x60; - メンバー指定 (1人), * &#x60; selected_user&#x60; - 申請時にメンバー指定 * &#x60; unspecified&#x60; - 指定なし * &#x60; and_resource&#x60; - メンバー指定 (複数、全員の承認), * &#x60; or_resource&#x60; - メンバー指定 (複数、1人の承認) * &#x60; and_position&#x60; - 役職指定 (複数、全員の承認) * &#x60; or_position&#x60; - 役職指定 (複数、1人の承認)</value>
-        [DataMember(Name = "resource_type", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "resource_type", EmitDefaultValue = false)]
         public ResourceTypeEnum ResourceType { get; set; }
         /// <summary>
         /// 承認者の承認状態 * &#x60;initial&#x60; - 初期状態 * &#x60;approved&#x60; - 承認済 * &#x60;rejected&#x60; - 却下 * &#x60;feedback&#x60; - 差戻し
@@ -124,7 +123,7 @@ namespace Freee.Accounting.Models
         /// 承認者の承認状態 * &#x60;initial&#x60; - 初期状態 * &#x60;approved&#x60; - 承認済 * &#x60;rejected&#x60; - 却下 * &#x60;feedback&#x60; - 差戻し
         /// </summary>
         /// <value>承認者の承認状態 * &#x60;initial&#x60; - 初期状態 * &#x60;approved&#x60; - 承認済 * &#x60;rejected&#x60; - 却下 * &#x60;feedback&#x60; - 差戻し</value>
-        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestResponseApprovalRequestApprovers" /> class.
@@ -153,21 +152,21 @@ namespace Freee.Accounting.Models
         /// 代理承認済みかどうか
         /// </summary>
         /// <value>代理承認済みかどうか</value>
-        [DataMember(Name = "is_force_action", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "is_force_action", EmitDefaultValue = false)]
         public bool IsForceAction { get; set; }
 
         /// <summary>
         /// 承認ステップID
         /// </summary>
         /// <value>承認ステップID</value>
-        [DataMember(Name = "step_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "step_id", EmitDefaultValue = false)]
         public int StepId { get; set; }
 
         /// <summary>
         /// 承認者のユーザーID 下記の場合はnullになります。 &lt;ul&gt;   &lt;li&gt;resource_type:selected_userの場合で承認者未指定時&lt;/li&gt;   &lt;li&gt;resource_type:or_positionで前stepで部門未指定の場合&lt;/li&gt; &lt;/ul&gt;
         /// </summary>
         /// <value>承認者のユーザーID 下記の場合はnullになります。 &lt;ul&gt;   &lt;li&gt;resource_type:selected_userの場合で承認者未指定時&lt;/li&gt;   &lt;li&gt;resource_type:or_positionで前stepで部門未指定の場合&lt;/li&gt; &lt;/ul&gt;</value>
-        [DataMember(Name = "user_id", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "user_id", EmitDefaultValue = true)]
         public int? UserId { get; set; }
 
         /// <summary>
@@ -193,7 +192,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

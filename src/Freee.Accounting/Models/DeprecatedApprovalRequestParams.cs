@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -59,7 +58,7 @@ namespace Freee.Accounting.Models
         /// 経路申請ID
         /// </summary>
         /// <value>経路申請ID</value>
-        [DataMember(Name = "approval_flow_route_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "approval_flow_route_id", EmitDefaultValue = false)]
         public int ApprovalFlowRouteId { get; set; }
 
         /// <summary>
@@ -73,14 +72,14 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 申請フォームID
         /// </summary>
         /// <value>申請フォームID</value>
-        [DataMember(Name = "request_form_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "request_form_id", EmitDefaultValue = false)]
         public int RequestFormId { get; set; }
 
         /// <summary>
@@ -93,7 +92,7 @@ namespace Freee.Accounting.Models
         /// 申請タイトル (255文字以内)
         /// </summary>
         /// <value>申請タイトル (255文字以内)</value>
-        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
@@ -120,7 +119,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>

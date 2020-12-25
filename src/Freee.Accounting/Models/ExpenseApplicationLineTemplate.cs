@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -72,7 +71,7 @@ namespace Freee.Accounting.Models
         /// 勘定科目名
         /// </summary>
         /// <value>勘定科目名</value>
-        [DataMember(Name = "account_item_name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "account_item_name", EmitDefaultValue = false)]
         public string AccountItemName { get; set; }
 
         /// <summary>
@@ -86,7 +85,7 @@ namespace Freee.Accounting.Models
         /// 経費科目ID
         /// </summary>
         /// <value>経費科目ID</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
@@ -100,7 +99,7 @@ namespace Freee.Accounting.Models
         /// 経費科目名
         /// </summary>
         /// <value>経費科目名</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -114,7 +113,7 @@ namespace Freee.Accounting.Models
         /// 税区分名
         /// </summary>
         /// <value>税区分名</value>
-        [DataMember(Name = "tax_name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "tax_name", EmitDefaultValue = false)]
         public string TaxName { get; set; }
 
         /// <summary>
@@ -143,7 +142,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>
