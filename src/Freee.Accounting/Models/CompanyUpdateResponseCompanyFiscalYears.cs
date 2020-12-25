@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -76,7 +77,7 @@ namespace Freee.Accounting.Models
         /// 月次償却（0: しない、1: する）
         /// </summary>
         /// <value>月次償却（0: しない、1: する）</value>
-        [DataMember(Name = "depreciation_record_method", EmitDefaultValue = false)]
+        [DataMember(Name = "depreciation_record_method", IsRequired = true, EmitDefaultValue = false)]
         public int DepreciationRecordMethod { get; set; }
 
         /// <summary>
@@ -90,28 +91,28 @@ namespace Freee.Accounting.Models
         /// 固定資産の控除法（true: 間接控除法、false: 直接控除法）
         /// </summary>
         /// <value>固定資産の控除法（true: 間接控除法、false: 直接控除法）</value>
-        [DataMember(Name = "indirect_write_off_method", EmitDefaultValue = false)]
+        [DataMember(Name = "indirect_write_off_method", IsRequired = true, EmitDefaultValue = false)]
         public bool IndirectWriteOffMethod { get; set; }
 
         /// <summary>
         /// 間接控除時の累計額（true: 資産分類別、false: 共通）
         /// </summary>
         /// <value>間接控除時の累計額（true: 資産分類別、false: 共通）</value>
-        [DataMember(Name = "indirect_write_off_method_type", EmitDefaultValue = false)]
+        [DataMember(Name = "indirect_write_off_method_type", IsRequired = true, EmitDefaultValue = false)]
         public bool IndirectWriteOffMethodType { get; set; }
 
         /// <summary>
         /// 不動産所得使用区分（0: 一般、3: 一般/不動産） ※個人事業主のみ設定可能
         /// </summary>
         /// <value>不動産所得使用区分（0: 一般、3: 一般/不動産） ※個人事業主のみ設定可能</value>
-        [DataMember(Name = "return_code", EmitDefaultValue = false)]
+        [DataMember(Name = "return_code", IsRequired = true, EmitDefaultValue = false)]
         public int ReturnCode { get; set; }
 
         /// <summary>
         /// 簡易課税用事業区分（0: 第一種：卸売業、1: 第二種：小売業、2: 第三種：農林水産業、工業、建設業、製造業など、3: 第四種：飲食店業など、4: 第五種：金融・保険業、運輸通信業、サービス業など、5: 第六種：不動産業など
         /// </summary>
         /// <value>簡易課税用事業区分（0: 第一種：卸売業、1: 第二種：小売業、2: 第三種：農林水産業、工業、建設業、製造業など、3: 第四種：飲食店業など、4: 第五種：金融・保険業、運輸通信業、サービス業など、5: 第六種：不動産業など</value>
-        [DataMember(Name = "sales_tax_business_code", EmitDefaultValue = false)]
+        [DataMember(Name = "sales_tax_business_code", IsRequired = true, EmitDefaultValue = false)]
         public int SalesTaxBusinessCode { get; set; }
 
         /// <summary>
@@ -125,28 +126,28 @@ namespace Freee.Accounting.Models
         /// 消費税経理処理方法（0: 税込経理、1: 旧税抜経理、2: 税抜経理）
         /// </summary>
         /// <value>消費税経理処理方法（0: 税込経理、1: 旧税抜経理、2: 税抜経理）</value>
-        [DataMember(Name = "tax_account_method", EmitDefaultValue = false)]
+        [DataMember(Name = "tax_account_method", IsRequired = true, EmitDefaultValue = false)]
         public int TaxAccountMethod { get; set; }
 
         /// <summary>
         /// 消費税端数処理方法（0: 切り捨て、1: 切り上げ、2: 四捨五入）
         /// </summary>
         /// <value>消費税端数処理方法（0: 切り捨て、1: 切り上げ、2: 四捨五入）</value>
-        [DataMember(Name = "tax_fraction", EmitDefaultValue = false)]
+        [DataMember(Name = "tax_fraction", IsRequired = true, EmitDefaultValue = false)]
         public int TaxFraction { get; set; }
 
         /// <summary>
         /// 課税区分（0: 免税、1: 簡易課税、2: 本則課税（個別対応方式）、3: 本則課税（一括比例配分方式）、4: 本則課税（全額控除））
         /// </summary>
         /// <value>課税区分（0: 免税、1: 簡易課税、2: 本則課税（個別対応方式）、3: 本則課税（一括比例配分方式）、4: 本則課税（全額控除））</value>
-        [DataMember(Name = "tax_method", EmitDefaultValue = false)]
+        [DataMember(Name = "tax_method", IsRequired = true, EmitDefaultValue = false)]
         public int TaxMethod { get; set; }
 
         /// <summary>
         /// 製造業向け機能（true: 使用する、false: 使用しない）
         /// </summary>
         /// <value>製造業向け機能（true: 使用する、false: 使用しない）</value>
-        [DataMember(Name = "use_industry_template", EmitDefaultValue = false)]
+        [DataMember(Name = "use_industry_template", IsRequired = true, EmitDefaultValue = false)]
         public bool UseIndustryTemplate { get; set; }
 
         /// <summary>
@@ -179,7 +180,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

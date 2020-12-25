@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -53,28 +54,28 @@ namespace Freee.Accounting.Models
         /// 軽減税率8%の税込み金額合計
         /// </summary>
         /// <value>軽減税率8%の税込み金額合計</value>
-        [DataMember(Name = "reduced_vat_8", EmitDefaultValue = false)]
+        [DataMember(Name = "reduced_vat_8", IsRequired = true, EmitDefaultValue = false)]
         public int ReducedVat8 { get; set; }
 
         /// <summary>
         /// 税率10%の税込み金額合計
         /// </summary>
         /// <value>税率10%の税込み金額合計</value>
-        [DataMember(Name = "vat_10", EmitDefaultValue = false)]
+        [DataMember(Name = "vat_10", IsRequired = true, EmitDefaultValue = false)]
         public int Vat10 { get; set; }
 
         /// <summary>
         /// 税率5%の税込み金額合計
         /// </summary>
         /// <value>税率5%の税込み金額合計</value>
-        [DataMember(Name = "vat_5", EmitDefaultValue = false)]
+        [DataMember(Name = "vat_5", IsRequired = true, EmitDefaultValue = false)]
         public int Vat5 { get; set; }
 
         /// <summary>
         /// 税率8%の税込み金額合計
         /// </summary>
         /// <value>税率8%の税込み金額合計</value>
-        [DataMember(Name = "vat_8", EmitDefaultValue = false)]
+        [DataMember(Name = "vat_8", IsRequired = true, EmitDefaultValue = false)]
         public int Vat8 { get; set; }
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

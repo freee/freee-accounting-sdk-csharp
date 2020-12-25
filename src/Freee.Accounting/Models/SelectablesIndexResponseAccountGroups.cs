@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -62,14 +63,14 @@ namespace Freee.Accounting.Models
         /// 勘定科目カテゴリーID
         /// </summary>
         /// <value>勘定科目カテゴリーID</value>
-        [DataMember(Name = "account_category_id", EmitDefaultValue = false)]
+        [DataMember(Name = "account_category_id", IsRequired = true, EmitDefaultValue = false)]
         public int AccountCategoryId { get; set; }
 
         /// <summary>
         /// 年度ID
         /// </summary>
         /// <value>年度ID</value>
-        [DataMember(Name = "account_structure_id", EmitDefaultValue = false)]
+        [DataMember(Name = "account_structure_id", IsRequired = true, EmitDefaultValue = false)]
         public int AccountStructureId { get; set; }
 
         /// <summary>
@@ -90,21 +91,21 @@ namespace Freee.Accounting.Models
         /// 決算書表示名（小カテゴリー）ID
         /// </summary>
         /// <value>決算書表示名（小カテゴリー）ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 並び順
         /// </summary>
         /// <value>並び順</value>
-        [DataMember(Name = "index", EmitDefaultValue = false)]
+        [DataMember(Name = "index", IsRequired = true, EmitDefaultValue = false)]
         public int Index { get; set; }
 
         /// <summary>
         /// 決算書表示名
         /// </summary>
         /// <value>決算書表示名</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -140,7 +141,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

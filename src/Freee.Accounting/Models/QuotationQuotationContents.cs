@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -60,7 +61,7 @@ namespace Freee.Accounting.Models
         /// 行の種類
         /// </summary>
         /// <value>行の種類</value>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="QuotationQuotationContents" /> class.
@@ -139,84 +140,84 @@ namespace Freee.Accounting.Models
         /// 勘定科目ID
         /// </summary>
         /// <value>勘定科目ID</value>
-        [DataMember(Name = "account_item_id", EmitDefaultValue = true)]
+        [DataMember(Name = "account_item_id", IsRequired = true, EmitDefaultValue = true)]
         public int? AccountItemId { get; set; }
 
         /// <summary>
         /// 勘定科目名
         /// </summary>
         /// <value>勘定科目名</value>
-        [DataMember(Name = "account_item_name", EmitDefaultValue = true)]
+        [DataMember(Name = "account_item_name", IsRequired = true, EmitDefaultValue = true)]
         public string AccountItemName { get; set; }
 
         /// <summary>
         /// 金額
         /// </summary>
         /// <value>金額</value>
-        [DataMember(Name = "amount", EmitDefaultValue = false)]
+        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
         public int Amount { get; set; }
 
         /// <summary>
         /// 備考
         /// </summary>
         /// <value>備考</value>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
+        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// 見積内容ID
         /// </summary>
         /// <value>見積内容ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 品目ID
         /// </summary>
         /// <value>品目ID</value>
-        [DataMember(Name = "item_id", EmitDefaultValue = true)]
+        [DataMember(Name = "item_id", IsRequired = true, EmitDefaultValue = true)]
         public int? ItemId { get; set; }
 
         /// <summary>
         /// 品目
         /// </summary>
         /// <value>品目</value>
-        [DataMember(Name = "item_name", EmitDefaultValue = true)]
+        [DataMember(Name = "item_name", IsRequired = true, EmitDefaultValue = true)]
         public string ItemName { get; set; }
 
         /// <summary>
         /// 順序
         /// </summary>
         /// <value>順序</value>
-        [DataMember(Name = "order", EmitDefaultValue = false)]
+        [DataMember(Name = "order", IsRequired = true, EmitDefaultValue = false)]
         public int Order { get; set; }
 
         /// <summary>
         /// 数量
         /// </summary>
         /// <value>数量</value>
-        [DataMember(Name = "qty", EmitDefaultValue = false)]
+        [DataMember(Name = "qty", IsRequired = true, EmitDefaultValue = false)]
         public decimal Qty { get; set; }
 
         /// <summary>
         /// 軽減税率税区分（true: 対象、false: 対象外）
         /// </summary>
         /// <value>軽減税率税区分（true: 対象、false: 対象外）</value>
-        [DataMember(Name = "reduced_vat", EmitDefaultValue = false)]
+        [DataMember(Name = "reduced_vat", IsRequired = true, EmitDefaultValue = false)]
         public bool ReducedVat { get; set; }
 
         /// <summary>
         /// 部門ID
         /// </summary>
         /// <value>部門ID</value>
-        [DataMember(Name = "section_id", EmitDefaultValue = true)]
+        [DataMember(Name = "section_id", IsRequired = true, EmitDefaultValue = true)]
         public int? SectionId { get; set; }
 
         /// <summary>
         /// 部門
         /// </summary>
         /// <value>部門</value>
-        [DataMember(Name = "section_name", EmitDefaultValue = true)]
+        [DataMember(Name = "section_name", IsRequired = true, EmitDefaultValue = true)]
         public string SectionName { get; set; }
 
         /// <summary>
@@ -264,41 +265,41 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets TagIds
         /// </summary>
-        [DataMember(Name = "tag_ids", EmitDefaultValue = false)]
+        [DataMember(Name = "tag_ids", IsRequired = true, EmitDefaultValue = false)]
         public List<int> TagIds { get; set; }
 
         /// <summary>
         /// Gets or Sets TagNames
         /// </summary>
-        [DataMember(Name = "tag_names", EmitDefaultValue = false)]
+        [DataMember(Name = "tag_names", IsRequired = true, EmitDefaultValue = false)]
         public List<string> TagNames { get; set; }
 
         /// <summary>
         /// 税区分コード
         /// </summary>
         /// <value>税区分コード</value>
-        [DataMember(Name = "tax_code", EmitDefaultValue = true)]
+        [DataMember(Name = "tax_code", IsRequired = true, EmitDefaultValue = true)]
         public int? TaxCode { get; set; }
 
         /// <summary>
         /// 単位
         /// </summary>
         /// <value>単位</value>
-        [DataMember(Name = "unit", EmitDefaultValue = true)]
+        [DataMember(Name = "unit", IsRequired = true, EmitDefaultValue = true)]
         public string Unit { get; set; }
 
         /// <summary>
         /// 単価
         /// </summary>
         /// <value>単価</value>
-        [DataMember(Name = "unit_price", EmitDefaultValue = false)]
+        [DataMember(Name = "unit_price", IsRequired = true, EmitDefaultValue = false)]
         public decimal UnitPrice { get; set; }
 
         /// <summary>
         /// 消費税額
         /// </summary>
         /// <value>消費税額</value>
-        [DataMember(Name = "vat", EmitDefaultValue = false)]
+        [DataMember(Name = "vat", IsRequired = true, EmitDefaultValue = false)]
         public int Vat { get; set; }
 
         /// <summary>
@@ -344,7 +345,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

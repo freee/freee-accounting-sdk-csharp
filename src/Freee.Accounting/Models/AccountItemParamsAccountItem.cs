@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -71,7 +72,7 @@ namespace Freee.Accounting.Models
         /// 勘定科目カテゴリーID Selectablesフォーム用選択項目情報エンドポイント(account_groups.account_category_id)で取得可能です
         /// </summary>
         /// <value>勘定科目カテゴリーID Selectablesフォーム用選択項目情報エンドポイント(account_groups.account_category_id)で取得可能です</value>
-        [DataMember(Name = "account_category_id", EmitDefaultValue = false)]
+        [DataMember(Name = "account_category_id", IsRequired = true, EmitDefaultValue = false)]
         public int AccountCategoryId { get; set; }
 
         /// <summary>
@@ -85,21 +86,21 @@ namespace Freee.Accounting.Models
         /// 支出取引相手勘定科目ID
         /// </summary>
         /// <value>支出取引相手勘定科目ID</value>
-        [DataMember(Name = "corresponding_expense_id", EmitDefaultValue = false)]
+        [DataMember(Name = "corresponding_expense_id", IsRequired = true, EmitDefaultValue = false)]
         public int CorrespondingExpenseId { get; set; }
 
         /// <summary>
         /// 収入取引相手勘定科目ID
         /// </summary>
         /// <value>収入取引相手勘定科目ID</value>
-        [DataMember(Name = "corresponding_income_id", EmitDefaultValue = false)]
+        [DataMember(Name = "corresponding_income_id", IsRequired = true, EmitDefaultValue = false)]
         public int CorrespondingIncomeId { get; set; }
 
         /// <summary>
         /// 決算書表示名（小カテゴリー） Selectablesフォーム用選択項目情報エンドポイント(account_groups.name)で取得可能です
         /// </summary>
         /// <value>決算書表示名（小カテゴリー） Selectablesフォーム用選択項目情報エンドポイント(account_groups.name)で取得可能です</value>
-        [DataMember(Name = "group_name", EmitDefaultValue = false)]
+        [DataMember(Name = "group_name", IsRequired = true, EmitDefaultValue = false)]
         public string GroupName { get; set; }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Freee.Accounting.Models
         /// 勘定科目名 (30文字以内)
         /// </summary>
         /// <value>勘定科目名 (30文字以内)</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Freee.Accounting.Models
         /// 税区分コード
         /// </summary>
         /// <value>税区分コード</value>
-        [DataMember(Name = "tax_code", EmitDefaultValue = false)]
+        [DataMember(Name = "tax_code", IsRequired = true, EmitDefaultValue = false)]
         public int TaxCode { get; set; }
 
         /// <summary>
@@ -181,7 +182,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
