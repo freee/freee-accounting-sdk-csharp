@@ -9,7 +9,6 @@ on:
 
 env:
   DOTNET_VERSION: 3.1.x
-  SCHEMA_URL_TEMP: https://raw.githubusercontent.com/dzeyelid/freee-api-schema/add-sdk-compatible-schema/_sdk_compatible/open-api-3/api-schema.yml
   KEEP_CURRENT_HEADER_SELECTOR: true
 
 jobs:
@@ -40,7 +39,7 @@ jobs:
         SCHEMA_URL: https://raw.githubusercontent.com/freee/freee-api-schema/${{ steps.get_original_repo_tag.outputs.tag }}/_sdk_compatible/open-api-3/api-schema.yml
       run: |
         docker run --rm -u "$(id -u $USER):$(id -g $USER)" -v "${PWD}:/local" openapitools/openapi-generator-cli:latest-release generate \
-        -i ${{ env.SCHEMA_URL_TEMP }} \
+        -i ${{ env.SCHEMA_URL }} \
         -c /local/.openapi-generator/config.yml \
         -g csharp-netcore \
         -o /local/
