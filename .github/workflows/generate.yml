@@ -59,13 +59,13 @@ jobs:
         git reset --hard HEAD
         git clean -fdx
 
-    - name: Use .NET Core ${{ env.DOTNET_VERSION }}
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
+    # - name: Use .NET Core ${{ env.DOTNET_VERSION }}
+    #   uses: actions/setup-dotnet@v1
+    #   with:
+    #     dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: Build projects
-      run: dotnet build -c Release
+    # - name: Build projects
+    #   run: dotnet build -c Release
 
     - name: Push changes
       uses: ad-m/github-push-action@master
