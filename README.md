@@ -6,10 +6,10 @@
 
 **最新バージョンとなる 2.x は現在 alpha リリース版となっています。一部の API 呼び出しに問題が発生する可能性があります。**
 
-**【重要】** 会計freee APIの新バージョンについて
-2020年12月まで、2つのバージョンが利用できる状態です。古いものは2020年12月に利用不可となります。
+このSDKは、リリースバージョンによって、内部で利用するAPIバージョンが異なります。
 
-このSDKは古いもの向けで、新しいバージョンに対応したSDKは準備中で2020年9月下旬を目標として公開予定です。
+- 2.0.0 以降 - 会計freee APIの新しいAPIバージョン(v2020-06-15)に対応しています。
+- 2.0.0 未満 - 会計freee APIの古いAPIバージョンを利用しています。古いAPIの提供終了に伴い、2020年12月以降に利用不可となります。
 
 ## 目次 ##
 
@@ -121,8 +121,8 @@ ASP.NET Core MVC のプロジェクトを新規に作成する場合は、[ASP.N
   <ItemGroup>
     ...
     <!-- [2] ここから -->
-    <PackageReference Include="Freee.Accounting.Sdk" Version="2.0.0" />
-    <PackageReference Include="Freee.OAuth.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Freee.Accounting.Sdk" Version="2.0.0-alpha" />
+    <PackageReference Include="Freee.OAuth.AspNetCore" Version="2.0.0-alpha" />
     <!-- [2] ここまでを追加 -->
   </ItemGroup>
 ```
