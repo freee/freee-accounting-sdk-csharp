@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -60,7 +61,7 @@ namespace Freee.Accounting.Models
         /// +更新の対象行タイプ
         /// </summary>
         /// <value>+更新の対象行タイプ</value>
-        [DataMember(Name = "renew_target_type", EmitDefaultValue = false)]
+        [DataMember(Name = "renew_target_type", IsRequired = true, EmitDefaultValue = false)]
         public RenewTargetTypeEnum RenewTargetType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DealRenews" /> class.
@@ -90,28 +91,28 @@ namespace Freee.Accounting.Models
         /// +更新の明細行一覧（配列）
         /// </summary>
         /// <value>+更新の明細行一覧（配列）</value>
-        [DataMember(Name = "details", EmitDefaultValue = false)]
+        [DataMember(Name = "details", IsRequired = true, EmitDefaultValue = false)]
         public List<DealDetails> Details { get; set; }
 
         /// <summary>
         /// +更新行ID
         /// </summary>
         /// <value>+更新行ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// +更新の対象行ID
         /// </summary>
         /// <value>+更新の対象行ID</value>
-        [DataMember(Name = "renew_target_id", EmitDefaultValue = false)]
+        [DataMember(Name = "renew_target_id", IsRequired = true, EmitDefaultValue = false)]
         public int RenewTargetId { get; set; }
 
         /// <summary>
         /// 更新日 (yyyy-mm-dd)
         /// </summary>
         /// <value>更新日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "update_date", EmitDefaultValue = false)]
+        [DataMember(Name = "update_date", IsRequired = true, EmitDefaultValue = false)]
         public string UpdateDate { get; set; }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

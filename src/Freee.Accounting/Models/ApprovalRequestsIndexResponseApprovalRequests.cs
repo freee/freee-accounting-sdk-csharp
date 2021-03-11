@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -43,10 +44,10 @@ namespace Freee.Accounting.Models
             Draft = 1,
 
             /// <summary>
-            /// Enum Inprogress for value: in_progress
+            /// Enum InProgress for value: in_progress
             /// </summary>
             [EnumMember(Value = "in_progress")]
-            Inprogress = 2,
+            InProgress = 2,
 
             /// <summary>
             /// Enum Approved for value: approved
@@ -72,7 +73,7 @@ namespace Freee.Accounting.Models
         /// 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
         /// </summary>
         /// <value>申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)</value>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestsIndexResponseApprovalRequests" /> class.
@@ -117,70 +118,70 @@ namespace Freee.Accounting.Models
         /// 申請者のユーザーID
         /// </summary>
         /// <value>申請者のユーザーID</value>
-        [DataMember(Name = "applicant_id", EmitDefaultValue = false)]
+        [DataMember(Name = "applicant_id", IsRequired = true, EmitDefaultValue = false)]
         public int ApplicantId { get; set; }
 
         /// <summary>
         /// 申請日 (yyyy-mm-dd)
         /// </summary>
         /// <value>申請日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "application_date", EmitDefaultValue = false)]
+        [DataMember(Name = "application_date", IsRequired = true, EmitDefaultValue = false)]
         public string ApplicationDate { get; set; }
 
         /// <summary>
         /// 申請No.
         /// </summary>
         /// <value>申請No.</value>
-        [DataMember(Name = "application_number", EmitDefaultValue = false)]
+        [DataMember(Name = "application_number", IsRequired = true, EmitDefaultValue = false)]
         public string ApplicationNumber { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 現在のround。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。
         /// </summary>
         /// <value>現在のround。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。</value>
-        [DataMember(Name = "current_round", EmitDefaultValue = false)]
+        [DataMember(Name = "current_round", IsRequired = true, EmitDefaultValue = false)]
         public int CurrentRound { get; set; }
 
         /// <summary>
         /// 現在承認ステップID
         /// </summary>
         /// <value>現在承認ステップID</value>
-        [DataMember(Name = "current_step_id", EmitDefaultValue = true)]
+        [DataMember(Name = "current_step_id", IsRequired = true, EmitDefaultValue = true)]
         public int? CurrentStepId { get; set; }
 
         /// <summary>
         /// 申請フォームID
         /// </summary>
         /// <value>申請フォームID</value>
-        [DataMember(Name = "form_id", EmitDefaultValue = false)]
+        [DataMember(Name = "form_id", IsRequired = true, EmitDefaultValue = false)]
         public int FormId { get; set; }
 
         /// <summary>
         /// 各種申請ID
         /// </summary>
         /// <value>各種申請ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 各種申請の項目一覧（配列）
         /// </summary>
         /// <value>各種申請の項目一覧（配列）</value>
-        [DataMember(Name = "request_items", EmitDefaultValue = false)]
+        [DataMember(Name = "request_items", IsRequired = true, EmitDefaultValue = false)]
         public List<ApprovalRequestResponseApprovalRequestRequestItems> RequestItems { get; set; }
 
         /// <summary>
         /// 申請タイトル
         /// </summary>
         /// <value>申請タイトル</value>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
+        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
@@ -212,7 +213,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

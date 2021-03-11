@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -59,35 +60,35 @@ namespace Freee.Accounting.Models
         /// 備考
         /// </summary>
         /// <value>備考</value>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
+        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// セグメントタグID
         /// </summary>
         /// <value>セグメントタグID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// セグメントタグ名
         /// </summary>
         /// <value>セグメントタグ名</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// ショートカット１ (20文字以内)
         /// </summary>
         /// <value>ショートカット１ (20文字以内)</value>
-        [DataMember(Name = "shortcut1", EmitDefaultValue = true)]
+        [DataMember(Name = "shortcut1", IsRequired = true, EmitDefaultValue = true)]
         public string Shortcut1 { get; set; }
 
         /// <summary>
         /// ショートカット２ (20文字以内)
         /// </summary>
         /// <value>ショートカット２ (20文字以内)</value>
-        [DataMember(Name = "shortcut2", EmitDefaultValue = true)]
+        [DataMember(Name = "shortcut2", IsRequired = true, EmitDefaultValue = true)]
         public string Shortcut2 { get; set; }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

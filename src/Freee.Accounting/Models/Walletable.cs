@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -37,16 +38,16 @@ namespace Freee.Accounting.Models
         public enum TypeEnum
         {
             /// <summary>
-            /// Enum Bankaccount for value: bank_account
+            /// Enum BankAccount for value: bank_account
             /// </summary>
             [EnumMember(Value = "bank_account")]
-            Bankaccount = 1,
+            BankAccount = 1,
 
             /// <summary>
-            /// Enum Creditcard for value: credit_card
+            /// Enum CreditCard for value: credit_card
             /// </summary>
             [EnumMember(Value = "credit_card")]
-            Creditcard = 2,
+            CreditCard = 2,
 
             /// <summary>
             /// Enum Wallet for value: wallet
@@ -60,7 +61,7 @@ namespace Freee.Accounting.Models
         /// 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
         /// </summary>
         /// <value>口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)</value>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Walletable" /> class.
@@ -92,14 +93,14 @@ namespace Freee.Accounting.Models
         /// サービスID
         /// </summary>
         /// <value>サービスID</value>
-        [DataMember(Name = "bank_id", EmitDefaultValue = true)]
+        [DataMember(Name = "bank_id", IsRequired = true, EmitDefaultValue = true)]
         public int? BankId { get; set; }
 
         /// <summary>
         /// 口座ID
         /// </summary>
         /// <value>口座ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Freee.Accounting.Models
         /// 口座名 (255文字以内)
         /// </summary>
         /// <value>口座名 (255文字以内)</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

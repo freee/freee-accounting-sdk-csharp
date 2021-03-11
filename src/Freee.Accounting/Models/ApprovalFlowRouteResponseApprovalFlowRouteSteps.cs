@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -37,16 +38,16 @@ namespace Freee.Accounting.Models
         public enum ResourceTypeEnum
         {
             /// <summary>
-            /// Enum Predefineduser for value: predefined_user
+            /// Enum PredefinedUser for value: predefined_user
             /// </summary>
             [EnumMember(Value = "predefined_user")]
-            Predefineduser = 1,
+            PredefinedUser = 1,
 
             /// <summary>
-            /// Enum Selecteduser for value: selected_user
+            /// Enum SelectedUser for value: selected_user
             /// </summary>
             [EnumMember(Value = "selected_user")]
-            Selecteduser = 2,
+            SelectedUser = 2,
 
             /// <summary>
             /// Enum Unspecified for value: unspecified
@@ -55,28 +56,28 @@ namespace Freee.Accounting.Models
             Unspecified = 3,
 
             /// <summary>
-            /// Enum Andresource for value: and_resource
+            /// Enum AndResource for value: and_resource
             /// </summary>
             [EnumMember(Value = "and_resource")]
-            Andresource = 4,
+            AndResource = 4,
 
             /// <summary>
-            /// Enum Orresource for value: or_resource
+            /// Enum OrResource for value: or_resource
             /// </summary>
             [EnumMember(Value = "or_resource")]
-            Orresource = 5,
+            OrResource = 5,
 
             /// <summary>
-            /// Enum Andposition for value: and_position
+            /// Enum AndPosition for value: and_position
             /// </summary>
             [EnumMember(Value = "and_position")]
-            Andposition = 6,
+            AndPosition = 6,
 
             /// <summary>
-            /// Enum Orposition for value: or_position
+            /// Enum OrPosition for value: or_position
             /// </summary>
             [EnumMember(Value = "or_position")]
-            Orposition = 7
+            OrPosition = 7
 
         }
 
@@ -84,7 +85,7 @@ namespace Freee.Accounting.Models
         /// 承認方法( predefined_user: メンバー指定 (1人), selected_user: 申請時にメンバー指定,unspecified: 指定なし, and_resource: メンバー指定 (複数、全員の承認), or_resource: メンバー指定 (複数、1人の承認), and_position: 役職指定 (複数、全員の承認), or_position: 役職指定 (複数、1人の承認) ) 
         /// </summary>
         /// <value>承認方法( predefined_user: メンバー指定 (1人), selected_user: 申請時にメンバー指定,unspecified: 指定なし, and_resource: メンバー指定 (複数、全員の承認), or_resource: メンバー指定 (複数、1人の承認), and_position: 役職指定 (複数、全員の承認), or_position: 役職指定 (複数、1人の承認) ) </value>
-        [DataMember(Name = "resource_type", EmitDefaultValue = false)]
+        [DataMember(Name = "resource_type", IsRequired = true, EmitDefaultValue = false)]
         public ResourceTypeEnum ResourceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalFlowRouteResponseApprovalFlowRouteSteps" /> class.
@@ -111,14 +112,14 @@ namespace Freee.Accounting.Models
         /// 承認ステップID
         /// </summary>
         /// <value>承認ステップID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 次の承認ステップID
         /// </summary>
         /// <value>次の承認ステップID</value>
-        [DataMember(Name = "next_step_id", EmitDefaultValue = true)]
+        [DataMember(Name = "next_step_id", IsRequired = true, EmitDefaultValue = true)]
         public int? NextStepId { get; set; }
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

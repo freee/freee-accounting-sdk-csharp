@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -49,10 +50,10 @@ namespace Freee.Accounting.Models
             Posting = 2,
 
             /// <summary>
-            /// Enum Emailandposting for value: email_and_posting
+            /// Enum EmailAndPosting for value: email_and_posting
             /// </summary>
             [EnumMember(Value = "email_and_posting")]
-            Emailandposting = 3
+            EmailAndPosting = 3
 
         }
 
@@ -90,7 +91,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

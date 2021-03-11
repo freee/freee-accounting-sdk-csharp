@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -43,16 +44,16 @@ namespace Freee.Accounting.Models
             Title = 1,
 
             /// <summary>
-            /// Enum Singleline for value: single_line
+            /// Enum SingleLine for value: single_line
             /// </summary>
             [EnumMember(Value = "single_line")]
-            Singleline = 2,
+            SingleLine = 2,
 
             /// <summary>
-            /// Enum Multiline for value: multi_line
+            /// Enum MultiLine for value: multi_line
             /// </summary>
             [EnumMember(Value = "multi_line")]
-            Multiline = 3,
+            MultiLine = 3,
 
             /// <summary>
             /// Enum Select for value: select
@@ -134,7 +135,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

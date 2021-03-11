@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -37,40 +38,40 @@ namespace Freee.Accounting.Models
         public enum QuotationLayoutEnum
         {
             /// <summary>
-            /// Enum Defaultclassic for value: default_classic
+            /// Enum DefaultClassic for value: default_classic
             /// </summary>
             [EnumMember(Value = "default_classic")]
-            Defaultclassic = 1,
+            DefaultClassic = 1,
 
             /// <summary>
-            /// Enum Standardclassic for value: standard_classic
+            /// Enum StandardClassic for value: standard_classic
             /// </summary>
             [EnumMember(Value = "standard_classic")]
-            Standardclassic = 2,
+            StandardClassic = 2,
 
             /// <summary>
-            /// Enum Envelopeclassic for value: envelope_classic
+            /// Enum EnvelopeClassic for value: envelope_classic
             /// </summary>
             [EnumMember(Value = "envelope_classic")]
-            Envelopeclassic = 3,
+            EnvelopeClassic = 3,
 
             /// <summary>
-            /// Enum Defaultmodern for value: default_modern
+            /// Enum DefaultModern for value: default_modern
             /// </summary>
             [EnumMember(Value = "default_modern")]
-            Defaultmodern = 4,
+            DefaultModern = 4,
 
             /// <summary>
-            /// Enum Standardmodern for value: standard_modern
+            /// Enum StandardModern for value: standard_modern
             /// </summary>
             [EnumMember(Value = "standard_modern")]
-            Standardmodern = 5,
+            StandardModern = 5,
 
             /// <summary>
-            /// Enum Envelopemodern for value: envelope_modern
+            /// Enum EnvelopeModern for value: envelope_modern
             /// </summary>
             [EnumMember(Value = "envelope_modern")]
-            Envelopemodern = 6
+            EnvelopeModern = 6
 
         }
 
@@ -168,7 +169,7 @@ namespace Freee.Accounting.Models
         /// <param name="quotationStatus">見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み).</param>
         /// <param name="taxEntryMethod">見積書の消費税計算方法(inclusive: 内税表示, exclusive: 外税表示 (デフォルト)).</param>
         /// <param name="title">タイトル (デフォルト: 見積書).</param>
-        public QuotationCreateParams(string companyAddress1 = default(string), string companyAddress2 = default(string), string companyContactInfo = default(string), int companyId = default(int), string companyName = default(string), int companyPrefectureCode = default(int), string companyZipcode = default(string), string description = default(string), string issueDate = default(string), string message = default(string), string notes = default(string), string partnerAddress1 = default(string), string partnerAddress2 = default(string), string partnerCode = default(string), string partnerContactInfo = default(string), string partnerDisplayName = default(string), int? partnerId = default(int?), int? partnerPrefectureCode = default(int?), string partnerTitle = default(string), string partnerZipcode = default(string), List<InvoiceCreateParamsInvoiceContents> quotationContents = default(List<InvoiceCreateParamsInvoiceContents>), QuotationLayoutEnum? quotationLayout = default(QuotationLayoutEnum?), string quotationNumber = default(string), QuotationStatusEnum? quotationStatus = default(QuotationStatusEnum?), TaxEntryMethodEnum? taxEntryMethod = default(TaxEntryMethodEnum?), string title = default(string))
+        public QuotationCreateParams(string companyAddress1 = default(string), string companyAddress2 = default(string), string companyContactInfo = default(string), int companyId = default(int), string companyName = default(string), int companyPrefectureCode = default(int), string companyZipcode = default(string), string description = default(string), string issueDate = default(string), string message = default(string), string notes = default(string), string partnerAddress1 = default(string), string partnerAddress2 = default(string), string partnerCode = default(string), string partnerContactInfo = default(string), string partnerDisplayName = default(string), int? partnerId = default(int?), int partnerPrefectureCode = default(int), string partnerTitle = default(string), string partnerZipcode = default(string), List<InvoiceCreateParamsInvoiceContents> quotationContents = default(List<InvoiceCreateParamsInvoiceContents>), QuotationLayoutEnum? quotationLayout = default(QuotationLayoutEnum?), string quotationNumber = default(string), QuotationStatusEnum? quotationStatus = default(QuotationStatusEnum?), TaxEntryMethodEnum? taxEntryMethod = default(TaxEntryMethodEnum?), string title = default(string))
         {
             this.CompanyId = companyId;
             // to ensure "partnerDisplayName" is required (not null)
@@ -225,7 +226,7 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
@@ -309,7 +310,7 @@ namespace Freee.Accounting.Models
         /// 見積書に表示する取引先名
         /// </summary>
         /// <value>見積書に表示する取引先名</value>
-        [DataMember(Name = "partner_display_name", EmitDefaultValue = false)]
+        [DataMember(Name = "partner_display_name", IsRequired = true, EmitDefaultValue = false)]
         public string PartnerDisplayName { get; set; }
 
         /// <summary>
@@ -323,14 +324,14 @@ namespace Freee.Accounting.Models
         /// 取引先都道府県コード（0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄) (デフォルトはpartner_idもしくはpartner_codeで指定された取引先設定情報が補完されます)
         /// </summary>
         /// <value>取引先都道府県コード（0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄) (デフォルトはpartner_idもしくはpartner_codeで指定された取引先設定情報が補完されます)</value>
-        [DataMember(Name = "partner_prefecture_code", EmitDefaultValue = true)]
-        public int? PartnerPrefectureCode { get; set; }
+        [DataMember(Name = "partner_prefecture_code", EmitDefaultValue = false)]
+        public int PartnerPrefectureCode { get; set; }
 
         /// <summary>
         /// 敬称（御中、様、(空白)の3つから選択）
         /// </summary>
         /// <value>敬称（御中、様、(空白)の3つから選択）</value>
-        [DataMember(Name = "partner_title", EmitDefaultValue = false)]
+        [DataMember(Name = "partner_title", IsRequired = true, EmitDefaultValue = false)]
         public string PartnerTitle { get; set; }
 
         /// <summary>
@@ -405,7 +406,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
@@ -514,8 +515,7 @@ namespace Freee.Accounting.Models
                 ) && 
                 (
                     this.PartnerPrefectureCode == input.PartnerPrefectureCode ||
-                    (this.PartnerPrefectureCode != null &&
-                    this.PartnerPrefectureCode.Equals(input.PartnerPrefectureCode))
+                    this.PartnerPrefectureCode.Equals(input.PartnerPrefectureCode)
                 ) && 
                 (
                     this.PartnerTitle == input.PartnerTitle ||
@@ -598,8 +598,7 @@ namespace Freee.Accounting.Models
                     hashCode = hashCode * 59 + this.PartnerDisplayName.GetHashCode();
                 if (this.PartnerId != null)
                     hashCode = hashCode * 59 + this.PartnerId.GetHashCode();
-                if (this.PartnerPrefectureCode != null)
-                    hashCode = hashCode * 59 + this.PartnerPrefectureCode.GetHashCode();
+                hashCode = hashCode * 59 + this.PartnerPrefectureCode.GetHashCode();
                 if (this.PartnerTitle != null)
                     hashCode = hashCode * 59 + this.PartnerTitle.GetHashCode();
                 if (this.PartnerZipcode != null)

@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -100,10 +101,10 @@ namespace Freee.Accounting.Models
             Description = 5,
 
             /// <summary>
-            /// Enum Wallettxndescription for value: wallet_txn_description
+            /// Enum WalletTxnDescription for value: wallet_txn_description
             /// </summary>
             [EnumMember(Value = "wallet_txn_description")]
-            Wallettxndescription = 6,
+            WalletTxnDescription = 6,
 
             /// <summary>
             /// Enum All for value: all
@@ -112,22 +113,22 @@ namespace Freee.Accounting.Models
             All = 7,
 
             /// <summary>
-            /// Enum Segment1tag for value: segment_1_tag
+            /// Enum Segment1Tag for value: segment_1_tag
             /// </summary>
             [EnumMember(Value = "segment_1_tag")]
-            Segment1tag = 8,
+            Segment1Tag = 8,
 
             /// <summary>
-            /// Enum Segment2tag for value: segment_2_tag
+            /// Enum Segment2Tag for value: segment_2_tag
             /// </summary>
             [EnumMember(Value = "segment_2_tag")]
-            Segment2tag = 9,
+            Segment2Tag = 9,
 
             /// <summary>
-            /// Enum Segment3tag for value: segment_3_tag
+            /// Enum Segment3Tag for value: segment_3_tag
             /// </summary>
             [EnumMember(Value = "segment_3_tag")]
-            Segment3tag = 10
+            Segment3Tag = 10
 
         }
 
@@ -169,7 +170,7 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
@@ -183,7 +184,7 @@ namespace Freee.Accounting.Models
         /// 受け付けID
         /// </summary>
         /// <value>受け付けID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
@@ -232,7 +233,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
