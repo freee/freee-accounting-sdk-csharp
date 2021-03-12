@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -112,10 +113,10 @@ namespace Freee.Accounting.Models
         public enum IndustryClassEnum
         {
             /// <summary>
-            /// Enum Agricultureforestryfisheriesore for value: agriculture_forestry_fisheries_ore
+            /// Enum AgricultureForestryFisheriesOre for value: agriculture_forestry_fisheries_ore
             /// </summary>
             [EnumMember(Value = "agriculture_forestry_fisheries_ore")]
-            Agricultureforestryfisheriesore = 1,
+            AgricultureForestryFisheriesOre = 1,
 
             /// <summary>
             /// Enum Construction for value: construction
@@ -124,10 +125,10 @@ namespace Freee.Accounting.Models
             Construction = 2,
 
             /// <summary>
-            /// Enum Manufacturingprocessing for value: manufacturing_processing
+            /// Enum ManufacturingProcessing for value: manufacturing_processing
             /// </summary>
             [EnumMember(Value = "manufacturing_processing")]
-            Manufacturingprocessing = 3,
+            ManufacturingProcessing = 3,
 
             /// <summary>
             /// Enum It for value: it
@@ -136,28 +137,28 @@ namespace Freee.Accounting.Models
             It = 4,
 
             /// <summary>
-            /// Enum Transportationlogistics for value: transportation_logistics
+            /// Enum TransportationLogistics for value: transportation_logistics
             /// </summary>
             [EnumMember(Value = "transportation_logistics")]
-            Transportationlogistics = 5,
+            TransportationLogistics = 5,
 
             /// <summary>
-            /// Enum Retailwholesale for value: retail_wholesale
+            /// Enum RetailWholesale for value: retail_wholesale
             /// </summary>
             [EnumMember(Value = "retail_wholesale")]
-            Retailwholesale = 6,
+            RetailWholesale = 6,
 
             /// <summary>
-            /// Enum Financeinsurance for value: finance_insurance
+            /// Enum FinanceInsurance for value: finance_insurance
             /// </summary>
             [EnumMember(Value = "finance_insurance")]
-            Financeinsurance = 7,
+            FinanceInsurance = 7,
 
             /// <summary>
-            /// Enum Realestaterental for value: real_estate_rental
+            /// Enum RealEstateRental for value: real_estate_rental
             /// </summary>
             [EnumMember(Value = "real_estate_rental")]
-            Realestaterental = 8,
+            RealEstateRental = 8,
 
             /// <summary>
             /// Enum Profession for value: profession
@@ -166,10 +167,10 @@ namespace Freee.Accounting.Models
             Profession = 9,
 
             /// <summary>
-            /// Enum Designproduction for value: design_production
+            /// Enum DesignProduction for value: design_production
             /// </summary>
             [EnumMember(Value = "design_production")]
-            Designproduction = 10,
+            DesignProduction = 10,
 
             /// <summary>
             /// Enum Food for value: food
@@ -178,10 +179,10 @@ namespace Freee.Accounting.Models
             Food = 11,
 
             /// <summary>
-            /// Enum Leisureentertainment for value: leisure_entertainment
+            /// Enum LeisureEntertainment for value: leisure_entertainment
             /// </summary>
             [EnumMember(Value = "leisure_entertainment")]
-            Leisureentertainment = 12,
+            LeisureEntertainment = 12,
 
             /// <summary>
             /// Enum Lifestyle for value: lifestyle
@@ -196,16 +197,16 @@ namespace Freee.Accounting.Models
             Education = 14,
 
             /// <summary>
-            /// Enum Medicalwelfare for value: medical_welfare
+            /// Enum MedicalWelfare for value: medical_welfare
             /// </summary>
             [EnumMember(Value = "medical_welfare")]
-            Medicalwelfare = 15,
+            MedicalWelfare = 15,
 
             /// <summary>
-            /// Enum Otherservices for value: other_services
+            /// Enum OtherServices for value: other_services
             /// </summary>
             [EnumMember(Value = "other_services")]
-            Otherservices = 16,
+            OtherServices = 16,
 
             /// <summary>
             /// Enum Other for value: other
@@ -241,10 +242,10 @@ namespace Freee.Accounting.Models
             Forestry = 2,
 
             /// <summary>
-            /// Enum Fishingindustry for value: fishing_industry
+            /// Enum FishingIndustry for value: fishing_industry
             /// </summary>
             [EnumMember(Value = "fishing_industry")]
-            Fishingindustry = 3,
+            FishingIndustry = 3,
 
             /// <summary>
             /// Enum Mining for value: mining
@@ -253,10 +254,10 @@ namespace Freee.Accounting.Models
             Mining = 4,
 
             /// <summary>
-            /// Enum Civilcontractors for value: civil_contractors
+            /// Enum CivilContractors for value: civil_contractors
             /// </summary>
             [EnumMember(Value = "civil_contractors")]
-            Civilcontractors = 5,
+            CivilContractors = 5,
 
             /// <summary>
             /// Enum Pavement for value: pavement
@@ -277,10 +278,10 @@ namespace Freee.Accounting.Models
             Renovation = 8,
 
             /// <summary>
-            /// Enum Electricalplumbing for value: electrical_plumbing
+            /// Enum ElectricalPlumbing for value: electrical_plumbing
             /// </summary>
             [EnumMember(Value = "electrical_plumbing")]
-            Electricalplumbing = 9,
+            ElectricalPlumbing = 9,
 
             /// <summary>
             /// Enum Grocery for value: grocery
@@ -289,10 +290,10 @@ namespace Freee.Accounting.Models
             Grocery = 10,
 
             /// <summary>
-            /// Enum Machinerymanufacturing for value: machinery_manufacturing
+            /// Enum MachineryManufacturing for value: machinery_manufacturing
             /// </summary>
             [EnumMember(Value = "machinery_manufacturing")]
-            Machinerymanufacturing = 11,
+            MachineryManufacturing = 11,
 
             /// <summary>
             /// Enum Printing for value: printing
@@ -301,82 +302,82 @@ namespace Freee.Accounting.Models
             Printing = 12,
 
             /// <summary>
-            /// Enum Othermanufacturing for value: other_manufacturing
+            /// Enum OtherManufacturing for value: other_manufacturing
             /// </summary>
             [EnumMember(Value = "other_manufacturing")]
-            Othermanufacturing = 13,
+            OtherManufacturing = 13,
 
             /// <summary>
-            /// Enum Softwaredevelopment for value: software_development
+            /// Enum SoftwareDevelopment for value: software_development
             /// </summary>
             [EnumMember(Value = "software_development")]
-            Softwaredevelopment = 14,
+            SoftwareDevelopment = 14,
 
             /// <summary>
-            /// Enum Systemdevelopment for value: system_development
+            /// Enum SystemDevelopment for value: system_development
             /// </summary>
             [EnumMember(Value = "system_development")]
-            Systemdevelopment = 15,
+            SystemDevelopment = 15,
 
             /// <summary>
-            /// Enum Surveyanalysis for value: survey_analysis
+            /// Enum SurveyAnalysis for value: survey_analysis
             /// </summary>
             [EnumMember(Value = "survey_analysis")]
-            Surveyanalysis = 16,
+            SurveyAnalysis = 16,
 
             /// <summary>
-            /// Enum Servermanagement for value: server_management
+            /// Enum ServerManagement for value: server_management
             /// </summary>
             [EnumMember(Value = "server_management")]
-            Servermanagement = 17,
+            ServerManagement = 17,
 
             /// <summary>
-            /// Enum Websiteproduction for value: website_production
+            /// Enum WebsiteProduction for value: website_production
             /// </summary>
             [EnumMember(Value = "website_production")]
-            Websiteproduction = 18,
+            WebsiteProduction = 18,
 
             /// <summary>
-            /// Enum Onlineservicemanagement for value: online_service_management
+            /// Enum OnlineServiceManagement for value: online_service_management
             /// </summary>
             [EnumMember(Value = "online_service_management")]
-            Onlineservicemanagement = 19,
+            OnlineServiceManagement = 19,
 
             /// <summary>
-            /// Enum Onlineadvertisingagency for value: online_advertising_agency
+            /// Enum OnlineAdvertisingAgency for value: online_advertising_agency
             /// </summary>
             [EnumMember(Value = "online_advertising_agency")]
-            Onlineadvertisingagency = 20,
+            OnlineAdvertisingAgency = 20,
 
             /// <summary>
-            /// Enum Onlineadvertisingplanningproduction for value: online_advertising_planning_production
+            /// Enum OnlineAdvertisingPlanningProduction for value: online_advertising_planning_production
             /// </summary>
             [EnumMember(Value = "online_advertising_planning_production")]
-            Onlineadvertisingplanningproduction = 21,
+            OnlineAdvertisingPlanningProduction = 21,
 
             /// <summary>
-            /// Enum Onlinemediamanagement for value: online_media_management
+            /// Enum OnlineMediaManagement for value: online_media_management
             /// </summary>
             [EnumMember(Value = "online_media_management")]
-            Onlinemediamanagement = 22,
+            OnlineMediaManagement = 22,
 
             /// <summary>
-            /// Enum Portalsitemanagement for value: portal_site_management
+            /// Enum PortalSiteManagement for value: portal_site_management
             /// </summary>
             [EnumMember(Value = "portal_site_management")]
-            Portalsitemanagement = 23,
+            PortalSiteManagement = 23,
 
             /// <summary>
-            /// Enum Otheritservices for value: other_it_services
+            /// Enum OtherItServices for value: other_it_services
             /// </summary>
             [EnumMember(Value = "other_it_services")]
-            Otheritservices = 24,
+            OtherItServices = 24,
 
             /// <summary>
-            /// Enum Transportdelivery for value: transport_delivery
+            /// Enum TransportDelivery for value: transport_delivery
             /// </summary>
             [EnumMember(Value = "transport_delivery")]
-            Transportdelivery = 25,
+            TransportDelivery = 25,
 
             /// <summary>
             /// Enum Delivery for value: delivery
@@ -385,238 +386,238 @@ namespace Freee.Accounting.Models
             Delivery = 26,
 
             /// <summary>
-            /// Enum Othertransportationlogistics for value: other_transportation_logistics
+            /// Enum OtherTransportationLogistics for value: other_transportation_logistics
             /// </summary>
             [EnumMember(Value = "other_transportation_logistics")]
-            Othertransportationlogistics = 27,
+            OtherTransportationLogistics = 27,
 
             /// <summary>
-            /// Enum Otherwholesale for value: other_wholesale
+            /// Enum OtherWholesale for value: other_wholesale
             /// </summary>
             [EnumMember(Value = "other_wholesale")]
-            Otherwholesale = 28,
+            OtherWholesale = 28,
 
             /// <summary>
-            /// Enum Clothingwholesalefiber for value: clothing_wholesale_fiber
+            /// Enum ClothingWholesaleFiber for value: clothing_wholesale_fiber
             /// </summary>
             [EnumMember(Value = "clothing_wholesale_fiber")]
-            Clothingwholesalefiber = 29,
+            ClothingWholesaleFiber = 29,
 
             /// <summary>
-            /// Enum Foodwholesale for value: food_wholesale
+            /// Enum FoodWholesale for value: food_wholesale
             /// </summary>
             [EnumMember(Value = "food_wholesale")]
-            Foodwholesale = 30,
+            FoodWholesale = 30,
 
             /// <summary>
-            /// Enum Entrusteddevelopmentwholesale for value: entrusted_development_wholesale
+            /// Enum EntrustedDevelopmentWholesale for value: entrusted_development_wholesale
             /// </summary>
             [EnumMember(Value = "entrusted_development_wholesale")]
-            Entrusteddevelopmentwholesale = 31,
+            EntrustedDevelopmentWholesale = 31,
 
             /// <summary>
-            /// Enum Onlineshop for value: online_shop
+            /// Enum OnlineShop for value: online_shop
             /// </summary>
             [EnumMember(Value = "online_shop")]
-            Onlineshop = 32,
+            OnlineShop = 32,
 
             /// <summary>
-            /// Enum Fashiongrocerystore for value: fashion_grocery_store
+            /// Enum FashionGroceryStore for value: fashion_grocery_store
             /// </summary>
             [EnumMember(Value = "fashion_grocery_store")]
-            Fashiongrocerystore = 33,
+            FashionGroceryStore = 33,
 
             /// <summary>
-            /// Enum Foodstore for value: food_store
+            /// Enum FoodStore for value: food_store
             /// </summary>
             [EnumMember(Value = "food_store")]
-            Foodstore = 34,
+            FoodStore = 34,
 
             /// <summary>
-            /// Enum Entrustedstore for value: entrusted_store
+            /// Enum EntrustedStore for value: entrusted_store
             /// </summary>
             [EnumMember(Value = "entrusted_store")]
-            Entrustedstore = 35,
+            EntrustedStore = 35,
 
             /// <summary>
-            /// Enum Otherstore for value: other_store
+            /// Enum OtherStore for value: other_store
             /// </summary>
             [EnumMember(Value = "other_store")]
-            Otherstore = 36,
+            OtherStore = 36,
 
             /// <summary>
-            /// Enum Financialinstrumentsexchange for value: financial_instruments_exchange
+            /// Enum FinancialInstrumentsExchange for value: financial_instruments_exchange
             /// </summary>
             [EnumMember(Value = "financial_instruments_exchange")]
-            Financialinstrumentsexchange = 37,
+            FinancialInstrumentsExchange = 37,
 
             /// <summary>
-            /// Enum Commodityfuturesinvestmentadvisor for value: commodity_futures_investment_advisor
+            /// Enum CommodityFuturesInvestmentAdvisor for value: commodity_futures_investment_advisor
             /// </summary>
             [EnumMember(Value = "commodity_futures_investment_advisor")]
-            Commodityfuturesinvestmentadvisor = 38,
+            CommodityFuturesInvestmentAdvisor = 38,
 
             /// <summary>
-            /// Enum Otherfinancial for value: other_financial
+            /// Enum OtherFinancial for value: other_financial
             /// </summary>
             [EnumMember(Value = "other_financial")]
-            Otherfinancial = 39,
+            OtherFinancial = 39,
 
             /// <summary>
-            /// Enum Brokerageinsurance for value: brokerage_insurance
+            /// Enum BrokerageInsurance for value: brokerage_insurance
             /// </summary>
             [EnumMember(Value = "brokerage_insurance")]
-            Brokerageinsurance = 40,
+            BrokerageInsurance = 40,
 
             /// <summary>
-            /// Enum Otherinsurance for value: other_insurance
+            /// Enum OtherInsurance for value: other_insurance
             /// </summary>
             [EnumMember(Value = "other_insurance")]
-            Otherinsurance = 41,
+            OtherInsurance = 41,
 
             /// <summary>
-            /// Enum Realestatedeveloper for value: real_estate_developer
+            /// Enum RealEstateDeveloper for value: real_estate_developer
             /// </summary>
             [EnumMember(Value = "real_estate_developer")]
-            Realestatedeveloper = 42,
+            RealEstateDeveloper = 42,
 
             /// <summary>
-            /// Enum Realestatebrokerage for value: real_estate_brokerage
+            /// Enum RealEstateBrokerage for value: real_estate_brokerage
             /// </summary>
             [EnumMember(Value = "real_estate_brokerage")]
-            Realestatebrokerage = 43,
+            RealEstateBrokerage = 43,
 
             /// <summary>
-            /// Enum Rentcoinparkingmanagement for value: rent_coin_parking_management
+            /// Enum RentCoinParkingManagement for value: rent_coin_parking_management
             /// </summary>
             [EnumMember(Value = "rent_coin_parking_management")]
-            Rentcoinparkingmanagement = 44,
+            RentCoinParkingManagement = 44,
 
             /// <summary>
-            /// Enum Rentalofficecoworkingspace for value: rental_office_co_working_space
+            /// Enum RentalOfficeCoWorkingSpace for value: rental_office_co_working_space
             /// </summary>
             [EnumMember(Value = "rental_office_co_working_space")]
-            Rentalofficecoworkingspace = 45,
+            RentalOfficeCoWorkingSpace = 45,
 
             /// <summary>
-            /// Enum Rentallease for value: rental_lease
+            /// Enum RentalLease for value: rental_lease
             /// </summary>
             [EnumMember(Value = "rental_lease")]
-            Rentallease = 46,
+            RentalLease = 46,
 
             /// <summary>
-            /// Enum Cpataxaccountant for value: cpa_tax_accountant
+            /// Enum CpaTaxAccountant for value: cpa_tax_accountant
             /// </summary>
             [EnumMember(Value = "cpa_tax_accountant")]
-            Cpataxaccountant = 47,
+            CpaTaxAccountant = 47,
 
             /// <summary>
-            /// Enum Lawoffice for value: law_office
+            /// Enum LawOffice for value: law_office
             /// </summary>
             [EnumMember(Value = "law_office")]
-            Lawoffice = 48,
+            LawOffice = 48,
 
             /// <summary>
-            /// Enum Judicialandadministrativescrivener for value: judicial_and_administrative_scrivener
+            /// Enum JudicialAndAdministrativeScrivener for value: judicial_and_administrative_scrivener
             /// </summary>
             [EnumMember(Value = "judicial_and_administrative_scrivener")]
-            Judicialandadministrativescrivener = 49,
+            JudicialAndAdministrativeScrivener = 49,
 
             /// <summary>
-            /// Enum Laborconsultant for value: labor_consultant
+            /// Enum LaborConsultant for value: labor_consultant
             /// </summary>
             [EnumMember(Value = "labor_consultant")]
-            Laborconsultant = 50,
+            LaborConsultant = 50,
 
             /// <summary>
-            /// Enum Otherprofession for value: other_profession
+            /// Enum OtherProfession for value: other_profession
             /// </summary>
             [EnumMember(Value = "other_profession")]
-            Otherprofession = 51,
+            OtherProfession = 51,
 
             /// <summary>
-            /// Enum Businessconsultant for value: business_consultant
+            /// Enum BusinessConsultant for value: business_consultant
             /// </summary>
             [EnumMember(Value = "business_consultant")]
-            Businessconsultant = 52,
+            BusinessConsultant = 52,
 
             /// <summary>
-            /// Enum Academicresearchdevelopment for value: academic_research_development
+            /// Enum AcademicResearchDevelopment for value: academic_research_development
             /// </summary>
             [EnumMember(Value = "academic_research_development")]
-            Academicresearchdevelopment = 53,
+            AcademicResearchDevelopment = 53,
 
             /// <summary>
-            /// Enum Advertisingagency for value: advertising_agency
+            /// Enum AdvertisingAgency for value: advertising_agency
             /// </summary>
             [EnumMember(Value = "advertising_agency")]
-            Advertisingagency = 54,
+            AdvertisingAgency = 54,
 
             /// <summary>
-            /// Enum Advertisingplanningproduction for value: advertising_planning_production
+            /// Enum AdvertisingPlanningProduction for value: advertising_planning_production
             /// </summary>
             [EnumMember(Value = "advertising_planning_production")]
-            Advertisingplanningproduction = 55,
+            AdvertisingPlanningProduction = 55,
 
             /// <summary>
-            /// Enum Designdevelopment for value: design_development
+            /// Enum DesignDevelopment for value: design_development
             /// </summary>
             [EnumMember(Value = "design_development")]
-            Designdevelopment = 56,
+            DesignDevelopment = 56,
 
             /// <summary>
-            /// Enum Apparelindustrydesign for value: apparel_industry_design
+            /// Enum ApparelIndustryDesign for value: apparel_industry_design
             /// </summary>
             [EnumMember(Value = "apparel_industry_design")]
-            Apparelindustrydesign = 57,
+            ApparelIndustryDesign = 57,
 
             /// <summary>
-            /// Enum Websitedesign for value: website_design
+            /// Enum WebsiteDesign for value: website_design
             /// </summary>
             [EnumMember(Value = "website_design")]
-            Websitedesign = 58,
+            WebsiteDesign = 58,
 
             /// <summary>
-            /// Enum Advertisingplanningdesign for value: advertising_planning_design
+            /// Enum AdvertisingPlanningDesign for value: advertising_planning_design
             /// </summary>
             [EnumMember(Value = "advertising_planning_design")]
-            Advertisingplanningdesign = 59,
+            AdvertisingPlanningDesign = 59,
 
             /// <summary>
-            /// Enum Otherdesign for value: other_design
+            /// Enum OtherDesign for value: other_design
             /// </summary>
             [EnumMember(Value = "other_design")]
-            Otherdesign = 60,
+            OtherDesign = 60,
 
             /// <summary>
-            /// Enum Restaurantscoffeeshops for value: restaurants_coffee_shops
+            /// Enum RestaurantsCoffeeShops for value: restaurants_coffee_shops
             /// </summary>
             [EnumMember(Value = "restaurants_coffee_shops")]
-            Restaurantscoffeeshops = 61,
+            RestaurantsCoffeeShops = 61,
 
             /// <summary>
-            /// Enum Saleoflunch for value: sale_of_lunch
+            /// Enum SaleOfLunch for value: sale_of_lunch
             /// </summary>
             [EnumMember(Value = "sale_of_lunch")]
-            Saleoflunch = 62,
+            SaleOfLunch = 62,
 
             /// <summary>
-            /// Enum Breadconfectionerymanufacturesale for value: bread_confectionery_manufacture_sale
+            /// Enum BreadConfectioneryManufactureSale for value: bread_confectionery_manufacture_sale
             /// </summary>
             [EnumMember(Value = "bread_confectionery_manufacture_sale")]
-            Breadconfectionerymanufacturesale = 63,
+            BreadConfectioneryManufactureSale = 63,
 
             /// <summary>
-            /// Enum Deliverycateringmobilecatering for value: delivery_catering_mobile_catering
+            /// Enum DeliveryCateringMobileCatering for value: delivery_catering_mobile_catering
             /// </summary>
             [EnumMember(Value = "delivery_catering_mobile_catering")]
-            Deliverycateringmobilecatering = 64,
+            DeliveryCateringMobileCatering = 64,
 
             /// <summary>
-            /// Enum Hotelinn for value: hotel_inn
+            /// Enum HotelInn for value: hotel_inn
             /// </summary>
             [EnumMember(Value = "hotel_inn")]
-            Hotelinn = 65,
+            HotelInn = 65,
 
             /// <summary>
             /// Enum Homestay for value: homestay
@@ -625,22 +626,22 @@ namespace Freee.Accounting.Models
             Homestay = 66,
 
             /// <summary>
-            /// Enum Travelagency for value: travel_agency
+            /// Enum TravelAgency for value: travel_agency
             /// </summary>
             [EnumMember(Value = "travel_agency")]
-            Travelagency = 67,
+            TravelAgency = 67,
 
             /// <summary>
-            /// Enum Leisuresportsfacilitymanagement for value: leisure_sports_facility_management
+            /// Enum LeisureSportsFacilityManagement for value: leisure_sports_facility_management
             /// </summary>
             [EnumMember(Value = "leisure_sports_facility_management")]
-            Leisuresportsfacilitymanagement = 68,
+            LeisureSportsFacilityManagement = 68,
 
             /// <summary>
-            /// Enum Showeventmanagement for value: show_event_management
+            /// Enum ShowEventManagement for value: show_event_management
             /// </summary>
             [EnumMember(Value = "show_event_management")]
-            Showeventmanagement = 69,
+            ShowEventManagement = 69,
 
             /// <summary>
             /// Enum Barber for value: barber
@@ -649,34 +650,34 @@ namespace Freee.Accounting.Models
             Barber = 70,
 
             /// <summary>
-            /// Enum Beautysalon for value: beauty_salon
+            /// Enum BeautySalon for value: beauty_salon
             /// </summary>
             [EnumMember(Value = "beauty_salon")]
-            Beautysalon = 71,
+            BeautySalon = 71,
 
             /// <summary>
-            /// Enum Spasandbathsauna for value: spa_sand_bath_sauna
+            /// Enum SpaSandBathSauna for value: spa_sand_bath_sauna
             /// </summary>
             [EnumMember(Value = "spa_sand_bath_sauna")]
-            Spasandbathsauna = 72,
+            SpaSandBathSauna = 72,
 
             /// <summary>
-            /// Enum Esteailsalon for value: este_ail_salon
+            /// Enum EsteAilSalon for value: este_ail_salon
             /// </summary>
             [EnumMember(Value = "este_ail_salon")]
-            Esteailsalon = 73,
+            EsteAilSalon = 73,
 
             /// <summary>
-            /// Enum Bridalplanningintroducewedding for value: bridal_planning_introduce_wedding
+            /// Enum BridalPlanningIntroduceWedding for value: bridal_planning_introduce_wedding
             /// </summary>
             [EnumMember(Value = "bridal_planning_introduce_wedding")]
-            Bridalplanningintroducewedding = 74,
+            BridalPlanningIntroduceWedding = 74,
 
             /// <summary>
-            /// Enum Memorialceremonyfuneral for value: memorial_ceremony_funeral
+            /// Enum MemorialCeremonyFuneral for value: memorial_ceremony_funeral
             /// </summary>
             [EnumMember(Value = "memorial_ceremony_funeral")]
-            Memorialceremonyfuneral = 75,
+            MemorialCeremonyFuneral = 75,
 
             /// <summary>
             /// Enum Moving for value: moving
@@ -685,82 +686,82 @@ namespace Freee.Accounting.Models
             Moving = 76,
 
             /// <summary>
-            /// Enum Courierindustry for value: courier_industry
+            /// Enum CourierIndustry for value: courier_industry
             /// </summary>
             [EnumMember(Value = "courier_industry")]
-            Courierindustry = 77,
+            CourierIndustry = 77,
 
             /// <summary>
-            /// Enum Housemaidcleaningagency for value: house_maid_cleaning_agency
+            /// Enum HouseMaidCleaningAgency for value: house_maid_cleaning_agency
             /// </summary>
             [EnumMember(Value = "house_maid_cleaning_agency")]
-            Housemaidcleaningagency = 78,
+            HouseMaidCleaningAgency = 78,
 
             /// <summary>
-            /// Enum Retailoringclothes for value: re_tailoring_clothes
+            /// Enum ReTailoringClothes for value: re_tailoring_clothes
             /// </summary>
             [EnumMember(Value = "re_tailoring_clothes")]
-            Retailoringclothes = 79,
+            ReTailoringClothes = 79,
 
             /// <summary>
-            /// Enum Traininginstitutemanagement for value: training_institute_management
+            /// Enum TrainingInstituteManagement for value: training_institute_management
             /// </summary>
             [EnumMember(Value = "training_institute_management")]
-            Traininginstitutemanagement = 80,
+            TrainingInstituteManagement = 80,
 
             /// <summary>
-            /// Enum Tutoringschool for value: tutoring_school
+            /// Enum TutoringSchool for value: tutoring_school
             /// </summary>
             [EnumMember(Value = "tutoring_school")]
-            Tutoringschool = 81,
+            TutoringSchool = 81,
 
             /// <summary>
-            /// Enum Musiccalligraphyabacusclassroom for value: music_calligraphy_abacus_classroom
+            /// Enum MusicCalligraphyAbacusClassroom for value: music_calligraphy_abacus_classroom
             /// </summary>
             [EnumMember(Value = "music_calligraphy_abacus_classroom")]
-            Musiccalligraphyabacusclassroom = 82,
+            MusicCalligraphyAbacusClassroom = 82,
 
             /// <summary>
-            /// Enum Englishschool for value: english_school
+            /// Enum EnglishSchool for value: english_school
             /// </summary>
             [EnumMember(Value = "english_school")]
-            Englishschool = 83,
+            EnglishSchool = 83,
 
             /// <summary>
-            /// Enum Tennisyogajudoschool for value: tennis_yoga_judo_school
+            /// Enum TennisYogaJudoSchool for value: tennis_yoga_judo_school
             /// </summary>
             [EnumMember(Value = "tennis_yoga_judo_school")]
-            Tennisyogajudoschool = 84,
+            TennisYogaJudoSchool = 84,
 
             /// <summary>
-            /// Enum Cultureschool for value: culture_school
+            /// Enum CultureSchool for value: culture_school
             /// </summary>
             [EnumMember(Value = "culture_school")]
-            Cultureschool = 85,
+            CultureSchool = 85,
 
             /// <summary>
-            /// Enum Seminarplanningmanagement for value: seminar_planning_management
+            /// Enum SeminarPlanningManagement for value: seminar_planning_management
             /// </summary>
             [EnumMember(Value = "seminar_planning_management")]
-            Seminarplanningmanagement = 86,
+            SeminarPlanningManagement = 86,
 
             /// <summary>
-            /// Enum Hospitalclinic for value: hospital_clinic
+            /// Enum HospitalClinic for value: hospital_clinic
             /// </summary>
             [EnumMember(Value = "hospital_clinic")]
-            Hospitalclinic = 87,
+            HospitalClinic = 87,
 
             /// <summary>
-            /// Enum Dentalclinic for value: dental_clinic
+            /// Enum DentalClinic for value: dental_clinic
             /// </summary>
             [EnumMember(Value = "dental_clinic")]
-            Dentalclinic = 88,
+            DentalClinic = 88,
 
             /// <summary>
-            /// Enum Othermedicalservices for value: other_medical_services
+            /// Enum OtherMedicalServices for value: other_medical_services
             /// </summary>
             [EnumMember(Value = "other_medical_services")]
-            Othermedicalservices = 89,
+            OtherMedicalServices = 89,
 
             /// <summary>
             /// Enum Nursery for value: nursery
@@ -769,58 +770,58 @@ namespace Freee.Accounting.Models
             Nursery = 90,
 
             /// <summary>
-            /// Enum Nursinghome for value: nursing_home
+            /// Enum NursingHome for value: nursing_home
             /// </summary>
             [EnumMember(Value = "nursing_home")]
-            Nursinghome = 91,
+            NursingHome = 91,
 
             /// <summary>
-            /// Enum Rehabilitationsupportservices for value: rehabilitation_support_services
+            /// Enum RehabilitationSupportServices for value: rehabilitation_support_services
             /// </summary>
             [EnumMember(Value = "rehabilitation_support_services")]
-            Rehabilitationsupportservices = 92,
+            RehabilitationSupportServices = 92,
 
             /// <summary>
-            /// Enum Otherwelfare for value: other_welfare
+            /// Enum OtherWelfare for value: other_welfare
             /// </summary>
             [EnumMember(Value = "other_welfare")]
-            Otherwelfare = 93,
+            OtherWelfare = 93,
 
             /// <summary>
-            /// Enum Visitwelfareservice for value: visit_welfare_service
+            /// Enum VisitWelfareService for value: visit_welfare_service
             /// </summary>
             [EnumMember(Value = "visit_welfare_service")]
-            Visitwelfareservice = 94,
+            VisitWelfareService = 94,
 
             /// <summary>
-            /// Enum Recruitmenttemporarystaffing for value: recruitment_temporary_staffing
+            /// Enum RecruitmentTemporaryStaffing for value: recruitment_temporary_staffing
             /// </summary>
             [EnumMember(Value = "recruitment_temporary_staffing")]
-            Recruitmenttemporarystaffing = 95,
+            RecruitmentTemporaryStaffing = 95,
 
             /// <summary>
-            /// Enum Liferelatedrecruitmenttemporarystaffing for value: life_related_recruitment_temporary_staffing
+            /// Enum LifeRelatedRecruitmentTemporaryStaffing for value: life_related_recruitment_temporary_staffing
             /// </summary>
             [EnumMember(Value = "life_related_recruitment_temporary_staffing")]
-            Liferelatedrecruitmenttemporarystaffing = 96,
+            LifeRelatedRecruitmentTemporaryStaffing = 96,
 
             /// <summary>
-            /// Enum Carmaintenancecarrepair for value: car_maintenance_car_repair
+            /// Enum CarMaintenanceCarRepair for value: car_maintenance_car_repair
             /// </summary>
             [EnumMember(Value = "car_maintenance_car_repair")]
-            Carmaintenancecarrepair = 97,
+            CarMaintenanceCarRepair = 97,
 
             /// <summary>
-            /// Enum Machineryequipmentmaintenancerepair for value: machinery_equipment_maintenance_repair
+            /// Enum MachineryEquipmentMaintenanceRepair for value: machinery_equipment_maintenance_repair
             /// </summary>
             [EnumMember(Value = "machinery_equipment_maintenance_repair")]
-            Machineryequipmentmaintenancerepair = 98,
+            MachineryEquipmentMaintenanceRepair = 98,
 
             /// <summary>
-            /// Enum Cleaningmaintenancebuildingmanagement for value: cleaning_maintenance_building_management
+            /// Enum CleaningMaintenanceBuildingManagement for value: cleaning_maintenance_building_management
             /// </summary>
             [EnumMember(Value = "cleaning_maintenance_building_management")]
-            Cleaningmaintenancebuildingmanagement = 99,
+            CleaningMaintenanceBuildingManagement = 99,
 
             /// <summary>
             /// Enum Security for value: security
@@ -829,10 +830,10 @@ namespace Freee.Accounting.Models
             Security = 100,
 
             /// <summary>
-            /// Enum Otherservices for value: other_services
+            /// Enum OtherServices for value: other_services
             /// </summary>
             [EnumMember(Value = "other_services")]
-            Otherservices = 101,
+            OtherServices = 101,
 
             /// <summary>
             /// Enum Npo for value: npo
@@ -841,22 +842,22 @@ namespace Freee.Accounting.Models
             Npo = 102,
 
             /// <summary>
-            /// Enum Generalincorporatedassociation for value: general_incorporated_association
+            /// Enum GeneralIncorporatedAssociation for value: general_incorporated_association
             /// </summary>
             [EnumMember(Value = "general_incorporated_association")]
-            Generalincorporatedassociation = 103,
+            GeneralIncorporatedAssociation = 103,
 
             /// <summary>
-            /// Enum Generalincorporatedfoundation for value: general_incorporated_foundation
+            /// Enum GeneralIncorporatedFoundation for value: general_incorporated_foundation
             /// </summary>
             [EnumMember(Value = "general_incorporated_foundation")]
-            Generalincorporatedfoundation = 104,
+            GeneralIncorporatedFoundation = 104,
 
             /// <summary>
-            /// Enum Otherassociation for value: other_association
+            /// Enum OtherAssociation for value: other_association
             /// </summary>
             [EnumMember(Value = "other_association")]
-            Otherassociation = 105
+            OtherAssociation = 105
 
         }
 
@@ -874,52 +875,52 @@ namespace Freee.Accounting.Models
         public enum InvoiceLayoutEnum
         {
             /// <summary>
-            /// Enum Defaultclassic for value: default_classic
+            /// Enum DefaultClassic for value: default_classic
             /// </summary>
             [EnumMember(Value = "default_classic")]
-            Defaultclassic = 1,
+            DefaultClassic = 1,
 
             /// <summary>
-            /// Enum Standardclassic for value: standard_classic
+            /// Enum StandardClassic for value: standard_classic
             /// </summary>
             [EnumMember(Value = "standard_classic")]
-            Standardclassic = 2,
+            StandardClassic = 2,
 
             /// <summary>
-            /// Enum Envelopeclassic for value: envelope_classic
+            /// Enum EnvelopeClassic for value: envelope_classic
             /// </summary>
             [EnumMember(Value = "envelope_classic")]
-            Envelopeclassic = 3,
+            EnvelopeClassic = 3,
 
             /// <summary>
-            /// Enum Carriedforwardstandardclassic for value: carried_forward_standard_classic
+            /// Enum CarriedForwardStandardClassic for value: carried_forward_standard_classic
             /// </summary>
             [EnumMember(Value = "carried_forward_standard_classic")]
-            Carriedforwardstandardclassic = 4,
+            CarriedForwardStandardClassic = 4,
 
             /// <summary>
-            /// Enum Carriedforwardenvelopeclassic for value: carried_forward_envelope_classic
+            /// Enum CarriedForwardEnvelopeClassic for value: carried_forward_envelope_classic
             /// </summary>
             [EnumMember(Value = "carried_forward_envelope_classic")]
-            Carriedforwardenvelopeclassic = 5,
+            CarriedForwardEnvelopeClassic = 5,
 
             /// <summary>
-            /// Enum Defaultmodern for value: default_modern
+            /// Enum DefaultModern for value: default_modern
             /// </summary>
             [EnumMember(Value = "default_modern")]
-            Defaultmodern = 6,
+            DefaultModern = 6,
 
             /// <summary>
-            /// Enum Standardmodern for value: standard_modern
+            /// Enum StandardModern for value: standard_modern
             /// </summary>
             [EnumMember(Value = "standard_modern")]
-            Standardmodern = 7,
+            StandardModern = 7,
 
             /// <summary>
-            /// Enum Envelopemodern for value: envelope_modern
+            /// Enum EnvelopeModern for value: envelope_modern
             /// </summary>
             [EnumMember(Value = "envelope_modern")]
-            Envelopemodern = 8
+            EnvelopeModern = 8
 
         }
 
@@ -937,10 +938,10 @@ namespace Freee.Accounting.Models
         public enum TxnNumberFormatEnum
         {
             /// <summary>
-            /// Enum Notused for value: not_used
+            /// Enum NotUsed for value: not_used
             /// </summary>
             [EnumMember(Value = "not_used")]
-            Notused = 1,
+            NotUsed = 1,
 
             /// <summary>
             /// Enum Digits for value: digits
@@ -1151,7 +1152,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

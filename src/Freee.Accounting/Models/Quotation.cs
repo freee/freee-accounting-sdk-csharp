@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -37,40 +38,40 @@ namespace Freee.Accounting.Models
         public enum QuotationLayoutEnum
         {
             /// <summary>
-            /// Enum Defaultclassic for value: default_classic
+            /// Enum DefaultClassic for value: default_classic
             /// </summary>
             [EnumMember(Value = "default_classic")]
-            Defaultclassic = 1,
+            DefaultClassic = 1,
 
             /// <summary>
-            /// Enum Standardclassic for value: standard_classic
+            /// Enum StandardClassic for value: standard_classic
             /// </summary>
             [EnumMember(Value = "standard_classic")]
-            Standardclassic = 2,
+            StandardClassic = 2,
 
             /// <summary>
-            /// Enum Envelopeclassic for value: envelope_classic
+            /// Enum EnvelopeClassic for value: envelope_classic
             /// </summary>
             [EnumMember(Value = "envelope_classic")]
-            Envelopeclassic = 3,
+            EnvelopeClassic = 3,
 
             /// <summary>
-            /// Enum Defaultmodern for value: default_modern
+            /// Enum DefaultModern for value: default_modern
             /// </summary>
             [EnumMember(Value = "default_modern")]
-            Defaultmodern = 4,
+            DefaultModern = 4,
 
             /// <summary>
-            /// Enum Standardmodern for value: standard_modern
+            /// Enum StandardModern for value: standard_modern
             /// </summary>
             [EnumMember(Value = "standard_modern")]
-            Standardmodern = 5,
+            StandardModern = 5,
 
             /// <summary>
-            /// Enum Envelopemodern for value: envelope_modern
+            /// Enum EnvelopeModern for value: envelope_modern
             /// </summary>
             [EnumMember(Value = "envelope_modern")]
-            Envelopemodern = 6
+            EnvelopeModern = 6
 
         }
 
@@ -78,7 +79,7 @@ namespace Freee.Accounting.Models
         /// 見積書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン
         /// </summary>
         /// <value>見積書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン</value>
-        [DataMember(Name = "quotation_layout", EmitDefaultValue = false)]
+        [DataMember(Name = "quotation_layout", IsRequired = true, EmitDefaultValue = false)]
         public QuotationLayoutEnum QuotationLayout { get; set; }
         /// <summary>
         /// 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み, all: 全て)
@@ -111,7 +112,7 @@ namespace Freee.Accounting.Models
         /// 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み, all: 全て)
         /// </summary>
         /// <value>見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み, all: 全て)</value>
-        [DataMember(Name = "quotation_status", EmitDefaultValue = false)]
+        [DataMember(Name = "quotation_status", IsRequired = true, EmitDefaultValue = false)]
         public QuotationStatusEnum QuotationStatus { get; set; }
         /// <summary>
         /// 見積書の消費税計算方法(inclusive: 内税, exclusive: 外税)
@@ -144,7 +145,7 @@ namespace Freee.Accounting.Models
         /// 見積書の消費税計算方法(inclusive: 内税, exclusive: 外税)
         /// </summary>
         /// <value>見積書の消費税計算方法(inclusive: 内税, exclusive: 外税)</value>
-        [DataMember(Name = "tax_entry_method", EmitDefaultValue = false)]
+        [DataMember(Name = "tax_entry_method", IsRequired = true, EmitDefaultValue = false)]
         public TaxEntryMethodEnum TaxEntryMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Quotation" /> class.
@@ -265,14 +266,14 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 事業所名
         /// </summary>
         /// <value>事業所名</value>
-        [DataMember(Name = "company_name", EmitDefaultValue = false)]
+        [DataMember(Name = "company_name", IsRequired = true, EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
         /// <summary>
@@ -307,14 +308,14 @@ namespace Freee.Accounting.Models
         /// 見積書ID
         /// </summary>
         /// <value>見積書ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 見積日 (yyyy-mm-dd)
         /// </summary>
         /// <value>見積日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "issue_date", EmitDefaultValue = false)]
+        [DataMember(Name = "issue_date", IsRequired = true, EmitDefaultValue = false)]
         public string IssueDate { get; set; }
 
         /// <summary>
@@ -377,7 +378,7 @@ namespace Freee.Accounting.Models
         /// 取引先ID
         /// </summary>
         /// <value>取引先ID</value>
-        [DataMember(Name = "partner_id", EmitDefaultValue = true)]
+        [DataMember(Name = "partner_id", IsRequired = true, EmitDefaultValue = true)]
         public int? PartnerId { get; set; }
 
         /// <summary>
@@ -405,7 +406,7 @@ namespace Freee.Accounting.Models
         /// 敬称（御中、様、(空白)の3つから選択）
         /// </summary>
         /// <value>敬称（御中、様、(空白)の3つから選択）</value>
-        [DataMember(Name = "partner_title", EmitDefaultValue = true)]
+        [DataMember(Name = "partner_title", IsRequired = true, EmitDefaultValue = true)]
         public string PartnerTitle { get; set; }
 
         /// <summary>
@@ -426,7 +427,7 @@ namespace Freee.Accounting.Models
         /// 見積書番号
         /// </summary>
         /// <value>見積書番号</value>
-        [DataMember(Name = "quotation_number", EmitDefaultValue = false)]
+        [DataMember(Name = "quotation_number", IsRequired = true, EmitDefaultValue = false)]
         public string QuotationNumber { get; set; }
 
         /// <summary>
@@ -447,13 +448,13 @@ namespace Freee.Accounting.Models
         /// 合計金額
         /// </summary>
         /// <value>合計金額</value>
-        [DataMember(Name = "total_amount", EmitDefaultValue = false)]
+        [DataMember(Name = "total_amount", IsRequired = true, EmitDefaultValue = false)]
         public int TotalAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalAmountPerVatRate
         /// </summary>
-        [DataMember(Name = "total_amount_per_vat_rate", EmitDefaultValue = false)]
+        [DataMember(Name = "total_amount_per_vat_rate", IsRequired = true, EmitDefaultValue = false)]
         public InvoiceTotalAmountPerVatRate TotalAmountPerVatRate { get; set; }
 
         /// <summary>
@@ -540,7 +541,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

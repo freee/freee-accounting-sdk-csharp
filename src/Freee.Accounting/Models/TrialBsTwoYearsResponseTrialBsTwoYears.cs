@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -37,10 +38,10 @@ namespace Freee.Accounting.Models
         public enum AccountItemDisplayTypeEnum
         {
             /// <summary>
-            /// Enum Accountitem for value: account_item
+            /// Enum AccountItem for value: account_item
             /// </summary>
             [EnumMember(Value = "account_item")]
-            Accountitem = 1,
+            AccountItem = 1,
 
             /// <summary>
             /// Enum Group for value: group
@@ -103,10 +104,10 @@ namespace Freee.Accounting.Models
             Item = 2,
 
             /// <summary>
-            /// Enum Accountitem for value: account_item
+            /// Enum AccountItem for value: account_item
             /// </summary>
             [EnumMember(Value = "account_item")]
-            Accountitem = 3
+            AccountItem = 3
 
         }
 
@@ -160,14 +161,14 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Gets or Sets Balances
         /// </summary>
-        [DataMember(Name = "balances", EmitDefaultValue = false)]
+        [DataMember(Name = "balances", IsRequired = true, EmitDefaultValue = false)]
         public List<TrialBsTwoYearsResponseTrialBsTwoYearsBalances> Balances { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
@@ -265,7 +266,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

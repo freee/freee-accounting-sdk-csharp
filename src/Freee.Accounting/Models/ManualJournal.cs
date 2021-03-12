@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -60,42 +61,42 @@ namespace Freee.Accounting.Models
         /// 決算整理仕訳フラグ（falseまたは未指定の場合: 日常仕訳）
         /// </summary>
         /// <value>決算整理仕訳フラグ（falseまたは未指定の場合: 日常仕訳）</value>
-        [DataMember(Name = "adjustment", EmitDefaultValue = false)]
+        [DataMember(Name = "adjustment", IsRequired = true, EmitDefaultValue = false)]
         public bool Adjustment { get; set; }
 
         /// <summary>
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// 貸借行一覧（配列）: 貸借合わせて100行まで登録できます。
         /// </summary>
         /// <value>貸借行一覧（配列）: 貸借合わせて100行まで登録できます。</value>
-        [DataMember(Name = "details", EmitDefaultValue = false)]
+        [DataMember(Name = "details", IsRequired = true, EmitDefaultValue = false)]
         public List<ManualJournalDetails> Details { get; set; }
 
         /// <summary>
         /// 振替伝票ID
         /// </summary>
         /// <value>振替伝票ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 発生日 (yyyy-mm-dd)
         /// </summary>
         /// <value>発生日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "issue_date", EmitDefaultValue = false)]
+        [DataMember(Name = "issue_date", IsRequired = true, EmitDefaultValue = false)]
         public string IssueDate { get; set; }
 
         /// <summary>
         /// 仕訳番号
         /// </summary>
         /// <value>仕訳番号</value>
-        [DataMember(Name = "txn_number", EmitDefaultValue = true)]
+        [DataMember(Name = "txn_number", IsRequired = true, EmitDefaultValue = true)]
         public string TxnNumber { get; set; }
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

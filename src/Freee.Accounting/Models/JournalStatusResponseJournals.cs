@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -60,7 +61,7 @@ namespace Freee.Accounting.Models
         /// ダウンロード形式
         /// </summary>
         /// <value>ダウンロード形式</value>
-        [DataMember(Name = "download_type", EmitDefaultValue = false)]
+        [DataMember(Name = "download_type", IsRequired = true, EmitDefaultValue = false)]
         public DownloadTypeEnum DownloadType { get; set; }
         /// <summary>
         /// 事業所ID
@@ -99,7 +100,7 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
         /// 補助科目やコメントとして出力する項目
@@ -139,10 +140,10 @@ namespace Freee.Accounting.Models
             Description = 5,
 
             /// <summary>
-            /// Enum Wallettxndescription for value: wallet_txn_description
+            /// Enum WalletTxnDescription for value: wallet_txn_description
             /// </summary>
             [EnumMember(Value = "wallet_txn_description")]
-            Wallettxndescription = 6,
+            WalletTxnDescription = 6,
 
             /// <summary>
             /// Enum All for value: all
@@ -151,22 +152,22 @@ namespace Freee.Accounting.Models
             All = 7,
 
             /// <summary>
-            /// Enum Segment1tag for value: segment_1_tag
+            /// Enum Segment1Tag for value: segment_1_tag
             /// </summary>
             [EnumMember(Value = "segment_1_tag")]
-            Segment1tag = 8,
+            Segment1Tag = 8,
 
             /// <summary>
-            /// Enum Segment2tag for value: segment_2_tag
+            /// Enum Segment2Tag for value: segment_2_tag
             /// </summary>
             [EnumMember(Value = "segment_2_tag")]
-            Segment2tag = 9,
+            Segment2Tag = 9,
 
             /// <summary>
-            /// Enum Segment3tag for value: segment_3_tag
+            /// Enum Segment3Tag for value: segment_3_tag
             /// </summary>
             [EnumMember(Value = "segment_3_tag")]
-            Segment3tag = 10
+            Segment3Tag = 10
 
         }
 
@@ -210,7 +211,7 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
@@ -224,21 +225,21 @@ namespace Freee.Accounting.Models
         /// 取得終了日 (yyyy-mm-dd)
         /// </summary>
         /// <value>取得終了日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "end_date", EmitDefaultValue = false)]
+        [DataMember(Name = "end_date", IsRequired = true, EmitDefaultValue = false)]
         public string EndDate { get; set; }
 
         /// <summary>
         /// 受け付けID
         /// </summary>
         /// <value>受け付けID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
         /// 取得開始日 (yyyy-mm-dd)
         /// </summary>
         /// <value>取得開始日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "start_date", EmitDefaultValue = false)]
+        [DataMember(Name = "start_date", IsRequired = true, EmitDefaultValue = false)]
         public string StartDate { get; set; }
 
         /// <summary>
@@ -267,7 +268,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
