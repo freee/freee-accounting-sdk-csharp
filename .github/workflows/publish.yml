@@ -2,7 +2,10 @@ name: Publish
 
 on:
   push:
-    tags: [ v* ]
+    branches:
+      - "!*"
+    tags:
+      - "v*"
 
 env:
   DOTNET_VERSION: 3.1.x
