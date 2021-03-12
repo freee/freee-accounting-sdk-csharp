@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -59,14 +60,14 @@ namespace Freee.Accounting.Models
         /// 申請日 (yyyy-mm-dd)
         /// </summary>
         /// <value>申請日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "application_date", EmitDefaultValue = false)]
+        [DataMember(Name = "application_date", IsRequired = true, EmitDefaultValue = false)]
         public string ApplicationDate { get; set; }
 
         /// <summary>
         /// 申請経路ID
         /// </summary>
         /// <value>申請経路ID</value>
-        [DataMember(Name = "approval_flow_route_id", EmitDefaultValue = false)]
+        [DataMember(Name = "approval_flow_route_id", IsRequired = true, EmitDefaultValue = false)]
         public int ApprovalFlowRouteId { get; set; }
 
         /// <summary>
@@ -80,20 +81,20 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
         /// falseの時、in_progress:申請中で更新する。それ以外の時はdraft:下書きで更新する
         /// </summary>
         /// <value>falseの時、in_progress:申請中で更新する。それ以外の時はdraft:下書きで更新する</value>
-        [DataMember(Name = "draft", EmitDefaultValue = false)]
+        [DataMember(Name = "draft", IsRequired = true, EmitDefaultValue = false)]
         public bool Draft { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestItems
         /// </summary>
-        [DataMember(Name = "request_items", EmitDefaultValue = false)]
+        [DataMember(Name = "request_items", IsRequired = true, EmitDefaultValue = false)]
         public List<ApprovalRequestCreateParamsRequestItems> RequestItems { get; set; }
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

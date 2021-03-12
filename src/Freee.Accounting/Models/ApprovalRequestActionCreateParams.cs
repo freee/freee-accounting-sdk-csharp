@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -43,10 +44,10 @@ namespace Freee.Accounting.Models
             Approve = 1,
 
             /// <summary>
-            /// Enum Forceapprove for value: force_approve
+            /// Enum ForceApprove for value: force_approve
             /// </summary>
             [EnumMember(Value = "force_approve")]
-            Forceapprove = 2,
+            ForceApprove = 2,
 
             /// <summary>
             /// Enum Cancel for value: cancel
@@ -67,10 +68,10 @@ namespace Freee.Accounting.Models
             Feedback = 5,
 
             /// <summary>
-            /// Enum Forcefeedback for value: force_feedback
+            /// Enum ForceFeedback for value: force_feedback
             /// </summary>
             [EnumMember(Value = "force_feedback")]
-            Forcefeedback = 6
+            ForceFeedback = 6
 
         }
 
@@ -78,7 +79,7 @@ namespace Freee.Accounting.Models
         /// 操作(approve: 承認する、force_approve: 代理承認する、cancel: 申請を取り消す、reject: 却下する、feedback: 申請者へ差し戻す、force_feedback: 承認済み・却下済みを取り消す)
         /// </summary>
         /// <value>操作(approve: 承認する、force_approve: 代理承認する、cancel: 申請を取り消す、reject: 却下する、feedback: 申請者へ差し戻す、force_feedback: 承認済み・却下済みを取り消す)</value>
-        [DataMember(Name = "approval_action", EmitDefaultValue = false)]
+        [DataMember(Name = "approval_action", IsRequired = true, EmitDefaultValue = false)]
         public ApprovalActionEnum ApprovalAction { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestActionCreateParams" /> class.
@@ -106,7 +107,7 @@ namespace Freee.Accounting.Models
         /// 事業所ID
         /// </summary>
         /// <value>事業所ID</value>
-        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
         public int CompanyId { get; set; }
 
         /// <summary>
@@ -120,14 +121,14 @@ namespace Freee.Accounting.Models
         /// 対象round。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。各種申請の取得APIレスポンス.current_roundを送信してください。
         /// </summary>
         /// <value>対象round。差し戻し等により申請がstepの最初からやり直しになるとroundの値が増えます。各種申請の取得APIレスポンス.current_roundを送信してください。</value>
-        [DataMember(Name = "target_round", EmitDefaultValue = false)]
+        [DataMember(Name = "target_round", IsRequired = true, EmitDefaultValue = false)]
         public int TargetRound { get; set; }
 
         /// <summary>
         /// 対象承認ステップID 各種申請の取得APIレスポンス.current_step_idを送信してください。
         /// </summary>
         /// <value>対象承認ステップID 各種申請の取得APIレスポンス.current_step_idを送信してください。</value>
-        [DataMember(Name = "target_step_id", EmitDefaultValue = false)]
+        [DataMember(Name = "target_step_id", IsRequired = true, EmitDefaultValue = false)]
         public int TargetStepId { get; set; }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

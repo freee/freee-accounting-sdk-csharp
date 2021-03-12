@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -36,7 +37,7 @@ namespace Freee.Accounting.Models
         /// <param name="streetName1">市区町村・番地.</param>
         /// <param name="streetName2">建物名・部屋番号など.</param>
         /// <param name="zipcode">郵便番号.</param>
-        public PartnerResponsePartnerAddressAttributes(int prefectureCode = default(int), string streetName1 = default(string), string streetName2 = default(string), string zipcode = default(string))
+        public PartnerResponsePartnerAddressAttributes(int? prefectureCode = default(int?), string streetName1 = default(string), string streetName2 = default(string), string zipcode = default(string))
         {
             this.PrefectureCode = prefectureCode;
             this.StreetName1 = streetName1;
@@ -48,8 +49,8 @@ namespace Freee.Accounting.Models
         /// 都道府県コード（0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄
         /// </summary>
         /// <value>都道府県コード（0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄</value>
-        [DataMember(Name = "prefecture_code", EmitDefaultValue = false)]
-        public int PrefectureCode { get; set; }
+        [DataMember(Name = "prefecture_code", EmitDefaultValue = true)]
+        public int? PrefectureCode { get; set; }
 
         /// <summary>
         /// 市区町村・番地
@@ -94,7 +95,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
@@ -120,7 +121,8 @@ namespace Freee.Accounting.Models
             return 
                 (
                     this.PrefectureCode == input.PrefectureCode ||
-                    this.PrefectureCode.Equals(input.PrefectureCode)
+                    (this.PrefectureCode != null &&
+                    this.PrefectureCode.Equals(input.PrefectureCode))
                 ) && 
                 (
                     this.StreetName1 == input.StreetName1 ||
@@ -148,7 +150,8 @@ namespace Freee.Accounting.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.PrefectureCode.GetHashCode();
+                if (this.PrefectureCode != null)
+                    hashCode = hashCode * 59 + this.PrefectureCode.GetHashCode();
                 if (this.StreetName1 != null)
                     hashCode = hashCode * 59 + this.StreetName1.GetHashCode();
                 if (this.StreetName2 != null)

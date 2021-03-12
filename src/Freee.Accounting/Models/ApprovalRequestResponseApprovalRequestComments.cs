@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -53,21 +54,21 @@ namespace Freee.Accounting.Models
         /// コメント内容
         /// </summary>
         /// <value>コメント内容</value>
-        [DataMember(Name = "comment", EmitDefaultValue = false)]
+        [DataMember(Name = "comment", IsRequired = true, EmitDefaultValue = false)]
         public string Comment { get; set; }
 
         /// <summary>
         /// コメント日時(ISO8601形式)
         /// </summary>
         /// <value>コメント日時(ISO8601形式)</value>
-        [DataMember(Name = "posted_at", EmitDefaultValue = false)]
+        [DataMember(Name = "posted_at", IsRequired = true, EmitDefaultValue = false)]
         public string PostedAt { get; set; }
 
         /// <summary>
         /// ユーザーID
         /// </summary>
         /// <value>ユーザーID</value>
-        [DataMember(Name = "user_id", EmitDefaultValue = false)]
+        [DataMember(Name = "user_id", IsRequired = true, EmitDefaultValue = false)]
         public int UserId { get; set; }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>

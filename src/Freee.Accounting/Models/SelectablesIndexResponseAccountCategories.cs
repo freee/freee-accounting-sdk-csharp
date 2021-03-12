@@ -19,6 +19,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 
 namespace Freee.Accounting.Models
@@ -54,7 +55,7 @@ namespace Freee.Accounting.Models
         /// 収支
         /// </summary>
         /// <value>収支</value>
-        [DataMember(Name = "balance", EmitDefaultValue = false)]
+        [DataMember(Name = "balance", IsRequired = true, EmitDefaultValue = false)]
         public BalanceEnum Balance { get; set; }
         /// <summary>
         /// 事業形態（個人事業主: personal、法人: corporate）
@@ -81,7 +82,7 @@ namespace Freee.Accounting.Models
         /// 事業形態（個人事業主: personal、法人: corporate）
         /// </summary>
         /// <value>事業形態（個人事業主: personal、法人: corporate）</value>
-        [DataMember(Name = "org_code", EmitDefaultValue = false)]
+        [DataMember(Name = "org_code", IsRequired = true, EmitDefaultValue = false)]
         public OrgCodeEnum OrgCode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectablesIndexResponseAccountCategories" /> class.
@@ -114,7 +115,7 @@ namespace Freee.Accounting.Models
         /// 勘定科目の一覧
         /// </summary>
         /// <value>勘定科目の一覧</value>
-        [DataMember(Name = "account_items", EmitDefaultValue = false)]
+        [DataMember(Name = "account_items", IsRequired = true, EmitDefaultValue = false)]
         public List<SelectablesIndexResponseAccountItems> AccountItems { get; set; }
 
         /// <summary>
@@ -128,14 +129,14 @@ namespace Freee.Accounting.Models
         /// カテゴリーコード
         /// </summary>
         /// <value>カテゴリーコード</value>
-        [DataMember(Name = "role", EmitDefaultValue = false)]
+        [DataMember(Name = "role", IsRequired = true, EmitDefaultValue = false)]
         public string Role { get; set; }
 
         /// <summary>
         /// カテゴリー名
         /// </summary>
         /// <value>カテゴリー名</value>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
+        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
@@ -162,7 +163,7 @@ namespace Freee.Accounting.Models
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
