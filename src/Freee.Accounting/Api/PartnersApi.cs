@@ -105,7 +105,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <returns>PartnersResponse</returns>
-        PartnersResponse GetPartners(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string));
+        PartnersResponse GetPartners(int companyId, long? offset = default(long?), int? limit = default(int?), string keyword = default(string));
 
         /// <summary>
         /// 取引先一覧の取得
@@ -119,7 +119,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <returns>ApiResponse of PartnersResponse</returns>
-        ApiResponse<PartnersResponse> GetPartnersWithHttpInfo(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string));
+        ApiResponse<PartnersResponse> GetPartnersWithHttpInfo(int companyId, long? offset = default(long?), int? limit = default(int?), string keyword = default(string));
         /// <summary>
         /// 取引先の更新
         /// </summary>
@@ -261,7 +261,7 @@ namespace Freee.Accounting.Api
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnersResponse</returns>
-        System.Threading.Tasks.Task<PartnersResponse> GetPartnersAsync(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PartnersResponse> GetPartnersAsync(int companyId, long? offset = default(long?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引先一覧の取得
@@ -276,7 +276,7 @@ namespace Freee.Accounting.Api
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PartnersResponse>> GetPartnersWithHttpInfoAsync(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PartnersResponse>> GetPartnersWithHttpInfoAsync(int companyId, long? offset = default(long?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引先の更新
         /// </summary>
@@ -835,7 +835,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <returns>PartnersResponse</returns>
-        public PartnersResponse GetPartners(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string))
+        public PartnersResponse GetPartners(int companyId, long? offset = default(long?), int? limit = default(int?), string keyword = default(string))
         {
             Freee.Accounting.Client.ApiResponse<PartnersResponse> localVarResponse = GetPartnersWithHttpInfo(companyId, offset, limit, keyword);
             return localVarResponse.Data;
@@ -850,7 +850,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <returns>ApiResponse of PartnersResponse</returns>
-        public Freee.Accounting.Client.ApiResponse<PartnersResponse> GetPartnersWithHttpInfo(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string))
+        public Freee.Accounting.Client.ApiResponse<PartnersResponse> GetPartnersWithHttpInfo(int companyId, long? offset = default(long?), int? limit = default(int?), string keyword = default(string))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -911,7 +911,7 @@ namespace Freee.Accounting.Api
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnersResponse</returns>
-        public async System.Threading.Tasks.Task<PartnersResponse> GetPartnersAsync(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PartnersResponse> GetPartnersAsync(int companyId, long? offset = default(long?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Freee.Accounting.Client.ApiResponse<PartnersResponse> localVarResponse = await GetPartnersWithHttpInfoAsync(companyId, offset, limit, keyword, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -927,7 +927,7 @@ namespace Freee.Accounting.Api
         /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnersResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnersResponse>> GetPartnersWithHttpInfoAsync(int companyId, int? offset = default(int?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnersResponse>> GetPartnersWithHttpInfoAsync(int companyId, long? offset = default(long?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

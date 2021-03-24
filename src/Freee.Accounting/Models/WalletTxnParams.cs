@@ -106,7 +106,7 @@ namespace Freee.Accounting.Models
         /// <param name="entrySide">入金／出金 (入金: income, 出金: expense) (required).</param>
         /// <param name="walletableId">口座ID (required).</param>
         /// <param name="walletableType">口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) (required).</param>
-        public WalletTxnParams(int amount = default(int), int balance = default(int), int companyId = default(int), string date = default(string), string description = default(string), EntrySideEnum entrySide = default(EntrySideEnum), int walletableId = default(int), WalletableTypeEnum walletableType = default(WalletableTypeEnum))
+        public WalletTxnParams(long amount = default(long), long balance = default(long), int companyId = default(int), string date = default(string), string description = default(string), EntrySideEnum entrySide = default(EntrySideEnum), int walletableId = default(int), WalletableTypeEnum walletableType = default(WalletableTypeEnum))
         {
             this.Amount = amount;
             this.CompanyId = companyId;
@@ -124,14 +124,14 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>取引金額</value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         /// <summary>
         /// 残高 (銀行口座等)
         /// </summary>
         /// <value>残高 (銀行口座等)</value>
         [DataMember(Name = "balance", EmitDefaultValue = false)]
-        public int Balance { get; set; }
+        public long Balance { get; set; }
 
         /// <summary>
         /// 事業所ID

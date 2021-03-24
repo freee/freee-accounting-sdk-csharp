@@ -105,7 +105,7 @@ namespace Freee.Accounting.Models
         /// <param name="refNumber">管理番号.</param>
         /// <param name="status">決済状況 (未決済: unsettled, 完了: settled) (required).</param>
         /// <param name="type">収支区分 (収入: income, 支出: expense).</param>
-        public DealCreateResponseDeal(int amount = default(int), int companyId = default(int), List<DealCreateResponseDealDetails> details = default(List<DealCreateResponseDealDetails>), int dueAmount = default(int), string dueDate = default(string), int id = default(int), string issueDate = default(string), string partnerCode = default(string), int partnerId = default(int), List<DealCreateResponseDealPayments> payments = default(List<DealCreateResponseDealPayments>), string refNumber = default(string), StatusEnum status = default(StatusEnum), TypeEnum? type = default(TypeEnum?))
+        public DealCreateResponseDeal(long amount = default(long), int companyId = default(int), List<DealCreateResponseDealDetails> details = default(List<DealCreateResponseDealDetails>), int dueAmount = default(int), string dueDate = default(string), int id = default(int), string issueDate = default(string), string partnerCode = default(string), int partnerId = default(int), List<DealCreateResponseDealPayments> payments = default(List<DealCreateResponseDealPayments>), string refNumber = default(string), StatusEnum status = default(StatusEnum), TypeEnum? type = default(TypeEnum?))
         {
             this.Amount = amount;
             this.CompanyId = companyId;
@@ -128,7 +128,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>金額</value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         /// <summary>
         /// 事業所ID

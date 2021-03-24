@@ -50,7 +50,7 @@ namespace Freee.Accounting.Models
         /// <param name="tagIds">メモタグID.</param>
         /// <param name="taxCode">税区分コード (required).</param>
         /// <param name="vat">消費税額（指定しない場合は自動で計算されます）.</param>
-        public DealUpdateParamsDetails(int accountItemId = default(int), int amount = default(int), string description = default(string), int id = default(int), int itemId = default(int), int sectionId = default(int), int segment1TagId = default(int), int segment2TagId = default(int), int segment3TagId = default(int), List<int> tagIds = default(List<int>), int taxCode = default(int), int vat = default(int))
+        public DealUpdateParamsDetails(int accountItemId = default(int), long amount = default(long), string description = default(string), long id = default(long), int itemId = default(int), int sectionId = default(int), long segment1TagId = default(long), long segment2TagId = default(long), long segment3TagId = default(long), List<int> tagIds = default(List<int>), int taxCode = default(int), int vat = default(int))
         {
             this.AccountItemId = accountItemId;
             this.Amount = amount;
@@ -78,7 +78,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>取引金額（税込で指定してください）</value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         /// <summary>
         /// 備考
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>取引行ID: 既存取引行を更新する場合に指定します。IDを指定しない取引行は、新規行として扱われ追加されます。また、detailsに含まれない既存の取引行は削除されます。更新後も残したい行は、必ず取引行IDを指定してdetailsに含めてください。</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// 品目ID
@@ -113,21 +113,21 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>セグメント１ID</value>
         [DataMember(Name = "segment_1_tag_id", EmitDefaultValue = false)]
-        public int Segment1TagId { get; set; }
+        public long Segment1TagId { get; set; }
 
         /// <summary>
         /// セグメント２ID
         /// </summary>
         /// <value>セグメント２ID</value>
         [DataMember(Name = "segment_2_tag_id", EmitDefaultValue = false)]
-        public int Segment2TagId { get; set; }
+        public long Segment2TagId { get; set; }
 
         /// <summary>
         /// セグメント３ID
         /// </summary>
         /// <value>セグメント３ID</value>
         [DataMember(Name = "segment_3_tag_id", EmitDefaultValue = false)]
-        public int Segment3TagId { get; set; }
+        public long Segment3TagId { get; set; }
 
         /// <summary>
         /// メモタグID

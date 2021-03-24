@@ -113,7 +113,7 @@ namespace Freee.Accounting.Models
         /// <param name="id">取引(振替)ID (required).</param>
         /// <param name="toWalletableId">振替先口座ID (required).</param>
         /// <param name="toWalletableType">振替先口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) (required).</param>
-        public Transfer(int amount = default(int), int companyId = default(int), string date = default(string), string description = default(string), int fromWalletableId = default(int), FromWalletableTypeEnum fromWalletableType = default(FromWalletableTypeEnum), int id = default(int), int toWalletableId = default(int), ToWalletableTypeEnum toWalletableType = default(ToWalletableTypeEnum))
+        public Transfer(long amount = default(long), int companyId = default(int), string date = default(string), string description = default(string), int fromWalletableId = default(int), FromWalletableTypeEnum fromWalletableType = default(FromWalletableTypeEnum), int id = default(int), int toWalletableId = default(int), ToWalletableTypeEnum toWalletableType = default(ToWalletableTypeEnum))
         {
             this.Amount = amount;
             this.CompanyId = companyId;
@@ -133,7 +133,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>金額</value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         /// <summary>
         /// 事業所ID

@@ -76,7 +76,7 @@ namespace Freee.Accounting.Models
         /// <param name="renewTargetId">+更新の対象行ID (required).</param>
         /// <param name="renewTargetType">+更新の対象行タイプ (required).</param>
         /// <param name="updateDate">更新日 (yyyy-mm-dd) (required).</param>
-        public DealRenews(List<DealDetails> details = default(List<DealDetails>), int id = default(int), int renewTargetId = default(int), RenewTargetTypeEnum renewTargetType = default(RenewTargetTypeEnum), string updateDate = default(string))
+        public DealRenews(List<DealDetails> details = default(List<DealDetails>), long id = default(long), long renewTargetId = default(long), RenewTargetTypeEnum renewTargetType = default(RenewTargetTypeEnum), string updateDate = default(string))
         {
             // to ensure "details" is required (not null)
             this.Details = details ?? throw new ArgumentNullException("details is a required property for DealRenews and cannot be null");
@@ -99,14 +99,14 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>+更新行ID</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// +更新の対象行ID
         /// </summary>
         /// <value>+更新の対象行ID</value>
         [DataMember(Name = "renew_target_id", IsRequired = true, EmitDefaultValue = false)]
-        public int RenewTargetId { get; set; }
+        public long RenewTargetId { get; set; }
 
         /// <summary>
         /// 更新日 (yyyy-mm-dd)
