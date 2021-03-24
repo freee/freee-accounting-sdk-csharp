@@ -107,7 +107,7 @@ namespace Freee.Accounting.Models
         /// <param name="renews">取引の+更新行.</param>
         /// <param name="status">決済状況 (未決済: unsettled, 完了: settled) (required).</param>
         /// <param name="type">収支区分 (収入: income, 支出: expense).</param>
-        public Deal(int amount = default(int), int companyId = default(int), List<DealCreateResponseDealDetails> details = default(List<DealCreateResponseDealDetails>), int dueAmount = default(int), string dueDate = default(string), int id = default(int), string issueDate = default(string), string partnerCode = default(string), int partnerId = default(int), List<DealCreateResponseDealPayments> payments = default(List<DealCreateResponseDealPayments>), List<DealReceipts> receipts = default(List<DealReceipts>), string refNumber = default(string), List<DealRenews> renews = default(List<DealRenews>), StatusEnum status = default(StatusEnum), TypeEnum? type = default(TypeEnum?))
+        public Deal(long amount = default(long), int companyId = default(int), List<DealCreateResponseDealDetails> details = default(List<DealCreateResponseDealDetails>), int dueAmount = default(int), string dueDate = default(string), int id = default(int), string issueDate = default(string), string partnerCode = default(string), int partnerId = default(int), List<DealCreateResponseDealPayments> payments = default(List<DealCreateResponseDealPayments>), List<DealReceipts> receipts = default(List<DealReceipts>), string refNumber = default(string), List<DealRenews> renews = default(List<DealRenews>), StatusEnum status = default(StatusEnum), TypeEnum? type = default(TypeEnum?))
         {
             this.Amount = amount;
             this.CompanyId = companyId;
@@ -132,7 +132,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>金額</value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         /// <summary>
         /// 事業所ID

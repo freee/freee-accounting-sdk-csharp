@@ -106,7 +106,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>InlineResponse20014</returns>
-        InlineResponse20014 GetTransfers(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?));
+        InlineResponse20014 GetTransfers(int companyId, string startDate = default(string), string endDate = default(string), long? offset = default(long?), int? limit = default(int?));
 
         /// <summary>
         /// 取引（振替）一覧の取得
@@ -121,7 +121,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20014</returns>
-        ApiResponse<InlineResponse20014> GetTransfersWithHttpInfo(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<InlineResponse20014> GetTransfersWithHttpInfo(int companyId, string startDate = default(string), string endDate = default(string), long? offset = default(long?), int? limit = default(int?));
         /// <summary>
         /// 取引（振替）の更新
         /// </summary>
@@ -241,7 +241,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20014</returns>
-        System.Threading.Tasks.Task<InlineResponse20014> GetTransfersAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse20014> GetTransfersAsync(int companyId, string startDate = default(string), string endDate = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 取引（振替）一覧の取得
@@ -257,7 +257,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20014>> GetTransfersWithHttpInfoAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20014>> GetTransfersWithHttpInfoAsync(int companyId, string startDate = default(string), string endDate = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 取引（振替）の更新
         /// </summary>
@@ -784,7 +784,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>InlineResponse20014</returns>
-        public InlineResponse20014 GetTransfers(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?))
+        public InlineResponse20014 GetTransfers(int companyId, string startDate = default(string), string endDate = default(string), long? offset = default(long?), int? limit = default(int?))
         {
             Freee.Accounting.Client.ApiResponse<InlineResponse20014> localVarResponse = GetTransfersWithHttpInfo(companyId, startDate, endDate, offset, limit);
             return localVarResponse.Data;
@@ -800,7 +800,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20014</returns>
-        public Freee.Accounting.Client.ApiResponse<InlineResponse20014> GetTransfersWithHttpInfo(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse20014> GetTransfersWithHttpInfo(int companyId, string startDate = default(string), string endDate = default(string), long? offset = default(long?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -866,7 +866,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20014</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20014> GetTransfersAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse20014> GetTransfersAsync(int companyId, string startDate = default(string), string endDate = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Freee.Accounting.Client.ApiResponse<InlineResponse20014> localVarResponse = await GetTransfersWithHttpInfoAsync(companyId, startDate, endDate, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -883,7 +883,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20014>> GetTransfersWithHttpInfoAsync(int companyId, string startDate = default(string), string endDate = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20014>> GetTransfersWithHttpInfoAsync(int companyId, string startDate = default(string), string endDate = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

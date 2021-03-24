@@ -117,7 +117,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>InlineResponse2008</returns>
-        InlineResponse2008 GetReceipts(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?));
+        InlineResponse2008 GetReceipts(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), long? offset = default(long?), int? limit = default(int?));
 
         /// <summary>
         /// ファイルボックス 証憑ファイル一覧の取得
@@ -137,7 +137,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>ApiResponse of InlineResponse2008</returns>
-        ApiResponse<InlineResponse2008> GetReceiptsWithHttpInfo(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<InlineResponse2008> GetReceiptsWithHttpInfo(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), long? offset = default(long?), int? limit = default(int?));
         /// <summary>
         /// ファイルボックス 証憑ファイル情報更新
         /// </summary>
@@ -268,7 +268,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2008</returns>
-        System.Threading.Tasks.Task<InlineResponse2008> GetReceiptsAsync(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse2008> GetReceiptsAsync(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ファイルボックス 証憑ファイル一覧の取得
@@ -289,7 +289,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2008>> GetReceiptsWithHttpInfoAsync(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2008>> GetReceiptsWithHttpInfoAsync(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ファイルボックス 証憑ファイル情報更新
         /// </summary>
@@ -857,7 +857,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>InlineResponse2008</returns>
-        public InlineResponse2008 GetReceipts(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?))
+        public InlineResponse2008 GetReceipts(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), long? offset = default(long?), int? limit = default(int?))
         {
             Freee.Accounting.Client.ApiResponse<InlineResponse2008> localVarResponse = GetReceiptsWithHttpInfo(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
             return localVarResponse.Data;
@@ -878,7 +878,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <returns>ApiResponse of InlineResponse2008</returns>
-        public Freee.Accounting.Client.ApiResponse<InlineResponse2008> GetReceiptsWithHttpInfo(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse2008> GetReceiptsWithHttpInfo(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), long? offset = default(long?), int? limit = default(int?))
         {
             // verify the required parameter 'startDate' is set
             if (startDate == null)
@@ -971,7 +971,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2008</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2008> GetReceiptsAsync(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse2008> GetReceiptsAsync(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Freee.Accounting.Client.ApiResponse<InlineResponse2008> localVarResponse = await GetReceiptsWithHttpInfoAsync(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -993,7 +993,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2008>> GetReceiptsWithHttpInfoAsync(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2008>> GetReceiptsWithHttpInfoAsync(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'startDate' is set
             if (startDate == null)

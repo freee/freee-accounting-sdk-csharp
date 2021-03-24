@@ -95,7 +95,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) (optional)</param>
         /// <returns>InlineResponse2003</returns>
-        InlineResponse2003 GetExpenseApplicationLineTemplates(int companyId, int? offset = default(int?), int? limit = default(int?));
+        InlineResponse2003 GetExpenseApplicationLineTemplates(int companyId, long? offset = default(long?), int? limit = default(int?));
 
         /// <summary>
         /// 経費科目一覧の取得
@@ -108,7 +108,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) (optional)</param>
         /// <returns>ApiResponse of InlineResponse2003</returns>
-        ApiResponse<InlineResponse2003> GetExpenseApplicationLineTemplatesWithHttpInfo(int companyId, int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<InlineResponse2003> GetExpenseApplicationLineTemplatesWithHttpInfo(int companyId, long? offset = default(long?), int? limit = default(int?));
         /// <summary>
         /// 経費科目の更新
         /// </summary>
@@ -223,7 +223,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2003</returns>
-        System.Threading.Tasks.Task<InlineResponse2003> GetExpenseApplicationLineTemplatesAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse2003> GetExpenseApplicationLineTemplatesAsync(int companyId, long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 経費科目一覧の取得
@@ -237,7 +237,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2003>> GetExpenseApplicationLineTemplatesWithHttpInfoAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2003>> GetExpenseApplicationLineTemplatesWithHttpInfoAsync(int companyId, long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 経費科目の更新
         /// </summary>
@@ -770,7 +770,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) (optional)</param>
         /// <returns>InlineResponse2003</returns>
-        public InlineResponse2003 GetExpenseApplicationLineTemplates(int companyId, int? offset = default(int?), int? limit = default(int?))
+        public InlineResponse2003 GetExpenseApplicationLineTemplates(int companyId, long? offset = default(long?), int? limit = default(int?))
         {
             Freee.Accounting.Client.ApiResponse<InlineResponse2003> localVarResponse = GetExpenseApplicationLineTemplatesWithHttpInfo(companyId, offset, limit);
             return localVarResponse.Data;
@@ -784,7 +784,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) (optional)</param>
         /// <returns>ApiResponse of InlineResponse2003</returns>
-        public Freee.Accounting.Client.ApiResponse<InlineResponse2003> GetExpenseApplicationLineTemplatesWithHttpInfo(int companyId, int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse2003> GetExpenseApplicationLineTemplatesWithHttpInfo(int companyId, long? offset = default(long?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -840,7 +840,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2003</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2003> GetExpenseApplicationLineTemplatesAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse2003> GetExpenseApplicationLineTemplatesAsync(int companyId, long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Freee.Accounting.Client.ApiResponse<InlineResponse2003> localVarResponse = await GetExpenseApplicationLineTemplatesWithHttpInfoAsync(companyId, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -855,7 +855,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2003>> GetExpenseApplicationLineTemplatesWithHttpInfoAsync(int companyId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2003>> GetExpenseApplicationLineTemplatesWithHttpInfoAsync(int companyId, long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

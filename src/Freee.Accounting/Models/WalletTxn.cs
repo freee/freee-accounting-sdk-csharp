@@ -109,7 +109,7 @@ namespace Freee.Accounting.Models
         /// <param name="status">明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4） (required).</param>
         /// <param name="walletableId">口座ID (required).</param>
         /// <param name="walletableType">口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) (required).</param>
-        public WalletTxn(int amount = default(int), int balance = default(int), int companyId = default(int), string date = default(string), string description = default(string), int dueAmount = default(int), EntrySideEnum entrySide = default(EntrySideEnum), int id = default(int), int status = default(int), int walletableId = default(int), WalletableTypeEnum walletableType = default(WalletableTypeEnum))
+        public WalletTxn(long amount = default(long), int balance = default(int), int companyId = default(int), string date = default(string), string description = default(string), int dueAmount = default(int), EntrySideEnum entrySide = default(EntrySideEnum), int id = default(int), int status = default(int), int walletableId = default(int), WalletableTypeEnum walletableType = default(WalletableTypeEnum))
         {
             this.Amount = amount;
             this.Balance = balance;
@@ -131,7 +131,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>取引金額</value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         /// <summary>
         /// 残高(銀行口座等)

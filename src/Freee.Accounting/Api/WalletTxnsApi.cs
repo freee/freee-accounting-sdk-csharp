@@ -109,7 +109,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>InlineResponse20017</returns>
-        InlineResponse20017 GetWalletTxns(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?));
+        InlineResponse20017 GetWalletTxns(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), long? offset = default(long?), int? limit = default(int?));
 
         /// <summary>
         /// 明細一覧の取得
@@ -127,7 +127,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20017</returns>
-        ApiResponse<InlineResponse20017> GetWalletTxnsWithHttpInfo(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<InlineResponse20017> GetWalletTxnsWithHttpInfo(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), long? offset = default(long?), int? limit = default(int?));
         #endregion Synchronous Operations
     }
 
@@ -227,7 +227,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20017</returns>
-        System.Threading.Tasks.Task<InlineResponse20017> GetWalletTxnsAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse20017> GetWalletTxnsAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 明細一覧の取得
@@ -246,7 +246,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20017>> GetWalletTxnsWithHttpInfoAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20017>> GetWalletTxnsWithHttpInfoAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -751,7 +751,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>InlineResponse20017</returns>
-        public InlineResponse20017 GetWalletTxns(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?))
+        public InlineResponse20017 GetWalletTxns(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), long? offset = default(long?), int? limit = default(int?))
         {
             Freee.Accounting.Client.ApiResponse<InlineResponse20017> localVarResponse = GetWalletTxnsWithHttpInfo(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit);
             return localVarResponse.Data;
@@ -770,7 +770,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20017</returns>
-        public Freee.Accounting.Client.ApiResponse<InlineResponse20017> GetWalletTxnsWithHttpInfo(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse20017> GetWalletTxnsWithHttpInfo(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), long? offset = default(long?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -851,7 +851,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20017</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20017> GetWalletTxnsAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse20017> GetWalletTxnsAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Freee.Accounting.Client.ApiResponse<InlineResponse20017> localVarResponse = await GetWalletTxnsWithHttpInfoAsync(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -871,7 +871,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20017>> GetWalletTxnsWithHttpInfoAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20017>> GetWalletTxnsWithHttpInfoAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

@@ -82,7 +82,7 @@ namespace Freee.Accounting.Models
         /// <param name="fromWalletableId">口座ID（from_walletable_typeがprivate_account_itemの場合は勘定科目ID）.</param>
         /// <param name="fromWalletableType">口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet, プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）: private_account_item).</param>
         /// <param name="id">取引行ID (required).</param>
-        public DealCreateResponseDealPayments(int amount = default(int), string date = default(string), int fromWalletableId = default(int), FromWalletableTypeEnum? fromWalletableType = default(FromWalletableTypeEnum?), int id = default(int))
+        public DealCreateResponseDealPayments(long amount = default(long), string date = default(string), int fromWalletableId = default(int), FromWalletableTypeEnum? fromWalletableType = default(FromWalletableTypeEnum?), long id = default(long))
         {
             this.Amount = amount;
             // to ensure "date" is required (not null)
@@ -97,7 +97,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>支払金額</value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         /// <summary>
         /// 支払日
@@ -118,7 +118,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>取引行ID</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

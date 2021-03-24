@@ -42,7 +42,7 @@ namespace Freee.Accounting.Models
         /// <param name="details">+更新の明細行 (required).</param>
         /// <param name="renewTargetId">+更新対象行ID (details(取引の明細行), accruals(債権債務行), renewsのdetails(+更新の明細行)のIDを指定)  (required).</param>
         /// <param name="updateDate">更新日 (yyyy-mm-dd) (required).</param>
-        public RenewCreateParams(int companyId = default(int), List<RenewCreateParamsDetails> details = default(List<RenewCreateParamsDetails>), int renewTargetId = default(int), string updateDate = default(string))
+        public RenewCreateParams(int companyId = default(int), List<RenewCreateParamsDetails> details = default(List<RenewCreateParamsDetails>), long renewTargetId = default(long), string updateDate = default(string))
         {
             this.CompanyId = companyId;
             // to ensure "details" is required (not null)
@@ -71,7 +71,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>+更新対象行ID (details(取引の明細行), accruals(債権債務行), renewsのdetails(+更新の明細行)のIDを指定) </value>
         [DataMember(Name = "renew_target_id", IsRequired = true, EmitDefaultValue = false)]
-        public int RenewTargetId { get; set; }
+        public long RenewTargetId { get; set; }
 
         /// <summary>
         /// 更新日 (yyyy-mm-dd)

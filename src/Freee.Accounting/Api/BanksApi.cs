@@ -58,7 +58,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="type">サービス種別 (optional)</param>
         /// <returns>InlineResponse2001</returns>
-        InlineResponse2001 GetBanks(int? offset = default(int?), int? limit = default(int?), string type = default(string));
+        InlineResponse2001 GetBanks(long? offset = default(long?), int? limit = default(int?), string type = default(string));
 
         /// <summary>
         /// 連携サービス一覧の取得
@@ -71,7 +71,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="type">サービス種別 (optional)</param>
         /// <returns>ApiResponse of InlineResponse2001</returns>
-        ApiResponse<InlineResponse2001> GetBanksWithHttpInfo(int? offset = default(int?), int? limit = default(int?), string type = default(string));
+        ApiResponse<InlineResponse2001> GetBanksWithHttpInfo(long? offset = default(long?), int? limit = default(int?), string type = default(string));
         #endregion Synchronous Operations
     }
 
@@ -116,7 +116,7 @@ namespace Freee.Accounting.Api
         /// <param name="type">サービス種別 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2001</returns>
-        System.Threading.Tasks.Task<InlineResponse2001> GetBanksAsync(int? offset = default(int?), int? limit = default(int?), string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse2001> GetBanksAsync(long? offset = default(long?), int? limit = default(int?), string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 連携サービス一覧の取得
@@ -130,7 +130,7 @@ namespace Freee.Accounting.Api
         /// <param name="type">サービス種別 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2001>> GetBanksWithHttpInfoAsync(int? offset = default(int?), int? limit = default(int?), string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2001>> GetBanksWithHttpInfoAsync(long? offset = default(long?), int? limit = default(int?), string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -378,7 +378,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="type">サービス種別 (optional)</param>
         /// <returns>InlineResponse2001</returns>
-        public InlineResponse2001 GetBanks(int? offset = default(int?), int? limit = default(int?), string type = default(string))
+        public InlineResponse2001 GetBanks(long? offset = default(long?), int? limit = default(int?), string type = default(string))
         {
             Freee.Accounting.Client.ApiResponse<InlineResponse2001> localVarResponse = GetBanksWithHttpInfo(offset, limit, type);
             return localVarResponse.Data;
@@ -392,7 +392,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="type">サービス種別 (optional)</param>
         /// <returns>ApiResponse of InlineResponse2001</returns>
-        public Freee.Accounting.Client.ApiResponse<InlineResponse2001> GetBanksWithHttpInfo(int? offset = default(int?), int? limit = default(int?), string type = default(string))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse2001> GetBanksWithHttpInfo(long? offset = default(long?), int? limit = default(int?), string type = default(string))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -451,7 +451,7 @@ namespace Freee.Accounting.Api
         /// <param name="type">サービス種別 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse2001</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2001> GetBanksAsync(int? offset = default(int?), int? limit = default(int?), string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse2001> GetBanksAsync(long? offset = default(long?), int? limit = default(int?), string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Freee.Accounting.Client.ApiResponse<InlineResponse2001> localVarResponse = await GetBanksWithHttpInfoAsync(offset, limit, type, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -466,7 +466,7 @@ namespace Freee.Accounting.Api
         /// <param name="type">サービス種別 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2001>> GetBanksWithHttpInfoAsync(int? offset = default(int?), int? limit = default(int?), string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse2001>> GetBanksWithHttpInfoAsync(long? offset = default(long?), int? limit = default(int?), string type = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();

@@ -42,7 +42,7 @@ namespace Freee.Accounting.Models
         /// <param name="vat10">税率10%の税込み金額合計 (required).</param>
         /// <param name="vat5">税率5%の税込み金額合計 (required).</param>
         /// <param name="vat8">税率8%の税込み金額合計 (required).</param>
-        public InvoiceTotalAmountPerVatRate(int reducedVat8 = default(int), int vat10 = default(int), int vat5 = default(int), int vat8 = default(int))
+        public InvoiceTotalAmountPerVatRate(long reducedVat8 = default(long), long vat10 = default(long), long vat5 = default(long), long vat8 = default(long))
         {
             this.ReducedVat8 = reducedVat8;
             this.Vat10 = vat10;
@@ -55,28 +55,28 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>軽減税率8%の税込み金額合計</value>
         [DataMember(Name = "reduced_vat_8", IsRequired = true, EmitDefaultValue = false)]
-        public int ReducedVat8 { get; set; }
+        public long ReducedVat8 { get; set; }
 
         /// <summary>
         /// 税率10%の税込み金額合計
         /// </summary>
         /// <value>税率10%の税込み金額合計</value>
         [DataMember(Name = "vat_10", IsRequired = true, EmitDefaultValue = false)]
-        public int Vat10 { get; set; }
+        public long Vat10 { get; set; }
 
         /// <summary>
         /// 税率5%の税込み金額合計
         /// </summary>
         /// <value>税率5%の税込み金額合計</value>
         [DataMember(Name = "vat_5", IsRequired = true, EmitDefaultValue = false)]
-        public int Vat5 { get; set; }
+        public long Vat5 { get; set; }
 
         /// <summary>
         /// 税率8%の税込み金額合計
         /// </summary>
         /// <value>税率8%の税込み金額合計</value>
         [DataMember(Name = "vat_8", IsRequired = true, EmitDefaultValue = false)]
-        public int Vat8 { get; set; }
+        public long Vat8 { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -87,7 +87,7 @@ namespace Freee.Accounting.Models
         /// <param name="unit">単位.</param>
         /// <param name="unitPrice">単価 (tax_entry_method: inclusiveの場合は税込価格、tax_entry_method: exclusiveの場合は税抜価格となります).</param>
         /// <param name="vat">消費税額.</param>
-        public QuotationUpdateParamsQuotationContents(int accountItemId = default(int), string description = default(string), int id = default(int), int itemId = default(int), int order = default(int), decimal qty = default(decimal), int sectionId = default(int), int segment1TagId = default(int), int segment2TagId = default(int), int segment3TagId = default(int), List<int> tagIds = default(List<int>), int taxCode = default(int), TypeEnum type = default(TypeEnum), string unit = default(string), decimal unitPrice = default(decimal), int? vat = default(int?))
+        public QuotationUpdateParamsQuotationContents(int accountItemId = default(int), string description = default(string), int id = default(int), int itemId = default(int), int order = default(int), decimal qty = default(decimal), int sectionId = default(int), long segment1TagId = default(long), long segment2TagId = default(long), long segment3TagId = default(long), List<int> tagIds = default(List<int>), int taxCode = default(int), TypeEnum type = default(TypeEnum), string unit = default(string), decimal unitPrice = default(decimal), int? vat = default(int?))
         {
             this.Order = order;
             this.Type = type;
@@ -161,21 +161,21 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>セグメント１ID</value>
         [DataMember(Name = "segment_1_tag_id", EmitDefaultValue = false)]
-        public int Segment1TagId { get; set; }
+        public long Segment1TagId { get; set; }
 
         /// <summary>
         /// セグメント２ID
         /// </summary>
         /// <value>セグメント２ID</value>
         [DataMember(Name = "segment_2_tag_id", EmitDefaultValue = false)]
-        public int Segment2TagId { get; set; }
+        public long Segment2TagId { get; set; }
 
         /// <summary>
         /// セグメント３ID
         /// </summary>
         /// <value>セグメント３ID</value>
         [DataMember(Name = "segment_3_tag_id", EmitDefaultValue = false)]
-        public int Segment3TagId { get; set; }
+        public long Segment3TagId { get; set; }
 
         /// <summary>
         /// Gets or Sets TagIds

@@ -96,7 +96,7 @@ namespace Freee.Accounting.Models
         /// <param name="unit">単位 (required).</param>
         /// <param name="unitPrice">単価 (required).</param>
         /// <param name="vat">消費税額 (required).</param>
-        public QuotationQuotationContents(int? accountItemId = default(int?), string accountItemName = default(string), int amount = default(int), string description = default(string), int id = default(int), int? itemId = default(int?), string itemName = default(string), int order = default(int), decimal qty = default(decimal), bool reducedVat = default(bool), int? sectionId = default(int?), string sectionName = default(string), int? segment1TagId = default(int?), string segment1TagName = default(string), int? segment2TagId = default(int?), string segment2TagName = default(string), int? segment3TagId = default(int?), string segment3TagName = default(string), List<int> tagIds = default(List<int>), List<string> tagNames = default(List<string>), int? taxCode = default(int?), TypeEnum type = default(TypeEnum), string unit = default(string), decimal unitPrice = default(decimal), int vat = default(int))
+        public QuotationQuotationContents(int? accountItemId = default(int?), string accountItemName = default(string), int amount = default(int), string description = default(string), int id = default(int), int? itemId = default(int?), string itemName = default(string), int order = default(int), decimal qty = default(decimal), bool reducedVat = default(bool), int? sectionId = default(int?), string sectionName = default(string), long? segment1TagId = default(long?), string segment1TagName = default(string), long? segment2TagId = default(long?), string segment2TagName = default(string), long? segment3TagId = default(long?), string segment3TagName = default(string), List<int> tagIds = default(List<int>), List<string> tagNames = default(List<string>), int? taxCode = default(int?), TypeEnum type = default(TypeEnum), string unit = default(string), decimal unitPrice = default(decimal), int vat = default(int))
         {
             // to ensure "accountItemId" is required (not null)
             this.AccountItemId = accountItemId ?? throw new ArgumentNullException("accountItemId is a required property for QuotationQuotationContents and cannot be null");
@@ -225,7 +225,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>セグメント１ID</value>
         [DataMember(Name = "segment_1_tag_id", EmitDefaultValue = true)]
-        public int? Segment1TagId { get; set; }
+        public long? Segment1TagId { get; set; }
 
         /// <summary>
         /// セグメント１ID
@@ -239,7 +239,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>セグメント２ID</value>
         [DataMember(Name = "segment_2_tag_id", EmitDefaultValue = true)]
-        public int? Segment2TagId { get; set; }
+        public long? Segment2TagId { get; set; }
 
         /// <summary>
         /// セグメント２
@@ -253,7 +253,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>セグメント３ID</value>
         [DataMember(Name = "segment_3_tag_id", EmitDefaultValue = true)]
-        public int? Segment3TagId { get; set; }
+        public long? Segment3TagId { get; set; }
 
         /// <summary>
         /// セグメント３

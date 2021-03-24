@@ -44,7 +44,7 @@ namespace Freee.Accounting.Models
         /// <param name="id">経費申請の項目行ID (required).</param>
         /// <param name="receiptId">証憑ID.</param>
         /// <param name="transactionDate">日付 (yyyy-mm-dd).</param>
-        public ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines(int amount = default(int), string description = default(string), int expenseApplicationLineTemplateId = default(int), int id = default(int), int receiptId = default(int), string transactionDate = default(string))
+        public ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines(int amount = default(int), string description = default(string), int expenseApplicationLineTemplateId = default(int), long id = default(long), int receiptId = default(int), string transactionDate = default(string))
         {
             this.Id = id;
             this.Amount = amount;
@@ -80,7 +80,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>経費申請の項目行ID</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// 証憑ID

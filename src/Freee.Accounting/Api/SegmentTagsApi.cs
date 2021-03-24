@@ -86,7 +86,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <returns>InlineResponse20010</returns>
-        InlineResponse20010 GetSegmentTags(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?));
+        InlineResponse20010 GetSegmentTags(int companyId, int segmentId, long? offset = default(long?), int? limit = default(int?));
 
         /// <summary>
         /// セグメントタグ一覧の取得
@@ -100,7 +100,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20010</returns>
-        ApiResponse<InlineResponse20010> GetSegmentTagsWithHttpInfo(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?));
+        ApiResponse<InlineResponse20010> GetSegmentTagsWithHttpInfo(int companyId, int segmentId, long? offset = default(long?), int? limit = default(int?));
         /// <summary>
         /// セグメントタグの更新
         /// </summary>
@@ -200,7 +200,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20010</returns>
-        System.Threading.Tasks.Task<InlineResponse20010> GetSegmentTagsAsync(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<InlineResponse20010> GetSegmentTagsAsync(int companyId, int segmentId, long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// セグメントタグ一覧の取得
@@ -215,7 +215,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20010>> GetSegmentTagsWithHttpInfoAsync(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20010>> GetSegmentTagsWithHttpInfoAsync(int companyId, int segmentId, long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// セグメントタグの更新
         /// </summary>
@@ -638,7 +638,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <returns>InlineResponse20010</returns>
-        public InlineResponse20010 GetSegmentTags(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?))
+        public InlineResponse20010 GetSegmentTags(int companyId, int segmentId, long? offset = default(long?), int? limit = default(int?))
         {
             Freee.Accounting.Client.ApiResponse<InlineResponse20010> localVarResponse = GetSegmentTagsWithHttpInfo(companyId, segmentId, offset, limit);
             return localVarResponse.Data;
@@ -653,7 +653,7 @@ namespace Freee.Accounting.Api
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <returns>ApiResponse of InlineResponse20010</returns>
-        public Freee.Accounting.Client.ApiResponse<InlineResponse20010> GetSegmentTagsWithHttpInfo(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?))
+        public Freee.Accounting.Client.ApiResponse<InlineResponse20010> GetSegmentTagsWithHttpInfo(int companyId, int segmentId, long? offset = default(long?), int? limit = default(int?))
         {
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
 
@@ -711,7 +711,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20010</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20010> GetSegmentTagsAsync(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<InlineResponse20010> GetSegmentTagsAsync(int companyId, int segmentId, long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Freee.Accounting.Client.ApiResponse<InlineResponse20010> localVarResponse = await GetSegmentTagsWithHttpInfoAsync(companyId, segmentId, offset, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -727,7 +727,7 @@ namespace Freee.Accounting.Api
         /// <param name="limit">取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20010>> GetSegmentTagsWithHttpInfoAsync(int companyId, int segmentId, int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20010>> GetSegmentTagsWithHttpInfoAsync(int companyId, int segmentId, long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
