@@ -32,17 +32,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialBsResponse</returns>
         TrialBsResponse GetTrialBs(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string approvalFlowStatus = default(string));
@@ -56,17 +56,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialBsResponse</returns>
         ApiResponse<TrialBsResponse> GetTrialBsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string approvalFlowStatus = default(string));
@@ -76,17 +76,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialBsThreeYearsResponse</returns>
         TrialBsThreeYearsResponse GetTrialBsThreeYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string approvalFlowStatus = default(string));
@@ -100,17 +100,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialBsThreeYearsResponse</returns>
         ApiResponse<TrialBsThreeYearsResponse> GetTrialBsThreeYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string approvalFlowStatus = default(string));
@@ -120,17 +120,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialBsTwoYearsResponse</returns>
         TrialBsTwoYearsResponse GetTrialBsTwoYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string approvalFlowStatus = default(string));
@@ -144,17 +144,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialBsTwoYearsResponse</returns>
         ApiResponse<TrialBsTwoYearsResponse> GetTrialBsTwoYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string approvalFlowStatus = default(string));
@@ -164,18 +164,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrResponse</returns>
         TrialCrResponse GetTrialCr(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -189,18 +189,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrResponse</returns>
         ApiResponse<TrialCrResponse> GetTrialCrWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -211,17 +211,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrSectionsResponse</returns>
         TrialCrSectionsResponse GetTrialCrSections(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -236,17 +236,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrSectionsResponse</returns>
         ApiResponse<TrialCrSectionsResponse> GetTrialCrSectionsWithHttpInfo(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -257,18 +257,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrSegment1TagsResponse</returns>
         TrialCrSegment1TagsResponse GetTrialCrSegment1Tags(int companyId, string segment1TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -283,18 +283,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrSegment1TagsResponse</returns>
         ApiResponse<TrialCrSegment1TagsResponse> GetTrialCrSegment1TagsWithHttpInfo(int companyId, string segment1TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -305,18 +305,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrSegment2TagsResponse</returns>
         TrialCrSegment2TagsResponse GetTrialCrSegment2Tags(int companyId, string segment2TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -331,18 +331,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrSegment2TagsResponse</returns>
         ApiResponse<TrialCrSegment2TagsResponse> GetTrialCrSegment2TagsWithHttpInfo(int companyId, string segment2TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -353,18 +353,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrSegment3TagsResponse</returns>
         TrialCrSegment3TagsResponse GetTrialCrSegment3Tags(int companyId, string segment3TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -379,18 +379,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrSegment3TagsResponse</returns>
         ApiResponse<TrialCrSegment3TagsResponse> GetTrialCrSegment3TagsWithHttpInfo(int companyId, string segment3TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -400,18 +400,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrThreeYearsResponse</returns>
         TrialCrThreeYearsResponse GetTrialCrThreeYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -425,18 +425,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrThreeYearsResponse</returns>
         ApiResponse<TrialCrThreeYearsResponse> GetTrialCrThreeYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -446,18 +446,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrTwoYearsResponse</returns>
         TrialCrTwoYearsResponse GetTrialCrTwoYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -471,18 +471,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrTwoYearsResponse</returns>
         ApiResponse<TrialCrTwoYearsResponse> GetTrialCrTwoYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -492,18 +492,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlResponse</returns>
         TrialPlResponse GetTrialPl(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -517,18 +517,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlResponse</returns>
         ApiResponse<TrialPlResponse> GetTrialPlWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -539,17 +539,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます。）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlSectionsResponse</returns>
         TrialPlSectionsResponse GetTrialPlSections(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -564,17 +564,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます。）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlSectionsResponse</returns>
         ApiResponse<TrialPlSectionsResponse> GetTrialPlSectionsWithHttpInfo(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -585,18 +585,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlSegment1TagsResponse</returns>
         TrialPlSegment1TagsResponse GetTrialPlSegment1Tags(int companyId, string segment1TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -611,18 +611,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlSegment1TagsResponse</returns>
         ApiResponse<TrialPlSegment1TagsResponse> GetTrialPlSegment1TagsWithHttpInfo(int companyId, string segment1TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -633,18 +633,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlSegment2TagsResponse</returns>
         TrialPlSegment2TagsResponse GetTrialPlSegment2Tags(int companyId, string segment2TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -659,18 +659,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlSegment2TagsResponse</returns>
         ApiResponse<TrialPlSegment2TagsResponse> GetTrialPlSegment2TagsWithHttpInfo(int companyId, string segment2TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -681,18 +681,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlSegment3TagsResponse</returns>
         TrialPlSegment3TagsResponse GetTrialPlSegment3Tags(int companyId, string segment3TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -707,18 +707,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlSegment3TagsResponse</returns>
         ApiResponse<TrialPlSegment3TagsResponse> GetTrialPlSegment3TagsWithHttpInfo(int companyId, string segment3TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -728,18 +728,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlThreeYearsResponse</returns>
         TrialPlThreeYearsResponse GetTrialPlThreeYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -753,18 +753,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlThreeYearsResponse</returns>
         ApiResponse<TrialPlThreeYearsResponse> GetTrialPlThreeYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -774,18 +774,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlTwoYearsResponse</returns>
         TrialPlTwoYearsResponse GetTrialPlTwoYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -799,18 +799,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlTwoYearsResponse</returns>
         ApiResponse<TrialPlTwoYearsResponse> GetTrialPlTwoYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string));
@@ -832,17 +832,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialBsResponse</returns>
@@ -857,17 +857,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialBsResponse)</returns>
@@ -881,17 +881,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialBsThreeYearsResponse</returns>
@@ -906,17 +906,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialBsThreeYearsResponse)</returns>
@@ -930,17 +930,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialBsTwoYearsResponse</returns>
@@ -955,17 +955,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialBsTwoYearsResponse)</returns>
@@ -979,18 +979,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrResponse</returns>
@@ -1005,18 +1005,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrResponse)</returns>
@@ -1031,17 +1031,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrSectionsResponse</returns>
@@ -1057,17 +1057,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrSectionsResponse)</returns>
@@ -1082,18 +1082,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrSegment1TagsResponse</returns>
@@ -1109,18 +1109,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrSegment1TagsResponse)</returns>
@@ -1135,18 +1135,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrSegment2TagsResponse</returns>
@@ -1162,18 +1162,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrSegment2TagsResponse)</returns>
@@ -1188,18 +1188,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrSegment3TagsResponse</returns>
@@ -1215,18 +1215,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrSegment3TagsResponse)</returns>
@@ -1240,18 +1240,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrThreeYearsResponse</returns>
@@ -1266,18 +1266,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrThreeYearsResponse)</returns>
@@ -1291,18 +1291,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrTwoYearsResponse</returns>
@@ -1317,18 +1317,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrTwoYearsResponse)</returns>
@@ -1342,18 +1342,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlResponse</returns>
@@ -1368,18 +1368,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlResponse)</returns>
@@ -1394,17 +1394,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます。）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlSectionsResponse</returns>
@@ -1420,17 +1420,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます。）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlSectionsResponse)</returns>
@@ -1445,18 +1445,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlSegment1TagsResponse</returns>
@@ -1472,18 +1472,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlSegment1TagsResponse)</returns>
@@ -1498,18 +1498,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlSegment2TagsResponse</returns>
@@ -1525,18 +1525,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlSegment2TagsResponse)</returns>
@@ -1551,18 +1551,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlSegment3TagsResponse</returns>
@@ -1578,18 +1578,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlSegment3TagsResponse)</returns>
@@ -1603,18 +1603,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlThreeYearsResponse</returns>
@@ -1629,18 +1629,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlThreeYearsResponse)</returns>
@@ -1654,18 +1654,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlTwoYearsResponse</returns>
@@ -1680,18 +1680,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlTwoYearsResponse)</returns>
@@ -1822,17 +1822,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialBsResponse</returns>
         public TrialBsResponse GetTrialBs(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string approvalFlowStatus = default(string))
@@ -1847,17 +1847,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialBsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialBsResponse> GetTrialBsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string approvalFlowStatus = default(string))
@@ -1940,7 +1940,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -1965,17 +1965,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialBsResponse</returns>
@@ -1991,17 +1991,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialBsResponse)</returns>
@@ -2086,7 +2086,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -2112,17 +2112,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialBsThreeYearsResponse</returns>
         public TrialBsThreeYearsResponse GetTrialBsThreeYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string approvalFlowStatus = default(string))
@@ -2137,17 +2137,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialBsThreeYearsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialBsThreeYearsResponse> GetTrialBsThreeYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string approvalFlowStatus = default(string))
@@ -2230,7 +2230,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -2255,17 +2255,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialBsThreeYearsResponse</returns>
@@ -2281,17 +2281,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialBsThreeYearsResponse)</returns>
@@ -2376,7 +2376,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -2402,17 +2402,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialBsTwoYearsResponse</returns>
         public TrialBsTwoYearsResponse GetTrialBsTwoYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string approvalFlowStatus = default(string))
@@ -2427,17 +2427,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialBsTwoYearsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialBsTwoYearsResponse> GetTrialBsTwoYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string approvalFlowStatus = default(string))
@@ -2520,7 +2520,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -2545,17 +2545,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialBsTwoYearsResponse</returns>
@@ -2571,17 +2571,17 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialBsTwoYearsResponse)</returns>
@@ -2666,7 +2666,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -2692,18 +2692,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrResponse</returns>
         public TrialCrResponse GetTrialCr(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -2718,18 +2718,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialCrResponse> GetTrialCrWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -2816,7 +2816,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -2841,18 +2841,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrResponse</returns>
@@ -2868,18 +2868,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrResponse)</returns>
@@ -2968,7 +2968,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -2995,17 +2995,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrSectionsResponse</returns>
         public TrialCrSectionsResponse GetTrialCrSections(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -3021,17 +3021,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrSectionsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialCrSectionsResponse> GetTrialCrSectionsWithHttpInfo(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -3121,7 +3121,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -3147,17 +3147,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrSectionsResponse</returns>
@@ -3174,17 +3174,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrSectionsResponse)</returns>
@@ -3276,7 +3276,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -3303,18 +3303,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrSegment1TagsResponse</returns>
         public TrialCrSegment1TagsResponse GetTrialCrSegment1Tags(int companyId, string segment1TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -3330,18 +3330,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrSegment1TagsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialCrSegment1TagsResponse> GetTrialCrSegment1TagsWithHttpInfo(int companyId, string segment1TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -3435,7 +3435,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -3461,18 +3461,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrSegment1TagsResponse</returns>
@@ -3489,18 +3489,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrSegment1TagsResponse)</returns>
@@ -3596,7 +3596,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -3623,18 +3623,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrSegment2TagsResponse</returns>
         public TrialCrSegment2TagsResponse GetTrialCrSegment2Tags(int companyId, string segment2TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -3650,18 +3650,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrSegment2TagsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialCrSegment2TagsResponse> GetTrialCrSegment2TagsWithHttpInfo(int companyId, string segment2TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -3755,7 +3755,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -3781,18 +3781,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrSegment2TagsResponse</returns>
@@ -3809,18 +3809,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrSegment2TagsResponse)</returns>
@@ -3916,7 +3916,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -3943,18 +3943,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrSegment3TagsResponse</returns>
         public TrialCrSegment3TagsResponse GetTrialCrSegment3Tags(int companyId, string segment3TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -3970,18 +3970,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrSegment3TagsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialCrSegment3TagsResponse> GetTrialCrSegment3TagsWithHttpInfo(int companyId, string segment3TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -4075,7 +4075,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -4101,18 +4101,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrSegment3TagsResponse</returns>
@@ -4129,18 +4129,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrSegment3TagsResponse)</returns>
@@ -4236,7 +4236,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -4262,18 +4262,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrThreeYearsResponse</returns>
         public TrialCrThreeYearsResponse GetTrialCrThreeYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -4288,18 +4288,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrThreeYearsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialCrThreeYearsResponse> GetTrialCrThreeYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -4386,7 +4386,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -4411,18 +4411,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrThreeYearsResponse</returns>
@@ -4438,18 +4438,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrThreeYearsResponse)</returns>
@@ -4538,7 +4538,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -4564,18 +4564,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialCrTwoYearsResponse</returns>
         public TrialCrTwoYearsResponse GetTrialCrTwoYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -4590,18 +4590,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialCrTwoYearsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialCrTwoYearsResponse> GetTrialCrTwoYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -4688,7 +4688,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -4713,18 +4713,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialCrTwoYearsResponse</returns>
@@ -4740,18 +4740,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト), 全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialCrTwoYearsResponse)</returns>
@@ -4840,7 +4840,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -4866,18 +4866,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlResponse</returns>
         public TrialPlResponse GetTrialPl(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -4892,18 +4892,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialPlResponse> GetTrialPlWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -4990,7 +4990,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -5015,18 +5015,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlResponse</returns>
@@ -5042,18 +5042,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlResponse)</returns>
@@ -5142,7 +5142,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -5169,17 +5169,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます。）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlSectionsResponse</returns>
         public TrialPlSectionsResponse GetTrialPlSections(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -5195,17 +5195,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます。）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlSectionsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialPlSectionsResponse> GetTrialPlSectionsWithHttpInfo(int companyId, string sectionIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -5295,7 +5295,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -5321,17 +5321,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます。）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlSectionsResponse</returns>
@@ -5348,17 +5348,17 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="sectionIds">出力する部門の指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択の部門で比較できます。）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlSectionsResponse)</returns>
@@ -5450,7 +5450,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -5477,18 +5477,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlSegment1TagsResponse</returns>
         public TrialPlSegment1TagsResponse GetTrialPlSegment1Tags(int companyId, string segment1TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -5504,18 +5504,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlSegment1TagsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialPlSegment1TagsResponse> GetTrialPlSegment1TagsWithHttpInfo(int companyId, string segment1TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -5609,7 +5609,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -5635,18 +5635,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlSegment1TagsResponse</returns>
@@ -5663,18 +5663,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment1TagIds">出力するセグメント1タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlSegment1TagsResponse)</returns>
@@ -5770,7 +5770,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -5797,18 +5797,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlSegment2TagsResponse</returns>
         public TrialPlSegment2TagsResponse GetTrialPlSegment2Tags(int companyId, string segment2TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -5824,18 +5824,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlSegment2TagsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialPlSegment2TagsResponse> GetTrialPlSegment2TagsWithHttpInfo(int companyId, string segment2TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -5929,7 +5929,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -5955,18 +5955,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlSegment2TagsResponse</returns>
@@ -5983,18 +5983,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment2TagIds">出力するセグメント2タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlSegment2TagsResponse)</returns>
@@ -6090,7 +6090,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -6117,18 +6117,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlSegment3TagsResponse</returns>
         public TrialPlSegment3TagsResponse GetTrialPlSegment3Tags(int companyId, string segment3TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -6144,18 +6144,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlSegment3TagsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialPlSegment3TagsResponse> GetTrialPlSegment3TagsWithHttpInfo(int companyId, string segment3TagIds, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -6249,7 +6249,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -6275,18 +6275,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlSegment3TagsResponse</returns>
@@ -6303,18 +6303,18 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="segment3TagIds">出力するセグメント3タグの指定（半角数字のidを半角カンマ区切りスペースなしで指定してください。0を指定すると、未選択のセグメントで比較できます）</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlSegment3TagsResponse)</returns>
@@ -6410,7 +6410,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -6436,18 +6436,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlThreeYearsResponse</returns>
         public TrialPlThreeYearsResponse GetTrialPlThreeYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -6462,18 +6462,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlThreeYearsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialPlThreeYearsResponse> GetTrialPlThreeYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -6560,7 +6560,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -6585,18 +6585,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlThreeYearsResponse</returns>
@@ -6612,18 +6612,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlThreeYearsResponse)</returns>
@@ -6712,7 +6712,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -6738,18 +6738,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>TrialPlTwoYearsResponse</returns>
         public TrialPlTwoYearsResponse GetTrialPlTwoYears(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -6764,18 +6764,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <returns>ApiResponse of TrialPlTwoYearsResponse</returns>
         public Freee.Accounting.Client.ApiResponse<TrialPlTwoYearsResponse> GetTrialPlTwoYearsWithHttpInfo(int companyId, int? fiscalYear = default(int?), int? startMonth = default(int?), int? endMonth = default(int?), string startDate = default(string), string endDate = default(string), string accountItemDisplayType = default(string), string breakdownDisplayType = default(string), int? partnerId = default(int?), string partnerCode = default(string), int? itemId = default(int?), int? sectionId = default(int?), string adjustment = default(string), string costAllocation = default(string), string approvalFlowStatus = default(string))
@@ -6862,7 +6862,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -6887,18 +6887,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TrialPlTwoYearsResponse</returns>
@@ -6914,18 +6914,18 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="fiscalYear">会計年度 (optional)</param>
-        /// <param name="startMonth">発生月で絞込：開始会計月(1-12) (optional)</param>
-        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する。) (optional)</param>
+        /// <param name="startMonth">発生月で絞込：開始会計月(1-12)。指定されない場合、現在の会計年度の期首月が指定されます。 (optional)</param>
+        /// <param name="endMonth">発生月で絞込：終了会計月(1-12)(会計年度が10月始まりでstart_monthが11なら11, 12, 1, ... 9のいずれかを指定する)。指定されない場合、現在の会計年度の期末月が指定されます。 (optional)</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
-        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group） (optional)</param>
+        /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
         /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
         /// <param name="sectionId">部門IDで絞込（0を指定すると、部門が未選択で絞り込めます） (optional)</param>
-        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） (optional)</param>
-        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without） (optional)</param>
+        /// <param name="adjustment">決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）。指定されない場合、決算整理仕訳以外: withoutが指定されます。 (optional)</param>
+        /// <param name="costAllocation">配賦仕訳で絞込（配賦仕訳のみ：only,配賦仕訳以外：without）。指定されない場合、配賦仕訳を含む金額が返却されます。 (optional)</param>
         /// <param name="approvalFlowStatus">承認ステータスで絞込 (未承認を除く: without_in_progress (デフォルト)、全てのステータス: all)&lt;br&gt; 個人: プレミアムプラン、法人: プロフェッショナルプラン以上で指定可能です。&lt;br&gt; 事業所の設定から仕訳承認フローの利用を有効にした場合に指定可能です。  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TrialPlTwoYearsResponse)</returns>
@@ -7014,7 +7014,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
