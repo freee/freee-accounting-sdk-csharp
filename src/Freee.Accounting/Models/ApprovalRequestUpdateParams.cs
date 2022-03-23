@@ -38,7 +38,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="ApprovalRequestUpdateParams" /> class.
         /// </summary>
-        /// <param name="applicationDate">申請日 (yyyy-mm-dd) (required).</param>
+        /// <param name="applicationDate">申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。 .</param>
         /// <param name="approvalFlowRouteId">申請経路ID (required).</param>
         /// <param name="approverId">承認者のユーザーID.</param>
         /// <param name="companyId">事業所ID (required).</param>
@@ -46,11 +46,6 @@ namespace Freee.Accounting.Models
         /// <param name="requestItems">requestItems (required).</param>
         public ApprovalRequestUpdateParams(string applicationDate = default(string), int approvalFlowRouteId = default(int), int approverId = default(int), int companyId = default(int), bool draft = default(bool), List<ApprovalRequestCreateParamsRequestItems> requestItems = default(List<ApprovalRequestCreateParamsRequestItems>))
         {
-            // to ensure "applicationDate" is required (not null)
-            if (applicationDate == null) {
-                throw new ArgumentNullException("applicationDate is a required property for ApprovalRequestUpdateParams and cannot be null");
-            }
-            this.ApplicationDate = applicationDate;
             this.ApprovalFlowRouteId = approvalFlowRouteId;
             this.CompanyId = companyId;
             this.Draft = draft;
@@ -59,14 +54,15 @@ namespace Freee.Accounting.Models
                 throw new ArgumentNullException("requestItems is a required property for ApprovalRequestUpdateParams and cannot be null");
             }
             this.RequestItems = requestItems;
+            this.ApplicationDate = applicationDate;
             this.ApproverId = approverId;
         }
 
         /// <summary>
-        /// 申請日 (yyyy-mm-dd)
+        /// 申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。 
         /// </summary>
-        /// <value>申請日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "application_date", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。 </value>
+        [DataMember(Name = "application_date", EmitDefaultValue = false)]
         public string ApplicationDate { get; set; }
 
         /// <summary>
