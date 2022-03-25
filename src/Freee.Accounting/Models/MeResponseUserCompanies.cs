@@ -31,9 +31,9 @@ namespace Freee.Accounting.Models
     public partial class MeResponseUserCompanies : IEquatable<MeResponseUserCompanies>
     {
         /// <summary>
-        /// ユーザーの権限
+        /// ユーザーの権限 &lt;ul&gt; &lt;li&gt;admin: 管理者&lt;/li&gt; &lt;li&gt;simple_accounting: 一般&lt;/li&gt; &lt;li&gt;self_only: 取引登録のみ&lt;/li&gt; &lt;li&gt;read_only: 閲覧のみ&lt;/li&gt; &lt;li&gt;workflow: 申請・承認&lt;/li&gt; &lt;/ul&gt;
         /// </summary>
-        /// <value>ユーザーの権限</value>
+        /// <value>ユーザーの権限 &lt;ul&gt; &lt;li&gt;admin: 管理者&lt;/li&gt; &lt;li&gt;simple_accounting: 一般&lt;/li&gt; &lt;li&gt;self_only: 取引登録のみ&lt;/li&gt; &lt;li&gt;read_only: 閲覧のみ&lt;/li&gt; &lt;li&gt;workflow: 申請・承認&lt;/li&gt; &lt;/ul&gt;</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RoleEnum
         {
@@ -59,15 +59,21 @@ namespace Freee.Accounting.Models
             /// Enum ReadOnly for value: read_only
             /// </summary>
             [EnumMember(Value = "read_only")]
-            ReadOnly = 4
+            ReadOnly = 4,
+
+            /// <summary>
+            /// Enum Workflow for value: workflow
+            /// </summary>
+            [EnumMember(Value = "workflow")]
+            Workflow = 5
 
         }
 
 
         /// <summary>
-        /// ユーザーの権限
+        /// ユーザーの権限 &lt;ul&gt; &lt;li&gt;admin: 管理者&lt;/li&gt; &lt;li&gt;simple_accounting: 一般&lt;/li&gt; &lt;li&gt;self_only: 取引登録のみ&lt;/li&gt; &lt;li&gt;read_only: 閲覧のみ&lt;/li&gt; &lt;li&gt;workflow: 申請・承認&lt;/li&gt; &lt;/ul&gt;
         /// </summary>
-        /// <value>ユーザーの権限</value>
+        /// <value>ユーザーの権限 &lt;ul&gt; &lt;li&gt;admin: 管理者&lt;/li&gt; &lt;li&gt;simple_accounting: 一般&lt;/li&gt; &lt;li&gt;self_only: 取引登録のみ&lt;/li&gt; &lt;li&gt;read_only: 閲覧のみ&lt;/li&gt; &lt;li&gt;workflow: 申請・承認&lt;/li&gt; &lt;/ul&gt;</value>
         [DataMember(Name = "role", IsRequired = true, EmitDefaultValue = false)]
         public RoleEnum Role { get; set; }
         /// <summary>
@@ -81,7 +87,7 @@ namespace Freee.Accounting.Models
         /// <param name="advisorId">アドバイザープロファイルID（アドバイザー事業所で無い場合にnullになります）.</param>
         /// <param name="displayName">表示名 (required).</param>
         /// <param name="id">事業所ID (required).</param>
-        /// <param name="role">ユーザーの権限 (required).</param>
+        /// <param name="role">ユーザーの権限 &lt;ul&gt; &lt;li&gt;admin: 管理者&lt;/li&gt; &lt;li&gt;simple_accounting: 一般&lt;/li&gt; &lt;li&gt;self_only: 取引登録のみ&lt;/li&gt; &lt;li&gt;read_only: 閲覧のみ&lt;/li&gt; &lt;li&gt;workflow: 申請・承認&lt;/li&gt; &lt;/ul&gt; (required).</param>
         /// <param name="useCustomRole">カスタム権限（true: 使用する、false: 使用しない） (required).</param>
         public MeResponseUserCompanies(int? advisorId = default(int?), string displayName = default(string), int id = default(int), RoleEnum role = default(RoleEnum), bool useCustomRole = default(bool))
         {

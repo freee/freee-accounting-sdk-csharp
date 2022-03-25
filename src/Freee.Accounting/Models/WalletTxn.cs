@@ -108,10 +108,11 @@ namespace Freee.Accounting.Models
         /// <param name="dueAmount">未決済金額 (required).</param>
         /// <param name="entrySide">入金／出金 (入金: income, 出金: expense) (required).</param>
         /// <param name="id">明細ID (required).</param>
-        /// <param name="status">明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4） (required).</param>
+        /// <param name="ruleMatched">登録時に&lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/202848350-明細の自動登録ルールを設定する\&quot; target&#x3D;\&quot;_blank\&quot;&gt;自動登録ルールの設定&lt;/a&gt;が適用され、登録処理が実行された場合、 trueになります。〜を推測する、〜の消込をするの条件の場合は一致してもfalseになります。  (required).</param>
+        /// <param name="status">明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4, 対象外: 6） (required).</param>
         /// <param name="walletableId">口座ID (required).</param>
         /// <param name="walletableType">口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) (required).</param>
-        public WalletTxn(long amount = default(long), int balance = default(int), int companyId = default(int), string date = default(string), string description = default(string), int dueAmount = default(int), EntrySideEnum entrySide = default(EntrySideEnum), int id = default(int), int status = default(int), int walletableId = default(int), WalletableTypeEnum walletableType = default(WalletableTypeEnum))
+        public WalletTxn(long amount = default(long), int balance = default(int), int companyId = default(int), string date = default(string), string description = default(string), int dueAmount = default(int), EntrySideEnum entrySide = default(EntrySideEnum), int id = default(int), bool ruleMatched = default(bool), int status = default(int), int walletableId = default(int), WalletableTypeEnum walletableType = default(WalletableTypeEnum))
         {
             this.Amount = amount;
             this.Balance = balance;
@@ -129,6 +130,7 @@ namespace Freee.Accounting.Models
             this.DueAmount = dueAmount;
             this.EntrySide = entrySide;
             this.Id = id;
+            this.RuleMatched = ruleMatched;
             this.Status = status;
             this.WalletableId = walletableId;
             this.WalletableType = walletableType;
@@ -184,9 +186,16 @@ namespace Freee.Accounting.Models
         public int Id { get; set; }
 
         /// <summary>
-        /// 明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4）
+        /// 登録時に&lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/202848350-明細の自動登録ルールを設定する\&quot; target&#x3D;\&quot;_blank\&quot;&gt;自動登録ルールの設定&lt;/a&gt;が適用され、登録処理が実行された場合、 trueになります。〜を推測する、〜の消込をするの条件の場合は一致してもfalseになります。 
         /// </summary>
-        /// <value>明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4）</value>
+        /// <value>登録時に&lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/202848350-明細の自動登録ルールを設定する\&quot; target&#x3D;\&quot;_blank\&quot;&gt;自動登録ルールの設定&lt;/a&gt;が適用され、登録処理が実行された場合、 trueになります。〜を推測する、〜の消込をするの条件の場合は一致してもfalseになります。 </value>
+        [DataMember(Name = "rule_matched", IsRequired = true, EmitDefaultValue = true)]
+        public bool RuleMatched { get; set; }
+
+        /// <summary>
+        /// 明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4, 対象外: 6）
+        /// </summary>
+        /// <value>明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4, 対象外: 6）</value>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
         public int Status { get; set; }
 
@@ -213,6 +222,7 @@ namespace Freee.Accounting.Models
             sb.Append("  DueAmount: ").Append(DueAmount).Append("\n");
             sb.Append("  EntrySide: ").Append(EntrySide).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  RuleMatched: ").Append(RuleMatched).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  WalletableId: ").Append(WalletableId).Append("\n");
             sb.Append("  WalletableType: ").Append(WalletableType).Append("\n");
@@ -286,6 +296,10 @@ namespace Freee.Accounting.Models
                     this.Id.Equals(input.Id)
                 ) && 
                 (
+                    this.RuleMatched == input.RuleMatched ||
+                    this.RuleMatched.Equals(input.RuleMatched)
+                ) && 
+                (
                     this.Status == input.Status ||
                     this.Status.Equals(input.Status)
                 ) && 
@@ -322,6 +336,7 @@ namespace Freee.Accounting.Models
                 hashCode = (hashCode * 59) + this.DueAmount.GetHashCode();
                 hashCode = (hashCode * 59) + this.EntrySide.GetHashCode();
                 hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                hashCode = (hashCode * 59) + this.RuleMatched.GetHashCode();
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 hashCode = (hashCode * 59) + this.WalletableId.GetHashCode();
                 hashCode = (hashCode * 59) + this.WalletableType.GetHashCode();

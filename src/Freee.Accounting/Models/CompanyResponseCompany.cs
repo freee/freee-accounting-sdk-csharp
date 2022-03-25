@@ -887,7 +887,13 @@ namespace Freee.Accounting.Models
             /// Enum ReadOnly for value: read_only
             /// </summary>
             [EnumMember(Value = "read_only")]
-            ReadOnly = 4
+            ReadOnly = 4,
+
+            /// <summary>
+            /// Enum Workflow for value: workflow
+            /// </summary>
+            [EnumMember(Value = "workflow")]
+            Workflow = 5
 
         }
 

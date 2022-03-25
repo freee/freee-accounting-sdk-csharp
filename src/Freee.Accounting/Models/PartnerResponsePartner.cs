@@ -85,8 +85,8 @@ namespace Freee.Accounting.Models
         /// <param name="payerWalletableId">振込元口座ID（一括振込ファイル用）:（未設定の場合は、nullです。）.</param>
         /// <param name="paymentTermAttributes">paymentTermAttributes.</param>
         /// <param name="phone">電話番号.</param>
-        /// <param name="shortcut1">ショートカット1 (20文字以内).</param>
-        /// <param name="shortcut2">ショートカット2 (20文字以内).</param>
+        /// <param name="shortcut1">ショートカット1 (255文字以内).</param>
+        /// <param name="shortcut2">ショートカット2 (255文字以内).</param>
         /// <param name="transferFeeHandlingSide">振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee).</param>
         /// <param name="updateDate">更新日 (yyyy-mm-dd) (required).</param>
         public PartnerResponsePartner(PartnerResponsePartnerAddressAttributes addressAttributes = default(PartnerResponsePartnerAddressAttributes), bool available = default(bool), string code = default(string), int companyId = default(int), string contactName = default(string), string countryCode = default(string), string defaultTitle = default(string), string email = default(string), int id = default(int), PartnerResponsePartnerInvoicePaymentTermAttributes invoicePaymentTermAttributes = default(PartnerResponsePartnerInvoicePaymentTermAttributes), string longName = default(string), string name = default(string), string nameKana = default(string), int? orgCode = default(int?), PartnerResponsePartnerPartnerBankAccountAttributes partnerBankAccountAttributes = default(PartnerResponsePartnerPartnerBankAccountAttributes), PartnerResponsePartnerPartnerDocSettingAttributes partnerDocSettingAttributes = default(PartnerResponsePartnerPartnerDocSettingAttributes), int? payerWalletableId = default(int?), PartnerResponsePartnerInvoicePaymentTermAttributes paymentTermAttributes = default(PartnerResponsePartnerInvoicePaymentTermAttributes), string phone = default(string), string shortcut1 = default(string), string shortcut2 = default(string), TransferFeeHandlingSideEnum? transferFeeHandlingSide = default(TransferFeeHandlingSideEnum?), string updateDate = default(string))
@@ -257,16 +257,16 @@ namespace Freee.Accounting.Models
         public string Phone { get; set; }
 
         /// <summary>
-        /// ショートカット1 (20文字以内)
+        /// ショートカット1 (255文字以内)
         /// </summary>
-        /// <value>ショートカット1 (20文字以内)</value>
+        /// <value>ショートカット1 (255文字以内)</value>
         [DataMember(Name = "shortcut1", EmitDefaultValue = true)]
         public string Shortcut1 { get; set; }
 
         /// <summary>
-        /// ショートカット2 (20文字以内)
+        /// ショートカット2 (255文字以内)
         /// </summary>
-        /// <value>ショートカット2 (20文字以内)</value>
+        /// <value>ショートカット2 (255文字以内)</value>
         [DataMember(Name = "shortcut2", EmitDefaultValue = true)]
         public string Shortcut2 { get; set; }
 

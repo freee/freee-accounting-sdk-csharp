@@ -133,7 +133,7 @@ namespace Freee.Accounting.Models
         /// <param name="accountName">受取人名（カナ）（48文字以内）&lt;br&gt; 支払先指定時には無効 .</param>
         /// <param name="accountNumber">口座番号（半角数字1桁〜7桁）&lt;br&gt; 支払先指定時には無効 .</param>
         /// <param name="accountType">&#39;口座種別(ordinary: 普通、checking: 当座、earmarked: 納税準備預金、savings: 貯蓄、other: その他)&#39;&lt;br&gt; &#39;支払先指定時には無効&#39;&lt;br&gt; &#39;デフォルトは ordinary: 普通 です&#39; .</param>
-        /// <param name="applicationDate">申請日 (yyyy-mm-dd)&lt;br&gt; 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効  (required).</param>
+        /// <param name="applicationDate">申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。&lt;br&gt; 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効 .</param>
         /// <param name="approvalFlowRouteId">申請経路ID&lt;br&gt; 指定する申請経路IDは、申請経路APIを利用して取得してください。  (required).</param>
         /// <param name="approverId">承認者のユーザーID&lt;br&gt; 「承認者を指定」の経路を申請経路として使用する場合に指定してください。&lt;br&gt; 指定する承認者のユーザーIDは、申請経路APIを利用して取得してください。 .</param>
         /// <param name="bankCode">銀行コード（半角数字1桁〜4桁）&lt;br&gt; 支払先指定時には無効 .</param>
@@ -156,11 +156,6 @@ namespace Freee.Accounting.Models
         /// <param name="title">申請タイトル&lt;br&gt; 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効  (required).</param>
         public PaymentRequestUpdateParams(string accountName = default(string), string accountNumber = default(string), AccountTypeEnum? accountType = default(AccountTypeEnum?), string applicationDate = default(string), int approvalFlowRouteId = default(int), int approverId = default(int), string bankCode = default(string), string bankName = default(string), string bankNameKana = default(string), string branchCode = default(string), string branchKana = default(string), string branchName = default(string), int companyId = default(int), string description = default(string), string documentCode = default(string), bool draft = default(bool), string issueDate = default(string), string partnerCode = default(string), int? partnerId = default(int?), string paymentDate = default(string), PaymentMethodEnum? paymentMethod = default(PaymentMethodEnum?), List<PaymentRequestUpdateParamsPaymentRequestLines> paymentRequestLines = default(List<PaymentRequestUpdateParamsPaymentRequestLines>), List<int> receiptIds = default(List<int>), string title = default(string))
         {
-            // to ensure "applicationDate" is required (not null)
-            if (applicationDate == null) {
-                throw new ArgumentNullException("applicationDate is a required property for PaymentRequestUpdateParams and cannot be null");
-            }
-            this.ApplicationDate = applicationDate;
             this.ApprovalFlowRouteId = approvalFlowRouteId;
             this.CompanyId = companyId;
             this.Draft = draft;
@@ -182,6 +177,7 @@ namespace Freee.Accounting.Models
             this.AccountName = accountName;
             this.AccountNumber = accountNumber;
             this.AccountType = accountType;
+            this.ApplicationDate = applicationDate;
             this.ApproverId = approverId;
             this.BankCode = bankCode;
             this.BankName = bankName;
@@ -213,10 +209,10 @@ namespace Freee.Accounting.Models
         public string AccountNumber { get; set; }
 
         /// <summary>
-        /// 申請日 (yyyy-mm-dd)&lt;br&gt; 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効 
+        /// 申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。&lt;br&gt; 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効 
         /// </summary>
-        /// <value>申請日 (yyyy-mm-dd)&lt;br&gt; 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効 </value>
-        [DataMember(Name = "application_date", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。&lt;br&gt; 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効 </value>
+        [DataMember(Name = "application_date", EmitDefaultValue = false)]
         public string ApplicationDate { get; set; }
 
         /// <summary>
