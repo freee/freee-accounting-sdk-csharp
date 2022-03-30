@@ -127,7 +127,7 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
-        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) (optional)</param>
+        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)</param>
         /// <param name="applicationNumber">申請No. (optional)</param>
         /// <param name="title">申請タイトル (optional)</param>
         /// <param name="formId">申請フォームID (optional)</param>
@@ -136,7 +136,7 @@ namespace Freee.Accounting.Api
         /// <param name="applicantId">申請者のユーザーID (optional)</param>
         /// <param name="minAmount">金額で絞込：以上 (optional)</param>
         /// <param name="maxAmount">金額で絞込：以下 (optional)</param>
-        /// <param name="approverId">承認者のユーザーID (optional)</param>
+        /// <param name="approverId">承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <returns>ApprovalRequestsIndexResponse</returns>
@@ -150,7 +150,7 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
-        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) (optional)</param>
+        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)</param>
         /// <param name="applicationNumber">申請No. (optional)</param>
         /// <param name="title">申請タイトル (optional)</param>
         /// <param name="formId">申請フォームID (optional)</param>
@@ -159,7 +159,7 @@ namespace Freee.Accounting.Api
         /// <param name="applicantId">申請者のユーザーID (optional)</param>
         /// <param name="minAmount">金額で絞込：以上 (optional)</param>
         /// <param name="maxAmount">金額で絞込：以下 (optional)</param>
-        /// <param name="approverId">承認者のユーザーID (optional)</param>
+        /// <param name="approverId">承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <returns>ApiResponse of ApprovalRequestsIndexResponse</returns>
@@ -342,7 +342,7 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
-        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) (optional)</param>
+        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)</param>
         /// <param name="applicationNumber">申請No. (optional)</param>
         /// <param name="title">申請タイトル (optional)</param>
         /// <param name="formId">申請フォームID (optional)</param>
@@ -351,7 +351,7 @@ namespace Freee.Accounting.Api
         /// <param name="applicantId">申請者のユーザーID (optional)</param>
         /// <param name="minAmount">金額で絞込：以上 (optional)</param>
         /// <param name="maxAmount">金額で絞込：以下 (optional)</param>
-        /// <param name="approverId">承認者のユーザーID (optional)</param>
+        /// <param name="approverId">承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -366,7 +366,7 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
-        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) (optional)</param>
+        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)</param>
         /// <param name="applicationNumber">申請No. (optional)</param>
         /// <param name="title">申請タイトル (optional)</param>
         /// <param name="formId">申請フォームID (optional)</param>
@@ -375,7 +375,7 @@ namespace Freee.Accounting.Api
         /// <param name="applicantId">申請者のユーザーID (optional)</param>
         /// <param name="minAmount">金額で絞込：以上 (optional)</param>
         /// <param name="maxAmount">金額で絞込：以下 (optional)</param>
-        /// <param name="approverId">承認者のユーザーID (optional)</param>
+        /// <param name="approverId">承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -599,7 +599,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -669,7 +669,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -737,7 +737,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -807,7 +807,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -876,7 +876,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -947,7 +947,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -1016,7 +1016,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -1087,7 +1087,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -1153,7 +1153,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -1221,7 +1221,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -1246,7 +1246,7 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
-        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) (optional)</param>
+        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)</param>
         /// <param name="applicationNumber">申請No. (optional)</param>
         /// <param name="title">申請タイトル (optional)</param>
         /// <param name="formId">申請フォームID (optional)</param>
@@ -1255,7 +1255,7 @@ namespace Freee.Accounting.Api
         /// <param name="applicantId">申請者のユーザーID (optional)</param>
         /// <param name="minAmount">金額で絞込：以上 (optional)</param>
         /// <param name="maxAmount">金額で絞込：以下 (optional)</param>
-        /// <param name="approverId">承認者のユーザーID (optional)</param>
+        /// <param name="approverId">承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <returns>ApprovalRequestsIndexResponse</returns>
@@ -1270,7 +1270,7 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
-        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) (optional)</param>
+        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)</param>
         /// <param name="applicationNumber">申請No. (optional)</param>
         /// <param name="title">申請タイトル (optional)</param>
         /// <param name="formId">申請フォームID (optional)</param>
@@ -1279,7 +1279,7 @@ namespace Freee.Accounting.Api
         /// <param name="applicantId">申請者のユーザーID (optional)</param>
         /// <param name="minAmount">金額で絞込：以上 (optional)</param>
         /// <param name="maxAmount">金額で絞込：以下 (optional)</param>
-        /// <param name="approverId">承認者のユーザーID (optional)</param>
+        /// <param name="approverId">承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <returns>ApiResponse of ApprovalRequestsIndexResponse</returns>
@@ -1359,7 +1359,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -1383,7 +1383,7 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
-        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) (optional)</param>
+        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)</param>
         /// <param name="applicationNumber">申請No. (optional)</param>
         /// <param name="title">申請タイトル (optional)</param>
         /// <param name="formId">申請フォームID (optional)</param>
@@ -1392,7 +1392,7 @@ namespace Freee.Accounting.Api
         /// <param name="applicantId">申請者のユーザーID (optional)</param>
         /// <param name="minAmount">金額で絞込：以上 (optional)</param>
         /// <param name="maxAmount">金額で絞込：以下 (optional)</param>
-        /// <param name="approverId">承認者のユーザーID (optional)</param>
+        /// <param name="approverId">承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1408,7 +1408,7 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
-        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) (optional)</param>
+        /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)</param>
         /// <param name="applicationNumber">申請No. (optional)</param>
         /// <param name="title">申請タイトル (optional)</param>
         /// <param name="formId">申請フォームID (optional)</param>
@@ -1417,7 +1417,7 @@ namespace Freee.Accounting.Api
         /// <param name="applicantId">申請者のユーザーID (optional)</param>
         /// <param name="minAmount">金額で絞込：以上 (optional)</param>
         /// <param name="maxAmount">金額で絞込：以下 (optional)</param>
-        /// <param name="approverId">承認者のユーザーID (optional)</param>
+        /// <param name="approverId">承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1499,7 +1499,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -1576,7 +1576,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -1655,7 +1655,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -1732,7 +1732,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
@@ -1811,7 +1811,7 @@ namespace Freee.Accounting.Api
 
             // authentication (oauth2) required
             // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }

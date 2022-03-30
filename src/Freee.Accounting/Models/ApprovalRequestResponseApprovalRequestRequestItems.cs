@@ -31,9 +31,9 @@ namespace Freee.Accounting.Models
     public partial class ApprovalRequestResponseApprovalRequestRequestItems : IEquatable<ApprovalRequestResponseApprovalRequestRequestItems>
     {
         /// <summary>
-        /// 項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル, section: 部門ID, partner: 取引先ID, ninja_sign_document: 契約書（NINJA SIGN連携）)
+        /// 項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル, section: 部門ID, partner: 取引先ID, ninja_sign_document: 契約書（freeeサイン連携）)
         /// </summary>
-        /// <value>項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル, section: 部門ID, partner: 取引先ID, ninja_sign_document: 契約書（NINJA SIGN連携）)</value>
+        /// <value>項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル, section: 部門ID, partner: 取引先ID, ninja_sign_document: 契約書（freeeサイン連携）)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -101,9 +101,9 @@ namespace Freee.Accounting.Models
 
 
         /// <summary>
-        /// 項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル, section: 部門ID, partner: 取引先ID, ninja_sign_document: 契約書（NINJA SIGN連携）)
+        /// 項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル, section: 部門ID, partner: 取引先ID, ninja_sign_document: 契約書（freeeサイン連携）)
         /// </summary>
-        /// <value>項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル, section: 部門ID, partner: 取引先ID, ninja_sign_document: 契約書（NINJA SIGN連携）)</value>
+        /// <value>項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル, section: 部門ID, partner: 取引先ID, ninja_sign_document: 契約書（freeeサイン連携）)</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
         public TypeEnum Type { get; set; }
         /// <summary>
@@ -115,7 +115,7 @@ namespace Freee.Accounting.Models
         /// Initializes a new instance of the <see cref="ApprovalRequestResponseApprovalRequestRequestItems" /> class.
         /// </summary>
         /// <param name="id">項目ID (required).</param>
-        /// <param name="type">項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル, section: 部門ID, partner: 取引先ID, ninja_sign_document: 契約書（NINJA SIGN連携）) (required).</param>
+        /// <param name="type">項目タイプ(title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル, section: 部門ID, partner: 取引先ID, ninja_sign_document: 契約書（freeeサイン連携）) (required).</param>
         /// <param name="value">項目の値 (required).</param>
         public ApprovalRequestResponseApprovalRequestRequestItems(int id = default(int), TypeEnum type = default(TypeEnum), string value = default(string))
         {

@@ -44,7 +44,7 @@ namespace Freee.Accounting.Models
         /// <param name="description">備考 (10000文字以内).</param>
         /// <param name="draft">経費申請のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で経費申請を作成します。&lt;br&gt; trueを指定した時は下書き（draft）で経費申請を作成します。&lt;br&gt; 未指定の時は下書きとみなして経費申請を作成します。 .</param>
         /// <param name="expenseApplicationLines">expenseApplicationLines (required).</param>
-        /// <param name="issueDate">申請日 (yyyy-mm-dd) (required).</param>
+        /// <param name="issueDate">申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。 .</param>
         /// <param name="parentId">親申請ID(法人向けプロフェッショナル, 法人向け エンタープライズプラン)&lt;br&gt; &lt;ul&gt;   &lt;li&gt;承認済みの既存各種申請IDのみ指定可能です。&lt;/li&gt;   &lt;li&gt;各種申請一覧APIを利用して取得してください。&lt;/li&gt; &lt;/ul&gt; .</param>
         /// <param name="sectionId">部門ID.</param>
         /// <param name="segment1TagId">セグメント１ID(法人向けプロフェッショナル, 法人向けエンタープライズプラン)&lt;br&gt; セグメントタグ一覧APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; .</param>
@@ -60,11 +60,6 @@ namespace Freee.Accounting.Models
                 throw new ArgumentNullException("expenseApplicationLines is a required property for ExpenseApplicationCreateParams and cannot be null");
             }
             this.ExpenseApplicationLines = expenseApplicationLines;
-            // to ensure "issueDate" is required (not null)
-            if (issueDate == null) {
-                throw new ArgumentNullException("issueDate is a required property for ExpenseApplicationCreateParams and cannot be null");
-            }
-            this.IssueDate = issueDate;
             // to ensure "title" is required (not null)
             if (title == null) {
                 throw new ArgumentNullException("title is a required property for ExpenseApplicationCreateParams and cannot be null");
@@ -74,6 +69,7 @@ namespace Freee.Accounting.Models
             this.ApproverId = approverId;
             this.Description = description;
             this.Draft = draft;
+            this.IssueDate = issueDate;
             this.ParentId = parentId;
             this.SectionId = sectionId;
             this.Segment1TagId = segment1TagId;
@@ -124,10 +120,10 @@ namespace Freee.Accounting.Models
         public List<ExpenseApplicationCreateParamsExpenseApplicationLines> ExpenseApplicationLines { get; set; }
 
         /// <summary>
-        /// 申請日 (yyyy-mm-dd)
+        /// 申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。 
         /// </summary>
-        /// <value>申請日 (yyyy-mm-dd)</value>
-        [DataMember(Name = "issue_date", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。 </value>
+        [DataMember(Name = "issue_date", EmitDefaultValue = false)]
         public string IssueDate { get; set; }
 
         /// <summary>
