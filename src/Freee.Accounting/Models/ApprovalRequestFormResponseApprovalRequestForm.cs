@@ -85,23 +85,27 @@ namespace Freee.Accounting.Models
         {
             this.CompanyId = companyId;
             // to ensure "createdDate" is required (not null)
-            if (createdDate == null) {
+            if (createdDate == null)
+            {
                 throw new ArgumentNullException("createdDate is a required property for ApprovalRequestFormResponseApprovalRequestForm and cannot be null");
             }
             this.CreatedDate = createdDate;
             // to ensure "description" is required (not null)
-            if (description == null) {
+            if (description == null)
+            {
                 throw new ArgumentNullException("description is a required property for ApprovalRequestFormResponseApprovalRequestForm and cannot be null");
             }
             this.Description = description;
             // to ensure "formOrder" is required (not null)
-            if (formOrder == null) {
+            if (formOrder == null)
+            {
                 throw new ArgumentNullException("formOrder is a required property for ApprovalRequestFormResponseApprovalRequestForm and cannot be null");
             }
             this.FormOrder = formOrder;
             this.Id = id;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for ApprovalRequestFormResponseApprovalRequestForm and cannot be null");
             }
             this.Name = name;

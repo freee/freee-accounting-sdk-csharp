@@ -51,7 +51,8 @@ namespace Freee.Accounting.Models
             this.AccountItemId = accountItemId;
             this.CompanyId = companyId;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for ExpenseApplicationLineTemplateParams and cannot be null");
             }
             this.Name = name;

@@ -81,7 +81,8 @@ namespace Freee.Accounting.Models
             this.BankId = bankId;
             this.Id = id;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for WalletableCreateResponseWalletable and cannot be null");
             }
             this.Name = name;

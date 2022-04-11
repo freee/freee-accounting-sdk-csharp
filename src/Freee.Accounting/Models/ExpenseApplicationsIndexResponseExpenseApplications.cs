@@ -135,31 +135,36 @@ namespace Freee.Accounting.Models
         {
             this.ApplicantId = applicantId;
             // to ensure "applicationNumber" is required (not null)
-            if (applicationNumber == null) {
+            if (applicationNumber == null)
+            {
                 throw new ArgumentNullException("applicationNumber is a required property for ExpenseApplicationsIndexResponseExpenseApplications and cannot be null");
             }
             this.ApplicationNumber = applicationNumber;
             this.CompanyId = companyId;
             // to ensure "dealId" is required (not null)
-            if (dealId == null) {
+            if (dealId == null)
+            {
                 throw new ArgumentNullException("dealId is a required property for ExpenseApplicationsIndexResponseExpenseApplications and cannot be null");
             }
             this.DealId = dealId;
             this.DealStatus = dealStatus;
             // to ensure "expenseApplicationLines" is required (not null)
-            if (expenseApplicationLines == null) {
+            if (expenseApplicationLines == null)
+            {
                 throw new ArgumentNullException("expenseApplicationLines is a required property for ExpenseApplicationsIndexResponseExpenseApplications and cannot be null");
             }
             this.ExpenseApplicationLines = expenseApplicationLines;
             this.Id = id;
             // to ensure "issueDate" is required (not null)
-            if (issueDate == null) {
+            if (issueDate == null)
+            {
                 throw new ArgumentNullException("issueDate is a required property for ExpenseApplicationsIndexResponseExpenseApplications and cannot be null");
             }
             this.IssueDate = issueDate;
             this.Status = status;
             // to ensure "title" is required (not null)
-            if (title == null) {
+            if (title == null)
+            {
                 throw new ArgumentNullException("title is a required property for ExpenseApplicationsIndexResponseExpenseApplications and cannot be null");
             }
             this.Title = title;

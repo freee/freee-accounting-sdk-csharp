@@ -86,7 +86,8 @@ namespace Freee.Accounting.Models
             this.EntrySide = entrySide;
             this.Id = id;
             // to ensure "tagIds" is required (not null)
-            if (tagIds == null) {
+            if (tagIds == null)
+            {
                 throw new ArgumentNullException("tagIds is a required property for DealDetails1 and cannot be null");
             }
             this.TagIds = tagIds;

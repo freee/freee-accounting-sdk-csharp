@@ -101,302 +101,362 @@ namespace Freee.Accounting.Models
         public InlineResponse20013(UserCapability tags = default(UserCapability), UserCapability accountItemStatements = default(UserCapability), UserCapability accountItems = default(UserCapability), UserCapability annualReports = default(UserCapability), UserCapability approvalFlowRoutes = default(UserCapability), UserCapability approvalRequests = default(UserCapability), UserCapability backups = default(UserCapability), UserCapability bankAccountantStaffUsers = default(UserCapability), UserCapability bizAllocations = default(UserCapability), UserCapability companies = default(UserCapability), UserCapability consumptionEntries = default(UserCapability), UserCapability costAllocations = default(UserCapability), UserCapability dealTemplates = default(UserCapability), UserCapability deals = default(UserCapability), UserCapability docPostings = default(UserCapability), UserCapability docs = default(UserCapability), UserCapability expenseApplicationTemplates = default(UserCapability), UserCapability expenseApplications = default(UserCapability), UserCapability fixedAssets = default(UserCapability), UserCapability inventoryRefreshes = default(UserCapability), UserCapability invitations = default(UserCapability), UserCapability items = default(UserCapability), UserCapability manualJournalTemplates = default(UserCapability), UserCapability manualJournals = default(UserCapability), UserCapability monthEnd = default(UserCapability), UserCapability oauthApplications = default(UserCapability), UserCapability oauthAuthorizations = default(UserCapability), UserCapability openingBalances = default(UserCapability), UserCapability partners = default(UserCapability), UserCapability paymentRecords = default(UserCapability), UserCapability paymentRequests = default(UserCapability), UserCapability receiptStreamEditor = default(UserCapability), UserCapability receipts = default(UserCapability), UserCapability reports = default(UserCapability), UserCapability reportsBs = default(UserCapability), UserCapability reportsCashBalance = default(UserCapability), UserCapability reportsCrosstabs = default(UserCapability), UserCapability reportsGeneralLedgers = default(UserCapability), UserCapability reportsIncomeExpense = default(UserCapability), UserCapability reportsJournals = default(UserCapability), UserCapability reportsManagementsNavigation = default(UserCapability), UserCapability reportsManagementsPlanning = default(UserCapability), UserCapability reportsPayables = default(UserCapability), UserCapability reportsPl = default(UserCapability), UserCapability reportsReceivables = default(UserCapability), UserCapability requestForms = default(UserCapability), UserCapability resets = default(UserCapability), UserCapability sections = default(UserCapability), UserCapability signInLogs = default(UserCapability), UserCapability spreadsheets = default(UserCapability), UserCapability systemConversion = default(UserCapability), UserCapability taxReports = default(UserCapability), UserCapability taxReturn = default(UserCapability), UserCapability taxes = default(UserCapability), UserCapability transfers = default(UserCapability), UserCapability userMatchers = default(UserCapability), UserCapability walletTxns = default(UserCapability), UserCapability walletables = default(UserCapability), UserCapability workflows = default(UserCapability), UserCapability yearEnd = default(UserCapability))
         {
             // to ensure "tags" is required (not null)
-            if (tags == null) {
+            if (tags == null)
+            {
                 throw new ArgumentNullException("tags is a required property for InlineResponse20013 and cannot be null");
             }
             this.Tags = tags;
             // to ensure "accountItemStatements" is required (not null)
-            if (accountItemStatements == null) {
+            if (accountItemStatements == null)
+            {
                 throw new ArgumentNullException("accountItemStatements is a required property for InlineResponse20013 and cannot be null");
             }
             this.AccountItemStatements = accountItemStatements;
             // to ensure "accountItems" is required (not null)
-            if (accountItems == null) {
+            if (accountItems == null)
+            {
                 throw new ArgumentNullException("accountItems is a required property for InlineResponse20013 and cannot be null");
             }
             this.AccountItems = accountItems;
             // to ensure "annualReports" is required (not null)
-            if (annualReports == null) {
+            if (annualReports == null)
+            {
                 throw new ArgumentNullException("annualReports is a required property for InlineResponse20013 and cannot be null");
             }
             this.AnnualReports = annualReports;
             // to ensure "approvalFlowRoutes" is required (not null)
-            if (approvalFlowRoutes == null) {
+            if (approvalFlowRoutes == null)
+            {
                 throw new ArgumentNullException("approvalFlowRoutes is a required property for InlineResponse20013 and cannot be null");
             }
             this.ApprovalFlowRoutes = approvalFlowRoutes;
             // to ensure "approvalRequests" is required (not null)
-            if (approvalRequests == null) {
+            if (approvalRequests == null)
+            {
                 throw new ArgumentNullException("approvalRequests is a required property for InlineResponse20013 and cannot be null");
             }
             this.ApprovalRequests = approvalRequests;
             // to ensure "backups" is required (not null)
-            if (backups == null) {
+            if (backups == null)
+            {
                 throw new ArgumentNullException("backups is a required property for InlineResponse20013 and cannot be null");
             }
             this.Backups = backups;
             // to ensure "bankAccountantStaffUsers" is required (not null)
-            if (bankAccountantStaffUsers == null) {
+            if (bankAccountantStaffUsers == null)
+            {
                 throw new ArgumentNullException("bankAccountantStaffUsers is a required property for InlineResponse20013 and cannot be null");
             }
             this.BankAccountantStaffUsers = bankAccountantStaffUsers;
             // to ensure "bizAllocations" is required (not null)
-            if (bizAllocations == null) {
+            if (bizAllocations == null)
+            {
                 throw new ArgumentNullException("bizAllocations is a required property for InlineResponse20013 and cannot be null");
             }
             this.BizAllocations = bizAllocations;
             // to ensure "companies" is required (not null)
-            if (companies == null) {
+            if (companies == null)
+            {
                 throw new ArgumentNullException("companies is a required property for InlineResponse20013 and cannot be null");
             }
             this.Companies = companies;
             // to ensure "consumptionEntries" is required (not null)
-            if (consumptionEntries == null) {
+            if (consumptionEntries == null)
+            {
                 throw new ArgumentNullException("consumptionEntries is a required property for InlineResponse20013 and cannot be null");
             }
             this.ConsumptionEntries = consumptionEntries;
             // to ensure "costAllocations" is required (not null)
-            if (costAllocations == null) {
+            if (costAllocations == null)
+            {
                 throw new ArgumentNullException("costAllocations is a required property for InlineResponse20013 and cannot be null");
             }
             this.CostAllocations = costAllocations;
             // to ensure "dealTemplates" is required (not null)
-            if (dealTemplates == null) {
+            if (dealTemplates == null)
+            {
                 throw new ArgumentNullException("dealTemplates is a required property for InlineResponse20013 and cannot be null");
             }
             this.DealTemplates = dealTemplates;
             // to ensure "deals" is required (not null)
-            if (deals == null) {
+            if (deals == null)
+            {
                 throw new ArgumentNullException("deals is a required property for InlineResponse20013 and cannot be null");
             }
             this.Deals = deals;
             // to ensure "docPostings" is required (not null)
-            if (docPostings == null) {
+            if (docPostings == null)
+            {
                 throw new ArgumentNullException("docPostings is a required property for InlineResponse20013 and cannot be null");
             }
             this.DocPostings = docPostings;
             // to ensure "docs" is required (not null)
-            if (docs == null) {
+            if (docs == null)
+            {
                 throw new ArgumentNullException("docs is a required property for InlineResponse20013 and cannot be null");
             }
             this.Docs = docs;
             // to ensure "expenseApplicationTemplates" is required (not null)
-            if (expenseApplicationTemplates == null) {
+            if (expenseApplicationTemplates == null)
+            {
                 throw new ArgumentNullException("expenseApplicationTemplates is a required property for InlineResponse20013 and cannot be null");
             }
             this.ExpenseApplicationTemplates = expenseApplicationTemplates;
             // to ensure "expenseApplications" is required (not null)
-            if (expenseApplications == null) {
+            if (expenseApplications == null)
+            {
                 throw new ArgumentNullException("expenseApplications is a required property for InlineResponse20013 and cannot be null");
             }
             this.ExpenseApplications = expenseApplications;
             // to ensure "fixedAssets" is required (not null)
-            if (fixedAssets == null) {
+            if (fixedAssets == null)
+            {
                 throw new ArgumentNullException("fixedAssets is a required property for InlineResponse20013 and cannot be null");
             }
             this.FixedAssets = fixedAssets;
             // to ensure "inventoryRefreshes" is required (not null)
-            if (inventoryRefreshes == null) {
+            if (inventoryRefreshes == null)
+            {
                 throw new ArgumentNullException("inventoryRefreshes is a required property for InlineResponse20013 and cannot be null");
             }
             this.InventoryRefreshes = inventoryRefreshes;
             // to ensure "invitations" is required (not null)
-            if (invitations == null) {
+            if (invitations == null)
+            {
                 throw new ArgumentNullException("invitations is a required property for InlineResponse20013 and cannot be null");
             }
             this.Invitations = invitations;
             // to ensure "items" is required (not null)
-            if (items == null) {
+            if (items == null)
+            {
                 throw new ArgumentNullException("items is a required property for InlineResponse20013 and cannot be null");
             }
             this.Items = items;
             // to ensure "manualJournalTemplates" is required (not null)
-            if (manualJournalTemplates == null) {
+            if (manualJournalTemplates == null)
+            {
                 throw new ArgumentNullException("manualJournalTemplates is a required property for InlineResponse20013 and cannot be null");
             }
             this.ManualJournalTemplates = manualJournalTemplates;
             // to ensure "manualJournals" is required (not null)
-            if (manualJournals == null) {
+            if (manualJournals == null)
+            {
                 throw new ArgumentNullException("manualJournals is a required property for InlineResponse20013 and cannot be null");
             }
             this.ManualJournals = manualJournals;
             // to ensure "monthEnd" is required (not null)
-            if (monthEnd == null) {
+            if (monthEnd == null)
+            {
                 throw new ArgumentNullException("monthEnd is a required property for InlineResponse20013 and cannot be null");
             }
             this.MonthEnd = monthEnd;
             // to ensure "oauthApplications" is required (not null)
-            if (oauthApplications == null) {
+            if (oauthApplications == null)
+            {
                 throw new ArgumentNullException("oauthApplications is a required property for InlineResponse20013 and cannot be null");
             }
             this.OauthApplications = oauthApplications;
             // to ensure "oauthAuthorizations" is required (not null)
-            if (oauthAuthorizations == null) {
+            if (oauthAuthorizations == null)
+            {
                 throw new ArgumentNullException("oauthAuthorizations is a required property for InlineResponse20013 and cannot be null");
             }
             this.OauthAuthorizations = oauthAuthorizations;
             // to ensure "openingBalances" is required (not null)
-            if (openingBalances == null) {
+            if (openingBalances == null)
+            {
                 throw new ArgumentNullException("openingBalances is a required property for InlineResponse20013 and cannot be null");
             }
             this.OpeningBalances = openingBalances;
             // to ensure "partners" is required (not null)
-            if (partners == null) {
+            if (partners == null)
+            {
                 throw new ArgumentNullException("partners is a required property for InlineResponse20013 and cannot be null");
             }
             this.Partners = partners;
             // to ensure "paymentRecords" is required (not null)
-            if (paymentRecords == null) {
+            if (paymentRecords == null)
+            {
                 throw new ArgumentNullException("paymentRecords is a required property for InlineResponse20013 and cannot be null");
             }
             this.PaymentRecords = paymentRecords;
             // to ensure "paymentRequests" is required (not null)
-            if (paymentRequests == null) {
+            if (paymentRequests == null)
+            {
                 throw new ArgumentNullException("paymentRequests is a required property for InlineResponse20013 and cannot be null");
             }
             this.PaymentRequests = paymentRequests;
             // to ensure "receiptStreamEditor" is required (not null)
-            if (receiptStreamEditor == null) {
+            if (receiptStreamEditor == null)
+            {
                 throw new ArgumentNullException("receiptStreamEditor is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReceiptStreamEditor = receiptStreamEditor;
             // to ensure "receipts" is required (not null)
-            if (receipts == null) {
+            if (receipts == null)
+            {
                 throw new ArgumentNullException("receipts is a required property for InlineResponse20013 and cannot be null");
             }
             this.Receipts = receipts;
             // to ensure "reports" is required (not null)
-            if (reports == null) {
+            if (reports == null)
+            {
                 throw new ArgumentNullException("reports is a required property for InlineResponse20013 and cannot be null");
             }
             this.Reports = reports;
             // to ensure "reportsBs" is required (not null)
-            if (reportsBs == null) {
+            if (reportsBs == null)
+            {
                 throw new ArgumentNullException("reportsBs is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReportsBs = reportsBs;
             // to ensure "reportsCashBalance" is required (not null)
-            if (reportsCashBalance == null) {
+            if (reportsCashBalance == null)
+            {
                 throw new ArgumentNullException("reportsCashBalance is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReportsCashBalance = reportsCashBalance;
             // to ensure "reportsCrosstabs" is required (not null)
-            if (reportsCrosstabs == null) {
+            if (reportsCrosstabs == null)
+            {
                 throw new ArgumentNullException("reportsCrosstabs is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReportsCrosstabs = reportsCrosstabs;
             // to ensure "reportsGeneralLedgers" is required (not null)
-            if (reportsGeneralLedgers == null) {
+            if (reportsGeneralLedgers == null)
+            {
                 throw new ArgumentNullException("reportsGeneralLedgers is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReportsGeneralLedgers = reportsGeneralLedgers;
             // to ensure "reportsIncomeExpense" is required (not null)
-            if (reportsIncomeExpense == null) {
+            if (reportsIncomeExpense == null)
+            {
                 throw new ArgumentNullException("reportsIncomeExpense is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReportsIncomeExpense = reportsIncomeExpense;
             // to ensure "reportsJournals" is required (not null)
-            if (reportsJournals == null) {
+            if (reportsJournals == null)
+            {
                 throw new ArgumentNullException("reportsJournals is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReportsJournals = reportsJournals;
             // to ensure "reportsManagementsNavigation" is required (not null)
-            if (reportsManagementsNavigation == null) {
+            if (reportsManagementsNavigation == null)
+            {
                 throw new ArgumentNullException("reportsManagementsNavigation is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReportsManagementsNavigation = reportsManagementsNavigation;
             // to ensure "reportsManagementsPlanning" is required (not null)
-            if (reportsManagementsPlanning == null) {
+            if (reportsManagementsPlanning == null)
+            {
                 throw new ArgumentNullException("reportsManagementsPlanning is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReportsManagementsPlanning = reportsManagementsPlanning;
             // to ensure "reportsPayables" is required (not null)
-            if (reportsPayables == null) {
+            if (reportsPayables == null)
+            {
                 throw new ArgumentNullException("reportsPayables is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReportsPayables = reportsPayables;
             // to ensure "reportsPl" is required (not null)
-            if (reportsPl == null) {
+            if (reportsPl == null)
+            {
                 throw new ArgumentNullException("reportsPl is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReportsPl = reportsPl;
             // to ensure "reportsReceivables" is required (not null)
-            if (reportsReceivables == null) {
+            if (reportsReceivables == null)
+            {
                 throw new ArgumentNullException("reportsReceivables is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReportsReceivables = reportsReceivables;
             // to ensure "requestForms" is required (not null)
-            if (requestForms == null) {
+            if (requestForms == null)
+            {
                 throw new ArgumentNullException("requestForms is a required property for InlineResponse20013 and cannot be null");
             }
             this.RequestForms = requestForms;
             // to ensure "resets" is required (not null)
-            if (resets == null) {
+            if (resets == null)
+            {
                 throw new ArgumentNullException("resets is a required property for InlineResponse20013 and cannot be null");
             }
             this.Resets = resets;
             // to ensure "sections" is required (not null)
-            if (sections == null) {
+            if (sections == null)
+            {
                 throw new ArgumentNullException("sections is a required property for InlineResponse20013 and cannot be null");
             }
             this.Sections = sections;
             // to ensure "signInLogs" is required (not null)
-            if (signInLogs == null) {
+            if (signInLogs == null)
+            {
                 throw new ArgumentNullException("signInLogs is a required property for InlineResponse20013 and cannot be null");
             }
             this.SignInLogs = signInLogs;
             // to ensure "spreadsheets" is required (not null)
-            if (spreadsheets == null) {
+            if (spreadsheets == null)
+            {
                 throw new ArgumentNullException("spreadsheets is a required property for InlineResponse20013 and cannot be null");
             }
             this.Spreadsheets = spreadsheets;
             // to ensure "systemConversion" is required (not null)
-            if (systemConversion == null) {
+            if (systemConversion == null)
+            {
                 throw new ArgumentNullException("systemConversion is a required property for InlineResponse20013 and cannot be null");
             }
             this.SystemConversion = systemConversion;
             // to ensure "taxReports" is required (not null)
-            if (taxReports == null) {
+            if (taxReports == null)
+            {
                 throw new ArgumentNullException("taxReports is a required property for InlineResponse20013 and cannot be null");
             }
             this.TaxReports = taxReports;
             // to ensure "taxReturn" is required (not null)
-            if (taxReturn == null) {
+            if (taxReturn == null)
+            {
                 throw new ArgumentNullException("taxReturn is a required property for InlineResponse20013 and cannot be null");
             }
             this.TaxReturn = taxReturn;
             // to ensure "taxes" is required (not null)
-            if (taxes == null) {
+            if (taxes == null)
+            {
                 throw new ArgumentNullException("taxes is a required property for InlineResponse20013 and cannot be null");
             }
             this.Taxes = taxes;
             // to ensure "transfers" is required (not null)
-            if (transfers == null) {
+            if (transfers == null)
+            {
                 throw new ArgumentNullException("transfers is a required property for InlineResponse20013 and cannot be null");
             }
             this.Transfers = transfers;
             // to ensure "userMatchers" is required (not null)
-            if (userMatchers == null) {
+            if (userMatchers == null)
+            {
                 throw new ArgumentNullException("userMatchers is a required property for InlineResponse20013 and cannot be null");
             }
             this.UserMatchers = userMatchers;
             // to ensure "walletTxns" is required (not null)
-            if (walletTxns == null) {
+            if (walletTxns == null)
+            {
                 throw new ArgumentNullException("walletTxns is a required property for InlineResponse20013 and cannot be null");
             }
             this.WalletTxns = walletTxns;
             // to ensure "walletables" is required (not null)
-            if (walletables == null) {
+            if (walletables == null)
+            {
                 throw new ArgumentNullException("walletables is a required property for InlineResponse20013 and cannot be null");
             }
             this.Walletables = walletables;
             // to ensure "workflows" is required (not null)
-            if (workflows == null) {
+            if (workflows == null)
+            {
                 throw new ArgumentNullException("workflows is a required property for InlineResponse20013 and cannot be null");
             }
             this.Workflows = workflows;
             // to ensure "yearEnd" is required (not null)
-            if (yearEnd == null) {
+            if (yearEnd == null)
+            {
                 throw new ArgumentNullException("yearEnd is a required property for InlineResponse20013 and cannot be null");
             }
             this.YearEnd = yearEnd;

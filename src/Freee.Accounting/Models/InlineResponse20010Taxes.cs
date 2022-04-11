@@ -89,12 +89,14 @@ namespace Freee.Accounting.Models
             this.Code = code;
             this.DisplayCategory = displayCategory;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for InlineResponse20010Taxes and cannot be null");
             }
             this.Name = name;
             // to ensure "nameJa" is required (not null)
-            if (nameJa == null) {
+            if (nameJa == null)
+            {
                 throw new ArgumentNullException("nameJa is a required property for InlineResponse20010Taxes and cannot be null");
             }
             this.NameJa = nameJa;

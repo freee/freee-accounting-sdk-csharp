@@ -53,7 +53,8 @@ namespace Freee.Accounting.Models
             this.Draft = draft;
             this.FormId = formId;
             // to ensure "requestItems" is required (not null)
-            if (requestItems == null) {
+            if (requestItems == null)
+            {
                 throw new ArgumentNullException("requestItems is a required property for ApprovalRequestCreateParams and cannot be null");
             }
             this.RequestItems = requestItems;

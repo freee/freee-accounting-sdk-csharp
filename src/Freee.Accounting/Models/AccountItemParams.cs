@@ -43,7 +43,8 @@ namespace Freee.Accounting.Models
         public AccountItemParams(AccountItemParamsAccountItem accountItem = default(AccountItemParamsAccountItem), int companyId = default(int))
         {
             // to ensure "accountItem" is required (not null)
-            if (accountItem == null) {
+            if (accountItem == null)
+            {
                 throw new ArgumentNullException("accountItem is a required property for AccountItemParams and cannot be null");
             }
             this.AccountItem = accountItem;

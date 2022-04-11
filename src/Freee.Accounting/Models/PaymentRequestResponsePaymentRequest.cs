@@ -242,131 +242,155 @@ namespace Freee.Accounting.Models
         public PaymentRequestResponsePaymentRequest(string accountName = default(string), string accountNumber = default(string), AccountTypeEnum accountType = default(AccountTypeEnum), int applicantId = default(int), string applicationDate = default(string), string applicationNumber = default(string), List<ApprovalRequestResponseApprovalRequestApprovalFlowLogs> approvalFlowLogs = default(List<ApprovalRequestResponseApprovalRequestApprovalFlowLogs>), int approvalFlowRouteId = default(int), List<ApprovalRequestResponseApprovalRequestApprovers> approvers = default(List<ApprovalRequestResponseApprovalRequestApprovers>), string bankCode = default(string), string bankName = default(string), string bankNameKana = default(string), string branchCode = default(string), string branchKana = default(string), string branchName = default(string), List<ApprovalRequestResponseApprovalRequestComments> comments = default(List<ApprovalRequestResponseApprovalRequestComments>), int companyId = default(int), int currentRound = default(int), int? currentStepId = default(int?), int? dealId = default(int?), DealStatusEnum dealStatus = default(DealStatusEnum), string description = default(string), string documentCode = default(string), int id = default(int), string issueDate = default(string), string partnerCode = default(string), int? partnerId = default(int?), string partnerName = default(string), string paymentDate = default(string), PaymentMethodEnum paymentMethod = default(PaymentMethodEnum), List<PaymentRequestResponsePaymentRequestPaymentRequestLines> paymentRequestLines = default(List<PaymentRequestResponsePaymentRequestPaymentRequestLines>), List<int> receiptIds = default(List<int>), StatusEnum status = default(StatusEnum), string title = default(string), int totalAmount = default(int))
         {
             // to ensure "accountName" is required (not null)
-            if (accountName == null) {
+            if (accountName == null)
+            {
                 throw new ArgumentNullException("accountName is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.AccountName = accountName;
             // to ensure "accountNumber" is required (not null)
-            if (accountNumber == null) {
+            if (accountNumber == null)
+            {
                 throw new ArgumentNullException("accountNumber is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.AccountNumber = accountNumber;
             this.AccountType = accountType;
             this.ApplicantId = applicantId;
             // to ensure "applicationDate" is required (not null)
-            if (applicationDate == null) {
+            if (applicationDate == null)
+            {
                 throw new ArgumentNullException("applicationDate is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.ApplicationDate = applicationDate;
             // to ensure "applicationNumber" is required (not null)
-            if (applicationNumber == null) {
+            if (applicationNumber == null)
+            {
                 throw new ArgumentNullException("applicationNumber is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.ApplicationNumber = applicationNumber;
             // to ensure "approvalFlowLogs" is required (not null)
-            if (approvalFlowLogs == null) {
+            if (approvalFlowLogs == null)
+            {
                 throw new ArgumentNullException("approvalFlowLogs is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.ApprovalFlowLogs = approvalFlowLogs;
             this.ApprovalFlowRouteId = approvalFlowRouteId;
             // to ensure "approvers" is required (not null)
-            if (approvers == null) {
+            if (approvers == null)
+            {
                 throw new ArgumentNullException("approvers is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.Approvers = approvers;
             // to ensure "bankCode" is required (not null)
-            if (bankCode == null) {
+            if (bankCode == null)
+            {
                 throw new ArgumentNullException("bankCode is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.BankCode = bankCode;
             // to ensure "bankName" is required (not null)
-            if (bankName == null) {
+            if (bankName == null)
+            {
                 throw new ArgumentNullException("bankName is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.BankName = bankName;
             // to ensure "bankNameKana" is required (not null)
-            if (bankNameKana == null) {
+            if (bankNameKana == null)
+            {
                 throw new ArgumentNullException("bankNameKana is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.BankNameKana = bankNameKana;
             // to ensure "branchCode" is required (not null)
-            if (branchCode == null) {
+            if (branchCode == null)
+            {
                 throw new ArgumentNullException("branchCode is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.BranchCode = branchCode;
             // to ensure "branchKana" is required (not null)
-            if (branchKana == null) {
+            if (branchKana == null)
+            {
                 throw new ArgumentNullException("branchKana is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.BranchKana = branchKana;
             // to ensure "branchName" is required (not null)
-            if (branchName == null) {
+            if (branchName == null)
+            {
                 throw new ArgumentNullException("branchName is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.BranchName = branchName;
             // to ensure "comments" is required (not null)
-            if (comments == null) {
+            if (comments == null)
+            {
                 throw new ArgumentNullException("comments is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.Comments = comments;
             this.CompanyId = companyId;
             this.CurrentRound = currentRound;
             // to ensure "currentStepId" is required (not null)
-            if (currentStepId == null) {
+            if (currentStepId == null)
+            {
                 throw new ArgumentNullException("currentStepId is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.CurrentStepId = currentStepId;
             // to ensure "dealId" is required (not null)
-            if (dealId == null) {
+            if (dealId == null)
+            {
                 throw new ArgumentNullException("dealId is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.DealId = dealId;
             this.DealStatus = dealStatus;
             // to ensure "description" is required (not null)
-            if (description == null) {
+            if (description == null)
+            {
                 throw new ArgumentNullException("description is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.Description = description;
             // to ensure "documentCode" is required (not null)
-            if (documentCode == null) {
+            if (documentCode == null)
+            {
                 throw new ArgumentNullException("documentCode is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.DocumentCode = documentCode;
             this.Id = id;
             // to ensure "issueDate" is required (not null)
-            if (issueDate == null) {
+            if (issueDate == null)
+            {
                 throw new ArgumentNullException("issueDate is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.IssueDate = issueDate;
             // to ensure "partnerId" is required (not null)
-            if (partnerId == null) {
+            if (partnerId == null)
+            {
                 throw new ArgumentNullException("partnerId is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.PartnerId = partnerId;
             // to ensure "partnerName" is required (not null)
-            if (partnerName == null) {
+            if (partnerName == null)
+            {
                 throw new ArgumentNullException("partnerName is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.PartnerName = partnerName;
             // to ensure "paymentDate" is required (not null)
-            if (paymentDate == null) {
+            if (paymentDate == null)
+            {
                 throw new ArgumentNullException("paymentDate is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.PaymentDate = paymentDate;
             this.PaymentMethod = paymentMethod;
             // to ensure "paymentRequestLines" is required (not null)
-            if (paymentRequestLines == null) {
+            if (paymentRequestLines == null)
+            {
                 throw new ArgumentNullException("paymentRequestLines is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.PaymentRequestLines = paymentRequestLines;
             // to ensure "receiptIds" is required (not null)
-            if (receiptIds == null) {
+            if (receiptIds == null)
+            {
                 throw new ArgumentNullException("receiptIds is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.ReceiptIds = receiptIds;
             this.Status = status;
             // to ensure "title" is required (not null)
-            if (title == null) {
+            if (title == null)
+            {
                 throw new ArgumentNullException("title is a required property for PaymentRequestResponsePaymentRequest and cannot be null");
             }
             this.Title = title;

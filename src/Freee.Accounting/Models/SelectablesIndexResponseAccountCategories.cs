@@ -103,19 +103,22 @@ namespace Freee.Accounting.Models
         public SelectablesIndexResponseAccountCategories(List<SelectablesIndexResponseAccountItems> accountItems = default(List<SelectablesIndexResponseAccountItems>), BalanceEnum balance = default(BalanceEnum), string desc = default(string), OrgCodeEnum orgCode = default(OrgCodeEnum), string role = default(string), string title = default(string))
         {
             // to ensure "accountItems" is required (not null)
-            if (accountItems == null) {
+            if (accountItems == null)
+            {
                 throw new ArgumentNullException("accountItems is a required property for SelectablesIndexResponseAccountCategories and cannot be null");
             }
             this.AccountItems = accountItems;
             this.Balance = balance;
             this.OrgCode = orgCode;
             // to ensure "role" is required (not null)
-            if (role == null) {
+            if (role == null)
+            {
                 throw new ArgumentNullException("role is a required property for SelectablesIndexResponseAccountCategories and cannot be null");
             }
             this.Role = role;
             // to ensure "title" is required (not null)
-            if (title == null) {
+            if (title == null)
+            {
                 throw new ArgumentNullException("title is a required property for SelectablesIndexResponseAccountCategories and cannot be null");
             }
             this.Title = title;

@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public ExpenseApplicationResponse(ExpenseApplicationResponseExpenseApplication expenseApplication = default(ExpenseApplicationResponseExpenseApplication))
         {
             // to ensure "expenseApplication" is required (not null)
-            if (expenseApplication == null) {
+            if (expenseApplication == null)
+            {
                 throw new ArgumentNullException("expenseApplication is a required property for ExpenseApplicationResponse and cannot be null");
             }
             this.ExpenseApplication = expenseApplication;

@@ -43,7 +43,8 @@ namespace Freee.Accounting.Models
         public ServiceUnavailableError(List<ServiceUnavailableErrorErrors> errors = default(List<ServiceUnavailableErrorErrors>), int statusCode = default(int))
         {
             // to ensure "errors" is required (not null)
-            if (errors == null) {
+            if (errors == null)
+            {
                 throw new ArgumentNullException("errors is a required property for ServiceUnavailableError and cannot be null");
             }
             this.Errors = errors;

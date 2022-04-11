@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public SectionResponse(Section section = default(Section))
         {
             // to ensure "section" is required (not null)
-            if (section == null) {
+            if (section == null)
+            {
                 throw new ArgumentNullException("section is a required property for SectionResponse and cannot be null");
             }
             this.Section = section;

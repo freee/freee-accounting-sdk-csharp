@@ -81,35 +81,41 @@ namespace Freee.Accounting.Models
         public PaymentRequestResponsePaymentRequestPaymentRequestLines(int? accountItemId = default(int?), int amount = default(int), string description = default(string), long id = default(long), int? itemId = default(int?), LineTypeEnum lineType = default(LineTypeEnum), int? sectionId = default(int?), long? segment1TagId = default(long?), long? segment2TagId = default(long?), long? segment3TagId = default(long?), List<int> tagIds = default(List<int>), int? taxCode = default(int?))
         {
             // to ensure "accountItemId" is required (not null)
-            if (accountItemId == null) {
+            if (accountItemId == null)
+            {
                 throw new ArgumentNullException("accountItemId is a required property for PaymentRequestResponsePaymentRequestPaymentRequestLines and cannot be null");
             }
             this.AccountItemId = accountItemId;
             this.Amount = amount;
             // to ensure "description" is required (not null)
-            if (description == null) {
+            if (description == null)
+            {
                 throw new ArgumentNullException("description is a required property for PaymentRequestResponsePaymentRequestPaymentRequestLines and cannot be null");
             }
             this.Description = description;
             this.Id = id;
             // to ensure "itemId" is required (not null)
-            if (itemId == null) {
+            if (itemId == null)
+            {
                 throw new ArgumentNullException("itemId is a required property for PaymentRequestResponsePaymentRequestPaymentRequestLines and cannot be null");
             }
             this.ItemId = itemId;
             this.LineType = lineType;
             // to ensure "sectionId" is required (not null)
-            if (sectionId == null) {
+            if (sectionId == null)
+            {
                 throw new ArgumentNullException("sectionId is a required property for PaymentRequestResponsePaymentRequestPaymentRequestLines and cannot be null");
             }
             this.SectionId = sectionId;
             // to ensure "tagIds" is required (not null)
-            if (tagIds == null) {
+            if (tagIds == null)
+            {
                 throw new ArgumentNullException("tagIds is a required property for PaymentRequestResponsePaymentRequestPaymentRequestLines and cannot be null");
             }
             this.TagIds = tagIds;
             // to ensure "taxCode" is required (not null)
-            if (taxCode == null) {
+            if (taxCode == null)
+            {
                 throw new ArgumentNullException("taxCode is a required property for PaymentRequestResponsePaymentRequestPaymentRequestLines and cannot be null");
             }
             this.TaxCode = taxCode;

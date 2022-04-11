@@ -382,25 +382,29 @@ namespace Freee.Accounting.Models
         {
             this.CompanyId = companyId;
             // to ensure "companyName" is required (not null)
-            if (companyName == null) {
+            if (companyName == null)
+            {
                 throw new ArgumentNullException("companyName is a required property for InvoiceIndexResponseInvoices and cannot be null");
             }
             this.CompanyName = companyName;
             this.Id = id;
             this.InvoiceLayout = invoiceLayout;
             // to ensure "invoiceNumber" is required (not null)
-            if (invoiceNumber == null) {
+            if (invoiceNumber == null)
+            {
                 throw new ArgumentNullException("invoiceNumber is a required property for InvoiceIndexResponseInvoices and cannot be null");
             }
             this.InvoiceNumber = invoiceNumber;
             this.InvoiceStatus = invoiceStatus;
             // to ensure "issueDate" is required (not null)
-            if (issueDate == null) {
+            if (issueDate == null)
+            {
                 throw new ArgumentNullException("issueDate is a required property for InvoiceIndexResponseInvoices and cannot be null");
             }
             this.IssueDate = issueDate;
             // to ensure "partnerId" is required (not null)
-            if (partnerId == null) {
+            if (partnerId == null)
+            {
                 throw new ArgumentNullException("partnerId is a required property for InvoiceIndexResponseInvoices and cannot be null");
             }
             this.PartnerId = partnerId;
@@ -409,7 +413,8 @@ namespace Freee.Accounting.Models
             this.TaxEntryMethod = taxEntryMethod;
             this.TotalAmount = totalAmount;
             // to ensure "totalAmountPerVatRate" is required (not null)
-            if (totalAmountPerVatRate == null) {
+            if (totalAmountPerVatRate == null)
+            {
                 throw new ArgumentNullException("totalAmountPerVatRate is a required property for InvoiceIndexResponseInvoices and cannot be null");
             }
             this.TotalAmountPerVatRate = totalAmountPerVatRate;

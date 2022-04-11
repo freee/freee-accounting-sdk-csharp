@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public PartnerResponse(PartnerResponsePartner partner = default(PartnerResponsePartner))
         {
             // to ensure "partner" is required (not null)
-            if (partner == null) {
+            if (partner == null)
+            {
                 throw new ArgumentNullException("partner is a required property for PartnerResponse and cannot be null");
             }
             this.Partner = partner;

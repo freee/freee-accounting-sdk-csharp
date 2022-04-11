@@ -176,12 +176,14 @@ namespace Freee.Accounting.Models
         {
             this.CompanyId = companyId;
             // to ensure "partnerDisplayName" is required (not null)
-            if (partnerDisplayName == null) {
+            if (partnerDisplayName == null)
+            {
                 throw new ArgumentNullException("partnerDisplayName is a required property for QuotationCreateParams and cannot be null");
             }
             this.PartnerDisplayName = partnerDisplayName;
             // to ensure "partnerTitle" is required (not null)
-            if (partnerTitle == null) {
+            if (partnerTitle == null)
+            {
                 throw new ArgumentNullException("partnerTitle is a required property for QuotationCreateParams and cannot be null");
             }
             this.PartnerTitle = partnerTitle;

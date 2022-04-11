@@ -228,7 +228,8 @@ namespace Freee.Accounting.Models
         public TrialPlTwoYearsResponseTrialPlTwoYears(AccountItemDisplayTypeEnum? accountItemDisplayType = default(AccountItemDisplayTypeEnum?), AdjustmentEnum? adjustment = default(AdjustmentEnum?), ApprovalFlowStatusEnum? approvalFlowStatus = default(ApprovalFlowStatusEnum?), List<TrialPlTwoYearsResponseTrialPlTwoYearsBalances> balances = default(List<TrialPlTwoYearsResponseTrialPlTwoYearsBalances>), BreakdownDisplayTypeEnum? breakdownDisplayType = default(BreakdownDisplayTypeEnum?), int companyId = default(int), CostAllocationEnum? costAllocation = default(CostAllocationEnum?), string createdAt = default(string), string endDate = default(string), int endMonth = default(int), int fiscalYear = default(int), int itemId = default(int), string partnerCode = default(string), int partnerId = default(int), int sectionId = default(int), string startDate = default(string), int startMonth = default(int))
         {
             // to ensure "balances" is required (not null)
-            if (balances == null) {
+            if (balances == null)
+            {
                 throw new ArgumentNullException("balances is a required property for TrialPlTwoYearsResponseTrialPlTwoYears and cannot be null");
             }
             this.Balances = balances;

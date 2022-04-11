@@ -49,7 +49,8 @@ namespace Freee.Accounting.Models
         public MeResponseUser(List<MeResponseUserCompanies> companies = default(List<MeResponseUserCompanies>), string displayName = default(string), string email = default(string), string firstName = default(string), string firstNameKana = default(string), int id = default(int), string lastName = default(string), string lastNameKana = default(string))
         {
             // to ensure "email" is required (not null)
-            if (email == null) {
+            if (email == null)
+            {
                 throw new ArgumentNullException("email is a required property for MeResponseUser and cannot be null");
             }
             this.Email = email;

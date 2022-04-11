@@ -88,7 +88,8 @@ namespace Freee.Accounting.Models
             this.Amount = amount;
             this.CompanyId = companyId;
             // to ensure "date" is required (not null)
-            if (date == null) {
+            if (date == null)
+            {
                 throw new ArgumentNullException("date is a required property for PaymentParams and cannot be null");
             }
             this.Date = date;

@@ -49,18 +49,21 @@ namespace Freee.Accounting.Models
             this.Adjustment = adjustment;
             this.CompanyId = companyId;
             // to ensure "details" is required (not null)
-            if (details == null) {
+            if (details == null)
+            {
                 throw new ArgumentNullException("details is a required property for ManualJournal and cannot be null");
             }
             this.Details = details;
             this.Id = id;
             // to ensure "issueDate" is required (not null)
-            if (issueDate == null) {
+            if (issueDate == null)
+            {
                 throw new ArgumentNullException("issueDate is a required property for ManualJournal and cannot be null");
             }
             this.IssueDate = issueDate;
             // to ensure "txnNumber" is required (not null)
-            if (txnNumber == null) {
+            if (txnNumber == null)
+            {
                 throw new ArgumentNullException("txnNumber is a required property for ManualJournal and cannot be null");
             }
             this.TxnNumber = txnNumber;

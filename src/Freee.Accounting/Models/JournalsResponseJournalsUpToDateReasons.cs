@@ -72,7 +72,8 @@ namespace Freee.Accounting.Models
         {
             this.Code = code;
             // to ensure "message" is required (not null)
-            if (message == null) {
+            if (message == null)
+            {
                 throw new ArgumentNullException("message is a required property for JournalsResponseJournalsUpToDateReasons and cannot be null");
             }
             this.Message = message;

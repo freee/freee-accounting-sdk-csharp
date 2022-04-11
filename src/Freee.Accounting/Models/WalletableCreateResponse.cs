@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public WalletableCreateResponse(WalletableCreateResponseWalletable walletable = default(WalletableCreateResponseWalletable))
         {
             // to ensure "walletable" is required (not null)
-            if (walletable == null) {
+            if (walletable == null)
+            {
                 throw new ArgumentNullException("walletable is a required property for WalletableCreateResponse and cannot be null");
             }
             this.Walletable = walletable;

@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public InlineResponse2008(List<Tag> tags = default(List<Tag>))
         {
             // to ensure "tags" is required (not null)
-            if (tags == null) {
+            if (tags == null)
+            {
                 throw new ArgumentNullException("tags is a required property for InlineResponse2008 and cannot be null");
             }
             this.Tags = tags;

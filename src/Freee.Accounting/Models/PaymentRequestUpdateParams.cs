@@ -160,17 +160,20 @@ namespace Freee.Accounting.Models
             this.CompanyId = companyId;
             this.Draft = draft;
             // to ensure "issueDate" is required (not null)
-            if (issueDate == null) {
+            if (issueDate == null)
+            {
                 throw new ArgumentNullException("issueDate is a required property for PaymentRequestUpdateParams and cannot be null");
             }
             this.IssueDate = issueDate;
             // to ensure "paymentRequestLines" is required (not null)
-            if (paymentRequestLines == null) {
+            if (paymentRequestLines == null)
+            {
                 throw new ArgumentNullException("paymentRequestLines is a required property for PaymentRequestUpdateParams and cannot be null");
             }
             this.PaymentRequestLines = paymentRequestLines;
             // to ensure "title" is required (not null)
-            if (title == null) {
+            if (title == null)
+            {
                 throw new ArgumentNullException("title is a required property for PaymentRequestUpdateParams and cannot be null");
             }
             this.Title = title;

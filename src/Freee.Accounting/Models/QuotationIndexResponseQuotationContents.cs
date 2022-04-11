@@ -100,29 +100,34 @@ namespace Freee.Accounting.Models
         public QuotationIndexResponseQuotationContents(int? accountItemId = default(int?), string accountItemName = default(string), int amount = default(int), string description = default(string), int id = default(int), int? itemId = default(int?), string itemName = default(string), int order = default(int), decimal qty = default(decimal), bool reducedVat = default(bool), int? sectionId = default(int?), string sectionName = default(string), long? segment1TagId = default(long?), string segment1TagName = default(string), long? segment2TagId = default(long?), string segment2TagName = default(string), long? segment3TagId = default(long?), string segment3TagName = default(string), List<int> tagIds = default(List<int>), List<string> tagNames = default(List<string>), int? taxCode = default(int?), TypeEnum type = default(TypeEnum), string unit = default(string), decimal unitPrice = default(decimal), int vat = default(int))
         {
             // to ensure "accountItemId" is required (not null)
-            if (accountItemId == null) {
+            if (accountItemId == null)
+            {
                 throw new ArgumentNullException("accountItemId is a required property for QuotationIndexResponseQuotationContents and cannot be null");
             }
             this.AccountItemId = accountItemId;
             // to ensure "accountItemName" is required (not null)
-            if (accountItemName == null) {
+            if (accountItemName == null)
+            {
                 throw new ArgumentNullException("accountItemName is a required property for QuotationIndexResponseQuotationContents and cannot be null");
             }
             this.AccountItemName = accountItemName;
             this.Amount = amount;
             // to ensure "description" is required (not null)
-            if (description == null) {
+            if (description == null)
+            {
                 throw new ArgumentNullException("description is a required property for QuotationIndexResponseQuotationContents and cannot be null");
             }
             this.Description = description;
             this.Id = id;
             // to ensure "itemId" is required (not null)
-            if (itemId == null) {
+            if (itemId == null)
+            {
                 throw new ArgumentNullException("itemId is a required property for QuotationIndexResponseQuotationContents and cannot be null");
             }
             this.ItemId = itemId;
             // to ensure "itemName" is required (not null)
-            if (itemName == null) {
+            if (itemName == null)
+            {
                 throw new ArgumentNullException("itemName is a required property for QuotationIndexResponseQuotationContents and cannot be null");
             }
             this.ItemName = itemName;
@@ -130,33 +135,39 @@ namespace Freee.Accounting.Models
             this.Qty = qty;
             this.ReducedVat = reducedVat;
             // to ensure "sectionId" is required (not null)
-            if (sectionId == null) {
+            if (sectionId == null)
+            {
                 throw new ArgumentNullException("sectionId is a required property for QuotationIndexResponseQuotationContents and cannot be null");
             }
             this.SectionId = sectionId;
             // to ensure "sectionName" is required (not null)
-            if (sectionName == null) {
+            if (sectionName == null)
+            {
                 throw new ArgumentNullException("sectionName is a required property for QuotationIndexResponseQuotationContents and cannot be null");
             }
             this.SectionName = sectionName;
             // to ensure "tagIds" is required (not null)
-            if (tagIds == null) {
+            if (tagIds == null)
+            {
                 throw new ArgumentNullException("tagIds is a required property for QuotationIndexResponseQuotationContents and cannot be null");
             }
             this.TagIds = tagIds;
             // to ensure "tagNames" is required (not null)
-            if (tagNames == null) {
+            if (tagNames == null)
+            {
                 throw new ArgumentNullException("tagNames is a required property for QuotationIndexResponseQuotationContents and cannot be null");
             }
             this.TagNames = tagNames;
             // to ensure "taxCode" is required (not null)
-            if (taxCode == null) {
+            if (taxCode == null)
+            {
                 throw new ArgumentNullException("taxCode is a required property for QuotationIndexResponseQuotationContents and cannot be null");
             }
             this.TaxCode = taxCode;
             this.Type = type;
             // to ensure "unit" is required (not null)
-            if (unit == null) {
+            if (unit == null)
+            {
                 throw new ArgumentNullException("unit is a required property for QuotationIndexResponseQuotationContents and cannot be null");
             }
             this.Unit = unit;

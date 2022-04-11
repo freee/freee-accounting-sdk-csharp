@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public QuotationIndexResponse(List<QuotationIndexResponseQuotations> quotations = default(List<QuotationIndexResponseQuotations>))
         {
             // to ensure "quotations" is required (not null)
-            if (quotations == null) {
+            if (quotations == null)
+            {
                 throw new ArgumentNullException("quotations is a required property for QuotationIndexResponse and cannot be null");
             }
             this.Quotations = quotations;

@@ -45,7 +45,8 @@ namespace Freee.Accounting.Models
         {
             this.CompanyId = companyId;
             // to ensure "issueDate" is required (not null)
-            if (issueDate == null) {
+            if (issueDate == null)
+            {
                 throw new ArgumentNullException("issueDate is a required property for ReceiptUpdateParams and cannot be null");
             }
             this.IssueDate = issueDate;

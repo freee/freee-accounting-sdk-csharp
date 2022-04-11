@@ -44,7 +44,8 @@ namespace Freee.Accounting.Models
         public TrialCrThreeYearsResponse(TrialCrThreeYearsResponseTrialCrThreeYears trialCrThreeYears = default(TrialCrThreeYearsResponseTrialCrThreeYears), bool upToDate = default(bool), List<JournalsResponseJournalsUpToDateReasons> upToDateReasons = default(List<JournalsResponseJournalsUpToDateReasons>))
         {
             // to ensure "trialCrThreeYears" is required (not null)
-            if (trialCrThreeYears == null) {
+            if (trialCrThreeYears == null)
+            {
                 throw new ArgumentNullException("trialCrThreeYears is a required property for TrialCrThreeYearsResponse and cannot be null");
             }
             this.TrialCrThreeYears = trialCrThreeYears;

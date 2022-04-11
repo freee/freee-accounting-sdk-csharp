@@ -139,53 +139,62 @@ namespace Freee.Accounting.Models
         {
             this.ApplicantId = applicantId;
             // to ensure "applicationNumber" is required (not null)
-            if (applicationNumber == null) {
+            if (applicationNumber == null)
+            {
                 throw new ArgumentNullException("applicationNumber is a required property for ExpenseApplicationResponseExpenseApplication and cannot be null");
             }
             this.ApplicationNumber = applicationNumber;
             // to ensure "approvalFlowLogs" is required (not null)
-            if (approvalFlowLogs == null) {
+            if (approvalFlowLogs == null)
+            {
                 throw new ArgumentNullException("approvalFlowLogs is a required property for ExpenseApplicationResponseExpenseApplication and cannot be null");
             }
             this.ApprovalFlowLogs = approvalFlowLogs;
             this.ApprovalFlowRouteId = approvalFlowRouteId;
             // to ensure "approvers" is required (not null)
-            if (approvers == null) {
+            if (approvers == null)
+            {
                 throw new ArgumentNullException("approvers is a required property for ExpenseApplicationResponseExpenseApplication and cannot be null");
             }
             this.Approvers = approvers;
             // to ensure "comments" is required (not null)
-            if (comments == null) {
+            if (comments == null)
+            {
                 throw new ArgumentNullException("comments is a required property for ExpenseApplicationResponseExpenseApplication and cannot be null");
             }
             this.Comments = comments;
             this.CompanyId = companyId;
             this.CurrentRound = currentRound;
             // to ensure "currentStepId" is required (not null)
-            if (currentStepId == null) {
+            if (currentStepId == null)
+            {
                 throw new ArgumentNullException("currentStepId is a required property for ExpenseApplicationResponseExpenseApplication and cannot be null");
             }
             this.CurrentStepId = currentStepId;
             // to ensure "dealId" is required (not null)
-            if (dealId == null) {
+            if (dealId == null)
+            {
                 throw new ArgumentNullException("dealId is a required property for ExpenseApplicationResponseExpenseApplication and cannot be null");
             }
             this.DealId = dealId;
             this.DealStatus = dealStatus;
             // to ensure "expenseApplicationLines" is required (not null)
-            if (expenseApplicationLines == null) {
+            if (expenseApplicationLines == null)
+            {
                 throw new ArgumentNullException("expenseApplicationLines is a required property for ExpenseApplicationResponseExpenseApplication and cannot be null");
             }
             this.ExpenseApplicationLines = expenseApplicationLines;
             this.Id = id;
             // to ensure "issueDate" is required (not null)
-            if (issueDate == null) {
+            if (issueDate == null)
+            {
                 throw new ArgumentNullException("issueDate is a required property for ExpenseApplicationResponseExpenseApplication and cannot be null");
             }
             this.IssueDate = issueDate;
             this.Status = status;
             // to ensure "title" is required (not null)
-            if (title == null) {
+            if (title == null)
+            {
                 throw new ArgumentNullException("title is a required property for ExpenseApplicationResponseExpenseApplication and cannot be null");
             }
             this.Title = title;

@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public DealResponse(Deal deal = default(Deal))
         {
             // to ensure "deal" is required (not null)
-            if (deal == null) {
+            if (deal == null)
+            {
                 throw new ArgumentNullException("deal is a required property for DealResponse and cannot be null");
             }
             this.Deal = deal;

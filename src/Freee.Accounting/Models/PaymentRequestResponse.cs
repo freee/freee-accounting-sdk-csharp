@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public PaymentRequestResponse(PaymentRequestResponsePaymentRequest paymentRequest = default(PaymentRequestResponsePaymentRequest))
         {
             // to ensure "paymentRequest" is required (not null)
-            if (paymentRequest == null) {
+            if (paymentRequest == null)
+            {
                 throw new ArgumentNullException("paymentRequest is a required property for PaymentRequestResponse and cannot be null");
             }
             this.PaymentRequest = paymentRequest;
