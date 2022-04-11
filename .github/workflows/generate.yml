@@ -50,9 +50,21 @@ jobs:
         git checkout \
           src/Freee.Accounting/Client/ApiClient.Version.cs
 
+    - name: mod CHANGELOG.md
+      run: |
+        touch NEW_CHANGELOG.md
+        echo "## ${{ github.event.pull_request.title }}" >> NEW_CHANGELOG.md
+        echo "リリース日時 $(TZ=JST-9 date +'%Y-%m-%d %H:%M:%S')  " >> NEW_CHANGELOG.md
+        echo "対象差分  " >> NEW_CHANGELOG.md
+        echo "https://github.com/freee/freee-api-schema/releases/tag/${{ steps.get_original_repo_tag.outputs.tag }}" >> NEW_CHANGELOG.md
+        echo "" >> NEW_CHANGELOG.md
+        cat CHANGELOG.md >> NEW_CHANGELOG.md
+        mv NEW_CHANGELOG.md CHANGELOG.md
+
     - name: Git
       run: |
         git config --local user.name "API Generator"
+        git add CHANGELOG.md
         git add *.cs
         git commit -m "Generate SDK code for ${{ github.event.pull_request.title }}"
         git reset --hard HEAD
