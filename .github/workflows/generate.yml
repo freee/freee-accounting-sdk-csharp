@@ -14,7 +14,7 @@ env:
 jobs:
   generate:
     name: Generate code and push them
-    if: ${{ contains(github.event.pull_request.labels.*.name, 'auto-generate') }}
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'auto-generate-test') }}
     runs-on: ubuntu-latest
     steps:
     - name: Get original repo tag
