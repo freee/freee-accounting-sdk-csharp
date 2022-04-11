@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public InlineResponse20011(List<Transfer> transfers = default(List<Transfer>))
         {
             // to ensure "transfers" is required (not null)
-            if (transfers == null) {
+            if (transfers == null)
+            {
                 throw new ArgumentNullException("transfers is a required property for InlineResponse20011 and cannot be null");
             }
             this.Transfers = transfers;

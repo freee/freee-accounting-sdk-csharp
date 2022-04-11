@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public QuotationResponse(QuotationResponseQuotation quotation = default(QuotationResponseQuotation))
         {
             // to ensure "quotation" is required (not null)
-            if (quotation == null) {
+            if (quotation == null)
+            {
                 throw new ArgumentNullException("quotation is a required property for QuotationResponse and cannot be null");
             }
             this.Quotation = quotation;

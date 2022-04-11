@@ -58,27 +58,31 @@ namespace Freee.Accounting.Models
         public AccountItemsResponseAccountItems(string accountCategory = default(string), int accountCategoryId = default(int), bool available = default(bool), List<string> categories = default(List<string>), int? correspondingExpenseId = default(int?), string correspondingExpenseName = default(string), int? correspondingIncomeId = default(int?), string correspondingIncomeName = default(string), int defaultTaxCode = default(int), int defaultTaxId = default(int), string groupName = default(string), int id = default(int), string name = default(string), string shortcut = default(string), string shortcutNum = default(string), int taxCode = default(int), int? walletableId = default(int?))
         {
             // to ensure "accountCategory" is required (not null)
-            if (accountCategory == null) {
+            if (accountCategory == null)
+            {
                 throw new ArgumentNullException("accountCategory is a required property for AccountItemsResponseAccountItems and cannot be null");
             }
             this.AccountCategory = accountCategory;
             this.AccountCategoryId = accountCategoryId;
             this.Available = available;
             // to ensure "categories" is required (not null)
-            if (categories == null) {
+            if (categories == null)
+            {
                 throw new ArgumentNullException("categories is a required property for AccountItemsResponseAccountItems and cannot be null");
             }
             this.Categories = categories;
             this.DefaultTaxCode = defaultTaxCode;
             this.Id = id;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for AccountItemsResponseAccountItems and cannot be null");
             }
             this.Name = name;
             this.TaxCode = taxCode;
             // to ensure "walletableId" is required (not null)
-            if (walletableId == null) {
+            if (walletableId == null)
+            {
                 throw new ArgumentNullException("walletableId is a required property for AccountItemsResponseAccountItems and cannot be null");
             }
             this.WalletableId = walletableId;

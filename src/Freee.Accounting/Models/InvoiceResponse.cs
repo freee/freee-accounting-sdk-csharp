@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public InvoiceResponse(InvoiceResponseInvoice invoice = default(InvoiceResponseInvoice))
         {
             // to ensure "invoice" is required (not null)
-            if (invoice == null) {
+            if (invoice == null)
+            {
                 throw new ArgumentNullException("invoice is a required property for InvoiceResponse and cannot be null");
             }
             this.Invoice = invoice;

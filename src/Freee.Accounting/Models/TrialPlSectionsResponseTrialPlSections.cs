@@ -222,13 +222,15 @@ namespace Freee.Accounting.Models
         public TrialPlSectionsResponseTrialPlSections(AccountItemDisplayTypeEnum? accountItemDisplayType = default(AccountItemDisplayTypeEnum?), AdjustmentEnum? adjustment = default(AdjustmentEnum?), ApprovalFlowStatusEnum? approvalFlowStatus = default(ApprovalFlowStatusEnum?), List<TrialPlSectionsResponseTrialPlSectionsBalances> balances = default(List<TrialPlSectionsResponseTrialPlSectionsBalances>), BreakdownDisplayTypeEnum? breakdownDisplayType = default(BreakdownDisplayTypeEnum?), int companyId = default(int), CostAllocationEnum? costAllocation = default(CostAllocationEnum?), string createdAt = default(string), string endDate = default(string), int endMonth = default(int), int fiscalYear = default(int), int itemId = default(int), string partnerCode = default(string), int partnerId = default(int), string sectionIds = default(string), string startDate = default(string), int startMonth = default(int))
         {
             // to ensure "balances" is required (not null)
-            if (balances == null) {
+            if (balances == null)
+            {
                 throw new ArgumentNullException("balances is a required property for TrialPlSectionsResponseTrialPlSections and cannot be null");
             }
             this.Balances = balances;
             this.CompanyId = companyId;
             // to ensure "sectionIds" is required (not null)
-            if (sectionIds == null) {
+            if (sectionIds == null)
+            {
                 throw new ArgumentNullException("sectionIds is a required property for TrialPlSectionsResponseTrialPlSections and cannot be null");
             }
             this.SectionIds = sectionIds;

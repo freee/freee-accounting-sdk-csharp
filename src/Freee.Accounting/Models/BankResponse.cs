@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public BankResponse(Bank bank = default(Bank))
         {
             // to ensure "bank" is required (not null)
-            if (bank == null) {
+            if (bank == null)
+            {
                 throw new ArgumentNullException("bank is a required property for BankResponse and cannot be null");
             }
             this.Bank = bank;

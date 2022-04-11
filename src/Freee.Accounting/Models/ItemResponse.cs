@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public ItemResponse(Item item = default(Item))
         {
             // to ensure "item" is required (not null)
-            if (item == null) {
+            if (item == null)
+            {
                 throw new ArgumentNullException("item is a required property for ItemResponse and cannot be null");
             }
             this.Item = item;

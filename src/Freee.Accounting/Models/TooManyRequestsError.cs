@@ -43,7 +43,8 @@ namespace Freee.Accounting.Models
         public TooManyRequestsError(TooManyRequestsErrorMeta meta = default(TooManyRequestsErrorMeta), int statusCode = default(int))
         {
             // to ensure "meta" is required (not null)
-            if (meta == null) {
+            if (meta == null)
+            {
                 throw new ArgumentNullException("meta is a required property for TooManyRequestsError and cannot be null");
             }
             this.Meta = meta;

@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public ApprovalFlowRouteResponse(ApprovalFlowRouteResponseApprovalFlowRoute approvalFlowRoute = default(ApprovalFlowRouteResponseApprovalFlowRoute))
         {
             // to ensure "approvalFlowRoute" is required (not null)
-            if (approvalFlowRoute == null) {
+            if (approvalFlowRoute == null)
+            {
                 throw new ArgumentNullException("approvalFlowRoute is a required property for ApprovalFlowRouteResponse and cannot be null");
             }
             this.ApprovalFlowRoute = approvalFlowRoute;

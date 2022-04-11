@@ -97,7 +97,8 @@ namespace Freee.Accounting.Models
         {
             this.Action = action;
             // to ensure "updatedAt" is required (not null)
-            if (updatedAt == null) {
+            if (updatedAt == null)
+            {
                 throw new ArgumentNullException("updatedAt is a required property for ApprovalRequestResponseApprovalRequestApprovalFlowLogs and cannot be null");
             }
             this.UpdatedAt = updatedAt;

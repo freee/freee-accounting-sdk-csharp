@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public TransferResponse(Transfer transfer = default(Transfer))
         {
             // to ensure "transfer" is required (not null)
-            if (transfer == null) {
+            if (transfer == null)
+            {
                 throw new ArgumentNullException("transfer is a required property for TransferResponse and cannot be null");
             }
             this.Transfer = transfer;

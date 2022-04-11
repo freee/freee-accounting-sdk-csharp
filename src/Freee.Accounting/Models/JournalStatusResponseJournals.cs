@@ -236,13 +236,15 @@ namespace Freee.Accounting.Models
             this.CompanyId = companyId;
             this.DownloadType = downloadType;
             // to ensure "endDate" is required (not null)
-            if (endDate == null) {
+            if (endDate == null)
+            {
                 throw new ArgumentNullException("endDate is a required property for JournalStatusResponseJournals and cannot be null");
             }
             this.EndDate = endDate;
             this.Id = id;
             // to ensure "startDate" is required (not null)
-            if (startDate == null) {
+            if (startDate == null)
+            {
                 throw new ArgumentNullException("startDate is a required property for JournalStatusResponseJournals and cannot be null");
             }
             this.StartDate = startDate;

@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public PaymentRequestsIndexResponse(List<PaymentRequestsIndexResponsePaymentRequests> paymentRequests = default(List<PaymentRequestsIndexResponsePaymentRequests>))
         {
             // to ensure "paymentRequests" is required (not null)
-            if (paymentRequests == null) {
+            if (paymentRequests == null)
+            {
                 throw new ArgumentNullException("paymentRequests is a required property for PaymentRequestsIndexResponse and cannot be null");
             }
             this.PaymentRequests = paymentRequests;

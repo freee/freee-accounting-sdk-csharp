@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public InlineResponse2009(List<Tax> taxes = default(List<Tax>))
         {
             // to ensure "taxes" is required (not null)
-            if (taxes == null) {
+            if (taxes == null)
+            {
                 throw new ArgumentNullException("taxes is a required property for InlineResponse2009 and cannot be null");
             }
             this.Taxes = taxes;

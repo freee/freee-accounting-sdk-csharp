@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public InlineResponse2003(List<Item> items = default(List<Item>))
         {
             // to ensure "items" is required (not null)
-            if (items == null) {
+            if (items == null)
+            {
                 throw new ArgumentNullException("items is a required property for InlineResponse2003 and cannot be null");
             }
             this.Items = items;

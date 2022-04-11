@@ -166,25 +166,29 @@ namespace Freee.Accounting.Models
         public DealReceipts(string createdAt = default(string), string description = default(string), string fileSrc = default(string), int id = default(int), string issueDate = default(string), string mimeType = default(string), OriginEnum origin = default(OriginEnum), StatusEnum status = default(StatusEnum), DealUser user = default(DealUser))
         {
             // to ensure "createdAt" is required (not null)
-            if (createdAt == null) {
+            if (createdAt == null)
+            {
                 throw new ArgumentNullException("createdAt is a required property for DealReceipts and cannot be null");
             }
             this.CreatedAt = createdAt;
             // to ensure "fileSrc" is required (not null)
-            if (fileSrc == null) {
+            if (fileSrc == null)
+            {
                 throw new ArgumentNullException("fileSrc is a required property for DealReceipts and cannot be null");
             }
             this.FileSrc = fileSrc;
             this.Id = id;
             // to ensure "mimeType" is required (not null)
-            if (mimeType == null) {
+            if (mimeType == null)
+            {
                 throw new ArgumentNullException("mimeType is a required property for DealReceipts and cannot be null");
             }
             this.MimeType = mimeType;
             this.Origin = origin;
             this.Status = status;
             // to ensure "user" is required (not null)
-            if (user == null) {
+            if (user == null)
+            {
                 throw new ArgumentNullException("user is a required property for DealReceipts and cannot be null");
             }
             this.User = user;

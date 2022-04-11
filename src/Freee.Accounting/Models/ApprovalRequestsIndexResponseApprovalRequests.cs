@@ -130,24 +130,28 @@ namespace Freee.Accounting.Models
         {
             this.ApplicantId = applicantId;
             // to ensure "applicationDate" is required (not null)
-            if (applicationDate == null) {
+            if (applicationDate == null)
+            {
                 throw new ArgumentNullException("applicationDate is a required property for ApprovalRequestsIndexResponseApprovalRequests and cannot be null");
             }
             this.ApplicationDate = applicationDate;
             // to ensure "applicationNumber" is required (not null)
-            if (applicationNumber == null) {
+            if (applicationNumber == null)
+            {
                 throw new ArgumentNullException("applicationNumber is a required property for ApprovalRequestsIndexResponseApprovalRequests and cannot be null");
             }
             this.ApplicationNumber = applicationNumber;
             this.CompanyId = companyId;
             this.CurrentRound = currentRound;
             // to ensure "currentStepId" is required (not null)
-            if (currentStepId == null) {
+            if (currentStepId == null)
+            {
                 throw new ArgumentNullException("currentStepId is a required property for ApprovalRequestsIndexResponseApprovalRequests and cannot be null");
             }
             this.CurrentStepId = currentStepId;
             // to ensure "dealId" is required (not null)
-            if (dealId == null) {
+            if (dealId == null)
+            {
                 throw new ArgumentNullException("dealId is a required property for ApprovalRequestsIndexResponseApprovalRequests and cannot be null");
             }
             this.DealId = dealId;
@@ -155,18 +159,21 @@ namespace Freee.Accounting.Models
             this.FormId = formId;
             this.Id = id;
             // to ensure "manualJournalId" is required (not null)
-            if (manualJournalId == null) {
+            if (manualJournalId == null)
+            {
                 throw new ArgumentNullException("manualJournalId is a required property for ApprovalRequestsIndexResponseApprovalRequests and cannot be null");
             }
             this.ManualJournalId = manualJournalId;
             // to ensure "requestItems" is required (not null)
-            if (requestItems == null) {
+            if (requestItems == null)
+            {
                 throw new ArgumentNullException("requestItems is a required property for ApprovalRequestsIndexResponseApprovalRequests and cannot be null");
             }
             this.RequestItems = requestItems;
             this.Status = status;
             // to ensure "title" is required (not null)
-            if (title == null) {
+            if (title == null)
+            {
                 throw new ArgumentNullException("title is a required property for ApprovalRequestsIndexResponseApprovalRequests and cannot be null");
             }
             this.Title = title;

@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public JournalStatusResponse(JournalStatusResponseJournals journals = default(JournalStatusResponseJournals))
         {
             // to ensure "journals" is required (not null)
-            if (journals == null) {
+            if (journals == null)
+            {
                 throw new ArgumentNullException("journals is a required property for JournalStatusResponse and cannot be null");
             }
             this.Journals = journals;

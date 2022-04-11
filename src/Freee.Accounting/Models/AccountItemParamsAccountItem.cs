@@ -56,12 +56,14 @@ namespace Freee.Accounting.Models
             this.CorrespondingExpenseId = correspondingExpenseId;
             this.CorrespondingIncomeId = correspondingIncomeId;
             // to ensure "groupName" is required (not null)
-            if (groupName == null) {
+            if (groupName == null)
+            {
                 throw new ArgumentNullException("groupName is a required property for AccountItemParamsAccountItem and cannot be null");
             }
             this.GroupName = groupName;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for AccountItemParamsAccountItem and cannot be null");
             }
             this.Name = name;

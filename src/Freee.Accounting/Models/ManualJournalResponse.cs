@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public ManualJournalResponse(ManualJournal manualJournal = default(ManualJournal))
         {
             // to ensure "manualJournal" is required (not null)
-            if (manualJournal == null) {
+            if (manualJournal == null)
+            {
                 throw new ArgumentNullException("manualJournal is a required property for ManualJournalResponse and cannot be null");
             }
             this.ManualJournal = manualJournal;

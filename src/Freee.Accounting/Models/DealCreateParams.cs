@@ -80,12 +80,14 @@ namespace Freee.Accounting.Models
         {
             this.CompanyId = companyId;
             // to ensure "details" is required (not null)
-            if (details == null) {
+            if (details == null)
+            {
                 throw new ArgumentNullException("details is a required property for DealCreateParams and cannot be null");
             }
             this.Details = details;
             // to ensure "issueDate" is required (not null)
-            if (issueDate == null) {
+            if (issueDate == null)
+            {
                 throw new ArgumentNullException("issueDate is a required property for DealCreateParams and cannot be null");
             }
             this.IssueDate = issueDate;

@@ -122,7 +122,8 @@ namespace Freee.Accounting.Models
             this.Id = id;
             this.Type = type;
             // to ensure "value" is required (not null)
-            if (value == null) {
+            if (value == null)
+            {
                 throw new ArgumentNullException("value is a required property for ApprovalRequestResponseApprovalRequestRequestItems and cannot be null");
             }
             this.Value = value;

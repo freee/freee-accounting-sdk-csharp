@@ -44,12 +44,14 @@ namespace Freee.Accounting.Models
         public ApprovalRequestResponseApprovalRequestComments(string comment = default(string), string postedAt = default(string), int userId = default(int))
         {
             // to ensure "comment" is required (not null)
-            if (comment == null) {
+            if (comment == null)
+            {
                 throw new ArgumentNullException("comment is a required property for ApprovalRequestResponseApprovalRequestComments and cannot be null");
             }
             this.Comment = comment;
             // to ensure "postedAt" is required (not null)
-            if (postedAt == null) {
+            if (postedAt == null)
+            {
                 throw new ArgumentNullException("postedAt is a required property for ApprovalRequestResponseApprovalRequestComments and cannot be null");
             }
             this.PostedAt = postedAt;

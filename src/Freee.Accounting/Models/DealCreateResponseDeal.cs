@@ -113,7 +113,8 @@ namespace Freee.Accounting.Models
             this.CompanyId = companyId;
             this.Id = id;
             // to ensure "issueDate" is required (not null)
-            if (issueDate == null) {
+            if (issueDate == null)
+            {
                 throw new ArgumentNullException("issueDate is a required property for DealCreateResponseDeal and cannot be null");
             }
             this.IssueDate = issueDate;

@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public TagResponse(Tag tag = default(Tag))
         {
             // to ensure "tag" is required (not null)
-            if (tag == null) {
+            if (tag == null)
+            {
                 throw new ArgumentNullException("tag is a required property for TagResponse and cannot be null");
             }
             this.Tag = tag;

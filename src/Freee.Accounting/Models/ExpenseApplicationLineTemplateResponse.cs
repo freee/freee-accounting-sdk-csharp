@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public ExpenseApplicationLineTemplateResponse(ExpenseApplicationLineTemplate expenseApplicationLineTemplate = default(ExpenseApplicationLineTemplate))
         {
             // to ensure "expenseApplicationLineTemplate" is required (not null)
-            if (expenseApplicationLineTemplate == null) {
+            if (expenseApplicationLineTemplate == null)
+            {
                 throw new ArgumentNullException("expenseApplicationLineTemplate is a required property for ExpenseApplicationLineTemplateResponse and cannot be null");
             }
             this.ExpenseApplicationLineTemplate = expenseApplicationLineTemplate;

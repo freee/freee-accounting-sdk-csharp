@@ -43,12 +43,14 @@ namespace Freee.Accounting.Models
         public InlineResponse2001(List<Deal> deals = default(List<Deal>), InlineResponse2001Meta meta = default(InlineResponse2001Meta))
         {
             // to ensure "deals" is required (not null)
-            if (deals == null) {
+            if (deals == null)
+            {
                 throw new ArgumentNullException("deals is a required property for InlineResponse2001 and cannot be null");
             }
             this.Deals = deals;
             // to ensure "meta" is required (not null)
-            if (meta == null) {
+            if (meta == null)
+            {
                 throw new ArgumentNullException("meta is a required property for InlineResponse2001 and cannot be null");
             }
             this.Meta = meta;

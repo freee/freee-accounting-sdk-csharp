@@ -92,7 +92,8 @@ namespace Freee.Accounting.Models
         public MeResponseUserCompanies(int? advisorId = default(int?), string displayName = default(string), int id = default(int), RoleEnum role = default(RoleEnum), bool useCustomRole = default(bool))
         {
             // to ensure "displayName" is required (not null)
-            if (displayName == null) {
+            if (displayName == null)
+            {
                 throw new ArgumentNullException("displayName is a required property for MeResponseUserCompanies and cannot be null");
             }
             this.DisplayName = displayName;

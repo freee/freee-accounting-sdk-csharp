@@ -43,7 +43,8 @@ namespace Freee.Accounting.Models
         public InlineResponse20015(InlineResponse20015Meta meta = default(InlineResponse20015Meta), List<Walletable> walletables = default(List<Walletable>))
         {
             // to ensure "walletables" is required (not null)
-            if (walletables == null) {
+            if (walletables == null)
+            {
                 throw new ArgumentNullException("walletables is a required property for InlineResponse20015 and cannot be null");
             }
             this.Walletables = walletables;

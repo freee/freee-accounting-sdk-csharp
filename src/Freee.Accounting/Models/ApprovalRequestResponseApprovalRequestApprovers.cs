@@ -148,7 +148,8 @@ namespace Freee.Accounting.Models
             this.Status = status;
             this.StepId = stepId;
             // to ensure "userId" is required (not null)
-            if (userId == null) {
+            if (userId == null)
+            {
                 throw new ArgumentNullException("userId is a required property for ApprovalRequestResponseApprovalRequestApprovers and cannot be null");
             }
             this.UserId = userId;

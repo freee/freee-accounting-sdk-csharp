@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public MeResponse(MeResponseUser user = default(MeResponseUser))
         {
             // to ensure "user" is required (not null)
-            if (user == null) {
+            if (user == null)
+            {
                 throw new ArgumentNullException("user is a required property for MeResponse and cannot be null");
             }
             this.User = user;

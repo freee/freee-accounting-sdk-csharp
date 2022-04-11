@@ -50,18 +50,21 @@ namespace Freee.Accounting.Models
         public ExpenseApplicationLineTemplate(int accountItemId = default(int), string accountItemName = default(string), string description = default(string), int id = default(int), string lineDescription = default(string), string name = default(string), bool requiredReceipt = default(bool), int taxCode = default(int), string taxName = default(string))
         {
             // to ensure "accountItemName" is required (not null)
-            if (accountItemName == null) {
+            if (accountItemName == null)
+            {
                 throw new ArgumentNullException("accountItemName is a required property for ExpenseApplicationLineTemplate and cannot be null");
             }
             this.AccountItemName = accountItemName;
             this.Id = id;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for ExpenseApplicationLineTemplate and cannot be null");
             }
             this.Name = name;
             // to ensure "taxName" is required (not null)
-            if (taxName == null) {
+            if (taxName == null)
+            {
                 throw new ArgumentNullException("taxName is a required property for ExpenseApplicationLineTemplate and cannot be null");
             }
             this.TaxName = taxName;

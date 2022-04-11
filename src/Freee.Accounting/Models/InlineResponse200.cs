@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public InlineResponse200(List<Bank> banks = default(List<Bank>))
         {
             // to ensure "banks" is required (not null)
-            if (banks == null) {
+            if (banks == null)
+            {
                 throw new ArgumentNullException("banks is a required property for InlineResponse200 and cannot be null");
             }
             this.Banks = banks;

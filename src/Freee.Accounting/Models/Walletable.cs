@@ -81,13 +81,15 @@ namespace Freee.Accounting.Models
         public Walletable(int? bankId = default(int?), int id = default(int), int lastBalance = default(int), string name = default(string), TypeEnum type = default(TypeEnum), int walletableBalance = default(int))
         {
             // to ensure "bankId" is required (not null)
-            if (bankId == null) {
+            if (bankId == null)
+            {
                 throw new ArgumentNullException("bankId is a required property for Walletable and cannot be null");
             }
             this.BankId = bankId;
             this.Id = id;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for Walletable and cannot be null");
             }
             this.Name = name;

@@ -97,7 +97,8 @@ namespace Freee.Accounting.Models
         {
             this.Id = id;
             // to ensure "requestFormIds" is required (not null)
-            if (requestFormIds == null) {
+            if (requestFormIds == null)
+            {
                 throw new ArgumentNullException("requestFormIds is a required property for ApprovalFlowRouteResponseApprovalFlowRoute and cannot be null");
             }
             this.RequestFormIds = requestFormIds;

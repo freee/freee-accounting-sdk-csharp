@@ -91,19 +91,22 @@ namespace Freee.Accounting.Models
         {
             this.Available = available;
             // to ensure "code" is required (not null)
-            if (code == null) {
+            if (code == null)
+            {
                 throw new ArgumentNullException("code is a required property for PartnersResponsePartners and cannot be null");
             }
             this.Code = code;
             this.CompanyId = companyId;
             this.Id = id;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for PartnersResponsePartners and cannot be null");
             }
             this.Name = name;
             // to ensure "updateDate" is required (not null)
-            if (updateDate == null) {
+            if (updateDate == null)
+            {
                 throw new ArgumentNullException("updateDate is a required property for PartnersResponsePartners and cannot be null");
             }
             this.UpdateDate = updateDate;
