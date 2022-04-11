@@ -64,6 +64,7 @@ jobs:
     - name: Git
       run: |
         git config --local user.name "API Generator"
+        git add CHANGELOG.md
         git add *.cs
         git commit -m "Generate SDK code for ${{ github.event.pull_request.title }}"
         git reset --hard HEAD
