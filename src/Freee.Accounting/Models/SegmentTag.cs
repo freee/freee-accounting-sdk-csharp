@@ -46,23 +46,27 @@ namespace Freee.Accounting.Models
         public SegmentTag(string description = default(string), int id = default(int), string name = default(string), string shortcut1 = default(string), string shortcut2 = default(string))
         {
             // to ensure "description" is required (not null)
-            if (description == null) {
+            if (description == null)
+            {
                 throw new ArgumentNullException("description is a required property for SegmentTag and cannot be null");
             }
             this.Description = description;
             this.Id = id;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for SegmentTag and cannot be null");
             }
             this.Name = name;
             // to ensure "shortcut1" is required (not null)
-            if (shortcut1 == null) {
+            if (shortcut1 == null)
+            {
                 throw new ArgumentNullException("shortcut1 is a required property for SegmentTag and cannot be null");
             }
             this.Shortcut1 = shortcut1;
             // to ensure "shortcut2" is required (not null)
-            if (shortcut2 == null) {
+            if (shortcut2 == null)
+            {
                 throw new ArgumentNullException("shortcut2 is a required property for SegmentTag and cannot be null");
             }
             this.Shortcut2 = shortcut2;

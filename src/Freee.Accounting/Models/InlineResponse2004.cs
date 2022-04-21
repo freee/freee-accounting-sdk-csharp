@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public InlineResponse2004(List<ManualJournal> manualJournals = default(List<ManualJournal>))
         {
             // to ensure "manualJournals" is required (not null)
-            if (manualJournals == null) {
+            if (manualJournals == null)
+            {
                 throw new ArgumentNullException("manualJournals is a required property for InlineResponse2004 and cannot be null");
             }
             this.ManualJournals = manualJournals;

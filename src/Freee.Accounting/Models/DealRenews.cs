@@ -80,7 +80,8 @@ namespace Freee.Accounting.Models
         public DealRenews(List<DealDetails1> details = default(List<DealDetails1>), long id = default(long), long renewTargetId = default(long), RenewTargetTypeEnum renewTargetType = default(RenewTargetTypeEnum), string updateDate = default(string))
         {
             // to ensure "details" is required (not null)
-            if (details == null) {
+            if (details == null)
+            {
                 throw new ArgumentNullException("details is a required property for DealRenews and cannot be null");
             }
             this.Details = details;
@@ -88,7 +89,8 @@ namespace Freee.Accounting.Models
             this.RenewTargetId = renewTargetId;
             this.RenewTargetType = renewTargetType;
             // to ensure "updateDate" is required (not null)
-            if (updateDate == null) {
+            if (updateDate == null)
+            {
                 throw new ArgumentNullException("updateDate is a required property for DealRenews and cannot be null");
             }
             this.UpdateDate = updateDate;

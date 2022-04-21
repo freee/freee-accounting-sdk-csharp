@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public CompanyResponse(CompanyResponseCompany company = default(CompanyResponseCompany))
         {
             // to ensure "company" is required (not null)
-            if (company == null) {
+            if (company == null)
+            {
                 throw new ArgumentNullException("company is a required property for CompanyResponse and cannot be null");
             }
             this.Company = company;

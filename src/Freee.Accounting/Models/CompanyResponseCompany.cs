@@ -1005,32 +1005,38 @@ namespace Freee.Accounting.Models
         {
             this.AmountFraction = amountFraction;
             // to ensure "contactName" is required (not null)
-            if (contactName == null) {
+            if (contactName == null)
+            {
                 throw new ArgumentNullException("contactName is a required property for CompanyResponseCompany and cannot be null");
             }
             this.ContactName = contactName;
             // to ensure "corporateNumber" is required (not null)
-            if (corporateNumber == null) {
+            if (corporateNumber == null)
+            {
                 throw new ArgumentNullException("corporateNumber is a required property for CompanyResponseCompany and cannot be null");
             }
             this.CorporateNumber = corporateNumber;
             // to ensure "displayName" is required (not null)
-            if (displayName == null) {
+            if (displayName == null)
+            {
                 throw new ArgumentNullException("displayName is a required property for CompanyResponseCompany and cannot be null");
             }
             this.DisplayName = displayName;
             // to ensure "fax" is required (not null)
-            if (fax == null) {
+            if (fax == null)
+            {
                 throw new ArgumentNullException("fax is a required property for CompanyResponseCompany and cannot be null");
             }
             this.Fax = fax;
             // to ensure "fiscalYears" is required (not null)
-            if (fiscalYears == null) {
+            if (fiscalYears == null)
+            {
                 throw new ArgumentNullException("fiscalYears is a required property for CompanyResponseCompany and cannot be null");
             }
             this.FiscalYears = fiscalYears;
             // to ensure "headCount" is required (not null)
-            if (headCount == null) {
+            if (headCount == null)
+            {
                 throw new ArgumentNullException("headCount is a required property for CompanyResponseCompany and cannot be null");
             }
             this.HeadCount = headCount;
@@ -1040,39 +1046,46 @@ namespace Freee.Accounting.Models
             this.InvoiceLayout = invoiceLayout;
             this.MinusFormat = minusFormat;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for CompanyResponseCompany and cannot be null");
             }
             this.Name = name;
             // to ensure "nameKana" is required (not null)
-            if (nameKana == null) {
+            if (nameKana == null)
+            {
                 throw new ArgumentNullException("nameKana is a required property for CompanyResponseCompany and cannot be null");
             }
             this.NameKana = nameKana;
             // to ensure "phone1" is required (not null)
-            if (phone1 == null) {
+            if (phone1 == null)
+            {
                 throw new ArgumentNullException("phone1 is a required property for CompanyResponseCompany and cannot be null");
             }
             this.Phone1 = phone1;
             // to ensure "phone2" is required (not null)
-            if (phone2 == null) {
+            if (phone2 == null)
+            {
                 throw new ArgumentNullException("phone2 is a required property for CompanyResponseCompany and cannot be null");
             }
             this.Phone2 = phone2;
             // to ensure "prefectureCode" is required (not null)
-            if (prefectureCode == null) {
+            if (prefectureCode == null)
+            {
                 throw new ArgumentNullException("prefectureCode is a required property for CompanyResponseCompany and cannot be null");
             }
             this.PrefectureCode = prefectureCode;
             this.PrivateSettlement = privateSettlement;
             this.Role = role;
             // to ensure "streetName1" is required (not null)
-            if (streetName1 == null) {
+            if (streetName1 == null)
+            {
                 throw new ArgumentNullException("streetName1 is a required property for CompanyResponseCompany and cannot be null");
             }
             this.StreetName1 = streetName1;
             // to ensure "streetName2" is required (not null)
-            if (streetName2 == null) {
+            if (streetName2 == null)
+            {
                 throw new ArgumentNullException("streetName2 is a required property for CompanyResponseCompany and cannot be null");
             }
             this.StreetName2 = streetName2;
@@ -1081,7 +1094,8 @@ namespace Freee.Accounting.Models
             this.UsePartnerCode = usePartnerCode;
             this.WorkflowSetting = workflowSetting;
             // to ensure "zipcode" is required (not null)
-            if (zipcode == null) {
+            if (zipcode == null)
+            {
                 throw new ArgumentNullException("zipcode is a required property for CompanyResponseCompany and cannot be null");
             }
             this.Zipcode = zipcode;

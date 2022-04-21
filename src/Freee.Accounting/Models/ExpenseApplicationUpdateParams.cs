@@ -55,12 +55,14 @@ namespace Freee.Accounting.Models
         {
             this.CompanyId = companyId;
             // to ensure "expenseApplicationLines" is required (not null)
-            if (expenseApplicationLines == null) {
+            if (expenseApplicationLines == null)
+            {
                 throw new ArgumentNullException("expenseApplicationLines is a required property for ExpenseApplicationUpdateParams and cannot be null");
             }
             this.ExpenseApplicationLines = expenseApplicationLines;
             // to ensure "title" is required (not null)
-            if (title == null) {
+            if (title == null)
+            {
                 throw new ArgumentNullException("title is a required property for ExpenseApplicationUpdateParams and cannot be null");
             }
             this.Title = title;

@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public ApprovalRequestFormResponse(ApprovalRequestFormResponseApprovalRequestForm approvalRequestForm = default(ApprovalRequestFormResponseApprovalRequestForm))
         {
             // to ensure "approvalRequestForm" is required (not null)
-            if (approvalRequestForm == null) {
+            if (approvalRequestForm == null)
+            {
                 throw new ArgumentNullException("approvalRequestForm is a required property for ApprovalRequestFormResponse and cannot be null");
             }
             this.ApprovalRequestForm = approvalRequestForm;

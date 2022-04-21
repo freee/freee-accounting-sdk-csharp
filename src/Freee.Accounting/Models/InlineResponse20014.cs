@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public InlineResponse20014(List<WalletTxn> walletTxns = default(List<WalletTxn>))
         {
             // to ensure "walletTxns" is required (not null)
-            if (walletTxns == null) {
+            if (walletTxns == null)
+            {
                 throw new ArgumentNullException("walletTxns is a required property for InlineResponse20014 and cannot be null");
             }
             this.WalletTxns = walletTxns;

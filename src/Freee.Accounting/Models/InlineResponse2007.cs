@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public InlineResponse2007(List<SegmentTag> segmentTags = default(List<SegmentTag>))
         {
             // to ensure "segmentTags" is required (not null)
-            if (segmentTags == null) {
+            if (segmentTags == null)
+            {
                 throw new ArgumentNullException("segmentTags is a required property for InlineResponse2007 and cannot be null");
             }
             this.SegmentTags = segmentTags;

@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public TaxResponse(Tax tax = default(Tax))
         {
             // to ensure "tax" is required (not null)
-            if (tax == null) {
+            if (tax == null)
+            {
                 throw new ArgumentNullException("tax is a required property for TaxResponse and cannot be null");
             }
             this.Tax = tax;

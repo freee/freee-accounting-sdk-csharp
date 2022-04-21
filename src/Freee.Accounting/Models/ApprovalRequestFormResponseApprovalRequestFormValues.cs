@@ -43,7 +43,8 @@ namespace Freee.Accounting.Models
         public ApprovalRequestFormResponseApprovalRequestFormValues(string name = default(string), int order = default(int))
         {
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for ApprovalRequestFormResponseApprovalRequestFormValues and cannot be null");
             }
             this.Name = name;

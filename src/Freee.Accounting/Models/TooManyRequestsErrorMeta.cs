@@ -47,7 +47,8 @@ namespace Freee.Accounting.Models
             this.Limit = limit;
             this.Remaining = remaining;
             // to ensure "reset" is required (not null)
-            if (reset == null) {
+            if (reset == null)
+            {
                 throw new ArgumentNullException("reset is a required property for TooManyRequestsErrorMeta and cannot be null");
             }
             this.Reset = reset;

@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public ExpenseApplicationsIndexResponse(List<ExpenseApplicationsIndexResponseExpenseApplications> expenseApplications = default(List<ExpenseApplicationsIndexResponseExpenseApplications>))
         {
             // to ensure "expenseApplications" is required (not null)
-            if (expenseApplications == null) {
+            if (expenseApplications == null)
+            {
                 throw new ArgumentNullException("expenseApplications is a required property for ExpenseApplicationsIndexResponse and cannot be null");
             }
             this.ExpenseApplications = expenseApplications;

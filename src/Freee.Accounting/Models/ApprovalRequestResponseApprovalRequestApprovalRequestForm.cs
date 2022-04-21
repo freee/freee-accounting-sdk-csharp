@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public ApprovalRequestResponseApprovalRequestApprovalRequestForm(List<ApprovalRequestFormResponseApprovalRequestFormParts> parts = default(List<ApprovalRequestFormResponseApprovalRequestFormParts>))
         {
             // to ensure "parts" is required (not null)
-            if (parts == null) {
+            if (parts == null)
+            {
                 throw new ArgumentNullException("parts is a required property for ApprovalRequestResponseApprovalRequestApprovalRequestForm and cannot be null");
             }
             this.Parts = parts;

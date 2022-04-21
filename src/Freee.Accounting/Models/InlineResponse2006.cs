@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public InlineResponse2006(List<Section> sections = default(List<Section>))
         {
             // to ensure "sections" is required (not null)
-            if (sections == null) {
+            if (sections == null)
+            {
                 throw new ArgumentNullException("sections is a required property for InlineResponse2006 and cannot be null");
             }
             this.Sections = sections;

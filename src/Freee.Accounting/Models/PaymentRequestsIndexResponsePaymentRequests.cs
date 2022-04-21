@@ -182,62 +182,73 @@ namespace Freee.Accounting.Models
         {
             this.ApplicantId = applicantId;
             // to ensure "applicationDate" is required (not null)
-            if (applicationDate == null) {
+            if (applicationDate == null)
+            {
                 throw new ArgumentNullException("applicationDate is a required property for PaymentRequestsIndexResponsePaymentRequests and cannot be null");
             }
             this.ApplicationDate = applicationDate;
             // to ensure "applicationNumber" is required (not null)
-            if (applicationNumber == null) {
+            if (applicationNumber == null)
+            {
                 throw new ArgumentNullException("applicationNumber is a required property for PaymentRequestsIndexResponsePaymentRequests and cannot be null");
             }
             this.ApplicationNumber = applicationNumber;
             // to ensure "approvers" is required (not null)
-            if (approvers == null) {
+            if (approvers == null)
+            {
                 throw new ArgumentNullException("approvers is a required property for PaymentRequestsIndexResponsePaymentRequests and cannot be null");
             }
             this.Approvers = approvers;
             this.CompanyId = companyId;
             this.CurrentRound = currentRound;
             // to ensure "currentStepId" is required (not null)
-            if (currentStepId == null) {
+            if (currentStepId == null)
+            {
                 throw new ArgumentNullException("currentStepId is a required property for PaymentRequestsIndexResponsePaymentRequests and cannot be null");
             }
             this.CurrentStepId = currentStepId;
             // to ensure "documentCode" is required (not null)
-            if (documentCode == null) {
+            if (documentCode == null)
+            {
                 throw new ArgumentNullException("documentCode is a required property for PaymentRequestsIndexResponsePaymentRequests and cannot be null");
             }
             this.DocumentCode = documentCode;
             this.Id = id;
             // to ensure "issueDate" is required (not null)
-            if (issueDate == null) {
+            if (issueDate == null)
+            {
                 throw new ArgumentNullException("issueDate is a required property for PaymentRequestsIndexResponsePaymentRequests and cannot be null");
             }
             this.IssueDate = issueDate;
             // to ensure "partnerCode" is required (not null)
-            if (partnerCode == null) {
+            if (partnerCode == null)
+            {
                 throw new ArgumentNullException("partnerCode is a required property for PaymentRequestsIndexResponsePaymentRequests and cannot be null");
             }
             this.PartnerCode = partnerCode;
             // to ensure "partnerId" is required (not null)
-            if (partnerId == null) {
+            if (partnerId == null)
+            {
                 throw new ArgumentNullException("partnerId is a required property for PaymentRequestsIndexResponsePaymentRequests and cannot be null");
             }
             this.PartnerId = partnerId;
             // to ensure "partnerName" is required (not null)
-            if (partnerName == null) {
+            if (partnerName == null)
+            {
                 throw new ArgumentNullException("partnerName is a required property for PaymentRequestsIndexResponsePaymentRequests and cannot be null");
             }
             this.PartnerName = partnerName;
             // to ensure "paymentDate" is required (not null)
-            if (paymentDate == null) {
+            if (paymentDate == null)
+            {
                 throw new ArgumentNullException("paymentDate is a required property for PaymentRequestsIndexResponsePaymentRequests and cannot be null");
             }
             this.PaymentDate = paymentDate;
             this.PaymentMethod = paymentMethod;
             this.Status = status;
             // to ensure "title" is required (not null)
-            if (title == null) {
+            if (title == null)
+            {
                 throw new ArgumentNullException("title is a required property for PaymentRequestsIndexResponsePaymentRequests and cannot be null");
             }
             this.Title = title;

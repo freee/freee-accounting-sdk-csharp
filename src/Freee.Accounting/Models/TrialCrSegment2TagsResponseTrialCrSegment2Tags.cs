@@ -211,13 +211,15 @@ namespace Freee.Accounting.Models
         public TrialCrSegment2TagsResponseTrialCrSegment2Tags(AccountItemDisplayTypeEnum? accountItemDisplayType = default(AccountItemDisplayTypeEnum?), AdjustmentEnum? adjustment = default(AdjustmentEnum?), ApprovalFlowStatusEnum? approvalFlowStatus = default(ApprovalFlowStatusEnum?), List<TrialCrSegment2TagsResponseTrialCrSegment2TagsBalances> balances = default(List<TrialCrSegment2TagsResponseTrialCrSegment2TagsBalances>), BreakdownDisplayTypeEnum? breakdownDisplayType = default(BreakdownDisplayTypeEnum?), int companyId = default(int), CostAllocationEnum? costAllocation = default(CostAllocationEnum?), string createdAt = default(string), string endDate = default(string), int endMonth = default(int), int fiscalYear = default(int), int itemId = default(int), string partnerCode = default(string), int partnerId = default(int), int sectionId = default(int), string segment2TagIds = default(string), string startDate = default(string), int startMonth = default(int))
         {
             // to ensure "balances" is required (not null)
-            if (balances == null) {
+            if (balances == null)
+            {
                 throw new ArgumentNullException("balances is a required property for TrialCrSegment2TagsResponseTrialCrSegment2Tags and cannot be null");
             }
             this.Balances = balances;
             this.CompanyId = companyId;
             // to ensure "segment2TagIds" is required (not null)
-            if (segment2TagIds == null) {
+            if (segment2TagIds == null)
+            {
                 throw new ArgumentNullException("segment2TagIds is a required property for TrialCrSegment2TagsResponseTrialCrSegment2Tags and cannot be null");
             }
             this.Segment2TagIds = segment2TagIds;

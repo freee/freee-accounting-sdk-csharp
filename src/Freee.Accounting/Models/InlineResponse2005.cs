@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public InlineResponse2005(List<Receipt> receipts = default(List<Receipt>))
         {
             // to ensure "receipts" is required (not null)
-            if (receipts == null) {
+            if (receipts == null)
+            {
                 throw new ArgumentNullException("receipts is a required property for InlineResponse2005 and cannot be null");
             }
             this.Receipts = receipts;

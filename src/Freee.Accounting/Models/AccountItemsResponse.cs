@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public AccountItemsResponse(List<AccountItemsResponseAccountItems> accountItems = default(List<AccountItemsResponseAccountItems>))
         {
             // to ensure "accountItems" is required (not null)
-            if (accountItems == null) {
+            if (accountItems == null)
+            {
                 throw new ArgumentNullException("accountItems is a required property for AccountItemsResponse and cannot be null");
             }
             this.AccountItems = accountItems;

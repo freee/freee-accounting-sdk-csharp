@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public ApprovalRequestsIndexResponse(List<ApprovalRequestsIndexResponseApprovalRequests> approvalRequests = default(List<ApprovalRequestsIndexResponseApprovalRequests>))
         {
             // to ensure "approvalRequests" is required (not null)
-            if (approvalRequests == null) {
+            if (approvalRequests == null)
+            {
                 throw new ArgumentNullException("approvalRequests is a required property for ApprovalRequestsIndexResponse and cannot be null");
             }
             this.ApprovalRequests = approvalRequests;

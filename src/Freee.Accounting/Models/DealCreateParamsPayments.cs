@@ -86,7 +86,8 @@ namespace Freee.Accounting.Models
         {
             this.Amount = amount;
             // to ensure "date" is required (not null)
-            if (date == null) {
+            if (date == null)
+            {
                 throw new ArgumentNullException("date is a required property for DealCreateParamsPayments and cannot be null");
             }
             this.Date = date;

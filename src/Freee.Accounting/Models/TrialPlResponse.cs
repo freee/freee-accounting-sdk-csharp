@@ -44,7 +44,8 @@ namespace Freee.Accounting.Models
         public TrialPlResponse(TrialPlResponseTrialPl trialPl = default(TrialPlResponseTrialPl), bool upToDate = default(bool), List<JournalsResponseJournalsUpToDateReasons> upToDateReasons = default(List<JournalsResponseJournalsUpToDateReasons>))
         {
             // to ensure "trialPl" is required (not null)
-            if (trialPl == null) {
+            if (trialPl == null)
+            {
                 throw new ArgumentNullException("trialPl is a required property for TrialPlResponse and cannot be null");
             }
             this.TrialPl = trialPl;

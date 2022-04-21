@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public InlineResponse20012(List<User> users = default(List<User>))
         {
             // to ensure "users" is required (not null)
-            if (users == null) {
+            if (users == null)
+            {
                 throw new ArgumentNullException("users is a required property for InlineResponse20012 and cannot be null");
             }
             this.Users = users;

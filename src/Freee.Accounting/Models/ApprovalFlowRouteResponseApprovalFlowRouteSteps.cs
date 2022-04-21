@@ -104,7 +104,8 @@ namespace Freee.Accounting.Models
         {
             this.Id = id;
             // to ensure "nextStepId" is required (not null)
-            if (nextStepId == null) {
+            if (nextStepId == null)
+            {
                 throw new ArgumentNullException("nextStepId is a required property for ApprovalFlowRouteResponseApprovalFlowRouteSteps and cannot be null");
             }
             this.NextStepId = nextStepId;

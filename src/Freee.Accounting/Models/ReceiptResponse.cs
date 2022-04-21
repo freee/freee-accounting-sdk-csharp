@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public ReceiptResponse(Receipt receipt = default(Receipt))
         {
             // to ensure "receipt" is required (not null)
-            if (receipt == null) {
+            if (receipt == null)
+            {
                 throw new ArgumentNullException("receipt is a required property for ReceiptResponse and cannot be null");
             }
             this.Receipt = receipt;

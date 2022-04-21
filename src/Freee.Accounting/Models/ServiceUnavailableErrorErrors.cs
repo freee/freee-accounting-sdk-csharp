@@ -69,7 +69,8 @@ namespace Freee.Accounting.Models
         public ServiceUnavailableErrorErrors(List<string> messages = default(List<string>), TypeEnum type = default(TypeEnum))
         {
             // to ensure "messages" is required (not null)
-            if (messages == null) {
+            if (messages == null)
+            {
                 throw new ArgumentNullException("messages is a required property for ServiceUnavailableErrorErrors and cannot be null");
             }
             this.Messages = messages;

@@ -92,18 +92,21 @@ namespace Freee.Accounting.Models
         public CompanyIndexResponseCompanies(string displayName = default(string), int id = default(int), string name = default(string), string nameKana = default(string), RoleEnum role = default(RoleEnum))
         {
             // to ensure "displayName" is required (not null)
-            if (displayName == null) {
+            if (displayName == null)
+            {
                 throw new ArgumentNullException("displayName is a required property for CompanyIndexResponseCompanies and cannot be null");
             }
             this.DisplayName = displayName;
             this.Id = id;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for CompanyIndexResponseCompanies and cannot be null");
             }
             this.Name = name;
             // to ensure "nameKana" is required (not null)
-            if (nameKana == null) {
+            if (nameKana == null)
+            {
                 throw new ArgumentNullException("nameKana is a required property for CompanyIndexResponseCompanies and cannot be null");
             }
             this.NameKana = nameKana;

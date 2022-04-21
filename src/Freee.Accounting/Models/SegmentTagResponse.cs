@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public SegmentTagResponse(SegmentTag segmentTag = default(SegmentTag))
         {
             // to ensure "segmentTag" is required (not null)
-            if (segmentTag == null) {
+            if (segmentTag == null)
+            {
                 throw new ArgumentNullException("segmentTag is a required property for SegmentTagResponse and cannot be null");
             }
             this.SegmentTag = segmentTag;

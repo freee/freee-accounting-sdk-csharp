@@ -44,7 +44,8 @@ namespace Freee.Accounting.Models
         public DealUser(string displayName = default(string), string email = default(string), int id = default(int))
         {
             // to ensure "email" is required (not null)
-            if (email == null) {
+            if (email == null)
+            {
                 throw new ArgumentNullException("email is a required property for DealUser and cannot be null");
             }
             this.Email = email;

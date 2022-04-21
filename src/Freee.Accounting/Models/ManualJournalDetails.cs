@@ -94,54 +94,64 @@ namespace Freee.Accounting.Models
             this.AccountItemId = accountItemId;
             this.Amount = amount;
             // to ensure "description" is required (not null)
-            if (description == null) {
+            if (description == null)
+            {
                 throw new ArgumentNullException("description is a required property for ManualJournalDetails and cannot be null");
             }
             this.Description = description;
             this.EntrySide = entrySide;
             this.Id = id;
             // to ensure "itemId" is required (not null)
-            if (itemId == null) {
+            if (itemId == null)
+            {
                 throw new ArgumentNullException("itemId is a required property for ManualJournalDetails and cannot be null");
             }
             this.ItemId = itemId;
             // to ensure "itemName" is required (not null)
-            if (itemName == null) {
+            if (itemName == null)
+            {
                 throw new ArgumentNullException("itemName is a required property for ManualJournalDetails and cannot be null");
             }
             this.ItemName = itemName;
             // to ensure "partnerId" is required (not null)
-            if (partnerId == null) {
+            if (partnerId == null)
+            {
                 throw new ArgumentNullException("partnerId is a required property for ManualJournalDetails and cannot be null");
             }
             this.PartnerId = partnerId;
             // to ensure "partnerLongName" is required (not null)
-            if (partnerLongName == null) {
+            if (partnerLongName == null)
+            {
                 throw new ArgumentNullException("partnerLongName is a required property for ManualJournalDetails and cannot be null");
             }
             this.PartnerLongName = partnerLongName;
             // to ensure "partnerName" is required (not null)
-            if (partnerName == null) {
+            if (partnerName == null)
+            {
                 throw new ArgumentNullException("partnerName is a required property for ManualJournalDetails and cannot be null");
             }
             this.PartnerName = partnerName;
             // to ensure "sectionId" is required (not null)
-            if (sectionId == null) {
+            if (sectionId == null)
+            {
                 throw new ArgumentNullException("sectionId is a required property for ManualJournalDetails and cannot be null");
             }
             this.SectionId = sectionId;
             // to ensure "sectionName" is required (not null)
-            if (sectionName == null) {
+            if (sectionName == null)
+            {
                 throw new ArgumentNullException("sectionName is a required property for ManualJournalDetails and cannot be null");
             }
             this.SectionName = sectionName;
             // to ensure "tagIds" is required (not null)
-            if (tagIds == null) {
+            if (tagIds == null)
+            {
                 throw new ArgumentNullException("tagIds is a required property for ManualJournalDetails and cannot be null");
             }
             this.TagIds = tagIds;
             // to ensure "tagNames" is required (not null)
-            if (tagNames == null) {
+            if (tagNames == null)
+            {
                 throw new ArgumentNullException("tagNames is a required property for ManualJournalDetails and cannot be null");
             }
             this.TagNames = tagNames;

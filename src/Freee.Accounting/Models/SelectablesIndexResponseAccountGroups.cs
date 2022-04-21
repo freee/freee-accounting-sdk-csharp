@@ -53,7 +53,8 @@ namespace Freee.Accounting.Models
             this.Id = id;
             this.Index = index;
             // to ensure "name" is required (not null)
-            if (name == null) {
+            if (name == null)
+            {
                 throw new ArgumentNullException("name is a required property for SelectablesIndexResponseAccountGroups and cannot be null");
             }
             this.Name = name;

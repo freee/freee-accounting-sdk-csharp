@@ -45,12 +45,14 @@ namespace Freee.Accounting.Models
         {
             this.CompanyId = companyId;
             // to ensure "details" is required (not null)
-            if (details == null) {
+            if (details == null)
+            {
                 throw new ArgumentNullException("details is a required property for RenewUpdateParams and cannot be null");
             }
             this.Details = details;
             // to ensure "updateDate" is required (not null)
-            if (updateDate == null) {
+            if (updateDate == null)
+            {
                 throw new ArgumentNullException("updateDate is a required property for RenewUpdateParams and cannot be null");
             }
             this.UpdateDate = updateDate;

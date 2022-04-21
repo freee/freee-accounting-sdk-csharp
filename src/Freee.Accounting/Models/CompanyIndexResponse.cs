@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public CompanyIndexResponse(List<CompanyIndexResponseCompanies> companies = default(List<CompanyIndexResponseCompanies>))
         {
             // to ensure "companies" is required (not null)
-            if (companies == null) {
+            if (companies == null)
+            {
                 throw new ArgumentNullException("companies is a required property for CompanyIndexResponse and cannot be null");
             }
             this.Companies = companies;

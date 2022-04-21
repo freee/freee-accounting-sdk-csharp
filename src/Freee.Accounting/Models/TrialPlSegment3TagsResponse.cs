@@ -44,7 +44,8 @@ namespace Freee.Accounting.Models
         public TrialPlSegment3TagsResponse(TrialPlSegment3TagsResponseTrialPlSegment3Tags trialPlSegment3Tags = default(TrialPlSegment3TagsResponseTrialPlSegment3Tags), bool upToDate = default(bool), List<JournalsResponseJournalsUpToDateReasons> upToDateReasons = default(List<JournalsResponseJournalsUpToDateReasons>))
         {
             // to ensure "trialPlSegment3Tags" is required (not null)
-            if (trialPlSegment3Tags == null) {
+            if (trialPlSegment3Tags == null)
+            {
                 throw new ArgumentNullException("trialPlSegment3Tags is a required property for TrialPlSegment3TagsResponse and cannot be null");
             }
             this.TrialPlSegment3Tags = trialPlSegment3Tags;

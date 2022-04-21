@@ -42,20 +42,24 @@ namespace Freee.Accounting.Models
         /// <param name="companyId">事業所ID (required).</param>
         /// <param name="details">details (required).</param>
         /// <param name="issueDate">発生日 (yyyy-mm-dd) (required).</param>
-        public ManualJournalUpdateParams(bool adjustment = default(bool), int companyId = default(int), List<ManualJournalUpdateParamsDetails> details = default(List<ManualJournalUpdateParamsDetails>), string issueDate = default(string))
+        /// <param name="receiptIds">証憑ファイルID（ファイルボックスのファイルID）（配列）.</param>
+        public ManualJournalUpdateParams(bool adjustment = default(bool), int companyId = default(int), List<ManualJournalUpdateParamsDetails> details = default(List<ManualJournalUpdateParamsDetails>), string issueDate = default(string), List<int> receiptIds = default(List<int>))
         {
             this.CompanyId = companyId;
             // to ensure "details" is required (not null)
-            if (details == null) {
+            if (details == null)
+            {
                 throw new ArgumentNullException("details is a required property for ManualJournalUpdateParams and cannot be null");
             }
             this.Details = details;
             // to ensure "issueDate" is required (not null)
-            if (issueDate == null) {
+            if (issueDate == null)
+            {
                 throw new ArgumentNullException("issueDate is a required property for ManualJournalUpdateParams and cannot be null");
             }
             this.IssueDate = issueDate;
             this.Adjustment = adjustment;
+            this.ReceiptIds = receiptIds;
         }
 
         /// <summary>
@@ -86,6 +90,13 @@ namespace Freee.Accounting.Models
         public string IssueDate { get; set; }
 
         /// <summary>
+        /// 証憑ファイルID（ファイルボックスのファイルID）（配列）
+        /// </summary>
+        /// <value>証憑ファイルID（ファイルボックスのファイルID）（配列）</value>
+        [DataMember(Name = "receipt_ids", EmitDefaultValue = false)]
+        public List<int> ReceiptIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -97,6 +108,7 @@ namespace Freee.Accounting.Models
             sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
             sb.Append("  Details: ").Append(Details).Append("\n");
             sb.Append("  IssueDate: ").Append(IssueDate).Append("\n");
+            sb.Append("  ReceiptIds: ").Append(ReceiptIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -150,6 +162,12 @@ namespace Freee.Accounting.Models
                     this.IssueDate == input.IssueDate ||
                     (this.IssueDate != null &&
                     this.IssueDate.Equals(input.IssueDate))
+                ) && 
+                (
+                    this.ReceiptIds == input.ReceiptIds ||
+                    this.ReceiptIds != null &&
+                    input.ReceiptIds != null &&
+                    this.ReceiptIds.SequenceEqual(input.ReceiptIds)
                 );
         }
 
@@ -171,6 +189,10 @@ namespace Freee.Accounting.Models
                 if (this.IssueDate != null)
                 {
                     hashCode = (hashCode * 59) + this.IssueDate.GetHashCode();
+                }
+                if (this.ReceiptIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.ReceiptIds.GetHashCode();
                 }
                 return hashCode;
             }

@@ -42,7 +42,8 @@ namespace Freee.Accounting.Models
         public WalletTxnResponse(WalletTxn walletTxn = default(WalletTxn))
         {
             // to ensure "walletTxn" is required (not null)
-            if (walletTxn == null) {
+            if (walletTxn == null)
+            {
                 throw new ArgumentNullException("walletTxn is a required property for WalletTxnResponse and cannot be null");
             }
             this.WalletTxn = walletTxn;
