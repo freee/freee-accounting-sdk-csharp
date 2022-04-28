@@ -38,7 +38,7 @@ jobs:
       env:
         SCHEMA_URL: https://raw.githubusercontent.com/freee/freee-api-schema/${{ steps.get_original_repo_tag.outputs.tag }}/_sdk_compatible/open-api-3/api-schema.yml
       run: |
-        docker run --rm -u "$(id -u $USER):$(id -g $USER)" -v "${PWD}:/local" openapitools/openapi-generator-cli:latest-release generate \
+        docker run --rm -u "$(id -u $USER):$(id -g $USER)" -v "${PWD}:/local" openapitools/openapi-generator-cli:v5.4.0 generate \
         -i ${{ env.SCHEMA_URL }} \
         -c /local/.openapi-generator/config.yml \
         -g csharp-netcore \
