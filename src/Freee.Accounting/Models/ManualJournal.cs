@@ -43,8 +43,9 @@ namespace Freee.Accounting.Models
         /// <param name="details">貸借行一覧（配列）: 貸借合わせて100行まで登録できます。 (required).</param>
         /// <param name="id">振替伝票ID (required).</param>
         /// <param name="issueDate">発生日 (yyyy-mm-dd) (required).</param>
+        /// <param name="receiptIds">証憑ファイルID（ファイルボックスのファイルID）.</param>
         /// <param name="txnNumber">仕訳番号 (required).</param>
-        public ManualJournal(bool adjustment = default(bool), int companyId = default(int), List<ManualJournalDetails> details = default(List<ManualJournalDetails>), int id = default(int), string issueDate = default(string), string txnNumber = default(string))
+        public ManualJournal(bool adjustment = default(bool), int companyId = default(int), List<ManualJournalDetails> details = default(List<ManualJournalDetails>), int id = default(int), string issueDate = default(string), List<int> receiptIds = default(List<int>), string txnNumber = default(string))
         {
             this.Adjustment = adjustment;
             this.CompanyId = companyId;
@@ -64,6 +65,7 @@ namespace Freee.Accounting.Models
                 throw new ArgumentNullException("txnNumber is a required property for ManualJournal and cannot be null");
             }
             this.TxnNumber = txnNumber;
+            this.ReceiptIds = receiptIds;
         }
 
         /// <summary>
@@ -102,6 +104,13 @@ namespace Freee.Accounting.Models
         public string IssueDate { get; set; }
 
         /// <summary>
+        /// 証憑ファイルID（ファイルボックスのファイルID）
+        /// </summary>
+        /// <value>証憑ファイルID（ファイルボックスのファイルID）</value>
+        [DataMember(Name = "receipt_ids", EmitDefaultValue = false)]
+        public List<int> ReceiptIds { get; set; }
+
+        /// <summary>
         /// 仕訳番号
         /// </summary>
         /// <value>仕訳番号</value>
@@ -121,6 +130,7 @@ namespace Freee.Accounting.Models
             sb.Append("  Details: ").Append(Details).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  IssueDate: ").Append(IssueDate).Append("\n");
+            sb.Append("  ReceiptIds: ").Append(ReceiptIds).Append("\n");
             sb.Append("  TxnNumber: ").Append(TxnNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -181,6 +191,12 @@ namespace Freee.Accounting.Models
                     this.IssueDate.Equals(input.IssueDate))
                 ) && 
                 (
+                    this.ReceiptIds == input.ReceiptIds ||
+                    this.ReceiptIds != null &&
+                    input.ReceiptIds != null &&
+                    this.ReceiptIds.SequenceEqual(input.ReceiptIds)
+                ) && 
+                (
                     this.TxnNumber == input.TxnNumber ||
                     (this.TxnNumber != null &&
                     this.TxnNumber.Equals(input.TxnNumber))
@@ -206,6 +222,10 @@ namespace Freee.Accounting.Models
                 if (this.IssueDate != null)
                 {
                     hashCode = (hashCode * 59) + this.IssueDate.GetHashCode();
+                }
+                if (this.ReceiptIds != null)
+                {
+                    hashCode = (hashCode * 59) + this.ReceiptIds.GetHashCode();
                 }
                 if (this.TxnNumber != null)
                 {
