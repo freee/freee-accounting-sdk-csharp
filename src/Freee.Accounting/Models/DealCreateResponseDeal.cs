@@ -97,7 +97,7 @@ namespace Freee.Accounting.Models
         /// <param name="amount">金額 (required).</param>
         /// <param name="companyId">事業所ID (required).</param>
         /// <param name="details">取引の明細行.</param>
-        /// <param name="dueAmount">支払金額.</param>
+        /// <param name="dueAmount">支払残額.</param>
         /// <param name="dueDate">支払期日 (yyyy-mm-dd).</param>
         /// <param name="id">取引ID (required).</param>
         /// <param name="issueDate">発生日 (yyyy-mm-dd) (required).</param>
@@ -150,9 +150,9 @@ namespace Freee.Accounting.Models
         public List<DealDetails> Details { get; set; }
 
         /// <summary>
-        /// 支払金額
+        /// 支払残額
         /// </summary>
-        /// <value>支払金額</value>
+        /// <value>支払残額</value>
         [DataMember(Name = "due_amount", EmitDefaultValue = false)]
         public int DueAmount { get; set; }
 
