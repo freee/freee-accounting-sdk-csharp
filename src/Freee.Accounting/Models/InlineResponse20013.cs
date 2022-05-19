@@ -98,7 +98,7 @@ namespace Freee.Accounting.Models
         /// <param name="walletables">walletables (required).</param>
         /// <param name="workflows">workflows (required).</param>
         /// <param name="yearEnd">yearEnd (required).</param>
-        public InlineResponse20013(UserCapability tags = default(UserCapability), UserCapability accountItemStatements = default(UserCapability), UserCapability accountItems = default(UserCapability), UserCapability annualReports = default(UserCapability), UserCapability approvalFlowRoutes = default(UserCapability), UserCapability approvalRequests = default(UserCapability), UserCapability backups = default(UserCapability), UserCapability bankAccountantStaffUsers = default(UserCapability), UserCapability bizAllocations = default(UserCapability), UserCapability companies = default(UserCapability), UserCapability consumptionEntries = default(UserCapability), UserCapability costAllocations = default(UserCapability), UserCapability dealTemplates = default(UserCapability), UserCapability deals = default(UserCapability), UserCapability docPostings = default(UserCapability), UserCapability docs = default(UserCapability), UserCapability expenseApplicationTemplates = default(UserCapability), UserCapability expenseApplications = default(UserCapability), UserCapability fixedAssets = default(UserCapability), UserCapability inventoryRefreshes = default(UserCapability), UserCapability invitations = default(UserCapability), UserCapability items = default(UserCapability), UserCapability manualJournalTemplates = default(UserCapability), UserCapability manualJournals = default(UserCapability), UserCapability monthEnd = default(UserCapability), UserCapability oauthApplications = default(UserCapability), UserCapability oauthAuthorizations = default(UserCapability), UserCapability openingBalances = default(UserCapability), UserCapability partners = default(UserCapability), UserCapability paymentRecords = default(UserCapability), UserCapability paymentRequests = default(UserCapability), UserCapability receiptStreamEditor = default(UserCapability), UserCapability receipts = default(UserCapability), UserCapability reports = default(UserCapability), UserCapability reportsBs = default(UserCapability), UserCapability reportsCashBalance = default(UserCapability), UserCapability reportsCrosstabs = default(UserCapability), UserCapability reportsGeneralLedgers = default(UserCapability), UserCapability reportsIncomeExpense = default(UserCapability), UserCapability reportsJournals = default(UserCapability), UserCapability reportsManagementsNavigation = default(UserCapability), UserCapability reportsManagementsPlanning = default(UserCapability), UserCapability reportsPayables = default(UserCapability), UserCapability reportsPl = default(UserCapability), UserCapability reportsReceivables = default(UserCapability), UserCapability requestForms = default(UserCapability), UserCapability resets = default(UserCapability), UserCapability sections = default(UserCapability), UserCapability signInLogs = default(UserCapability), UserCapability spreadsheets = default(UserCapability), UserCapability systemConversion = default(UserCapability), UserCapability taxReports = default(UserCapability), UserCapability taxReturn = default(UserCapability), UserCapability taxes = default(UserCapability), UserCapability transfers = default(UserCapability), UserCapability userMatchers = default(UserCapability), UserCapability walletTxns = default(UserCapability), UserCapability walletables = default(UserCapability), UserCapability workflows = default(UserCapability), UserCapability yearEnd = default(UserCapability))
+        public InlineResponse20013(UserCapability tags = default(UserCapability), UserCapability accountItemStatements = default(UserCapability), UserCapability accountItems = default(UserCapability), UserCapability annualReports = default(UserCapability), UserCapability approvalFlowRoutes = default(UserCapability), UserCapabilityWithSelfOnly approvalRequests = default(UserCapabilityWithSelfOnly), UserCapability backups = default(UserCapability), UserCapability bankAccountantStaffUsers = default(UserCapability), UserCapability bizAllocations = default(UserCapability), UserCapability companies = default(UserCapability), UserCapability consumptionEntries = default(UserCapability), UserCapability costAllocations = default(UserCapability), UserCapability dealTemplates = default(UserCapability), UserCapabilityWithSelfOnly deals = default(UserCapabilityWithSelfOnly), UserCapability docPostings = default(UserCapability), UserCapabilityWithSelfOnly docs = default(UserCapabilityWithSelfOnly), UserCapability expenseApplicationTemplates = default(UserCapability), UserCapabilityWithSelfOnly expenseApplications = default(UserCapabilityWithSelfOnly), UserCapability fixedAssets = default(UserCapability), UserCapability inventoryRefreshes = default(UserCapability), UserCapability invitations = default(UserCapability), UserCapability items = default(UserCapability), UserCapability manualJournalTemplates = default(UserCapability), UserCapabilityWithSelfOnly manualJournals = default(UserCapabilityWithSelfOnly), UserCapability monthEnd = default(UserCapability), UserCapability oauthApplications = default(UserCapability), UserCapability oauthAuthorizations = default(UserCapability), UserCapability openingBalances = default(UserCapability), UserCapability partners = default(UserCapability), UserCapability paymentRecords = default(UserCapability), UserCapabilityWithSelfOnly paymentRequests = default(UserCapabilityWithSelfOnly), UserCapability receiptStreamEditor = default(UserCapability), UserCapabilityWithSelfOnly receipts = default(UserCapabilityWithSelfOnly), UserCapability reports = default(UserCapability), UserCapability reportsBs = default(UserCapability), UserCapability reportsCashBalance = default(UserCapability), UserCapability reportsCrosstabs = default(UserCapability), UserCapability reportsGeneralLedgers = default(UserCapability), UserCapability reportsIncomeExpense = default(UserCapability), UserCapability reportsJournals = default(UserCapability), UserCapability reportsManagementsNavigation = default(UserCapability), UserCapability reportsManagementsPlanning = default(UserCapability), UserCapability reportsPayables = default(UserCapability), UserCapability reportsPl = default(UserCapability), UserCapability reportsReceivables = default(UserCapability), UserCapability requestForms = default(UserCapability), UserCapability resets = default(UserCapability), UserCapability sections = default(UserCapability), UserCapability signInLogs = default(UserCapability), UserCapability spreadsheets = default(UserCapability), UserCapability systemConversion = default(UserCapability), UserCapability taxReports = default(UserCapability), UserCapability taxReturn = default(UserCapability), UserCapability taxes = default(UserCapability), UserCapabilityWithSelfOnly transfers = default(UserCapabilityWithSelfOnly), UserCapability userMatchers = default(UserCapability), UserCapability walletTxns = default(UserCapability), UserCapability walletables = default(UserCapability), UserCapability workflows = default(UserCapability), UserCapability yearEnd = default(UserCapability))
         {
             // to ensure "tags" is required (not null)
             if (tags == null) {
@@ -436,7 +436,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets ApprovalRequests
         /// </summary>
         [DataMember(Name = "approval_requests", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ApprovalRequests { get; set; }
+        public UserCapabilityWithSelfOnly ApprovalRequests { get; set; }
 
         /// <summary>
         /// Gets or Sets Backups
@@ -484,7 +484,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets Deals
         /// </summary>
         [DataMember(Name = "deals", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability Deals { get; set; }
+        public UserCapabilityWithSelfOnly Deals { get; set; }
 
         /// <summary>
         /// Gets or Sets DocPostings
@@ -496,7 +496,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets Docs
         /// </summary>
         [DataMember(Name = "docs", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability Docs { get; set; }
+        public UserCapabilityWithSelfOnly Docs { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpenseApplicationTemplates
@@ -508,7 +508,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets ExpenseApplications
         /// </summary>
         [DataMember(Name = "expense_applications", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ExpenseApplications { get; set; }
+        public UserCapabilityWithSelfOnly ExpenseApplications { get; set; }
 
         /// <summary>
         /// Gets or Sets FixedAssets
@@ -544,7 +544,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets ManualJournals
         /// </summary>
         [DataMember(Name = "manual_journals", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ManualJournals { get; set; }
+        public UserCapabilityWithSelfOnly ManualJournals { get; set; }
 
         /// <summary>
         /// Gets or Sets MonthEnd
@@ -586,7 +586,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets PaymentRequests
         /// </summary>
         [DataMember(Name = "payment_requests", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability PaymentRequests { get; set; }
+        public UserCapabilityWithSelfOnly PaymentRequests { get; set; }
 
         /// <summary>
         /// Gets or Sets ReceiptStreamEditor
@@ -598,7 +598,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets Receipts
         /// </summary>
         [DataMember(Name = "receipts", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability Receipts { get; set; }
+        public UserCapabilityWithSelfOnly Receipts { get; set; }
 
         /// <summary>
         /// Gets or Sets Reports
@@ -730,7 +730,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets Transfers
         /// </summary>
         [DataMember(Name = "transfers", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability Transfers { get; set; }
+        public UserCapabilityWithSelfOnly Transfers { get; set; }
 
         /// <summary>
         /// Gets or Sets UserMatchers
