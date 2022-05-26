@@ -104,10 +104,11 @@ namespace Freee.Accounting.Models
         /// <param name="partnerCode">取引先コード.</param>
         /// <param name="partnerId">取引先ID (required).</param>
         /// <param name="payments">取引の支払行.</param>
+        /// <param name="receipts">証憑ファイル（ファイルボックスのファイル）.</param>
         /// <param name="refNumber">管理番号.</param>
         /// <param name="status">決済状況 (未決済: unsettled, 完了: settled) (required).</param>
         /// <param name="type">収支区分 (収入: income, 支出: expense).</param>
-        public DealCreateResponseDeal(long amount = default(long), int companyId = default(int), List<DealDetails> details = default(List<DealDetails>), int dueAmount = default(int), string dueDate = default(string), int id = default(int), string issueDate = default(string), string partnerCode = default(string), int partnerId = default(int), List<DealPayments> payments = default(List<DealPayments>), string refNumber = default(string), StatusEnum status = default(StatusEnum), TypeEnum? type = default(TypeEnum?))
+        public DealCreateResponseDeal(long amount = default(long), int companyId = default(int), List<DealDetails> details = default(List<DealDetails>), int dueAmount = default(int), string dueDate = default(string), int id = default(int), string issueDate = default(string), string partnerCode = default(string), int partnerId = default(int), List<DealPayments> payments = default(List<DealPayments>), List<DealCreateResponseDealReceipts> receipts = default(List<DealCreateResponseDealReceipts>), string refNumber = default(string), StatusEnum status = default(StatusEnum), TypeEnum? type = default(TypeEnum?))
         {
             this.Amount = amount;
             this.CompanyId = companyId;
@@ -124,6 +125,7 @@ namespace Freee.Accounting.Models
             this.DueDate = dueDate;
             this.PartnerCode = partnerCode;
             this.Payments = payments;
+            this.Receipts = receipts;
             this.RefNumber = refNumber;
             this.Type = type;
         }
@@ -199,6 +201,13 @@ namespace Freee.Accounting.Models
         public List<DealPayments> Payments { get; set; }
 
         /// <summary>
+        /// 証憑ファイル（ファイルボックスのファイル）
+        /// </summary>
+        /// <value>証憑ファイル（ファイルボックスのファイル）</value>
+        [DataMember(Name = "receipts", EmitDefaultValue = false)]
+        public List<DealCreateResponseDealReceipts> Receipts { get; set; }
+
+        /// <summary>
         /// 管理番号
         /// </summary>
         /// <value>管理番号</value>
@@ -223,6 +232,7 @@ namespace Freee.Accounting.Models
             sb.Append("  PartnerCode: ").Append(PartnerCode).Append("\n");
             sb.Append("  PartnerId: ").Append(PartnerId).Append("\n");
             sb.Append("  Payments: ").Append(Payments).Append("\n");
+            sb.Append("  Receipts: ").Append(Receipts).Append("\n");
             sb.Append("  RefNumber: ").Append(RefNumber).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -309,6 +319,12 @@ namespace Freee.Accounting.Models
                     this.Payments.SequenceEqual(input.Payments)
                 ) && 
                 (
+                    this.Receipts == input.Receipts ||
+                    this.Receipts != null &&
+                    input.Receipts != null &&
+                    this.Receipts.SequenceEqual(input.Receipts)
+                ) && 
+                (
                     this.RefNumber == input.RefNumber ||
                     (this.RefNumber != null &&
                     this.RefNumber.Equals(input.RefNumber))
@@ -356,6 +372,10 @@ namespace Freee.Accounting.Models
                 if (this.Payments != null)
                 {
                     hashCode = (hashCode * 59) + this.Payments.GetHashCode();
+                }
+                if (this.Receipts != null)
+                {
+                    hashCode = (hashCode * 59) + this.Receipts.GetHashCode();
                 }
                 if (this.RefNumber != null)
                 {

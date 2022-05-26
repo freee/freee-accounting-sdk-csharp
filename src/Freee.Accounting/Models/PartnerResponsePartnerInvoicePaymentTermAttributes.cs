@@ -33,9 +33,9 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="PartnerResponsePartnerInvoicePaymentTermAttributes" /> class.
         /// </summary>
-        /// <param name="additionalMonths">支払月.</param>
+        /// <param name="additionalMonths">入金月.</param>
         /// <param name="cutoffDay">締め日（29, 30, 31日の末日を指定する場合は、32。）.</param>
-        /// <param name="fixedDay">支払日（29, 30, 31日の末日を指定する場合は、32。）.</param>
+        /// <param name="fixedDay">入金日（29, 30, 31日の末日を指定する場合は、32。）.</param>
         public PartnerResponsePartnerInvoicePaymentTermAttributes(int? additionalMonths = default(int?), int? cutoffDay = default(int?), int? fixedDay = default(int?))
         {
             this.AdditionalMonths = additionalMonths;
@@ -44,9 +44,9 @@ namespace Freee.Accounting.Models
         }
 
         /// <summary>
-        /// 支払月
+        /// 入金月
         /// </summary>
-        /// <value>支払月</value>
+        /// <value>入金月</value>
         [DataMember(Name = "additional_months", EmitDefaultValue = true)]
         public int? AdditionalMonths { get; set; }
 
@@ -58,9 +58,9 @@ namespace Freee.Accounting.Models
         public int? CutoffDay { get; set; }
 
         /// <summary>
-        /// 支払日（29, 30, 31日の末日を指定する場合は、32。）
+        /// 入金日（29, 30, 31日の末日を指定する場合は、32。）
         /// </summary>
-        /// <value>支払日（29, 30, 31日の末日を指定する場合は、32。）</value>
+        /// <value>入金日（29, 30, 31日の末日を指定する場合は、32。）</value>
         [DataMember(Name = "fixed_day", EmitDefaultValue = true)]
         public int? FixedDay { get; set; }
 

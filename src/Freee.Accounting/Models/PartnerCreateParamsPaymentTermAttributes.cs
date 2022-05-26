@@ -25,18 +25,18 @@ using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 namespace Freee.Accounting.Models
 {
     /// <summary>
-    /// PartnerCreateParamsInvoicePaymentTermAttributes
+    /// PartnerCreateParamsPaymentTermAttributes
     /// </summary>
-    [DataContract(Name = "partnerCreateParams_invoice_payment_term_attributes")]
-    public partial class PartnerCreateParamsInvoicePaymentTermAttributes : IEquatable<PartnerCreateParamsInvoicePaymentTermAttributes>
+    [DataContract(Name = "partnerCreateParams_payment_term_attributes")]
+    public partial class PartnerCreateParamsPaymentTermAttributes : IEquatable<PartnerCreateParamsPaymentTermAttributes>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PartnerCreateParamsInvoicePaymentTermAttributes" /> class.
+        /// Initializes a new instance of the <see cref="PartnerCreateParamsPaymentTermAttributes" /> class.
         /// </summary>
-        /// <param name="additionalMonths">入金月.</param>
+        /// <param name="additionalMonths">支払月.</param>
         /// <param name="cutoffDay">締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。）.</param>
-        /// <param name="fixedDay">入金日（29, 30, 31日の末日を指定する場合は、32を指定してください。）.</param>
-        public PartnerCreateParamsInvoicePaymentTermAttributes(int additionalMonths = default(int), int cutoffDay = default(int), int fixedDay = default(int))
+        /// <param name="fixedDay">支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。）.</param>
+        public PartnerCreateParamsPaymentTermAttributes(int additionalMonths = default(int), int cutoffDay = default(int), int fixedDay = default(int))
         {
             this.AdditionalMonths = additionalMonths;
             this.CutoffDay = cutoffDay;
@@ -44,9 +44,9 @@ namespace Freee.Accounting.Models
         }
 
         /// <summary>
-        /// 入金月
+        /// 支払月
         /// </summary>
-        /// <value>入金月</value>
+        /// <value>支払月</value>
         [DataMember(Name = "additional_months", EmitDefaultValue = false)]
         public int AdditionalMonths { get; set; }
 
@@ -58,9 +58,9 @@ namespace Freee.Accounting.Models
         public int CutoffDay { get; set; }
 
         /// <summary>
-        /// 入金日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
+        /// 支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
         /// </summary>
-        /// <value>入金日（29, 30, 31日の末日を指定する場合は、32を指定してください。）</value>
+        /// <value>支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。）</value>
         [DataMember(Name = "fixed_day", EmitDefaultValue = false)]
         public int FixedDay { get; set; }
 
@@ -71,7 +71,7 @@ namespace Freee.Accounting.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PartnerCreateParamsInvoicePaymentTermAttributes {\n");
+            sb.Append("class PartnerCreateParamsPaymentTermAttributes {\n");
             sb.Append("  AdditionalMonths: ").Append(AdditionalMonths).Append("\n");
             sb.Append("  CutoffDay: ").Append(CutoffDay).Append("\n");
             sb.Append("  FixedDay: ").Append(FixedDay).Append("\n");
@@ -95,15 +95,15 @@ namespace Freee.Accounting.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PartnerCreateParamsInvoicePaymentTermAttributes);
+            return this.Equals(input as PartnerCreateParamsPaymentTermAttributes);
         }
 
         /// <summary>
-        /// Returns true if PartnerCreateParamsInvoicePaymentTermAttributes instances are equal
+        /// Returns true if PartnerCreateParamsPaymentTermAttributes instances are equal
         /// </summary>
-        /// <param name="input">Instance of PartnerCreateParamsInvoicePaymentTermAttributes to be compared</param>
+        /// <param name="input">Instance of PartnerCreateParamsPaymentTermAttributes to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PartnerCreateParamsInvoicePaymentTermAttributes input)
+        public bool Equals(PartnerCreateParamsPaymentTermAttributes input)
         {
             if (input == null)
             {
