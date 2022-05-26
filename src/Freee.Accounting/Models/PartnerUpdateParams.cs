@@ -139,7 +139,7 @@ namespace Freee.Accounting.Models
         /// <param name="shortcut1">ショートカット１ (255文字以内).</param>
         /// <param name="shortcut2">ショートカット２ (255文字以内).</param>
         /// <param name="transferFeeHandlingSide">振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee).</param>
-        public PartnerUpdateParams(PartnerCreateParamsAddressAttributes addressAttributes = default(PartnerCreateParamsAddressAttributes), int companyId = default(int), string contactName = default(string), CountryCodeEnum? countryCode = default(CountryCodeEnum?), string defaultTitle = default(string), string email = default(string), PartnerCreateParamsInvoicePaymentTermAttributes invoicePaymentTermAttributes = default(PartnerCreateParamsInvoicePaymentTermAttributes), string longName = default(string), string name = default(string), string nameKana = default(string), OrgCodeEnum? orgCode = default(OrgCodeEnum?), PartnerCreateParamsPartnerBankAccountAttributes partnerBankAccountAttributes = default(PartnerCreateParamsPartnerBankAccountAttributes), PartnerCreateParamsPartnerDocSettingAttributes partnerDocSettingAttributes = default(PartnerCreateParamsPartnerDocSettingAttributes), int? payerWalletableId = default(int?), PartnerCreateParamsInvoicePaymentTermAttributes paymentTermAttributes = default(PartnerCreateParamsInvoicePaymentTermAttributes), string phone = default(string), string shortcut1 = default(string), string shortcut2 = default(string), TransferFeeHandlingSideEnum? transferFeeHandlingSide = default(TransferFeeHandlingSideEnum?))
+        public PartnerUpdateParams(PartnerCreateParamsAddressAttributes addressAttributes = default(PartnerCreateParamsAddressAttributes), int companyId = default(int), string contactName = default(string), CountryCodeEnum? countryCode = default(CountryCodeEnum?), string defaultTitle = default(string), string email = default(string), PartnerCreateParamsInvoicePaymentTermAttributes invoicePaymentTermAttributes = default(PartnerCreateParamsInvoicePaymentTermAttributes), string longName = default(string), string name = default(string), string nameKana = default(string), OrgCodeEnum? orgCode = default(OrgCodeEnum?), PartnerCreateParamsPartnerBankAccountAttributes partnerBankAccountAttributes = default(PartnerCreateParamsPartnerBankAccountAttributes), PartnerCreateParamsPartnerDocSettingAttributes partnerDocSettingAttributes = default(PartnerCreateParamsPartnerDocSettingAttributes), int? payerWalletableId = default(int?), PartnerCreateParamsPaymentTermAttributes paymentTermAttributes = default(PartnerCreateParamsPaymentTermAttributes), string phone = default(string), string shortcut1 = default(string), string shortcut2 = default(string), TransferFeeHandlingSideEnum? transferFeeHandlingSide = default(TransferFeeHandlingSideEnum?))
         {
             this.CompanyId = companyId;
             // to ensure "name" is required (not null)
@@ -250,7 +250,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets PaymentTermAttributes
         /// </summary>
         [DataMember(Name = "payment_term_attributes", EmitDefaultValue = false)]
-        public PartnerCreateParamsInvoicePaymentTermAttributes PaymentTermAttributes { get; set; }
+        public PartnerCreateParamsPaymentTermAttributes PaymentTermAttributes { get; set; }
 
         /// <summary>
         /// 電話番号

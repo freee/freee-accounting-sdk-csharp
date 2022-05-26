@@ -25,18 +25,18 @@ using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 namespace Freee.Accounting.Models
 {
     /// <summary>
-    /// PartnerCreateParamsInvoicePaymentTermAttributes
+    /// PartnerResponsePartnerPaymentTermAttributes
     /// </summary>
-    [DataContract(Name = "partnerCreateParams_invoice_payment_term_attributes")]
-    public partial class PartnerCreateParamsInvoicePaymentTermAttributes : IEquatable<PartnerCreateParamsInvoicePaymentTermAttributes>
+    [DataContract(Name = "partnerResponse_partner_payment_term_attributes")]
+    public partial class PartnerResponsePartnerPaymentTermAttributes : IEquatable<PartnerResponsePartnerPaymentTermAttributes>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PartnerCreateParamsInvoicePaymentTermAttributes" /> class.
+        /// Initializes a new instance of the <see cref="PartnerResponsePartnerPaymentTermAttributes" /> class.
         /// </summary>
-        /// <param name="additionalMonths">入金月.</param>
-        /// <param name="cutoffDay">締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。）.</param>
-        /// <param name="fixedDay">入金日（29, 30, 31日の末日を指定する場合は、32を指定してください。）.</param>
-        public PartnerCreateParamsInvoicePaymentTermAttributes(int additionalMonths = default(int), int cutoffDay = default(int), int fixedDay = default(int))
+        /// <param name="additionalMonths">支払月.</param>
+        /// <param name="cutoffDay">締め日（29, 30, 31日の末日を指定する場合は、32。）.</param>
+        /// <param name="fixedDay">支払日（29, 30, 31日の末日を指定する場合は、32。）.</param>
+        public PartnerResponsePartnerPaymentTermAttributes(int? additionalMonths = default(int?), int? cutoffDay = default(int?), int? fixedDay = default(int?))
         {
             this.AdditionalMonths = additionalMonths;
             this.CutoffDay = cutoffDay;
@@ -44,25 +44,25 @@ namespace Freee.Accounting.Models
         }
 
         /// <summary>
-        /// 入金月
+        /// 支払月
         /// </summary>
-        /// <value>入金月</value>
-        [DataMember(Name = "additional_months", EmitDefaultValue = false)]
-        public int AdditionalMonths { get; set; }
+        /// <value>支払月</value>
+        [DataMember(Name = "additional_months", EmitDefaultValue = true)]
+        public int? AdditionalMonths { get; set; }
 
         /// <summary>
-        /// 締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
+        /// 締め日（29, 30, 31日の末日を指定する場合は、32。）
         /// </summary>
-        /// <value>締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。）</value>
-        [DataMember(Name = "cutoff_day", EmitDefaultValue = false)]
-        public int CutoffDay { get; set; }
+        /// <value>締め日（29, 30, 31日の末日を指定する場合は、32。）</value>
+        [DataMember(Name = "cutoff_day", EmitDefaultValue = true)]
+        public int? CutoffDay { get; set; }
 
         /// <summary>
-        /// 入金日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
+        /// 支払日（29, 30, 31日の末日を指定する場合は、32。）
         /// </summary>
-        /// <value>入金日（29, 30, 31日の末日を指定する場合は、32を指定してください。）</value>
-        [DataMember(Name = "fixed_day", EmitDefaultValue = false)]
-        public int FixedDay { get; set; }
+        /// <value>支払日（29, 30, 31日の末日を指定する場合は、32。）</value>
+        [DataMember(Name = "fixed_day", EmitDefaultValue = true)]
+        public int? FixedDay { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,7 +71,7 @@ namespace Freee.Accounting.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PartnerCreateParamsInvoicePaymentTermAttributes {\n");
+            sb.Append("class PartnerResponsePartnerPaymentTermAttributes {\n");
             sb.Append("  AdditionalMonths: ").Append(AdditionalMonths).Append("\n");
             sb.Append("  CutoffDay: ").Append(CutoffDay).Append("\n");
             sb.Append("  FixedDay: ").Append(FixedDay).Append("\n");
@@ -95,15 +95,15 @@ namespace Freee.Accounting.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PartnerCreateParamsInvoicePaymentTermAttributes);
+            return this.Equals(input as PartnerResponsePartnerPaymentTermAttributes);
         }
 
         /// <summary>
-        /// Returns true if PartnerCreateParamsInvoicePaymentTermAttributes instances are equal
+        /// Returns true if PartnerResponsePartnerPaymentTermAttributes instances are equal
         /// </summary>
-        /// <param name="input">Instance of PartnerCreateParamsInvoicePaymentTermAttributes to be compared</param>
+        /// <param name="input">Instance of PartnerResponsePartnerPaymentTermAttributes to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PartnerCreateParamsInvoicePaymentTermAttributes input)
+        public bool Equals(PartnerResponsePartnerPaymentTermAttributes input)
         {
             if (input == null)
             {
@@ -112,15 +112,18 @@ namespace Freee.Accounting.Models
             return 
                 (
                     this.AdditionalMonths == input.AdditionalMonths ||
-                    this.AdditionalMonths.Equals(input.AdditionalMonths)
+                    (this.AdditionalMonths != null &&
+                    this.AdditionalMonths.Equals(input.AdditionalMonths))
                 ) && 
                 (
                     this.CutoffDay == input.CutoffDay ||
-                    this.CutoffDay.Equals(input.CutoffDay)
+                    (this.CutoffDay != null &&
+                    this.CutoffDay.Equals(input.CutoffDay))
                 ) && 
                 (
                     this.FixedDay == input.FixedDay ||
-                    this.FixedDay.Equals(input.FixedDay)
+                    (this.FixedDay != null &&
+                    this.FixedDay.Equals(input.FixedDay))
                 );
         }
 
@@ -133,9 +136,18 @@ namespace Freee.Accounting.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.AdditionalMonths.GetHashCode();
-                hashCode = (hashCode * 59) + this.CutoffDay.GetHashCode();
-                hashCode = (hashCode * 59) + this.FixedDay.GetHashCode();
+                if (this.AdditionalMonths != null)
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalMonths.GetHashCode();
+                }
+                if (this.CutoffDay != null)
+                {
+                    hashCode = (hashCode * 59) + this.CutoffDay.GetHashCode();
+                }
+                if (this.FixedDay != null)
+                {
+                    hashCode = (hashCode * 59) + this.FixedDay.GetHashCode();
+                }
                 return hashCode;
             }
         }
