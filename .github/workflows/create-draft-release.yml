@@ -25,17 +25,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Delete working branch
-        uses: actions/github-script@v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const ownerAndRepoName = context.payload.repository.full_name.split('/');
-            const owner = ownerAndRepoName[0];
-            const repo = ownerAndRepoName[1];
-            const ref = `heads/${context.payload.pull_request.head.ref}`;
-            github.git.deleteRef({
-              owner,
-              repo,
-              ref,
-            });
