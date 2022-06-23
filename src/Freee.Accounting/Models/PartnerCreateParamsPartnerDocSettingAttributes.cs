@@ -62,7 +62,7 @@ namespace Freee.Accounting.Models
         /// 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)
         /// </summary>
         /// <value>請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)</value>
-        [DataMember(Name = "sending_method", EmitDefaultValue = false)]
+        [DataMember(Name = "sending_method", EmitDefaultValue = true)]
         public SendingMethodEnum? SendingMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PartnerCreateParamsPartnerDocSettingAttributes" /> class.

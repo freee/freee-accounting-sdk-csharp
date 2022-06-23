@@ -35,7 +35,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <param name="accountName">受取人名（カナ）.</param>
         /// <param name="accountNumber">口座番号.</param>
-        /// <param name="accountType">口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他).</param>
+        /// <param name="accountType">口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。.</param>
         /// <param name="bankCode">銀行コード.</param>
         /// <param name="bankName">銀行名.</param>
         /// <param name="bankNameKana">銀行名（カナ）.</param>
@@ -72,9 +72,9 @@ namespace Freee.Accounting.Models
         public string AccountNumber { get; set; }
 
         /// <summary>
-        /// 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)
+        /// 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。
         /// </summary>
-        /// <value>口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)</value>
+        /// <value>口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。</value>
         [DataMember(Name = "account_type", EmitDefaultValue = false)]
         public string AccountType { get; set; }
 
