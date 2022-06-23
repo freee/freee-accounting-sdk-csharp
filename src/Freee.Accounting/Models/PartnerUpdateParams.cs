@@ -31,9 +31,9 @@ namespace Freee.Accounting.Models
     public partial class PartnerUpdateParams : IEquatable<PartnerUpdateParams>
     {
         /// <summary>
-        /// 地域（JP: 国内、ZZ:国外）
+        /// 地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。
         /// </summary>
-        /// <value>地域（JP: 国内、ZZ:国外）</value>
+        /// <value>地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CountryCodeEnum
         {
@@ -53,9 +53,9 @@ namespace Freee.Accounting.Models
 
 
         /// <summary>
-        /// 地域（JP: 国内、ZZ:国外）
+        /// 地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。
         /// </summary>
-        /// <value>地域（JP: 国内、ZZ:国外）</value>
+        /// <value>地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。</value>
         [DataMember(Name = "country_code", EmitDefaultValue = false)]
         public CountryCodeEnum? CountryCode { get; set; }
         /// <summary>
@@ -85,9 +85,9 @@ namespace Freee.Accounting.Models
         [DataMember(Name = "org_code", EmitDefaultValue = true)]
         public OrgCodeEnum? OrgCode { get; set; }
         /// <summary>
-        /// 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)
+        /// 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)、指定しない場合payerになります。
         /// </summary>
-        /// <value>振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)</value>
+        /// <value>振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)、指定しない場合payerになります。</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TransferFeeHandlingSideEnum
         {
@@ -107,9 +107,9 @@ namespace Freee.Accounting.Models
 
 
         /// <summary>
-        /// 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)
+        /// 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)、指定しない場合payerになります。
         /// </summary>
-        /// <value>振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)</value>
+        /// <value>振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)、指定しない場合payerになります。</value>
         [DataMember(Name = "transfer_fee_handling_side", EmitDefaultValue = false)]
         public TransferFeeHandlingSideEnum? TransferFeeHandlingSide { get; set; }
         /// <summary>
@@ -123,7 +123,7 @@ namespace Freee.Accounting.Models
         /// <param name="addressAttributes">addressAttributes.</param>
         /// <param name="companyId">事業所ID (required).</param>
         /// <param name="contactName">担当者 氏名 (255文字以内).</param>
-        /// <param name="countryCode">地域（JP: 国内、ZZ:国外）.</param>
+        /// <param name="countryCode">地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。.</param>
         /// <param name="defaultTitle">敬称（御中、様、(空白)の3つから選択）.</param>
         /// <param name="email">担当者 メールアドレス (255文字以内).</param>
         /// <param name="invoicePaymentTermAttributes">invoicePaymentTermAttributes.</param>
@@ -138,7 +138,7 @@ namespace Freee.Accounting.Models
         /// <param name="phone">電話番号.</param>
         /// <param name="shortcut1">ショートカット１ (255文字以内).</param>
         /// <param name="shortcut2">ショートカット２ (255文字以内).</param>
-        /// <param name="transferFeeHandlingSide">振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee).</param>
+        /// <param name="transferFeeHandlingSide">振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)、指定しない場合payerになります。.</param>
         public PartnerUpdateParams(PartnerCreateParamsAddressAttributes addressAttributes = default(PartnerCreateParamsAddressAttributes), int companyId = default(int), string contactName = default(string), CountryCodeEnum? countryCode = default(CountryCodeEnum?), string defaultTitle = default(string), string email = default(string), PartnerCreateParamsInvoicePaymentTermAttributes invoicePaymentTermAttributes = default(PartnerCreateParamsInvoicePaymentTermAttributes), string longName = default(string), string name = default(string), string nameKana = default(string), OrgCodeEnum? orgCode = default(OrgCodeEnum?), PartnerCreateParamsPartnerBankAccountAttributes partnerBankAccountAttributes = default(PartnerCreateParamsPartnerBankAccountAttributes), PartnerCreateParamsPartnerDocSettingAttributes partnerDocSettingAttributes = default(PartnerCreateParamsPartnerDocSettingAttributes), int? payerWalletableId = default(int?), PartnerCreateParamsPaymentTermAttributes paymentTermAttributes = default(PartnerCreateParamsPaymentTermAttributes), string phone = default(string), string shortcut1 = default(string), string shortcut2 = default(string), TransferFeeHandlingSideEnum? transferFeeHandlingSide = default(TransferFeeHandlingSideEnum?))
         {
             this.CompanyId = companyId;
