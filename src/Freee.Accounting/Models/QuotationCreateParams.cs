@@ -83,9 +83,9 @@ namespace Freee.Accounting.Models
         [DataMember(Name = "quotation_layout", EmitDefaultValue = false)]
         public QuotationLayoutEnum? QuotationLayout { get; set; }
         /// <summary>
-        /// 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み)
+        /// 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み) (請求書承認ワークフローを利用している場合、unsubmitted を指定すると、下書きの見積書が作成されます)
         /// </summary>
-        /// <value>見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み)</value>
+        /// <value>見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み) (請求書承認ワークフローを利用している場合、unsubmitted を指定すると、下書きの見積書が作成されます)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum QuotationStatusEnum
         {
@@ -105,9 +105,9 @@ namespace Freee.Accounting.Models
 
 
         /// <summary>
-        /// 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み)
+        /// 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み) (請求書承認ワークフローを利用している場合、unsubmitted を指定すると、下書きの見積書が作成されます)
         /// </summary>
-        /// <value>見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み)</value>
+        /// <value>見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み) (請求書承認ワークフローを利用している場合、unsubmitted を指定すると、下書きの見積書が作成されます)</value>
         [DataMember(Name = "quotation_status", EmitDefaultValue = false)]
         public QuotationStatusEnum? QuotationStatus { get; set; }
         /// <summary>
@@ -169,7 +169,7 @@ namespace Freee.Accounting.Models
         /// <param name="quotationContents">見積内容.</param>
         /// <param name="quotationLayout">見積書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン.</param>
         /// <param name="quotationNumber">見積書番号 (デフォルト: 自動採番されます).</param>
-        /// <param name="quotationStatus">見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み).</param>
+        /// <param name="quotationStatus">見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み) (請求書承認ワークフローを利用している場合、unsubmitted を指定すると、下書きの見積書が作成されます).</param>
         /// <param name="taxEntryMethod">見積書の消費税計算方法(inclusive: 内税表示, exclusive: 外税表示 (デフォルト)).</param>
         /// <param name="title">タイトル (デフォルト: 見積書).</param>
         public QuotationCreateParams(string companyAddress1 = default(string), string companyAddress2 = default(string), string companyContactInfo = default(string), int companyId = default(int), string companyName = default(string), int companyPrefectureCode = default(int), string companyZipcode = default(string), string description = default(string), string issueDate = default(string), string message = default(string), string notes = default(string), string partnerAddress1 = default(string), string partnerAddress2 = default(string), string partnerCode = default(string), string partnerContactInfo = default(string), string partnerDisplayName = default(string), int? partnerId = default(int?), int? partnerPrefectureCode = default(int?), string partnerTitle = default(string), string partnerZipcode = default(string), List<InvoiceCreateParamsInvoiceContents> quotationContents = default(List<InvoiceCreateParamsInvoiceContents>), QuotationLayoutEnum? quotationLayout = default(QuotationLayoutEnum?), string quotationNumber = default(string), QuotationStatusEnum? quotationStatus = default(QuotationStatusEnum?), TaxEntryMethodEnum? taxEntryMethod = default(TaxEntryMethodEnum?), string title = default(string))

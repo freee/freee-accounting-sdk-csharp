@@ -178,7 +178,7 @@ namespace Freee.Accounting.Models
         /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) (required).</param>
         /// <param name="title">申請タイトル (required).</param>
         /// <param name="totalAmount">合計金額 (required).</param>
-        public PaymentRequestsIndexResponsePaymentRequests(int applicantId = default(int), string applicationDate = default(string), string applicationNumber = default(string), List<ApprovalRequestResponseApprovalRequestApprovers> approvers = default(List<ApprovalRequestResponseApprovalRequestApprovers>), int companyId = default(int), int currentRound = default(int), int? currentStepId = default(int?), int? dealId = default(int?), DealStatusEnum? dealStatus = default(DealStatusEnum?), string documentCode = default(string), int id = default(int), string issueDate = default(string), string partnerCode = default(string), int? partnerId = default(int?), string partnerName = default(string), string paymentDate = default(string), PaymentMethodEnum paymentMethod = default(PaymentMethodEnum), StatusEnum status = default(StatusEnum), string title = default(string), int totalAmount = default(int))
+        public PaymentRequestsIndexResponsePaymentRequests(int applicantId = default(int), string applicationDate = default(string), string applicationNumber = default(string), List<ApprovalRequestResponseApprovalRequestApprovers> approvers = default(List<ApprovalRequestResponseApprovalRequestApprovers>), int companyId = default(int), int currentRound = default(int), int? currentStepId = default(int?), int? dealId = default(int?), DealStatusEnum? dealStatus = default(DealStatusEnum?), string documentCode = default(string), int id = default(int), string issueDate = default(string), string partnerCode = default(string), int? partnerId = default(int?), string partnerName = default(string), string paymentDate = default(string), PaymentMethodEnum paymentMethod = default(PaymentMethodEnum), StatusEnum status = default(StatusEnum), string title = default(string), long totalAmount = default(long))
         {
             this.ApplicantId = applicantId;
             // to ensure "applicationDate" is required (not null)
@@ -363,7 +363,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>合計金額</value>
         [DataMember(Name = "total_amount", IsRequired = true, EmitDefaultValue = false)]
-        public int TotalAmount { get; set; }
+        public long TotalAmount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

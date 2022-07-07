@@ -78,7 +78,7 @@ namespace Freee.Accounting.Models
         /// <param name="segment3TagId">セグメント３ID。セグメント３が使用可能なプランの時のみレスポンスに含まれます。.</param>
         /// <param name="tagIds">メモタグID (required).</param>
         /// <param name="taxCode">税区分コード (required).</param>
-        public PaymentRequestResponsePaymentRequestPaymentRequestLines(int? accountItemId = default(int?), int amount = default(int), string description = default(string), long id = default(long), int? itemId = default(int?), LineTypeEnum lineType = default(LineTypeEnum), int? sectionId = default(int?), long? segment1TagId = default(long?), long? segment2TagId = default(long?), long? segment3TagId = default(long?), List<int> tagIds = default(List<int>), int? taxCode = default(int?))
+        public PaymentRequestResponsePaymentRequestPaymentRequestLines(int? accountItemId = default(int?), long amount = default(long), string description = default(string), long id = default(long), int? itemId = default(int?), LineTypeEnum lineType = default(LineTypeEnum), int? sectionId = default(int?), long? segment1TagId = default(long?), long? segment2TagId = default(long?), long? segment3TagId = default(long?), List<int> tagIds = default(List<int>), int? taxCode = default(int?))
         {
             // to ensure "accountItemId" is required (not null)
             if (accountItemId == null) {
@@ -130,7 +130,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>金額</value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         /// <summary>
         /// 内容
