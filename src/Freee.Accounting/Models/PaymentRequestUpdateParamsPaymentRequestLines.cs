@@ -78,7 +78,7 @@ namespace Freee.Accounting.Models
         /// <param name="segment3TagId">セグメント３ID(法人向けエンタープライズプラン)&lt;br&gt; セグメントタグ一覧APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; .</param>
         /// <param name="tagIds">メモタグID.</param>
         /// <param name="taxCode">税区分コード&lt;br&gt; 勘定科目IDを指定する場合は必須です。 .</param>
-        public PaymentRequestUpdateParamsPaymentRequestLines(int? accountItemId = default(int?), int amount = default(int), string description = default(string), long id = default(long), int itemId = default(int), LineTypeEnum? lineType = default(LineTypeEnum?), int sectionId = default(int), long segment1TagId = default(long), long segment2TagId = default(long), long segment3TagId = default(long), List<int> tagIds = default(List<int>), int taxCode = default(int))
+        public PaymentRequestUpdateParamsPaymentRequestLines(int? accountItemId = default(int?), long amount = default(long), string description = default(string), long id = default(long), int itemId = default(int), LineTypeEnum? lineType = default(LineTypeEnum?), int sectionId = default(int), long segment1TagId = default(long), long segment2TagId = default(long), long segment3TagId = default(long), List<int> tagIds = default(List<int>), int taxCode = default(int))
         {
             this.Amount = amount;
             this.AccountItemId = accountItemId;
@@ -106,7 +106,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>金額</value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
         /// <summary>
         /// 内容
