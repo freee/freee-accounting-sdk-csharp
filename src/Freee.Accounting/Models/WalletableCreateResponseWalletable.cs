@@ -72,7 +72,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="WalletableCreateResponseWalletable" /> class.
         /// </summary>
-        /// <param name="bankId">サービスID (required).</param>
+        /// <param name="bankId">連携サービスID（typeにbank_account、credit_cardを指定する場合は必須） (required).</param>
         /// <param name="id">口座ID (required).</param>
         /// <param name="name">口座名, 最大255文字 (required).</param>
         /// <param name="type">口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) (required).</param>
@@ -89,9 +89,9 @@ namespace Freee.Accounting.Models
         }
 
         /// <summary>
-        /// サービスID
+        /// 連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）
         /// </summary>
-        /// <value>サービスID</value>
+        /// <value>連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）</value>
         [DataMember(Name = "bank_id", IsRequired = true, EmitDefaultValue = false)]
         public int BankId { get; set; }
 

@@ -41,7 +41,7 @@ namespace Freee.Accounting.Models
         /// <param name="trialPlSegment3Tags">trialPlSegment3Tags (required).</param>
         /// <param name="upToDate">集計結果が最新かどうか (required).</param>
         /// <param name="upToDateReasons">集計が最新でない場合の要因情報.</param>
-        public TrialPlSegment3TagsResponse(TrialPlSegment3TagsResponseTrialPlSegment3Tags trialPlSegment3Tags = default(TrialPlSegment3TagsResponseTrialPlSegment3Tags), bool upToDate = default(bool), List<JournalsResponseJournalsUpToDateReasons> upToDateReasons = default(List<JournalsResponseJournalsUpToDateReasons>))
+        public TrialPlSegment3TagsResponse(TrialCrSegment3TagsResponseTrialCrSegment3Tags trialPlSegment3Tags = default(TrialCrSegment3TagsResponseTrialCrSegment3Tags), bool upToDate = default(bool), List<JournalsResponseJournalsUpToDateReasons> upToDateReasons = default(List<JournalsResponseJournalsUpToDateReasons>))
         {
             // to ensure "trialPlSegment3Tags" is required (not null)
             if (trialPlSegment3Tags == null) {
@@ -56,7 +56,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets TrialPlSegment3Tags
         /// </summary>
         [DataMember(Name = "trial_pl_segment_3_tags", IsRequired = true, EmitDefaultValue = false)]
-        public TrialPlSegment3TagsResponseTrialPlSegment3Tags TrialPlSegment3Tags { get; set; }
+        public TrialCrSegment3TagsResponseTrialCrSegment3Tags TrialPlSegment3Tags { get; set; }
 
         /// <summary>
         /// 集計結果が最新かどうか

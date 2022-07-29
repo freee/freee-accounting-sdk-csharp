@@ -72,12 +72,12 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="WalletableCreateParams" /> class.
         /// </summary>
-        /// <param name="bankId">サービスID.</param>
+        /// <param name="bankId">連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）.</param>
         /// <param name="companyId">事業所ID (required).</param>
-        /// <param name="groupName">決算書表示名（小カテゴリー）　例：売掛金, 受取手形, 未収入金（法人のみ）, 買掛金, 支払手形, 未払金, 預り金, 前受金.</param>
+        /// <param name="isAsset">口座を資産口座とするか負債口座とするか（true: 資産口座 (デフォルト), false: 負債口座）&lt;br&gt; bank_idを指定しない場合にのみ使われます。&lt;br&gt; bank_idを指定する場合には資産口座か負債口座かはbank_idに指定したサービスに応じて決定され、is_assetに指定した値は無視されます。 .</param>
         /// <param name="name">口座名 (255文字以内) (required).</param>
         /// <param name="type">口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required).</param>
-        public WalletableCreateParams(int bankId = default(int), int companyId = default(int), string groupName = default(string), string name = default(string), TypeEnum type = default(TypeEnum))
+        public WalletableCreateParams(int bankId = default(int), int companyId = default(int), bool isAsset = default(bool), string name = default(string), TypeEnum type = default(TypeEnum))
         {
             this.CompanyId = companyId;
             // to ensure "name" is required (not null)
@@ -87,13 +87,13 @@ namespace Freee.Accounting.Models
             this.Name = name;
             this.Type = type;
             this.BankId = bankId;
-            this.GroupName = groupName;
+            this.IsAsset = isAsset;
         }
 
         /// <summary>
-        /// サービスID
+        /// 連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）
         /// </summary>
-        /// <value>サービスID</value>
+        /// <value>連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）</value>
         [DataMember(Name = "bank_id", EmitDefaultValue = false)]
         public int BankId { get; set; }
 
@@ -105,11 +105,11 @@ namespace Freee.Accounting.Models
         public int CompanyId { get; set; }
 
         /// <summary>
-        /// 決算書表示名（小カテゴリー）　例：売掛金, 受取手形, 未収入金（法人のみ）, 買掛金, 支払手形, 未払金, 預り金, 前受金
+        /// 口座を資産口座とするか負債口座とするか（true: 資産口座 (デフォルト), false: 負債口座）&lt;br&gt; bank_idを指定しない場合にのみ使われます。&lt;br&gt; bank_idを指定する場合には資産口座か負債口座かはbank_idに指定したサービスに応じて決定され、is_assetに指定した値は無視されます。 
         /// </summary>
-        /// <value>決算書表示名（小カテゴリー）　例：売掛金, 受取手形, 未収入金（法人のみ）, 買掛金, 支払手形, 未払金, 預り金, 前受金</value>
-        [DataMember(Name = "group_name", EmitDefaultValue = false)]
-        public string GroupName { get; set; }
+        /// <value>口座を資産口座とするか負債口座とするか（true: 資産口座 (デフォルト), false: 負債口座）&lt;br&gt; bank_idを指定しない場合にのみ使われます。&lt;br&gt; bank_idを指定する場合には資産口座か負債口座かはbank_idに指定したサービスに応じて決定され、is_assetに指定した値は無視されます。 </value>
+        [DataMember(Name = "is_asset", EmitDefaultValue = true)]
+        public bool IsAsset { get; set; }
 
         /// <summary>
         /// 口座名 (255文字以内)
@@ -128,7 +128,7 @@ namespace Freee.Accounting.Models
             sb.Append("class WalletableCreateParams {\n");
             sb.Append("  BankId: ").Append(BankId).Append("\n");
             sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
-            sb.Append("  GroupName: ").Append(GroupName).Append("\n");
+            sb.Append("  IsAsset: ").Append(IsAsset).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
@@ -175,9 +175,8 @@ namespace Freee.Accounting.Models
                     this.CompanyId.Equals(input.CompanyId)
                 ) && 
                 (
-                    this.GroupName == input.GroupName ||
-                    (this.GroupName != null &&
-                    this.GroupName.Equals(input.GroupName))
+                    this.IsAsset == input.IsAsset ||
+                    this.IsAsset.Equals(input.IsAsset)
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -201,10 +200,7 @@ namespace Freee.Accounting.Models
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.BankId.GetHashCode();
                 hashCode = (hashCode * 59) + this.CompanyId.GetHashCode();
-                if (this.GroupName != null)
-                {
-                    hashCode = (hashCode * 59) + this.GroupName.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.IsAsset.GetHashCode();
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
