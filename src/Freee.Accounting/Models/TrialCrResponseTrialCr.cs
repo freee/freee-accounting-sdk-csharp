@@ -225,7 +225,7 @@ namespace Freee.Accounting.Models
         /// <param name="sectionId">部門ID(条件に指定した時のみ含まれる）.</param>
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd)(条件に指定した時のみ含まれる）.</param>
         /// <param name="startMonth">発生月で絞込：開始会計月(1-12)(条件に指定した時のみ含まれる）.</param>
-        public TrialCrResponseTrialCr(AccountItemDisplayTypeEnum? accountItemDisplayType = default(AccountItemDisplayTypeEnum?), AdjustmentEnum? adjustment = default(AdjustmentEnum?), ApprovalFlowStatusEnum? approvalFlowStatus = default(ApprovalFlowStatusEnum?), List<TrialCrResponseTrialCrBalances> balances = default(List<TrialCrResponseTrialCrBalances>), BreakdownDisplayTypeEnum? breakdownDisplayType = default(BreakdownDisplayTypeEnum?), int companyId = default(int), CostAllocationEnum? costAllocation = default(CostAllocationEnum?), string createdAt = default(string), string endDate = default(string), int endMonth = default(int), int fiscalYear = default(int), int itemId = default(int), string partnerCode = default(string), int partnerId = default(int), int sectionId = default(int), string startDate = default(string), int startMonth = default(int))
+        public TrialCrResponseTrialCr(AccountItemDisplayTypeEnum? accountItemDisplayType = default(AccountItemDisplayTypeEnum?), AdjustmentEnum? adjustment = default(AdjustmentEnum?), ApprovalFlowStatusEnum? approvalFlowStatus = default(ApprovalFlowStatusEnum?), List<TrialBsResponseTrialBsBalances> balances = default(List<TrialBsResponseTrialBsBalances>), BreakdownDisplayTypeEnum? breakdownDisplayType = default(BreakdownDisplayTypeEnum?), int companyId = default(int), CostAllocationEnum? costAllocation = default(CostAllocationEnum?), string createdAt = default(string), string endDate = default(string), int endMonth = default(int), int fiscalYear = default(int), int itemId = default(int), string partnerCode = default(string), int partnerId = default(int), int sectionId = default(int), string startDate = default(string), int startMonth = default(int))
         {
             // to ensure "balances" is required (not null)
             if (balances == null) {
@@ -254,7 +254,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets Balances
         /// </summary>
         [DataMember(Name = "balances", IsRequired = true, EmitDefaultValue = false)]
-        public List<TrialCrResponseTrialCrBalances> Balances { get; set; }
+        public List<TrialBsResponseTrialBsBalances> Balances { get; set; }
 
         /// <summary>
         /// 事業所ID

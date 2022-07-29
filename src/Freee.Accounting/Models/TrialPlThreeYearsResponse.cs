@@ -41,7 +41,7 @@ namespace Freee.Accounting.Models
         /// <param name="trialPlThreeYears">trialPlThreeYears (required).</param>
         /// <param name="upToDate">集計結果が最新かどうか (required).</param>
         /// <param name="upToDateReasons">集計が最新でない場合の要因情報.</param>
-        public TrialPlThreeYearsResponse(TrialPlThreeYearsResponseTrialPlThreeYears trialPlThreeYears = default(TrialPlThreeYearsResponseTrialPlThreeYears), bool upToDate = default(bool), List<JournalsResponseJournalsUpToDateReasons> upToDateReasons = default(List<JournalsResponseJournalsUpToDateReasons>))
+        public TrialPlThreeYearsResponse(TrialCrThreeYearsResponseTrialCrThreeYears trialPlThreeYears = default(TrialCrThreeYearsResponseTrialCrThreeYears), bool upToDate = default(bool), List<JournalsResponseJournalsUpToDateReasons> upToDateReasons = default(List<JournalsResponseJournalsUpToDateReasons>))
         {
             // to ensure "trialPlThreeYears" is required (not null)
             if (trialPlThreeYears == null) {
@@ -56,7 +56,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets TrialPlThreeYears
         /// </summary>
         [DataMember(Name = "trial_pl_three_years", IsRequired = true, EmitDefaultValue = false)]
-        public TrialPlThreeYearsResponseTrialPlThreeYears TrialPlThreeYears { get; set; }
+        public TrialCrThreeYearsResponseTrialCrThreeYears TrialPlThreeYears { get; set; }
 
         /// <summary>
         /// 集計結果が最新かどうか

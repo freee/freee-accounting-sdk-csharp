@@ -116,7 +116,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="type">口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）</param>
-        /// <param name="walletableUpdateParams">口座の作成 (optional)</param>
+        /// <param name="walletableUpdateParams">口座の更新 (optional)</param>
         /// <returns>InlineResponse20016</returns>
         InlineResponse20016 UpdateWalletable(int id, string type, WalletableUpdateParams walletableUpdateParams = default(WalletableUpdateParams));
 
@@ -129,7 +129,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="type">口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）</param>
-        /// <param name="walletableUpdateParams">口座の作成 (optional)</param>
+        /// <param name="walletableUpdateParams">口座の更新 (optional)</param>
         /// <returns>ApiResponse of InlineResponse20016</returns>
         ApiResponse<InlineResponse20016> UpdateWalletableWithHttpInfo(int id, string type, WalletableUpdateParams walletableUpdateParams = default(WalletableUpdateParams));
         #endregion Synchronous Operations
@@ -254,7 +254,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="type">口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）</param>
-        /// <param name="walletableUpdateParams">口座の作成 (optional)</param>
+        /// <param name="walletableUpdateParams">口座の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20016</returns>
         System.Threading.Tasks.Task<InlineResponse20016> UpdateWalletableAsync(int id, string type, WalletableUpdateParams walletableUpdateParams = default(WalletableUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -268,7 +268,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="type">口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）</param>
-        /// <param name="walletableUpdateParams">口座の作成 (optional)</param>
+        /// <param name="walletableUpdateParams">口座の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
         System.Threading.Tasks.Task<ApiResponse<InlineResponse20016>> UpdateWalletableWithHttpInfoAsync(int id, string type, WalletableUpdateParams walletableUpdateParams = default(WalletableUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1008,7 +1008,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="type">口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）</param>
-        /// <param name="walletableUpdateParams">口座の作成 (optional)</param>
+        /// <param name="walletableUpdateParams">口座の更新 (optional)</param>
         /// <returns>InlineResponse20016</returns>
         public InlineResponse20016 UpdateWalletable(int id, string type, WalletableUpdateParams walletableUpdateParams = default(WalletableUpdateParams))
         {
@@ -1022,7 +1022,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="type">口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）</param>
-        /// <param name="walletableUpdateParams">口座の作成 (optional)</param>
+        /// <param name="walletableUpdateParams">口座の更新 (optional)</param>
         /// <returns>ApiResponse of InlineResponse20016</returns>
         public Freee.Accounting.Client.ApiResponse<InlineResponse20016> UpdateWalletableWithHttpInfo(int id, string type, WalletableUpdateParams walletableUpdateParams = default(WalletableUpdateParams))
         {
@@ -1087,7 +1087,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="type">口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）</param>
-        /// <param name="walletableUpdateParams">口座の作成 (optional)</param>
+        /// <param name="walletableUpdateParams">口座の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of InlineResponse20016</returns>
         public async System.Threading.Tasks.Task<InlineResponse20016> UpdateWalletableAsync(int id, string type, WalletableUpdateParams walletableUpdateParams = default(WalletableUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1102,7 +1102,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="type">口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）</param>
-        /// <param name="walletableUpdateParams">口座の作成 (optional)</param>
+        /// <param name="walletableUpdateParams">口座の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
         public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<InlineResponse20016>> UpdateWalletableWithHttpInfoAsync(int id, string type, WalletableUpdateParams walletableUpdateParams = default(WalletableUpdateParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

@@ -41,7 +41,7 @@ namespace Freee.Accounting.Models
         /// <param name="trialPl">trialPl (required).</param>
         /// <param name="upToDate">集計結果が最新かどうか (required).</param>
         /// <param name="upToDateReasons">集計が最新でない場合の要因情報.</param>
-        public TrialPlResponse(TrialPlResponseTrialPl trialPl = default(TrialPlResponseTrialPl), bool upToDate = default(bool), List<JournalsResponseJournalsUpToDateReasons> upToDateReasons = default(List<JournalsResponseJournalsUpToDateReasons>))
+        public TrialPlResponse(TrialCrResponseTrialCr trialPl = default(TrialCrResponseTrialCr), bool upToDate = default(bool), List<JournalsResponseJournalsUpToDateReasons> upToDateReasons = default(List<JournalsResponseJournalsUpToDateReasons>))
         {
             // to ensure "trialPl" is required (not null)
             if (trialPl == null) {
@@ -56,7 +56,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets TrialPl
         /// </summary>
         [DataMember(Name = "trial_pl", IsRequired = true, EmitDefaultValue = false)]
-        public TrialPlResponseTrialPl TrialPl { get; set; }
+        public TrialCrResponseTrialCr TrialPl { get; set; }
 
         /// <summary>
         /// 集計結果が最新かどうか
