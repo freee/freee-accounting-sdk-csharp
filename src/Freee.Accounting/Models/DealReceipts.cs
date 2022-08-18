@@ -107,43 +107,37 @@ namespace Freee.Accounting.Models
         [DataMember(Name = "origin", IsRequired = true, EmitDefaultValue = false)]
         public OriginEnum Origin { get; set; }
         /// <summary>
-        /// ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視)
+        /// ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視)
         /// </summary>
-        /// <value>ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視)</value>
+        /// <value>ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum Unconfirmed for value: unconfirmed
-            /// </summary>
-            [EnumMember(Value = "unconfirmed")]
-            Unconfirmed = 1,
-
-            /// <summary>
             /// Enum Confirmed for value: confirmed
             /// </summary>
             [EnumMember(Value = "confirmed")]
-            Confirmed = 2,
+            Confirmed = 1,
 
             /// <summary>
             /// Enum Deleted for value: deleted
             /// </summary>
             [EnumMember(Value = "deleted")]
-            Deleted = 3,
+            Deleted = 2,
 
             /// <summary>
             /// Enum Ignored for value: ignored
             /// </summary>
             [EnumMember(Value = "ignored")]
-            Ignored = 4
+            Ignored = 3
 
         }
 
 
         /// <summary>
-        /// ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視)
+        /// ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視)
         /// </summary>
-        /// <value>ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視)</value>
+        /// <value>ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視)</value>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
@@ -161,7 +155,7 @@ namespace Freee.Accounting.Models
         /// <param name="issueDate">発生日.</param>
         /// <param name="mimeType">MIMEタイプ (required).</param>
         /// <param name="origin">アップロード元種別 (required).</param>
-        /// <param name="status">ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視) (required).</param>
+        /// <param name="status">ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視) (required).</param>
         /// <param name="user">user (required).</param>
         public DealReceipts(string createdAt = default(string), string description = default(string), string fileSrc = default(string), int id = default(int), string issueDate = default(string), string mimeType = default(string), OriginEnum origin = default(OriginEnum), StatusEnum status = default(StatusEnum), DealUser user = default(DealUser))
         {
