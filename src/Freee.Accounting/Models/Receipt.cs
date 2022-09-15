@@ -155,9 +155,10 @@ namespace Freee.Accounting.Models
         /// <param name="issueDate">発生日.</param>
         /// <param name="mimeType">MIMEタイプ (required).</param>
         /// <param name="origin">アップロード元種別 (required).</param>
+        /// <param name="receiptMetadatum">receiptMetadatum.</param>
         /// <param name="status">ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視) (required).</param>
         /// <param name="user">user (required).</param>
-        public Receipt(string createdAt = default(string), string description = default(string), string fileSrc = default(string), int id = default(int), string issueDate = default(string), string mimeType = default(string), OriginEnum origin = default(OriginEnum), StatusEnum status = default(StatusEnum), DealUser user = default(DealUser))
+        public Receipt(string createdAt = default(string), string description = default(string), string fileSrc = default(string), int id = default(int), string issueDate = default(string), string mimeType = default(string), OriginEnum origin = default(OriginEnum), DealReceiptMetadatum receiptMetadatum = default(DealReceiptMetadatum), StatusEnum status = default(StatusEnum), DealUser user = default(DealUser))
         {
             // to ensure "createdAt" is required (not null)
             if (createdAt == null) {
@@ -184,6 +185,7 @@ namespace Freee.Accounting.Models
             this.User = user;
             this.Description = description;
             this.IssueDate = issueDate;
+            this.ReceiptMetadatum = receiptMetadatum;
         }
 
         /// <summary>
@@ -230,6 +232,12 @@ namespace Freee.Accounting.Models
         public string MimeType { get; set; }
 
         /// <summary>
+        /// Gets or Sets ReceiptMetadatum
+        /// </summary>
+        [DataMember(Name = "receipt_metadatum", EmitDefaultValue = false)]
+        public DealReceiptMetadatum ReceiptMetadatum { get; set; }
+
+        /// <summary>
         /// Gets or Sets User
         /// </summary>
         [DataMember(Name = "user", IsRequired = true, EmitDefaultValue = false)]
@@ -250,6 +258,7 @@ namespace Freee.Accounting.Models
             sb.Append("  IssueDate: ").Append(IssueDate).Append("\n");
             sb.Append("  MimeType: ").Append(MimeType).Append("\n");
             sb.Append("  Origin: ").Append(Origin).Append("\n");
+            sb.Append("  ReceiptMetadatum: ").Append(ReceiptMetadatum).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("}\n");
@@ -321,6 +330,11 @@ namespace Freee.Accounting.Models
                     this.Origin.Equals(input.Origin)
                 ) && 
                 (
+                    this.ReceiptMetadatum == input.ReceiptMetadatum ||
+                    (this.ReceiptMetadatum != null &&
+                    this.ReceiptMetadatum.Equals(input.ReceiptMetadatum))
+                ) && 
+                (
                     this.Status == input.Status ||
                     this.Status.Equals(input.Status)
                 ) && 
@@ -362,6 +376,10 @@ namespace Freee.Accounting.Models
                     hashCode = (hashCode * 59) + this.MimeType.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Origin.GetHashCode();
+                if (this.ReceiptMetadatum != null)
+                {
+                    hashCode = (hashCode * 59) + this.ReceiptMetadatum.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 if (this.User != null)
                 {

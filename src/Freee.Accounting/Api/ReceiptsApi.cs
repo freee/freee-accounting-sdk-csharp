@@ -34,8 +34,11 @@ namespace Freee.Accounting.Api
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumAmount">金額 (optional)</param>
+        /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <returns>ReceiptResponse</returns>
-        ReceiptResponse CreateReceipt(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string));
+        ReceiptResponse CreateReceipt(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string));
 
         /// <summary>
         /// ファイルボックス 証憑ファイルアップロード
@@ -48,8 +51,11 @@ namespace Freee.Accounting.Api
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumAmount">金額 (optional)</param>
+        /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <returns>ApiResponse of ReceiptResponse</returns>
-        ApiResponse<ReceiptResponse> CreateReceiptWithHttpInfo(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string));
+        ApiResponse<ReceiptResponse> CreateReceiptWithHttpInfo(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string));
         /// <summary>
         /// ファイルボックス 証憑ファイルを削除する
         /// </summary>
@@ -151,7 +157,7 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ファイルID</param>
-        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <param name="receiptUpdateParams"></param>
         /// <returns>ReceiptResponse</returns>
         ReceiptResponse UpdateReceipt(int id, ReceiptUpdateParams receiptUpdateParams);
 
@@ -163,7 +169,7 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ファイルID</param>
-        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <param name="receiptUpdateParams"></param>
         /// <returns>ApiResponse of ReceiptResponse</returns>
         ApiResponse<ReceiptResponse> UpdateReceiptWithHttpInfo(int id, ReceiptUpdateParams receiptUpdateParams);
         #endregion Synchronous Operations
@@ -186,9 +192,12 @@ namespace Freee.Accounting.Api
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumAmount">金額 (optional)</param>
+        /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReceiptResponse</returns>
-        System.Threading.Tasks.Task<ReceiptResponse> CreateReceiptAsync(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ReceiptResponse> CreateReceiptAsync(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// ファイルボックス 証憑ファイルアップロード
@@ -201,9 +210,12 @@ namespace Freee.Accounting.Api
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumAmount">金額 (optional)</param>
+        /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ReceiptResponse>> CreateReceiptWithHttpInfoAsync(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ReceiptResponse>> CreateReceiptWithHttpInfoAsync(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// ファイルボックス 証憑ファイルを削除する
         /// </summary>
@@ -328,7 +340,7 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ファイルID</param>
-        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <param name="receiptUpdateParams"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReceiptResponse</returns>
         System.Threading.Tasks.Task<ReceiptResponse> UpdateReceiptAsync(int id, ReceiptUpdateParams receiptUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -341,7 +353,7 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ファイルID</param>
-        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <param name="receiptUpdateParams"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ReceiptResponse>> UpdateReceiptWithHttpInfoAsync(int id, ReceiptUpdateParams receiptUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -473,10 +485,13 @@ namespace Freee.Accounting.Api
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumAmount">金額 (optional)</param>
+        /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <returns>ReceiptResponse</returns>
-        public ReceiptResponse CreateReceipt(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string))
+        public ReceiptResponse CreateReceipt(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string))
         {
-            Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = CreateReceiptWithHttpInfo(companyId, receipt, description, issueDate);
+            Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = CreateReceiptWithHttpInfo(companyId, receipt, description, issueDate, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName);
             return localVarResponse.Data;
         }
 
@@ -488,8 +503,11 @@ namespace Freee.Accounting.Api
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumAmount">金額 (optional)</param>
+        /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <returns>ApiResponse of ReceiptResponse</returns>
-        public Freee.Accounting.Client.ApiResponse<ReceiptResponse> CreateReceiptWithHttpInfo(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string))
+        public Freee.Accounting.Client.ApiResponse<ReceiptResponse> CreateReceiptWithHttpInfo(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string))
         {
             // verify the required parameter 'receipt' is set
             if (receipt == null)
@@ -530,6 +548,18 @@ namespace Freee.Accounting.Api
                 localVarRequestOptions.FormParameters.Add("issue_date", Freee.Accounting.Client.ClientUtils.ParameterToString(issueDate)); // form parameter
             }
             localVarRequestOptions.FileParameters.Add("receipt", receipt);
+            if (receiptMetadatumAmount != null)
+            {
+                localVarRequestOptions.FormParameters.Add("receipt_metadatum_amount", Freee.Accounting.Client.ClientUtils.ParameterToString(receiptMetadatumAmount)); // form parameter
+            }
+            if (receiptMetadatumIssueDate != null)
+            {
+                localVarRequestOptions.FormParameters.Add("receipt_metadatum_issue_date", Freee.Accounting.Client.ClientUtils.ParameterToString(receiptMetadatumIssueDate)); // form parameter
+            }
+            if (receiptMetadatumPartnerName != null)
+            {
+                localVarRequestOptions.FormParameters.Add("receipt_metadatum_partner_name", Freee.Accounting.Client.ClientUtils.ParameterToString(receiptMetadatumPartnerName)); // form parameter
+            }
 
             // authentication (oauth2) required
             // oauth required
@@ -560,11 +590,14 @@ namespace Freee.Accounting.Api
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumAmount">金額 (optional)</param>
+        /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReceiptResponse</returns>
-        public async System.Threading.Tasks.Task<ReceiptResponse> CreateReceiptAsync(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ReceiptResponse> CreateReceiptAsync(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = await CreateReceiptWithHttpInfoAsync(companyId, receipt, description, issueDate, cancellationToken).ConfigureAwait(false);
+            Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = await CreateReceiptWithHttpInfoAsync(companyId, receipt, description, issueDate, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -576,9 +609,12 @@ namespace Freee.Accounting.Api
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumAmount">金額 (optional)</param>
+        /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
+        /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ReceiptResponse>> CreateReceiptWithHttpInfoAsync(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ReceiptResponse>> CreateReceiptWithHttpInfoAsync(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'receipt' is set
             if (receipt == null)
@@ -620,6 +656,18 @@ namespace Freee.Accounting.Api
                 localVarRequestOptions.FormParameters.Add("issue_date", Freee.Accounting.Client.ClientUtils.ParameterToString(issueDate)); // form parameter
             }
             localVarRequestOptions.FileParameters.Add("receipt", receipt);
+            if (receiptMetadatumAmount != null)
+            {
+                localVarRequestOptions.FormParameters.Add("receipt_metadatum_amount", Freee.Accounting.Client.ClientUtils.ParameterToString(receiptMetadatumAmount)); // form parameter
+            }
+            if (receiptMetadatumIssueDate != null)
+            {
+                localVarRequestOptions.FormParameters.Add("receipt_metadatum_issue_date", Freee.Accounting.Client.ClientUtils.ParameterToString(receiptMetadatumIssueDate)); // form parameter
+            }
+            if (receiptMetadatumPartnerName != null)
+            {
+                localVarRequestOptions.FormParameters.Add("receipt_metadatum_partner_name", Freee.Accounting.Client.ClientUtils.ParameterToString(receiptMetadatumPartnerName)); // form parameter
+            }
 
             // authentication (oauth2) required
             // oauth required
@@ -1326,7 +1374,7 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ファイルID</param>
-        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <param name="receiptUpdateParams"></param>
         /// <returns>ReceiptResponse</returns>
         public ReceiptResponse UpdateReceipt(int id, ReceiptUpdateParams receiptUpdateParams)
         {
@@ -1339,7 +1387,7 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ファイルID</param>
-        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <param name="receiptUpdateParams"></param>
         /// <returns>ApiResponse of ReceiptResponse</returns>
         public Freee.Accounting.Client.ApiResponse<ReceiptResponse> UpdateReceiptWithHttpInfo(int id, ReceiptUpdateParams receiptUpdateParams)
         {
@@ -1402,7 +1450,7 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ファイルID</param>
-        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <param name="receiptUpdateParams"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReceiptResponse</returns>
         public async System.Threading.Tasks.Task<ReceiptResponse> UpdateReceiptAsync(int id, ReceiptUpdateParams receiptUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -1416,7 +1464,7 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">証憑ファイルID</param>
-        /// <param name="receiptUpdateParams">経費申請の更新</param>
+        /// <param name="receiptUpdateParams"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
         public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ReceiptResponse>> UpdateReceiptWithHttpInfoAsync(int id, ReceiptUpdateParams receiptUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
