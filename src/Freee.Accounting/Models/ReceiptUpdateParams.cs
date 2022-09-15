@@ -41,7 +41,8 @@ namespace Freee.Accounting.Models
         /// <param name="companyId">事業所ID (required).</param>
         /// <param name="description">メモ (255文字以内).</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (required).</param>
-        public ReceiptUpdateParams(int companyId = default(int), string description = default(string), string issueDate = default(string))
+        /// <param name="receiptMetadatum">receiptMetadatum.</param>
+        public ReceiptUpdateParams(int companyId = default(int), string description = default(string), string issueDate = default(string), DealReceiptMetadatum receiptMetadatum = default(DealReceiptMetadatum))
         {
             this.CompanyId = companyId;
             // to ensure "issueDate" is required (not null)
@@ -50,6 +51,7 @@ namespace Freee.Accounting.Models
             }
             this.IssueDate = issueDate;
             this.Description = description;
+            this.ReceiptMetadatum = receiptMetadatum;
         }
 
         /// <summary>
@@ -74,6 +76,12 @@ namespace Freee.Accounting.Models
         public string IssueDate { get; set; }
 
         /// <summary>
+        /// Gets or Sets ReceiptMetadatum
+        /// </summary>
+        [DataMember(Name = "receipt_metadatum", EmitDefaultValue = false)]
+        public DealReceiptMetadatum ReceiptMetadatum { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +92,7 @@ namespace Freee.Accounting.Models
             sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  IssueDate: ").Append(IssueDate).Append("\n");
+            sb.Append("  ReceiptMetadatum: ").Append(ReceiptMetadatum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -132,6 +141,11 @@ namespace Freee.Accounting.Models
                     this.IssueDate == input.IssueDate ||
                     (this.IssueDate != null &&
                     this.IssueDate.Equals(input.IssueDate))
+                ) && 
+                (
+                    this.ReceiptMetadatum == input.ReceiptMetadatum ||
+                    (this.ReceiptMetadatum != null &&
+                    this.ReceiptMetadatum.Equals(input.ReceiptMetadatum))
                 );
         }
 
@@ -152,6 +166,10 @@ namespace Freee.Accounting.Models
                 if (this.IssueDate != null)
                 {
                     hashCode = (hashCode * 59) + this.IssueDate.GetHashCode();
+                }
+                if (this.ReceiptMetadatum != null)
+                {
+                    hashCode = (hashCode * 59) + this.ReceiptMetadatum.GetHashCode();
                 }
                 return hashCode;
             }
