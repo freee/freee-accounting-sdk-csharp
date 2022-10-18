@@ -30,9 +30,9 @@ namespace Freee.Accounting.Api
         /// 勘定科目の作成
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountItemParams">勘定科目の作成</param>
+        /// <param name="accountItemCreateParams">勘定科目の作成</param>
         /// <returns>AccountItemResponse</returns>
-        AccountItemResponse CreateAccountItem(AccountItemParams accountItemParams);
+        AccountItemResponse CreateAccountItem(AccountItemCreateParams accountItemCreateParams);
 
         /// <summary>
         /// 勘定科目の作成
@@ -41,9 +41,9 @@ namespace Freee.Accounting.Api
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountItemParams">勘定科目の作成</param>
+        /// <param name="accountItemCreateParams">勘定科目の作成</param>
         /// <returns>ApiResponse of AccountItemResponse</returns>
-        ApiResponse<AccountItemResponse> CreateAccountItemWithHttpInfo(AccountItemParams accountItemParams);
+        ApiResponse<AccountItemResponse> CreateAccountItemWithHttpInfo(AccountItemCreateParams accountItemCreateParams);
         /// <summary>
         /// 勘定科目の削除
         /// </summary>
@@ -109,9 +109,9 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="accountItemParams">勘定科目の更新</param>
+        /// <param name="accountItemUpdateParams">勘定科目の更新</param>
         /// <returns>AccountItemResponse</returns>
-        AccountItemResponse UpdateAccountItem(int id, AccountItemParams accountItemParams);
+        AccountItemResponse UpdateAccountItem(int id, AccountItemUpdateParams accountItemUpdateParams);
 
         /// <summary>
         /// 勘定科目の更新
@@ -121,9 +121,9 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="accountItemParams">勘定科目の更新</param>
+        /// <param name="accountItemUpdateParams">勘定科目の更新</param>
         /// <returns>ApiResponse of AccountItemResponse</returns>
-        ApiResponse<AccountItemResponse> UpdateAccountItemWithHttpInfo(int id, AccountItemParams accountItemParams);
+        ApiResponse<AccountItemResponse> UpdateAccountItemWithHttpInfo(int id, AccountItemUpdateParams accountItemUpdateParams);
         #endregion Synchronous Operations
     }
 
@@ -140,10 +140,10 @@ namespace Freee.Accounting.Api
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountItemParams">勘定科目の作成</param>
+        /// <param name="accountItemCreateParams">勘定科目の作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountItemResponse</returns>
-        System.Threading.Tasks.Task<AccountItemResponse> CreateAccountItemAsync(AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AccountItemResponse> CreateAccountItemAsync(AccountItemCreateParams accountItemCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 勘定科目の作成
@@ -152,10 +152,10 @@ namespace Freee.Accounting.Api
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountItemParams">勘定科目の作成</param>
+        /// <param name="accountItemCreateParams">勘定科目の作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountItemResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AccountItemResponse>> CreateAccountItemWithHttpInfoAsync(AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AccountItemResponse>> CreateAccountItemWithHttpInfoAsync(AccountItemCreateParams accountItemCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 勘定科目の削除
         /// </summary>
@@ -239,10 +239,10 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="accountItemParams">勘定科目の更新</param>
+        /// <param name="accountItemUpdateParams">勘定科目の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountItemResponse</returns>
-        System.Threading.Tasks.Task<AccountItemResponse> UpdateAccountItemAsync(int id, AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AccountItemResponse> UpdateAccountItemAsync(int id, AccountItemUpdateParams accountItemUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 勘定科目の更新
@@ -252,10 +252,10 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="accountItemParams">勘定科目の更新</param>
+        /// <param name="accountItemUpdateParams">勘定科目の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountItemResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AccountItemResponse>> UpdateAccountItemWithHttpInfoAsync(int id, AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AccountItemResponse>> UpdateAccountItemWithHttpInfoAsync(int id, AccountItemUpdateParams accountItemUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -380,11 +380,11 @@ namespace Freee.Accounting.Api
         /// 勘定科目の作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountItemParams">勘定科目の作成</param>
+        /// <param name="accountItemCreateParams">勘定科目の作成</param>
         /// <returns>AccountItemResponse</returns>
-        public AccountItemResponse CreateAccountItem(AccountItemParams accountItemParams)
+        public AccountItemResponse CreateAccountItem(AccountItemCreateParams accountItemCreateParams)
         {
-            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = CreateAccountItemWithHttpInfo(accountItemParams);
+            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = CreateAccountItemWithHttpInfo(accountItemCreateParams);
             return localVarResponse.Data;
         }
 
@@ -392,14 +392,14 @@ namespace Freee.Accounting.Api
         /// 勘定科目の作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountItemParams">勘定科目の作成</param>
+        /// <param name="accountItemCreateParams">勘定科目の作成</param>
         /// <returns>ApiResponse of AccountItemResponse</returns>
-        public Freee.Accounting.Client.ApiResponse<AccountItemResponse> CreateAccountItemWithHttpInfo(AccountItemParams accountItemParams)
+        public Freee.Accounting.Client.ApiResponse<AccountItemResponse> CreateAccountItemWithHttpInfo(AccountItemCreateParams accountItemCreateParams)
         {
-            // verify the required parameter 'accountItemParams' is set
-            if (accountItemParams == null)
+            // verify the required parameter 'accountItemCreateParams' is set
+            if (accountItemCreateParams == null)
             {
-                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'accountItemParams' when calling AccountItemsApi->CreateAccountItem");
+                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'accountItemCreateParams' when calling AccountItemsApi->CreateAccountItem");
             }
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -426,7 +426,7 @@ namespace Freee.Accounting.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = accountItemParams;
+            localVarRequestOptions.Data = accountItemCreateParams;
 
             // authentication (oauth2) required
             // oauth required
@@ -453,12 +453,12 @@ namespace Freee.Accounting.Api
         /// 勘定科目の作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountItemParams">勘定科目の作成</param>
+        /// <param name="accountItemCreateParams">勘定科目の作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountItemResponse</returns>
-        public async System.Threading.Tasks.Task<AccountItemResponse> CreateAccountItemAsync(AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AccountItemResponse> CreateAccountItemAsync(AccountItemCreateParams accountItemCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = await CreateAccountItemWithHttpInfoAsync(accountItemParams, cancellationToken).ConfigureAwait(false);
+            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = await CreateAccountItemWithHttpInfoAsync(accountItemCreateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -466,15 +466,15 @@ namespace Freee.Accounting.Api
         /// 勘定科目の作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountItemParams">勘定科目の作成</param>
+        /// <param name="accountItemCreateParams">勘定科目の作成</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountItemResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<AccountItemResponse>> CreateAccountItemWithHttpInfoAsync(AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<AccountItemResponse>> CreateAccountItemWithHttpInfoAsync(AccountItemCreateParams accountItemCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'accountItemParams' is set
-            if (accountItemParams == null)
+            // verify the required parameter 'accountItemCreateParams' is set
+            if (accountItemCreateParams == null)
             {
-                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'accountItemParams' when calling AccountItemsApi->CreateAccountItem");
+                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'accountItemCreateParams' when calling AccountItemsApi->CreateAccountItem");
             }
 
 
@@ -502,7 +502,7 @@ namespace Freee.Accounting.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.Data = accountItemParams;
+            localVarRequestOptions.Data = accountItemCreateParams;
 
             // authentication (oauth2) required
             // oauth required
@@ -955,11 +955,11 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="accountItemParams">勘定科目の更新</param>
+        /// <param name="accountItemUpdateParams">勘定科目の更新</param>
         /// <returns>AccountItemResponse</returns>
-        public AccountItemResponse UpdateAccountItem(int id, AccountItemParams accountItemParams)
+        public AccountItemResponse UpdateAccountItem(int id, AccountItemUpdateParams accountItemUpdateParams)
         {
-            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = UpdateAccountItemWithHttpInfo(id, accountItemParams);
+            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = UpdateAccountItemWithHttpInfo(id, accountItemUpdateParams);
             return localVarResponse.Data;
         }
 
@@ -968,14 +968,14 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="accountItemParams">勘定科目の更新</param>
+        /// <param name="accountItemUpdateParams">勘定科目の更新</param>
         /// <returns>ApiResponse of AccountItemResponse</returns>
-        public Freee.Accounting.Client.ApiResponse<AccountItemResponse> UpdateAccountItemWithHttpInfo(int id, AccountItemParams accountItemParams)
+        public Freee.Accounting.Client.ApiResponse<AccountItemResponse> UpdateAccountItemWithHttpInfo(int id, AccountItemUpdateParams accountItemUpdateParams)
         {
-            // verify the required parameter 'accountItemParams' is set
-            if (accountItemParams == null)
+            // verify the required parameter 'accountItemUpdateParams' is set
+            if (accountItemUpdateParams == null)
             {
-                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'accountItemParams' when calling AccountItemsApi->UpdateAccountItem");
+                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'accountItemUpdateParams' when calling AccountItemsApi->UpdateAccountItem");
             }
 
             Freee.Accounting.Client.RequestOptions localVarRequestOptions = new Freee.Accounting.Client.RequestOptions();
@@ -1003,7 +1003,7 @@ namespace Freee.Accounting.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = accountItemParams;
+            localVarRequestOptions.Data = accountItemUpdateParams;
 
             // authentication (oauth2) required
             // oauth required
@@ -1031,12 +1031,12 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="accountItemParams">勘定科目の更新</param>
+        /// <param name="accountItemUpdateParams">勘定科目の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AccountItemResponse</returns>
-        public async System.Threading.Tasks.Task<AccountItemResponse> UpdateAccountItemAsync(int id, AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AccountItemResponse> UpdateAccountItemAsync(int id, AccountItemUpdateParams accountItemUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = await UpdateAccountItemWithHttpInfoAsync(id, accountItemParams, cancellationToken).ConfigureAwait(false);
+            Freee.Accounting.Client.ApiResponse<AccountItemResponse> localVarResponse = await UpdateAccountItemWithHttpInfoAsync(id, accountItemUpdateParams, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1045,15 +1045,15 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="accountItemParams">勘定科目の更新</param>
+        /// <param name="accountItemUpdateParams">勘定科目の更新</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AccountItemResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<AccountItemResponse>> UpdateAccountItemWithHttpInfoAsync(int id, AccountItemParams accountItemParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<AccountItemResponse>> UpdateAccountItemWithHttpInfoAsync(int id, AccountItemUpdateParams accountItemUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'accountItemParams' is set
-            if (accountItemParams == null)
+            // verify the required parameter 'accountItemUpdateParams' is set
+            if (accountItemUpdateParams == null)
             {
-                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'accountItemParams' when calling AccountItemsApi->UpdateAccountItem");
+                throw new Freee.Accounting.Client.ApiException(400, "Missing required parameter 'accountItemUpdateParams' when calling AccountItemsApi->UpdateAccountItem");
             }
 
 
@@ -1082,7 +1082,7 @@ namespace Freee.Accounting.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Freee.Accounting.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = accountItemParams;
+            localVarRequestOptions.Data = accountItemUpdateParams;
 
             // authentication (oauth2) required
             // oauth required

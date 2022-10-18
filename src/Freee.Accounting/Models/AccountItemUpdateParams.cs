@@ -25,26 +25,26 @@ using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 namespace Freee.Accounting.Models
 {
     /// <summary>
-    /// AccountItemParams
+    /// AccountItemUpdateParams
     /// </summary>
-    [DataContract(Name = "accountItemParams")]
-    public partial class AccountItemParams : IEquatable<AccountItemParams>
+    [DataContract(Name = "accountItemUpdateParams")]
+    public partial class AccountItemUpdateParams : IEquatable<AccountItemUpdateParams>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountItemParams" /> class.
+        /// Initializes a new instance of the <see cref="AccountItemUpdateParams" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AccountItemParams() { }
+        protected AccountItemUpdateParams() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountItemParams" /> class.
+        /// Initializes a new instance of the <see cref="AccountItemUpdateParams" /> class.
         /// </summary>
         /// <param name="accountItem">accountItem (required).</param>
         /// <param name="companyId">事業所ID (required).</param>
-        public AccountItemParams(AccountItemParamsAccountItem accountItem = default(AccountItemParamsAccountItem), int companyId = default(int))
+        public AccountItemUpdateParams(AccountItemUpdateParamsAccountItem accountItem = default(AccountItemUpdateParamsAccountItem), int companyId = default(int))
         {
             // to ensure "accountItem" is required (not null)
             if (accountItem == null) {
-                throw new ArgumentNullException("accountItem is a required property for AccountItemParams and cannot be null");
+                throw new ArgumentNullException("accountItem is a required property for AccountItemUpdateParams and cannot be null");
             }
             this.AccountItem = accountItem;
             this.CompanyId = companyId;
@@ -54,7 +54,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets AccountItem
         /// </summary>
         [DataMember(Name = "account_item", IsRequired = true, EmitDefaultValue = false)]
-        public AccountItemParamsAccountItem AccountItem { get; set; }
+        public AccountItemUpdateParamsAccountItem AccountItem { get; set; }
 
         /// <summary>
         /// 事業所ID
@@ -70,7 +70,7 @@ namespace Freee.Accounting.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AccountItemParams {\n");
+            sb.Append("class AccountItemUpdateParams {\n");
             sb.Append("  AccountItem: ").Append(AccountItem).Append("\n");
             sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
             sb.Append("}\n");
@@ -93,15 +93,15 @@ namespace Freee.Accounting.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AccountItemParams);
+            return this.Equals(input as AccountItemUpdateParams);
         }
 
         /// <summary>
-        /// Returns true if AccountItemParams instances are equal
+        /// Returns true if AccountItemUpdateParams instances are equal
         /// </summary>
-        /// <param name="input">Instance of AccountItemParams to be compared</param>
+        /// <param name="input">Instance of AccountItemUpdateParams to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AccountItemParams input)
+        public bool Equals(AccountItemUpdateParams input)
         {
             if (input == null)
             {

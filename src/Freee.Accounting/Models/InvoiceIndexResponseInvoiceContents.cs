@@ -85,7 +85,7 @@ namespace Freee.Accounting.Models
         /// <param name="sectionId">部門ID (required).</param>
         /// <param name="sectionName">部門 (required).</param>
         /// <param name="segment1TagId">セグメント１ID.</param>
-        /// <param name="segment1TagName">セグメント１ID.</param>
+        /// <param name="segment1TagName">セグメント１.</param>
         /// <param name="segment2TagId">セグメント２ID.</param>
         /// <param name="segment2TagName">セグメント２.</param>
         /// <param name="segment3TagId">セグメント３ID.</param>
@@ -266,9 +266,9 @@ namespace Freee.Accounting.Models
         public long? Segment1TagId { get; set; }
 
         /// <summary>
-        /// セグメント１ID
+        /// セグメント１
         /// </summary>
-        /// <value>セグメント１ID</value>
+        /// <value>セグメント１</value>
         [DataMember(Name = "segment_1_tag_name", EmitDefaultValue = true)]
         public string Segment1TagName { get; set; }
 

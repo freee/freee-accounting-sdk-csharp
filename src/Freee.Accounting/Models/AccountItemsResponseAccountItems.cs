@@ -47,7 +47,6 @@ namespace Freee.Accounting.Models
         /// <param name="correspondingIncomeId">収入取引相手勘定科目ID.</param>
         /// <param name="correspondingIncomeName">収入取引相手勘定科目名.</param>
         /// <param name="defaultTaxCode">デフォルト設定がされている税区分コード (required).</param>
-        /// <param name="defaultTaxId">デフォルト設定がされている税区分ID.</param>
         /// <param name="groupName">決算書表示名（小カテゴリー）.</param>
         /// <param name="id">勘定科目ID (required).</param>
         /// <param name="name">勘定科目名 (30文字以内) (required).</param>
@@ -55,7 +54,7 @@ namespace Freee.Accounting.Models
         /// <param name="shortcutNum">ショートカット2(勘定科目コード) (20文字以内).</param>
         /// <param name="taxCode">税区分コード (required).</param>
         /// <param name="walletableId">口座ID (required).</param>
-        public AccountItemsResponseAccountItems(string accountCategory = default(string), int accountCategoryId = default(int), bool available = default(bool), List<string> categories = default(List<string>), int? correspondingExpenseId = default(int?), string correspondingExpenseName = default(string), int? correspondingIncomeId = default(int?), string correspondingIncomeName = default(string), int defaultTaxCode = default(int), int defaultTaxId = default(int), string groupName = default(string), int id = default(int), string name = default(string), string shortcut = default(string), string shortcutNum = default(string), int taxCode = default(int), int? walletableId = default(int?))
+        public AccountItemsResponseAccountItems(string accountCategory = default(string), int accountCategoryId = default(int), bool available = default(bool), List<string> categories = default(List<string>), int? correspondingExpenseId = default(int?), string correspondingExpenseName = default(string), int? correspondingIncomeId = default(int?), string correspondingIncomeName = default(string), int defaultTaxCode = default(int), string groupName = default(string), int id = default(int), string name = default(string), string shortcut = default(string), string shortcutNum = default(string), int taxCode = default(int), int? walletableId = default(int?))
         {
             // to ensure "accountCategory" is required (not null)
             if (accountCategory == null) {
@@ -86,7 +85,6 @@ namespace Freee.Accounting.Models
             this.CorrespondingExpenseName = correspondingExpenseName;
             this.CorrespondingIncomeId = correspondingIncomeId;
             this.CorrespondingIncomeName = correspondingIncomeName;
-            this.DefaultTaxId = defaultTaxId;
             this.GroupName = groupName;
             this.Shortcut = shortcut;
             this.ShortcutNum = shortcutNum;
@@ -155,13 +153,6 @@ namespace Freee.Accounting.Models
         public int DefaultTaxCode { get; set; }
 
         /// <summary>
-        /// デフォルト設定がされている税区分ID
-        /// </summary>
-        /// <value>デフォルト設定がされている税区分ID</value>
-        [DataMember(Name = "default_tax_id", EmitDefaultValue = false)]
-        public int DefaultTaxId { get; set; }
-
-        /// <summary>
         /// 決算書表示名（小カテゴリー）
         /// </summary>
         /// <value>決算書表示名（小カテゴリー）</value>
@@ -227,7 +218,6 @@ namespace Freee.Accounting.Models
             sb.Append("  CorrespondingIncomeId: ").Append(CorrespondingIncomeId).Append("\n");
             sb.Append("  CorrespondingIncomeName: ").Append(CorrespondingIncomeName).Append("\n");
             sb.Append("  DefaultTaxCode: ").Append(DefaultTaxCode).Append("\n");
-            sb.Append("  DefaultTaxId: ").Append(DefaultTaxId).Append("\n");
             sb.Append("  GroupName: ").Append(GroupName).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -314,10 +304,6 @@ namespace Freee.Accounting.Models
                     this.DefaultTaxCode.Equals(input.DefaultTaxCode)
                 ) && 
                 (
-                    this.DefaultTaxId == input.DefaultTaxId ||
-                    this.DefaultTaxId.Equals(input.DefaultTaxId)
-                ) && 
-                (
                     this.GroupName == input.GroupName ||
                     (this.GroupName != null &&
                     this.GroupName.Equals(input.GroupName))
@@ -388,7 +374,6 @@ namespace Freee.Accounting.Models
                     hashCode = (hashCode * 59) + this.CorrespondingIncomeName.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.DefaultTaxCode.GetHashCode();
-                hashCode = (hashCode * 59) + this.DefaultTaxId.GetHashCode();
                 if (this.GroupName != null)
                 {
                     hashCode = (hashCode * 59) + this.GroupName.GetHashCode();

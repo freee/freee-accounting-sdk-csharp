@@ -31,9 +31,9 @@ namespace Freee.Accounting.Models
     public partial class PartnerCreateParamsPartnerDocSettingAttributes : IEquatable<PartnerCreateParamsPartnerDocSettingAttributes>
     {
         /// <summary>
-        /// 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)
+        /// 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送、null:設定しない)
         /// </summary>
-        /// <value>請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)</value>
+        /// <value>請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送、null:設定しない)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SendingMethodEnum
         {
@@ -59,15 +59,15 @@ namespace Freee.Accounting.Models
 
 
         /// <summary>
-        /// 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)
+        /// 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送、null:設定しない)
         /// </summary>
-        /// <value>請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)</value>
+        /// <value>請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送、null:設定しない)</value>
         [DataMember(Name = "sending_method", EmitDefaultValue = true)]
         public SendingMethodEnum? SendingMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PartnerCreateParamsPartnerDocSettingAttributes" /> class.
         /// </summary>
-        /// <param name="sendingMethod">請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送).</param>
+        /// <param name="sendingMethod">請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送、null:設定しない).</param>
         public PartnerCreateParamsPartnerDocSettingAttributes(SendingMethodEnum? sendingMethod = default(SendingMethodEnum?))
         {
             this.SendingMethod = sendingMethod;

@@ -145,7 +145,7 @@ namespace Freee.Accounting.Models
         /// <param name="companyId">事業所ID (required).</param>
         /// <param name="description">備考.</param>
         /// <param name="documentCode">請求書番号（255文字以内）.</param>
-        /// <param name="draft">支払依頼のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で支払依頼を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で支払依頼を更新します。&lt;br&gt; 未指定の時は下書きとみなして支払依頼を更新します。  (required).</param>
+        /// <param name="draft">支払依頼のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で支払依頼を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で支払依頼を更新します。  (required).</param>
         /// <param name="issueDate">発生日 (yyyy-mm-dd) (required).</param>
         /// <param name="partnerCode">支払先の取引先コード&lt;br&gt; 支払先の取引先ID指定時には無効 .</param>
         /// <param name="partnerId">支払先の取引先ID.</param>
@@ -293,9 +293,9 @@ namespace Freee.Accounting.Models
         public string DocumentCode { get; set; }
 
         /// <summary>
-        /// 支払依頼のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で支払依頼を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で支払依頼を更新します。&lt;br&gt; 未指定の時は下書きとみなして支払依頼を更新します。 
+        /// 支払依頼のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で支払依頼を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で支払依頼を更新します。 
         /// </summary>
-        /// <value>支払依頼のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で支払依頼を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で支払依頼を更新します。&lt;br&gt; 未指定の時は下書きとみなして支払依頼を更新します。 </value>
+        /// <value>支払依頼のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で支払依頼を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で支払依頼を更新します。 </value>
         [DataMember(Name = "draft", IsRequired = true, EmitDefaultValue = true)]
         public bool Draft { get; set; }
 

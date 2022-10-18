@@ -1003,13 +1003,12 @@ namespace Freee.Accounting.Models
         /// <param name="streetName2">建物名・部屋番号など (required).</param>
         /// <param name="taxAtSourceCalcType">源泉徴収税計算（0: 消費税を含める、1: 消費税を含めない） (required).</param>
         /// <param name="taxCodes">taxCodes.</param>
-        /// <param name="taxes">taxes.</param>
         /// <param name="txnNumberFormat">仕訳番号形式（not_used: 使用しない、digits: 数字（例：5091824）、alnum: 英数字（例：59J0P）） (required).</param>
         /// <param name="usePartnerCode">取引先コードの利用設定（true: 有効、 false: 無効） (required).</param>
         /// <param name="walletables">walletables.</param>
         /// <param name="workflowSetting">仕訳承認フロー（enable: 有効、 disable: 無効） (required).</param>
         /// <param name="zipcode">郵便番号 (required).</param>
-        public CompanyResponseCompany(List<CompanyResponseCompanyTags> tags = default(List<CompanyResponseCompanyTags>), List<CompanyResponseCompanyAccountItems> accountItems = default(List<CompanyResponseCompanyAccountItems>), int amountFraction = default(int), string contactName = default(string), string corporateNumber = default(string), int defaultWalletAccountId = default(int), string displayName = default(string), string fax = default(string), List<FiscalYears> fiscalYears = default(List<FiscalYears>), int? headCount = default(int?), int id = default(int), IndustryClassEnum industryClass = default(IndustryClassEnum), IndustryCodeEnum industryCode = default(IndustryCodeEnum), InvoiceLayoutEnum invoiceLayout = default(InvoiceLayoutEnum), List<CompanyResponseCompanyItems> items = default(List<CompanyResponseCompanyItems>), int minusFormat = default(int), string name = default(string), string nameKana = default(string), List<CompanyResponseCompanyPartners> partners = default(List<CompanyResponseCompanyPartners>), string phone1 = default(string), string phone2 = default(string), int? prefectureCode = default(int?), bool privateSettlement = default(bool), RoleEnum role = default(RoleEnum), List<CompanyResponseCompanySections> sections = default(List<CompanyResponseCompanySections>), string streetName1 = default(string), string streetName2 = default(string), int taxAtSourceCalcType = default(int), List<CompanyResponseCompanyTaxCodes> taxCodes = default(List<CompanyResponseCompanyTaxCodes>), List<CompanyResponseCompanyTaxes> taxes = default(List<CompanyResponseCompanyTaxes>), TxnNumberFormatEnum txnNumberFormat = default(TxnNumberFormatEnum), bool usePartnerCode = default(bool), List<CompanyResponseCompanyWalletables> walletables = default(List<CompanyResponseCompanyWalletables>), WorkflowSettingEnum workflowSetting = default(WorkflowSettingEnum), string zipcode = default(string))
+        public CompanyResponseCompany(List<CompanyResponseCompanyTags> tags = default(List<CompanyResponseCompanyTags>), List<CompanyResponseCompanyAccountItems> accountItems = default(List<CompanyResponseCompanyAccountItems>), int amountFraction = default(int), string contactName = default(string), string corporateNumber = default(string), int defaultWalletAccountId = default(int), string displayName = default(string), string fax = default(string), List<FiscalYears> fiscalYears = default(List<FiscalYears>), int? headCount = default(int?), int id = default(int), IndustryClassEnum industryClass = default(IndustryClassEnum), IndustryCodeEnum industryCode = default(IndustryCodeEnum), InvoiceLayoutEnum invoiceLayout = default(InvoiceLayoutEnum), List<CompanyResponseCompanyItems> items = default(List<CompanyResponseCompanyItems>), int minusFormat = default(int), string name = default(string), string nameKana = default(string), List<CompanyResponseCompanyPartners> partners = default(List<CompanyResponseCompanyPartners>), string phone1 = default(string), string phone2 = default(string), int? prefectureCode = default(int?), bool privateSettlement = default(bool), RoleEnum role = default(RoleEnum), List<CompanyResponseCompanySections> sections = default(List<CompanyResponseCompanySections>), string streetName1 = default(string), string streetName2 = default(string), int taxAtSourceCalcType = default(int), List<CompanyResponseCompanyTaxCodes> taxCodes = default(List<CompanyResponseCompanyTaxCodes>), TxnNumberFormatEnum txnNumberFormat = default(TxnNumberFormatEnum), bool usePartnerCode = default(bool), List<CompanyResponseCompanyWalletables> walletables = default(List<CompanyResponseCompanyWalletables>), WorkflowSettingEnum workflowSetting = default(WorkflowSettingEnum), string zipcode = default(string))
         {
             this.AmountFraction = amountFraction;
             // to ensure "contactName" is required (not null)
@@ -1100,7 +1099,6 @@ namespace Freee.Accounting.Models
             this.Partners = partners;
             this.Sections = sections;
             this.TaxCodes = taxCodes;
-            this.Taxes = taxes;
             this.Walletables = walletables;
         }
 
@@ -1273,12 +1271,6 @@ namespace Freee.Accounting.Models
         public List<CompanyResponseCompanyTaxCodes> TaxCodes { get; set; }
 
         /// <summary>
-        /// Gets or Sets Taxes
-        /// </summary>
-        [DataMember(Name = "taxes", EmitDefaultValue = false)]
-        public List<CompanyResponseCompanyTaxes> Taxes { get; set; }
-
-        /// <summary>
         /// 取引先コードの利用設定（true: 有効、 false: 無効）
         /// </summary>
         /// <value>取引先コードの利用設定（true: 有効、 false: 無効）</value>
@@ -1335,7 +1327,6 @@ namespace Freee.Accounting.Models
             sb.Append("  StreetName2: ").Append(StreetName2).Append("\n");
             sb.Append("  TaxAtSourceCalcType: ").Append(TaxAtSourceCalcType).Append("\n");
             sb.Append("  TaxCodes: ").Append(TaxCodes).Append("\n");
-            sb.Append("  Taxes: ").Append(Taxes).Append("\n");
             sb.Append("  TxnNumberFormat: ").Append(TxnNumberFormat).Append("\n");
             sb.Append("  UsePartnerCode: ").Append(UsePartnerCode).Append("\n");
             sb.Append("  Walletables: ").Append(Walletables).Append("\n");
@@ -1519,12 +1510,6 @@ namespace Freee.Accounting.Models
                     this.TaxCodes.SequenceEqual(input.TaxCodes)
                 ) && 
                 (
-                    this.Taxes == input.Taxes ||
-                    this.Taxes != null &&
-                    input.Taxes != null &&
-                    this.Taxes.SequenceEqual(input.Taxes)
-                ) && 
-                (
                     this.TxnNumberFormat == input.TxnNumberFormat ||
                     this.TxnNumberFormat.Equals(input.TxnNumberFormat)
                 ) && 
@@ -1643,10 +1628,6 @@ namespace Freee.Accounting.Models
                 if (this.TaxCodes != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxCodes.GetHashCode();
-                }
-                if (this.Taxes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Taxes.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.TxnNumberFormat.GetHashCode();
                 hashCode = (hashCode * 59) + this.UsePartnerCode.GetHashCode();

@@ -47,9 +47,9 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>
-        /// <param name="details">取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
+        /// <param name="details">取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
         /// <param name="accountItems">取得情報に勘定科目一覧を含める (optional)</param>
-        /// <param name="taxes">取得情報に税区分コード・税区分一覧を含める (optional)</param>
+        /// <param name="taxes">取得情報に税区分コード一覧を含める (optional)</param>
         /// <param name="items">取得情報に品目一覧を含める (optional)</param>
         /// <param name="partners">取得情報に取引先一覧を含める (optional)</param>
         /// <param name="sections">取得情報に部門一覧を含める (optional)</param>
@@ -66,9 +66,9 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>
-        /// <param name="details">取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
+        /// <param name="details">取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
         /// <param name="accountItems">取得情報に勘定科目一覧を含める (optional)</param>
-        /// <param name="taxes">取得情報に税区分コード・税区分一覧を含める (optional)</param>
+        /// <param name="taxes">取得情報に税区分コード一覧を含める (optional)</param>
         /// <param name="items">取得情報に品目一覧を含める (optional)</param>
         /// <param name="partners">取得情報に取引先一覧を含める (optional)</param>
         /// <param name="sections">取得情報に部門一覧を含める (optional)</param>
@@ -114,9 +114,9 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>
-        /// <param name="details">取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
+        /// <param name="details">取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
         /// <param name="accountItems">取得情報に勘定科目一覧を含める (optional)</param>
-        /// <param name="taxes">取得情報に税区分コード・税区分一覧を含める (optional)</param>
+        /// <param name="taxes">取得情報に税区分コード一覧を含める (optional)</param>
         /// <param name="items">取得情報に品目一覧を含める (optional)</param>
         /// <param name="partners">取得情報に取引先一覧を含める (optional)</param>
         /// <param name="sections">取得情報に部門一覧を含める (optional)</param>
@@ -134,9 +134,9 @@ namespace Freee.Accounting.Api
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>
-        /// <param name="details">取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
+        /// <param name="details">取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
         /// <param name="accountItems">取得情報に勘定科目一覧を含める (optional)</param>
-        /// <param name="taxes">取得情報に税区分コード・税区分一覧を含める (optional)</param>
+        /// <param name="taxes">取得情報に税区分コード一覧を含める (optional)</param>
         /// <param name="items">取得情報に品目一覧を含める (optional)</param>
         /// <param name="partners">取得情報に取引先一覧を含める (optional)</param>
         /// <param name="sections">取得情報に部門一覧を含める (optional)</param>
@@ -398,9 +398,9 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>
-        /// <param name="details">取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
+        /// <param name="details">取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
         /// <param name="accountItems">取得情報に勘定科目一覧を含める (optional)</param>
-        /// <param name="taxes">取得情報に税区分コード・税区分一覧を含める (optional)</param>
+        /// <param name="taxes">取得情報に税区分コード一覧を含める (optional)</param>
         /// <param name="items">取得情報に品目一覧を含める (optional)</param>
         /// <param name="partners">取得情報に取引先一覧を含める (optional)</param>
         /// <param name="sections">取得情報に部門一覧を含める (optional)</param>
@@ -418,9 +418,9 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>
-        /// <param name="details">取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
+        /// <param name="details">取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
         /// <param name="accountItems">取得情報に勘定科目一覧を含める (optional)</param>
-        /// <param name="taxes">取得情報に税区分コード・税区分一覧を含める (optional)</param>
+        /// <param name="taxes">取得情報に税区分コード一覧を含める (optional)</param>
         /// <param name="items">取得情報に品目一覧を含める (optional)</param>
         /// <param name="partners">取得情報に取引先一覧を含める (optional)</param>
         /// <param name="sections">取得情報に部門一覧を含める (optional)</param>
@@ -511,9 +511,9 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>
-        /// <param name="details">取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
+        /// <param name="details">取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
         /// <param name="accountItems">取得情報に勘定科目一覧を含める (optional)</param>
-        /// <param name="taxes">取得情報に税区分コード・税区分一覧を含める (optional)</param>
+        /// <param name="taxes">取得情報に税区分コード一覧を含める (optional)</param>
         /// <param name="items">取得情報に品目一覧を含める (optional)</param>
         /// <param name="partners">取得情報に取引先一覧を含める (optional)</param>
         /// <param name="sections">取得情報に部門一覧を含める (optional)</param>
@@ -532,9 +532,9 @@ namespace Freee.Accounting.Api
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>
-        /// <param name="details">取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
+        /// <param name="details">取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)</param>
         /// <param name="accountItems">取得情報に勘定科目一覧を含める (optional)</param>
-        /// <param name="taxes">取得情報に税区分コード・税区分一覧を含める (optional)</param>
+        /// <param name="taxes">取得情報に税区分コード一覧を含める (optional)</param>
         /// <param name="items">取得情報に品目一覧を含める (optional)</param>
         /// <param name="partners">取得情報に取引先一覧を含める (optional)</param>
         /// <param name="sections">取得情報に部門一覧を含める (optional)</param>

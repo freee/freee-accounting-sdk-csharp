@@ -78,7 +78,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse20010Taxes" /> class.
         /// </summary>
-        /// <param name="available">true: 使用する、false: 使用しない (required).</param>
+        /// <param name="available">税区分の使用設定。true: 使用する、false: 使用しない (required).</param>
         /// <param name="code">税区分コード (required).</param>
         /// <param name="displayCategory">税区分の表示カテゴリ（tax_5: 5%表示の税区分、tax_8: 8%表示の税区分、tax_r8: 軽減税率8%表示の税区分、tax_10: 10%表示の税区分、null: 税率未設定税区分） (required).</param>
         /// <param name="name">税区分名 (required).</param>
@@ -101,9 +101,9 @@ namespace Freee.Accounting.Models
         }
 
         /// <summary>
-        /// true: 使用する、false: 使用しない
+        /// 税区分の使用設定。true: 使用する、false: 使用しない
         /// </summary>
-        /// <value>true: 使用する、false: 使用しない</value>
+        /// <value>税区分の使用設定。true: 使用する、false: 使用しない</value>
         [DataMember(Name = "available", IsRequired = true, EmitDefaultValue = true)]
         public bool Available { get; set; }
 

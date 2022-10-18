@@ -80,7 +80,7 @@ namespace Freee.Accounting.Models
         /// <param name="sectionId">部門ID (required).</param>
         /// <param name="sectionName">部門 (required).</param>
         /// <param name="segment1TagId">セグメント１ID.</param>
-        /// <param name="segment1TagName">セグメント１ID.</param>
+        /// <param name="segment1TagName">セグメント１.</param>
         /// <param name="segment2TagId">セグメント２ID.</param>
         /// <param name="segment2TagName">セグメント２.</param>
         /// <param name="segment3TagId">セグメント３ID.</param>
@@ -89,7 +89,7 @@ namespace Freee.Accounting.Models
         /// <param name="tagNames">tagNames (required).</param>
         /// <param name="taxCode">税区分コード (required).</param>
         /// <param name="vat">消費税額（指定しない場合は自動で計算されます） (required).</param>
-        public ManualJournalDetails(int accountItemId = default(int), int amount = default(int), string description = default(string), EntrySideEnum entrySide = default(EntrySideEnum), long id = default(long), int? itemId = default(int?), string itemName = default(string), string partnerCode = default(string), int? partnerId = default(int?), string partnerLongName = default(string), string partnerName = default(string), int? sectionId = default(int?), string sectionName = default(string), long segment1TagId = default(long), int segment1TagName = default(int), long segment2TagId = default(long), int segment2TagName = default(int), long segment3TagId = default(long), int segment3TagName = default(int), List<int> tagIds = default(List<int>), List<string> tagNames = default(List<string>), int taxCode = default(int), int vat = default(int))
+        public ManualJournalDetails(int accountItemId = default(int), int amount = default(int), string description = default(string), EntrySideEnum entrySide = default(EntrySideEnum), long id = default(long), int? itemId = default(int?), string itemName = default(string), string partnerCode = default(string), int? partnerId = default(int?), string partnerLongName = default(string), string partnerName = default(string), int? sectionId = default(int?), string sectionName = default(string), long segment1TagId = default(long), string segment1TagName = default(string), long segment2TagId = default(long), string segment2TagName = default(string), long segment3TagId = default(long), string segment3TagName = default(string), List<int> tagIds = default(List<int>), List<string> tagNames = default(List<string>), int taxCode = default(int), int vat = default(int))
         {
             this.AccountItemId = accountItemId;
             this.Amount = amount;
@@ -248,11 +248,11 @@ namespace Freee.Accounting.Models
         public long Segment1TagId { get; set; }
 
         /// <summary>
-        /// セグメント１ID
+        /// セグメント１
         /// </summary>
-        /// <value>セグメント１ID</value>
-        [DataMember(Name = "segment_1_tag_name", EmitDefaultValue = false)]
-        public int Segment1TagName { get; set; }
+        /// <value>セグメント１</value>
+        [DataMember(Name = "segment_1_tag_name", EmitDefaultValue = true)]
+        public string Segment1TagName { get; set; }
 
         /// <summary>
         /// セグメント２ID
@@ -265,8 +265,8 @@ namespace Freee.Accounting.Models
         /// セグメント２
         /// </summary>
         /// <value>セグメント２</value>
-        [DataMember(Name = "segment_2_tag_name", EmitDefaultValue = false)]
-        public int Segment2TagName { get; set; }
+        [DataMember(Name = "segment_2_tag_name", EmitDefaultValue = true)]
+        public string Segment2TagName { get; set; }
 
         /// <summary>
         /// セグメント３ID
@@ -279,8 +279,8 @@ namespace Freee.Accounting.Models
         /// セグメント３
         /// </summary>
         /// <value>セグメント３</value>
-        [DataMember(Name = "segment_3_tag_name", EmitDefaultValue = false)]
-        public int Segment3TagName { get; set; }
+        [DataMember(Name = "segment_3_tag_name", EmitDefaultValue = true)]
+        public string Segment3TagName { get; set; }
 
         /// <summary>
         /// Gets or Sets TagIds
@@ -441,7 +441,8 @@ namespace Freee.Accounting.Models
                 ) && 
                 (
                     this.Segment1TagName == input.Segment1TagName ||
-                    this.Segment1TagName.Equals(input.Segment1TagName)
+                    (this.Segment1TagName != null &&
+                    this.Segment1TagName.Equals(input.Segment1TagName))
                 ) && 
                 (
                     this.Segment2TagId == input.Segment2TagId ||
@@ -449,7 +450,8 @@ namespace Freee.Accounting.Models
                 ) && 
                 (
                     this.Segment2TagName == input.Segment2TagName ||
-                    this.Segment2TagName.Equals(input.Segment2TagName)
+                    (this.Segment2TagName != null &&
+                    this.Segment2TagName.Equals(input.Segment2TagName))
                 ) && 
                 (
                     this.Segment3TagId == input.Segment3TagId ||
@@ -457,7 +459,8 @@ namespace Freee.Accounting.Models
                 ) && 
                 (
                     this.Segment3TagName == input.Segment3TagName ||
-                    this.Segment3TagName.Equals(input.Segment3TagName)
+                    (this.Segment3TagName != null &&
+                    this.Segment3TagName.Equals(input.Segment3TagName))
                 ) && 
                 (
                     this.TagIds == input.TagIds ||
@@ -531,11 +534,20 @@ namespace Freee.Accounting.Models
                     hashCode = (hashCode * 59) + this.SectionName.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Segment1TagId.GetHashCode();
-                hashCode = (hashCode * 59) + this.Segment1TagName.GetHashCode();
+                if (this.Segment1TagName != null)
+                {
+                    hashCode = (hashCode * 59) + this.Segment1TagName.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.Segment2TagId.GetHashCode();
-                hashCode = (hashCode * 59) + this.Segment2TagName.GetHashCode();
+                if (this.Segment2TagName != null)
+                {
+                    hashCode = (hashCode * 59) + this.Segment2TagName.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.Segment3TagId.GetHashCode();
-                hashCode = (hashCode * 59) + this.Segment3TagName.GetHashCode();
+                if (this.Segment3TagName != null)
+                {
+                    hashCode = (hashCode * 59) + this.Segment3TagName.GetHashCode();
+                }
                 if (this.TagIds != null)
                 {
                     hashCode = (hashCode * 59) + this.TagIds.GetHashCode();

@@ -25,18 +25,18 @@ using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 namespace Freee.Accounting.Models
 {
     /// <summary>
-    /// AccountItemParamsAccountItem
+    /// AccountItemCreateParamsAccountItem
     /// </summary>
-    [DataContract(Name = "accountItemParams_account_item")]
-    public partial class AccountItemParamsAccountItem : IEquatable<AccountItemParamsAccountItem>
+    [DataContract(Name = "accountItemCreateParams_account_item")]
+    public partial class AccountItemCreateParamsAccountItem : IEquatable<AccountItemCreateParamsAccountItem>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountItemParamsAccountItem" /> class.
+        /// Initializes a new instance of the <see cref="AccountItemCreateParamsAccountItem" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AccountItemParamsAccountItem() { }
+        protected AccountItemCreateParamsAccountItem() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountItemParamsAccountItem" /> class.
+        /// Initializes a new instance of the <see cref="AccountItemCreateParamsAccountItem" /> class.
         /// </summary>
         /// <param name="accountCategoryId">勘定科目カテゴリーID Selectablesフォーム用選択項目情報エンドポイント(account_groups.account_category_id)で取得可能です (required).</param>
         /// <param name="accumulatedDepAccountItemId">減価償却累計額勘定科目ID（法人のみ利用可能）.</param>
@@ -50,19 +50,19 @@ namespace Freee.Accounting.Models
         /// <param name="shortcut">ショートカット1 (20文字以内).</param>
         /// <param name="shortcutNum">ショートカット2(勘定科目コード)(20文字以内).</param>
         /// <param name="taxCode">税区分コード (required).</param>
-        public AccountItemParamsAccountItem(int accountCategoryId = default(int), int accumulatedDepAccountItemId = default(int), int correspondingExpenseId = default(int), int correspondingIncomeId = default(int), string groupName = default(string), List<AccountItemParamsAccountItemItems> items = default(List<AccountItemParamsAccountItemItems>), string name = default(string), List<AccountItemParamsAccountItemItems> partners = default(List<AccountItemParamsAccountItemItems>), int searchable = default(int), string shortcut = default(string), string shortcutNum = default(string), int taxCode = default(int))
+        public AccountItemCreateParamsAccountItem(int accountCategoryId = default(int), int accumulatedDepAccountItemId = default(int), int correspondingExpenseId = default(int), int correspondingIncomeId = default(int), string groupName = default(string), List<AccountItemCreateParamsAccountItemItems> items = default(List<AccountItemCreateParamsAccountItemItems>), string name = default(string), List<AccountItemCreateParamsAccountItemItems> partners = default(List<AccountItemCreateParamsAccountItemItems>), int searchable = default(int), string shortcut = default(string), string shortcutNum = default(string), int taxCode = default(int))
         {
             this.AccountCategoryId = accountCategoryId;
             this.CorrespondingExpenseId = correspondingExpenseId;
             this.CorrespondingIncomeId = correspondingIncomeId;
             // to ensure "groupName" is required (not null)
             if (groupName == null) {
-                throw new ArgumentNullException("groupName is a required property for AccountItemParamsAccountItem and cannot be null");
+                throw new ArgumentNullException("groupName is a required property for AccountItemCreateParamsAccountItem and cannot be null");
             }
             this.GroupName = groupName;
             // to ensure "name" is required (not null)
             if (name == null) {
-                throw new ArgumentNullException("name is a required property for AccountItemParamsAccountItem and cannot be null");
+                throw new ArgumentNullException("name is a required property for AccountItemCreateParamsAccountItem and cannot be null");
             }
             this.Name = name;
             this.TaxCode = taxCode;
@@ -114,7 +114,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>品目</value>
         [DataMember(Name = "items", EmitDefaultValue = false)]
-        public List<AccountItemParamsAccountItemItems> Items { get; set; }
+        public List<AccountItemCreateParamsAccountItemItems> Items { get; set; }
 
         /// <summary>
         /// 勘定科目名 (30文字以内)
@@ -128,7 +128,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <value>取引先</value>
         [DataMember(Name = "partners", EmitDefaultValue = false)]
-        public List<AccountItemParamsAccountItemItems> Partners { get; set; }
+        public List<AccountItemCreateParamsAccountItemItems> Partners { get; set; }
 
         /// <summary>
         /// 検索可能:2, 検索不可：3(登録時未指定の場合は2で登録されます。更新時未指定の場合はsearchableは変更されません。)
@@ -165,7 +165,7 @@ namespace Freee.Accounting.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AccountItemParamsAccountItem {\n");
+            sb.Append("class AccountItemCreateParamsAccountItem {\n");
             sb.Append("  AccountCategoryId: ").Append(AccountCategoryId).Append("\n");
             sb.Append("  AccumulatedDepAccountItemId: ").Append(AccumulatedDepAccountItemId).Append("\n");
             sb.Append("  CorrespondingExpenseId: ").Append(CorrespondingExpenseId).Append("\n");
@@ -198,15 +198,15 @@ namespace Freee.Accounting.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AccountItemParamsAccountItem);
+            return this.Equals(input as AccountItemCreateParamsAccountItem);
         }
 
         /// <summary>
-        /// Returns true if AccountItemParamsAccountItem instances are equal
+        /// Returns true if AccountItemCreateParamsAccountItem instances are equal
         /// </summary>
-        /// <param name="input">Instance of AccountItemParamsAccountItem to be compared</param>
+        /// <param name="input">Instance of AccountItemCreateParamsAccountItem to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AccountItemParamsAccountItem input)
+        public bool Equals(AccountItemCreateParamsAccountItem input)
         {
             if (input == null)
             {

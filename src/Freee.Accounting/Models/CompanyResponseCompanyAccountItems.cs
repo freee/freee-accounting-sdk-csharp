@@ -39,11 +39,10 @@ namespace Freee.Accounting.Models
         /// Initializes a new instance of the <see cref="CompanyResponseCompanyAccountItems" /> class.
         /// </summary>
         /// <param name="categories">categories (required).</param>
-        /// <param name="defaultTaxId">デフォルト設定がされている税区分ID.</param>
         /// <param name="id">勘定科目ID (required).</param>
         /// <param name="name">勘定科目名 (30文字以内) (required).</param>
         /// <param name="shortcut">ショートカット1 (20文字以内).</param>
-        public CompanyResponseCompanyAccountItems(List<string> categories = default(List<string>), int defaultTaxId = default(int), int id = default(int), string name = default(string), string shortcut = default(string))
+        public CompanyResponseCompanyAccountItems(List<string> categories = default(List<string>), int id = default(int), string name = default(string), string shortcut = default(string))
         {
             // to ensure "categories" is required (not null)
             if (categories == null) {
@@ -56,7 +55,6 @@ namespace Freee.Accounting.Models
                 throw new ArgumentNullException("name is a required property for CompanyResponseCompanyAccountItems and cannot be null");
             }
             this.Name = name;
-            this.DefaultTaxId = defaultTaxId;
             this.Shortcut = shortcut;
         }
 
@@ -65,13 +63,6 @@ namespace Freee.Accounting.Models
         /// </summary>
         [DataMember(Name = "categories", IsRequired = true, EmitDefaultValue = false)]
         public List<string> Categories { get; set; }
-
-        /// <summary>
-        /// デフォルト設定がされている税区分ID
-        /// </summary>
-        /// <value>デフォルト設定がされている税区分ID</value>
-        [DataMember(Name = "default_tax_id", EmitDefaultValue = false)]
-        public int DefaultTaxId { get; set; }
 
         /// <summary>
         /// 勘定科目ID
@@ -103,7 +94,6 @@ namespace Freee.Accounting.Models
             StringBuilder sb = new StringBuilder();
             sb.Append("class CompanyResponseCompanyAccountItems {\n");
             sb.Append("  Categories: ").Append(Categories).Append("\n");
-            sb.Append("  DefaultTaxId: ").Append(DefaultTaxId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Shortcut: ").Append(Shortcut).Append("\n");
@@ -149,10 +139,6 @@ namespace Freee.Accounting.Models
                     this.Categories.SequenceEqual(input.Categories)
                 ) && 
                 (
-                    this.DefaultTaxId == input.DefaultTaxId ||
-                    this.DefaultTaxId.Equals(input.DefaultTaxId)
-                ) && 
-                (
                     this.Id == input.Id ||
                     this.Id.Equals(input.Id)
                 ) && 
@@ -181,7 +167,6 @@ namespace Freee.Accounting.Models
                 {
                     hashCode = (hashCode * 59) + this.Categories.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.DefaultTaxId.GetHashCode();
                 hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 if (this.Name != null)
                 {

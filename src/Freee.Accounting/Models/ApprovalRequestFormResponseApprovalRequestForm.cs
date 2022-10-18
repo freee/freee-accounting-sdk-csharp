@@ -31,9 +31,9 @@ namespace Freee.Accounting.Models
     public partial class ApprovalRequestFormResponseApprovalRequestForm : IEquatable<ApprovalRequestFormResponseApprovalRequestForm>
     {
         /// <summary>
-        /// ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み)
+        /// ステータス(draft: 申請で使用しない、active: 申請で使用する)
         /// </summary>
-        /// <value>ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み)</value>
+        /// <value>ステータス(draft: 申請で使用しない、active: 申請で使用する)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -47,21 +47,15 @@ namespace Freee.Accounting.Models
             /// Enum Active for value: active
             /// </summary>
             [EnumMember(Value = "active")]
-            Active = 2,
-
-            /// <summary>
-            /// Enum Deleted for value: deleted
-            /// </summary>
-            [EnumMember(Value = "deleted")]
-            Deleted = 3
+            Active = 2
 
         }
 
 
         /// <summary>
-        /// ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み)
+        /// ステータス(draft: 申請で使用しない、active: 申請で使用する)
         /// </summary>
-        /// <value>ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み)</value>
+        /// <value>ステータス(draft: 申請で使用しない、active: 申請で使用する)</value>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = false)]
         public StatusEnum Status { get; set; }
         /// <summary>
@@ -80,7 +74,7 @@ namespace Freee.Accounting.Models
         /// <param name="name">申請フォームの名前 (required).</param>
         /// <param name="parts">申請フォームの項目.</param>
         /// <param name="routeSettingCount">適用された経路数 (required).</param>
-        /// <param name="status">ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み) (required).</param>
+        /// <param name="status">ステータス(draft: 申請で使用しない、active: 申請で使用する) (required).</param>
         public ApprovalRequestFormResponseApprovalRequestForm(int companyId = default(int), string createdDate = default(string), string description = default(string), int? formOrder = default(int?), int id = default(int), string name = default(string), List<ApprovalRequestFormResponseApprovalRequestFormParts> parts = default(List<ApprovalRequestFormResponseApprovalRequestFormParts>), int routeSettingCount = default(int), StatusEnum status = default(StatusEnum))
         {
             this.CompanyId = companyId;
