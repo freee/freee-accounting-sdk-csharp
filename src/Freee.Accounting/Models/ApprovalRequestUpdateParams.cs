@@ -42,7 +42,7 @@ namespace Freee.Accounting.Models
         /// <param name="approvalFlowRouteId">申請経路ID (required).</param>
         /// <param name="approverId">承認者のユーザーID.</param>
         /// <param name="companyId">事業所ID (required).</param>
-        /// <param name="draft">falseの時、in_progress:申請中で更新する。それ以外の時はdraft:下書きで更新する (required).</param>
+        /// <param name="draft">各種申請のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で各種申請を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で各種申請を更新します。  (required).</param>
         /// <param name="requestItems">requestItems (required).</param>
         public ApprovalRequestUpdateParams(string applicationDate = default(string), int approvalFlowRouteId = default(int), int approverId = default(int), int companyId = default(int), bool draft = default(bool), List<ApprovalRequestCreateParamsRequestItems> requestItems = default(List<ApprovalRequestCreateParamsRequestItems>))
         {
@@ -87,9 +87,9 @@ namespace Freee.Accounting.Models
         public int CompanyId { get; set; }
 
         /// <summary>
-        /// falseの時、in_progress:申請中で更新する。それ以外の時はdraft:下書きで更新する
+        /// 各種申請のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で各種申請を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で各種申請を更新します。 
         /// </summary>
-        /// <value>falseの時、in_progress:申請中で更新する。それ以外の時はdraft:下書きで更新する</value>
+        /// <value>各種申請のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で各種申請を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で各種申請を更新します。 </value>
         [DataMember(Name = "draft", IsRequired = true, EmitDefaultValue = true)]
         public bool Draft { get; set; }
 

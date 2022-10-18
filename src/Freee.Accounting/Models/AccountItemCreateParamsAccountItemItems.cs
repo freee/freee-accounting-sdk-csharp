@@ -25,16 +25,16 @@ using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 namespace Freee.Accounting.Models
 {
     /// <summary>
-    /// AccountItemParamsAccountItemItems
+    /// AccountItemCreateParamsAccountItemItems
     /// </summary>
-    [DataContract(Name = "accountItemParams_account_item_items")]
-    public partial class AccountItemParamsAccountItemItems : IEquatable<AccountItemParamsAccountItemItems>
+    [DataContract(Name = "accountItemCreateParams_account_item_items")]
+    public partial class AccountItemCreateParamsAccountItemItems : IEquatable<AccountItemCreateParamsAccountItemItems>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountItemParamsAccountItemItems" /> class.
+        /// Initializes a new instance of the <see cref="AccountItemCreateParamsAccountItemItems" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        public AccountItemParamsAccountItemItems(int id = default(int))
+        public AccountItemCreateParamsAccountItemItems(int id = default(int))
         {
             this.Id = id;
         }
@@ -52,7 +52,7 @@ namespace Freee.Accounting.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AccountItemParamsAccountItemItems {\n");
+            sb.Append("class AccountItemCreateParamsAccountItemItems {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -74,15 +74,15 @@ namespace Freee.Accounting.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AccountItemParamsAccountItemItems);
+            return this.Equals(input as AccountItemCreateParamsAccountItemItems);
         }
 
         /// <summary>
-        /// Returns true if AccountItemParamsAccountItemItems instances are equal
+        /// Returns true if AccountItemCreateParamsAccountItemItems instances are equal
         /// </summary>
-        /// <param name="input">Instance of AccountItemParamsAccountItemItems to be compared</param>
+        /// <param name="input">Instance of AccountItemCreateParamsAccountItemItems to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AccountItemParamsAccountItemItems input)
+        public bool Equals(AccountItemCreateParamsAccountItemItems input)
         {
             if (input == null)
             {

@@ -544,7 +544,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
-        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
+        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
@@ -569,7 +569,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
-        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
+        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
@@ -1399,7 +1399,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
-        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
+        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
@@ -1425,7 +1425,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
-        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
+        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
@@ -5174,7 +5174,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
-        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
+        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
@@ -5200,7 +5200,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
-        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
+        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
@@ -5326,7 +5326,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
-        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
+        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>
@@ -5353,7 +5353,7 @@ namespace Freee.Accounting.Api
         /// <param name="startDate">発生日で絞込：開始日(yyyy-mm-dd) (optional)</param>
         /// <param name="endDate">発生日で絞込：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="accountItemDisplayType">勘定科目の表示（勘定科目: account_item, 決算書表示:group）。指定されない場合、勘定科目: account_itemが指定されます。 (optional)</param>
-        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
+        /// <param name="breakdownDisplayType">内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag） ※勘定科目はaccount_item_display_typeが「group」の時のみ指定できます (optional)</param>
         /// <param name="partnerId">取引先IDで絞込（0を指定すると、取引先が未選択で絞り込めます） (optional)</param>
         /// <param name="partnerCode">取引先コードで絞込（事業所設定で取引先コードの利用を有効にしている場合のみ利用可能です） (optional)</param>
         /// <param name="itemId">品目IDで絞込（0を指定すると、品目が未選択で絞り込めます） (optional)</param>

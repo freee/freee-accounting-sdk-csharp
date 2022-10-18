@@ -25,44 +25,43 @@ using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 namespace Freee.Accounting.Models
 {
     /// <summary>
-    /// CompanyResponseCompanyTaxes
+    /// AccountItemCreateParams
     /// </summary>
-    [DataContract(Name = "companyResponse_company_taxes")]
-    public partial class CompanyResponseCompanyTaxes : IEquatable<CompanyResponseCompanyTaxes>
+    [DataContract(Name = "accountItemCreateParams")]
+    public partial class AccountItemCreateParams : IEquatable<AccountItemCreateParams>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CompanyResponseCompanyTaxes" /> class.
+        /// Initializes a new instance of the <see cref="AccountItemCreateParams" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected CompanyResponseCompanyTaxes() { }
+        protected AccountItemCreateParams() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="CompanyResponseCompanyTaxes" /> class.
+        /// Initializes a new instance of the <see cref="AccountItemCreateParams" /> class.
         /// </summary>
-        /// <param name="id">税区分ID（廃止予定。tax_codeを使用してください。） (required).</param>
-        /// <param name="name">税区分名 (required).</param>
-        public CompanyResponseCompanyTaxes(int id = default(int), string name = default(string))
+        /// <param name="accountItem">accountItem (required).</param>
+        /// <param name="companyId">事業所ID (required).</param>
+        public AccountItemCreateParams(AccountItemCreateParamsAccountItem accountItem = default(AccountItemCreateParamsAccountItem), int companyId = default(int))
         {
-            this.Id = id;
-            // to ensure "name" is required (not null)
-            if (name == null) {
-                throw new ArgumentNullException("name is a required property for CompanyResponseCompanyTaxes and cannot be null");
+            // to ensure "accountItem" is required (not null)
+            if (accountItem == null) {
+                throw new ArgumentNullException("accountItem is a required property for AccountItemCreateParams and cannot be null");
             }
-            this.Name = name;
+            this.AccountItem = accountItem;
+            this.CompanyId = companyId;
         }
 
         /// <summary>
-        /// 税区分ID（廃止予定。tax_codeを使用してください。）
+        /// Gets or Sets AccountItem
         /// </summary>
-        /// <value>税区分ID（廃止予定。tax_codeを使用してください。）</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
-        public int Id { get; set; }
+        [DataMember(Name = "account_item", IsRequired = true, EmitDefaultValue = false)]
+        public AccountItemCreateParamsAccountItem AccountItem { get; set; }
 
         /// <summary>
-        /// 税区分名
+        /// 事業所ID
         /// </summary>
-        /// <value>税区分名</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
-        public string Name { get; set; }
+        /// <value>事業所ID</value>
+        [DataMember(Name = "company_id", IsRequired = true, EmitDefaultValue = false)]
+        public int CompanyId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,9 +70,9 @@ namespace Freee.Accounting.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CompanyResponseCompanyTaxes {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("class AccountItemCreateParams {\n");
+            sb.Append("  AccountItem: ").Append(AccountItem).Append("\n");
+            sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -94,15 +93,15 @@ namespace Freee.Accounting.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CompanyResponseCompanyTaxes);
+            return this.Equals(input as AccountItemCreateParams);
         }
 
         /// <summary>
-        /// Returns true if CompanyResponseCompanyTaxes instances are equal
+        /// Returns true if AccountItemCreateParams instances are equal
         /// </summary>
-        /// <param name="input">Instance of CompanyResponseCompanyTaxes to be compared</param>
+        /// <param name="input">Instance of AccountItemCreateParams to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CompanyResponseCompanyTaxes input)
+        public bool Equals(AccountItemCreateParams input)
         {
             if (input == null)
             {
@@ -110,13 +109,13 @@ namespace Freee.Accounting.Models
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
+                    this.AccountItem == input.AccountItem ||
+                    (this.AccountItem != null &&
+                    this.AccountItem.Equals(input.AccountItem))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.CompanyId == input.CompanyId ||
+                    this.CompanyId.Equals(input.CompanyId)
                 );
         }
 
@@ -129,11 +128,11 @@ namespace Freee.Accounting.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                if (this.Name != null)
+                if (this.AccountItem != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.AccountItem.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.CompanyId.GetHashCode();
                 return hashCode;
             }
         }
