@@ -93,7 +93,7 @@ namespace Freee.Accounting.Api
         /// <param name="endUpdateDate">更新日で絞り込み：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
-        /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
+        /// <param name="keyword">検索キーワード&lt;br&gt; 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。&lt;br&gt; 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 &lt;ul&gt; &lt;li&gt;半角スペース&lt;/li&gt; &lt;li&gt;全角スペース&lt;/li&gt; &lt;li&gt;タブ&lt;/li&gt; &lt;/ul&gt;  (optional)</param>
         /// <returns>PartnersResponse</returns>
         PartnersResponse GetPartners(int companyId, string startUpdateDate = default(string), string endUpdateDate = default(string), long? offset = default(long?), int? limit = default(int?), string keyword = default(string));
 
@@ -109,7 +109,7 @@ namespace Freee.Accounting.Api
         /// <param name="endUpdateDate">更新日で絞り込み：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
-        /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
+        /// <param name="keyword">検索キーワード&lt;br&gt; 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。&lt;br&gt; 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 &lt;ul&gt; &lt;li&gt;半角スペース&lt;/li&gt; &lt;li&gt;全角スペース&lt;/li&gt; &lt;li&gt;タブ&lt;/li&gt; &lt;/ul&gt;  (optional)</param>
         /// <returns>ApiResponse of PartnersResponse</returns>
         ApiResponse<PartnersResponse> GetPartnersWithHttpInfo(int companyId, string startUpdateDate = default(string), string endUpdateDate = default(string), long? offset = default(long?), int? limit = default(int?), string keyword = default(string));
         /// <summary>
@@ -246,7 +246,7 @@ namespace Freee.Accounting.Api
         /// <param name="endUpdateDate">更新日で絞り込み：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
-        /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
+        /// <param name="keyword">検索キーワード&lt;br&gt; 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。&lt;br&gt; 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 &lt;ul&gt; &lt;li&gt;半角スペース&lt;/li&gt; &lt;li&gt;全角スペース&lt;/li&gt; &lt;li&gt;タブ&lt;/li&gt; &lt;/ul&gt;  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnersResponse</returns>
         System.Threading.Tasks.Task<PartnersResponse> GetPartnersAsync(int companyId, string startUpdateDate = default(string), string endUpdateDate = default(string), long? offset = default(long?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -263,7 +263,7 @@ namespace Freee.Accounting.Api
         /// <param name="endUpdateDate">更新日で絞り込み：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
-        /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
+        /// <param name="keyword">検索キーワード&lt;br&gt; 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。&lt;br&gt; 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 &lt;ul&gt; &lt;li&gt;半角スペース&lt;/li&gt; &lt;li&gt;全角スペース&lt;/li&gt; &lt;li&gt;タブ&lt;/li&gt; &lt;/ul&gt;  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnersResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PartnersResponse>> GetPartnersWithHttpInfoAsync(int companyId, string startUpdateDate = default(string), string endUpdateDate = default(string), long? offset = default(long?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -874,7 +874,7 @@ namespace Freee.Accounting.Api
         /// <param name="endUpdateDate">更新日で絞り込み：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
-        /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
+        /// <param name="keyword">検索キーワード&lt;br&gt; 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。&lt;br&gt; 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 &lt;ul&gt; &lt;li&gt;半角スペース&lt;/li&gt; &lt;li&gt;全角スペース&lt;/li&gt; &lt;li&gt;タブ&lt;/li&gt; &lt;/ul&gt;  (optional)</param>
         /// <returns>PartnersResponse</returns>
         public PartnersResponse GetPartners(int companyId, string startUpdateDate = default(string), string endUpdateDate = default(string), long? offset = default(long?), int? limit = default(int?), string keyword = default(string))
         {
@@ -891,7 +891,7 @@ namespace Freee.Accounting.Api
         /// <param name="endUpdateDate">更新日で絞り込み：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
-        /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
+        /// <param name="keyword">検索キーワード&lt;br&gt; 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。&lt;br&gt; 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 &lt;ul&gt; &lt;li&gt;半角スペース&lt;/li&gt; &lt;li&gt;全角スペース&lt;/li&gt; &lt;li&gt;タブ&lt;/li&gt; &lt;/ul&gt;  (optional)</param>
         /// <returns>ApiResponse of PartnersResponse</returns>
         public Freee.Accounting.Client.ApiResponse<PartnersResponse> GetPartnersWithHttpInfo(int companyId, string startUpdateDate = default(string), string endUpdateDate = default(string), long? offset = default(long?), int? limit = default(int?), string keyword = default(string))
         {
@@ -969,7 +969,7 @@ namespace Freee.Accounting.Api
         /// <param name="endUpdateDate">更新日で絞り込み：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
-        /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
+        /// <param name="keyword">検索キーワード&lt;br&gt; 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。&lt;br&gt; 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 &lt;ul&gt; &lt;li&gt;半角スペース&lt;/li&gt; &lt;li&gt;全角スペース&lt;/li&gt; &lt;li&gt;タブ&lt;/li&gt; &lt;/ul&gt;  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PartnersResponse</returns>
         public async System.Threading.Tasks.Task<PartnersResponse> GetPartnersAsync(int companyId, string startUpdateDate = default(string), string endUpdateDate = default(string), long? offset = default(long?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -987,7 +987,7 @@ namespace Freee.Accounting.Api
         /// <param name="endUpdateDate">更新日で絞り込み：終了日(yyyy-mm-dd) (optional)</param>
         /// <param name="offset">取得レコードのオフセット (デフォルト: 0) (optional)</param>
         /// <param name="limit">取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)</param>
-        /// <param name="keyword">検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)</param>
+        /// <param name="keyword">検索キーワード&lt;br&gt; 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。&lt;br&gt; 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 &lt;ul&gt; &lt;li&gt;半角スペース&lt;/li&gt; &lt;li&gt;全角スペース&lt;/li&gt; &lt;li&gt;タブ&lt;/li&gt; &lt;/ul&gt;  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PartnersResponse)</returns>
         public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<PartnersResponse>> GetPartnersWithHttpInfoAsync(int companyId, string startUpdateDate = default(string), string endUpdateDate = default(string), long? offset = default(long?), int? limit = default(int?), string keyword = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

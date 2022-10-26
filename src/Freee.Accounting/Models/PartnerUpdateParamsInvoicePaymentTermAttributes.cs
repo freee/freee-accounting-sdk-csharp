@@ -33,7 +33,7 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="PartnerUpdateParamsInvoicePaymentTermAttributes" /> class.
         /// </summary>
-        /// <param name="additionalMonths">入金月.</param>
+        /// <param name="additionalMonths">入金月（当月を指定する場合は、0を指定してください。）.</param>
         /// <param name="cutoffDay">締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。）.</param>
         /// <param name="fixedDay">入金日（29, 30, 31日の末日を指定する場合は、32を指定してください。）.</param>
         public PartnerUpdateParamsInvoicePaymentTermAttributes(int additionalMonths = default(int), int cutoffDay = default(int), int fixedDay = default(int))
@@ -44,9 +44,9 @@ namespace Freee.Accounting.Models
         }
 
         /// <summary>
-        /// 入金月
+        /// 入金月（当月を指定する場合は、0を指定してください。）
         /// </summary>
-        /// <value>入金月</value>
+        /// <value>入金月（当月を指定する場合は、0を指定してください。）</value>
         [DataMember(Name = "additional_months", EmitDefaultValue = false)]
         public int AdditionalMonths { get; set; }
 

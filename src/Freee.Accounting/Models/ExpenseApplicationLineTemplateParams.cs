@@ -44,7 +44,7 @@ namespace Freee.Accounting.Models
         /// <param name="itemId">品目ID.</param>
         /// <param name="lineDescription">内容の補足 (1000文字以内).</param>
         /// <param name="name">経費科目名 (100文字以内) (required).</param>
-        /// <param name="requiredReceipt">添付ファイルの必須/任意.</param>
+        /// <param name="requiredReceipt">添付ファイルの必須/任意&lt;br&gt; falseを指定した時は申請時の領収書の添付を任意とします。&lt;br&gt; trueを指定した時は申請時の領収書の添付を必須とします。&lt;br&gt; 未指定の時は申請時の領収書の添付を任意とします。.</param>
         /// <param name="taxCode">税区分コード（税区分のdisplay_categoryがtax_5: 5%表示の税区分, tax_r8: 軽減税率8%表示の税区分に該当するtax_codeのみ利用可能です。税区分のdisplay_categoryは /taxes/companies/{:company_id}のAPIから取得可能です。） (required).</param>
         public ExpenseApplicationLineTemplateParams(int accountItemId = default(int), int companyId = default(int), string description = default(string), int itemId = default(int), string lineDescription = default(string), string name = default(string), bool requiredReceipt = default(bool), int taxCode = default(int))
         {
@@ -105,9 +105,9 @@ namespace Freee.Accounting.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// 添付ファイルの必須/任意
+        /// 添付ファイルの必須/任意&lt;br&gt; falseを指定した時は申請時の領収書の添付を任意とします。&lt;br&gt; trueを指定した時は申請時の領収書の添付を必須とします。&lt;br&gt; 未指定の時は申請時の領収書の添付を任意とします。
         /// </summary>
-        /// <value>添付ファイルの必須/任意</value>
+        /// <value>添付ファイルの必須/任意&lt;br&gt; falseを指定した時は申請時の領収書の添付を任意とします。&lt;br&gt; trueを指定した時は申請時の領収書の添付を必須とします。&lt;br&gt; 未指定の時は申請時の領収書の添付を任意とします。</value>
         [DataMember(Name = "required_receipt", EmitDefaultValue = true)]
         public bool RequiredReceipt { get; set; }
 

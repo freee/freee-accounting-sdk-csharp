@@ -33,19 +33,29 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectablesIndexResponseDefaultTaxTaxRate8" /> class.
         /// </summary>
+        /// <param name="code">税区分コード.</param>
         /// <param name="id">税区分ID.</param>
         /// <param name="name">税区分.</param>
-        public SelectablesIndexResponseDefaultTaxTaxRate8(int id = default(int), string name = default(string))
+        public SelectablesIndexResponseDefaultTaxTaxRate8(int code = default(int), int id = default(int), string name = default(string))
         {
+            this.Code = code;
             this.Id = id;
             this.Name = name;
         }
+
+        /// <summary>
+        /// 税区分コード
+        /// </summary>
+        /// <value>税区分コード</value>
+        [DataMember(Name = "code", EmitDefaultValue = false)]
+        public int Code { get; set; }
 
         /// <summary>
         /// 税区分ID
         /// </summary>
         /// <value>税区分ID</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
+        [Obsolete]
         public int Id { get; set; }
 
         /// <summary>
@@ -63,6 +73,7 @@ namespace Freee.Accounting.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class SelectablesIndexResponseDefaultTaxTaxRate8 {\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
@@ -101,6 +112,10 @@ namespace Freee.Accounting.Models
             }
             return 
                 (
+                    this.Code == input.Code ||
+                    this.Code.Equals(input.Code)
+                ) && 
+                (
                     this.Id == input.Id ||
                     this.Id.Equals(input.Id)
                 ) && 
@@ -120,6 +135,7 @@ namespace Freee.Accounting.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 if (this.Name != null)
                 {
