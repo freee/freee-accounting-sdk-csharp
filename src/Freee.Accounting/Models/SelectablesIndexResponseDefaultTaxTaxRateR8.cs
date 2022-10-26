@@ -25,18 +25,18 @@ using OpenAPIDateConverter = Freee.Accounting.Client.OpenAPIDateConverter;
 namespace Freee.Accounting.Models
 {
     /// <summary>
-    /// SelectablesIndexResponseDefaultTaxTaxRate5
+    /// SelectablesIndexResponseDefaultTaxTaxRateR8
     /// </summary>
-    [DataContract(Name = "selectablesIndexResponse_default_tax_tax_rate_5")]
-    public partial class SelectablesIndexResponseDefaultTaxTaxRate5 : IEquatable<SelectablesIndexResponseDefaultTaxTaxRate5>
+    [DataContract(Name = "selectablesIndexResponse_default_tax_tax_rate_r8")]
+    public partial class SelectablesIndexResponseDefaultTaxTaxRateR8 : IEquatable<SelectablesIndexResponseDefaultTaxTaxRateR8>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SelectablesIndexResponseDefaultTaxTaxRate5" /> class.
+        /// Initializes a new instance of the <see cref="SelectablesIndexResponseDefaultTaxTaxRateR8" /> class.
         /// </summary>
         /// <param name="code">税区分コード.</param>
         /// <param name="id">税区分ID.</param>
         /// <param name="name">税区分.</param>
-        public SelectablesIndexResponseDefaultTaxTaxRate5(int code = default(int), int id = default(int), string name = default(string))
+        public SelectablesIndexResponseDefaultTaxTaxRateR8(int code = default(int), int id = default(int), string name = default(string))
         {
             this.Code = code;
             this.Id = id;
@@ -72,7 +72,7 @@ namespace Freee.Accounting.Models
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class SelectablesIndexResponseDefaultTaxTaxRate5 {\n");
+            sb.Append("class SelectablesIndexResponseDefaultTaxTaxRateR8 {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -96,15 +96,15 @@ namespace Freee.Accounting.Models
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SelectablesIndexResponseDefaultTaxTaxRate5);
+            return this.Equals(input as SelectablesIndexResponseDefaultTaxTaxRateR8);
         }
 
         /// <summary>
-        /// Returns true if SelectablesIndexResponseDefaultTaxTaxRate5 instances are equal
+        /// Returns true if SelectablesIndexResponseDefaultTaxTaxRateR8 instances are equal
         /// </summary>
-        /// <param name="input">Instance of SelectablesIndexResponseDefaultTaxTaxRate5 to be compared</param>
+        /// <param name="input">Instance of SelectablesIndexResponseDefaultTaxTaxRateR8 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SelectablesIndexResponseDefaultTaxTaxRate5 input)
+        public bool Equals(SelectablesIndexResponseDefaultTaxTaxRateR8 input)
         {
             if (input == null)
             {

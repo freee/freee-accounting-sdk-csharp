@@ -33,13 +33,23 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectablesIndexResponseDefaultTax" /> class.
         /// </summary>
+        /// <param name="taxRate10">taxRate10.</param>
         /// <param name="taxRate5">taxRate5.</param>
         /// <param name="taxRate8">taxRate8.</param>
-        public SelectablesIndexResponseDefaultTax(SelectablesIndexResponseDefaultTaxTaxRate5 taxRate5 = default(SelectablesIndexResponseDefaultTaxTaxRate5), SelectablesIndexResponseDefaultTaxTaxRate8 taxRate8 = default(SelectablesIndexResponseDefaultTaxTaxRate8))
+        /// <param name="taxRateR8">taxRateR8.</param>
+        public SelectablesIndexResponseDefaultTax(SelectablesIndexResponseDefaultTaxTaxRate10 taxRate10 = default(SelectablesIndexResponseDefaultTaxTaxRate10), SelectablesIndexResponseDefaultTaxTaxRate5 taxRate5 = default(SelectablesIndexResponseDefaultTaxTaxRate5), SelectablesIndexResponseDefaultTaxTaxRate8 taxRate8 = default(SelectablesIndexResponseDefaultTaxTaxRate8), SelectablesIndexResponseDefaultTaxTaxRateR8 taxRateR8 = default(SelectablesIndexResponseDefaultTaxTaxRateR8))
         {
+            this.TaxRate10 = taxRate10;
             this.TaxRate5 = taxRate5;
             this.TaxRate8 = taxRate8;
+            this.TaxRateR8 = taxRateR8;
         }
+
+        /// <summary>
+        /// Gets or Sets TaxRate10
+        /// </summary>
+        [DataMember(Name = "tax_rate_10", EmitDefaultValue = false)]
+        public SelectablesIndexResponseDefaultTaxTaxRate10 TaxRate10 { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxRate5
@@ -54,6 +64,12 @@ namespace Freee.Accounting.Models
         public SelectablesIndexResponseDefaultTaxTaxRate8 TaxRate8 { get; set; }
 
         /// <summary>
+        /// Gets or Sets TaxRateR8
+        /// </summary>
+        [DataMember(Name = "tax_rate_r8", EmitDefaultValue = false)]
+        public SelectablesIndexResponseDefaultTaxTaxRateR8 TaxRateR8 { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -61,8 +77,10 @@ namespace Freee.Accounting.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class SelectablesIndexResponseDefaultTax {\n");
+            sb.Append("  TaxRate10: ").Append(TaxRate10).Append("\n");
             sb.Append("  TaxRate5: ").Append(TaxRate5).Append("\n");
             sb.Append("  TaxRate8: ").Append(TaxRate8).Append("\n");
+            sb.Append("  TaxRateR8: ").Append(TaxRateR8).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +117,11 @@ namespace Freee.Accounting.Models
             }
             return 
                 (
+                    this.TaxRate10 == input.TaxRate10 ||
+                    (this.TaxRate10 != null &&
+                    this.TaxRate10.Equals(input.TaxRate10))
+                ) && 
+                (
                     this.TaxRate5 == input.TaxRate5 ||
                     (this.TaxRate5 != null &&
                     this.TaxRate5.Equals(input.TaxRate5))
@@ -107,6 +130,11 @@ namespace Freee.Accounting.Models
                     this.TaxRate8 == input.TaxRate8 ||
                     (this.TaxRate8 != null &&
                     this.TaxRate8.Equals(input.TaxRate8))
+                ) && 
+                (
+                    this.TaxRateR8 == input.TaxRateR8 ||
+                    (this.TaxRateR8 != null &&
+                    this.TaxRateR8.Equals(input.TaxRateR8))
                 );
         }
 
@@ -119,6 +147,10 @@ namespace Freee.Accounting.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.TaxRate10 != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxRate10.GetHashCode();
+                }
                 if (this.TaxRate5 != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxRate5.GetHashCode();
@@ -126,6 +158,10 @@ namespace Freee.Accounting.Models
                 if (this.TaxRate8 != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxRate8.GetHashCode();
+                }
+                if (this.TaxRateR8 != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxRateR8.GetHashCode();
                 }
                 return hashCode;
             }

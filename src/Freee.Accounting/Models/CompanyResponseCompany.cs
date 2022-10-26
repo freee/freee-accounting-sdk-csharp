@@ -31,9 +31,9 @@ namespace Freee.Accounting.Models
     public partial class CompanyResponseCompany : IEquatable<CompanyResponseCompany>
     {
         /// <summary>
-        /// 種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他）
+        /// 種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他, \&quot;\&quot;: 未選択）
         /// </summary>
-        /// <value>種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他）</value>
+        /// <value>種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他, \&quot;\&quot;: 未選択）</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum IndustryClassEnum
         {
@@ -137,662 +137,812 @@ namespace Freee.Accounting.Models
             /// Enum Other for value: other
             /// </summary>
             [EnumMember(Value = "other")]
-            Other = 17
+            Other = 17,
+
+            /// <summary>
+            /// Enum Empty for value: 
+            /// </summary>
+            [EnumMember(Value = "")]
+            Empty = 18
 
         }
 
 
         /// <summary>
-        /// 種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他）
+        /// 種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他, \&quot;\&quot;: 未選択）
         /// </summary>
-        /// <value>種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他）</value>
+        /// <value>種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他, \&quot;\&quot;: 未選択）</value>
         [DataMember(Name = "industry_class", IsRequired = true, EmitDefaultValue = false)]
         public IndustryClassEnum IndustryClass { get; set; }
         /// <summary>
-        /// 業種（agriculture: 農業, forestry: 林業, fishing_industry: 漁業、水産養殖業, mining: 鉱業、採石業、砂利採取業, civil_contractors: 土木工事業, pavement: 舗装工事業, carpenter: とび、大工、左官等の建設工事業, renovation: リフォーム工事業, electrical_plumbing: 電気、管工事等の設備工事業, grocery: 食料品の製造加工業, machinery_manufacturing: 機械器具の製造加工業, printing: 印刷業, other_manufacturing: その他の製造加工業, software_development: 受託：ソフトウェア、アプリ開発業, system_development: 受託：システム開発業, survey_analysis: 受託：調査、分析等の情報処理業, server_management: 受託：サーバー運営管理, website_production: 受託：ウェブサイト制作, online_service_management: オンラインサービス運営業, online_advertising_agency: オンライン広告代理店業, online_advertising_planning_production: オンライン広告企画・制作業, online_media_management: オンラインメディア運営業, portal_site_management: ポータルサイト運営業, other_it_services: その他、IT サービス業, transport_delivery: 輸送業、配送業, delivery: バイク便等の配達業, other_transportation_logistics: その他の運輸業、物流業, other_wholesale: 卸売業：その他, clothing_wholesale_fiber: 卸売業：衣類卸売／繊維, food_wholesale: 卸売業：飲食料品, entrusted_development_wholesale: 卸売業：機械器具, online_shop: 小売業：無店舗　オンラインショップ, fashion_grocery_store: 小売業：店舗あり　ファッション、雑貨, food_store: 小売業：店舗あり　生鮮食品、飲食料品, entrusted_store: 小売業：店舗あり　機械、器具, other_store: 小売業：店舗あり　その他, financial_instruments_exchange: 金融業：金融商品取引, commodity_futures_investment_advisor: 金融業：商品先物取引、商品投資顧問, other_financial: 金融業：その他, brokerage_insurance: 保険業：仲介、代理, other_insurance: 保険業：その他, real_estate_developer: 不動産業：ディベロッパー, real_estate_brokerage: 不動産業：売買、仲介, rent_coin_parking_management: 不動産業：賃貸、コインパーキング、管理, rental_office_co_working_space: 不動産業：レンタルオフィス、コワーキングスペース, rental_lease: レンタル業、リース業, cpa_tax_accountant: 士業：公認会計士事務所、税理士事務所, law_office: 士業：法律事務所, judicial_and_administrative_scrivener: 士業：司法書士事務所／行政書士事務所, labor_consultant: 士業：社会保険労務士事務所, other_profession: 士業：その他, business_consultant: 経営コンサルタント, academic_research_development: 学術・開発研究機関, advertising_agency: 広告代理店, advertising_planning_production: 広告企画／制作, design_development: ソフトウェア、アプリ開発業（受託）, apparel_industry_design: 服飾デザイン業、工業デザイン業, website_design: ウェブサイト制作（受託）, advertising_planning_design: 広告企画／制作業, other_design: その他、デザイン／制作, restaurants_coffee_shops: レストラン、喫茶店等の飲食店業, sale_of_lunch: 弁当の販売業, bread_confectionery_manufacture_sale: パン、菓子等の製造販売業, delivery_catering_mobile_catering: デリバリー業、ケータリング業、移動販売業, hotel_inn: 宿泊業：ホテル、旅館, homestay: 宿泊業：民泊, travel_agency: 旅行代理店業, leisure_sports_facility_management: レジャー、スポーツ等の施設運営業, show_event_management: ショー、イベント等の興行、イベント運営業, barber: ビューティ、ヘルスケア業：床屋、理容室, beauty_salon: ビューティ、ヘルスケア業：美容室, spa_sand_bath_sauna: ビューティ、ヘルスケア業：スパ、砂風呂、サウナ等, este_ail_salon: ビューティ、ヘルスケア業：その他、エステサロン、ネイルサロン等, bridal_planning_introduce_wedding: 冠婚葬祭業：ブライダルプランニング、結婚式場紹介等, memorial_ceremony_funeral: 冠婚葬祭業：メモリアルセレモニー、葬儀等, moving: 引っ越し業, courier_industry: 宅配業, house_maid_cleaning_agency: 家事代行サービス業：無店舗　ハウスメイド、掃除代行等, re_tailoring_clothes: 家事代行サービス業：店舗あり　衣類修理、衣類仕立て直し等, training_institute_management: 研修所等の施設運営業, tutoring_school: 学習塾、進学塾等の教育・学習支援業, music_calligraphy_abacus_classroom: 音楽教室、書道教室、そろばん教室等のの教育・学習支援業, english_school: 英会話スクール等の語学学習支援業, tennis_yoga_judo_school: テニススクール、ヨガ教室、柔道場等のスポーツ指導、支援業, culture_school: その他、カルチャースクール等の教育・学習支援業, seminar_planning_management: セミナー等の企画、運営業, hospital_clinic: 医療業：病院、一般診療所、クリニック等, dental_clinic: 医療業：歯科診療所, other_medical_services: 医療業：その他、医療サービス等, nursery: 福祉業：保育所等、児童向け施設型サービス, nursing_home: 福祉業：老人ホーム等、老人向け施設型サービス, rehabilitation_support_services: 福祉業：療育支援サービス等、障害者等向け施設型サービス, other_welfare: 福祉業：その他、施設型福祉サービス, visit_welfare_service: 福祉業：訪問型福祉サービス, recruitment_temporary_staffing: 人材紹介業、人材派遣業, life_related_recruitment_temporary_staffing: 生活関連サービスの人材紹介業、人材派遣業, car_maintenance_car_repair: 自動車整備業、自動車修理業, machinery_equipment_maintenance_repair: 機械機器類の整備業、修理業, cleaning_maintenance_building_management: 清掃業、メンテナンス業、建物管理業, security: 警備業, other_services: その他のサービス業, npo: NPO, general_incorporated_association: 一般社団法人, general_incorporated_foundation: 一般財団法人, other_association: その他組織)
+        /// ### 業種 法人&lt;br&gt;   - &#39;&#39;: 未選択   - agriculture: 農業   - forestry: 林業   - fishing_industry: 漁業、水産養殖業   - mining: 鉱業、採石業、砂利採取業   - civil_contractors: 土木工事業   - pavement: 舗装工事業   - carpenter: とび、大工、左官等の建設工事業   - renovation: リフォーム工事業   - electrical_plumbing: 電気、管工事等の設備工事業   - grocery: 食料品の製造加工業   - machinery_manufacturing: 機械器具の製造加工業   - printing: 印刷業   - other_manufacturing: その他の製造加工業   - software_development: 受託：ソフトウェア、アプリ開発業   - system_development: 受託：システム開発業   - survey_analysis: 受託：調査、分析等の情報処理業   - server_management: 受託：サーバー運営管理   - website_production: 受託：ウェブサイト制作   - online_service_management: オンラインサービス運営業   - online_advertising_agency: オンライン広告代理店業   - online_advertising_planning_production: オンライン広告企画・制作業   - online_media_management: オンラインメディア運営業   - portal_site_management: ポータルサイト運営業   - other_it_services: その他、IT サービス業   - transport_delivery: 輸送業、配送業   - delivery: バイク便等の配達業   - other_transportation_logistics: その他の運輸業、物流業   - other_wholesale: 卸売業：その他   - clothing_wholesale_fiber: 卸売業：衣類卸売／繊維   - food_wholesale: 卸売業：飲食料品   - entrusted_development_wholesale: 卸売業：機械器具   - online_shop: 小売業：無店舗　オンラインショップ   - fashion_grocery_store: 小売業：店舗あり　ファッション、雑貨   - food_store: 小売業：店舗あり　生鮮食品、飲食料品   - entrusted_store: 小売業：店舗あり　機械、器具   - other_store: 小売業：店舗あり　その他   - financial_instruments_exchange: 金融業：金融商品取引   - commodity_futures_investment_advisor: 金融業：商品先物取引、商品投資顧問   - other_financial: 金融業：その他   - brokerage_insurance: 保険業：仲介、代理   - other_insurance: 保険業：その他   - real_estate_developer: 不動産業：ディベロッパー   - real_estate_brokerage: 不動産業：売買、仲介   - rent_coin_parking_management: 不動産業：賃貸、コインパーキング、管理   - rental_office_co_working_space: 不動産業：レンタルオフィス、コワーキングスペース   - rental_lease: レンタル業、リース業   - cpa_tax_accountant: 士業：公認会計士事務所、税理士事務所   - law_office: 士業：法律事務所   - judicial_and_administrative_scrivener: 士業：司法書士事務所／行政書士事務所   - labor_consultant: 士業：社会保険労務士事務所   - other_profession: 士業：その他   - business_consultant: 経営コンサルタント   - academic_research_development: 学術・開発研究機関   - advertising_agency: 広告代理店   - advertising_planning_production: 広告企画／制作   - design_development: ソフトウェア、アプリ開発業（受託）   - apparel_industry_design: 服飾デザイン業、工業デザイン業   - website_design: ウェブサイト制作（受託）   - advertising_planning_design: 広告企画／制作業   - other_design: その他、デザイン／制作   - restaurants_coffee_shops: レストラン、喫茶店等の飲食店業   - sale_of_lunch: 弁当の販売業   - bread_confectionery_manufacture_sale: パン、菓子等の製造販売業   - delivery_catering_mobile_catering: デリバリー業、ケータリング業、移動販売業   - hotel_inn: 宿泊業：ホテル、旅館   - homestay: 宿泊業：民泊   - travel_agency: 旅行代理店業   - leisure_sports_facility_management: レジャー、スポーツ等の施設運営業   - show_event_management: ショー、イベント等の興行、イベント運営業   - barber: ビューティ、ヘルスケア業：床屋、理容室   - beauty_salon: ビューティ、ヘルスケア業：美容室   - spa_sand_bath_sauna: ビューティ、ヘルスケア業：スパ、砂風呂、サウナ等   - este_ail_salon: ビューティ、ヘルスケア業：その他、エステサロン、ネイルサロン等   - bridal_planning_introduce_wedding: 冠婚葬祭業：ブライダルプランニング、結婚式場紹介等   - memorial_ceremony_funeral: 冠婚葬祭業：メモリアルセレモニー、葬儀等   - moving: 引っ越し業   - courier_industry: 宅配業   - house_maid_cleaning_agency: 家事代行サービス業：無店舗　ハウスメイド、掃除代行等   - re_tailoring_clothes: 家事代行サービス業：店舗あり　衣類修理、衣類仕立て直し等   - training_institute_management: 研修所等の施設運営業   - tutoring_school: 学習塾、進学塾等の教育・学習支援業   - music_calligraphy_abacus_classroom: 音楽教室、書道教室、そろばん教室等の教育・学習支援業   - english_school: 英会話スクール等の語学学習支援業   - tennis_yoga_judo_school: テニススクール、ヨガ教室、柔道場等のスポーツ指導、支援業   - culture_school: その他、カルチャースクール等の教育・学習支援業   - seminar_planning_management: セミナー等の企画、運営業   - hospital_clinic: 医療業：病院、一般診療所、クリニック等   - dental_clinic: 医療業：歯科診療所   - other_medical_services: 医療業：その他、医療サービス等   - nursery: 福祉業：保育所等、児童向け施設型サービス   - nursing_home: 福祉業：老人ホーム等、老人向け施設型サービス   - rehabilitation_support_services: 福祉業：療育支援サービス等、障害者等向け施設型サービス   - other_welfare: 福祉業：その他、施設型福祉サービス   - visit_welfare_service: 福祉業：訪問型福祉サービス   - recruitment_temporary_staffing: 人材紹介業、人材派遣業   - life_related_recruitment_temporary_staffing: 生活関連サービスの人材紹介業、人材派遣業   - car_maintenance_car_repair: 自動車整備業、自動車修理業   - machinery_equipment_maintenance_repair: 機械機器類の整備業、修理業   - cleaning_maintenance_building_management: 清掃業、メンテナンス業、建物管理業   - security: 警備業   - other_services: その他のサービス業   - npo: &#39;NPO&#39;   - general_incorporated_association: &#39;一般社団法人&#39;   - general_incorporated_foundation: &#39;一般財団法人&#39;   - other_association: &#39;その他組織&#39; &lt;br&gt; &lt;br&gt; ### 業種 個人&lt;br&gt;   - &#39;&#39;: 未選択   - manufacturing: 製造業   - education: 教育   - medical: 医療/福祉   - ict: ソフトウェア・情報サービス業   - food: 飲食業   - construction: 建設業   - transportation: 運送業   - trading: 卸売業   - retail: 小売業   - finance: 金融/保険業   - real_estate: 不動産業   - agriculture: 農業   - travel: 旅行・宿泊業   - accountant: 専門業（税理士・会計士）   - lawer: その他専門業（法律など）   - consultant: サービス業（コンサルティング）   - recruit: サービス業（人材）   - publication: サービス業（出版）   - design: サービス業（デザイン）   - barber: サービス業（理容・美容）   - others: その他サービス業   - company_employee: 会社員   - others_side_business: その他(副業や株取引のみなど)   - others_deduction: その他(医療費などの控除のみ)   - default: 未定
         /// </summary>
-        /// <value>業種（agriculture: 農業, forestry: 林業, fishing_industry: 漁業、水産養殖業, mining: 鉱業、採石業、砂利採取業, civil_contractors: 土木工事業, pavement: 舗装工事業, carpenter: とび、大工、左官等の建設工事業, renovation: リフォーム工事業, electrical_plumbing: 電気、管工事等の設備工事業, grocery: 食料品の製造加工業, machinery_manufacturing: 機械器具の製造加工業, printing: 印刷業, other_manufacturing: その他の製造加工業, software_development: 受託：ソフトウェア、アプリ開発業, system_development: 受託：システム開発業, survey_analysis: 受託：調査、分析等の情報処理業, server_management: 受託：サーバー運営管理, website_production: 受託：ウェブサイト制作, online_service_management: オンラインサービス運営業, online_advertising_agency: オンライン広告代理店業, online_advertising_planning_production: オンライン広告企画・制作業, online_media_management: オンラインメディア運営業, portal_site_management: ポータルサイト運営業, other_it_services: その他、IT サービス業, transport_delivery: 輸送業、配送業, delivery: バイク便等の配達業, other_transportation_logistics: その他の運輸業、物流業, other_wholesale: 卸売業：その他, clothing_wholesale_fiber: 卸売業：衣類卸売／繊維, food_wholesale: 卸売業：飲食料品, entrusted_development_wholesale: 卸売業：機械器具, online_shop: 小売業：無店舗　オンラインショップ, fashion_grocery_store: 小売業：店舗あり　ファッション、雑貨, food_store: 小売業：店舗あり　生鮮食品、飲食料品, entrusted_store: 小売業：店舗あり　機械、器具, other_store: 小売業：店舗あり　その他, financial_instruments_exchange: 金融業：金融商品取引, commodity_futures_investment_advisor: 金融業：商品先物取引、商品投資顧問, other_financial: 金融業：その他, brokerage_insurance: 保険業：仲介、代理, other_insurance: 保険業：その他, real_estate_developer: 不動産業：ディベロッパー, real_estate_brokerage: 不動産業：売買、仲介, rent_coin_parking_management: 不動産業：賃貸、コインパーキング、管理, rental_office_co_working_space: 不動産業：レンタルオフィス、コワーキングスペース, rental_lease: レンタル業、リース業, cpa_tax_accountant: 士業：公認会計士事務所、税理士事務所, law_office: 士業：法律事務所, judicial_and_administrative_scrivener: 士業：司法書士事務所／行政書士事務所, labor_consultant: 士業：社会保険労務士事務所, other_profession: 士業：その他, business_consultant: 経営コンサルタント, academic_research_development: 学術・開発研究機関, advertising_agency: 広告代理店, advertising_planning_production: 広告企画／制作, design_development: ソフトウェア、アプリ開発業（受託）, apparel_industry_design: 服飾デザイン業、工業デザイン業, website_design: ウェブサイト制作（受託）, advertising_planning_design: 広告企画／制作業, other_design: その他、デザイン／制作, restaurants_coffee_shops: レストラン、喫茶店等の飲食店業, sale_of_lunch: 弁当の販売業, bread_confectionery_manufacture_sale: パン、菓子等の製造販売業, delivery_catering_mobile_catering: デリバリー業、ケータリング業、移動販売業, hotel_inn: 宿泊業：ホテル、旅館, homestay: 宿泊業：民泊, travel_agency: 旅行代理店業, leisure_sports_facility_management: レジャー、スポーツ等の施設運営業, show_event_management: ショー、イベント等の興行、イベント運営業, barber: ビューティ、ヘルスケア業：床屋、理容室, beauty_salon: ビューティ、ヘルスケア業：美容室, spa_sand_bath_sauna: ビューティ、ヘルスケア業：スパ、砂風呂、サウナ等, este_ail_salon: ビューティ、ヘルスケア業：その他、エステサロン、ネイルサロン等, bridal_planning_introduce_wedding: 冠婚葬祭業：ブライダルプランニング、結婚式場紹介等, memorial_ceremony_funeral: 冠婚葬祭業：メモリアルセレモニー、葬儀等, moving: 引っ越し業, courier_industry: 宅配業, house_maid_cleaning_agency: 家事代行サービス業：無店舗　ハウスメイド、掃除代行等, re_tailoring_clothes: 家事代行サービス業：店舗あり　衣類修理、衣類仕立て直し等, training_institute_management: 研修所等の施設運営業, tutoring_school: 学習塾、進学塾等の教育・学習支援業, music_calligraphy_abacus_classroom: 音楽教室、書道教室、そろばん教室等のの教育・学習支援業, english_school: 英会話スクール等の語学学習支援業, tennis_yoga_judo_school: テニススクール、ヨガ教室、柔道場等のスポーツ指導、支援業, culture_school: その他、カルチャースクール等の教育・学習支援業, seminar_planning_management: セミナー等の企画、運営業, hospital_clinic: 医療業：病院、一般診療所、クリニック等, dental_clinic: 医療業：歯科診療所, other_medical_services: 医療業：その他、医療サービス等, nursery: 福祉業：保育所等、児童向け施設型サービス, nursing_home: 福祉業：老人ホーム等、老人向け施設型サービス, rehabilitation_support_services: 福祉業：療育支援サービス等、障害者等向け施設型サービス, other_welfare: 福祉業：その他、施設型福祉サービス, visit_welfare_service: 福祉業：訪問型福祉サービス, recruitment_temporary_staffing: 人材紹介業、人材派遣業, life_related_recruitment_temporary_staffing: 生活関連サービスの人材紹介業、人材派遣業, car_maintenance_car_repair: 自動車整備業、自動車修理業, machinery_equipment_maintenance_repair: 機械機器類の整備業、修理業, cleaning_maintenance_building_management: 清掃業、メンテナンス業、建物管理業, security: 警備業, other_services: その他のサービス業, npo: NPO, general_incorporated_association: 一般社団法人, general_incorporated_foundation: 一般財団法人, other_association: その他組織)</value>
+        /// <value>### 業種 法人&lt;br&gt;   - &#39;&#39;: 未選択   - agriculture: 農業   - forestry: 林業   - fishing_industry: 漁業、水産養殖業   - mining: 鉱業、採石業、砂利採取業   - civil_contractors: 土木工事業   - pavement: 舗装工事業   - carpenter: とび、大工、左官等の建設工事業   - renovation: リフォーム工事業   - electrical_plumbing: 電気、管工事等の設備工事業   - grocery: 食料品の製造加工業   - machinery_manufacturing: 機械器具の製造加工業   - printing: 印刷業   - other_manufacturing: その他の製造加工業   - software_development: 受託：ソフトウェア、アプリ開発業   - system_development: 受託：システム開発業   - survey_analysis: 受託：調査、分析等の情報処理業   - server_management: 受託：サーバー運営管理   - website_production: 受託：ウェブサイト制作   - online_service_management: オンラインサービス運営業   - online_advertising_agency: オンライン広告代理店業   - online_advertising_planning_production: オンライン広告企画・制作業   - online_media_management: オンラインメディア運営業   - portal_site_management: ポータルサイト運営業   - other_it_services: その他、IT サービス業   - transport_delivery: 輸送業、配送業   - delivery: バイク便等の配達業   - other_transportation_logistics: その他の運輸業、物流業   - other_wholesale: 卸売業：その他   - clothing_wholesale_fiber: 卸売業：衣類卸売／繊維   - food_wholesale: 卸売業：飲食料品   - entrusted_development_wholesale: 卸売業：機械器具   - online_shop: 小売業：無店舗　オンラインショップ   - fashion_grocery_store: 小売業：店舗あり　ファッション、雑貨   - food_store: 小売業：店舗あり　生鮮食品、飲食料品   - entrusted_store: 小売業：店舗あり　機械、器具   - other_store: 小売業：店舗あり　その他   - financial_instruments_exchange: 金融業：金融商品取引   - commodity_futures_investment_advisor: 金融業：商品先物取引、商品投資顧問   - other_financial: 金融業：その他   - brokerage_insurance: 保険業：仲介、代理   - other_insurance: 保険業：その他   - real_estate_developer: 不動産業：ディベロッパー   - real_estate_brokerage: 不動産業：売買、仲介   - rent_coin_parking_management: 不動産業：賃貸、コインパーキング、管理   - rental_office_co_working_space: 不動産業：レンタルオフィス、コワーキングスペース   - rental_lease: レンタル業、リース業   - cpa_tax_accountant: 士業：公認会計士事務所、税理士事務所   - law_office: 士業：法律事務所   - judicial_and_administrative_scrivener: 士業：司法書士事務所／行政書士事務所   - labor_consultant: 士業：社会保険労務士事務所   - other_profession: 士業：その他   - business_consultant: 経営コンサルタント   - academic_research_development: 学術・開発研究機関   - advertising_agency: 広告代理店   - advertising_planning_production: 広告企画／制作   - design_development: ソフトウェア、アプリ開発業（受託）   - apparel_industry_design: 服飾デザイン業、工業デザイン業   - website_design: ウェブサイト制作（受託）   - advertising_planning_design: 広告企画／制作業   - other_design: その他、デザイン／制作   - restaurants_coffee_shops: レストラン、喫茶店等の飲食店業   - sale_of_lunch: 弁当の販売業   - bread_confectionery_manufacture_sale: パン、菓子等の製造販売業   - delivery_catering_mobile_catering: デリバリー業、ケータリング業、移動販売業   - hotel_inn: 宿泊業：ホテル、旅館   - homestay: 宿泊業：民泊   - travel_agency: 旅行代理店業   - leisure_sports_facility_management: レジャー、スポーツ等の施設運営業   - show_event_management: ショー、イベント等の興行、イベント運営業   - barber: ビューティ、ヘルスケア業：床屋、理容室   - beauty_salon: ビューティ、ヘルスケア業：美容室   - spa_sand_bath_sauna: ビューティ、ヘルスケア業：スパ、砂風呂、サウナ等   - este_ail_salon: ビューティ、ヘルスケア業：その他、エステサロン、ネイルサロン等   - bridal_planning_introduce_wedding: 冠婚葬祭業：ブライダルプランニング、結婚式場紹介等   - memorial_ceremony_funeral: 冠婚葬祭業：メモリアルセレモニー、葬儀等   - moving: 引っ越し業   - courier_industry: 宅配業   - house_maid_cleaning_agency: 家事代行サービス業：無店舗　ハウスメイド、掃除代行等   - re_tailoring_clothes: 家事代行サービス業：店舗あり　衣類修理、衣類仕立て直し等   - training_institute_management: 研修所等の施設運営業   - tutoring_school: 学習塾、進学塾等の教育・学習支援業   - music_calligraphy_abacus_classroom: 音楽教室、書道教室、そろばん教室等の教育・学習支援業   - english_school: 英会話スクール等の語学学習支援業   - tennis_yoga_judo_school: テニススクール、ヨガ教室、柔道場等のスポーツ指導、支援業   - culture_school: その他、カルチャースクール等の教育・学習支援業   - seminar_planning_management: セミナー等の企画、運営業   - hospital_clinic: 医療業：病院、一般診療所、クリニック等   - dental_clinic: 医療業：歯科診療所   - other_medical_services: 医療業：その他、医療サービス等   - nursery: 福祉業：保育所等、児童向け施設型サービス   - nursing_home: 福祉業：老人ホーム等、老人向け施設型サービス   - rehabilitation_support_services: 福祉業：療育支援サービス等、障害者等向け施設型サービス   - other_welfare: 福祉業：その他、施設型福祉サービス   - visit_welfare_service: 福祉業：訪問型福祉サービス   - recruitment_temporary_staffing: 人材紹介業、人材派遣業   - life_related_recruitment_temporary_staffing: 生活関連サービスの人材紹介業、人材派遣業   - car_maintenance_car_repair: 自動車整備業、自動車修理業   - machinery_equipment_maintenance_repair: 機械機器類の整備業、修理業   - cleaning_maintenance_building_management: 清掃業、メンテナンス業、建物管理業   - security: 警備業   - other_services: その他のサービス業   - npo: &#39;NPO&#39;   - general_incorporated_association: &#39;一般社団法人&#39;   - general_incorporated_foundation: &#39;一般財団法人&#39;   - other_association: &#39;その他組織&#39; &lt;br&gt; &lt;br&gt; ### 業種 個人&lt;br&gt;   - &#39;&#39;: 未選択   - manufacturing: 製造業   - education: 教育   - medical: 医療/福祉   - ict: ソフトウェア・情報サービス業   - food: 飲食業   - construction: 建設業   - transportation: 運送業   - trading: 卸売業   - retail: 小売業   - finance: 金融/保険業   - real_estate: 不動産業   - agriculture: 農業   - travel: 旅行・宿泊業   - accountant: 専門業（税理士・会計士）   - lawer: その他専門業（法律など）   - consultant: サービス業（コンサルティング）   - recruit: サービス業（人材）   - publication: サービス業（出版）   - design: サービス業（デザイン）   - barber: サービス業（理容・美容）   - others: その他サービス業   - company_employee: 会社員   - others_side_business: その他(副業や株取引のみなど)   - others_deduction: その他(医療費などの控除のみ)   - default: 未定</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum IndustryCodeEnum
         {
             /// <summary>
+            /// Enum Empty for value: 
+            /// </summary>
+            [EnumMember(Value = "")]
+            Empty = 1,
+
+            /// <summary>
             /// Enum Agriculture for value: agriculture
             /// </summary>
             [EnumMember(Value = "agriculture")]
-            Agriculture = 1,
+            Agriculture = 2,
 
             /// <summary>
             /// Enum Forestry for value: forestry
             /// </summary>
             [EnumMember(Value = "forestry")]
-            Forestry = 2,
+            Forestry = 3,
 
             /// <summary>
             /// Enum FishingIndustry for value: fishing_industry
             /// </summary>
             [EnumMember(Value = "fishing_industry")]
-            FishingIndustry = 3,
+            FishingIndustry = 4,
 
             /// <summary>
             /// Enum Mining for value: mining
             /// </summary>
             [EnumMember(Value = "mining")]
-            Mining = 4,
+            Mining = 5,
 
             /// <summary>
             /// Enum CivilContractors for value: civil_contractors
             /// </summary>
             [EnumMember(Value = "civil_contractors")]
-            CivilContractors = 5,
+            CivilContractors = 6,
 
             /// <summary>
             /// Enum Pavement for value: pavement
             /// </summary>
             [EnumMember(Value = "pavement")]
-            Pavement = 6,
+            Pavement = 7,
 
             /// <summary>
             /// Enum Carpenter for value: carpenter
             /// </summary>
             [EnumMember(Value = "carpenter")]
-            Carpenter = 7,
+            Carpenter = 8,
 
             /// <summary>
             /// Enum Renovation for value: renovation
             /// </summary>
             [EnumMember(Value = "renovation")]
-            Renovation = 8,
+            Renovation = 9,
 
             /// <summary>
             /// Enum ElectricalPlumbing for value: electrical_plumbing
             /// </summary>
             [EnumMember(Value = "electrical_plumbing")]
-            ElectricalPlumbing = 9,
+            ElectricalPlumbing = 10,
 
             /// <summary>
             /// Enum Grocery for value: grocery
             /// </summary>
             [EnumMember(Value = "grocery")]
-            Grocery = 10,
+            Grocery = 11,
 
             /// <summary>
             /// Enum MachineryManufacturing for value: machinery_manufacturing
             /// </summary>
             [EnumMember(Value = "machinery_manufacturing")]
-            MachineryManufacturing = 11,
+            MachineryManufacturing = 12,
 
             /// <summary>
             /// Enum Printing for value: printing
             /// </summary>
             [EnumMember(Value = "printing")]
-            Printing = 12,
+            Printing = 13,
 
             /// <summary>
             /// Enum OtherManufacturing for value: other_manufacturing
             /// </summary>
             [EnumMember(Value = "other_manufacturing")]
-            OtherManufacturing = 13,
+            OtherManufacturing = 14,
 
             /// <summary>
             /// Enum SoftwareDevelopment for value: software_development
             /// </summary>
             [EnumMember(Value = "software_development")]
-            SoftwareDevelopment = 14,
+            SoftwareDevelopment = 15,
 
             /// <summary>
             /// Enum SystemDevelopment for value: system_development
             /// </summary>
             [EnumMember(Value = "system_development")]
-            SystemDevelopment = 15,
+            SystemDevelopment = 16,
 
             /// <summary>
             /// Enum SurveyAnalysis for value: survey_analysis
             /// </summary>
             [EnumMember(Value = "survey_analysis")]
-            SurveyAnalysis = 16,
+            SurveyAnalysis = 17,
 
             /// <summary>
             /// Enum ServerManagement for value: server_management
             /// </summary>
             [EnumMember(Value = "server_management")]
-            ServerManagement = 17,
+            ServerManagement = 18,
 
             /// <summary>
             /// Enum WebsiteProduction for value: website_production
             /// </summary>
             [EnumMember(Value = "website_production")]
-            WebsiteProduction = 18,
+            WebsiteProduction = 19,
 
             /// <summary>
             /// Enum OnlineServiceManagement for value: online_service_management
             /// </summary>
             [EnumMember(Value = "online_service_management")]
-            OnlineServiceManagement = 19,
+            OnlineServiceManagement = 20,
 
             /// <summary>
             /// Enum OnlineAdvertisingAgency for value: online_advertising_agency
             /// </summary>
             [EnumMember(Value = "online_advertising_agency")]
-            OnlineAdvertisingAgency = 20,
+            OnlineAdvertisingAgency = 21,
 
             /// <summary>
             /// Enum OnlineAdvertisingPlanningProduction for value: online_advertising_planning_production
             /// </summary>
             [EnumMember(Value = "online_advertising_planning_production")]
-            OnlineAdvertisingPlanningProduction = 21,
+            OnlineAdvertisingPlanningProduction = 22,
 
             /// <summary>
             /// Enum OnlineMediaManagement for value: online_media_management
             /// </summary>
             [EnumMember(Value = "online_media_management")]
-            OnlineMediaManagement = 22,
+            OnlineMediaManagement = 23,
 
             /// <summary>
             /// Enum PortalSiteManagement for value: portal_site_management
             /// </summary>
             [EnumMember(Value = "portal_site_management")]
-            PortalSiteManagement = 23,
+            PortalSiteManagement = 24,
 
             /// <summary>
             /// Enum OtherItServices for value: other_it_services
             /// </summary>
             [EnumMember(Value = "other_it_services")]
-            OtherItServices = 24,
+            OtherItServices = 25,
 
             /// <summary>
             /// Enum TransportDelivery for value: transport_delivery
             /// </summary>
             [EnumMember(Value = "transport_delivery")]
-            TransportDelivery = 25,
+            TransportDelivery = 26,
 
             /// <summary>
             /// Enum Delivery for value: delivery
             /// </summary>
             [EnumMember(Value = "delivery")]
-            Delivery = 26,
+            Delivery = 27,
 
             /// <summary>
             /// Enum OtherTransportationLogistics for value: other_transportation_logistics
             /// </summary>
             [EnumMember(Value = "other_transportation_logistics")]
-            OtherTransportationLogistics = 27,
+            OtherTransportationLogistics = 28,
 
             /// <summary>
             /// Enum OtherWholesale for value: other_wholesale
             /// </summary>
             [EnumMember(Value = "other_wholesale")]
-            OtherWholesale = 28,
+            OtherWholesale = 29,
 
             /// <summary>
             /// Enum ClothingWholesaleFiber for value: clothing_wholesale_fiber
             /// </summary>
             [EnumMember(Value = "clothing_wholesale_fiber")]
-            ClothingWholesaleFiber = 29,
+            ClothingWholesaleFiber = 30,
 
             /// <summary>
             /// Enum FoodWholesale for value: food_wholesale
             /// </summary>
             [EnumMember(Value = "food_wholesale")]
-            FoodWholesale = 30,
+            FoodWholesale = 31,
 
             /// <summary>
             /// Enum EntrustedDevelopmentWholesale for value: entrusted_development_wholesale
             /// </summary>
             [EnumMember(Value = "entrusted_development_wholesale")]
-            EntrustedDevelopmentWholesale = 31,
+            EntrustedDevelopmentWholesale = 32,
 
             /// <summary>
             /// Enum OnlineShop for value: online_shop
             /// </summary>
             [EnumMember(Value = "online_shop")]
-            OnlineShop = 32,
+            OnlineShop = 33,
 
             /// <summary>
             /// Enum FashionGroceryStore for value: fashion_grocery_store
             /// </summary>
             [EnumMember(Value = "fashion_grocery_store")]
-            FashionGroceryStore = 33,
+            FashionGroceryStore = 34,
 
             /// <summary>
             /// Enum FoodStore for value: food_store
             /// </summary>
             [EnumMember(Value = "food_store")]
-            FoodStore = 34,
+            FoodStore = 35,
 
             /// <summary>
             /// Enum EntrustedStore for value: entrusted_store
             /// </summary>
             [EnumMember(Value = "entrusted_store")]
-            EntrustedStore = 35,
+            EntrustedStore = 36,
 
             /// <summary>
             /// Enum OtherStore for value: other_store
             /// </summary>
             [EnumMember(Value = "other_store")]
-            OtherStore = 36,
+            OtherStore = 37,
 
             /// <summary>
             /// Enum FinancialInstrumentsExchange for value: financial_instruments_exchange
             /// </summary>
             [EnumMember(Value = "financial_instruments_exchange")]
-            FinancialInstrumentsExchange = 37,
+            FinancialInstrumentsExchange = 38,
 
             /// <summary>
             /// Enum CommodityFuturesInvestmentAdvisor for value: commodity_futures_investment_advisor
             /// </summary>
             [EnumMember(Value = "commodity_futures_investment_advisor")]
-            CommodityFuturesInvestmentAdvisor = 38,
+            CommodityFuturesInvestmentAdvisor = 39,
 
             /// <summary>
             /// Enum OtherFinancial for value: other_financial
             /// </summary>
             [EnumMember(Value = "other_financial")]
-            OtherFinancial = 39,
+            OtherFinancial = 40,
 
             /// <summary>
             /// Enum BrokerageInsurance for value: brokerage_insurance
             /// </summary>
             [EnumMember(Value = "brokerage_insurance")]
-            BrokerageInsurance = 40,
+            BrokerageInsurance = 41,
 
             /// <summary>
             /// Enum OtherInsurance for value: other_insurance
             /// </summary>
             [EnumMember(Value = "other_insurance")]
-            OtherInsurance = 41,
+            OtherInsurance = 42,
 
             /// <summary>
             /// Enum RealEstateDeveloper for value: real_estate_developer
             /// </summary>
             [EnumMember(Value = "real_estate_developer")]
-            RealEstateDeveloper = 42,
+            RealEstateDeveloper = 43,
 
             /// <summary>
             /// Enum RealEstateBrokerage for value: real_estate_brokerage
             /// </summary>
             [EnumMember(Value = "real_estate_brokerage")]
-            RealEstateBrokerage = 43,
+            RealEstateBrokerage = 44,
 
             /// <summary>
             /// Enum RentCoinParkingManagement for value: rent_coin_parking_management
             /// </summary>
             [EnumMember(Value = "rent_coin_parking_management")]
-            RentCoinParkingManagement = 44,
+            RentCoinParkingManagement = 45,
 
             /// <summary>
             /// Enum RentalOfficeCoWorkingSpace for value: rental_office_co_working_space
             /// </summary>
             [EnumMember(Value = "rental_office_co_working_space")]
-            RentalOfficeCoWorkingSpace = 45,
+            RentalOfficeCoWorkingSpace = 46,
 
             /// <summary>
             /// Enum RentalLease for value: rental_lease
             /// </summary>
             [EnumMember(Value = "rental_lease")]
-            RentalLease = 46,
+            RentalLease = 47,
 
             /// <summary>
             /// Enum CpaTaxAccountant for value: cpa_tax_accountant
             /// </summary>
             [EnumMember(Value = "cpa_tax_accountant")]
-            CpaTaxAccountant = 47,
+            CpaTaxAccountant = 48,
 
             /// <summary>
             /// Enum LawOffice for value: law_office
             /// </summary>
             [EnumMember(Value = "law_office")]
-            LawOffice = 48,
+            LawOffice = 49,
 
             /// <summary>
             /// Enum JudicialAndAdministrativeScrivener for value: judicial_and_administrative_scrivener
             /// </summary>
             [EnumMember(Value = "judicial_and_administrative_scrivener")]
-            JudicialAndAdministrativeScrivener = 49,
+            JudicialAndAdministrativeScrivener = 50,
 
             /// <summary>
             /// Enum LaborConsultant for value: labor_consultant
             /// </summary>
             [EnumMember(Value = "labor_consultant")]
-            LaborConsultant = 50,
+            LaborConsultant = 51,
 
             /// <summary>
             /// Enum OtherProfession for value: other_profession
             /// </summary>
             [EnumMember(Value = "other_profession")]
-            OtherProfession = 51,
+            OtherProfession = 52,
 
             /// <summary>
             /// Enum BusinessConsultant for value: business_consultant
             /// </summary>
             [EnumMember(Value = "business_consultant")]
-            BusinessConsultant = 52,
+            BusinessConsultant = 53,
 
             /// <summary>
             /// Enum AcademicResearchDevelopment for value: academic_research_development
             /// </summary>
             [EnumMember(Value = "academic_research_development")]
-            AcademicResearchDevelopment = 53,
+            AcademicResearchDevelopment = 54,
 
             /// <summary>
             /// Enum AdvertisingAgency for value: advertising_agency
             /// </summary>
             [EnumMember(Value = "advertising_agency")]
-            AdvertisingAgency = 54,
+            AdvertisingAgency = 55,
 
             /// <summary>
             /// Enum AdvertisingPlanningProduction for value: advertising_planning_production
             /// </summary>
             [EnumMember(Value = "advertising_planning_production")]
-            AdvertisingPlanningProduction = 55,
+            AdvertisingPlanningProduction = 56,
 
             /// <summary>
             /// Enum DesignDevelopment for value: design_development
             /// </summary>
             [EnumMember(Value = "design_development")]
-            DesignDevelopment = 56,
+            DesignDevelopment = 57,
 
             /// <summary>
             /// Enum ApparelIndustryDesign for value: apparel_industry_design
             /// </summary>
             [EnumMember(Value = "apparel_industry_design")]
-            ApparelIndustryDesign = 57,
+            ApparelIndustryDesign = 58,
 
             /// <summary>
             /// Enum WebsiteDesign for value: website_design
             /// </summary>
             [EnumMember(Value = "website_design")]
-            WebsiteDesign = 58,
+            WebsiteDesign = 59,
 
             /// <summary>
             /// Enum AdvertisingPlanningDesign for value: advertising_planning_design
             /// </summary>
             [EnumMember(Value = "advertising_planning_design")]
-            AdvertisingPlanningDesign = 59,
+            AdvertisingPlanningDesign = 60,
 
             /// <summary>
             /// Enum OtherDesign for value: other_design
             /// </summary>
             [EnumMember(Value = "other_design")]
-            OtherDesign = 60,
+            OtherDesign = 61,
 
             /// <summary>
             /// Enum RestaurantsCoffeeShops for value: restaurants_coffee_shops
             /// </summary>
             [EnumMember(Value = "restaurants_coffee_shops")]
-            RestaurantsCoffeeShops = 61,
+            RestaurantsCoffeeShops = 62,
 
             /// <summary>
             /// Enum SaleOfLunch for value: sale_of_lunch
             /// </summary>
             [EnumMember(Value = "sale_of_lunch")]
-            SaleOfLunch = 62,
+            SaleOfLunch = 63,
 
             /// <summary>
             /// Enum BreadConfectioneryManufactureSale for value: bread_confectionery_manufacture_sale
             /// </summary>
             [EnumMember(Value = "bread_confectionery_manufacture_sale")]
-            BreadConfectioneryManufactureSale = 63,
+            BreadConfectioneryManufactureSale = 64,
 
             /// <summary>
             /// Enum DeliveryCateringMobileCatering for value: delivery_catering_mobile_catering
             /// </summary>
             [EnumMember(Value = "delivery_catering_mobile_catering")]
-            DeliveryCateringMobileCatering = 64,
+            DeliveryCateringMobileCatering = 65,
 
             /// <summary>
             /// Enum HotelInn for value: hotel_inn
             /// </summary>
             [EnumMember(Value = "hotel_inn")]
-            HotelInn = 65,
+            HotelInn = 66,
 
             /// <summary>
             /// Enum Homestay for value: homestay
             /// </summary>
             [EnumMember(Value = "homestay")]
-            Homestay = 66,
+            Homestay = 67,
 
             /// <summary>
             /// Enum TravelAgency for value: travel_agency
             /// </summary>
             [EnumMember(Value = "travel_agency")]
-            TravelAgency = 67,
+            TravelAgency = 68,
 
             /// <summary>
             /// Enum LeisureSportsFacilityManagement for value: leisure_sports_facility_management
             /// </summary>
             [EnumMember(Value = "leisure_sports_facility_management")]
-            LeisureSportsFacilityManagement = 68,
+            LeisureSportsFacilityManagement = 69,
 
             /// <summary>
             /// Enum ShowEventManagement for value: show_event_management
             /// </summary>
             [EnumMember(Value = "show_event_management")]
-            ShowEventManagement = 69,
+            ShowEventManagement = 70,
 
             /// <summary>
             /// Enum Barber for value: barber
             /// </summary>
             [EnumMember(Value = "barber")]
-            Barber = 70,
+            Barber = 71,
 
             /// <summary>
             /// Enum BeautySalon for value: beauty_salon
             /// </summary>
             [EnumMember(Value = "beauty_salon")]
-            BeautySalon = 71,
+            BeautySalon = 72,
 
             /// <summary>
             /// Enum SpaSandBathSauna for value: spa_sand_bath_sauna
             /// </summary>
             [EnumMember(Value = "spa_sand_bath_sauna")]
-            SpaSandBathSauna = 72,
+            SpaSandBathSauna = 73,
 
             /// <summary>
             /// Enum EsteAilSalon for value: este_ail_salon
             /// </summary>
             [EnumMember(Value = "este_ail_salon")]
-            EsteAilSalon = 73,
+            EsteAilSalon = 74,
 
             /// <summary>
             /// Enum BridalPlanningIntroduceWedding for value: bridal_planning_introduce_wedding
             /// </summary>
             [EnumMember(Value = "bridal_planning_introduce_wedding")]
-            BridalPlanningIntroduceWedding = 74,
+            BridalPlanningIntroduceWedding = 75,
 
             /// <summary>
             /// Enum MemorialCeremonyFuneral for value: memorial_ceremony_funeral
             /// </summary>
             [EnumMember(Value = "memorial_ceremony_funeral")]
-            MemorialCeremonyFuneral = 75,
+            MemorialCeremonyFuneral = 76,
 
             /// <summary>
             /// Enum Moving for value: moving
             /// </summary>
             [EnumMember(Value = "moving")]
-            Moving = 76,
+            Moving = 77,
 
             /// <summary>
             /// Enum CourierIndustry for value: courier_industry
             /// </summary>
             [EnumMember(Value = "courier_industry")]
-            CourierIndustry = 77,
+            CourierIndustry = 78,
 
             /// <summary>
             /// Enum HouseMaidCleaningAgency for value: house_maid_cleaning_agency
             /// </summary>
             [EnumMember(Value = "house_maid_cleaning_agency")]
-            HouseMaidCleaningAgency = 78,
+            HouseMaidCleaningAgency = 79,
 
             /// <summary>
             /// Enum ReTailoringClothes for value: re_tailoring_clothes
             /// </summary>
             [EnumMember(Value = "re_tailoring_clothes")]
-            ReTailoringClothes = 79,
+            ReTailoringClothes = 80,
 
             /// <summary>
             /// Enum TrainingInstituteManagement for value: training_institute_management
             /// </summary>
             [EnumMember(Value = "training_institute_management")]
-            TrainingInstituteManagement = 80,
+            TrainingInstituteManagement = 81,
 
             /// <summary>
             /// Enum TutoringSchool for value: tutoring_school
             /// </summary>
             [EnumMember(Value = "tutoring_school")]
-            TutoringSchool = 81,
+            TutoringSchool = 82,
 
             /// <summary>
             /// Enum MusicCalligraphyAbacusClassroom for value: music_calligraphy_abacus_classroom
             /// </summary>
             [EnumMember(Value = "music_calligraphy_abacus_classroom")]
-            MusicCalligraphyAbacusClassroom = 82,
+            MusicCalligraphyAbacusClassroom = 83,
 
             /// <summary>
             /// Enum EnglishSchool for value: english_school
             /// </summary>
             [EnumMember(Value = "english_school")]
-            EnglishSchool = 83,
+            EnglishSchool = 84,
 
             /// <summary>
             /// Enum TennisYogaJudoSchool for value: tennis_yoga_judo_school
             /// </summary>
             [EnumMember(Value = "tennis_yoga_judo_school")]
-            TennisYogaJudoSchool = 84,
+            TennisYogaJudoSchool = 85,
 
             /// <summary>
             /// Enum CultureSchool for value: culture_school
             /// </summary>
             [EnumMember(Value = "culture_school")]
-            CultureSchool = 85,
+            CultureSchool = 86,
 
             /// <summary>
             /// Enum SeminarPlanningManagement for value: seminar_planning_management
             /// </summary>
             [EnumMember(Value = "seminar_planning_management")]
-            SeminarPlanningManagement = 86,
+            SeminarPlanningManagement = 87,
 
             /// <summary>
             /// Enum HospitalClinic for value: hospital_clinic
             /// </summary>
             [EnumMember(Value = "hospital_clinic")]
-            HospitalClinic = 87,
+            HospitalClinic = 88,
 
             /// <summary>
             /// Enum DentalClinic for value: dental_clinic
             /// </summary>
             [EnumMember(Value = "dental_clinic")]
-            DentalClinic = 88,
+            DentalClinic = 89,
 
             /// <summary>
             /// Enum OtherMedicalServices for value: other_medical_services
             /// </summary>
             [EnumMember(Value = "other_medical_services")]
-            OtherMedicalServices = 89,
+            OtherMedicalServices = 90,
 
             /// <summary>
             /// Enum Nursery for value: nursery
             /// </summary>
             [EnumMember(Value = "nursery")]
-            Nursery = 90,
+            Nursery = 91,
 
             /// <summary>
             /// Enum NursingHome for value: nursing_home
             /// </summary>
             [EnumMember(Value = "nursing_home")]
-            NursingHome = 91,
+            NursingHome = 92,
 
             /// <summary>
             /// Enum RehabilitationSupportServices for value: rehabilitation_support_services
             /// </summary>
             [EnumMember(Value = "rehabilitation_support_services")]
-            RehabilitationSupportServices = 92,
+            RehabilitationSupportServices = 93,
 
             /// <summary>
             /// Enum OtherWelfare for value: other_welfare
             /// </summary>
             [EnumMember(Value = "other_welfare")]
-            OtherWelfare = 93,
+            OtherWelfare = 94,
 
             /// <summary>
             /// Enum VisitWelfareService for value: visit_welfare_service
             /// </summary>
             [EnumMember(Value = "visit_welfare_service")]
-            VisitWelfareService = 94,
+            VisitWelfareService = 95,
 
             /// <summary>
             /// Enum RecruitmentTemporaryStaffing for value: recruitment_temporary_staffing
             /// </summary>
             [EnumMember(Value = "recruitment_temporary_staffing")]
-            RecruitmentTemporaryStaffing = 95,
+            RecruitmentTemporaryStaffing = 96,
 
             /// <summary>
             /// Enum LifeRelatedRecruitmentTemporaryStaffing for value: life_related_recruitment_temporary_staffing
             /// </summary>
             [EnumMember(Value = "life_related_recruitment_temporary_staffing")]
-            LifeRelatedRecruitmentTemporaryStaffing = 96,
+            LifeRelatedRecruitmentTemporaryStaffing = 97,
 
             /// <summary>
             /// Enum CarMaintenanceCarRepair for value: car_maintenance_car_repair
             /// </summary>
             [EnumMember(Value = "car_maintenance_car_repair")]
-            CarMaintenanceCarRepair = 97,
+            CarMaintenanceCarRepair = 98,
 
             /// <summary>
             /// Enum MachineryEquipmentMaintenanceRepair for value: machinery_equipment_maintenance_repair
             /// </summary>
             [EnumMember(Value = "machinery_equipment_maintenance_repair")]
-            MachineryEquipmentMaintenanceRepair = 98,
+            MachineryEquipmentMaintenanceRepair = 99,
 
             /// <summary>
             /// Enum CleaningMaintenanceBuildingManagement for value: cleaning_maintenance_building_management
             /// </summary>
             [EnumMember(Value = "cleaning_maintenance_building_management")]
-            CleaningMaintenanceBuildingManagement = 99,
+            CleaningMaintenanceBuildingManagement = 100,
 
             /// <summary>
             /// Enum Security for value: security
             /// </summary>
             [EnumMember(Value = "security")]
-            Security = 100,
+            Security = 101,
 
             /// <summary>
             /// Enum OtherServices for value: other_services
             /// </summary>
             [EnumMember(Value = "other_services")]
-            OtherServices = 101,
+            OtherServices = 102,
 
             /// <summary>
             /// Enum Npo for value: npo
             /// </summary>
             [EnumMember(Value = "npo")]
-            Npo = 102,
+            Npo = 103,
 
             /// <summary>
             /// Enum GeneralIncorporatedAssociation for value: general_incorporated_association
             /// </summary>
             [EnumMember(Value = "general_incorporated_association")]
-            GeneralIncorporatedAssociation = 103,
+            GeneralIncorporatedAssociation = 104,
 
             /// <summary>
             /// Enum GeneralIncorporatedFoundation for value: general_incorporated_foundation
             /// </summary>
             [EnumMember(Value = "general_incorporated_foundation")]
-            GeneralIncorporatedFoundation = 104,
+            GeneralIncorporatedFoundation = 105,
 
             /// <summary>
             /// Enum OtherAssociation for value: other_association
             /// </summary>
             [EnumMember(Value = "other_association")]
-            OtherAssociation = 105
+            OtherAssociation = 106,
+
+            /// <summary>
+            /// Enum Manufacturing for value: manufacturing
+            /// </summary>
+            [EnumMember(Value = "manufacturing")]
+            Manufacturing = 107,
+
+            /// <summary>
+            /// Enum Education for value: education
+            /// </summary>
+            [EnumMember(Value = "education")]
+            Education = 108,
+
+            /// <summary>
+            /// Enum Medical for value: medical
+            /// </summary>
+            [EnumMember(Value = "medical")]
+            Medical = 109,
+
+            /// <summary>
+            /// Enum Ict for value: ict
+            /// </summary>
+            [EnumMember(Value = "ict")]
+            Ict = 110,
+
+            /// <summary>
+            /// Enum Food for value: food
+            /// </summary>
+            [EnumMember(Value = "food")]
+            Food = 111,
+
+            /// <summary>
+            /// Enum Construction for value: construction
+            /// </summary>
+            [EnumMember(Value = "construction")]
+            Construction = 112,
+
+            /// <summary>
+            /// Enum Transportation for value: transportation
+            /// </summary>
+            [EnumMember(Value = "transportation")]
+            Transportation = 113,
+
+            /// <summary>
+            /// Enum Trading for value: trading
+            /// </summary>
+            [EnumMember(Value = "trading")]
+            Trading = 114,
+
+            /// <summary>
+            /// Enum Retail for value: retail
+            /// </summary>
+            [EnumMember(Value = "retail")]
+            Retail = 115,
+
+            /// <summary>
+            /// Enum Finance for value: finance
+            /// </summary>
+            [EnumMember(Value = "finance")]
+            Finance = 116,
+
+            /// <summary>
+            /// Enum RealEstate for value: real_estate
+            /// </summary>
+            [EnumMember(Value = "real_estate")]
+            RealEstate = 117,
+
+            /// <summary>
+            /// Enum Travel for value: travel
+            /// </summary>
+            [EnumMember(Value = "travel")]
+            Travel = 118,
+
+            /// <summary>
+            /// Enum Accountant for value: accountant
+            /// </summary>
+            [EnumMember(Value = "accountant")]
+            Accountant = 119,
+
+            /// <summary>
+            /// Enum Lawer for value: lawer
+            /// </summary>
+            [EnumMember(Value = "lawer")]
+            Lawer = 120,
+
+            /// <summary>
+            /// Enum Consultant for value: consultant
+            /// </summary>
+            [EnumMember(Value = "consultant")]
+            Consultant = 121,
+
+            /// <summary>
+            /// Enum Recruit for value: recruit
+            /// </summary>
+            [EnumMember(Value = "recruit")]
+            Recruit = 122,
+
+            /// <summary>
+            /// Enum Publication for value: publication
+            /// </summary>
+            [EnumMember(Value = "publication")]
+            Publication = 123,
+
+            /// <summary>
+            /// Enum Design for value: design
+            /// </summary>
+            [EnumMember(Value = "design")]
+            Design = 124,
+
+            /// <summary>
+            /// Enum Others for value: others
+            /// </summary>
+            [EnumMember(Value = "others")]
+            Others = 125,
+
+            /// <summary>
+            /// Enum CompanyEmployee for value: company_employee
+            /// </summary>
+            [EnumMember(Value = "company_employee")]
+            CompanyEmployee = 126,
+
+            /// <summary>
+            /// Enum OthersSideBusiness for value: others_side_business
+            /// </summary>
+            [EnumMember(Value = "others_side_business")]
+            OthersSideBusiness = 127,
+
+            /// <summary>
+            /// Enum OthersDeduction for value: others_deduction
+            /// </summary>
+            [EnumMember(Value = "others_deduction")]
+            OthersDeduction = 128,
+
+            /// <summary>
+            /// Enum Default for value: default
+            /// </summary>
+            [EnumMember(Value = "default")]
+            Default = 129
 
         }
 
 
         /// <summary>
-        /// 業種（agriculture: 農業, forestry: 林業, fishing_industry: 漁業、水産養殖業, mining: 鉱業、採石業、砂利採取業, civil_contractors: 土木工事業, pavement: 舗装工事業, carpenter: とび、大工、左官等の建設工事業, renovation: リフォーム工事業, electrical_plumbing: 電気、管工事等の設備工事業, grocery: 食料品の製造加工業, machinery_manufacturing: 機械器具の製造加工業, printing: 印刷業, other_manufacturing: その他の製造加工業, software_development: 受託：ソフトウェア、アプリ開発業, system_development: 受託：システム開発業, survey_analysis: 受託：調査、分析等の情報処理業, server_management: 受託：サーバー運営管理, website_production: 受託：ウェブサイト制作, online_service_management: オンラインサービス運営業, online_advertising_agency: オンライン広告代理店業, online_advertising_planning_production: オンライン広告企画・制作業, online_media_management: オンラインメディア運営業, portal_site_management: ポータルサイト運営業, other_it_services: その他、IT サービス業, transport_delivery: 輸送業、配送業, delivery: バイク便等の配達業, other_transportation_logistics: その他の運輸業、物流業, other_wholesale: 卸売業：その他, clothing_wholesale_fiber: 卸売業：衣類卸売／繊維, food_wholesale: 卸売業：飲食料品, entrusted_development_wholesale: 卸売業：機械器具, online_shop: 小売業：無店舗　オンラインショップ, fashion_grocery_store: 小売業：店舗あり　ファッション、雑貨, food_store: 小売業：店舗あり　生鮮食品、飲食料品, entrusted_store: 小売業：店舗あり　機械、器具, other_store: 小売業：店舗あり　その他, financial_instruments_exchange: 金融業：金融商品取引, commodity_futures_investment_advisor: 金融業：商品先物取引、商品投資顧問, other_financial: 金融業：その他, brokerage_insurance: 保険業：仲介、代理, other_insurance: 保険業：その他, real_estate_developer: 不動産業：ディベロッパー, real_estate_brokerage: 不動産業：売買、仲介, rent_coin_parking_management: 不動産業：賃貸、コインパーキング、管理, rental_office_co_working_space: 不動産業：レンタルオフィス、コワーキングスペース, rental_lease: レンタル業、リース業, cpa_tax_accountant: 士業：公認会計士事務所、税理士事務所, law_office: 士業：法律事務所, judicial_and_administrative_scrivener: 士業：司法書士事務所／行政書士事務所, labor_consultant: 士業：社会保険労務士事務所, other_profession: 士業：その他, business_consultant: 経営コンサルタント, academic_research_development: 学術・開発研究機関, advertising_agency: 広告代理店, advertising_planning_production: 広告企画／制作, design_development: ソフトウェア、アプリ開発業（受託）, apparel_industry_design: 服飾デザイン業、工業デザイン業, website_design: ウェブサイト制作（受託）, advertising_planning_design: 広告企画／制作業, other_design: その他、デザイン／制作, restaurants_coffee_shops: レストラン、喫茶店等の飲食店業, sale_of_lunch: 弁当の販売業, bread_confectionery_manufacture_sale: パン、菓子等の製造販売業, delivery_catering_mobile_catering: デリバリー業、ケータリング業、移動販売業, hotel_inn: 宿泊業：ホテル、旅館, homestay: 宿泊業：民泊, travel_agency: 旅行代理店業, leisure_sports_facility_management: レジャー、スポーツ等の施設運営業, show_event_management: ショー、イベント等の興行、イベント運営業, barber: ビューティ、ヘルスケア業：床屋、理容室, beauty_salon: ビューティ、ヘルスケア業：美容室, spa_sand_bath_sauna: ビューティ、ヘルスケア業：スパ、砂風呂、サウナ等, este_ail_salon: ビューティ、ヘルスケア業：その他、エステサロン、ネイルサロン等, bridal_planning_introduce_wedding: 冠婚葬祭業：ブライダルプランニング、結婚式場紹介等, memorial_ceremony_funeral: 冠婚葬祭業：メモリアルセレモニー、葬儀等, moving: 引っ越し業, courier_industry: 宅配業, house_maid_cleaning_agency: 家事代行サービス業：無店舗　ハウスメイド、掃除代行等, re_tailoring_clothes: 家事代行サービス業：店舗あり　衣類修理、衣類仕立て直し等, training_institute_management: 研修所等の施設運営業, tutoring_school: 学習塾、進学塾等の教育・学習支援業, music_calligraphy_abacus_classroom: 音楽教室、書道教室、そろばん教室等のの教育・学習支援業, english_school: 英会話スクール等の語学学習支援業, tennis_yoga_judo_school: テニススクール、ヨガ教室、柔道場等のスポーツ指導、支援業, culture_school: その他、カルチャースクール等の教育・学習支援業, seminar_planning_management: セミナー等の企画、運営業, hospital_clinic: 医療業：病院、一般診療所、クリニック等, dental_clinic: 医療業：歯科診療所, other_medical_services: 医療業：その他、医療サービス等, nursery: 福祉業：保育所等、児童向け施設型サービス, nursing_home: 福祉業：老人ホーム等、老人向け施設型サービス, rehabilitation_support_services: 福祉業：療育支援サービス等、障害者等向け施設型サービス, other_welfare: 福祉業：その他、施設型福祉サービス, visit_welfare_service: 福祉業：訪問型福祉サービス, recruitment_temporary_staffing: 人材紹介業、人材派遣業, life_related_recruitment_temporary_staffing: 生活関連サービスの人材紹介業、人材派遣業, car_maintenance_car_repair: 自動車整備業、自動車修理業, machinery_equipment_maintenance_repair: 機械機器類の整備業、修理業, cleaning_maintenance_building_management: 清掃業、メンテナンス業、建物管理業, security: 警備業, other_services: その他のサービス業, npo: NPO, general_incorporated_association: 一般社団法人, general_incorporated_foundation: 一般財団法人, other_association: その他組織)
+        /// ### 業種 法人&lt;br&gt;   - &#39;&#39;: 未選択   - agriculture: 農業   - forestry: 林業   - fishing_industry: 漁業、水産養殖業   - mining: 鉱業、採石業、砂利採取業   - civil_contractors: 土木工事業   - pavement: 舗装工事業   - carpenter: とび、大工、左官等の建設工事業   - renovation: リフォーム工事業   - electrical_plumbing: 電気、管工事等の設備工事業   - grocery: 食料品の製造加工業   - machinery_manufacturing: 機械器具の製造加工業   - printing: 印刷業   - other_manufacturing: その他の製造加工業   - software_development: 受託：ソフトウェア、アプリ開発業   - system_development: 受託：システム開発業   - survey_analysis: 受託：調査、分析等の情報処理業   - server_management: 受託：サーバー運営管理   - website_production: 受託：ウェブサイト制作   - online_service_management: オンラインサービス運営業   - online_advertising_agency: オンライン広告代理店業   - online_advertising_planning_production: オンライン広告企画・制作業   - online_media_management: オンラインメディア運営業   - portal_site_management: ポータルサイト運営業   - other_it_services: その他、IT サービス業   - transport_delivery: 輸送業、配送業   - delivery: バイク便等の配達業   - other_transportation_logistics: その他の運輸業、物流業   - other_wholesale: 卸売業：その他   - clothing_wholesale_fiber: 卸売業：衣類卸売／繊維   - food_wholesale: 卸売業：飲食料品   - entrusted_development_wholesale: 卸売業：機械器具   - online_shop: 小売業：無店舗　オンラインショップ   - fashion_grocery_store: 小売業：店舗あり　ファッション、雑貨   - food_store: 小売業：店舗あり　生鮮食品、飲食料品   - entrusted_store: 小売業：店舗あり　機械、器具   - other_store: 小売業：店舗あり　その他   - financial_instruments_exchange: 金融業：金融商品取引   - commodity_futures_investment_advisor: 金融業：商品先物取引、商品投資顧問   - other_financial: 金融業：その他   - brokerage_insurance: 保険業：仲介、代理   - other_insurance: 保険業：その他   - real_estate_developer: 不動産業：ディベロッパー   - real_estate_brokerage: 不動産業：売買、仲介   - rent_coin_parking_management: 不動産業：賃貸、コインパーキング、管理   - rental_office_co_working_space: 不動産業：レンタルオフィス、コワーキングスペース   - rental_lease: レンタル業、リース業   - cpa_tax_accountant: 士業：公認会計士事務所、税理士事務所   - law_office: 士業：法律事務所   - judicial_and_administrative_scrivener: 士業：司法書士事務所／行政書士事務所   - labor_consultant: 士業：社会保険労務士事務所   - other_profession: 士業：その他   - business_consultant: 経営コンサルタント   - academic_research_development: 学術・開発研究機関   - advertising_agency: 広告代理店   - advertising_planning_production: 広告企画／制作   - design_development: ソフトウェア、アプリ開発業（受託）   - apparel_industry_design: 服飾デザイン業、工業デザイン業   - website_design: ウェブサイト制作（受託）   - advertising_planning_design: 広告企画／制作業   - other_design: その他、デザイン／制作   - restaurants_coffee_shops: レストラン、喫茶店等の飲食店業   - sale_of_lunch: 弁当の販売業   - bread_confectionery_manufacture_sale: パン、菓子等の製造販売業   - delivery_catering_mobile_catering: デリバリー業、ケータリング業、移動販売業   - hotel_inn: 宿泊業：ホテル、旅館   - homestay: 宿泊業：民泊   - travel_agency: 旅行代理店業   - leisure_sports_facility_management: レジャー、スポーツ等の施設運営業   - show_event_management: ショー、イベント等の興行、イベント運営業   - barber: ビューティ、ヘルスケア業：床屋、理容室   - beauty_salon: ビューティ、ヘルスケア業：美容室   - spa_sand_bath_sauna: ビューティ、ヘルスケア業：スパ、砂風呂、サウナ等   - este_ail_salon: ビューティ、ヘルスケア業：その他、エステサロン、ネイルサロン等   - bridal_planning_introduce_wedding: 冠婚葬祭業：ブライダルプランニング、結婚式場紹介等   - memorial_ceremony_funeral: 冠婚葬祭業：メモリアルセレモニー、葬儀等   - moving: 引っ越し業   - courier_industry: 宅配業   - house_maid_cleaning_agency: 家事代行サービス業：無店舗　ハウスメイド、掃除代行等   - re_tailoring_clothes: 家事代行サービス業：店舗あり　衣類修理、衣類仕立て直し等   - training_institute_management: 研修所等の施設運営業   - tutoring_school: 学習塾、進学塾等の教育・学習支援業   - music_calligraphy_abacus_classroom: 音楽教室、書道教室、そろばん教室等の教育・学習支援業   - english_school: 英会話スクール等の語学学習支援業   - tennis_yoga_judo_school: テニススクール、ヨガ教室、柔道場等のスポーツ指導、支援業   - culture_school: その他、カルチャースクール等の教育・学習支援業   - seminar_planning_management: セミナー等の企画、運営業   - hospital_clinic: 医療業：病院、一般診療所、クリニック等   - dental_clinic: 医療業：歯科診療所   - other_medical_services: 医療業：その他、医療サービス等   - nursery: 福祉業：保育所等、児童向け施設型サービス   - nursing_home: 福祉業：老人ホーム等、老人向け施設型サービス   - rehabilitation_support_services: 福祉業：療育支援サービス等、障害者等向け施設型サービス   - other_welfare: 福祉業：その他、施設型福祉サービス   - visit_welfare_service: 福祉業：訪問型福祉サービス   - recruitment_temporary_staffing: 人材紹介業、人材派遣業   - life_related_recruitment_temporary_staffing: 生活関連サービスの人材紹介業、人材派遣業   - car_maintenance_car_repair: 自動車整備業、自動車修理業   - machinery_equipment_maintenance_repair: 機械機器類の整備業、修理業   - cleaning_maintenance_building_management: 清掃業、メンテナンス業、建物管理業   - security: 警備業   - other_services: その他のサービス業   - npo: &#39;NPO&#39;   - general_incorporated_association: &#39;一般社団法人&#39;   - general_incorporated_foundation: &#39;一般財団法人&#39;   - other_association: &#39;その他組織&#39; &lt;br&gt; &lt;br&gt; ### 業種 個人&lt;br&gt;   - &#39;&#39;: 未選択   - manufacturing: 製造業   - education: 教育   - medical: 医療/福祉   - ict: ソフトウェア・情報サービス業   - food: 飲食業   - construction: 建設業   - transportation: 運送業   - trading: 卸売業   - retail: 小売業   - finance: 金融/保険業   - real_estate: 不動産業   - agriculture: 農業   - travel: 旅行・宿泊業   - accountant: 専門業（税理士・会計士）   - lawer: その他専門業（法律など）   - consultant: サービス業（コンサルティング）   - recruit: サービス業（人材）   - publication: サービス業（出版）   - design: サービス業（デザイン）   - barber: サービス業（理容・美容）   - others: その他サービス業   - company_employee: 会社員   - others_side_business: その他(副業や株取引のみなど)   - others_deduction: その他(医療費などの控除のみ)   - default: 未定
         /// </summary>
-        /// <value>業種（agriculture: 農業, forestry: 林業, fishing_industry: 漁業、水産養殖業, mining: 鉱業、採石業、砂利採取業, civil_contractors: 土木工事業, pavement: 舗装工事業, carpenter: とび、大工、左官等の建設工事業, renovation: リフォーム工事業, electrical_plumbing: 電気、管工事等の設備工事業, grocery: 食料品の製造加工業, machinery_manufacturing: 機械器具の製造加工業, printing: 印刷業, other_manufacturing: その他の製造加工業, software_development: 受託：ソフトウェア、アプリ開発業, system_development: 受託：システム開発業, survey_analysis: 受託：調査、分析等の情報処理業, server_management: 受託：サーバー運営管理, website_production: 受託：ウェブサイト制作, online_service_management: オンラインサービス運営業, online_advertising_agency: オンライン広告代理店業, online_advertising_planning_production: オンライン広告企画・制作業, online_media_management: オンラインメディア運営業, portal_site_management: ポータルサイト運営業, other_it_services: その他、IT サービス業, transport_delivery: 輸送業、配送業, delivery: バイク便等の配達業, other_transportation_logistics: その他の運輸業、物流業, other_wholesale: 卸売業：その他, clothing_wholesale_fiber: 卸売業：衣類卸売／繊維, food_wholesale: 卸売業：飲食料品, entrusted_development_wholesale: 卸売業：機械器具, online_shop: 小売業：無店舗　オンラインショップ, fashion_grocery_store: 小売業：店舗あり　ファッション、雑貨, food_store: 小売業：店舗あり　生鮮食品、飲食料品, entrusted_store: 小売業：店舗あり　機械、器具, other_store: 小売業：店舗あり　その他, financial_instruments_exchange: 金融業：金融商品取引, commodity_futures_investment_advisor: 金融業：商品先物取引、商品投資顧問, other_financial: 金融業：その他, brokerage_insurance: 保険業：仲介、代理, other_insurance: 保険業：その他, real_estate_developer: 不動産業：ディベロッパー, real_estate_brokerage: 不動産業：売買、仲介, rent_coin_parking_management: 不動産業：賃貸、コインパーキング、管理, rental_office_co_working_space: 不動産業：レンタルオフィス、コワーキングスペース, rental_lease: レンタル業、リース業, cpa_tax_accountant: 士業：公認会計士事務所、税理士事務所, law_office: 士業：法律事務所, judicial_and_administrative_scrivener: 士業：司法書士事務所／行政書士事務所, labor_consultant: 士業：社会保険労務士事務所, other_profession: 士業：その他, business_consultant: 経営コンサルタント, academic_research_development: 学術・開発研究機関, advertising_agency: 広告代理店, advertising_planning_production: 広告企画／制作, design_development: ソフトウェア、アプリ開発業（受託）, apparel_industry_design: 服飾デザイン業、工業デザイン業, website_design: ウェブサイト制作（受託）, advertising_planning_design: 広告企画／制作業, other_design: その他、デザイン／制作, restaurants_coffee_shops: レストラン、喫茶店等の飲食店業, sale_of_lunch: 弁当の販売業, bread_confectionery_manufacture_sale: パン、菓子等の製造販売業, delivery_catering_mobile_catering: デリバリー業、ケータリング業、移動販売業, hotel_inn: 宿泊業：ホテル、旅館, homestay: 宿泊業：民泊, travel_agency: 旅行代理店業, leisure_sports_facility_management: レジャー、スポーツ等の施設運営業, show_event_management: ショー、イベント等の興行、イベント運営業, barber: ビューティ、ヘルスケア業：床屋、理容室, beauty_salon: ビューティ、ヘルスケア業：美容室, spa_sand_bath_sauna: ビューティ、ヘルスケア業：スパ、砂風呂、サウナ等, este_ail_salon: ビューティ、ヘルスケア業：その他、エステサロン、ネイルサロン等, bridal_planning_introduce_wedding: 冠婚葬祭業：ブライダルプランニング、結婚式場紹介等, memorial_ceremony_funeral: 冠婚葬祭業：メモリアルセレモニー、葬儀等, moving: 引っ越し業, courier_industry: 宅配業, house_maid_cleaning_agency: 家事代行サービス業：無店舗　ハウスメイド、掃除代行等, re_tailoring_clothes: 家事代行サービス業：店舗あり　衣類修理、衣類仕立て直し等, training_institute_management: 研修所等の施設運営業, tutoring_school: 学習塾、進学塾等の教育・学習支援業, music_calligraphy_abacus_classroom: 音楽教室、書道教室、そろばん教室等のの教育・学習支援業, english_school: 英会話スクール等の語学学習支援業, tennis_yoga_judo_school: テニススクール、ヨガ教室、柔道場等のスポーツ指導、支援業, culture_school: その他、カルチャースクール等の教育・学習支援業, seminar_planning_management: セミナー等の企画、運営業, hospital_clinic: 医療業：病院、一般診療所、クリニック等, dental_clinic: 医療業：歯科診療所, other_medical_services: 医療業：その他、医療サービス等, nursery: 福祉業：保育所等、児童向け施設型サービス, nursing_home: 福祉業：老人ホーム等、老人向け施設型サービス, rehabilitation_support_services: 福祉業：療育支援サービス等、障害者等向け施設型サービス, other_welfare: 福祉業：その他、施設型福祉サービス, visit_welfare_service: 福祉業：訪問型福祉サービス, recruitment_temporary_staffing: 人材紹介業、人材派遣業, life_related_recruitment_temporary_staffing: 生活関連サービスの人材紹介業、人材派遣業, car_maintenance_car_repair: 自動車整備業、自動車修理業, machinery_equipment_maintenance_repair: 機械機器類の整備業、修理業, cleaning_maintenance_building_management: 清掃業、メンテナンス業、建物管理業, security: 警備業, other_services: その他のサービス業, npo: NPO, general_incorporated_association: 一般社団法人, general_incorporated_foundation: 一般財団法人, other_association: その他組織)</value>
-        [DataMember(Name = "industry_code", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>### 業種 法人&lt;br&gt;   - &#39;&#39;: 未選択   - agriculture: 農業   - forestry: 林業   - fishing_industry: 漁業、水産養殖業   - mining: 鉱業、採石業、砂利採取業   - civil_contractors: 土木工事業   - pavement: 舗装工事業   - carpenter: とび、大工、左官等の建設工事業   - renovation: リフォーム工事業   - electrical_plumbing: 電気、管工事等の設備工事業   - grocery: 食料品の製造加工業   - machinery_manufacturing: 機械器具の製造加工業   - printing: 印刷業   - other_manufacturing: その他の製造加工業   - software_development: 受託：ソフトウェア、アプリ開発業   - system_development: 受託：システム開発業   - survey_analysis: 受託：調査、分析等の情報処理業   - server_management: 受託：サーバー運営管理   - website_production: 受託：ウェブサイト制作   - online_service_management: オンラインサービス運営業   - online_advertising_agency: オンライン広告代理店業   - online_advertising_planning_production: オンライン広告企画・制作業   - online_media_management: オンラインメディア運営業   - portal_site_management: ポータルサイト運営業   - other_it_services: その他、IT サービス業   - transport_delivery: 輸送業、配送業   - delivery: バイク便等の配達業   - other_transportation_logistics: その他の運輸業、物流業   - other_wholesale: 卸売業：その他   - clothing_wholesale_fiber: 卸売業：衣類卸売／繊維   - food_wholesale: 卸売業：飲食料品   - entrusted_development_wholesale: 卸売業：機械器具   - online_shop: 小売業：無店舗　オンラインショップ   - fashion_grocery_store: 小売業：店舗あり　ファッション、雑貨   - food_store: 小売業：店舗あり　生鮮食品、飲食料品   - entrusted_store: 小売業：店舗あり　機械、器具   - other_store: 小売業：店舗あり　その他   - financial_instruments_exchange: 金融業：金融商品取引   - commodity_futures_investment_advisor: 金融業：商品先物取引、商品投資顧問   - other_financial: 金融業：その他   - brokerage_insurance: 保険業：仲介、代理   - other_insurance: 保険業：その他   - real_estate_developer: 不動産業：ディベロッパー   - real_estate_brokerage: 不動産業：売買、仲介   - rent_coin_parking_management: 不動産業：賃貸、コインパーキング、管理   - rental_office_co_working_space: 不動産業：レンタルオフィス、コワーキングスペース   - rental_lease: レンタル業、リース業   - cpa_tax_accountant: 士業：公認会計士事務所、税理士事務所   - law_office: 士業：法律事務所   - judicial_and_administrative_scrivener: 士業：司法書士事務所／行政書士事務所   - labor_consultant: 士業：社会保険労務士事務所   - other_profession: 士業：その他   - business_consultant: 経営コンサルタント   - academic_research_development: 学術・開発研究機関   - advertising_agency: 広告代理店   - advertising_planning_production: 広告企画／制作   - design_development: ソフトウェア、アプリ開発業（受託）   - apparel_industry_design: 服飾デザイン業、工業デザイン業   - website_design: ウェブサイト制作（受託）   - advertising_planning_design: 広告企画／制作業   - other_design: その他、デザイン／制作   - restaurants_coffee_shops: レストラン、喫茶店等の飲食店業   - sale_of_lunch: 弁当の販売業   - bread_confectionery_manufacture_sale: パン、菓子等の製造販売業   - delivery_catering_mobile_catering: デリバリー業、ケータリング業、移動販売業   - hotel_inn: 宿泊業：ホテル、旅館   - homestay: 宿泊業：民泊   - travel_agency: 旅行代理店業   - leisure_sports_facility_management: レジャー、スポーツ等の施設運営業   - show_event_management: ショー、イベント等の興行、イベント運営業   - barber: ビューティ、ヘルスケア業：床屋、理容室   - beauty_salon: ビューティ、ヘルスケア業：美容室   - spa_sand_bath_sauna: ビューティ、ヘルスケア業：スパ、砂風呂、サウナ等   - este_ail_salon: ビューティ、ヘルスケア業：その他、エステサロン、ネイルサロン等   - bridal_planning_introduce_wedding: 冠婚葬祭業：ブライダルプランニング、結婚式場紹介等   - memorial_ceremony_funeral: 冠婚葬祭業：メモリアルセレモニー、葬儀等   - moving: 引っ越し業   - courier_industry: 宅配業   - house_maid_cleaning_agency: 家事代行サービス業：無店舗　ハウスメイド、掃除代行等   - re_tailoring_clothes: 家事代行サービス業：店舗あり　衣類修理、衣類仕立て直し等   - training_institute_management: 研修所等の施設運営業   - tutoring_school: 学習塾、進学塾等の教育・学習支援業   - music_calligraphy_abacus_classroom: 音楽教室、書道教室、そろばん教室等の教育・学習支援業   - english_school: 英会話スクール等の語学学習支援業   - tennis_yoga_judo_school: テニススクール、ヨガ教室、柔道場等のスポーツ指導、支援業   - culture_school: その他、カルチャースクール等の教育・学習支援業   - seminar_planning_management: セミナー等の企画、運営業   - hospital_clinic: 医療業：病院、一般診療所、クリニック等   - dental_clinic: 医療業：歯科診療所   - other_medical_services: 医療業：その他、医療サービス等   - nursery: 福祉業：保育所等、児童向け施設型サービス   - nursing_home: 福祉業：老人ホーム等、老人向け施設型サービス   - rehabilitation_support_services: 福祉業：療育支援サービス等、障害者等向け施設型サービス   - other_welfare: 福祉業：その他、施設型福祉サービス   - visit_welfare_service: 福祉業：訪問型福祉サービス   - recruitment_temporary_staffing: 人材紹介業、人材派遣業   - life_related_recruitment_temporary_staffing: 生活関連サービスの人材紹介業、人材派遣業   - car_maintenance_car_repair: 自動車整備業、自動車修理業   - machinery_equipment_maintenance_repair: 機械機器類の整備業、修理業   - cleaning_maintenance_building_management: 清掃業、メンテナンス業、建物管理業   - security: 警備業   - other_services: その他のサービス業   - npo: &#39;NPO&#39;   - general_incorporated_association: &#39;一般社団法人&#39;   - general_incorporated_foundation: &#39;一般財団法人&#39;   - other_association: &#39;その他組織&#39; &lt;br&gt; &lt;br&gt; ### 業種 個人&lt;br&gt;   - &#39;&#39;: 未選択   - manufacturing: 製造業   - education: 教育   - medical: 医療/福祉   - ict: ソフトウェア・情報サービス業   - food: 飲食業   - construction: 建設業   - transportation: 運送業   - trading: 卸売業   - retail: 小売業   - finance: 金融/保険業   - real_estate: 不動産業   - agriculture: 農業   - travel: 旅行・宿泊業   - accountant: 専門業（税理士・会計士）   - lawer: その他専門業（法律など）   - consultant: サービス業（コンサルティング）   - recruit: サービス業（人材）   - publication: サービス業（出版）   - design: サービス業（デザイン）   - barber: サービス業（理容・美容）   - others: その他サービス業   - company_employee: 会社員   - others_side_business: その他(副業や株取引のみなど)   - others_deduction: その他(医療費などの控除のみ)   - default: 未定</value>
+        [DataMember(Name = "industry_code", IsRequired = true, EmitDefaultValue = true)]
         public IndustryCodeEnum IndustryCode { get; set; }
         /// <summary>
         /// 請求書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;carried_forward_standard_classic&#x60; - レイアウト３（繰越金額欄あり）/クラシック  * &#x60;carried_forward_envelope_classic&#x60; - 封筒２（繰越金額欄あり）/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン
@@ -985,8 +1135,8 @@ namespace Freee.Accounting.Models
         /// <param name="fiscalYears">fiscalYears (required).</param>
         /// <param name="headCount">従業員数（0: 経営者のみ、1: 2~5人、2: 6~10人、3: 11~20人、4: 21~30人、5: 31~40人、6: 41~100人、7: 100人以上 (required).</param>
         /// <param name="id">事業所ID (required).</param>
-        /// <param name="industryClass">種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他） (required).</param>
-        /// <param name="industryCode">業種（agriculture: 農業, forestry: 林業, fishing_industry: 漁業、水産養殖業, mining: 鉱業、採石業、砂利採取業, civil_contractors: 土木工事業, pavement: 舗装工事業, carpenter: とび、大工、左官等の建設工事業, renovation: リフォーム工事業, electrical_plumbing: 電気、管工事等の設備工事業, grocery: 食料品の製造加工業, machinery_manufacturing: 機械器具の製造加工業, printing: 印刷業, other_manufacturing: その他の製造加工業, software_development: 受託：ソフトウェア、アプリ開発業, system_development: 受託：システム開発業, survey_analysis: 受託：調査、分析等の情報処理業, server_management: 受託：サーバー運営管理, website_production: 受託：ウェブサイト制作, online_service_management: オンラインサービス運営業, online_advertising_agency: オンライン広告代理店業, online_advertising_planning_production: オンライン広告企画・制作業, online_media_management: オンラインメディア運営業, portal_site_management: ポータルサイト運営業, other_it_services: その他、IT サービス業, transport_delivery: 輸送業、配送業, delivery: バイク便等の配達業, other_transportation_logistics: その他の運輸業、物流業, other_wholesale: 卸売業：その他, clothing_wholesale_fiber: 卸売業：衣類卸売／繊維, food_wholesale: 卸売業：飲食料品, entrusted_development_wholesale: 卸売業：機械器具, online_shop: 小売業：無店舗　オンラインショップ, fashion_grocery_store: 小売業：店舗あり　ファッション、雑貨, food_store: 小売業：店舗あり　生鮮食品、飲食料品, entrusted_store: 小売業：店舗あり　機械、器具, other_store: 小売業：店舗あり　その他, financial_instruments_exchange: 金融業：金融商品取引, commodity_futures_investment_advisor: 金融業：商品先物取引、商品投資顧問, other_financial: 金融業：その他, brokerage_insurance: 保険業：仲介、代理, other_insurance: 保険業：その他, real_estate_developer: 不動産業：ディベロッパー, real_estate_brokerage: 不動産業：売買、仲介, rent_coin_parking_management: 不動産業：賃貸、コインパーキング、管理, rental_office_co_working_space: 不動産業：レンタルオフィス、コワーキングスペース, rental_lease: レンタル業、リース業, cpa_tax_accountant: 士業：公認会計士事務所、税理士事務所, law_office: 士業：法律事務所, judicial_and_administrative_scrivener: 士業：司法書士事務所／行政書士事務所, labor_consultant: 士業：社会保険労務士事務所, other_profession: 士業：その他, business_consultant: 経営コンサルタント, academic_research_development: 学術・開発研究機関, advertising_agency: 広告代理店, advertising_planning_production: 広告企画／制作, design_development: ソフトウェア、アプリ開発業（受託）, apparel_industry_design: 服飾デザイン業、工業デザイン業, website_design: ウェブサイト制作（受託）, advertising_planning_design: 広告企画／制作業, other_design: その他、デザイン／制作, restaurants_coffee_shops: レストラン、喫茶店等の飲食店業, sale_of_lunch: 弁当の販売業, bread_confectionery_manufacture_sale: パン、菓子等の製造販売業, delivery_catering_mobile_catering: デリバリー業、ケータリング業、移動販売業, hotel_inn: 宿泊業：ホテル、旅館, homestay: 宿泊業：民泊, travel_agency: 旅行代理店業, leisure_sports_facility_management: レジャー、スポーツ等の施設運営業, show_event_management: ショー、イベント等の興行、イベント運営業, barber: ビューティ、ヘルスケア業：床屋、理容室, beauty_salon: ビューティ、ヘルスケア業：美容室, spa_sand_bath_sauna: ビューティ、ヘルスケア業：スパ、砂風呂、サウナ等, este_ail_salon: ビューティ、ヘルスケア業：その他、エステサロン、ネイルサロン等, bridal_planning_introduce_wedding: 冠婚葬祭業：ブライダルプランニング、結婚式場紹介等, memorial_ceremony_funeral: 冠婚葬祭業：メモリアルセレモニー、葬儀等, moving: 引っ越し業, courier_industry: 宅配業, house_maid_cleaning_agency: 家事代行サービス業：無店舗　ハウスメイド、掃除代行等, re_tailoring_clothes: 家事代行サービス業：店舗あり　衣類修理、衣類仕立て直し等, training_institute_management: 研修所等の施設運営業, tutoring_school: 学習塾、進学塾等の教育・学習支援業, music_calligraphy_abacus_classroom: 音楽教室、書道教室、そろばん教室等のの教育・学習支援業, english_school: 英会話スクール等の語学学習支援業, tennis_yoga_judo_school: テニススクール、ヨガ教室、柔道場等のスポーツ指導、支援業, culture_school: その他、カルチャースクール等の教育・学習支援業, seminar_planning_management: セミナー等の企画、運営業, hospital_clinic: 医療業：病院、一般診療所、クリニック等, dental_clinic: 医療業：歯科診療所, other_medical_services: 医療業：その他、医療サービス等, nursery: 福祉業：保育所等、児童向け施設型サービス, nursing_home: 福祉業：老人ホーム等、老人向け施設型サービス, rehabilitation_support_services: 福祉業：療育支援サービス等、障害者等向け施設型サービス, other_welfare: 福祉業：その他、施設型福祉サービス, visit_welfare_service: 福祉業：訪問型福祉サービス, recruitment_temporary_staffing: 人材紹介業、人材派遣業, life_related_recruitment_temporary_staffing: 生活関連サービスの人材紹介業、人材派遣業, car_maintenance_car_repair: 自動車整備業、自動車修理業, machinery_equipment_maintenance_repair: 機械機器類の整備業、修理業, cleaning_maintenance_building_management: 清掃業、メンテナンス業、建物管理業, security: 警備業, other_services: その他のサービス業, npo: NPO, general_incorporated_association: 一般社団法人, general_incorporated_foundation: 一般財団法人, other_association: その他組織) (required).</param>
+        /// <param name="industryClass">種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他, \&quot;\&quot;: 未選択） (required).</param>
+        /// <param name="industryCode">### 業種 法人&lt;br&gt;   - &#39;&#39;: 未選択   - agriculture: 農業   - forestry: 林業   - fishing_industry: 漁業、水産養殖業   - mining: 鉱業、採石業、砂利採取業   - civil_contractors: 土木工事業   - pavement: 舗装工事業   - carpenter: とび、大工、左官等の建設工事業   - renovation: リフォーム工事業   - electrical_plumbing: 電気、管工事等の設備工事業   - grocery: 食料品の製造加工業   - machinery_manufacturing: 機械器具の製造加工業   - printing: 印刷業   - other_manufacturing: その他の製造加工業   - software_development: 受託：ソフトウェア、アプリ開発業   - system_development: 受託：システム開発業   - survey_analysis: 受託：調査、分析等の情報処理業   - server_management: 受託：サーバー運営管理   - website_production: 受託：ウェブサイト制作   - online_service_management: オンラインサービス運営業   - online_advertising_agency: オンライン広告代理店業   - online_advertising_planning_production: オンライン広告企画・制作業   - online_media_management: オンラインメディア運営業   - portal_site_management: ポータルサイト運営業   - other_it_services: その他、IT サービス業   - transport_delivery: 輸送業、配送業   - delivery: バイク便等の配達業   - other_transportation_logistics: その他の運輸業、物流業   - other_wholesale: 卸売業：その他   - clothing_wholesale_fiber: 卸売業：衣類卸売／繊維   - food_wholesale: 卸売業：飲食料品   - entrusted_development_wholesale: 卸売業：機械器具   - online_shop: 小売業：無店舗　オンラインショップ   - fashion_grocery_store: 小売業：店舗あり　ファッション、雑貨   - food_store: 小売業：店舗あり　生鮮食品、飲食料品   - entrusted_store: 小売業：店舗あり　機械、器具   - other_store: 小売業：店舗あり　その他   - financial_instruments_exchange: 金融業：金融商品取引   - commodity_futures_investment_advisor: 金融業：商品先物取引、商品投資顧問   - other_financial: 金融業：その他   - brokerage_insurance: 保険業：仲介、代理   - other_insurance: 保険業：その他   - real_estate_developer: 不動産業：ディベロッパー   - real_estate_brokerage: 不動産業：売買、仲介   - rent_coin_parking_management: 不動産業：賃貸、コインパーキング、管理   - rental_office_co_working_space: 不動産業：レンタルオフィス、コワーキングスペース   - rental_lease: レンタル業、リース業   - cpa_tax_accountant: 士業：公認会計士事務所、税理士事務所   - law_office: 士業：法律事務所   - judicial_and_administrative_scrivener: 士業：司法書士事務所／行政書士事務所   - labor_consultant: 士業：社会保険労務士事務所   - other_profession: 士業：その他   - business_consultant: 経営コンサルタント   - academic_research_development: 学術・開発研究機関   - advertising_agency: 広告代理店   - advertising_planning_production: 広告企画／制作   - design_development: ソフトウェア、アプリ開発業（受託）   - apparel_industry_design: 服飾デザイン業、工業デザイン業   - website_design: ウェブサイト制作（受託）   - advertising_planning_design: 広告企画／制作業   - other_design: その他、デザイン／制作   - restaurants_coffee_shops: レストラン、喫茶店等の飲食店業   - sale_of_lunch: 弁当の販売業   - bread_confectionery_manufacture_sale: パン、菓子等の製造販売業   - delivery_catering_mobile_catering: デリバリー業、ケータリング業、移動販売業   - hotel_inn: 宿泊業：ホテル、旅館   - homestay: 宿泊業：民泊   - travel_agency: 旅行代理店業   - leisure_sports_facility_management: レジャー、スポーツ等の施設運営業   - show_event_management: ショー、イベント等の興行、イベント運営業   - barber: ビューティ、ヘルスケア業：床屋、理容室   - beauty_salon: ビューティ、ヘルスケア業：美容室   - spa_sand_bath_sauna: ビューティ、ヘルスケア業：スパ、砂風呂、サウナ等   - este_ail_salon: ビューティ、ヘルスケア業：その他、エステサロン、ネイルサロン等   - bridal_planning_introduce_wedding: 冠婚葬祭業：ブライダルプランニング、結婚式場紹介等   - memorial_ceremony_funeral: 冠婚葬祭業：メモリアルセレモニー、葬儀等   - moving: 引っ越し業   - courier_industry: 宅配業   - house_maid_cleaning_agency: 家事代行サービス業：無店舗　ハウスメイド、掃除代行等   - re_tailoring_clothes: 家事代行サービス業：店舗あり　衣類修理、衣類仕立て直し等   - training_institute_management: 研修所等の施設運営業   - tutoring_school: 学習塾、進学塾等の教育・学習支援業   - music_calligraphy_abacus_classroom: 音楽教室、書道教室、そろばん教室等の教育・学習支援業   - english_school: 英会話スクール等の語学学習支援業   - tennis_yoga_judo_school: テニススクール、ヨガ教室、柔道場等のスポーツ指導、支援業   - culture_school: その他、カルチャースクール等の教育・学習支援業   - seminar_planning_management: セミナー等の企画、運営業   - hospital_clinic: 医療業：病院、一般診療所、クリニック等   - dental_clinic: 医療業：歯科診療所   - other_medical_services: 医療業：その他、医療サービス等   - nursery: 福祉業：保育所等、児童向け施設型サービス   - nursing_home: 福祉業：老人ホーム等、老人向け施設型サービス   - rehabilitation_support_services: 福祉業：療育支援サービス等、障害者等向け施設型サービス   - other_welfare: 福祉業：その他、施設型福祉サービス   - visit_welfare_service: 福祉業：訪問型福祉サービス   - recruitment_temporary_staffing: 人材紹介業、人材派遣業   - life_related_recruitment_temporary_staffing: 生活関連サービスの人材紹介業、人材派遣業   - car_maintenance_car_repair: 自動車整備業、自動車修理業   - machinery_equipment_maintenance_repair: 機械機器類の整備業、修理業   - cleaning_maintenance_building_management: 清掃業、メンテナンス業、建物管理業   - security: 警備業   - other_services: その他のサービス業   - npo: &#39;NPO&#39;   - general_incorporated_association: &#39;一般社団法人&#39;   - general_incorporated_foundation: &#39;一般財団法人&#39;   - other_association: &#39;その他組織&#39; &lt;br&gt; &lt;br&gt; ### 業種 個人&lt;br&gt;   - &#39;&#39;: 未選択   - manufacturing: 製造業   - education: 教育   - medical: 医療/福祉   - ict: ソフトウェア・情報サービス業   - food: 飲食業   - construction: 建設業   - transportation: 運送業   - trading: 卸売業   - retail: 小売業   - finance: 金融/保険業   - real_estate: 不動産業   - agriculture: 農業   - travel: 旅行・宿泊業   - accountant: 専門業（税理士・会計士）   - lawer: その他専門業（法律など）   - consultant: サービス業（コンサルティング）   - recruit: サービス業（人材）   - publication: サービス業（出版）   - design: サービス業（デザイン）   - barber: サービス業（理容・美容）   - others: その他サービス業   - company_employee: 会社員   - others_side_business: その他(副業や株取引のみなど)   - others_deduction: その他(医療費などの控除のみ)   - default: 未定 (required).</param>
         /// <param name="invoiceLayout">請求書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;carried_forward_standard_classic&#x60; - レイアウト３（繰越金額欄あり）/クラシック  * &#x60;carried_forward_envelope_classic&#x60; - 封筒２（繰越金額欄あり）/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン (required).</param>
         /// <param name="items">items.</param>
         /// <param name="minusFormat">マイナスの表示方法（0: -、 1: △） (required).</param>
