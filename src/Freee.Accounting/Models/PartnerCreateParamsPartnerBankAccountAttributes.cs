@@ -31,6 +31,52 @@ namespace Freee.Accounting.Models
     public partial class PartnerCreateParamsPartnerBankAccountAttributes : IEquatable<PartnerCreateParamsPartnerBankAccountAttributes>
     {
         /// <summary>
+        /// 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。
+        /// </summary>
+        /// <value>口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AccountTypeEnum
+        {
+            /// <summary>
+            /// Enum Ordinary for value: ordinary
+            /// </summary>
+            [EnumMember(Value = "ordinary")]
+            Ordinary = 1,
+
+            /// <summary>
+            /// Enum Checking for value: checking
+            /// </summary>
+            [EnumMember(Value = "checking")]
+            Checking = 2,
+
+            /// <summary>
+            /// Enum Earmarked for value: earmarked
+            /// </summary>
+            [EnumMember(Value = "earmarked")]
+            Earmarked = 3,
+
+            /// <summary>
+            /// Enum Savings for value: savings
+            /// </summary>
+            [EnumMember(Value = "savings")]
+            Savings = 4,
+
+            /// <summary>
+            /// Enum Other for value: other
+            /// </summary>
+            [EnumMember(Value = "other")]
+            Other = 5
+
+        }
+
+
+        /// <summary>
+        /// 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。
+        /// </summary>
+        /// <value>口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。</value>
+        [DataMember(Name = "account_type", EmitDefaultValue = false)]
+        public AccountTypeEnum? AccountType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="PartnerCreateParamsPartnerBankAccountAttributes" /> class.
         /// </summary>
         /// <param name="accountName">受取人名（カナ）.</param>
@@ -43,7 +89,7 @@ namespace Freee.Accounting.Models
         /// <param name="branchKana">支店名（カナ）.</param>
         /// <param name="branchName">支店名.</param>
         /// <param name="longAccountName">受取人名.</param>
-        public PartnerCreateParamsPartnerBankAccountAttributes(string accountName = default(string), string accountNumber = default(string), string accountType = default(string), string bankCode = default(string), string bankName = default(string), string bankNameKana = default(string), string branchCode = default(string), string branchKana = default(string), string branchName = default(string), string longAccountName = default(string))
+        public PartnerCreateParamsPartnerBankAccountAttributes(string accountName = default(string), string accountNumber = default(string), AccountTypeEnum? accountType = default(AccountTypeEnum?), string bankCode = default(string), string bankName = default(string), string bankNameKana = default(string), string branchCode = default(string), string branchKana = default(string), string branchName = default(string), string longAccountName = default(string))
         {
             this.AccountName = accountName;
             this.AccountNumber = accountNumber;
@@ -70,13 +116,6 @@ namespace Freee.Accounting.Models
         /// <value>口座番号</value>
         [DataMember(Name = "account_number", EmitDefaultValue = false)]
         public string AccountNumber { get; set; }
-
-        /// <summary>
-        /// 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。
-        /// </summary>
-        /// <value>口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。</value>
-        [DataMember(Name = "account_type", EmitDefaultValue = false)]
-        public string AccountType { get; set; }
 
         /// <summary>
         /// 銀行コード
@@ -192,8 +231,7 @@ namespace Freee.Accounting.Models
                 ) && 
                 (
                     this.AccountType == input.AccountType ||
-                    (this.AccountType != null &&
-                    this.AccountType.Equals(input.AccountType))
+                    this.AccountType.Equals(input.AccountType)
                 ) && 
                 (
                     this.BankCode == input.BankCode ||
@@ -249,10 +287,7 @@ namespace Freee.Accounting.Models
                 {
                     hashCode = (hashCode * 59) + this.AccountNumber.GetHashCode();
                 }
-                if (this.AccountType != null)
-                {
-                    hashCode = (hashCode * 59) + this.AccountType.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.AccountType.GetHashCode();
                 if (this.BankCode != null)
                 {
                     hashCode = (hashCode * 59) + this.BankCode.GetHashCode();
