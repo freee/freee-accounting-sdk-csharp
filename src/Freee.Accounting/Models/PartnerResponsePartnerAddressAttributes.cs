@@ -33,13 +33,13 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="PartnerResponsePartnerAddressAttributes" /> class.
         /// </summary>
-        /// <param name="prefectureCodes">都道府県コード（-1: 設定しない、0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄.</param>
+        /// <param name="prefectureCode">都道府県コード（-1: 設定しない、0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄.</param>
         /// <param name="streetName1">市区町村・番地.</param>
         /// <param name="streetName2">建物名・部屋番号など.</param>
         /// <param name="zipcode">郵便番号.</param>
-        public PartnerResponsePartnerAddressAttributes(int? prefectureCodes = default(int?), string streetName1 = default(string), string streetName2 = default(string), string zipcode = default(string))
+        public PartnerResponsePartnerAddressAttributes(int? prefectureCode = default(int?), string streetName1 = default(string), string streetName2 = default(string), string zipcode = default(string))
         {
-            this.PrefectureCodes = prefectureCodes;
+            this.PrefectureCode = prefectureCode;
             this.StreetName1 = streetName1;
             this.StreetName2 = streetName2;
             this.Zipcode = zipcode;
@@ -49,8 +49,8 @@ namespace Freee.Accounting.Models
         /// 都道府県コード（-1: 設定しない、0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄
         /// </summary>
         /// <value>都道府県コード（-1: 設定しない、0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄</value>
-        [DataMember(Name = "prefecture_codes", EmitDefaultValue = true)]
-        public int? PrefectureCodes { get; set; }
+        [DataMember(Name = "prefecture_code", EmitDefaultValue = true)]
+        public int? PrefectureCode { get; set; }
 
         /// <summary>
         /// 市区町村・番地
@@ -81,7 +81,7 @@ namespace Freee.Accounting.Models
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PartnerResponsePartnerAddressAttributes {\n");
-            sb.Append("  PrefectureCodes: ").Append(PrefectureCodes).Append("\n");
+            sb.Append("  PrefectureCode: ").Append(PrefectureCode).Append("\n");
             sb.Append("  StreetName1: ").Append(StreetName1).Append("\n");
             sb.Append("  StreetName2: ").Append(StreetName2).Append("\n");
             sb.Append("  Zipcode: ").Append(Zipcode).Append("\n");
@@ -121,9 +121,9 @@ namespace Freee.Accounting.Models
             }
             return 
                 (
-                    this.PrefectureCodes == input.PrefectureCodes ||
-                    (this.PrefectureCodes != null &&
-                    this.PrefectureCodes.Equals(input.PrefectureCodes))
+                    this.PrefectureCode == input.PrefectureCode ||
+                    (this.PrefectureCode != null &&
+                    this.PrefectureCode.Equals(input.PrefectureCode))
                 ) && 
                 (
                     this.StreetName1 == input.StreetName1 ||
@@ -151,9 +151,9 @@ namespace Freee.Accounting.Models
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PrefectureCodes != null)
+                if (this.PrefectureCode != null)
                 {
-                    hashCode = (hashCode * 59) + this.PrefectureCodes.GetHashCode();
+                    hashCode = (hashCode * 59) + this.PrefectureCode.GetHashCode();
                 }
                 if (this.StreetName1 != null)
                 {

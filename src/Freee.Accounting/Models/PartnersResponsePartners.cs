@@ -87,7 +87,7 @@ namespace Freee.Accounting.Models
         /// <param name="shortcut2">ショートカット2 (255文字以内).</param>
         /// <param name="transferFeeHandlingSide">振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee).</param>
         /// <param name="updateDate">更新日 (yyyy-mm-dd) (required).</param>
-        public PartnersResponsePartners(PartnersResponseAddressAttributes addressAttributes = default(PartnersResponseAddressAttributes), bool available = default(bool), string code = default(string), int companyId = default(int), string contactName = default(string), string countryCode = default(string), string defaultTitle = default(string), string email = default(string), int id = default(int), string longName = default(string), string name = default(string), string nameKana = default(string), int? orgCode = default(int?), PartnerResponsePartnerPartnerBankAccountAttributes partnerBankAccountAttributes = default(PartnerResponsePartnerPartnerBankAccountAttributes), PartnerCreateParamsPartnerDocSettingAttributes partnerDocSettingAttributes = default(PartnerCreateParamsPartnerDocSettingAttributes), int? payerWalletableId = default(int?), string phone = default(string), string shortcut1 = default(string), string shortcut2 = default(string), TransferFeeHandlingSideEnum? transferFeeHandlingSide = default(TransferFeeHandlingSideEnum?), string updateDate = default(string))
+        public PartnersResponsePartners(PartnerResponsePartnerAddressAttributes addressAttributes = default(PartnerResponsePartnerAddressAttributes), bool available = default(bool), string code = default(string), int companyId = default(int), string contactName = default(string), string countryCode = default(string), string defaultTitle = default(string), string email = default(string), int id = default(int), string longName = default(string), string name = default(string), string nameKana = default(string), int? orgCode = default(int?), PartnerResponsePartnerPartnerBankAccountAttributes partnerBankAccountAttributes = default(PartnerResponsePartnerPartnerBankAccountAttributes), PartnerCreateParamsPartnerDocSettingAttributes partnerDocSettingAttributes = default(PartnerCreateParamsPartnerDocSettingAttributes), int? payerWalletableId = default(int?), string phone = default(string), string shortcut1 = default(string), string shortcut2 = default(string), TransferFeeHandlingSideEnum? transferFeeHandlingSide = default(TransferFeeHandlingSideEnum?), string updateDate = default(string))
         {
             this.Available = available;
             // to ensure "code" is required (not null)
@@ -128,7 +128,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets AddressAttributes
         /// </summary>
         [DataMember(Name = "address_attributes", EmitDefaultValue = false)]
-        public PartnersResponseAddressAttributes AddressAttributes { get; set; }
+        public PartnerResponsePartnerAddressAttributes AddressAttributes { get; set; }
 
         /// <summary>
         /// 取引先の使用設定（true: 使用する、false: 使用しない） &lt;br&gt; &lt;ul&gt;   &lt;li&gt;     本APIでpartnerを作成した場合はtrueになります。   &lt;/li&gt;   &lt;li&gt;     falseにする場合はWeb画面から変更できます。   &lt;/li&gt;   &lt;li&gt;     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   &lt;/li&gt;   &lt;li&gt;     falseの場合、取引先自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入／支出）の作成APIなどでfalseの取引先をパラメータに指定すれば、取引などにfalseの取引先を設定できます。   &lt;/li&gt; &lt;/ul&gt;
