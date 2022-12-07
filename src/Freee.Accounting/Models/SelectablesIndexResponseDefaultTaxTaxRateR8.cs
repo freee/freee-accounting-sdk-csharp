@@ -34,12 +34,10 @@ namespace Freee.Accounting.Models
         /// Initializes a new instance of the <see cref="SelectablesIndexResponseDefaultTaxTaxRateR8" /> class.
         /// </summary>
         /// <param name="code">税区分コード.</param>
-        /// <param name="id">税区分ID.</param>
         /// <param name="name">税区分.</param>
-        public SelectablesIndexResponseDefaultTaxTaxRateR8(int code = default(int), int id = default(int), string name = default(string))
+        public SelectablesIndexResponseDefaultTaxTaxRateR8(int code = default(int), string name = default(string))
         {
             this.Code = code;
-            this.Id = id;
             this.Name = name;
         }
 
@@ -49,14 +47,6 @@ namespace Freee.Accounting.Models
         /// <value>税区分コード</value>
         [DataMember(Name = "code", EmitDefaultValue = false)]
         public int Code { get; set; }
-
-        /// <summary>
-        /// 税区分ID
-        /// </summary>
-        /// <value>税区分ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        [Obsolete]
-        public int Id { get; set; }
 
         /// <summary>
         /// 税区分
@@ -74,7 +64,6 @@ namespace Freee.Accounting.Models
             StringBuilder sb = new StringBuilder();
             sb.Append("class SelectablesIndexResponseDefaultTaxTaxRateR8 {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -116,10 +105,6 @@ namespace Freee.Accounting.Models
                     this.Code.Equals(input.Code)
                 ) && 
                 (
-                    this.Id == input.Id ||
-                    this.Id.Equals(input.Id)
-                ) && 
-                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -136,7 +121,6 @@ namespace Freee.Accounting.Models
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Code.GetHashCode();
-                hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
