@@ -39,7 +39,7 @@ namespace Freee.Accounting.Models
         /// Initializes a new instance of the <see cref="DealUpdateParamsDetails" /> class.
         /// </summary>
         /// <param name="accountItemId">勘定科目ID (required).</param>
-        /// <param name="amount">取引金額（税込で指定してください） (required).</param>
+        /// <param name="amount">取引金額（税込で指定してください）&lt;br&gt; マイナスの値を指定した場合、控除・マイナス行として登録されます。&lt;br&gt; 上記以外の値を指定した場合、通常行として登録されます。  (required).</param>
         /// <param name="description">備考.</param>
         /// <param name="id">取引行ID: 既存取引行を更新する場合に指定します。IDを指定しない取引行は、新規行として扱われ追加されます。また、detailsに含まれない既存の取引行は削除されます。更新後も残したい行は、必ず取引行IDを指定してdetailsに含めてください。.</param>
         /// <param name="itemId">品目ID.</param>
@@ -74,9 +74,9 @@ namespace Freee.Accounting.Models
         public int AccountItemId { get; set; }
 
         /// <summary>
-        /// 取引金額（税込で指定してください）
+        /// 取引金額（税込で指定してください）&lt;br&gt; マイナスの値を指定した場合、控除・マイナス行として登録されます。&lt;br&gt; 上記以外の値を指定した場合、通常行として登録されます。 
         /// </summary>
-        /// <value>取引金額（税込で指定してください）</value>
+        /// <value>取引金額（税込で指定してください）&lt;br&gt; マイナスの値を指定した場合、控除・マイナス行として登録されます。&lt;br&gt; 上記以外の値を指定した場合、通常行として登録されます。 </value>
         [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = false)]
         public long Amount { get; set; }
 

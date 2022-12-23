@@ -375,7 +375,7 @@ namespace Freee.Accounting.Models
         /// <param name="title">タイトル.</param>
         /// <param name="totalAmount">合計金額 (required).</param>
         /// <param name="totalAmountPerVatRate">totalAmountPerVatRate (required).</param>
-        /// <param name="totalVat">合計金額.</param>
+        /// <param name="totalVat">消費税.</param>
         /// <param name="webConfirmedAt">Web共有取引先確認日時(最新).</param>
         /// <param name="webDownloadedAt">Web共有ダウンロード日時(最新).</param>
         /// <param name="webPublishedAt">Web共有日時(最新).</param>
@@ -709,9 +709,9 @@ namespace Freee.Accounting.Models
         public InvoiceIndexResponseTotalAmountPerVatRate TotalAmountPerVatRate { get; set; }
 
         /// <summary>
-        /// 合計金額
+        /// 消費税
         /// </summary>
-        /// <value>合計金額</value>
+        /// <value>消費税</value>
         [DataMember(Name = "total_vat", EmitDefaultValue = false)]
         public int TotalVat { get; set; }
 
