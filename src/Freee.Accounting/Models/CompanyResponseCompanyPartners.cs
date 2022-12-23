@@ -38,24 +38,20 @@ namespace Freee.Accounting.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyResponseCompanyPartners" /> class.
         /// </summary>
-        /// <param name="code">取引先コード (required).</param>
+        /// <param name="code">取引先コード.</param>
         /// <param name="id">取引先ID (required).</param>
         /// <param name="name">取引先名 (required).</param>
         /// <param name="shortcut1">ショートカット1 (255文字以内).</param>
         /// <param name="shortcut2">ショートカット2 (255文字以内).</param>
         public CompanyResponseCompanyPartners(string code = default(string), int id = default(int), string name = default(string), string shortcut1 = default(string), string shortcut2 = default(string))
         {
-            // to ensure "code" is required (not null)
-            if (code == null) {
-                throw new ArgumentNullException("code is a required property for CompanyResponseCompanyPartners and cannot be null");
-            }
-            this.Code = code;
             this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null) {
                 throw new ArgumentNullException("name is a required property for CompanyResponseCompanyPartners and cannot be null");
             }
             this.Name = name;
+            this.Code = code;
             this.Shortcut1 = shortcut1;
             this.Shortcut2 = shortcut2;
         }
@@ -64,7 +60,7 @@ namespace Freee.Accounting.Models
         /// 取引先コード
         /// </summary>
         /// <value>取引先コード</value>
-        [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "code", EmitDefaultValue = true)]
         public string Code { get; set; }
 
         /// <summary>
