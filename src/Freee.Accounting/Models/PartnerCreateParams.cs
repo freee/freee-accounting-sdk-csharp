@@ -121,7 +121,7 @@ namespace Freee.Accounting.Models
         /// Initializes a new instance of the <see cref="PartnerCreateParams" /> class.
         /// </summary>
         /// <param name="addressAttributes">addressAttributes.</param>
-        /// <param name="code">取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。）.</param>
+        /// <param name="code">取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。ただし重複は不可。）.</param>
         /// <param name="companyId">事業所ID (required).</param>
         /// <param name="contactName">担当者 氏名 (255文字以内).</param>
         /// <param name="countryCode">地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。.</param>
@@ -175,9 +175,9 @@ namespace Freee.Accounting.Models
         public PartnerCreateParamsAddressAttributes AddressAttributes { get; set; }
 
         /// <summary>
-        /// 取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。）
+        /// 取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。ただし重複は不可。）
         /// </summary>
-        /// <value>取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。）</value>
+        /// <value>取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。ただし重複は不可。）</value>
         [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 

@@ -31,9 +31,9 @@ namespace Freee.Accounting.Models
     public partial class PaymentRequestResponsePaymentRequestPaymentRequestLines : IEquatable<PaymentRequestResponsePaymentRequestPaymentRequestLines>
     {
         /// <summary>
-        /// 行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税)
+        /// 行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)
         /// </summary>
-        /// <value>行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税)</value>
+        /// <value>行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineTypeEnum
         {
@@ -53,9 +53,9 @@ namespace Freee.Accounting.Models
 
 
         /// <summary>
-        /// 行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税)
+        /// 行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)
         /// </summary>
-        /// <value>行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税)</value>
+        /// <value>行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)</value>
         [DataMember(Name = "line_type", IsRequired = true, EmitDefaultValue = false)]
         public LineTypeEnum LineType { get; set; }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Freee.Accounting.Models
         /// <param name="description">内容 (required).</param>
         /// <param name="id">支払依頼の項目行ID (required).</param>
         /// <param name="itemId">品目ID (required).</param>
-        /// <param name="lineType">行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税) (required).</param>
+        /// <param name="lineType">行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行) (required).</param>
         /// <param name="sectionId">部門ID (required).</param>
         /// <param name="segment1TagId">セグメント１ID。セグメント１が使用可能なプランの時のみレスポンスに含まれます。.</param>
         /// <param name="segment2TagId">セグメント２ID。セグメント２が使用可能なプランの時のみレスポンスに含まれます。.</param>

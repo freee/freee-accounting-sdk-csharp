@@ -39,21 +39,26 @@ namespace Freee.Accounting.Models
         /// Initializes a new instance of the <see cref="InlineResponse20013" /> class.
         /// </summary>
         /// <param name="tags">tags (required).</param>
+        /// <param name="accessControls">accessControls (required).</param>
         /// <param name="accountItemStatements">accountItemStatements (required).</param>
         /// <param name="accountItems">accountItems (required).</param>
         /// <param name="annualReports">annualReports (required).</param>
+        /// <param name="appRoleLogs">appRoleLogs (required).</param>
         /// <param name="approvalFlowRoutes">approvalFlowRoutes (required).</param>
         /// <param name="approvalRequests">approvalRequests (required).</param>
         /// <param name="backups">backups (required).</param>
         /// <param name="bankAccountantStaffUsers">bankAccountantStaffUsers (required).</param>
         /// <param name="bizAllocations">bizAllocations (required).</param>
         /// <param name="companies">companies (required).</param>
+        /// <param name="companyInternalAnnouncements">companyInternalAnnouncements (required).</param>
         /// <param name="consumptionEntries">consumptionEntries (required).</param>
         /// <param name="costAllocations">costAllocations (required).</param>
         /// <param name="dealTemplates">dealTemplates (required).</param>
         /// <param name="deals">deals (required).</param>
+        /// <param name="docChangeLogs">docChangeLogs (required).</param>
         /// <param name="docPostings">docPostings (required).</param>
         /// <param name="docs">docs (required).</param>
+        /// <param name="expenseApplicationSyncPayroll">expenseApplicationSyncPayroll (required).</param>
         /// <param name="expenseApplicationTemplates">expenseApplicationTemplates (required).</param>
         /// <param name="expenseApplications">expenseApplications (required).</param>
         /// <param name="fixedAssets">fixedAssets (required).</param>
@@ -69,12 +74,14 @@ namespace Freee.Accounting.Models
         /// <param name="partners">partners (required).</param>
         /// <param name="paymentRecords">paymentRecords (required).</param>
         /// <param name="paymentRequests">paymentRequests (required).</param>
+        /// <param name="payrollItemSets">payrollItemSets (required).</param>
         /// <param name="receiptStreamEditor">receiptStreamEditor (required).</param>
         /// <param name="receipts">receipts (required).</param>
         /// <param name="reports">reports (required).</param>
         /// <param name="reportsBs">reportsBs (required).</param>
         /// <param name="reportsCashBalance">reportsCashBalance (required).</param>
         /// <param name="reportsCrosstabs">reportsCrosstabs (required).</param>
+        /// <param name="reportsCustomReportsAggregate">reportsCustomReportsAggregate (required).</param>
         /// <param name="reportsGeneralLedgers">reportsGeneralLedgers (required).</param>
         /// <param name="reportsIncomeExpense">reportsIncomeExpense (required).</param>
         /// <param name="reportsJournals">reportsJournals (required).</param>
@@ -89,22 +96,30 @@ namespace Freee.Accounting.Models
         /// <param name="signInLogs">signInLogs (required).</param>
         /// <param name="spreadsheets">spreadsheets (required).</param>
         /// <param name="systemConversion">systemConversion (required).</param>
+        /// <param name="systemMessagesForAdmin">systemMessagesForAdmin (required).</param>
         /// <param name="taxReports">taxReports (required).</param>
         /// <param name="taxReturn">taxReturn (required).</param>
         /// <param name="taxes">taxes (required).</param>
         /// <param name="transfers">transfers (required).</param>
+        /// <param name="txnRelationshipLogs">txnRelationshipLogs (required).</param>
+        /// <param name="userAttributeLogs">userAttributeLogs (required).</param>
         /// <param name="userMatchers">userMatchers (required).</param>
         /// <param name="walletTxns">walletTxns (required).</param>
         /// <param name="walletables">walletables (required).</param>
         /// <param name="workflows">workflows (required).</param>
         /// <param name="yearEnd">yearEnd (required).</param>
-        public InlineResponse20013(UserCapability tags = default(UserCapability), UserCapability accountItemStatements = default(UserCapability), UserCapability accountItems = default(UserCapability), UserCapability annualReports = default(UserCapability), UserCapability approvalFlowRoutes = default(UserCapability), UserCapabilityWithSelfOnly approvalRequests = default(UserCapabilityWithSelfOnly), UserCapability backups = default(UserCapability), UserCapability bankAccountantStaffUsers = default(UserCapability), UserCapability bizAllocations = default(UserCapability), UserCapability companies = default(UserCapability), UserCapability consumptionEntries = default(UserCapability), UserCapability costAllocations = default(UserCapability), UserCapability dealTemplates = default(UserCapability), UserCapabilityWithSelfOnly deals = default(UserCapabilityWithSelfOnly), UserCapability docPostings = default(UserCapability), UserCapabilityWithSelfOnly docs = default(UserCapabilityWithSelfOnly), UserCapability expenseApplicationTemplates = default(UserCapability), UserCapabilityWithSelfOnly expenseApplications = default(UserCapabilityWithSelfOnly), UserCapability fixedAssets = default(UserCapability), UserCapability inventoryRefreshes = default(UserCapability), UserCapability invitations = default(UserCapability), UserCapability items = default(UserCapability), UserCapability manualJournalTemplates = default(UserCapability), UserCapabilityWithSelfOnly manualJournals = default(UserCapabilityWithSelfOnly), UserCapability monthEnd = default(UserCapability), UserCapability oauthApplications = default(UserCapability), UserCapability oauthAuthorizations = default(UserCapability), UserCapability openingBalances = default(UserCapability), UserCapability partners = default(UserCapability), UserCapability paymentRecords = default(UserCapability), UserCapabilityWithSelfOnly paymentRequests = default(UserCapabilityWithSelfOnly), UserCapability receiptStreamEditor = default(UserCapability), UserCapabilityWithSelfOnly receipts = default(UserCapabilityWithSelfOnly), UserCapability reports = default(UserCapability), UserCapability reportsBs = default(UserCapability), UserCapability reportsCashBalance = default(UserCapability), UserCapability reportsCrosstabs = default(UserCapability), UserCapability reportsGeneralLedgers = default(UserCapability), UserCapability reportsIncomeExpense = default(UserCapability), UserCapability reportsJournals = default(UserCapability), UserCapability reportsManagementsNavigation = default(UserCapability), UserCapability reportsManagementsPlanning = default(UserCapability), UserCapability reportsPayables = default(UserCapability), UserCapability reportsPl = default(UserCapability), UserCapability reportsReceivables = default(UserCapability), UserCapability requestForms = default(UserCapability), UserCapability resets = default(UserCapability), UserCapability sections = default(UserCapability), UserCapability signInLogs = default(UserCapability), UserCapability spreadsheets = default(UserCapability), UserCapability systemConversion = default(UserCapability), UserCapability taxReports = default(UserCapability), UserCapability taxReturn = default(UserCapability), UserCapability taxes = default(UserCapability), UserCapabilityWithSelfOnly transfers = default(UserCapabilityWithSelfOnly), UserCapability userMatchers = default(UserCapability), UserCapabilityWithConfirm walletTxns = default(UserCapabilityWithConfirm), UserCapabilityWithSync walletables = default(UserCapabilityWithSync), UserCapability workflows = default(UserCapability), UserCapability yearEnd = default(UserCapability))
+        public InlineResponse20013(UserCapability tags = default(UserCapability), UserCapabilityWithWrite accessControls = default(UserCapabilityWithWrite), UserCapabilityJustRead accountItemStatements = default(UserCapabilityJustRead), UserCapability accountItems = default(UserCapability), UserCapabilityJustRead annualReports = default(UserCapabilityJustRead), UserCapabilityJustRead appRoleLogs = default(UserCapabilityJustRead), UserCapability approvalFlowRoutes = default(UserCapability), UserCapabilityWithSelfOnly approvalRequests = default(UserCapabilityWithSelfOnly), UserCapabilityJustRead backups = default(UserCapabilityJustRead), UserCapability bankAccountantStaffUsers = default(UserCapability), UserCapability bizAllocations = default(UserCapability), UserCapabilityJustReadUpdate companies = default(UserCapabilityJustReadUpdate), UserCapabilityJustUpdate companyInternalAnnouncements = default(UserCapabilityJustUpdate), UserCapabilityJustRead consumptionEntries = default(UserCapabilityJustRead), UserCapabilityJustReadUpdate costAllocations = default(UserCapabilityJustReadUpdate), UserCapability dealTemplates = default(UserCapability), UserCapabilityWithSelfOnly deals = default(UserCapabilityWithSelfOnly), UserCapabilityJustRead docChangeLogs = default(UserCapabilityJustRead), UserCapabilityJustCreate docPostings = default(UserCapabilityJustCreate), UserCapabilityWithSelfOnly docs = default(UserCapabilityWithSelfOnly), UserCapabilityJustCreate expenseApplicationSyncPayroll = default(UserCapabilityJustCreate), UserCapability expenseApplicationTemplates = default(UserCapability), UserCapabilityWithSelfOnly expenseApplications = default(UserCapabilityWithSelfOnly), UserCapability fixedAssets = default(UserCapability), UserCapability inventoryRefreshes = default(UserCapability), UserCapability invitations = default(UserCapability), UserCapability items = default(UserCapability), UserCapability manualJournalTemplates = default(UserCapability), UserCapabilityWithSelfOnly manualJournals = default(UserCapabilityWithSelfOnly), UserCapabilityJustRead monthEnd = default(UserCapabilityJustRead), UserCapability oauthApplications = default(UserCapability), UserCapability oauthAuthorizations = default(UserCapability), UserCapabilityJustReadUpdate openingBalances = default(UserCapabilityJustReadUpdate), UserCapability partners = default(UserCapability), UserCapability paymentRecords = default(UserCapability), UserCapabilityWithSelfOnly paymentRequests = default(UserCapabilityWithSelfOnly), UserCapability payrollItemSets = default(UserCapability), UserCapabilityJustRead receiptStreamEditor = default(UserCapabilityJustRead), UserCapabilityWithSelfOnly receipts = default(UserCapabilityWithSelfOnly), UserCapabilityJustRead reports = default(UserCapabilityJustRead), UserCapabilityJustRead reportsBs = default(UserCapabilityJustRead), UserCapabilityJustRead reportsCashBalance = default(UserCapabilityJustRead), UserCapabilityJustRead reportsCrosstabs = default(UserCapabilityJustRead), UserCapabilityJustRead reportsCustomReportsAggregate = default(UserCapabilityJustRead), UserCapabilityJustRead reportsGeneralLedgers = default(UserCapabilityJustRead), UserCapabilityJustRead reportsIncomeExpense = default(UserCapabilityJustRead), UserCapabilityJustRead reportsJournals = default(UserCapabilityJustRead), UserCapabilityJustReadWrite reportsManagementsNavigation = default(UserCapabilityJustReadWrite), UserCapabilityJustReadWrite reportsManagementsPlanning = default(UserCapabilityJustReadWrite), UserCapabilityJustReadWrite reportsPayables = default(UserCapabilityJustReadWrite), UserCapabilityJustRead reportsPl = default(UserCapabilityJustRead), UserCapabilityJustRead reportsReceivables = default(UserCapabilityJustRead), UserCapability requestForms = default(UserCapability), UserCapabilityJustRead resets = default(UserCapabilityJustRead), UserCapability sections = default(UserCapability), UserCapabilityJustRead signInLogs = default(UserCapabilityJustRead), UserCapabilityJustCreateRead spreadsheets = default(UserCapabilityJustCreateRead), UserCapabilityJustRead systemConversion = default(UserCapabilityJustRead), UserCapabilityJustRead systemMessagesForAdmin = default(UserCapabilityJustRead), UserCapabilityJustRead taxReports = default(UserCapabilityJustRead), UserCapabilityJustRead taxReturn = default(UserCapabilityJustRead), UserCapabilityJustReadUpdate taxes = default(UserCapabilityJustReadUpdate), UserCapabilityWithSelfOnly transfers = default(UserCapabilityWithSelfOnly), UserCapabilityJustRead txnRelationshipLogs = default(UserCapabilityJustRead), UserCapabilityJustRead userAttributeLogs = default(UserCapabilityJustRead), UserCapability userMatchers = default(UserCapability), UserCapabilityWithConfirm walletTxns = default(UserCapabilityWithConfirm), UserCapabilityWithSync walletables = default(UserCapabilityWithSync), UserCapabilityJustReadUpdateDestroy workflows = default(UserCapabilityJustReadUpdateDestroy), UserCapabilityJustReadUpdate yearEnd = default(UserCapabilityJustReadUpdate))
         {
             // to ensure "tags" is required (not null)
             if (tags == null) {
                 throw new ArgumentNullException("tags is a required property for InlineResponse20013 and cannot be null");
             }
             this.Tags = tags;
+            // to ensure "accessControls" is required (not null)
+            if (accessControls == null) {
+                throw new ArgumentNullException("accessControls is a required property for InlineResponse20013 and cannot be null");
+            }
+            this.AccessControls = accessControls;
             // to ensure "accountItemStatements" is required (not null)
             if (accountItemStatements == null) {
                 throw new ArgumentNullException("accountItemStatements is a required property for InlineResponse20013 and cannot be null");
@@ -120,6 +135,11 @@ namespace Freee.Accounting.Models
                 throw new ArgumentNullException("annualReports is a required property for InlineResponse20013 and cannot be null");
             }
             this.AnnualReports = annualReports;
+            // to ensure "appRoleLogs" is required (not null)
+            if (appRoleLogs == null) {
+                throw new ArgumentNullException("appRoleLogs is a required property for InlineResponse20013 and cannot be null");
+            }
+            this.AppRoleLogs = appRoleLogs;
             // to ensure "approvalFlowRoutes" is required (not null)
             if (approvalFlowRoutes == null) {
                 throw new ArgumentNullException("approvalFlowRoutes is a required property for InlineResponse20013 and cannot be null");
@@ -150,6 +170,11 @@ namespace Freee.Accounting.Models
                 throw new ArgumentNullException("companies is a required property for InlineResponse20013 and cannot be null");
             }
             this.Companies = companies;
+            // to ensure "companyInternalAnnouncements" is required (not null)
+            if (companyInternalAnnouncements == null) {
+                throw new ArgumentNullException("companyInternalAnnouncements is a required property for InlineResponse20013 and cannot be null");
+            }
+            this.CompanyInternalAnnouncements = companyInternalAnnouncements;
             // to ensure "consumptionEntries" is required (not null)
             if (consumptionEntries == null) {
                 throw new ArgumentNullException("consumptionEntries is a required property for InlineResponse20013 and cannot be null");
@@ -170,6 +195,11 @@ namespace Freee.Accounting.Models
                 throw new ArgumentNullException("deals is a required property for InlineResponse20013 and cannot be null");
             }
             this.Deals = deals;
+            // to ensure "docChangeLogs" is required (not null)
+            if (docChangeLogs == null) {
+                throw new ArgumentNullException("docChangeLogs is a required property for InlineResponse20013 and cannot be null");
+            }
+            this.DocChangeLogs = docChangeLogs;
             // to ensure "docPostings" is required (not null)
             if (docPostings == null) {
                 throw new ArgumentNullException("docPostings is a required property for InlineResponse20013 and cannot be null");
@@ -180,6 +210,11 @@ namespace Freee.Accounting.Models
                 throw new ArgumentNullException("docs is a required property for InlineResponse20013 and cannot be null");
             }
             this.Docs = docs;
+            // to ensure "expenseApplicationSyncPayroll" is required (not null)
+            if (expenseApplicationSyncPayroll == null) {
+                throw new ArgumentNullException("expenseApplicationSyncPayroll is a required property for InlineResponse20013 and cannot be null");
+            }
+            this.ExpenseApplicationSyncPayroll = expenseApplicationSyncPayroll;
             // to ensure "expenseApplicationTemplates" is required (not null)
             if (expenseApplicationTemplates == null) {
                 throw new ArgumentNullException("expenseApplicationTemplates is a required property for InlineResponse20013 and cannot be null");
@@ -255,6 +290,11 @@ namespace Freee.Accounting.Models
                 throw new ArgumentNullException("paymentRequests is a required property for InlineResponse20013 and cannot be null");
             }
             this.PaymentRequests = paymentRequests;
+            // to ensure "payrollItemSets" is required (not null)
+            if (payrollItemSets == null) {
+                throw new ArgumentNullException("payrollItemSets is a required property for InlineResponse20013 and cannot be null");
+            }
+            this.PayrollItemSets = payrollItemSets;
             // to ensure "receiptStreamEditor" is required (not null)
             if (receiptStreamEditor == null) {
                 throw new ArgumentNullException("receiptStreamEditor is a required property for InlineResponse20013 and cannot be null");
@@ -285,6 +325,11 @@ namespace Freee.Accounting.Models
                 throw new ArgumentNullException("reportsCrosstabs is a required property for InlineResponse20013 and cannot be null");
             }
             this.ReportsCrosstabs = reportsCrosstabs;
+            // to ensure "reportsCustomReportsAggregate" is required (not null)
+            if (reportsCustomReportsAggregate == null) {
+                throw new ArgumentNullException("reportsCustomReportsAggregate is a required property for InlineResponse20013 and cannot be null");
+            }
+            this.ReportsCustomReportsAggregate = reportsCustomReportsAggregate;
             // to ensure "reportsGeneralLedgers" is required (not null)
             if (reportsGeneralLedgers == null) {
                 throw new ArgumentNullException("reportsGeneralLedgers is a required property for InlineResponse20013 and cannot be null");
@@ -355,6 +400,11 @@ namespace Freee.Accounting.Models
                 throw new ArgumentNullException("systemConversion is a required property for InlineResponse20013 and cannot be null");
             }
             this.SystemConversion = systemConversion;
+            // to ensure "systemMessagesForAdmin" is required (not null)
+            if (systemMessagesForAdmin == null) {
+                throw new ArgumentNullException("systemMessagesForAdmin is a required property for InlineResponse20013 and cannot be null");
+            }
+            this.SystemMessagesForAdmin = systemMessagesForAdmin;
             // to ensure "taxReports" is required (not null)
             if (taxReports == null) {
                 throw new ArgumentNullException("taxReports is a required property for InlineResponse20013 and cannot be null");
@@ -375,6 +425,16 @@ namespace Freee.Accounting.Models
                 throw new ArgumentNullException("transfers is a required property for InlineResponse20013 and cannot be null");
             }
             this.Transfers = transfers;
+            // to ensure "txnRelationshipLogs" is required (not null)
+            if (txnRelationshipLogs == null) {
+                throw new ArgumentNullException("txnRelationshipLogs is a required property for InlineResponse20013 and cannot be null");
+            }
+            this.TxnRelationshipLogs = txnRelationshipLogs;
+            // to ensure "userAttributeLogs" is required (not null)
+            if (userAttributeLogs == null) {
+                throw new ArgumentNullException("userAttributeLogs is a required property for InlineResponse20013 and cannot be null");
+            }
+            this.UserAttributeLogs = userAttributeLogs;
             // to ensure "userMatchers" is required (not null)
             if (userMatchers == null) {
                 throw new ArgumentNullException("userMatchers is a required property for InlineResponse20013 and cannot be null");
@@ -409,10 +469,16 @@ namespace Freee.Accounting.Models
         public UserCapability Tags { get; set; }
 
         /// <summary>
+        /// Gets or Sets AccessControls
+        /// </summary>
+        [DataMember(Name = "access_controls", IsRequired = true, EmitDefaultValue = false)]
+        public UserCapabilityWithWrite AccessControls { get; set; }
+
+        /// <summary>
         /// Gets or Sets AccountItemStatements
         /// </summary>
         [DataMember(Name = "account_item_statements", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability AccountItemStatements { get; set; }
+        public UserCapabilityJustRead AccountItemStatements { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountItems
@@ -424,7 +490,13 @@ namespace Freee.Accounting.Models
         /// Gets or Sets AnnualReports
         /// </summary>
         [DataMember(Name = "annual_reports", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability AnnualReports { get; set; }
+        public UserCapabilityJustRead AnnualReports { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AppRoleLogs
+        /// </summary>
+        [DataMember(Name = "app_role_logs", IsRequired = true, EmitDefaultValue = false)]
+        public UserCapabilityJustRead AppRoleLogs { get; set; }
 
         /// <summary>
         /// Gets or Sets ApprovalFlowRoutes
@@ -442,7 +514,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets Backups
         /// </summary>
         [DataMember(Name = "backups", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability Backups { get; set; }
+        public UserCapabilityJustRead Backups { get; set; }
 
         /// <summary>
         /// Gets or Sets BankAccountantStaffUsers
@@ -460,19 +532,25 @@ namespace Freee.Accounting.Models
         /// Gets or Sets Companies
         /// </summary>
         [DataMember(Name = "companies", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability Companies { get; set; }
+        public UserCapabilityJustReadUpdate Companies { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CompanyInternalAnnouncements
+        /// </summary>
+        [DataMember(Name = "company_internal_announcements", IsRequired = true, EmitDefaultValue = false)]
+        public UserCapabilityJustUpdate CompanyInternalAnnouncements { get; set; }
 
         /// <summary>
         /// Gets or Sets ConsumptionEntries
         /// </summary>
         [DataMember(Name = "consumption_entries", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ConsumptionEntries { get; set; }
+        public UserCapabilityJustRead ConsumptionEntries { get; set; }
 
         /// <summary>
         /// Gets or Sets CostAllocations
         /// </summary>
         [DataMember(Name = "cost_allocations", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability CostAllocations { get; set; }
+        public UserCapabilityJustReadUpdate CostAllocations { get; set; }
 
         /// <summary>
         /// Gets or Sets DealTemplates
@@ -487,16 +565,28 @@ namespace Freee.Accounting.Models
         public UserCapabilityWithSelfOnly Deals { get; set; }
 
         /// <summary>
+        /// Gets or Sets DocChangeLogs
+        /// </summary>
+        [DataMember(Name = "doc_change_logs", IsRequired = true, EmitDefaultValue = false)]
+        public UserCapabilityJustRead DocChangeLogs { get; set; }
+
+        /// <summary>
         /// Gets or Sets DocPostings
         /// </summary>
         [DataMember(Name = "doc_postings", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability DocPostings { get; set; }
+        public UserCapabilityJustCreate DocPostings { get; set; }
 
         /// <summary>
         /// Gets or Sets Docs
         /// </summary>
         [DataMember(Name = "docs", IsRequired = true, EmitDefaultValue = false)]
         public UserCapabilityWithSelfOnly Docs { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExpenseApplicationSyncPayroll
+        /// </summary>
+        [DataMember(Name = "expense_application_sync_payroll", IsRequired = true, EmitDefaultValue = false)]
+        public UserCapabilityJustCreate ExpenseApplicationSyncPayroll { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpenseApplicationTemplates
@@ -550,7 +640,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets MonthEnd
         /// </summary>
         [DataMember(Name = "month_end", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability MonthEnd { get; set; }
+        public UserCapabilityJustRead MonthEnd { get; set; }
 
         /// <summary>
         /// Gets or Sets OauthApplications
@@ -568,7 +658,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets OpeningBalances
         /// </summary>
         [DataMember(Name = "opening_balances", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability OpeningBalances { get; set; }
+        public UserCapabilityJustReadUpdate OpeningBalances { get; set; }
 
         /// <summary>
         /// Gets or Sets Partners
@@ -589,10 +679,16 @@ namespace Freee.Accounting.Models
         public UserCapabilityWithSelfOnly PaymentRequests { get; set; }
 
         /// <summary>
+        /// Gets or Sets PayrollItemSets
+        /// </summary>
+        [DataMember(Name = "payroll_item_sets", IsRequired = true, EmitDefaultValue = false)]
+        public UserCapability PayrollItemSets { get; set; }
+
+        /// <summary>
         /// Gets or Sets ReceiptStreamEditor
         /// </summary>
         [DataMember(Name = "receipt_stream_editor", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ReceiptStreamEditor { get; set; }
+        public UserCapabilityJustRead ReceiptStreamEditor { get; set; }
 
         /// <summary>
         /// Gets or Sets Receipts
@@ -604,73 +700,79 @@ namespace Freee.Accounting.Models
         /// Gets or Sets Reports
         /// </summary>
         [DataMember(Name = "reports", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability Reports { get; set; }
+        public UserCapabilityJustRead Reports { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsBs
         /// </summary>
         [DataMember(Name = "reports_bs", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ReportsBs { get; set; }
+        public UserCapabilityJustRead ReportsBs { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsCashBalance
         /// </summary>
         [DataMember(Name = "reports_cash_balance", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ReportsCashBalance { get; set; }
+        public UserCapabilityJustRead ReportsCashBalance { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsCrosstabs
         /// </summary>
         [DataMember(Name = "reports_crosstabs", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ReportsCrosstabs { get; set; }
+        public UserCapabilityJustRead ReportsCrosstabs { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ReportsCustomReportsAggregate
+        /// </summary>
+        [DataMember(Name = "reports_custom_reports_aggregate", IsRequired = true, EmitDefaultValue = false)]
+        public UserCapabilityJustRead ReportsCustomReportsAggregate { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsGeneralLedgers
         /// </summary>
         [DataMember(Name = "reports_general_ledgers", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ReportsGeneralLedgers { get; set; }
+        public UserCapabilityJustRead ReportsGeneralLedgers { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsIncomeExpense
         /// </summary>
         [DataMember(Name = "reports_income_expense", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ReportsIncomeExpense { get; set; }
+        public UserCapabilityJustRead ReportsIncomeExpense { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsJournals
         /// </summary>
         [DataMember(Name = "reports_journals", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ReportsJournals { get; set; }
+        public UserCapabilityJustRead ReportsJournals { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsManagementsNavigation
         /// </summary>
         [DataMember(Name = "reports_managements_navigation", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ReportsManagementsNavigation { get; set; }
+        public UserCapabilityJustReadWrite ReportsManagementsNavigation { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsManagementsPlanning
         /// </summary>
         [DataMember(Name = "reports_managements_planning", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ReportsManagementsPlanning { get; set; }
+        public UserCapabilityJustReadWrite ReportsManagementsPlanning { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsPayables
         /// </summary>
         [DataMember(Name = "reports_payables", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ReportsPayables { get; set; }
+        public UserCapabilityJustReadWrite ReportsPayables { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsPl
         /// </summary>
         [DataMember(Name = "reports_pl", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ReportsPl { get; set; }
+        public UserCapabilityJustRead ReportsPl { get; set; }
 
         /// <summary>
         /// Gets or Sets ReportsReceivables
         /// </summary>
         [DataMember(Name = "reports_receivables", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability ReportsReceivables { get; set; }
+        public UserCapabilityJustRead ReportsReceivables { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestForms
@@ -682,7 +784,7 @@ namespace Freee.Accounting.Models
         /// Gets or Sets Resets
         /// </summary>
         [DataMember(Name = "resets", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability Resets { get; set; }
+        public UserCapabilityJustRead Resets { get; set; }
 
         /// <summary>
         /// Gets or Sets Sections
@@ -694,43 +796,61 @@ namespace Freee.Accounting.Models
         /// Gets or Sets SignInLogs
         /// </summary>
         [DataMember(Name = "sign_in_logs", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability SignInLogs { get; set; }
+        public UserCapabilityJustRead SignInLogs { get; set; }
 
         /// <summary>
         /// Gets or Sets Spreadsheets
         /// </summary>
         [DataMember(Name = "spreadsheets", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability Spreadsheets { get; set; }
+        public UserCapabilityJustCreateRead Spreadsheets { get; set; }
 
         /// <summary>
         /// Gets or Sets SystemConversion
         /// </summary>
         [DataMember(Name = "system_conversion", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability SystemConversion { get; set; }
+        public UserCapabilityJustRead SystemConversion { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SystemMessagesForAdmin
+        /// </summary>
+        [DataMember(Name = "system_messages_for_admin", IsRequired = true, EmitDefaultValue = false)]
+        public UserCapabilityJustRead SystemMessagesForAdmin { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxReports
         /// </summary>
         [DataMember(Name = "tax_reports", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability TaxReports { get; set; }
+        public UserCapabilityJustRead TaxReports { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxReturn
         /// </summary>
         [DataMember(Name = "tax_return", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability TaxReturn { get; set; }
+        public UserCapabilityJustRead TaxReturn { get; set; }
 
         /// <summary>
         /// Gets or Sets Taxes
         /// </summary>
         [DataMember(Name = "taxes", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability Taxes { get; set; }
+        public UserCapabilityJustReadUpdate Taxes { get; set; }
 
         /// <summary>
         /// Gets or Sets Transfers
         /// </summary>
         [DataMember(Name = "transfers", IsRequired = true, EmitDefaultValue = false)]
         public UserCapabilityWithSelfOnly Transfers { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TxnRelationshipLogs
+        /// </summary>
+        [DataMember(Name = "txn_relationship_logs", IsRequired = true, EmitDefaultValue = false)]
+        public UserCapabilityJustRead TxnRelationshipLogs { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UserAttributeLogs
+        /// </summary>
+        [DataMember(Name = "user_attribute_logs", IsRequired = true, EmitDefaultValue = false)]
+        public UserCapabilityJustRead UserAttributeLogs { get; set; }
 
         /// <summary>
         /// Gets or Sets UserMatchers
@@ -754,13 +874,13 @@ namespace Freee.Accounting.Models
         /// Gets or Sets Workflows
         /// </summary>
         [DataMember(Name = "workflows", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability Workflows { get; set; }
+        public UserCapabilityJustReadUpdateDestroy Workflows { get; set; }
 
         /// <summary>
         /// Gets or Sets YearEnd
         /// </summary>
         [DataMember(Name = "year_end", IsRequired = true, EmitDefaultValue = false)]
-        public UserCapability YearEnd { get; set; }
+        public UserCapabilityJustReadUpdate YearEnd { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -771,21 +891,26 @@ namespace Freee.Accounting.Models
             StringBuilder sb = new StringBuilder();
             sb.Append("class InlineResponse20013 {\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
+            sb.Append("  AccessControls: ").Append(AccessControls).Append("\n");
             sb.Append("  AccountItemStatements: ").Append(AccountItemStatements).Append("\n");
             sb.Append("  AccountItems: ").Append(AccountItems).Append("\n");
             sb.Append("  AnnualReports: ").Append(AnnualReports).Append("\n");
+            sb.Append("  AppRoleLogs: ").Append(AppRoleLogs).Append("\n");
             sb.Append("  ApprovalFlowRoutes: ").Append(ApprovalFlowRoutes).Append("\n");
             sb.Append("  ApprovalRequests: ").Append(ApprovalRequests).Append("\n");
             sb.Append("  Backups: ").Append(Backups).Append("\n");
             sb.Append("  BankAccountantStaffUsers: ").Append(BankAccountantStaffUsers).Append("\n");
             sb.Append("  BizAllocations: ").Append(BizAllocations).Append("\n");
             sb.Append("  Companies: ").Append(Companies).Append("\n");
+            sb.Append("  CompanyInternalAnnouncements: ").Append(CompanyInternalAnnouncements).Append("\n");
             sb.Append("  ConsumptionEntries: ").Append(ConsumptionEntries).Append("\n");
             sb.Append("  CostAllocations: ").Append(CostAllocations).Append("\n");
             sb.Append("  DealTemplates: ").Append(DealTemplates).Append("\n");
             sb.Append("  Deals: ").Append(Deals).Append("\n");
+            sb.Append("  DocChangeLogs: ").Append(DocChangeLogs).Append("\n");
             sb.Append("  DocPostings: ").Append(DocPostings).Append("\n");
             sb.Append("  Docs: ").Append(Docs).Append("\n");
+            sb.Append("  ExpenseApplicationSyncPayroll: ").Append(ExpenseApplicationSyncPayroll).Append("\n");
             sb.Append("  ExpenseApplicationTemplates: ").Append(ExpenseApplicationTemplates).Append("\n");
             sb.Append("  ExpenseApplications: ").Append(ExpenseApplications).Append("\n");
             sb.Append("  FixedAssets: ").Append(FixedAssets).Append("\n");
@@ -801,12 +926,14 @@ namespace Freee.Accounting.Models
             sb.Append("  Partners: ").Append(Partners).Append("\n");
             sb.Append("  PaymentRecords: ").Append(PaymentRecords).Append("\n");
             sb.Append("  PaymentRequests: ").Append(PaymentRequests).Append("\n");
+            sb.Append("  PayrollItemSets: ").Append(PayrollItemSets).Append("\n");
             sb.Append("  ReceiptStreamEditor: ").Append(ReceiptStreamEditor).Append("\n");
             sb.Append("  Receipts: ").Append(Receipts).Append("\n");
             sb.Append("  Reports: ").Append(Reports).Append("\n");
             sb.Append("  ReportsBs: ").Append(ReportsBs).Append("\n");
             sb.Append("  ReportsCashBalance: ").Append(ReportsCashBalance).Append("\n");
             sb.Append("  ReportsCrosstabs: ").Append(ReportsCrosstabs).Append("\n");
+            sb.Append("  ReportsCustomReportsAggregate: ").Append(ReportsCustomReportsAggregate).Append("\n");
             sb.Append("  ReportsGeneralLedgers: ").Append(ReportsGeneralLedgers).Append("\n");
             sb.Append("  ReportsIncomeExpense: ").Append(ReportsIncomeExpense).Append("\n");
             sb.Append("  ReportsJournals: ").Append(ReportsJournals).Append("\n");
@@ -821,10 +948,13 @@ namespace Freee.Accounting.Models
             sb.Append("  SignInLogs: ").Append(SignInLogs).Append("\n");
             sb.Append("  Spreadsheets: ").Append(Spreadsheets).Append("\n");
             sb.Append("  SystemConversion: ").Append(SystemConversion).Append("\n");
+            sb.Append("  SystemMessagesForAdmin: ").Append(SystemMessagesForAdmin).Append("\n");
             sb.Append("  TaxReports: ").Append(TaxReports).Append("\n");
             sb.Append("  TaxReturn: ").Append(TaxReturn).Append("\n");
             sb.Append("  Taxes: ").Append(Taxes).Append("\n");
             sb.Append("  Transfers: ").Append(Transfers).Append("\n");
+            sb.Append("  TxnRelationshipLogs: ").Append(TxnRelationshipLogs).Append("\n");
+            sb.Append("  UserAttributeLogs: ").Append(UserAttributeLogs).Append("\n");
             sb.Append("  UserMatchers: ").Append(UserMatchers).Append("\n");
             sb.Append("  WalletTxns: ").Append(WalletTxns).Append("\n");
             sb.Append("  Walletables: ").Append(Walletables).Append("\n");
@@ -871,6 +1001,11 @@ namespace Freee.Accounting.Models
                     this.Tags.Equals(input.Tags))
                 ) && 
                 (
+                    this.AccessControls == input.AccessControls ||
+                    (this.AccessControls != null &&
+                    this.AccessControls.Equals(input.AccessControls))
+                ) && 
+                (
                     this.AccountItemStatements == input.AccountItemStatements ||
                     (this.AccountItemStatements != null &&
                     this.AccountItemStatements.Equals(input.AccountItemStatements))
@@ -884,6 +1019,11 @@ namespace Freee.Accounting.Models
                     this.AnnualReports == input.AnnualReports ||
                     (this.AnnualReports != null &&
                     this.AnnualReports.Equals(input.AnnualReports))
+                ) && 
+                (
+                    this.AppRoleLogs == input.AppRoleLogs ||
+                    (this.AppRoleLogs != null &&
+                    this.AppRoleLogs.Equals(input.AppRoleLogs))
                 ) && 
                 (
                     this.ApprovalFlowRoutes == input.ApprovalFlowRoutes ||
@@ -916,6 +1056,11 @@ namespace Freee.Accounting.Models
                     this.Companies.Equals(input.Companies))
                 ) && 
                 (
+                    this.CompanyInternalAnnouncements == input.CompanyInternalAnnouncements ||
+                    (this.CompanyInternalAnnouncements != null &&
+                    this.CompanyInternalAnnouncements.Equals(input.CompanyInternalAnnouncements))
+                ) && 
+                (
                     this.ConsumptionEntries == input.ConsumptionEntries ||
                     (this.ConsumptionEntries != null &&
                     this.ConsumptionEntries.Equals(input.ConsumptionEntries))
@@ -936,6 +1081,11 @@ namespace Freee.Accounting.Models
                     this.Deals.Equals(input.Deals))
                 ) && 
                 (
+                    this.DocChangeLogs == input.DocChangeLogs ||
+                    (this.DocChangeLogs != null &&
+                    this.DocChangeLogs.Equals(input.DocChangeLogs))
+                ) && 
+                (
                     this.DocPostings == input.DocPostings ||
                     (this.DocPostings != null &&
                     this.DocPostings.Equals(input.DocPostings))
@@ -944,6 +1094,11 @@ namespace Freee.Accounting.Models
                     this.Docs == input.Docs ||
                     (this.Docs != null &&
                     this.Docs.Equals(input.Docs))
+                ) && 
+                (
+                    this.ExpenseApplicationSyncPayroll == input.ExpenseApplicationSyncPayroll ||
+                    (this.ExpenseApplicationSyncPayroll != null &&
+                    this.ExpenseApplicationSyncPayroll.Equals(input.ExpenseApplicationSyncPayroll))
                 ) && 
                 (
                     this.ExpenseApplicationTemplates == input.ExpenseApplicationTemplates ||
@@ -1021,6 +1176,11 @@ namespace Freee.Accounting.Models
                     this.PaymentRequests.Equals(input.PaymentRequests))
                 ) && 
                 (
+                    this.PayrollItemSets == input.PayrollItemSets ||
+                    (this.PayrollItemSets != null &&
+                    this.PayrollItemSets.Equals(input.PayrollItemSets))
+                ) && 
+                (
                     this.ReceiptStreamEditor == input.ReceiptStreamEditor ||
                     (this.ReceiptStreamEditor != null &&
                     this.ReceiptStreamEditor.Equals(input.ReceiptStreamEditor))
@@ -1049,6 +1209,11 @@ namespace Freee.Accounting.Models
                     this.ReportsCrosstabs == input.ReportsCrosstabs ||
                     (this.ReportsCrosstabs != null &&
                     this.ReportsCrosstabs.Equals(input.ReportsCrosstabs))
+                ) && 
+                (
+                    this.ReportsCustomReportsAggregate == input.ReportsCustomReportsAggregate ||
+                    (this.ReportsCustomReportsAggregate != null &&
+                    this.ReportsCustomReportsAggregate.Equals(input.ReportsCustomReportsAggregate))
                 ) && 
                 (
                     this.ReportsGeneralLedgers == input.ReportsGeneralLedgers ||
@@ -1121,6 +1286,11 @@ namespace Freee.Accounting.Models
                     this.SystemConversion.Equals(input.SystemConversion))
                 ) && 
                 (
+                    this.SystemMessagesForAdmin == input.SystemMessagesForAdmin ||
+                    (this.SystemMessagesForAdmin != null &&
+                    this.SystemMessagesForAdmin.Equals(input.SystemMessagesForAdmin))
+                ) && 
+                (
                     this.TaxReports == input.TaxReports ||
                     (this.TaxReports != null &&
                     this.TaxReports.Equals(input.TaxReports))
@@ -1139,6 +1309,16 @@ namespace Freee.Accounting.Models
                     this.Transfers == input.Transfers ||
                     (this.Transfers != null &&
                     this.Transfers.Equals(input.Transfers))
+                ) && 
+                (
+                    this.TxnRelationshipLogs == input.TxnRelationshipLogs ||
+                    (this.TxnRelationshipLogs != null &&
+                    this.TxnRelationshipLogs.Equals(input.TxnRelationshipLogs))
+                ) && 
+                (
+                    this.UserAttributeLogs == input.UserAttributeLogs ||
+                    (this.UserAttributeLogs != null &&
+                    this.UserAttributeLogs.Equals(input.UserAttributeLogs))
                 ) && 
                 (
                     this.UserMatchers == input.UserMatchers ||
@@ -1180,6 +1360,10 @@ namespace Freee.Accounting.Models
                 {
                     hashCode = (hashCode * 59) + this.Tags.GetHashCode();
                 }
+                if (this.AccessControls != null)
+                {
+                    hashCode = (hashCode * 59) + this.AccessControls.GetHashCode();
+                }
                 if (this.AccountItemStatements != null)
                 {
                     hashCode = (hashCode * 59) + this.AccountItemStatements.GetHashCode();
@@ -1191,6 +1375,10 @@ namespace Freee.Accounting.Models
                 if (this.AnnualReports != null)
                 {
                     hashCode = (hashCode * 59) + this.AnnualReports.GetHashCode();
+                }
+                if (this.AppRoleLogs != null)
+                {
+                    hashCode = (hashCode * 59) + this.AppRoleLogs.GetHashCode();
                 }
                 if (this.ApprovalFlowRoutes != null)
                 {
@@ -1216,6 +1404,10 @@ namespace Freee.Accounting.Models
                 {
                     hashCode = (hashCode * 59) + this.Companies.GetHashCode();
                 }
+                if (this.CompanyInternalAnnouncements != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompanyInternalAnnouncements.GetHashCode();
+                }
                 if (this.ConsumptionEntries != null)
                 {
                     hashCode = (hashCode * 59) + this.ConsumptionEntries.GetHashCode();
@@ -1232,6 +1424,10 @@ namespace Freee.Accounting.Models
                 {
                     hashCode = (hashCode * 59) + this.Deals.GetHashCode();
                 }
+                if (this.DocChangeLogs != null)
+                {
+                    hashCode = (hashCode * 59) + this.DocChangeLogs.GetHashCode();
+                }
                 if (this.DocPostings != null)
                 {
                     hashCode = (hashCode * 59) + this.DocPostings.GetHashCode();
@@ -1239,6 +1435,10 @@ namespace Freee.Accounting.Models
                 if (this.Docs != null)
                 {
                     hashCode = (hashCode * 59) + this.Docs.GetHashCode();
+                }
+                if (this.ExpenseApplicationSyncPayroll != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExpenseApplicationSyncPayroll.GetHashCode();
                 }
                 if (this.ExpenseApplicationTemplates != null)
                 {
@@ -1300,6 +1500,10 @@ namespace Freee.Accounting.Models
                 {
                     hashCode = (hashCode * 59) + this.PaymentRequests.GetHashCode();
                 }
+                if (this.PayrollItemSets != null)
+                {
+                    hashCode = (hashCode * 59) + this.PayrollItemSets.GetHashCode();
+                }
                 if (this.ReceiptStreamEditor != null)
                 {
                     hashCode = (hashCode * 59) + this.ReceiptStreamEditor.GetHashCode();
@@ -1323,6 +1527,10 @@ namespace Freee.Accounting.Models
                 if (this.ReportsCrosstabs != null)
                 {
                     hashCode = (hashCode * 59) + this.ReportsCrosstabs.GetHashCode();
+                }
+                if (this.ReportsCustomReportsAggregate != null)
+                {
+                    hashCode = (hashCode * 59) + this.ReportsCustomReportsAggregate.GetHashCode();
                 }
                 if (this.ReportsGeneralLedgers != null)
                 {
@@ -1380,6 +1588,10 @@ namespace Freee.Accounting.Models
                 {
                     hashCode = (hashCode * 59) + this.SystemConversion.GetHashCode();
                 }
+                if (this.SystemMessagesForAdmin != null)
+                {
+                    hashCode = (hashCode * 59) + this.SystemMessagesForAdmin.GetHashCode();
+                }
                 if (this.TaxReports != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxReports.GetHashCode();
@@ -1395,6 +1607,14 @@ namespace Freee.Accounting.Models
                 if (this.Transfers != null)
                 {
                     hashCode = (hashCode * 59) + this.Transfers.GetHashCode();
+                }
+                if (this.TxnRelationshipLogs != null)
+                {
+                    hashCode = (hashCode * 59) + this.TxnRelationshipLogs.GetHashCode();
+                }
+                if (this.UserAttributeLogs != null)
+                {
+                    hashCode = (hashCode * 59) + this.UserAttributeLogs.GetHashCode();
                 }
                 if (this.UserMatchers != null)
                 {
