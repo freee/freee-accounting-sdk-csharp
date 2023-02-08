@@ -1,3 +1,5 @@
+# このSDKはこれまで定期的にメンテナンスをしていましたが、2023年4月をもって定期的なメンテナンスを終了する予定です。 詳細は「[freee会計 Public APIに関するSDKのメンテナンス終了、およびスキーマのymlファイルでの公開終了について](https://developer.freee.co.jp/news/6263)」をご覧ください。
+
 # 会計freee C# SDK #
 
 会計freee APIを C# で利用するための SDK です。
