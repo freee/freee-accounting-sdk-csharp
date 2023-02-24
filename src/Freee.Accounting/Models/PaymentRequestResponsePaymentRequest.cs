@@ -235,7 +235,7 @@ namespace Freee.Accounting.Models
         /// <param name="paymentDate">支払期限 (yyyy-mm-dd) (required).</param>
         /// <param name="paymentMethod">支払方法(none: 指定なし, domestic_bank_transfer: 国内振込, abroad_bank_transfer: 国外振込, account_transfer: 口座振替, credit_card: クレジットカード) (required).</param>
         /// <param name="paymentRequestLines">支払依頼の項目行一覧（配列） (required).</param>
-        /// <param name="receiptIds">証憑ファイルID（ファイルボックスのファイルID） (required).</param>
+        /// <param name="receiptIds">ファイルボックス（証憑ファイル）ID (required).</param>
         /// <param name="status">申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) (required).</param>
         /// <param name="title">申請タイトル (required).</param>
         /// <param name="totalAmount">合計金額 (required).</param>
@@ -571,9 +571,9 @@ namespace Freee.Accounting.Models
         public List<PaymentRequestResponsePaymentRequestPaymentRequestLines> PaymentRequestLines { get; set; }
 
         /// <summary>
-        /// 証憑ファイルID（ファイルボックスのファイルID）
+        /// ファイルボックス（証憑ファイル）ID
         /// </summary>
-        /// <value>証憑ファイルID（ファイルボックスのファイルID）</value>
+        /// <value>ファイルボックス（証憑ファイル）ID</value>
         [DataMember(Name = "receipt_ids", IsRequired = true, EmitDefaultValue = false)]
         public List<int> ReceiptIds { get; set; }
 

@@ -65,7 +65,7 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DestroySectionWithHttpInfo(int id, int companyId);
         /// <summary>
-        /// 
+        /// 部門の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">部門ID</param>
@@ -74,7 +74,7 @@ namespace Freee.Accounting.Api
         SectionResponse GetSection(int id, int companyId);
 
         /// <summary>
-        /// 
+        /// 部門の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -180,7 +180,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DestroySectionWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// 部門の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -193,7 +193,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<SectionResponse> GetSectionAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// 部門の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -649,7 +649,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        ///  
+        /// 部門の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">部門ID</param>
@@ -662,7 +662,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        ///  
+        /// 部門の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">部門ID</param>
@@ -717,7 +717,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        ///  
+        /// 部門の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">部門ID</param>
@@ -731,7 +731,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        ///  
+        /// 部門の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">部門ID</param>

@@ -123,7 +123,7 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of ApprovalRequestFormIndexResponse</returns>
         ApiResponse<ApprovalRequestFormIndexResponse> GetApprovalRequestFormsWithHttpInfo(int companyId);
         /// <summary>
-        /// 各種申請の一覧
+        /// 各種申請一覧の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -143,7 +143,7 @@ namespace Freee.Accounting.Api
         ApprovalRequestsIndexResponse GetApprovalRequests(int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), long? minAmount = default(long?), long? maxAmount = default(long?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?));
 
         /// <summary>
-        /// 各種申請の一覧
+        /// 各種申請一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -335,7 +335,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse (ApprovalRequestFormIndexResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApprovalRequestFormIndexResponse>> GetApprovalRequestFormsWithHttpInfoAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 各種申請の一覧
+        /// 各種申請一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -359,7 +359,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<ApprovalRequestsIndexResponse> GetApprovalRequestsAsync(int companyId, string status = default(string), int? applicationNumber = default(int?), string title = default(string), int? formId = default(int?), string startApplicationDate = default(string), string endApplicationDate = default(string), int? applicantId = default(int?), long? minAmount = default(long?), long? maxAmount = default(long?), int? approverId = default(int?), int? offset = default(int?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 各種申請の一覧
+        /// 各種申請一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -1242,7 +1242,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 各種申請の一覧 
+        /// 各種申請一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -1266,7 +1266,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 各種申請の一覧 
+        /// 各種申請一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -1379,7 +1379,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 各種申請の一覧 
+        /// 各種申請一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -1404,7 +1404,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 各種申請の一覧 
+        /// 各種申請一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>

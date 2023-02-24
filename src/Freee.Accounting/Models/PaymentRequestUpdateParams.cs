@@ -152,7 +152,7 @@ namespace Freee.Accounting.Models
         /// <param name="paymentDate">支払期限 (yyyy-mm-dd).</param>
         /// <param name="paymentMethod">&#39;支払方法(none: 指定なし, domestic_bank_transfer: 国内振込, abroad_bank_transfer: 国外振込, account_transfer: 口座振替, credit_card: クレジットカード)&#39;&lt;br&gt; &#39;デフォルトは none: 指定なし です。&#39; .</param>
         /// <param name="paymentRequestLines">支払依頼の項目行一覧（配列） (required).</param>
-        /// <param name="receiptIds">証憑ファイルID（ファイルボックスのファイルID）（配列）.</param>
+        /// <param name="receiptIds">ファイルボックス（証憑ファイル）ID（配列）.</param>
         /// <param name="title">申請タイトル&lt;br&gt; 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効  (required).</param>
         public PaymentRequestUpdateParams(string accountName = default(string), string accountNumber = default(string), AccountTypeEnum? accountType = default(AccountTypeEnum?), string applicationDate = default(string), int approvalFlowRouteId = default(int), int approverId = default(int), string bankCode = default(string), string bankName = default(string), string bankNameKana = default(string), string branchCode = default(string), string branchKana = default(string), string branchName = default(string), int companyId = default(int), string description = default(string), string documentCode = default(string), bool draft = default(bool), string issueDate = default(string), string partnerCode = default(string), int? partnerId = default(int?), string paymentDate = default(string), PaymentMethodEnum? paymentMethod = default(PaymentMethodEnum?), List<PaymentRequestUpdateParamsPaymentRequestLines> paymentRequestLines = default(List<PaymentRequestUpdateParamsPaymentRequestLines>), List<int> receiptIds = default(List<int>), string title = default(string))
         {
@@ -335,9 +335,9 @@ namespace Freee.Accounting.Models
         public List<PaymentRequestUpdateParamsPaymentRequestLines> PaymentRequestLines { get; set; }
 
         /// <summary>
-        /// 証憑ファイルID（ファイルボックスのファイルID）（配列）
+        /// ファイルボックス（証憑ファイル）ID（配列）
         /// </summary>
-        /// <value>証憑ファイルID（ファイルボックスのファイルID）（配列）</value>
+        /// <value>ファイルボックス（証憑ファイル）ID（配列）</value>
         [DataMember(Name = "receipt_ids", EmitDefaultValue = false)]
         public List<int> ReceiptIds { get; set; }
 
