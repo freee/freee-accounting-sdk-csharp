@@ -150,8 +150,8 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <param name="createdAt">作成日時（ISO8601形式） (required).</param>
         /// <param name="description">メモ.</param>
-        /// <param name="fileSrc">ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） &lt;br&gt; &lt;br&gt; file_srcは廃止予定の属性になります。&lt;br&gt; file_srcに替わり、証憑ファイル（ファイルボックスのファイル）のダウンロード APIをご利用ください。&lt;br&gt; 証憑ファイル（ファイルボックスのファイル）のダウンロードAPIを利用することで、以下のようになります。 &lt;ul&gt;   &lt;li&gt;アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。&lt;/li&gt; &lt;/ul&gt; (required).</param>
-        /// <param name="id">証憑ファイルID（ファイルボックスのファイルID） (required).</param>
+        /// <param name="fileSrc">ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） &lt;br&gt; &lt;br&gt; file_srcは廃止予定の属性になります。&lt;br&gt; file_srcに替わり、ファイルボックス（証憑ファイル）のダウンロード APIをご利用ください。&lt;br&gt; ファイルボックス（証憑ファイル）のダウンロードAPIを利用することで、以下のようになります。 &lt;ul&gt;   &lt;li&gt;アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。&lt;/li&gt; &lt;/ul&gt; (required).</param>
+        /// <param name="id">ファイルボックス（証憑ファイル）ID (required).</param>
         /// <param name="issueDate">発生日.</param>
         /// <param name="mimeType">MIMEタイプ (required).</param>
         /// <param name="origin">アップロード元種別 (required).</param>
@@ -203,17 +203,17 @@ namespace Freee.Accounting.Models
         public string Description { get; set; }
 
         /// <summary>
-        /// ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） &lt;br&gt; &lt;br&gt; file_srcは廃止予定の属性になります。&lt;br&gt; file_srcに替わり、証憑ファイル（ファイルボックスのファイル）のダウンロード APIをご利用ください。&lt;br&gt; 証憑ファイル（ファイルボックスのファイル）のダウンロードAPIを利用することで、以下のようになります。 &lt;ul&gt;   &lt;li&gt;アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。&lt;/li&gt; &lt;/ul&gt;
+        /// ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） &lt;br&gt; &lt;br&gt; file_srcは廃止予定の属性になります。&lt;br&gt; file_srcに替わり、ファイルボックス（証憑ファイル）のダウンロード APIをご利用ください。&lt;br&gt; ファイルボックス（証憑ファイル）のダウンロードAPIを利用することで、以下のようになります。 &lt;ul&gt;   &lt;li&gt;アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。&lt;/li&gt; &lt;/ul&gt;
         /// </summary>
-        /// <value>ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） &lt;br&gt; &lt;br&gt; file_srcは廃止予定の属性になります。&lt;br&gt; file_srcに替わり、証憑ファイル（ファイルボックスのファイル）のダウンロード APIをご利用ください。&lt;br&gt; 証憑ファイル（ファイルボックスのファイル）のダウンロードAPIを利用することで、以下のようになります。 &lt;ul&gt;   &lt;li&gt;アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。&lt;/li&gt; &lt;/ul&gt;</value>
+        /// <value>ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） &lt;br&gt; &lt;br&gt; file_srcは廃止予定の属性になります。&lt;br&gt; file_srcに替わり、ファイルボックス（証憑ファイル）のダウンロード APIをご利用ください。&lt;br&gt; ファイルボックス（証憑ファイル）のダウンロードAPIを利用することで、以下のようになります。 &lt;ul&gt;   &lt;li&gt;アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。&lt;/li&gt; &lt;/ul&gt;</value>
         [DataMember(Name = "file_src", IsRequired = true, EmitDefaultValue = false)]
         [Obsolete]
         public string FileSrc { get; set; }
 
         /// <summary>
-        /// 証憑ファイルID（ファイルボックスのファイルID）
+        /// ファイルボックス（証憑ファイル）ID
         /// </summary>
-        /// <value>証憑ファイルID（ファイルボックスのファイルID）</value>
+        /// <value>ファイルボックス（証憑ファイル）ID</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 

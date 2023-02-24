@@ -36,7 +36,7 @@ namespace Freee.Accounting.Models
         /// <param name="amount">金額.</param>
         /// <param name="description">内容 (250文字以内).</param>
         /// <param name="expenseApplicationLineTemplateId">経費科目ID.</param>
-        /// <param name="receiptId">証憑ファイルID（ファイルボックスのファイルID）.</param>
+        /// <param name="receiptId">ファイルボックス（証憑ファイル）ID.</param>
         /// <param name="transactionDate">日付 (yyyy-mm-dd).</param>
         public ExpenseApplicationCreateParamsExpenseApplicationLines(int amount = default(int), string description = default(string), int expenseApplicationLineTemplateId = default(int), int receiptId = default(int), string transactionDate = default(string))
         {
@@ -69,9 +69,9 @@ namespace Freee.Accounting.Models
         public int ExpenseApplicationLineTemplateId { get; set; }
 
         /// <summary>
-        /// 証憑ファイルID（ファイルボックスのファイルID）
+        /// ファイルボックス（証憑ファイル）ID
         /// </summary>
-        /// <value>証憑ファイルID（ファイルボックスのファイルID）</value>
+        /// <value>ファイルボックス（証憑ファイル）ID</value>
         [DataMember(Name = "receipt_id", EmitDefaultValue = false)]
         public int ReceiptId { get; set; }
 
