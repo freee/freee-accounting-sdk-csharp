@@ -43,7 +43,7 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of CompanyIndexResponse</returns>
         ApiResponse<CompanyIndexResponse> GetCompaniesWithHttpInfo();
         /// <summary>
-        /// 事業所の取得
+        /// 事業所の詳細情報の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>
@@ -59,7 +59,7 @@ namespace Freee.Accounting.Api
         CompanyResponse GetCompany(int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?));
 
         /// <summary>
-        /// 事業所の取得
+        /// 事業所の詳細情報の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -107,7 +107,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse (CompanyIndexResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CompanyIndexResponse>> GetCompaniesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 事業所の取得
+        /// 事業所の詳細情報の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -127,7 +127,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<CompanyResponse> GetCompanyAsync(int id, bool? details = default(bool?), bool? accountItems = default(bool?), bool? taxes = default(bool?), bool? items = default(bool?), bool? partners = default(bool?), bool? sections = default(bool?), bool? tags = default(bool?), bool? walletables = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 事業所の取得
+        /// 事業所の詳細情報の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -394,7 +394,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 事業所の取得 
+        /// 事業所の詳細情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>
@@ -414,7 +414,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 事業所の取得 
+        /// 事業所の詳細情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>
@@ -507,7 +507,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 事業所の取得 
+        /// 事業所の詳細情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>
@@ -528,7 +528,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 事業所の取得 
+        /// 事業所の詳細情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">事業所ID</param>

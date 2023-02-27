@@ -65,7 +65,7 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of InlineResponse20013</returns>
         ApiResponse<InlineResponse20013> GetUsersCapabilitiesWithHttpInfo(int companyId);
         /// <summary>
-        /// ログインユーザーの取得
+        /// ログインユーザー情報の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
@@ -74,7 +74,7 @@ namespace Freee.Accounting.Api
         MeResponse GetUsersMe(bool? companies = default(bool?), bool? advisor = default(bool?));
 
         /// <summary>
-        /// ログインユーザーの取得
+        /// ログインユーザー情報の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -85,21 +85,21 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of MeResponse</returns>
         ApiResponse<MeResponse> GetUsersMeWithHttpInfo(bool? companies = default(bool?), bool? advisor = default(bool?));
         /// <summary>
-        /// ログインユーザーの更新
+        /// ユーザー情報の更新
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userParams">ログインユーザーの更新 (optional)</param>
+        /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <returns>UserResponse</returns>
         UserResponse UpdateUser(UserParams userParams = default(UserParams));
 
         /// <summary>
-        /// ログインユーザーの更新
+        /// ユーザー情報の更新
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userParams">ログインユーザーの更新 (optional)</param>
+        /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <returns>ApiResponse of UserResponse</returns>
         ApiResponse<UserResponse> UpdateUserWithHttpInfo(UserParams userParams = default(UserParams));
         #endregion Synchronous Operations
@@ -160,7 +160,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
         System.Threading.Tasks.Task<ApiResponse<InlineResponse20013>> GetUsersCapabilitiesWithHttpInfoAsync(int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// ログインユーザーの取得
+        /// ログインユーザー情報の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -173,7 +173,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<MeResponse> GetUsersMeAsync(bool? companies = default(bool?), bool? advisor = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// ログインユーザーの取得
+        /// ログインユーザー情報の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -185,25 +185,25 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse (MeResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<MeResponse>> GetUsersMeWithHttpInfoAsync(bool? companies = default(bool?), bool? advisor = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// ログインユーザーの更新
+        /// ユーザー情報の更新
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userParams">ログインユーザーの更新 (optional)</param>
+        /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserResponse</returns>
         System.Threading.Tasks.Task<UserResponse> UpdateUserAsync(UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// ログインユーザーの更新
+        /// ユーザー情報の更新
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userParams">ログインユーザーの更新 (optional)</param>
+        /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<UserResponse>> UpdateUserWithHttpInfoAsync(UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -608,7 +608,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ログインユーザーの取得 
+        /// ログインユーザー情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
@@ -621,7 +621,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ログインユーザーの取得 
+        /// ログインユーザー情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
@@ -682,7 +682,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ログインユーザーの取得 
+        /// ログインユーザー情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
@@ -696,7 +696,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ログインユーザーの取得 
+        /// ログインユーザー情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companies">取得情報にユーザーが所属する事業所一覧を含める (optional)</param>
@@ -760,10 +760,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ログインユーザーの更新 
+        /// ユーザー情報の更新 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userParams">ログインユーザーの更新 (optional)</param>
+        /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <returns>UserResponse</returns>
         public UserResponse UpdateUser(UserParams userParams = default(UserParams))
         {
@@ -772,10 +772,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ログインユーザーの更新 
+        /// ユーザー情報の更新 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userParams">ログインユーザーの更新 (optional)</param>
+        /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <returns>ApiResponse of UserResponse</returns>
         public Freee.Accounting.Client.ApiResponse<UserResponse> UpdateUserWithHttpInfo(UserParams userParams = default(UserParams))
         {
@@ -827,10 +827,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ログインユーザーの更新 
+        /// ユーザー情報の更新 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userParams">ログインユーザーの更新 (optional)</param>
+        /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserResponse</returns>
         public async System.Threading.Tasks.Task<UserResponse> UpdateUserAsync(UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -840,10 +840,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ログインユーザーの更新 
+        /// ユーザー情報の更新 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userParams">ログインユーザーの更新 (optional)</param>
+        /// <param name="userParams">ユーザー情報の更新 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserResponse)</returns>
         public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<UserResponse>> UpdateUserWithHttpInfoAsync(UserParams userParams = default(UserParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

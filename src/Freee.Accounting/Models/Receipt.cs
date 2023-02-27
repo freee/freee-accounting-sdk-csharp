@@ -31,40 +31,6 @@ namespace Freee.Accounting.Models
     public partial class Receipt : IEquatable<Receipt>
     {
         /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） 
-        /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum DocumentTypeEnum
-        {
-            /// <summary>
-            /// Enum Receipt for value: receipt
-            /// </summary>
-            [EnumMember(Value = "receipt")]
-            Receipt = 1,
-
-            /// <summary>
-            /// Enum Invoice for value: invoice
-            /// </summary>
-            [EnumMember(Value = "invoice")]
-            Invoice = 2,
-
-            /// <summary>
-            /// Enum Other for value: other
-            /// </summary>
-            [EnumMember(Value = "other")]
-            Other = 3
-
-        }
-
-
-        /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） 
-        /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） </value>
-        [DataMember(Name = "document_type", EmitDefaultValue = true)]
-        public DocumentTypeEnum? DocumentType { get; set; }
-        /// <summary>
         /// アップロード元種別
         /// </summary>
         /// <value>アップロード元種別</value>
@@ -141,34 +107,6 @@ namespace Freee.Accounting.Models
         [DataMember(Name = "origin", IsRequired = true, EmitDefaultValue = false)]
         public OriginEnum Origin { get; set; }
         /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
-        /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum QualifiedInvoiceEnum
-        {
-            /// <summary>
-            /// Enum Qualified for value: qualified
-            /// </summary>
-            [EnumMember(Value = "qualified")]
-            Qualified = 1,
-
-            /// <summary>
-            /// Enum NotQualified for value: not_qualified
-            /// </summary>
-            [EnumMember(Value = "not_qualified")]
-            NotQualified = 2
-
-        }
-
-
-        /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
-        /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） </value>
-        [DataMember(Name = "qualified_invoice", EmitDefaultValue = true)]
-        public QualifiedInvoiceEnum? QualifiedInvoice { get; set; }
-        /// <summary>
         /// ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視)
         /// </summary>
         /// <value>ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視)</value>
@@ -212,18 +150,15 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <param name="createdAt">作成日時（ISO8601形式） (required).</param>
         /// <param name="description">メモ.</param>
-        /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） .</param>
         /// <param name="fileSrc">ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） &lt;br&gt; &lt;br&gt; file_srcは廃止予定の属性になります。&lt;br&gt; file_srcに替わり、証憑ファイルのダウンロード APIをご利用ください。&lt;br&gt; 証憑ファイルのダウンロードAPIを利用することで、以下のようになります。 &lt;ul&gt;   &lt;li&gt;アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。&lt;/li&gt; &lt;/ul&gt; (required).</param>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID (required).</param>
-        /// <param name="invoiceRegistrationNumber">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; .</param>
+        /// <param name="id">証憑ファイルID (required).</param>
         /// <param name="issueDate">発生日.</param>
         /// <param name="mimeType">MIMEタイプ (required).</param>
         /// <param name="origin">アップロード元種別 (required).</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） .</param>
         /// <param name="receiptMetadatum">receiptMetadatum.</param>
         /// <param name="status">ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視) (required).</param>
         /// <param name="user">user (required).</param>
-        public Receipt(string createdAt = default(string), string description = default(string), DocumentTypeEnum? documentType = default(DocumentTypeEnum?), string fileSrc = default(string), int id = default(int), string invoiceRegistrationNumber = default(string), string issueDate = default(string), string mimeType = default(string), OriginEnum origin = default(OriginEnum), QualifiedInvoiceEnum? qualifiedInvoice = default(QualifiedInvoiceEnum?), DealReceiptMetadatum receiptMetadatum = default(DealReceiptMetadatum), StatusEnum status = default(StatusEnum), DealUser user = default(DealUser))
+        public Receipt(string createdAt = default(string), string description = default(string), string fileSrc = default(string), int id = default(int), string issueDate = default(string), string mimeType = default(string), OriginEnum origin = default(OriginEnum), DealReceiptMetadatum receiptMetadatum = default(DealReceiptMetadatum), StatusEnum status = default(StatusEnum), DealUser user = default(DealUser))
         {
             // to ensure "createdAt" is required (not null)
             if (createdAt == null) {
@@ -249,10 +184,7 @@ namespace Freee.Accounting.Models
             }
             this.User = user;
             this.Description = description;
-            this.DocumentType = documentType;
-            this.InvoiceRegistrationNumber = invoiceRegistrationNumber;
             this.IssueDate = issueDate;
-            this.QualifiedInvoice = qualifiedInvoice;
             this.ReceiptMetadatum = receiptMetadatum;
         }
 
@@ -279,18 +211,11 @@ namespace Freee.Accounting.Models
         public string FileSrc { get; set; }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）ID
+        /// 証憑ファイルID
         /// </summary>
-        /// <value>ファイルボックス（証憑ファイル）ID</value>
+        /// <value>証憑ファイルID</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
-
-        /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; 
-        /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; </value>
-        [DataMember(Name = "invoice_registration_number", EmitDefaultValue = true)]
-        public string InvoiceRegistrationNumber { get; set; }
 
         /// <summary>
         /// 発生日
@@ -328,14 +253,11 @@ namespace Freee.Accounting.Models
             sb.Append("class Receipt {\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  DocumentType: ").Append(DocumentType).Append("\n");
             sb.Append("  FileSrc: ").Append(FileSrc).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  InvoiceRegistrationNumber: ").Append(InvoiceRegistrationNumber).Append("\n");
             sb.Append("  IssueDate: ").Append(IssueDate).Append("\n");
             sb.Append("  MimeType: ").Append(MimeType).Append("\n");
             sb.Append("  Origin: ").Append(Origin).Append("\n");
-            sb.Append("  QualifiedInvoice: ").Append(QualifiedInvoice).Append("\n");
             sb.Append("  ReceiptMetadatum: ").Append(ReceiptMetadatum).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  User: ").Append(User).Append("\n");
@@ -385,10 +307,6 @@ namespace Freee.Accounting.Models
                     this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.DocumentType == input.DocumentType ||
-                    this.DocumentType.Equals(input.DocumentType)
-                ) && 
-                (
                     this.FileSrc == input.FileSrc ||
                     (this.FileSrc != null &&
                     this.FileSrc.Equals(input.FileSrc))
@@ -396,11 +314,6 @@ namespace Freee.Accounting.Models
                 (
                     this.Id == input.Id ||
                     this.Id.Equals(input.Id)
-                ) && 
-                (
-                    this.InvoiceRegistrationNumber == input.InvoiceRegistrationNumber ||
-                    (this.InvoiceRegistrationNumber != null &&
-                    this.InvoiceRegistrationNumber.Equals(input.InvoiceRegistrationNumber))
                 ) && 
                 (
                     this.IssueDate == input.IssueDate ||
@@ -415,10 +328,6 @@ namespace Freee.Accounting.Models
                 (
                     this.Origin == input.Origin ||
                     this.Origin.Equals(input.Origin)
-                ) && 
-                (
-                    this.QualifiedInvoice == input.QualifiedInvoice ||
-                    this.QualifiedInvoice.Equals(input.QualifiedInvoice)
                 ) && 
                 (
                     this.ReceiptMetadatum == input.ReceiptMetadatum ||
@@ -453,16 +362,11 @@ namespace Freee.Accounting.Models
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.DocumentType.GetHashCode();
                 if (this.FileSrc != null)
                 {
                     hashCode = (hashCode * 59) + this.FileSrc.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                if (this.InvoiceRegistrationNumber != null)
-                {
-                    hashCode = (hashCode * 59) + this.InvoiceRegistrationNumber.GetHashCode();
-                }
                 if (this.IssueDate != null)
                 {
                     hashCode = (hashCode * 59) + this.IssueDate.GetHashCode();
@@ -472,7 +376,6 @@ namespace Freee.Accounting.Models
                     hashCode = (hashCode * 59) + this.MimeType.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Origin.GetHashCode();
-                hashCode = (hashCode * 59) + this.QualifiedInvoice.GetHashCode();
                 if (this.ReceiptMetadatum != null)
                 {
                     hashCode = (hashCode * 59) + this.ReceiptMetadatum.GetHashCode();

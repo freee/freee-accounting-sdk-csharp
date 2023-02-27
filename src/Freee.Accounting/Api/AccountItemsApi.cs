@@ -65,7 +65,7 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DestroyAccountItemWithHttpInfo(int id, int companyId);
         /// <summary>
-        /// 勘定科目の取得
+        /// 勘定科目の詳細情報の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -74,7 +74,7 @@ namespace Freee.Accounting.Api
         AccountItemResponse GetAccountItem(int companyId, int id);
 
         /// <summary>
-        /// 勘定科目の取得
+        /// 勘定科目の詳細情報の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -182,7 +182,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DestroyAccountItemWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 勘定科目の取得
+        /// 勘定科目の詳細情報の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -195,7 +195,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<AccountItemResponse> GetAccountItemAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 勘定科目の取得
+        /// 勘定科目の詳細情報の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -665,7 +665,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 勘定科目の取得 
+        /// 勘定科目の詳細情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -678,7 +678,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 勘定科目の取得 
+        /// 勘定科目の詳細情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -733,7 +733,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 勘定科目の取得 
+        /// 勘定科目の詳細情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -747,7 +747,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 勘定科目の取得 
+        /// 勘定科目の詳細情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>

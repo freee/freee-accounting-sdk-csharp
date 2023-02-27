@@ -128,7 +128,7 @@ namespace Freee.Accounting.Models
         /// <param name="email">担当者 メールアドレス (255文字以内).</param>
         /// <param name="invoicePaymentTermAttributes">invoicePaymentTermAttributes.</param>
         /// <param name="longName">正式名称（255文字以内）.</param>
-        /// <param name="name">取引先名 (255文字以内、重複不可) (required).</param>
+        /// <param name="name">取引先名 (255文字以内) (required).</param>
         /// <param name="nameKana">カナ名称（255文字以内）.</param>
         /// <param name="orgCode">事業所種別（null: 未設定、1: 法人、2: 個人）.</param>
         /// <param name="partnerBankAccountAttributes">partnerBankAccountAttributes.</param>
@@ -214,9 +214,9 @@ namespace Freee.Accounting.Models
         public string LongName { get; set; }
 
         /// <summary>
-        /// 取引先名 (255文字以内、重複不可)
+        /// 取引先名 (255文字以内)
         /// </summary>
-        /// <value>取引先名 (255文字以内、重複不可)</value>
+        /// <value>取引先名 (255文字以内)</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
         public string Name { get; set; }
 

@@ -45,7 +45,7 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of TransferResponse</returns>
         ApiResponse<TransferResponse> CreateTransferWithHttpInfo(TransferParams transferParams = default(TransferParams));
         /// <summary>
-        /// 取引（振替）の削除
+        /// 取引（振替）の削除する
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
@@ -54,7 +54,7 @@ namespace Freee.Accounting.Api
         void DestroyTransfer(int id, int companyId);
 
         /// <summary>
-        /// 取引（振替）の削除
+        /// 取引（振替）の削除する
         /// </summary>
         /// <remarks>
         /// 
@@ -163,7 +163,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse (TransferResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<TransferResponse>> CreateTransferWithHttpInfoAsync(TransferParams transferParams = default(TransferParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 取引（振替）の削除
+        /// 取引（振替）の削除する
         /// </summary>
         /// <remarks>
         /// 
@@ -176,7 +176,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task DestroyTransferAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 取引（振替）の削除
+        /// 取引（振替）の削除する
         /// </summary>
         /// <remarks>
         /// 
@@ -527,7 +527,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（振替）の削除 
+        /// 取引（振替）の削除する 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
@@ -539,7 +539,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（振替）の削除 
+        /// 取引（振替）の削除する 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
@@ -594,7 +594,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（振替）の削除 
+        /// 取引（振替）の削除する 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
@@ -607,7 +607,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（振替）の削除 
+        /// 取引（振替）の削除する 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引(振替)ID</param>
