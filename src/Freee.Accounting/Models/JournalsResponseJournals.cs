@@ -188,7 +188,7 @@ namespace Freee.Accounting.Models
         /// <param name="id">受け付けID (required).</param>
         /// <param name="messages">messages.</param>
         /// <param name="startDate">取得開始日 (yyyy-mm-dd).</param>
-        /// <param name="statusUrl">ステータス確認用URL.</param>
+        /// <param name="statusUrl">仕訳帳のステータスの取得用URL.</param>
         /// <param name="upToDate">集計結果が最新かどうか.</param>
         /// <param name="upToDateReasons">集計が最新でない場合の要因情報.</param>
         /// <param name="visibleIds">visibleIds.</param>
@@ -243,9 +243,9 @@ namespace Freee.Accounting.Models
         public string StartDate { get; set; }
 
         /// <summary>
-        /// ステータス確認用URL
+        /// 仕訳帳のステータスの取得用URL
         /// </summary>
-        /// <value>ステータス確認用URL</value>
+        /// <value>仕訳帳のステータスの取得用URL</value>
         [DataMember(Name = "status_url", EmitDefaultValue = false)]
         public string StatusUrl { get; set; }
 
