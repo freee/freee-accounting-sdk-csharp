@@ -67,7 +67,7 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DestroyWalletableWithHttpInfo(int id, string type, int companyId);
         /// <summary>
-        /// 口座の取得
+        /// 口座情報の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">口座ID</param>
@@ -77,7 +77,7 @@ namespace Freee.Accounting.Api
         InlineResponse20016 GetWalletable(int id, string type, int companyId);
 
         /// <summary>
-        /// 口座の取得
+        /// 口座情報の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -192,7 +192,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DestroyWalletableWithHttpInfoAsync(int id, string type, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 口座の取得
+        /// 口座情報の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -206,7 +206,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<InlineResponse20016> GetWalletableAsync(int id, string type, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 口座の取得
+        /// 口座情報の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -687,7 +687,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 口座の取得 
+        /// 口座情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">口座ID</param>
@@ -701,7 +701,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 口座の取得 
+        /// 口座情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">口座ID</param>
@@ -764,7 +764,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 口座の取得 
+        /// 口座情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">口座ID</param>
@@ -779,7 +779,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 口座の取得 
+        /// 口座情報の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">口座ID</param>

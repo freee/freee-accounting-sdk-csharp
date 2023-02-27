@@ -27,27 +27,27 @@ namespace Freee.Accounting.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 取引（収入・支出）の+更新の作成
+        /// 取引（収入／支出）に対する+更新の作成
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
-        /// <param name="renewCreateParams">取引（収入・支出）の+更新の作成</param>
+        /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <returns>DealResponse</returns>
         DealResponse CreateDealRenew(int id, RenewCreateParams renewCreateParams);
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の作成
+        /// 取引（収入／支出）に対する+更新の作成
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
-        /// <param name="renewCreateParams">取引（収入・支出）の+更新の作成</param>
+        /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <returns>ApiResponse of DealResponse</returns>
         ApiResponse<DealResponse> CreateDealRenewWithHttpInfo(int id, RenewCreateParams renewCreateParams);
         /// <summary>
-        /// 取引（収入・支出）の+更新の削除
+        /// 取引（収入／支出）の+更新の削除
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
@@ -57,7 +57,7 @@ namespace Freee.Accounting.Api
         DealResponse DeleteDealRenew(int id, int renewId, int companyId);
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の削除
+        /// 取引（収入／支出）の+更新の削除
         /// </summary>
         /// <remarks>
         /// 
@@ -69,17 +69,17 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of DealResponse</returns>
         ApiResponse<DealResponse> DeleteDealRenewWithHttpInfo(int id, int renewId, int companyId);
         /// <summary>
-        /// 取引（収入・支出）の+更新の更新
+        /// 取引（収入／支出）の+更新の更新
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
         /// <param name="renewId">+更新ID</param>
-        /// <param name="renewUpdateParams">取引（収入・支出）の+更新の更新</param>
+        /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <returns>DealResponse</returns>
         DealResponse UpdateDealRenew(int id, int renewId, RenewUpdateParams renewUpdateParams);
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の更新
+        /// 取引（収入／支出）の+更新の更新
         /// </summary>
         /// <remarks>
         /// 
@@ -87,7 +87,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
         /// <param name="renewId">+更新ID</param>
-        /// <param name="renewUpdateParams">取引（収入・支出）の+更新の更新</param>
+        /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <returns>ApiResponse of DealResponse</returns>
         ApiResponse<DealResponse> UpdateDealRenewWithHttpInfo(int id, int renewId, RenewUpdateParams renewUpdateParams);
         #endregion Synchronous Operations
@@ -100,32 +100,32 @@ namespace Freee.Accounting.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 取引（収入・支出）の+更新の作成
+        /// 取引（収入／支出）に対する+更新の作成
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
-        /// <param name="renewCreateParams">取引（収入・支出）の+更新の作成</param>
+        /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
         System.Threading.Tasks.Task<DealResponse> CreateDealRenewAsync(int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の作成
+        /// 取引（収入／支出）に対する+更新の作成
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
-        /// <param name="renewCreateParams">取引（収入・支出）の+更新の作成</param>
+        /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<DealResponse>> CreateDealRenewWithHttpInfoAsync(int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 取引（収入・支出）の+更新の削除
+        /// 取引（収入／支出）の+更新の削除
         /// </summary>
         /// <remarks>
         /// 
@@ -139,7 +139,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<DealResponse> DeleteDealRenewAsync(int id, int renewId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の削除
+        /// 取引（収入／支出）の+更新の削除
         /// </summary>
         /// <remarks>
         /// 
@@ -152,7 +152,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse (DealResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<DealResponse>> DeleteDealRenewWithHttpInfoAsync(int id, int renewId, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 取引（収入・支出）の+更新の更新
+        /// 取引（収入／支出）の+更新の更新
         /// </summary>
         /// <remarks>
         /// 
@@ -160,13 +160,13 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
         /// <param name="renewId">+更新ID</param>
-        /// <param name="renewUpdateParams">取引（収入・支出）の+更新の更新</param>
+        /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
         System.Threading.Tasks.Task<DealResponse> UpdateDealRenewAsync(int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の更新
+        /// 取引（収入／支出）の+更新の更新
         /// </summary>
         /// <remarks>
         /// 
@@ -174,7 +174,7 @@ namespace Freee.Accounting.Api
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
         /// <param name="renewId">+更新ID</param>
-        /// <param name="renewUpdateParams">取引（収入・支出）の+更新の更新</param>
+        /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<DealResponse>> UpdateDealRenewWithHttpInfoAsync(int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -299,11 +299,11 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の作成 
+        /// 取引（収入／支出）に対する+更新の作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
-        /// <param name="renewCreateParams">取引（収入・支出）の+更新の作成</param>
+        /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <returns>DealResponse</returns>
         public DealResponse CreateDealRenew(int id, RenewCreateParams renewCreateParams)
         {
@@ -312,11 +312,11 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の作成 
+        /// 取引（収入／支出）に対する+更新の作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
-        /// <param name="renewCreateParams">取引（収入・支出）の+更新の作成</param>
+        /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <returns>ApiResponse of DealResponse</returns>
         public Freee.Accounting.Client.ApiResponse<DealResponse> CreateDealRenewWithHttpInfo(int id, RenewCreateParams renewCreateParams)
         {
@@ -375,11 +375,11 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の作成 
+        /// 取引（収入／支出）に対する+更新の作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
-        /// <param name="renewCreateParams">取引（収入・支出）の+更新の作成</param>
+        /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
         public async System.Threading.Tasks.Task<DealResponse> CreateDealRenewAsync(int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -389,11 +389,11 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の作成 
+        /// 取引（収入／支出）に対する+更新の作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
-        /// <param name="renewCreateParams">取引（収入・支出）の+更新の作成</param>
+        /// <param name="renewCreateParams">取引（収入／支出）に対する+更新の情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
         public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<DealResponse>> CreateDealRenewWithHttpInfoAsync(int id, RenewCreateParams renewCreateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -455,7 +455,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の削除 
+        /// 取引（収入／支出）の+更新の削除 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
@@ -469,7 +469,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の削除 
+        /// 取引（収入／支出）の+更新の削除 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
@@ -526,7 +526,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の削除 
+        /// 取引（収入／支出）の+更新の削除 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
@@ -541,7 +541,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の削除 
+        /// 取引（収入／支出）の+更新の削除 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
@@ -601,12 +601,12 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の更新 
+        /// 取引（収入／支出）の+更新の更新 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
         /// <param name="renewId">+更新ID</param>
-        /// <param name="renewUpdateParams">取引（収入・支出）の+更新の更新</param>
+        /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <returns>DealResponse</returns>
         public DealResponse UpdateDealRenew(int id, int renewId, RenewUpdateParams renewUpdateParams)
         {
@@ -615,12 +615,12 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の更新 
+        /// 取引（収入／支出）の+更新の更新 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
         /// <param name="renewId">+更新ID</param>
-        /// <param name="renewUpdateParams">取引（収入・支出）の+更新の更新</param>
+        /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <returns>ApiResponse of DealResponse</returns>
         public Freee.Accounting.Client.ApiResponse<DealResponse> UpdateDealRenewWithHttpInfo(int id, int renewId, RenewUpdateParams renewUpdateParams)
         {
@@ -680,12 +680,12 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の更新 
+        /// 取引（収入／支出）の+更新の更新 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
         /// <param name="renewId">+更新ID</param>
-        /// <param name="renewUpdateParams">取引（収入・支出）の+更新の更新</param>
+        /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DealResponse</returns>
         public async System.Threading.Tasks.Task<DealResponse> UpdateDealRenewAsync(int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -695,12 +695,12 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 取引（収入・支出）の+更新の更新 
+        /// 取引（収入／支出）の+更新の更新 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">取引ID</param>
         /// <param name="renewId">+更新ID</param>
-        /// <param name="renewUpdateParams">取引（収入・支出）の+更新の更新</param>
+        /// <param name="renewUpdateParams">+更新の更新情報</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DealResponse)</returns>
         public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<DealResponse>> UpdateDealRenewWithHttpInfoAsync(int id, int renewId, RenewUpdateParams renewUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

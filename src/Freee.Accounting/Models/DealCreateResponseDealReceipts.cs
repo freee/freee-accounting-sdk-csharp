@@ -150,7 +150,7 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <param name="createdAt">作成日時（ISO8601形式） (required).</param>
         /// <param name="description">メモ.</param>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID (required).</param>
+        /// <param name="id">証憑ファイルID（ファイルボックスのファイルID） (required).</param>
         /// <param name="issueDate">発生日.</param>
         /// <param name="mimeType">MIMEタイプ (required).</param>
         /// <param name="origin">アップロード元種別 (required).</param>
@@ -197,9 +197,9 @@ namespace Freee.Accounting.Models
         public string Description { get; set; }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）ID
+        /// 証憑ファイルID（ファイルボックスのファイルID）
         /// </summary>
-        /// <value>ファイルボックス（証憑ファイル）ID</value>
+        /// <value>証憑ファイルID（ファイルボックスのファイルID）</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
 

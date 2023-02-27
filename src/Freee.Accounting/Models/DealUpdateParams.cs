@@ -72,7 +72,7 @@ namespace Freee.Accounting.Models
         /// <param name="issueDate">発生日 (yyyy-mm-dd) (required).</param>
         /// <param name="partnerCode">取引先コード.</param>
         /// <param name="partnerId">取引先ID.</param>
-        /// <param name="receiptIds">ファイルボックス（証憑ファイル）ID（配列）.</param>
+        /// <param name="receiptIds">証憑ファイルID（ファイルボックスのファイルID）（配列）.</param>
         /// <param name="refNumber">管理番号.</param>
         /// <param name="type">収支区分 (収入: income, 支出: expense) (required).</param>
         public DealUpdateParams(int companyId = default(int), List<DealUpdateParamsDetails> details = default(List<DealUpdateParamsDetails>), string dueDate = default(string), string issueDate = default(string), string partnerCode = default(string), int partnerId = default(int), List<int> receiptIds = default(List<int>), string refNumber = default(string), TypeEnum type = default(TypeEnum))
@@ -138,9 +138,9 @@ namespace Freee.Accounting.Models
         public int PartnerId { get; set; }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）ID（配列）
+        /// 証憑ファイルID（ファイルボックスのファイルID）（配列）
         /// </summary>
-        /// <value>ファイルボックス（証憑ファイル）ID（配列）</value>
+        /// <value>証憑ファイルID（ファイルボックスのファイルID）（配列）</value>
         [DataMember(Name = "receipt_ids", EmitDefaultValue = true)]
         public List<int> ReceiptIds { get; set; }
 

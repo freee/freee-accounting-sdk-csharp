@@ -27,23 +27,21 @@ namespace Freee.Accounting.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のアップロード
+        /// ファイルボックス 証憑ファイルアップロード
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
-        /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <returns>ReceiptResponse</returns>
-        ReceiptResponse CreateReceipt(int companyId, System.IO.Stream receipt, string description = default(string), string documentType = default(string), string issueDate = default(string), string qualifiedInvoice = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string));
+        ReceiptResponse CreateReceipt(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string));
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のアップロード
+        /// ファイルボックス 証憑ファイルアップロード
         /// </summary>
         /// <remarks>
         /// 
@@ -52,76 +50,74 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
-        /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <returns>ApiResponse of ReceiptResponse</returns>
-        ApiResponse<ReceiptResponse> CreateReceiptWithHttpInfo(int companyId, System.IO.Stream receipt, string description = default(string), string documentType = default(string), string issueDate = default(string), string qualifiedInvoice = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string));
+        ApiResponse<ReceiptResponse> CreateReceiptWithHttpInfo(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string));
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の削除
+        /// ファイルボックス 証憑ファイルを削除する
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
         void DestroyReceipt(int id, int companyId);
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の削除
+        /// ファイルボックス 証憑ファイルを削除する
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DestroyReceiptWithHttpInfo(int id, int companyId);
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のダウンロード
+        /// ファイルボックス 証憑ファイルのダウンロード
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>System.IO.Stream</returns>
         System.IO.Stream DownloadReceipt(int id, int companyId);
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のダウンロード
+        /// ファイルボックス 証憑ファイルのダウンロード
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
         ApiResponse<System.IO.Stream> DownloadReceiptWithHttpInfo(int id, int companyId);
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の取得
+        /// ファイルボックス 証憑ファイルの取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ReceiptResponse</returns>
         ReceiptResponse GetReceipt(int id, int companyId);
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の取得
+        /// ファイルボックス 証憑ファイルの取得
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of ReceiptResponse</returns>
         ApiResponse<ReceiptResponse> GetReceiptWithHttpInfo(int id, int companyId);
         /// <summary>
-        /// ファイルボックス（証憑ファイル）一覧の取得
+        /// ファイルボックス 証憑ファイル一覧の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -138,7 +134,7 @@ namespace Freee.Accounting.Api
         InlineResponse2005 GetReceipts(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), long? offset = default(long?), int? limit = default(int?));
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）一覧の取得
+        /// ファイルボックス 証憑ファイル一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -157,22 +153,22 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of InlineResponse2005</returns>
         ApiResponse<InlineResponse2005> GetReceiptsWithHttpInfo(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), long? offset = default(long?), int? limit = default(int?));
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の更新
+        /// ファイルボックス 証憑ファイル情報更新
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="receiptUpdateParams"></param>
         /// <returns>ReceiptResponse</returns>
         ReceiptResponse UpdateReceipt(int id, ReceiptUpdateParams receiptUpdateParams);
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の更新
+        /// ファイルボックス 証憑ファイル情報更新
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="receiptUpdateParams"></param>
         /// <returns>ApiResponse of ReceiptResponse</returns>
         ApiResponse<ReceiptResponse> UpdateReceiptWithHttpInfo(int id, ReceiptUpdateParams receiptUpdateParams);
@@ -186,7 +182,7 @@ namespace Freee.Accounting.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のアップロード
+        /// ファイルボックス 証憑ファイルアップロード
         /// </summary>
         /// <remarks>
         /// 
@@ -195,18 +191,16 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
-        /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReceiptResponse</returns>
-        System.Threading.Tasks.Task<ReceiptResponse> CreateReceiptAsync(int companyId, System.IO.Stream receipt, string description = default(string), string documentType = default(string), string issueDate = default(string), string qualifiedInvoice = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ReceiptResponse> CreateReceiptAsync(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のアップロード
+        /// ファイルボックス 証憑ファイルアップロード
         /// </summary>
         /// <remarks>
         /// 
@@ -215,92 +209,90 @@ namespace Freee.Accounting.Api
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
-        /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ReceiptResponse>> CreateReceiptWithHttpInfoAsync(int companyId, System.IO.Stream receipt, string description = default(string), string documentType = default(string), string issueDate = default(string), string qualifiedInvoice = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ReceiptResponse>> CreateReceiptWithHttpInfoAsync(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の削除
+        /// ファイルボックス 証憑ファイルを削除する
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task DestroyReceiptAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の削除
+        /// ファイルボックス 証憑ファイルを削除する
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DestroyReceiptWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のダウンロード
+        /// ファイルボックス 証憑ファイルのダウンロード
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
         System.Threading.Tasks.Task<System.IO.Stream> DownloadReceiptAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のダウンロード
+        /// ファイルボックス 証憑ファイルのダウンロード
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DownloadReceiptWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の取得
+        /// ファイルボックス 証憑ファイルの取得
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReceiptResponse</returns>
         System.Threading.Tasks.Task<ReceiptResponse> GetReceiptAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の取得
+        /// ファイルボックス 証憑ファイルの取得
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ReceiptResponse>> GetReceiptWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// ファイルボックス（証憑ファイル）一覧の取得
+        /// ファイルボックス 証憑ファイル一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -321,7 +313,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<InlineResponse2005> GetReceiptsAsync(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）一覧の取得
+        /// ファイルボックス 証憑ファイル一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -341,26 +333,26 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
         System.Threading.Tasks.Task<ApiResponse<InlineResponse2005>> GetReceiptsWithHttpInfoAsync(int companyId, string startDate, string endDate, string userName = default(string), int? number = default(int?), string commentType = default(string), bool? commentImportant = default(bool?), string category = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の更新
+        /// ファイルボックス 証憑ファイル情報更新
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="receiptUpdateParams"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReceiptResponse</returns>
         System.Threading.Tasks.Task<ReceiptResponse> UpdateReceiptAsync(int id, ReceiptUpdateParams receiptUpdateParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の更新
+        /// ファイルボックス 証憑ファイル情報更新
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="receiptUpdateParams"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
@@ -486,40 +478,36 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のアップロード 
+        /// ファイルボックス 証憑ファイルアップロード 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
-        /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <returns>ReceiptResponse</returns>
-        public ReceiptResponse CreateReceipt(int companyId, System.IO.Stream receipt, string description = default(string), string documentType = default(string), string issueDate = default(string), string qualifiedInvoice = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string))
+        public ReceiptResponse CreateReceipt(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string))
         {
-            Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = CreateReceiptWithHttpInfo(companyId, receipt, description, documentType, issueDate, qualifiedInvoice, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName);
+            Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = CreateReceiptWithHttpInfo(companyId, receipt, description, issueDate, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のアップロード 
+        /// ファイルボックス 証憑ファイルアップロード 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
-        /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <returns>ApiResponse of ReceiptResponse</returns>
-        public Freee.Accounting.Client.ApiResponse<ReceiptResponse> CreateReceiptWithHttpInfo(int companyId, System.IO.Stream receipt, string description = default(string), string documentType = default(string), string issueDate = default(string), string qualifiedInvoice = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string))
+        public Freee.Accounting.Client.ApiResponse<ReceiptResponse> CreateReceiptWithHttpInfo(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string))
         {
             // verify the required parameter 'receipt' is set
             if (receipt == null)
@@ -555,17 +543,9 @@ namespace Freee.Accounting.Api
             {
                 localVarRequestOptions.FormParameters.Add("description", Freee.Accounting.Client.ClientUtils.ParameterToString(description)); // form parameter
             }
-            if (documentType != null)
-            {
-                localVarRequestOptions.FormParameters.Add("document_type", Freee.Accounting.Client.ClientUtils.ParameterToString(documentType)); // form parameter
-            }
             if (issueDate != null)
             {
                 localVarRequestOptions.FormParameters.Add("issue_date", Freee.Accounting.Client.ClientUtils.ParameterToString(issueDate)); // form parameter
-            }
-            if (qualifiedInvoice != null)
-            {
-                localVarRequestOptions.FormParameters.Add("qualified_invoice", Freee.Accounting.Client.ClientUtils.ParameterToString(qualifiedInvoice)); // form parameter
             }
             localVarRequestOptions.FileParameters.Add("receipt", receipt);
             if (receiptMetadatumAmount != null)
@@ -603,42 +583,38 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のアップロード 
+        /// ファイルボックス 証憑ファイルアップロード 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
-        /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReceiptResponse</returns>
-        public async System.Threading.Tasks.Task<ReceiptResponse> CreateReceiptAsync(int companyId, System.IO.Stream receipt, string description = default(string), string documentType = default(string), string issueDate = default(string), string qualifiedInvoice = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ReceiptResponse> CreateReceiptAsync(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = await CreateReceiptWithHttpInfoAsync(companyId, receipt, description, documentType, issueDate, qualifiedInvoice, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName, cancellationToken).ConfigureAwait(false);
+            Freee.Accounting.Client.ApiResponse<ReceiptResponse> localVarResponse = await CreateReceiptWithHttpInfoAsync(companyId, receipt, description, issueDate, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のアップロード 
+        /// ファイルボックス 証憑ファイルアップロード 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
         /// <param name="receipt">証憑ファイル</param>
         /// <param name="description">メモ (255文字以内) (optional)</param>
-        /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
-        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ReceiptResponse>> CreateReceiptWithHttpInfoAsync(int companyId, System.IO.Stream receipt, string description = default(string), string documentType = default(string), string issueDate = default(string), string qualifiedInvoice = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<ReceiptResponse>> CreateReceiptWithHttpInfoAsync(int companyId, System.IO.Stream receipt, string description = default(string), string issueDate = default(string), long? receiptMetadatumAmount = default(long?), string receiptMetadatumIssueDate = default(string), string receiptMetadatumPartnerName = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'receipt' is set
             if (receipt == null)
@@ -675,17 +651,9 @@ namespace Freee.Accounting.Api
             {
                 localVarRequestOptions.FormParameters.Add("description", Freee.Accounting.Client.ClientUtils.ParameterToString(description)); // form parameter
             }
-            if (documentType != null)
-            {
-                localVarRequestOptions.FormParameters.Add("document_type", Freee.Accounting.Client.ClientUtils.ParameterToString(documentType)); // form parameter
-            }
             if (issueDate != null)
             {
                 localVarRequestOptions.FormParameters.Add("issue_date", Freee.Accounting.Client.ClientUtils.ParameterToString(issueDate)); // form parameter
-            }
-            if (qualifiedInvoice != null)
-            {
-                localVarRequestOptions.FormParameters.Add("qualified_invoice", Freee.Accounting.Client.ClientUtils.ParameterToString(qualifiedInvoice)); // form parameter
             }
             localVarRequestOptions.FileParameters.Add("receipt", receipt);
             if (receiptMetadatumAmount != null)
@@ -724,10 +692,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の削除 
+        /// ファイルボックス 証憑ファイルを削除する 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns></returns>
         public void DestroyReceipt(int id, int companyId)
@@ -736,10 +704,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の削除 
+        /// ファイルボックス 証憑ファイルを削除する 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public Freee.Accounting.Client.ApiResponse<Object> DestroyReceiptWithHttpInfo(int id, int companyId)
@@ -791,10 +759,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の削除 
+        /// ファイルボックス 証憑ファイルを削除する 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -804,10 +772,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の削除 
+        /// ファイルボックス 証憑ファイルを削除する 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -862,10 +830,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のダウンロード 
+        /// ファイルボックス 証憑ファイルのダウンロード 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>System.IO.Stream</returns>
         public System.IO.Stream DownloadReceipt(int id, int companyId)
@@ -875,10 +843,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のダウンロード 
+        /// ファイルボックス 証憑ファイルのダウンロード 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
         public Freee.Accounting.Client.ApiResponse<System.IO.Stream> DownloadReceiptWithHttpInfo(int id, int companyId)
@@ -933,10 +901,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のダウンロード 
+        /// ファイルボックス 証憑ファイルのダウンロード 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
@@ -947,10 +915,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）のダウンロード 
+        /// ファイルボックス 証憑ファイルのダウンロード 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
@@ -1008,10 +976,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の取得 
+        /// ファイルボックス 証憑ファイルの取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ReceiptResponse</returns>
         public ReceiptResponse GetReceipt(int id, int companyId)
@@ -1021,10 +989,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の取得 
+        /// ファイルボックス 証憑ファイルの取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <returns>ApiResponse of ReceiptResponse</returns>
         public Freee.Accounting.Client.ApiResponse<ReceiptResponse> GetReceiptWithHttpInfo(int id, int companyId)
@@ -1076,10 +1044,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の取得 
+        /// ファイルボックス 証憑ファイルの取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReceiptResponse</returns>
@@ -1090,10 +1058,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の取得 
+        /// ファイルボックス 証憑ファイルの取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="companyId">事業所ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReceiptResponse)</returns>
@@ -1148,7 +1116,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）一覧の取得 
+        /// ファイルボックス 証憑ファイル一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -1169,7 +1137,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）一覧の取得 
+        /// ファイルボックス 証憑ファイル一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -1273,7 +1241,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）一覧の取得 
+        /// ファイルボックス 証憑ファイル一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -1295,7 +1263,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）一覧の取得 
+        /// ファイルボックス 証憑ファイル一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -1402,10 +1370,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の更新 
+        /// ファイルボックス 証憑ファイル情報更新 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="receiptUpdateParams"></param>
         /// <returns>ReceiptResponse</returns>
         public ReceiptResponse UpdateReceipt(int id, ReceiptUpdateParams receiptUpdateParams)
@@ -1415,10 +1383,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の更新 
+        /// ファイルボックス 証憑ファイル情報更新 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="receiptUpdateParams"></param>
         /// <returns>ApiResponse of ReceiptResponse</returns>
         public Freee.Accounting.Client.ApiResponse<ReceiptResponse> UpdateReceiptWithHttpInfo(int id, ReceiptUpdateParams receiptUpdateParams)
@@ -1478,10 +1446,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の更新 
+        /// ファイルボックス 証憑ファイル情報更新 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="receiptUpdateParams"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReceiptResponse</returns>
@@ -1492,10 +1460,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）の更新 
+        /// ファイルボックス 証憑ファイル情報更新 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">ファイルボックス（証憑ファイル）ID</param>
+        /// <param name="id">証憑ファイルID</param>
         /// <param name="receiptUpdateParams"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReceiptResponse)</returns>

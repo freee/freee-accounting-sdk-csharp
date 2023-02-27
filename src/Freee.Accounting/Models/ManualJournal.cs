@@ -43,7 +43,7 @@ namespace Freee.Accounting.Models
         /// <param name="details">貸借行一覧（配列）: 貸借合わせて100行まで登録できます。 (required).</param>
         /// <param name="id">振替伝票ID (required).</param>
         /// <param name="issueDate">発生日 (yyyy-mm-dd) (required).</param>
-        /// <param name="receiptIds">ファイルボックス（証憑ファイル）ID.</param>
+        /// <param name="receiptIds">証憑ファイルID（ファイルボックスのファイルID）.</param>
         /// <param name="txnNumber">仕訳番号 (required).</param>
         public ManualJournal(bool adjustment = default(bool), int companyId = default(int), List<ManualJournalDetails> details = default(List<ManualJournalDetails>), int id = default(int), string issueDate = default(string), List<int> receiptIds = default(List<int>), string txnNumber = default(string))
         {
@@ -104,9 +104,9 @@ namespace Freee.Accounting.Models
         public string IssueDate { get; set; }
 
         /// <summary>
-        /// ファイルボックス（証憑ファイル）ID
+        /// 証憑ファイルID（ファイルボックスのファイルID）
         /// </summary>
-        /// <value>ファイルボックス（証憑ファイル）ID</value>
+        /// <value>証憑ファイルID（ファイルボックスのファイルID）</value>
         [DataMember(Name = "receipt_ids", EmitDefaultValue = false)]
         public List<int> ReceiptIds { get; set; }
 
