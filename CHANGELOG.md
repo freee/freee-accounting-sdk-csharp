@@ -1,4 +1,9 @@
 ## 2.25.0
+リリース日時 2023-03-02 07:33:39  
+対象差分  
+https://github.com/freee/freee-api-schema/releases/tag/v0.0.112
+
+## 2.25.0
 リリース日時 2023-03-02 07:31:17  
 対象差分  
 https://github.com/freee/freee-api-schema/releases/tag/v0.0.112
