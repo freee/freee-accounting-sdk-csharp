@@ -27,7 +27,7 @@ namespace Freee.Accounting.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 税区分コードの取得
+        /// 税区分の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="code">税区分コード</param>
@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         TaxResponse GetTaxCode(int code);
 
         /// <summary>
-        /// 税区分コードの取得
+        /// 税区分の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -45,14 +45,14 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of TaxResponse</returns>
         ApiResponse<TaxResponse> GetTaxCodeWithHttpInfo(int code);
         /// <summary>
-        /// 税区分コード一覧の取得
+        /// 税区分一覧の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>InlineResponse2009</returns>
         InlineResponse2009 GetTaxCodes();
 
         /// <summary>
-        /// 税区分コード一覧の取得
+        /// 税区分一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -61,7 +61,7 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of InlineResponse2009</returns>
         ApiResponse<InlineResponse2009> GetTaxCodesWithHttpInfo();
         /// <summary>
-        /// 税区分コード詳細一覧の取得
+        /// 指定した事業所の税区分一覧の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -71,7 +71,7 @@ namespace Freee.Accounting.Api
         InlineResponse20010 GetTaxesCompanies(int companyId, string displayCategory = default(string), bool? available = default(bool?));
 
         /// <summary>
-        /// 税区分コード詳細一覧の取得
+        /// 指定した事業所の税区分一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -92,7 +92,7 @@ namespace Freee.Accounting.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 税区分コードの取得
+        /// 税区分の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -104,7 +104,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<TaxResponse> GetTaxCodeAsync(int code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 税区分コードの取得
+        /// 税区分の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -115,7 +115,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse (TaxResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<TaxResponse>> GetTaxCodeWithHttpInfoAsync(int code, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 税区分コード一覧の取得
+        /// 税区分一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -126,7 +126,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<InlineResponse2009> GetTaxCodesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 税区分コード一覧の取得
+        /// 税区分一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -136,7 +136,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
         System.Threading.Tasks.Task<ApiResponse<InlineResponse2009>> GetTaxCodesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 税区分コード詳細一覧の取得
+        /// 指定した事業所の税区分一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -150,7 +150,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<InlineResponse20010> GetTaxesCompaniesAsync(int companyId, string displayCategory = default(string), bool? available = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 税区分コード詳細一覧の取得
+        /// 指定した事業所の税区分一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -283,7 +283,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 税区分コードの取得 
+        /// 税区分の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="code">税区分コード</param>
@@ -295,7 +295,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 税区分コードの取得 
+        /// 税区分の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="code">税区分コード</param>
@@ -348,7 +348,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 税区分コードの取得 
+        /// 税区分の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="code">税区分コード</param>
@@ -361,7 +361,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 税区分コードの取得 
+        /// 税区分の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="code">税区分コード</param>
@@ -417,7 +417,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 税区分コード一覧の取得 
+        /// 税区分一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>InlineResponse2009</returns>
@@ -428,7 +428,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 税区分コード一覧の取得 
+        /// 税区分一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of InlineResponse2009</returns>
@@ -479,7 +479,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 税区分コード一覧の取得 
+        /// 税区分一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -491,7 +491,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 税区分コード一覧の取得 
+        /// 税区分一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -545,7 +545,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 税区分コード詳細一覧の取得 
+        /// 指定した事業所の税区分一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -559,7 +559,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 税区分コード詳細一覧の取得 
+        /// 指定した事業所の税区分一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -622,7 +622,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 税区分コード詳細一覧の取得 
+        /// 指定した事業所の税区分一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -637,7 +637,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 税区分コード詳細一覧の取得 
+        /// 指定した事業所の税区分一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>

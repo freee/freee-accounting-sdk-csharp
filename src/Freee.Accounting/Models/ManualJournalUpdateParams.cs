@@ -42,7 +42,7 @@ namespace Freee.Accounting.Models
         /// <param name="companyId">事業所ID (required).</param>
         /// <param name="details">details (required).</param>
         /// <param name="issueDate">発生日 (yyyy-mm-dd) (required).</param>
-        /// <param name="receiptIds">証憑ファイルID（ファイルボックスのファイルID）（配列）.</param>
+        /// <param name="receiptIds">ファイルボックス（証憑ファイル）ID（配列）.</param>
         public ManualJournalUpdateParams(bool adjustment = default(bool), int companyId = default(int), List<ManualJournalUpdateParamsDetails> details = default(List<ManualJournalUpdateParamsDetails>), string issueDate = default(string), List<int> receiptIds = default(List<int>))
         {
             this.CompanyId = companyId;
@@ -88,9 +88,9 @@ namespace Freee.Accounting.Models
         public string IssueDate { get; set; }
 
         /// <summary>
-        /// 証憑ファイルID（ファイルボックスのファイルID）（配列）
+        /// ファイルボックス（証憑ファイル）ID（配列）
         /// </summary>
-        /// <value>証憑ファイルID（ファイルボックスのファイルID）（配列）</value>
+        /// <value>ファイルボックス（証憑ファイル）ID（配列）</value>
         [DataMember(Name = "receipt_ids", EmitDefaultValue = false)]
         public List<int> ReceiptIds { get; set; }
 

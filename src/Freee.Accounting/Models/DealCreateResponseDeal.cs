@@ -104,7 +104,7 @@ namespace Freee.Accounting.Models
         /// <param name="partnerCode">取引先コード.</param>
         /// <param name="partnerId">取引先ID (required).</param>
         /// <param name="payments">取引の支払行.</param>
-        /// <param name="receipts">証憑ファイル（ファイルボックスのファイル）.</param>
+        /// <param name="receipts">ファイルボックス（証憑ファイル）.</param>
         /// <param name="refNumber">管理番号.</param>
         /// <param name="status">決済状況 (未決済: unsettled, 完了: settled) (required).</param>
         /// <param name="type">収支区分 (収入: income, 支出: expense).</param>
@@ -201,9 +201,9 @@ namespace Freee.Accounting.Models
         public List<DealPayments> Payments { get; set; }
 
         /// <summary>
-        /// 証憑ファイル（ファイルボックスのファイル）
+        /// ファイルボックス（証憑ファイル）
         /// </summary>
-        /// <value>証憑ファイル（ファイルボックスのファイル）</value>
+        /// <value>ファイルボックス（証憑ファイル）</value>
         [DataMember(Name = "receipts", EmitDefaultValue = false)]
         public List<DealCreateResponseDealReceipts> Receipts { get; set; }
 

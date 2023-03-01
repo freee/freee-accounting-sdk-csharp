@@ -27,7 +27,7 @@ namespace Freee.Accounting.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// セグメントの作成
+        /// セグメントタグの作成
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="segmentId">セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン </param>
@@ -36,7 +36,7 @@ namespace Freee.Accounting.Api
         SegmentTagResponse CreateSegmentTag(int segmentId, SegmentTagParams segmentTagParams);
 
         /// <summary>
-        /// セグメントの作成
+        /// セグメントタグの作成
         /// </summary>
         /// <remarks>
         /// 
@@ -124,7 +124,7 @@ namespace Freee.Accounting.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// セグメントの作成
+        /// セグメントタグの作成
         /// </summary>
         /// <remarks>
         /// 
@@ -137,7 +137,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<SegmentTagResponse> CreateSegmentTagAsync(int segmentId, SegmentTagParams segmentTagParams, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// セグメントの作成
+        /// セグメントタグの作成
         /// </summary>
         /// <remarks>
         /// 
@@ -352,7 +352,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// セグメントの作成 
+        /// セグメントタグの作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="segmentId">セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン </param>
@@ -365,7 +365,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// セグメントの作成 
+        /// セグメントタグの作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="segmentId">セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン </param>
@@ -428,7 +428,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// セグメントの作成 
+        /// セグメントタグの作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="segmentId">セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン </param>
@@ -442,7 +442,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// セグメントの作成 
+        /// セグメントタグの作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="segmentId">セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン </param>
