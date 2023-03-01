@@ -67,7 +67,7 @@ namespace Freee.Accounting.Models
         /// Initializes a new instance of the <see cref="PartnersResponsePartners" /> class.
         /// </summary>
         /// <param name="addressAttributes">addressAttributes.</param>
-        /// <param name="available">取引先の使用設定（true: 使用する、false: 使用しない） &lt;br&gt; &lt;ul&gt;   &lt;li&gt;     本APIでpartnerを作成した場合はtrueになります。   &lt;/li&gt;   &lt;li&gt;     falseにする場合はWeb画面から変更できます。   &lt;/li&gt;   &lt;li&gt;     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   &lt;/li&gt;   &lt;li&gt;     falseの場合、取引先自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入／支出）の作成APIなどでfalseの取引先をパラメータに指定すれば、取引などにfalseの取引先を設定できます。   &lt;/li&gt; &lt;/ul&gt; (required).</param>
+        /// <param name="available">取引先の使用設定（true: 使用する、false: 使用しない） &lt;br&gt; &lt;ul&gt;   &lt;li&gt;     本APIでpartnerを作成した場合はtrueになります。   &lt;/li&gt;   &lt;li&gt;     falseにする場合はWeb画面から変更できます。   &lt;/li&gt;   &lt;li&gt;     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   &lt;/li&gt;   &lt;li&gt;     falseの場合、取引先自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入・支出）の作成APIなどでfalseの取引先をパラメータに指定すれば、取引などにfalseの取引先を設定できます。   &lt;/li&gt; &lt;/ul&gt; (required).</param>
         /// <param name="code">取引先コード (required).</param>
         /// <param name="companyId">事業所ID (required).</param>
         /// <param name="contactName">担当者 氏名.</param>
@@ -75,6 +75,7 @@ namespace Freee.Accounting.Models
         /// <param name="defaultTitle">敬称（御中、様、(空白)の3つから選択）.</param>
         /// <param name="email">担当者 メールアドレス.</param>
         /// <param name="id">取引先ID (required).</param>
+        /// <param name="invoiceRegistrationNumber">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; .</param>
         /// <param name="longName">正式名称（255文字以内）.</param>
         /// <param name="name">取引先名 (required).</param>
         /// <param name="nameKana">カナ名称（255文字以内）.</param>
@@ -83,11 +84,12 @@ namespace Freee.Accounting.Models
         /// <param name="partnerDocSettingAttributes">partnerDocSettingAttributes.</param>
         /// <param name="payerWalletableId">振込元口座ID（一括振込ファイル用）:（未設定の場合は、nullです。）.</param>
         /// <param name="phone">電話番号.</param>
+        /// <param name="qualifiedInvoiceIssuer">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者（true: 対象事業者、false: 非対象事業者） &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; .</param>
         /// <param name="shortcut1">ショートカット1 (255文字以内).</param>
         /// <param name="shortcut2">ショートカット2 (255文字以内).</param>
         /// <param name="transferFeeHandlingSide">振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee).</param>
         /// <param name="updateDate">更新日 (yyyy-mm-dd) (required).</param>
-        public PartnersResponsePartners(PartnerResponsePartnerAddressAttributes addressAttributes = default(PartnerResponsePartnerAddressAttributes), bool available = default(bool), string code = default(string), int companyId = default(int), string contactName = default(string), string countryCode = default(string), string defaultTitle = default(string), string email = default(string), int id = default(int), string longName = default(string), string name = default(string), string nameKana = default(string), int? orgCode = default(int?), PartnerResponsePartnerPartnerBankAccountAttributes partnerBankAccountAttributes = default(PartnerResponsePartnerPartnerBankAccountAttributes), PartnerCreateParamsPartnerDocSettingAttributes partnerDocSettingAttributes = default(PartnerCreateParamsPartnerDocSettingAttributes), int? payerWalletableId = default(int?), string phone = default(string), string shortcut1 = default(string), string shortcut2 = default(string), TransferFeeHandlingSideEnum? transferFeeHandlingSide = default(TransferFeeHandlingSideEnum?), string updateDate = default(string))
+        public PartnersResponsePartners(PartnerResponsePartnerAddressAttributes addressAttributes = default(PartnerResponsePartnerAddressAttributes), bool available = default(bool), string code = default(string), int companyId = default(int), string contactName = default(string), string countryCode = default(string), string defaultTitle = default(string), string email = default(string), int id = default(int), string invoiceRegistrationNumber = default(string), string longName = default(string), string name = default(string), string nameKana = default(string), int? orgCode = default(int?), PartnerResponsePartnerPartnerBankAccountAttributes partnerBankAccountAttributes = default(PartnerResponsePartnerPartnerBankAccountAttributes), PartnerCreateParamsPartnerDocSettingAttributes partnerDocSettingAttributes = default(PartnerCreateParamsPartnerDocSettingAttributes), int? payerWalletableId = default(int?), string phone = default(string), bool qualifiedInvoiceIssuer = default(bool), string shortcut1 = default(string), string shortcut2 = default(string), TransferFeeHandlingSideEnum? transferFeeHandlingSide = default(TransferFeeHandlingSideEnum?), string updateDate = default(string))
         {
             this.Available = available;
             // to ensure "code" is required (not null)
@@ -112,6 +114,7 @@ namespace Freee.Accounting.Models
             this.CountryCode = countryCode;
             this.DefaultTitle = defaultTitle;
             this.Email = email;
+            this.InvoiceRegistrationNumber = invoiceRegistrationNumber;
             this.LongName = longName;
             this.NameKana = nameKana;
             this.OrgCode = orgCode;
@@ -119,6 +122,7 @@ namespace Freee.Accounting.Models
             this.PartnerDocSettingAttributes = partnerDocSettingAttributes;
             this.PayerWalletableId = payerWalletableId;
             this.Phone = phone;
+            this.QualifiedInvoiceIssuer = qualifiedInvoiceIssuer;
             this.Shortcut1 = shortcut1;
             this.Shortcut2 = shortcut2;
             this.TransferFeeHandlingSide = transferFeeHandlingSide;
@@ -131,9 +135,9 @@ namespace Freee.Accounting.Models
         public PartnerResponsePartnerAddressAttributes AddressAttributes { get; set; }
 
         /// <summary>
-        /// 取引先の使用設定（true: 使用する、false: 使用しない） &lt;br&gt; &lt;ul&gt;   &lt;li&gt;     本APIでpartnerを作成した場合はtrueになります。   &lt;/li&gt;   &lt;li&gt;     falseにする場合はWeb画面から変更できます。   &lt;/li&gt;   &lt;li&gt;     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   &lt;/li&gt;   &lt;li&gt;     falseの場合、取引先自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入／支出）の作成APIなどでfalseの取引先をパラメータに指定すれば、取引などにfalseの取引先を設定できます。   &lt;/li&gt; &lt;/ul&gt;
+        /// 取引先の使用設定（true: 使用する、false: 使用しない） &lt;br&gt; &lt;ul&gt;   &lt;li&gt;     本APIでpartnerを作成した場合はtrueになります。   &lt;/li&gt;   &lt;li&gt;     falseにする場合はWeb画面から変更できます。   &lt;/li&gt;   &lt;li&gt;     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   &lt;/li&gt;   &lt;li&gt;     falseの場合、取引先自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入・支出）の作成APIなどでfalseの取引先をパラメータに指定すれば、取引などにfalseの取引先を設定できます。   &lt;/li&gt; &lt;/ul&gt;
         /// </summary>
-        /// <value>取引先の使用設定（true: 使用する、false: 使用しない） &lt;br&gt; &lt;ul&gt;   &lt;li&gt;     本APIでpartnerを作成した場合はtrueになります。   &lt;/li&gt;   &lt;li&gt;     falseにする場合はWeb画面から変更できます。   &lt;/li&gt;   &lt;li&gt;     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   &lt;/li&gt;   &lt;li&gt;     falseの場合、取引先自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入／支出）の作成APIなどでfalseの取引先をパラメータに指定すれば、取引などにfalseの取引先を設定できます。   &lt;/li&gt; &lt;/ul&gt;</value>
+        /// <value>取引先の使用設定（true: 使用する、false: 使用しない） &lt;br&gt; &lt;ul&gt;   &lt;li&gt;     本APIでpartnerを作成した場合はtrueになります。   &lt;/li&gt;   &lt;li&gt;     falseにする場合はWeb画面から変更できます。   &lt;/li&gt;   &lt;li&gt;     trueの場合、Web画面での取引登録時などに入力候補として表示されます。   &lt;/li&gt;   &lt;li&gt;     falseの場合、取引先自体は削除せず、Web画面での取引登録時などに入力候補として表示されません。ただし取引（収入・支出）の作成APIなどでfalseの取引先をパラメータに指定すれば、取引などにfalseの取引先を設定できます。   &lt;/li&gt; &lt;/ul&gt;</value>
         [DataMember(Name = "available", IsRequired = true, EmitDefaultValue = true)]
         public bool Available { get; set; }
 
@@ -185,6 +189,13 @@ namespace Freee.Accounting.Models
         /// <value>取引先ID</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public int Id { get; set; }
+
+        /// <summary>
+        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; 
+        /// </summary>
+        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; </value>
+        [DataMember(Name = "invoice_registration_number", EmitDefaultValue = true)]
+        public string InvoiceRegistrationNumber { get; set; }
 
         /// <summary>
         /// 正式名称（255文字以内）
@@ -241,6 +252,13 @@ namespace Freee.Accounting.Models
         public string Phone { get; set; }
 
         /// <summary>
+        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者（true: 対象事業者、false: 非対象事業者） &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; 
+        /// </summary>
+        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者（true: 対象事業者、false: 非対象事業者） &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; </value>
+        [DataMember(Name = "qualified_invoice_issuer", EmitDefaultValue = true)]
+        public bool QualifiedInvoiceIssuer { get; set; }
+
+        /// <summary>
         /// ショートカット1 (255文字以内)
         /// </summary>
         /// <value>ショートカット1 (255文字以内)</value>
@@ -278,6 +296,7 @@ namespace Freee.Accounting.Models
             sb.Append("  DefaultTitle: ").Append(DefaultTitle).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  InvoiceRegistrationNumber: ").Append(InvoiceRegistrationNumber).Append("\n");
             sb.Append("  LongName: ").Append(LongName).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  NameKana: ").Append(NameKana).Append("\n");
@@ -286,6 +305,7 @@ namespace Freee.Accounting.Models
             sb.Append("  PartnerDocSettingAttributes: ").Append(PartnerDocSettingAttributes).Append("\n");
             sb.Append("  PayerWalletableId: ").Append(PayerWalletableId).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
+            sb.Append("  QualifiedInvoiceIssuer: ").Append(QualifiedInvoiceIssuer).Append("\n");
             sb.Append("  Shortcut1: ").Append(Shortcut1).Append("\n");
             sb.Append("  Shortcut2: ").Append(Shortcut2).Append("\n");
             sb.Append("  TransferFeeHandlingSide: ").Append(TransferFeeHandlingSide).Append("\n");
@@ -368,6 +388,11 @@ namespace Freee.Accounting.Models
                     this.Id.Equals(input.Id)
                 ) && 
                 (
+                    this.InvoiceRegistrationNumber == input.InvoiceRegistrationNumber ||
+                    (this.InvoiceRegistrationNumber != null &&
+                    this.InvoiceRegistrationNumber.Equals(input.InvoiceRegistrationNumber))
+                ) && 
+                (
                     this.LongName == input.LongName ||
                     (this.LongName != null &&
                     this.LongName.Equals(input.LongName))
@@ -406,6 +431,10 @@ namespace Freee.Accounting.Models
                     this.Phone == input.Phone ||
                     (this.Phone != null &&
                     this.Phone.Equals(input.Phone))
+                ) && 
+                (
+                    this.QualifiedInvoiceIssuer == input.QualifiedInvoiceIssuer ||
+                    this.QualifiedInvoiceIssuer.Equals(input.QualifiedInvoiceIssuer)
                 ) && 
                 (
                     this.Shortcut1 == input.Shortcut1 ||
@@ -464,6 +493,10 @@ namespace Freee.Accounting.Models
                     hashCode = (hashCode * 59) + this.Email.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                if (this.InvoiceRegistrationNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.InvoiceRegistrationNumber.GetHashCode();
+                }
                 if (this.LongName != null)
                 {
                     hashCode = (hashCode * 59) + this.LongName.GetHashCode();
@@ -496,6 +529,7 @@ namespace Freee.Accounting.Models
                 {
                     hashCode = (hashCode * 59) + this.Phone.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.QualifiedInvoiceIssuer.GetHashCode();
                 if (this.Shortcut1 != null)
                 {
                     hashCode = (hashCode * 59) + this.Shortcut1.GetHashCode();

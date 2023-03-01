@@ -27,25 +27,25 @@ namespace Freee.Accounting.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 明細の作成
+        /// 口座明細の作成
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="walletTxnParams">明細の作成 (optional)</param>
+        /// <param name="walletTxnParams">口座明細の作成 (optional)</param>
         /// <returns>WalletTxnResponse</returns>
         WalletTxnResponse CreateWalletTxn(WalletTxnParams walletTxnParams = default(WalletTxnParams));
 
         /// <summary>
-        /// 明細の作成
+        /// 口座明細の作成
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="walletTxnParams">明細の作成 (optional)</param>
+        /// <param name="walletTxnParams">口座明細の作成 (optional)</param>
         /// <returns>ApiResponse of WalletTxnResponse</returns>
         ApiResponse<WalletTxnResponse> CreateWalletTxnWithHttpInfo(WalletTxnParams walletTxnParams = default(WalletTxnParams));
         /// <summary>
-        /// 明細の削除
+        /// 口座明細の削除
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">明細ID</param>
@@ -54,7 +54,7 @@ namespace Freee.Accounting.Api
         void DestroyWalletTxn(int id, int companyId);
 
         /// <summary>
-        /// 明細の削除
+        /// 口座明細の削除
         /// </summary>
         /// <remarks>
         /// 
@@ -65,7 +65,7 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DestroyWalletTxnWithHttpInfo(int id, int companyId);
         /// <summary>
-        /// 明細の取得
+        /// 口座明細の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">明細ID</param>
@@ -74,7 +74,7 @@ namespace Freee.Accounting.Api
         WalletTxnResponse GetWalletTxn(int id, int companyId);
 
         /// <summary>
-        /// 明細の取得
+        /// 口座明細の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -85,7 +85,7 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of WalletTxnResponse</returns>
         ApiResponse<WalletTxnResponse> GetWalletTxnWithHttpInfo(int id, int companyId);
         /// <summary>
-        /// 明細一覧の取得
+        /// 口座明細一覧の取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -100,7 +100,7 @@ namespace Freee.Accounting.Api
         InlineResponse20014 GetWalletTxns(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), long? offset = default(long?), int? limit = default(int?));
 
         /// <summary>
-        /// 明細一覧の取得
+        /// 口座明細一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -126,30 +126,30 @@ namespace Freee.Accounting.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 明細の作成
+        /// 口座明細の作成
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="walletTxnParams">明細の作成 (optional)</param>
+        /// <param name="walletTxnParams">口座明細の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WalletTxnResponse</returns>
         System.Threading.Tasks.Task<WalletTxnResponse> CreateWalletTxnAsync(WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 明細の作成
+        /// 口座明細の作成
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="walletTxnParams">明細の作成 (optional)</param>
+        /// <param name="walletTxnParams">口座明細の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WalletTxnResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<WalletTxnResponse>> CreateWalletTxnWithHttpInfoAsync(WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 明細の削除
+        /// 口座明細の削除
         /// </summary>
         /// <remarks>
         /// 
@@ -162,7 +162,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task DestroyWalletTxnAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 明細の削除
+        /// 口座明細の削除
         /// </summary>
         /// <remarks>
         /// 
@@ -174,7 +174,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DestroyWalletTxnWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 明細の取得
+        /// 口座明細の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -187,7 +187,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<WalletTxnResponse> GetWalletTxnAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 明細の取得
+        /// 口座明細の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -199,7 +199,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse (WalletTxnResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<WalletTxnResponse>> GetWalletTxnWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 明細一覧の取得
+        /// 口座明細一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -218,7 +218,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<InlineResponse20014> GetWalletTxnsAsync(int companyId, string walletableType = default(string), int? walletableId = default(int?), string startDate = default(string), string endDate = default(string), string entrySide = default(string), long? offset = default(long?), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 明細一覧の取得
+        /// 口座明細一覧の取得
         /// </summary>
         /// <remarks>
         /// 
@@ -356,10 +356,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細の作成 
+        /// 口座明細の作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="walletTxnParams">明細の作成 (optional)</param>
+        /// <param name="walletTxnParams">口座明細の作成 (optional)</param>
         /// <returns>WalletTxnResponse</returns>
         public WalletTxnResponse CreateWalletTxn(WalletTxnParams walletTxnParams = default(WalletTxnParams))
         {
@@ -368,10 +368,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細の作成 
+        /// 口座明細の作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="walletTxnParams">明細の作成 (optional)</param>
+        /// <param name="walletTxnParams">口座明細の作成 (optional)</param>
         /// <returns>ApiResponse of WalletTxnResponse</returns>
         public Freee.Accounting.Client.ApiResponse<WalletTxnResponse> CreateWalletTxnWithHttpInfo(WalletTxnParams walletTxnParams = default(WalletTxnParams))
         {
@@ -423,10 +423,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細の作成 
+        /// 口座明細の作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="walletTxnParams">明細の作成 (optional)</param>
+        /// <param name="walletTxnParams">口座明細の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WalletTxnResponse</returns>
         public async System.Threading.Tasks.Task<WalletTxnResponse> CreateWalletTxnAsync(WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -436,10 +436,10 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細の作成 
+        /// 口座明細の作成 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="walletTxnParams">明細の作成 (optional)</param>
+        /// <param name="walletTxnParams">口座明細の作成 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WalletTxnResponse)</returns>
         public async System.Threading.Tasks.Task<Freee.Accounting.Client.ApiResponse<WalletTxnResponse>> CreateWalletTxnWithHttpInfoAsync(WalletTxnParams walletTxnParams = default(WalletTxnParams), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -494,7 +494,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細の削除 
+        /// 口座明細の削除 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">明細ID</param>
@@ -506,7 +506,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細の削除 
+        /// 口座明細の削除 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">明細ID</param>
@@ -561,7 +561,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細の削除 
+        /// 口座明細の削除 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">明細ID</param>
@@ -574,7 +574,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細の削除 
+        /// 口座明細の削除 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">明細ID</param>
@@ -632,7 +632,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細の取得 
+        /// 口座明細の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">明細ID</param>
@@ -645,7 +645,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細の取得 
+        /// 口座明細の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">明細ID</param>
@@ -700,7 +700,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細の取得 
+        /// 口座明細の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">明細ID</param>
@@ -714,7 +714,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細の取得 
+        /// 口座明細の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">明細ID</param>
@@ -772,7 +772,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細一覧の取得 
+        /// 口座明細一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -791,7 +791,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細一覧の取得 
+        /// 口座明細一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -879,7 +879,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細一覧の取得 
+        /// 口座明細一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -899,7 +899,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// 明細一覧の取得 
+        /// 口座明細一覧の取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>

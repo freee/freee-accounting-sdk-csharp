@@ -27,7 +27,7 @@ namespace Freee.Accounting.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// ダウンロード実行
+        /// 仕訳帳のダウンロード
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">受け付けID</param>
@@ -36,7 +36,7 @@ namespace Freee.Accounting.Api
         System.IO.Stream DownloadJournal(int id, int companyId);
 
         /// <summary>
-        /// ダウンロード実行
+        /// 仕訳帳のダウンロード
         /// </summary>
         /// <remarks>
         /// 
@@ -47,7 +47,7 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of System.IO.Stream</returns>
         ApiResponse<System.IO.Stream> DownloadJournalWithHttpInfo(int id, int companyId);
         /// <summary>
-        /// ステータス確認
+        /// 仕訳帳のステータスの取得
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -56,7 +56,7 @@ namespace Freee.Accounting.Api
         JournalStatusResponse GetJournalStatus(int companyId, int id);
 
         /// <summary>
-        /// ステータス確認
+        /// 仕訳帳のステータスの取得
         /// </summary>
         /// <remarks>
         /// 
@@ -67,7 +67,7 @@ namespace Freee.Accounting.Api
         /// <returns>ApiResponse of JournalStatusResponse</returns>
         ApiResponse<JournalStatusResponse> GetJournalStatusWithHttpInfo(int companyId, int id);
         /// <summary>
-        /// ダウンロード要求
+        /// 仕訳帳のダウンロード要求
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadType">ダウンロード形式</param>
@@ -80,7 +80,7 @@ namespace Freee.Accounting.Api
         JournalsResponse GetJournals(string downloadType, int companyId, List<string> visibleTags = default(List<string>), List<string> visibleIds = default(List<string>), string startDate = default(string), string endDate = default(string));
 
         /// <summary>
-        /// ダウンロード要求
+        /// 仕訳帳のダウンロード要求
         /// </summary>
         /// <remarks>
         /// 
@@ -104,7 +104,7 @@ namespace Freee.Accounting.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// ダウンロード実行
+        /// 仕訳帳のダウンロード
         /// </summary>
         /// <remarks>
         /// 
@@ -117,7 +117,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<System.IO.Stream> DownloadJournalAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// ダウンロード実行
+        /// 仕訳帳のダウンロード
         /// </summary>
         /// <remarks>
         /// 
@@ -129,7 +129,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DownloadJournalWithHttpInfoAsync(int id, int companyId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// ステータス確認
+        /// 仕訳帳のステータスの取得
         /// </summary>
         /// <remarks>
         /// 
@@ -142,7 +142,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<JournalStatusResponse> GetJournalStatusAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// ステータス確認
+        /// 仕訳帳のステータスの取得
         /// </summary>
         /// <remarks>
         /// 
@@ -154,7 +154,7 @@ namespace Freee.Accounting.Api
         /// <returns>Task of ApiResponse (JournalStatusResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<JournalStatusResponse>> GetJournalStatusWithHttpInfoAsync(int companyId, int id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// ダウンロード要求
+        /// 仕訳帳のダウンロード要求
         /// </summary>
         /// <remarks>
         /// 
@@ -171,7 +171,7 @@ namespace Freee.Accounting.Api
         System.Threading.Tasks.Task<JournalsResponse> GetJournalsAsync(string downloadType, int companyId, List<string> visibleTags = default(List<string>), List<string> visibleIds = default(List<string>), string startDate = default(string), string endDate = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// ダウンロード要求
+        /// 仕訳帳のダウンロード要求
         /// </summary>
         /// <remarks>
         /// 
@@ -307,7 +307,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ダウンロード実行 
+        /// 仕訳帳のダウンロード 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">受け付けID</param>
@@ -320,7 +320,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ダウンロード実行 
+        /// 仕訳帳のダウンロード 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">受け付けID</param>
@@ -377,7 +377,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ダウンロード実行 
+        /// 仕訳帳のダウンロード 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">受け付けID</param>
@@ -391,7 +391,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ダウンロード実行 
+        /// 仕訳帳のダウンロード 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">受け付けID</param>
@@ -451,7 +451,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ステータス確認 
+        /// 仕訳帳のステータスの取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -464,7 +464,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ステータス確認 
+        /// 仕訳帳のステータスの取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -519,7 +519,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ステータス確認 
+        /// 仕訳帳のステータスの取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -533,7 +533,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ステータス確認 
+        /// 仕訳帳のステータスの取得 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="companyId">事業所ID</param>
@@ -591,7 +591,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ダウンロード要求 
+        /// 仕訳帳のダウンロード要求 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadType">ダウンロード形式</param>
@@ -608,7 +608,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ダウンロード要求 
+        /// 仕訳帳のダウンロード要求 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadType">ダウンロード形式</param>
@@ -689,7 +689,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ダウンロード要求 
+        /// 仕訳帳のダウンロード要求 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadType">ダウンロード形式</param>
@@ -707,7 +707,7 @@ namespace Freee.Accounting.Api
         }
 
         /// <summary>
-        /// ダウンロード要求 
+        /// 仕訳帳のダウンロード要求 
         /// </summary>
         /// <exception cref="Freee.Accounting.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="downloadType">ダウンロード形式</param>

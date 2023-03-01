@@ -73,7 +73,7 @@ namespace Freee.Accounting.Models
         /// <param name="partnerCode">取引先コード.</param>
         /// <param name="partnerId">取引先ID.</param>
         /// <param name="payments">支払行一覧（配列）：未指定の場合、未決済の取引を作成します。.</param>
-        /// <param name="receiptIds">証憑ファイルID（ファイルボックスのファイルID）（配列）.</param>
+        /// <param name="receiptIds">ファイルボックス（証憑ファイル）ID（配列）.</param>
         /// <param name="refNumber">管理番号.</param>
         /// <param name="type">収支区分 (収入: income, 支出: expense) (required).</param>
         public DealCreateParams(int companyId = default(int), List<DealCreateParamsDetails> details = default(List<DealCreateParamsDetails>), string dueDate = default(string), string issueDate = default(string), string partnerCode = default(string), int partnerId = default(int), List<DealCreateParamsPayments> payments = default(List<DealCreateParamsPayments>), List<int> receiptIds = default(List<int>), string refNumber = default(string), TypeEnum type = default(TypeEnum))
@@ -147,9 +147,9 @@ namespace Freee.Accounting.Models
         public List<DealCreateParamsPayments> Payments { get; set; }
 
         /// <summary>
-        /// 証憑ファイルID（ファイルボックスのファイルID）（配列）
+        /// ファイルボックス（証憑ファイル）ID（配列）
         /// </summary>
-        /// <value>証憑ファイルID（ファイルボックスのファイルID）（配列）</value>
+        /// <value>ファイルボックス（証憑ファイル）ID（配列）</value>
         [DataMember(Name = "receipt_ids", EmitDefaultValue = false)]
         public List<int> ReceiptIds { get; set; }
 
