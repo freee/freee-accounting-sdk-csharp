@@ -31,9 +31,9 @@ namespace Freee.Accounting.Models
     public partial class PaymentRequestCreateParamsPaymentRequestLines : IEquatable<PaymentRequestCreateParamsPaymentRequestLines>
     {
         /// <summary>
-        /// &#39;行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;デフォルトは deal_line: 支払依頼の通常取引行 です&#39; 
+        /// &#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;デフォルトは deal_line: 支払依頼の通常取引行 です&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39; 
         /// </summary>
-        /// <value>&#39;行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;デフォルトは deal_line: 支払依頼の通常取引行 です&#39; </value>
+        /// <value>&#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;デフォルトは deal_line: 支払依頼の通常取引行 です&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39; </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineTypeEnum
         {
@@ -44,18 +44,24 @@ namespace Freee.Accounting.Models
             DealLine = 1,
 
             /// <summary>
+            /// Enum NegativeLine for value: negative_line
+            /// </summary>
+            [EnumMember(Value = "negative_line")]
+            NegativeLine = 2,
+
+            /// <summary>
             /// Enum WithholdingTax for value: withholding_tax
             /// </summary>
             [EnumMember(Value = "withholding_tax")]
-            WithholdingTax = 2
+            WithholdingTax = 3
 
         }
 
 
         /// <summary>
-        /// &#39;行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;デフォルトは deal_line: 支払依頼の通常取引行 です&#39; 
+        /// &#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;デフォルトは deal_line: 支払依頼の通常取引行 です&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39; 
         /// </summary>
-        /// <value>&#39;行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;デフォルトは deal_line: 支払依頼の通常取引行 です&#39; </value>
+        /// <value>&#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;デフォルトは deal_line: 支払依頼の通常取引行 です&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39; </value>
         [DataMember(Name = "line_type", EmitDefaultValue = false)]
         public LineTypeEnum? LineType { get; set; }
         /// <summary>
@@ -70,7 +76,7 @@ namespace Freee.Accounting.Models
         /// <param name="amount">金額 (required).</param>
         /// <param name="description">内容.</param>
         /// <param name="itemId">品目ID.</param>
-        /// <param name="lineType">&#39;行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;デフォルトは deal_line: 支払依頼の通常取引行 です&#39; .</param>
+        /// <param name="lineType">&#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;デフォルトは deal_line: 支払依頼の通常取引行 です&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39; .</param>
         /// <param name="sectionId">部門ID.</param>
         /// <param name="segment1TagId">セグメント１ID&lt;br&gt; セグメントタグ一覧の取得APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; .</param>
         /// <param name="segment2TagId">セグメント２ID(法人向けエンタープライズプラン)&lt;br&gt; セグメントタグ一覧の取得APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; .</param>
