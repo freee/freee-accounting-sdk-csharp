@@ -31,9 +31,9 @@ namespace Freee.Accounting.Models
     public partial class PaymentRequestResponsePaymentRequestPaymentRequestLines : IEquatable<PaymentRequestResponsePaymentRequestPaymentRequestLines>
     {
         /// <summary>
-        /// 行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)
+        /// &#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39; 
         /// </summary>
-        /// <value>行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)</value>
+        /// <value>&#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39; </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineTypeEnum
         {
@@ -44,18 +44,24 @@ namespace Freee.Accounting.Models
             DealLine = 1,
 
             /// <summary>
+            /// Enum NegativeLine for value: negative_line
+            /// </summary>
+            [EnumMember(Value = "negative_line")]
+            NegativeLine = 2,
+
+            /// <summary>
             /// Enum WithholdingTax for value: withholding_tax
             /// </summary>
             [EnumMember(Value = "withholding_tax")]
-            WithholdingTax = 2
+            WithholdingTax = 3
 
         }
 
 
         /// <summary>
-        /// 行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)
+        /// &#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39; 
         /// </summary>
-        /// <value>行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)</value>
+        /// <value>&#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39; </value>
         [DataMember(Name = "line_type", IsRequired = true, EmitDefaultValue = false)]
         public LineTypeEnum LineType { get; set; }
         /// <summary>
@@ -71,7 +77,7 @@ namespace Freee.Accounting.Models
         /// <param name="description">内容 (required).</param>
         /// <param name="id">支払依頼の項目行ID (required).</param>
         /// <param name="itemId">品目ID (required).</param>
-        /// <param name="lineType">行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行) (required).</param>
+        /// <param name="lineType">&#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39;  (required).</param>
         /// <param name="sectionId">部門ID (required).</param>
         /// <param name="segment1TagId">セグメント１ID。セグメント１が使用可能なプランの時のみレスポンスに含まれます。.</param>
         /// <param name="segment2TagId">セグメント２ID。セグメント２が使用可能なプランの時のみレスポンスに含まれます。.</param>
