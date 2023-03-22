@@ -43,23 +43,19 @@ namespace Freee.Accounting.Models
         /// <param name="companyId">事業所ID (required).</param>
         /// <param name="description">備考 (10000文字以内).</param>
         /// <param name="draft">経費申請のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で経費申請を作成します。&lt;br&gt; trueを指定した時は下書き（draft）で経費申請を作成します。&lt;br&gt; 未指定の時は下書きとみなして経費申請を作成します。 .</param>
-        /// <param name="expenseApplicationLines">expenseApplicationLines (required).</param>
+        /// <param name="expenseApplicationLines">経費申請の項目行一覧（配列）.</param>
         /// <param name="issueDate">申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。 .</param>
         /// <param name="parentId">親申請ID(法人向けプロフェッショナル, 法人向け エンタープライズプラン)&lt;br&gt; &lt;ul&gt;   &lt;li&gt;承認済みの既存各種申請IDのみ指定可能です。&lt;/li&gt;   &lt;li&gt;各種申請一覧APIを利用して取得してください。&lt;/li&gt; &lt;/ul&gt; .</param>
+        /// <param name="purchaseLines">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） .</param>
         /// <param name="sectionId">部門ID.</param>
         /// <param name="segment1TagId">セグメント１ID(法人向けプロフェッショナル, 法人向けエンタープライズプラン)&lt;br&gt; セグメントタグ一覧の取得APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; .</param>
         /// <param name="segment2TagId">セグメント２ID(法人向け エンタープライズプラン)&lt;br&gt; セグメントタグ一覧の取得APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; .</param>
         /// <param name="segment3TagId">セグメント３ID(法人向け エンタープライズプラン)&lt;br&gt; セグメントタグ一覧の取得APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; .</param>
         /// <param name="tagIds">メモタグID.</param>
         /// <param name="title">申請タイトル (250文字以内) (required).</param>
-        public ExpenseApplicationCreateParams(int approvalFlowRouteId = default(int), int approverId = default(int), int companyId = default(int), string description = default(string), bool draft = default(bool), List<ExpenseApplicationCreateParamsExpenseApplicationLines> expenseApplicationLines = default(List<ExpenseApplicationCreateParamsExpenseApplicationLines>), string issueDate = default(string), int parentId = default(int), int sectionId = default(int), long segment1TagId = default(long), long segment2TagId = default(long), long segment3TagId = default(long), List<int> tagIds = default(List<int>), string title = default(string))
+        public ExpenseApplicationCreateParams(int approvalFlowRouteId = default(int), int approverId = default(int), int companyId = default(int), string description = default(string), bool draft = default(bool), List<ExpenseApplicationCreateParamsExpenseApplicationLines> expenseApplicationLines = default(List<ExpenseApplicationCreateParamsExpenseApplicationLines>), string issueDate = default(string), int parentId = default(int), List<ExpenseApplicationCreateParamsPurchaseLines> purchaseLines = default(List<ExpenseApplicationCreateParamsPurchaseLines>), int sectionId = default(int), long segment1TagId = default(long), long segment2TagId = default(long), long segment3TagId = default(long), List<int> tagIds = default(List<int>), string title = default(string))
         {
             this.CompanyId = companyId;
-            // to ensure "expenseApplicationLines" is required (not null)
-            if (expenseApplicationLines == null) {
-                throw new ArgumentNullException("expenseApplicationLines is a required property for ExpenseApplicationCreateParams and cannot be null");
-            }
-            this.ExpenseApplicationLines = expenseApplicationLines;
             // to ensure "title" is required (not null)
             if (title == null) {
                 throw new ArgumentNullException("title is a required property for ExpenseApplicationCreateParams and cannot be null");
@@ -69,8 +65,10 @@ namespace Freee.Accounting.Models
             this.ApproverId = approverId;
             this.Description = description;
             this.Draft = draft;
+            this.ExpenseApplicationLines = expenseApplicationLines;
             this.IssueDate = issueDate;
             this.ParentId = parentId;
+            this.PurchaseLines = purchaseLines;
             this.SectionId = sectionId;
             this.Segment1TagId = segment1TagId;
             this.Segment2TagId = segment2TagId;
@@ -114,9 +112,10 @@ namespace Freee.Accounting.Models
         public bool Draft { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExpenseApplicationLines
+        /// 経費申請の項目行一覧（配列）
         /// </summary>
-        [DataMember(Name = "expense_application_lines", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>経費申請の項目行一覧（配列）</value>
+        [DataMember(Name = "expense_application_lines", EmitDefaultValue = false)]
         public List<ExpenseApplicationCreateParamsExpenseApplicationLines> ExpenseApplicationLines { get; set; }
 
         /// <summary>
@@ -132,6 +131,13 @@ namespace Freee.Accounting.Models
         /// <value>親申請ID(法人向けプロフェッショナル, 法人向け エンタープライズプラン)&lt;br&gt; &lt;ul&gt;   &lt;li&gt;承認済みの既存各種申請IDのみ指定可能です。&lt;/li&gt;   &lt;li&gt;各種申請一覧APIを利用して取得してください。&lt;/li&gt; &lt;/ul&gt; </value>
         [DataMember(Name = "parent_id", EmitDefaultValue = false)]
         public int ParentId { get; set; }
+
+        /// <summary>
+        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） 
+        /// </summary>
+        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） </value>
+        [DataMember(Name = "purchase_lines", EmitDefaultValue = false)]
+        public List<ExpenseApplicationCreateParamsPurchaseLines> PurchaseLines { get; set; }
 
         /// <summary>
         /// 部門ID
@@ -191,6 +197,7 @@ namespace Freee.Accounting.Models
             sb.Append("  ExpenseApplicationLines: ").Append(ExpenseApplicationLines).Append("\n");
             sb.Append("  IssueDate: ").Append(IssueDate).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
+            sb.Append("  PurchaseLines: ").Append(PurchaseLines).Append("\n");
             sb.Append("  SectionId: ").Append(SectionId).Append("\n");
             sb.Append("  Segment1TagId: ").Append(Segment1TagId).Append("\n");
             sb.Append("  Segment2TagId: ").Append(Segment2TagId).Append("\n");
@@ -269,6 +276,12 @@ namespace Freee.Accounting.Models
                     this.ParentId.Equals(input.ParentId)
                 ) && 
                 (
+                    this.PurchaseLines == input.PurchaseLines ||
+                    this.PurchaseLines != null &&
+                    input.PurchaseLines != null &&
+                    this.PurchaseLines.SequenceEqual(input.PurchaseLines)
+                ) && 
+                (
                     this.SectionId == input.SectionId ||
                     this.SectionId.Equals(input.SectionId)
                 ) && 
@@ -323,6 +336,10 @@ namespace Freee.Accounting.Models
                     hashCode = (hashCode * 59) + this.IssueDate.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
+                if (this.PurchaseLines != null)
+                {
+                    hashCode = (hashCode * 59) + this.PurchaseLines.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.SectionId.GetHashCode();
                 hashCode = (hashCode * 59) + this.Segment1TagId.GetHashCode();
                 hashCode = (hashCode * 59) + this.Segment2TagId.GetHashCode();

@@ -31,9 +31,9 @@ namespace Freee.Accounting.Models
     public partial class Receipt : IEquatable<Receipt>
     {
         /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） 
+        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他、null: OCR解析結果が保存されている時等） 
         /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） </value>
+        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他、null: OCR解析結果が保存されている時等） </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DocumentTypeEnum
         {
@@ -59,9 +59,9 @@ namespace Freee.Accounting.Models
 
 
         /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） 
+        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他、null: OCR解析結果が保存されている時等） 
         /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） </value>
+        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他、null: OCR解析結果が保存されている時等） </value>
         [DataMember(Name = "document_type", EmitDefaultValue = true)]
         public DocumentTypeEnum? DocumentType { get; set; }
         /// <summary>
@@ -141,9 +141,9 @@ namespace Freee.Accounting.Models
         [DataMember(Name = "origin", IsRequired = true, EmitDefaultValue = false)]
         public OriginEnum Origin { get; set; }
         /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
+        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択、null: OCR解析結果が保存されている時等） 
         /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） </value>
+        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択、null: OCR解析結果が保存されている時等） </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum QualifiedInvoiceEnum
         {
@@ -157,15 +157,21 @@ namespace Freee.Accounting.Models
             /// Enum NotQualified for value: not_qualified
             /// </summary>
             [EnumMember(Value = "not_qualified")]
-            NotQualified = 2
+            NotQualified = 2,
+
+            /// <summary>
+            /// Enum Unselected for value: unselected
+            /// </summary>
+            [EnumMember(Value = "unselected")]
+            Unselected = 3
 
         }
 
 
         /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
+        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択、null: OCR解析結果が保存されている時等） 
         /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） </value>
+        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択、null: OCR解析結果が保存されている時等） </value>
         [DataMember(Name = "qualified_invoice", EmitDefaultValue = true)]
         public QualifiedInvoiceEnum? QualifiedInvoice { get; set; }
         /// <summary>
@@ -212,14 +218,14 @@ namespace Freee.Accounting.Models
         /// </summary>
         /// <param name="createdAt">作成日時（ISO8601形式） (required).</param>
         /// <param name="description">メモ.</param>
-        /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） .</param>
+        /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他、null: OCR解析結果が保存されている時等） .</param>
         /// <param name="fileSrc">ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） &lt;br&gt; &lt;br&gt; file_srcは廃止予定の属性になります。&lt;br&gt; file_srcに替わり、証憑ファイルのダウンロード APIをご利用ください。&lt;br&gt; 証憑ファイルのダウンロードAPIを利用することで、以下のようになります。 &lt;ul&gt;   &lt;li&gt;アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。&lt;/li&gt; &lt;/ul&gt; (required).</param>
         /// <param name="id">ファイルボックス（証憑ファイル）ID (required).</param>
-        /// <param name="invoiceRegistrationNumber">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; .</param>
+        /// <param name="invoiceRegistrationNumber">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号（null: OCR解析結果が保存されている時等） - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; .</param>
         /// <param name="issueDate">発生日.</param>
         /// <param name="mimeType">MIMEタイプ (required).</param>
         /// <param name="origin">アップロード元種別 (required).</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） .</param>
+        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択、null: OCR解析結果が保存されている時等） .</param>
         /// <param name="receiptMetadatum">receiptMetadatum.</param>
         /// <param name="status">ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視) (required).</param>
         /// <param name="user">user (required).</param>
@@ -286,9 +292,9 @@ namespace Freee.Accounting.Models
         public int Id { get; set; }
 
         /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; 
+        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号（null: OCR解析結果が保存されている時等） - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; 
         /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; </value>
+        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号（null: OCR解析結果が保存されている時等） - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; </value>
         [DataMember(Name = "invoice_registration_number", EmitDefaultValue = true)]
         public string InvoiceRegistrationNumber { get; set; }
 
