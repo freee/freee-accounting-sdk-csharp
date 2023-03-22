@@ -124,9 +124,10 @@ namespace Freee.Accounting.Models
         /// <param name="dealId">取引ID (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_idが表示されます) (required).</param>
         /// <param name="dealStatus">取引ステータス (申請ステータス:statusがapprovedで、取引が存在する時のみdeal_statusが表示されます settled:精算済み, unsettled:清算待ち) (required).</param>
         /// <param name="description">備考.</param>
-        /// <param name="expenseApplicationLines">経費申請の項目行一覧（配列） (required).</param>
+        /// <param name="expenseApplicationLines">経費申請の項目行一覧（配列）.</param>
         /// <param name="id">経費申請ID (required).</param>
         /// <param name="issueDate">申請日 (yyyy-mm-dd) (required).</param>
+        /// <param name="purchaseLines">この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） .</param>
         /// <param name="sectionId">部門ID.</param>
         /// <param name="segment1TagId">セグメント１ID。セグメント１が使用可能なプランの時のみレスポンスに含まれます。.</param>
         /// <param name="segment2TagId">セグメント２ID。セグメント２が使用可能なプランの時のみレスポンスに含まれます。.</param>
@@ -135,7 +136,7 @@ namespace Freee.Accounting.Models
         /// <param name="tagIds">メモタグID.</param>
         /// <param name="title">申請タイトル (required).</param>
         /// <param name="totalAmount">合計金額.</param>
-        public ExpenseApplicationResponseExpenseApplication(int applicantId = default(int), string applicationNumber = default(string), List<ApprovalRequestResponseApprovalRequestApprovalFlowLogs> approvalFlowLogs = default(List<ApprovalRequestResponseApprovalRequestApprovalFlowLogs>), int approvalFlowRouteId = default(int), List<ApprovalRequestResponseApprovalRequestApprovers> approvers = default(List<ApprovalRequestResponseApprovalRequestApprovers>), List<ApprovalRequestResponseApprovalRequestComments> comments = default(List<ApprovalRequestResponseApprovalRequestComments>), int companyId = default(int), int currentRound = default(int), int? currentStepId = default(int?), int? dealId = default(int?), DealStatusEnum dealStatus = default(DealStatusEnum), string description = default(string), List<ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines> expenseApplicationLines = default(List<ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines>), int id = default(int), string issueDate = default(string), int? sectionId = default(int?), long? segment1TagId = default(long?), long? segment2TagId = default(long?), long? segment3TagId = default(long?), StatusEnum status = default(StatusEnum), List<int> tagIds = default(List<int>), string title = default(string), int totalAmount = default(int))
+        public ExpenseApplicationResponseExpenseApplication(int applicantId = default(int), string applicationNumber = default(string), List<ApprovalRequestResponseApprovalRequestApprovalFlowLogs> approvalFlowLogs = default(List<ApprovalRequestResponseApprovalRequestApprovalFlowLogs>), int approvalFlowRouteId = default(int), List<ApprovalRequestResponseApprovalRequestApprovers> approvers = default(List<ApprovalRequestResponseApprovalRequestApprovers>), List<ApprovalRequestResponseApprovalRequestComments> comments = default(List<ApprovalRequestResponseApprovalRequestComments>), int companyId = default(int), int currentRound = default(int), int? currentStepId = default(int?), int? dealId = default(int?), DealStatusEnum dealStatus = default(DealStatusEnum), string description = default(string), List<ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines> expenseApplicationLines = default(List<ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines>), int id = default(int), string issueDate = default(string), List<ExpenseApplicationResponseExpenseApplicationPurchaseLines> purchaseLines = default(List<ExpenseApplicationResponseExpenseApplicationPurchaseLines>), int? sectionId = default(int?), long? segment1TagId = default(long?), long? segment2TagId = default(long?), long? segment3TagId = default(long?), StatusEnum status = default(StatusEnum), List<int> tagIds = default(List<int>), string title = default(string), int totalAmount = default(int))
         {
             this.ApplicantId = applicantId;
             // to ensure "applicationNumber" is required (not null)
@@ -172,11 +173,6 @@ namespace Freee.Accounting.Models
             }
             this.DealId = dealId;
             this.DealStatus = dealStatus;
-            // to ensure "expenseApplicationLines" is required (not null)
-            if (expenseApplicationLines == null) {
-                throw new ArgumentNullException("expenseApplicationLines is a required property for ExpenseApplicationResponseExpenseApplication and cannot be null");
-            }
-            this.ExpenseApplicationLines = expenseApplicationLines;
             this.Id = id;
             // to ensure "issueDate" is required (not null)
             if (issueDate == null) {
@@ -190,6 +186,8 @@ namespace Freee.Accounting.Models
             }
             this.Title = title;
             this.Description = description;
+            this.ExpenseApplicationLines = expenseApplicationLines;
+            this.PurchaseLines = purchaseLines;
             this.SectionId = sectionId;
             this.Segment1TagId = segment1TagId;
             this.Segment2TagId = segment2TagId;
@@ -279,7 +277,7 @@ namespace Freee.Accounting.Models
         /// 経費申請の項目行一覧（配列）
         /// </summary>
         /// <value>経費申請の項目行一覧（配列）</value>
-        [DataMember(Name = "expense_application_lines", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "expense_application_lines", EmitDefaultValue = false)]
         public List<ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines> ExpenseApplicationLines { get; set; }
 
         /// <summary>
@@ -295,6 +293,13 @@ namespace Freee.Accounting.Models
         /// <value>申請日 (yyyy-mm-dd)</value>
         [DataMember(Name = "issue_date", IsRequired = true, EmitDefaultValue = false)]
         public string IssueDate { get; set; }
+
+        /// <summary>
+        /// この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） 
+        /// </summary>
+        /// <value>この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） </value>
+        [DataMember(Name = "purchase_lines", EmitDefaultValue = false)]
+        public List<ExpenseApplicationResponseExpenseApplicationPurchaseLines> PurchaseLines { get; set; }
 
         /// <summary>
         /// 部門ID
@@ -368,6 +373,7 @@ namespace Freee.Accounting.Models
             sb.Append("  ExpenseApplicationLines: ").Append(ExpenseApplicationLines).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  IssueDate: ").Append(IssueDate).Append("\n");
+            sb.Append("  PurchaseLines: ").Append(PurchaseLines).Append("\n");
             sb.Append("  SectionId: ").Append(SectionId).Append("\n");
             sb.Append("  Segment1TagId: ").Append(Segment1TagId).Append("\n");
             sb.Append("  Segment2TagId: ").Append(Segment2TagId).Append("\n");
@@ -485,6 +491,12 @@ namespace Freee.Accounting.Models
                     this.IssueDate.Equals(input.IssueDate))
                 ) && 
                 (
+                    this.PurchaseLines == input.PurchaseLines ||
+                    this.PurchaseLines != null &&
+                    input.PurchaseLines != null &&
+                    this.PurchaseLines.SequenceEqual(input.PurchaseLines)
+                ) && 
+                (
                     this.SectionId == input.SectionId ||
                     (this.SectionId != null &&
                     this.SectionId.Equals(input.SectionId))
@@ -575,6 +587,10 @@ namespace Freee.Accounting.Models
                 if (this.IssueDate != null)
                 {
                     hashCode = (hashCode * 59) + this.IssueDate.GetHashCode();
+                }
+                if (this.PurchaseLines != null)
+                {
+                    hashCode = (hashCode * 59) + this.PurchaseLines.GetHashCode();
                 }
                 if (this.SectionId != null)
                 {

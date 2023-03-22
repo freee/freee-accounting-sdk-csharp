@@ -35,7 +35,7 @@ namespace Freee.Accounting.Api
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
+        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
@@ -54,7 +54,7 @@ namespace Freee.Accounting.Api
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
+        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
@@ -197,7 +197,7 @@ namespace Freee.Accounting.Api
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
+        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
@@ -217,7 +217,7 @@ namespace Freee.Accounting.Api
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
+        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
@@ -494,7 +494,7 @@ namespace Freee.Accounting.Api
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
+        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
@@ -514,7 +514,7 @@ namespace Freee.Accounting.Api
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
+        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
@@ -611,7 +611,7 @@ namespace Freee.Accounting.Api
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
+        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
@@ -632,7 +632,7 @@ namespace Freee.Accounting.Api
         /// <param name="description">メモ (255文字以内) (optional)</param>
         /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (optional)</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)</param>
+        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択）  (optional)</param>
         /// <param name="receiptMetadatumAmount">金額 (optional)</param>
         /// <param name="receiptMetadatumIssueDate">発行日 (yyyy-mm-dd) (optional)</param>
         /// <param name="receiptMetadatumPartnerName">発行元 (optional)</param>
