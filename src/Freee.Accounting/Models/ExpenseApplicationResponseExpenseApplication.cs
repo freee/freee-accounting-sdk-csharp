@@ -127,7 +127,7 @@ namespace Freee.Accounting.Models
         /// <param name="expenseApplicationLines">経費申請の項目行一覧（配列）.</param>
         /// <param name="id">経費申請ID (required).</param>
         /// <param name="issueDate">申請日 (yyyy-mm-dd) (required).</param>
-        /// <param name="purchaseLines">この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） .</param>
+        /// <param name="purchaseLines">この項目はインボイス制度で利用する項目です。2023年4月下旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） .</param>
         /// <param name="sectionId">部門ID.</param>
         /// <param name="segment1TagId">セグメント１ID。セグメント１が使用可能なプランの時のみレスポンスに含まれます。.</param>
         /// <param name="segment2TagId">セグメント２ID。セグメント２が使用可能なプランの時のみレスポンスに含まれます。.</param>
@@ -295,9 +295,9 @@ namespace Freee.Accounting.Models
         public string IssueDate { get; set; }
 
         /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） 
+        /// この項目はインボイス制度で利用する項目です。2023年4月下旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） 
         /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） </value>
+        /// <value>この項目はインボイス制度で利用する項目です。2023年4月下旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） </value>
         [DataMember(Name = "purchase_lines", EmitDefaultValue = false)]
         public List<ExpenseApplicationResponseExpenseApplicationPurchaseLines> PurchaseLines { get; set; }
 

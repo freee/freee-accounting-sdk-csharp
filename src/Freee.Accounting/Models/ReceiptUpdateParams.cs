@@ -62,12 +62,12 @@ namespace Freee.Accounting.Models
         /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） 
         /// </summary>
         /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） </value>
-        [DataMember(Name = "document_type", EmitDefaultValue = true)]
+        [DataMember(Name = "document_type", EmitDefaultValue = false)]
         public DocumentTypeEnum? DocumentType { get; set; }
         /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
+        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択） 
         /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） </value>
+        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択） </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum QualifiedInvoiceEnum
         {
@@ -81,16 +81,22 @@ namespace Freee.Accounting.Models
             /// Enum NotQualified for value: not_qualified
             /// </summary>
             [EnumMember(Value = "not_qualified")]
-            NotQualified = 2
+            NotQualified = 2,
+
+            /// <summary>
+            /// Enum Unselected for value: unselected
+            /// </summary>
+            [EnumMember(Value = "unselected")]
+            Unselected = 3
 
         }
 
 
         /// <summary>
-        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
+        /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択） 
         /// </summary>
-        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） </value>
-        [DataMember(Name = "qualified_invoice", EmitDefaultValue = true)]
+        /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択） </value>
+        [DataMember(Name = "qualified_invoice", EmitDefaultValue = false)]
         public QualifiedInvoiceEnum? QualifiedInvoice { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ReceiptUpdateParams" /> class.
@@ -105,7 +111,7 @@ namespace Freee.Accounting.Models
         /// <param name="documentType">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） .</param>
         /// <param name="invoiceRegistrationNumber">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; .</param>
         /// <param name="issueDate">取引日 (yyyy-mm-dd) (required).</param>
-        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） .</param>
+        /// <param name="qualifiedInvoice">この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択） .</param>
         /// <param name="receiptMetadatum">receiptMetadatum.</param>
         public ReceiptUpdateParams(int companyId = default(int), string description = default(string), DocumentTypeEnum? documentType = default(DocumentTypeEnum?), string invoiceRegistrationNumber = default(string), string issueDate = default(string), QualifiedInvoiceEnum? qualifiedInvoice = default(QualifiedInvoiceEnum?), DealReceiptMetadatum receiptMetadatum = default(DealReceiptMetadatum))
         {
@@ -140,7 +146,7 @@ namespace Freee.Accounting.Models
         /// この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; 
         /// </summary>
         /// <value>この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; </value>
-        [DataMember(Name = "invoice_registration_number", EmitDefaultValue = true)]
+        [DataMember(Name = "invoice_registration_number", EmitDefaultValue = false)]
         public string InvoiceRegistrationNumber { get; set; }
 
         /// <summary>
